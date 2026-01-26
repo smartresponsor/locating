@@ -1,0 +1,54 @@
+name: gate
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: owner-gate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  gate:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run owner gate (Linux)
+        if: runner.os != 'Windows'
+        shell: bash
+        run: |
+          chmod +x ./.gate/gate.sh
+          ./.gate/gate.sh .
+
+      - name: Gate fix proposal (print, Linux)
+        if: always() && runner.os != 'Windows'
+        shell: bash
+        run: |
+          chmod +x ./.gate/contract/fix.sh || true
+          ./.gate/contract/fix.sh . .report/gate-fix-proposal.ndjson print || true
+
+      - name: Run owner gate (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          ./.gate/gate.ps1 -Path .
+
+      - name: Gate fix proposal (print, Windows)
+        if: always() && runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          pwsh -File .\.gate\contract\fix.ps1 -RepoRoot . -PrintOnly
