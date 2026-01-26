@@ -18,7 +18,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+<<<<<<< HEAD
         os: [ubuntu-latest, windows-latest]
+=======
+        os: [ ubuntu-latest, windows-latest ]
+>>>>>>> 94ad96f (first/init commit)
 
     steps:
       - uses: actions/checkout@v4
@@ -38,8 +42,13 @@ jobs:
         if: always() && runner.os != 'Windows'
         shell: bash
         run: |
+<<<<<<< HEAD
           chmod +x ./.gate/contract/ps1/fail-fixer-run.sh || true
           ./.gate/contract/ps1/fail-fixer-run.sh . .report/gate-fix-proposal.ndjson print || true
+=======
+          chmod +x ./.gate/contract/fix.sh || true
+          ./.gate/contract/sh/fail-fixer-run.sh . .report/gate-fix-proposal.ndjson print || true
+>>>>>>> 94ad96f (first/init commit)
 
       - name: Run owner gate (Windows)
         if: runner.os == 'Windows'
@@ -52,3 +61,7 @@ jobs:
         shell: pwsh
         run: |
           pwsh -File .\.gate\contract\ps1\fail-fixer-run.ps1 -RepoRoot . -PrintOnly
+<<<<<<< HEAD
+=======
+
+>>>>>>> 94ad96f (first/init commit)

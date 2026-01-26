@@ -1,5 +1,8 @@
 #!/bin/sh
+<<<<<<< HEAD
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
+=======
+>>>>>>> 94ad96f (first/init commit)
 # dot.sh
 # Dot-run scanner + runner (ps/sh) with fallback + logging.
 # Entry: dot_folder "."  (auto-called at the bottom if executed directly)

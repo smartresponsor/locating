@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
+=======
+>>>>>>> 94ad96f (first/init commit)
 name: consuming
 
 on:
@@ -33,13 +36,19 @@ jobs:
         id: key
         shell: pwsh
         env:
+<<<<<<< HEAD
           PEM: ${{ secrets.PRIVATE_KEY }}
           B64: ${{ secrets.PRIVATE_KEY_B64 }}
+=======
+          PEM: ${{ secrets.AUTOMATER_APP_PRIVATE_KEY }}
+          B64: ${{ secrets.AUTOMATER_APP_PRIVATE_KEY_B64 }}
+>>>>>>> 94ad96f (first/init commit)
         run: |
           $key = $env:PEM
           if ([string]::IsNullOrWhiteSpace($key) -and -not [string]::IsNullOrWhiteSpace($env:B64)) {
             $key = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String($env:B64))
           }
+<<<<<<< HEAD
 
           if ([string]::IsNullOrWhiteSpace($key)) {
             throw "PRIVATE_KEY is empty (and PRIVATE_KEY_B64 is empty)."
@@ -99,12 +108,31 @@ jobs:
           Add-Content -Path $env:GITHUB_OUTPUT -Encoding utf8NoBOM -Value "private-key<<EOF"
           Add-Content -Path $env:GITHUB_OUTPUT -Encoding utf8NoBOM -Value (Get-Content -Raw -Path $pkcs8Path)
           Add-Content -Path $env:GITHUB_OUTPUT -Encoding utf8NoBOM -Value "EOF"
+=======
+          if ([string]::IsNullOrWhiteSpace($key)) {
+            throw "AUTOMATER_APP_PRIVATE_KEY is empty (and AUTOMATER_APP_PRIVATE_KEY_B64 is empty)."
+          }
+          if ($key.StartsWith('"') -and $key.EndsWith('"')) { $key = $key.Trim('"') }
+          $key = $key -replace "`r",""
+          $key = $key -replace "\\n","`n"
+          if ($key -notmatch "BEGIN (RSA )?PRIVATE KEY") {
+            throw "Private key does not look like PEM."
+          }
+
+          "private-key<<EOF" | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding utf8 -Append
+          $key | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding utf8 -Append
+          "EOF" | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding utf8 -Append
+>>>>>>> 94ad96f (first/init commit)
 
       - name: Create GitHub App token (Automater)
         id: app
         uses: actions/create-github-app-token@v2
         with:
+<<<<<<< HEAD
           app-id: ${{ vars.APP_ID }}
+=======
+          app-id: ${{ vars.AUTOMATER_APP_ID }}
+>>>>>>> 94ad96f (first/init commit)
           private-key: ${{ steps.key.outputs.private-key }}
 
       - name: Checkout (with App token)
@@ -122,7 +150,11 @@ jobs:
         shell: pwsh
         env:
           GITHUB_TOKEN: ${{ steps.app.outputs.token }}
+<<<<<<< HEAD
           CONSUMING_SOURCE_TOKEN: ${{ secrets.SOURCE_TOKEN }}
+=======
+          CONSUMING_SOURCE_TOKEN: ${{ secrets.AUTOMATE_SOURCE_TOKEN }}
+>>>>>>> 94ad96f (first/init commit)
           CONSUMING_ONLY_ID: ${{ github.event.client_payload.onlyId || inputs.onlyId || '' }}
           CONSUMING_TAG: ${{ github.event.client_payload.tag || inputs.tag || '' }}
         run: |

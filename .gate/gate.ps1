@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 param(
     [Parameter(Mandatory = $false)]
@@ -101,3 +102,34 @@ if ($Quality) {
 
 Write-Host "[gate] Gate OK"
 GateProposalPrint $proposalFile
+=======
+\
+# Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
+param(
+  [Parameter(Mandatory=$false)]
+  [Alias('Path')]
+  [string]$RepoRoot = "."
+)
+
+Set-StrictMode -Version Latest
+$ErrorActionPreference = 'Stop'
+
+$resolved = (Resolve-Path -Path $RepoRoot).Path
+
+# If caller passed the .gate folder as root (common when invoked from menu), normalize to parent.
+if ((Split-Path -Leaf $resolved) -eq ".gate") {
+  $resolved = Split-Path -Parent $resolved
+}
+
+if (-not (Get-Command bash -ErrorAction SilentlyContinue)) {
+  throw "bash not found. Install Git for Windows (Git Bash) or provide bash in PATH."
+}
+
+$gateSh = Join-Path $resolved ".gate\gate.sh"
+if (-not (Test-Path -LiteralPath $gateSh -PathType Leaf)) {
+  throw "gate.sh not found at $gateSh"
+}
+
+bash $gateSh $resolved
+exit $LASTEXITCODE
+>>>>>>> 94ad96f (first/init commit)

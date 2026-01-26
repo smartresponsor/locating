@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
+=======
+>>>>>>> 94ad96f (first/init commit)
 while true; do
   clear
   echo -e "\e[1m"
