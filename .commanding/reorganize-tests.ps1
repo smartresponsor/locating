@@ -1,3 +1,4 @@
+# Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 param([switch]$DryRun)
 
 $repoRoot  = Split-Path -Parent $MyInvocation.MyCommand.Path

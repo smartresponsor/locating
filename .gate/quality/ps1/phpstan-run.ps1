@@ -1,3 +1,4 @@
+# Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 param(
   [Parameter(Mandatory=$false)][string]$RepoRoot = (Get-Location).Path
 )

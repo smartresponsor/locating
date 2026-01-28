@@ -1,0 +1,1 @@
+# Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp

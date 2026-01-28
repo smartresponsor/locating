@@ -1,3 +1,4 @@
+# Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 [CmdletBinding()]
 param(
   [Parameter(Mandatory = $false)]
