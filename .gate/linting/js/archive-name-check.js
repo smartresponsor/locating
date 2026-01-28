@@ -53,8 +53,31 @@ function lintOne(filePath) {
   return null;
 }
 
-let bad = 0;
+if (process.argv.length <= 2) {
+  console.error('usage: node archive-name-lint.js <file1.zip> <file2.zip> ...');
+  process.exit(2);
+}
+
+const filesToCheck = [];
 for (const p of process.argv.slice(2)) {
+  if (fs.existsSync(p) && fs.statSync(p).isDirectory()) {
+    const entries = fs.readdirSync(p);
+    for (const entry of entries) {
+      if (entry.toLowerCase().endsWith('.zip')) {
+        filesToCheck.push(path.join(p, entry));
+      }
+    }
+  } else {
+    filesToCheck.push(p);
+  }
+}
+
+if (filesToCheck.length === 0) {
+  process.exit(0);
+}
+
+let bad = 0;
+for (const p of filesToCheck) {
   const err = lintOne(p);
   if (err) {
     bad++;
@@ -64,8 +87,4 @@ for (const p of process.argv.slice(2)) {
   }
 }
 
-if (process.argv.length <= 2) {
-  console.error('usage: node archive-name-lint.js <file1.zip> <file2.zip> ...');
-  process.exit(2);
-}
 process.exit(bad ? 2 : 0);
