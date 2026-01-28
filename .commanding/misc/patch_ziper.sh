@@ -1,4 +1,5 @@
 #!/bin/bash
+# Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 
 #PATCH_DIR="/var/patch"
 

@@ -1,3 +1,4 @@
+# Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 while true; do
   clear
   echo -e "\e[1m"
