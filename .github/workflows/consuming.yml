@@ -32,15 +32,15 @@ jobs:
         id: key
         shell: pwsh
         env:
-          PEM: ${{ secrets.AUTOMATER_APP_PRIVATE_KEY }}
-          B64: ${{ secrets.AUTOMATER_APP_PRIVATE_KEY_B64 }}
+          PEM: ${{ secrets.PRIVATE_KEY }}
+          B64: ${{ secrets.PRIVATE_KEY_B64 }}
         run: |
           $key = $env:PEM
           if ([string]::IsNullOrWhiteSpace($key) -and -not [string]::IsNullOrWhiteSpace($env:B64)) {
             $key = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String($env:B64))
           }
           if ([string]::IsNullOrWhiteSpace($key)) {
-            throw "AUTOMATER_APP_PRIVATE_KEY is empty (and AUTOMATER_APP_PRIVATE_KEY_B64 is empty)."
+            throw "PRIVATE_KEY is empty (and PRIVATE_KEY_B64 is empty)."
           }
           if ($key.StartsWith('"') -and $key.EndsWith('"')) { $key = $key.Trim('"') }
           $key = $key.Trim()
@@ -68,7 +68,7 @@ jobs:
         id: app
         uses: actions/create-github-app-token@v2
         with:
-          app-id: ${{ vars.AUTOMATER_APP_ID }}
+          app-id: ${{ vars.APP_ID }}
           private-key: ${{ steps.key.outputs.private-key }}
 
       - name: Checkout (with App token)
@@ -86,7 +86,7 @@ jobs:
         shell: pwsh
         env:
           GITHUB_TOKEN: ${{ steps.app.outputs.token }}
-          CONSUMING_SOURCE_TOKEN: ${{ secrets.AUTOMATE_SOURCE_TOKEN }}
+          CONSUMING_SOURCE_TOKEN: ${{ secrets.SOURCE_TOKEN }}
           CONSUMING_ONLY_ID: ${{ github.event.client_payload.onlyId || inputs.onlyId || '' }}
           CONSUMING_TAG: ${{ github.event.client_payload.tag || inputs.tag || '' }}
         run: |
