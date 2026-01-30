@@ -39,13 +39,22 @@ jobs:
           if ([string]::IsNullOrWhiteSpace($key) -and -not [string]::IsNullOrWhiteSpace($env:B64)) {
             $key = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String($env:B64))
           }
+
           if ([string]::IsNullOrWhiteSpace($key)) {
             throw "PRIVATE_KEY is empty (and PRIVATE_KEY_B64 is empty)."
           }
+
           if ($key.StartsWith('"') -and $key.EndsWith('"')) { $key = $key.Trim('"') }
           $key = $key.Trim()
+
+          # remove BOM if it sneaks in
+          $key = $key.TrimStart([char]0xFEFF)
+
+          # normalize newlines (handle both actual CR and escaped \r\n)
           $key = $key -replace "`r",""
+          $key = $key -replace "\\r",""
           $key = $key -replace "\\n","`n"
+
           if ($key -notmatch "BEGIN (RSA )?PRIVATE KEY") {
             try {
               $decoded = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String($key))
@@ -53,16 +62,23 @@ jobs:
                 $key = $decoded.Trim()
               }
             } catch {
-              # Fall through to error below.
+              # fall through
             }
           }
+
           if ($key -notmatch "BEGIN (RSA )?PRIVATE KEY") {
             throw "Private key does not look like PEM or base64-encoded PEM."
           }
 
-          "private-key<<EOF" | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding utf8 -Append
-          $key | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding utf8 -Append
-          "EOF" | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding utf8 -Append
+          # write key to file without BOM and validate via openssl (no leak)
+          $path = Join-Path $env:RUNNER_TEMP "app-private-key.pem"
+          Set-Content -Path $path -Value $key -Encoding utf8NoBOM -NoNewline
+          & openssl pkey -in $path -noout | Out-Null
+
+          # export as multiline output (BOM-free)
+          Add-Content -Path $env:GITHUB_OUTPUT -Encoding utf8NoBOM -Value "private-key<<EOF"
+          Add-Content -Path $env:GITHUB_OUTPUT -Encoding utf8NoBOM -Value (Get-Content -Raw -Path $path)
+          Add-Content -Path $env:GITHUB_OUTPUT -Encoding utf8NoBOM -Value "EOF"
 
       - name: Create GitHub App token (Automater)
         id: app
