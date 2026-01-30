@@ -46,6 +46,7 @@ jobs:
           }
 
           if ($key.StartsWith('"') -and $key.EndsWith('"')) { $key = $key.Trim('"') }
+          if ($key.StartsWith("'") -and $key.EndsWith("'")) { $key = $key.Trim("'") }
           $key = $key.Trim()
 
           # remove BOM if it sneaks in
@@ -69,6 +70,20 @@ jobs:
 
           if ($key -notmatch "BEGIN (RSA )?PRIVATE KEY") {
             throw "Private key does not look like PEM or base64-encoded PEM."
+          }
+
+          $pemMatch = [regex]::Match(
+            $key,
+            "(?s)-----BEGIN (RSA )?PRIVATE KEY-----\\s*(?<body>[A-Za-z0-9+/=\\s]+)\\s*-----END (RSA )?PRIVATE KEY-----"
+          )
+          if ($pemMatch.Success) {
+            $body = ($pemMatch.Groups["body"].Value -replace "\\s", "")
+            $chunks = ($body -split "(.{1,64})" | Where-Object { $_ -ne "" })
+            $key = @(
+              $pemMatch.Value -replace "(?s)^.*?(-----BEGIN (RSA )?PRIVATE KEY-----).*$", '$1'
+              $chunks
+              $pemMatch.Value -replace "(?s)^.*?(-----END (RSA )?PRIVATE KEY-----).*$", '$1'
+            ) -join "`n"
           }
 
           # write key to file without BOM and validate via openssl (no leak)
