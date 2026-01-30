@@ -1,3 +1,4 @@
+# Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 name: consuming
 
 on:
@@ -75,9 +76,13 @@ jobs:
           Set-Content -Path $path -Value $key -Encoding utf8NoBOM -NoNewline
           & openssl pkey -in $path -noout | Out-Null
 
+          # convert to PKCS#8 to avoid OpenSSL decoder errors in node crypto
+          $pkcs8Path = Join-Path $env:RUNNER_TEMP "app-private-key-pkcs8.pem"
+          & openssl pkcs8 -topk8 -inform PEM -outform PEM -nocrypt -in $path -out $pkcs8Path
+
           # export as multiline output (BOM-free)
           Add-Content -Path $env:GITHUB_OUTPUT -Encoding utf8NoBOM -Value "private-key<<EOF"
-          Add-Content -Path $env:GITHUB_OUTPUT -Encoding utf8NoBOM -Value (Get-Content -Raw -Path $path)
+          Add-Content -Path $env:GITHUB_OUTPUT -Encoding utf8NoBOM -Value (Get-Content -Raw -Path $pkcs8Path)
           Add-Content -Path $env:GITHUB_OUTPUT -Encoding utf8NoBOM -Value "EOF"
 
       - name: Create GitHub App token (Automater)
