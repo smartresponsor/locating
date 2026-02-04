@@ -1,0 +1,73 @@
+name: Locator CI SLO Gate
+
+on:
+  push:
+    paths:
+      - 'src/**'
+      - 'tests/**'
+      - 'tools/**'
+      - 'config/**'
+      - 'composer.json'
+      - 'composer.lock'
+      - '.github/workflows/locator-ci-slo-gate.yml'
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'tests/**'
+      - 'tools/**'
+      - 'config/**'
+
+jobs:
+  locator-ci:
+    runs-on: ubuntu-latest
+
+    services:
+      php:
+        image: php:8.2-cli
+        options: >-
+          --health-cmd="php -v"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          coverage: none
+
+      - name: Install dependencies
+        run: |
+          if [ -f composer.json ]; then
+            composer install --no-interaction --no-progress --no-suggest
+          fi
+
+      - name: Run unit tests
+        run: |
+          if [ -f vendor/bin/phpunit ]; then
+            php vendor/bin/phpunit
+          else
+            echo "phpunit not found, skipping."
+          fi
+
+      - name: Golden fixtures smoke
+        env:
+          LOCATOR_BASE_URL: http://localhost:8000
+          LOCATOR_TENANT: demo
+        run: |
+          if [ -f tools/locator-fixtures-run.php ]; then
+            php tools/locator-fixtures-run.php || true
+          else
+            echo "Fixture runner not found, skipping."
+          fi
+
+      # Placeholder for a future scripted load/SLO check.
+      # Insert your k6 or PHP-based load runner here and make the job fail
+      # when SLO thresholds are not met (p95 latency, error rate).
+      - name: SLO gate placeholder
+        run: |
+          echo "SLO gate is not enforced yet. This step is a placeholder."

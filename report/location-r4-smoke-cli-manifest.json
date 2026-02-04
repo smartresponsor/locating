@@ -1,0 +1,14 @@
+{
+  "summary": {
+    "cli_locator_namespaces_updated": true,
+    "smoke_script_added": true,
+    "makefile_added": true,
+    "tests_doc_added": true
+  },
+  "files_touched": [
+    "bin/locator",
+    "tools/run-tests.sh",
+    "Makefile",
+    "docs/locator-tests-t1.md"
+  ]
+}

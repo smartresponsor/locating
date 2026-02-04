@@ -1,0 +1,5 @@
+locator_metrics:
+  path: /locator/metrics
+  controller: App\Controller\Locator\MetricsController
+  methods: [GET]
+

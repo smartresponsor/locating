@@ -1,0 +1,39 @@
+# Locator HTTP demo requests
+#
+# This file can be used with IDE HTTP clients (for example, the built-in
+# HTTP client in PhpStorm or VS Code extensions).
+#
+# Set the base URL in one place to quickly switch between environments.
+
+@base = http://localhost:8000
+@tenant = demo
+
+### Service status
+
+GET {{base}}/locator/status
+Accept: application/json
+X-SR-Tenant: {{tenant}}
+
+### Address suggest – US (checkout-style query)
+
+GET {{base}}/locator/address/suggest?query=1600%20Pennsylvania%20Ave%20NW%20Washington&country=US&limit=5
+Accept: application/json
+X-SR-Tenant: {{tenant}}
+
+### Address suggest – GB (Downing Street)
+
+GET {{base}}/locator/address/suggest?query=10%20Downing%20Street%20London&country=GB&limit=5
+Accept: application/json
+X-SR-Tenant: {{tenant}}
+
+### Reverse geocoding – Houston, TX
+
+GET {{base}}/locator/address/reverse?lat=29.7604&lon=-95.3698&country=US
+Accept: application/json
+X-SR-Tenant: {{tenant}}
+
+### Reverse geocoding – Kyiv
+
+GET {{base}}/locator/address/reverse?lat=50.4501&lon=30.5234&country=UA
+Accept: application/json
+X-SR-Tenant: {{tenant}}

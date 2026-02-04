@@ -1,0 +1,15 @@
+### Locator status
+GET http://localhost:8000/locator/status
+Accept: application/json
+
+###
+
+### Locator suggest – basic query
+GET http://localhost:8000/locator/address/suggest?query=123%20Main%20St&country=US&limit=5
+Accept: application/json
+
+###
+
+### Locator metrics – Prometheus text
+GET http://localhost:8000/locator/metrics
+Accept: text/plain

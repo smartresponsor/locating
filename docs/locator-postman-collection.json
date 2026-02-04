@@ -1,0 +1,97 @@
+{
+  "info": {
+    "name": "SmartResponsor Locator API",
+    "description": "Basic collection for Locator status, suggest and metrics endpoints.",
+    "_postman_id": "00000000-0000-0000-0000-000000000000",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Locator status",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/locator/status",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "locator",
+            "status"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Address suggest",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/locator/address/suggest?query=123%20Main%20St&country=US&limit=5",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "locator",
+            "address",
+            "suggest"
+          ],
+          "query": [
+            {
+              "key": "query",
+              "value": "123 Main St"
+            },
+            {
+              "key": "country",
+              "value": "US"
+            },
+            {
+              "key": "limit",
+              "value": "5"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Locator metrics",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "text/plain"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/locator/metrics",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "locator",
+            "metrics"
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8000"
+    }
+  ]
+}

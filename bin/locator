@@ -1,0 +1,41 @@
+#!/usr/bin/env php
+<?php
+declare(strict_types=1);
+require __DIR__.'/../vendor/autoload.php';
+use SmartResponsor\Integration\Locator\LocatorConfig;
+use SmartResponsor\Integration\Locator\LocatorSelector;
+use SmartResponsor\Integration\Locator\Http\NominatimClient;
+use SmartResponsor\Integration\Locator\Health\{NominatimHealthCheck,CompositeHealthCheck};
+use SmartResponsor\Service\Locator\LocatorService;
+use SmartResponsor\Model\Locator\AddressData;
+use SmartResponsor\Model\Locator\GeoPoint;
+$cmd = $argv[1] ?? 'help';
+$cfg = new LocatorConfig(
+  nominatimBaseUrl: getenv('NOMINATIM_BASE_URL') ?: 'https://nominatim.openstreetmap.org',
+  nominatimEmail: getenv('NOMINATIM_EMAIL') ?: null,
+  httpTimeout: getenv('HTTP_TIMEOUT') ? (int)getenv('HTTP_TIMEOUT') : 5,
+  retries: getenv('RETRIES') ? (int)getenv('RETRIES') : 2,
+  retryBaseMs: getenv('RETRY_BASE_MS') ? (int)getenv('RETRY_BASE_MS') : 100,
+  cbThreshold: getenv('CB_THRESHOLD') ? (int)getenv('CB_THRESHOLD') : 5,
+  cbCooldownSec: getenv('CB_COOLDOWN') ? (int)getenv('CB_COOLDOWN') : 30,
+  fallbackEnabled: getenv('FALLBACK_ENABLED') ? (bool)(int)getenv('FALLBACK_ENABLED') : true
+);
+$svc = new LocatorService((new LocatorSelector($cfg))->build());
+switch ($cmd) {
+  case 'normalize': $raw = $argv[2] ?? ''; $r=$svc->normalize($raw)->toArray(); echo json_encode($r, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE).PHP_EOL; break;
+  case 'geocode': $a=new AddressData($argv[2]??'',$argv[3]??'',$argv[4]??'',$argv[5]??'',$argv[6]??''); $pt=$svc->geocode($a)->toArray(); echo json_encode($pt, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE).PHP_EOL; break;
+  case 'reverse': $lat=(float)($argv[2]??0); $lon=(float)($argv[3]??0); $a=$svc->reverse(new GeoPoint($lat,$lon))->toArray(); echo json_encode($a, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE).PHP_EOL; break;
+  case 'health':
+    $hc = new CompositeHealthCheck([ new NominatimHealthCheck(new NominatimClient($cfg->nominatimBaseUrl, $cfg->nominatimEmail, 2)) ]);
+    echo json_encode($hc->check(), JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE).PHP_EOL;
+    break;
+  case 'self-test':
+    $fx = __DIR__.'/../tests/fixtures/selftest.json';
+    $data = file_exists($fx) ? json_decode((string)file_get_contents($fx), true) : ['normalize'=>[],'reverse'=>[]];
+    $out = ['results'=>[]];
+    foreach ($data['normalize'] as $raw){ $out['results'][]=['raw'=>$raw,'norm'=>$svc->normalize($raw)->toArray()]; }
+    foreach ($data['reverse'] as $pair){ $out['results'][]=['pt'=>$pair,'rev'=>$svc->reverse(new GeoPoint($pair['lat'],$pair['lon']))->toArray()]; }
+    echo json_encode($out, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE).PHP_EOL;
+    break;
+  default: echo "Usage: php bin/locator normalize|geocode|reverse|health|self-test ...\n";
+}

@@ -1,0 +1,24 @@
+{
+  "summary": {
+    "r24": "pre-rc-slo-gate",
+    "ci_doc_added": true,
+    "github_workflow_added": true,
+    "release_notes_template_added": true,
+    "docker_quickstart_doc_added": true
+  },
+  "files_touched": [
+    "tools/locator-ci-slo-gate.md",
+    ".github/workflows/locator-ci-slo-gate.yml",
+    "docs/locator-release-notes-template.md",
+    "docs/locator-quickstart-docker.md"
+  ],
+  "slo_targets": {
+    "read_p95_ms": 700,
+    "error_rate_percent": 0.5
+  },
+  "notes": [
+    "GitHub Actions workflow provides a baseline CI with unit tests and golden fixture smoke.",
+    "SLO gate is documented and can be enforced by plugging in a k6 or PHP-based load runner.",
+    "Release notes and Docker quickstart templates complete the pre-RC kit."
+  ]
+}

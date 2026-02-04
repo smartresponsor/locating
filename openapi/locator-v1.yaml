@@ -1,0 +1,268 @@
+openapi: 3.0.3
+info:
+  title: Locator API
+  version: v1
+  description: |
+    Locator component HTTP API (version 1).
+
+    This version is considered stable. Backwards compatibility promises:
+
+    - no breaking changes to existing paths, parameters or response fields;
+    - new fields, if added, are always optional;
+    - error semantics for documented status codes remain the same.
+
+servers:
+  - url: https://api.example.com
+    description: Production
+  - url: http://localhost:8000
+    description: Local development
+
+paths:
+  /locator/status:
+    get:
+      summary: Service status and metrics
+      description: Returns overall locator service status and a minimal metric snapshot.
+      operationId: getLocatorStatus
+      tags: [status]
+      parameters:
+        - $ref: '#/components/parameters/TenantHeader'
+      responses:
+        '200':
+          description: Current service status and metrics.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusResponse'
+
+  /locator/address/suggest:
+    get:
+      summary: Address suggestions
+      description: >
+        Returns a list of address suggestions for the provided query. Results are
+        ordered by relevance and may be influenced by country and locale hints.
+      operationId: getAddressSuggestions
+      tags: [address]
+      parameters:
+        - $ref: '#/components/parameters/TenantHeader'
+        - name: query
+          in: query
+          required: true
+          description: Free-form address query string.
+          schema:
+            type: string
+            minLength: 1
+        - name: country
+          in: query
+          required: false
+          description: ISO 3166-1 alpha-2 country code hint (e.g. US, GB, UA).
+          schema:
+            type: string
+            minLength: 2
+            maxLength: 2
+        - name: limit
+          in: query
+          required: false
+          description: Maximum number of suggestions to return (default 5).
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 20
+            default: 5
+        - name: locale
+          in: query
+          required: false
+          description: Locale hint in BCP 47 form (e.g. en_US, de_DE).
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Suggestions for the query.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuggestResponse'
+
+  /locator/address/reverse:
+    get:
+      summary: Reverse geocoding
+      description: Returns an address for the given coordinates.
+      operationId: reverseGeocode
+      tags: [address]
+      parameters:
+        - $ref: '#/components/parameters/TenantHeader'
+        - name: lat
+          in: query
+          required: true
+          description: Latitude in decimal degrees.
+          schema:
+            type: number
+            format: double
+        - name: lon
+          in: query
+          required: true
+          description: Longitude in decimal degrees.
+          schema:
+            type: number
+            format: double
+        - name: country
+          in: query
+          required: false
+          description: Optional ISO 3166-1 alpha-2 country code hint.
+          schema:
+            type: string
+            minLength: 2
+            maxLength: 2
+      responses:
+        '200':
+          description: Successful reverse geocoding.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AddressResult'
+        '400':
+          description: Missing or invalid input.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  parameters:
+    TenantHeader:
+      name: X-SR-Tenant
+      in: header
+      required: false
+      description: Tenant identifier used for quota tracking and configuration.
+      schema:
+        type: string
+
+  schemas:
+    StatusResponse:
+      type: object
+      required:
+        - service
+        - status
+        - metrics
+      properties:
+        service:
+          type: string
+          example: locator
+        status:
+          type: string
+          description: Overall status computed from metrics.
+          enum: [ok, degraded, down]
+        metrics:
+          type: object
+          additionalProperties:
+            type: object
+
+    SuggestResponse:
+      type: object
+      required:
+        - items
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/AddressSuggestion'
+        quotaExceeded:
+          type: boolean
+          description: >
+            True when the tenant quota was exceeded and suggestions were not
+            returned. When true, items will be an empty array.
+
+    AddressSuggestion:
+      type: object
+      required:
+        - label
+        - address
+      properties:
+        label:
+          type: string
+          description: Human-readable address line.
+        address:
+          $ref: '#/components/schemas/AddressData'
+        providerKey:
+          type: string
+          nullable: true
+          description: Identifier of the underlying provider used, if available.
+
+    AddressResult:
+      type: object
+      required:
+        - address
+        - status
+        - issues
+      properties:
+        address:
+          $ref: '#/components/schemas/AddressData'
+        status:
+          type: string
+          description: High-level address status (e.g. valid, partial, invalid).
+        issues:
+          type: array
+          items:
+            $ref: '#/components/schemas/AddressValidationIssue'
+        geoPoint:
+          $ref: '#/components/schemas/GeoPoint'
+          nullable: true
+        providerKey:
+          type: string
+          nullable: true
+          description: Identifier of the underlying provider used, if available.
+
+    AddressData:
+      type: object
+      required:
+        - street
+        - city
+        - region
+        - postalCode
+        - countryCode
+      properties:
+        street:
+          type: string
+        city:
+          type: string
+        region:
+          type: string
+        postalCode:
+          type: string
+        countryCode:
+          type: string
+          description: ISO 3166-1 alpha-2 country code.
+
+    AddressValidationIssue:
+      type: object
+      required:
+        - field
+        - code
+        - message
+      properties:
+        field:
+          type: string
+        code:
+          type: string
+        message:
+          type: string
+
+    GeoPoint:
+      type: object
+      required:
+        - latitude
+        - longitude
+      properties:
+        latitude:
+          type: number
+          format: double
+        longitude:
+          type: number
+          format: double
+
+    ErrorResponse:
+      type: object
+      required:
+        - error
+      properties:
+        error:
+          type: string

@@ -1,0 +1,12 @@
+FeatureKey,Category,Description,ImplStatus,HasTests,HasDemo,HasDoc,Notes
+forward_geocoding,Search,Text address to normalized address + point,,,,,
+reverse_geocoding,Search,Coordinates to nearest address / object,,,,,
+autocomplete,UX,Suggest addresses/POI while user types,,,,,
+poi_nearby,POI,Search POI by type/category around point,,,,,
+viewport_search,Search,Search within bounding box / polygon,,,,,
+rank_scoring,Relevance,"Ranking strategy (distance, score, business rules)",,,,,
+multi_source,Data,Multiple data providers and internal sources,,,,,
+normalization_validation,Data,Normalize and validate address parts,,,,,
+error_model,Resilience,Handling of empty/partial/invalid results,,,,,
+cache_dedupe,Performance,Caching and duplicate query handling,,,,,
+sla_slo_core_ops,SLO,Target SLO for core operations,,,,,

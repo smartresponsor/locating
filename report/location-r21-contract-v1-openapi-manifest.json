@@ -1,0 +1,18 @@
+{
+  "summary": {
+    "r21": "contract-v1-openapi",
+    "openapi_file_added": true,
+    "contract_test_added": true,
+    "docs_added": true
+  },
+  "files_touched": [
+    "openapi/locator-v1.yaml",
+    "tests/Locator/Contract/LocatorOpenApiPresenceTest.php",
+    "docs/locator-openapi-contract-v1.md"
+  ],
+  "notes": [
+    "locator-v1.yaml defines the stable HTTP contract for status, suggest and reverse endpoints.",
+    "Presence test guards that core paths are present in the OpenAPI document.",
+    "Address JSON shapes remain guarded by existing AddressContractTest."
+  ]
+}

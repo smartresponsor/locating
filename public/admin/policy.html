@@ -1,0 +1,34 @@
+
+<!doctype html><meta charset="utf-8"><title>Policy Admin</title>
+<style>body{font-family:system-ui,Arial,sans-serif;margin:16px;max-width:920px}
+h3{margin:0 0 8px}textarea{width:100%;height:200px}pre{background:#f7f7f7;padding:8px;overflow:auto}
+.btn{padding:6px 10px;border:1px solid #888;border-radius:8px;background:#fff;cursor:pointer}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+</style>
+<h3>Policy Admin (client-only)</h3>
+<p>Import/export JSON policies for Locator (ip-rule, provider-rule, budget, region-timeout). No server calls here.</p>
+<div class="grid">
+<div><b>Input JSON</b><textarea id="in" placeholder='{"ipRule":[...],"providerRule":[...],"budget":[...]}'></textarea>
+<button class="btn" id="val">Validate</button>
+</div>
+<div><b>Result</b><pre id="out"></pre><button class="btn" id="save">Download JSON</button></div>
+</div>
+<script>
+function validate(o){
+  const issue=[];
+  if(o.ipRule){ o.ipRule.forEach(r=>{ if(!r.tenantId||!r.priority||!r.action||!r.cidr){ issue.push('ipRule:'+JSON.stringify(r)); } }); }
+  if(o.providerRule){ o.providerRule.forEach(r=>{ if(!r.tenantId||r.priority===undefined||!r.region||!r.op||!r.providerId||!r.action){ issue.push('providerRule:'+JSON.stringify(r)); } }); }
+  if(o.budget){ o.budget.forEach(r=>{ if(!r.tenantId||!r.op||r.cap===undefined){ issue.push('budget:'+JSON.stringify(r)); } }); }
+  if(o.regionTimeout){ o.regionTimeout.forEach(r=>{ if(!r.providerId||!r.region||!r.op||r.timeoutMs===undefined){ issue.push('regionTimeout:'+JSON.stringify(r)); } }); }
+  return issue;
+}
+document.getElementById('val').onclick=()=>{
+  try{ const o=JSON.parse(document.getElementById('in').value||'{}'); const issue=validate(o);
+    document.getElementById('out').textContent = issue.length? ('Issues:\n'+issue.join('\n')) : 'OK';
+  }catch(e){ document.getElementById('out').textContent='Bad JSON: '+e.message; }
+};
+document.getElementById('save').onclick=()=>{
+  const blob=new Blob([document.getElementById('in').value||'{}'],{type:'application/json'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='locator-policy.json'; a.click();
+};
+</script>

@@ -1,0 +1,18 @@
+{
+  "summary": {
+    "r27": "demo-discovery-loop",
+    "demo_curl_script_added": true,
+    "http_demo_file_added": true,
+    "demo_loop_doc_added": true
+  },
+  "files_touched": [
+    "tools/locator-demo-curl.sh",
+    "tools/locator-http-demo.http",
+    "docs/locator-demo-loop-r27.md"
+  ],
+  "notes": [
+    "locator-demo-curl.sh provides a quick terminal-based discovery path.",
+    "locator-http-demo.http integrates demo requests into IDE HTTP clients.",
+    "locator-demo-loop-r27.md ties the technical steps to business scenarios from the R26 portrait."
+  ]
+}

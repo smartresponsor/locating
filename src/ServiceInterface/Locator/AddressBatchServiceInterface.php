@@ -1,0 +1,25 @@
+<?php
+declare(strict_types=1);
+
+/*
+ * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
+ */
+
+namespace App\ServiceInterface\Locator;
+
+use App.EntityInterface\Locator\AddressBatchJobInterface;
+
+interface AddressBatchServiceInterface
+{
+    /**
+     * @param array<int,array<string,mixed>> $itemList
+     */
+    public function createJob(string $tenantId, array $itemList): AddressBatchJobInterface;
+
+    public function jobStatus(string $jobId): ?AddressBatchJobInterface;
+
+    /**
+     * @return array<int,array<string,mixed>>
+     */
+    public function jobResultList(string $jobId): array;
+}

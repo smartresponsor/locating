@@ -1,0 +1,19 @@
+{
+  "summary": {
+    "r22": "fixture-golden-suite",
+    "address_fixture_file_added": true,
+    "fixture_file_test_added": true,
+    "fixture_runner_added": true,
+    "docs_added": true
+  },
+  "files_touched": [
+    "tests/Locator/Fixture/address-golden.ndjson",
+    "tests/Locator/Fixture/AddressFixtureFileTest.php",
+    "tools/locator-fixtures-run.php",
+    "docs/locator-fixture-golden-suite.md"
+  ],
+  "notes": [
+    "Golden fixture file serves as a human-readable catalog of key address cases.",
+    "Current runner focuses on manual regression; can be extended with strict assertions later."
+  ]
+}

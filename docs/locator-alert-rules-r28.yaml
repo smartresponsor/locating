@@ -1,0 +1,59 @@
+groups:
+  - name: locator-slo-r28
+    rules:
+      - alert: LocatorHighErrorRate
+        expr: |
+          100 * sum(rate(locator_request_total{status="error"}[5m]))
+            /
+          sum(rate(locator_request_total[5m]))
+            > 0.5
+        for: 10m
+        labels:
+          severity: warning
+          service: locator
+        annotations:
+          summary: "Locator high error rate"
+          description: "Error rate is above 0.5% for more than 10 minutes."
+
+      - alert: LocatorHighLatencySuggest
+        expr: |
+          histogram_quantile(
+            0.95,
+            sum by (le) (
+              rate(locator_request_latency_ms_bucket{operation="suggest"}[5m])
+            )
+          ) > 700
+        for: 10m
+        labels:
+          severity: warning
+          service: locator
+        annotations:
+          summary: "Locator p95 latency high for suggest"
+          description: "p95 latency for suggest operation is above 700 ms."
+
+      - alert: LocatorHighLatencyReverse
+        expr: |
+          histogram_quantile(
+            0.95,
+            sum by (le) (
+              rate(locator_request_latency_ms_bucket{operation="reverse"}[5m])
+            )
+          ) > 700
+        for: 10m
+        labels:
+          severity: warning
+          service: locator
+        annotations:
+          summary: "Locator p95 latency high for reverse"
+          description: "p95 latency for reverse operation is above 700 ms."
+
+      - alert: LocatorQuotaDenialsSpike
+        expr: |
+          sum(rate(tenant_quota_geocode{result="error"}[5m])) > 0
+        for: 15m
+        labels:
+          severity: info
+          service: locator
+        annotations:
+          summary: "Locator tenant quota denials observed"
+          description: "At least some quota denials for geocode operation were observed in the last 15 minutes."

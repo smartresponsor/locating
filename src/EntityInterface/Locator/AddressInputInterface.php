@@ -1,0 +1,15 @@
+<?php
+declare(strict_types=1);
+
+/*
+ * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
+ */
+
+namespace App\EntityInterface\Locator;
+
+interface AddressInputInterface
+{
+    public function rawLine(): string;
+
+    public function toArray(): array;
+}

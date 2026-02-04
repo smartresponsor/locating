@@ -1,0 +1,21 @@
+{
+  "summary": {
+    "r19": "tenant-context-header-wiring",
+    "request_tenant_context_added": true,
+    "services_binding_added": true,
+    "tests_added": true,
+    "docs_added": true
+  },
+  "files_touched": [
+    "src/Infrastructure/Locator/RequestTenantContext.php",
+    "config/services.php",
+    "tests/Locator/Infrastructure/RequestTenantContextTest.php",
+    "docs/locator-tenant-context-header.md"
+  ],
+  "tenant_resolution_order": [
+    "X-SR-Tenant header",
+    "tenant query parameter",
+    "LOCATOR_DEFAULT_TENANT env",
+    "demo fallback"
+  ]
+}

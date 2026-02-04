@@ -1,0 +1,3 @@
+GapId,FeatureKey,GapType,Severity,ShortDescription,DecisionForRC1,Owner,Notes
+G-001,autocomplete,test,high,No integration test for partial city+state input,,,
+G-002,reverse_geocoding,impl,critical,No support for coordinates near rural roads,,,

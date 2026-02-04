@@ -1,0 +1,16 @@
+{
+  "normalize": [
+    "10 Downing St, London",
+    "1600 Amphitheatre Parkway, Mountain View, CA 94043, US"
+  ],
+  "reverse": [
+    {
+      "lat": 51.5033635,
+      "lon": -0.1276248
+    },
+    {
+      "lat": 37.422,
+      "lon": -122.084
+    }
+  ]
+}

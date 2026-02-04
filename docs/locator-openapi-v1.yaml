@@ -1,0 +1,194 @@
+openapi: 3.0.3
+info:
+  title: SmartResponsor Locator API
+  version: 1.0.0-rc0
+  description: >
+    HTTP API for address suggestions and basic health/metrics exposure
+    for the SmartResponsor Locator service.
+servers:
+  - url: http://localhost:8000
+    description: Local development server
+paths:
+  /locator/address/suggest:
+    get:
+      summary: Suggest address
+      description: >
+        Return ranked address suggestions for a free-form query and optional country filter.
+      parameters:
+        - name: query
+          in: query
+          required: true
+          description: Free-form search query.
+          schema:
+            type: string
+        - name: country
+          in: query
+          required: false
+          description: Optional ISO 3166-1 alpha-2 country code to bias results.
+          schema:
+            type: string
+            minLength: 2
+            maxLength: 2
+        - name: limit
+          in: query
+          required: false
+          description: Maximum number of suggestions to return (1-20, default 5).
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 20
+            default: 5
+      responses:
+        '200':
+          description: Suggestions returned successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuggestResponse'
+        '429':
+          description: Tenant quota exceeded for suggest operation.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QuotaErrorResponse'
+  /locator/status:
+    get:
+      summary: Service status
+      description: >
+        Lightweight health and status endpoint for the Locator service,
+        including a basic per-operation metric snapshot.
+      responses:
+        '200':
+          description: Service status.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusResponse'
+  /locator/metrics:
+    get:
+      summary: Prometheus metrics
+      description: >
+        Expose Prometheus-style metrics for the Locator service based on
+        the in-memory metric recorder snapshot.
+      responses:
+        '200':
+          description: Prometheus metrics text payload.
+          content:
+            text/plain:
+              schema:
+                type: string
+components:
+  schemas:
+    AddressData:
+      type: object
+      description: Normalized address data.
+      properties:
+        street:
+          type: string
+          description: Street line.
+        city:
+          type: string
+          description: City or locality.
+        region:
+          type: string
+          description: Region, state or province.
+        postalCode:
+          type: string
+          description: Postal or ZIP code.
+        countryCode:
+          type: string
+          description: ISO 3166-1 alpha-2 country code.
+      required: [street, city, region, postalCode, countryCode]
+
+    AddressSuggestion:
+      type: object
+      description: Address suggestion entry for autocomplete.
+      properties:
+        label:
+          type: string
+          description: Human-readable label for the suggestion.
+        address:
+          $ref: '#/components/schemas/AddressData'
+        providerKey:
+          type: string
+          description: Key of the provider that produced this suggestion.
+        score:
+          type: number
+          format: double
+          description: Ranking score assigned by the backend.
+        reason:
+          type: object
+          additionalProperties:
+            type: number
+            format: double
+          description: Map of ranking signals and their contribution to score.
+      required: [label, address]
+
+    SuggestResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          enum: [ok]
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/AddressSuggestion'
+      required: [status, items]
+
+    QuotaErrorResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          enum: [error]
+        error:
+          type: string
+          enum: [quota_exceeded]
+        operation:
+          type: string
+          description: Operation name for which quota was exceeded.
+        items:
+          type: array
+          description: Empty list for suggest quota errors.
+          items:
+            $ref: '#/components/schemas/AddressSuggestion'
+        quotaExceeded:
+          type: boolean
+      required: [status, error, operation, items, quotaExceeded]
+
+    MetricSnapshotEntry:
+      type: object
+      description: Aggregated metrics for a single operation.
+      properties:
+        count:
+          type: integer
+          description: Total number of requests.
+        errorCount:
+          type: integer
+          description: Total number of failed requests.
+        avgMs:
+          type: number
+          format: double
+          description: Average latency in milliseconds.
+        errorRate:
+          type: number
+          format: double
+          description: Error rate (0.0-1.0).
+      required: [count, errorCount, avgMs, errorRate]
+
+    StatusResponse:
+      type: object
+      properties:
+        service:
+          type: string
+          example: locator
+        status:
+          type: string
+          enum: [ok, degraded, error]
+        metrics:
+          type: object
+          description: Metric snapshot keyed by operation name.
+          additionalProperties:
+            $ref: '#/components/schemas/MetricSnapshotEntry'
+      required: [service, status, metrics]

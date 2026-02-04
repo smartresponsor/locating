@@ -1,0 +1,17 @@
+
+<!doctype html><meta charset="utf-8"><title>Provider Stats</title>
+<style>body{font-family:system-ui,Arial,sans-serif;margin:16px}table{border-collapse:collapse}td,th{border:1px solid #ccc;padding:6px 10px}</style>
+<h3>Provider Stats (snapshot)</h3>
+<p>Drop a JSON file exported by ops (array of rows). This is a lightweight offline viewer.</p>
+<input type="file" id="f"><table id="t"><thead><tr><th>provider</th><th>region</th><th>count</th><th>error</th><th>p95 ms</th><th>cost avg</th></tr></thead><tbody></tbody></table>
+<script>
+document.getElementById('f').onchange = async (e)=>{
+  const tb=document.querySelector('#t tbody'); tb.innerHTML='';
+  const j = JSON.parse(await e.target.files[0].text());
+  j.forEach(r=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML = `<td>${r.providerId}</td><td>${r.region}</td><td>${r.count}</td><td>${(r.errorRate*100).toFixed(1)}%</td><td>${r.p95Ms.toFixed(0)}</td><td>${r.costAvg.toFixed(4)}</td>`;
+    tb.appendChild(tr);
+  });
+};
+</script>

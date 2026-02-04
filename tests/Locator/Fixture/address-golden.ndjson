@@ -1,0 +1,6 @@
+{"id": "us_white_house_suggest", "kind": "suggest", "input": {"query": "1600 Pennsylvania Ave NW Washington", "country": "US", "limit": 5, "locale": "en_US"}, "note": "US example – White House style query"}
+{"id": "gb_downing_street_suggest", "kind": "suggest", "input": {"query": "10 Downing Street London", "country": "GB", "limit": 5, "locale": "en_GB"}, "note": "GB example – Downing Street"}
+{"id": "ua_khreschatyk_suggest", "kind": "suggest", "input": {"query": "Khreshchatyk 1 Kyiv", "country": "UA", "limit": 5, "locale": "uk_UA"}, "note": "UA example – Kyiv main street"}
+{"id": "reverse_houston", "kind": "reverse", "input": {"lat": 29.7604, "lon": -95.3698, "country": "US"}, "note": "Reverse geocoding for Houston, TX"}
+{"id": "reverse_kyiv", "kind": "reverse", "input": {"lat": 50.4501, "lon": 30.5234, "country": "UA"}, "note": "Reverse geocoding for Kyiv"}
+{"id": "reverse_invalid_coord", "kind": "reverse_invalid", "input": {"lat": 999.0, "lon": 999.0}, "note": "Intentionally invalid coordinates, expected to fail validation"}

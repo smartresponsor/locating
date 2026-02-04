@@ -1,0 +1,16 @@
+<?php
+declare(strict_types=1);
+
+/*
+ * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
+ */
+
+namespace App\ServiceInterface\Locator;
+
+use App\Entity\Locator\AddressData;
+use App\Entity\Locator\AddressResult;
+
+interface AddressGeocodeBridgeInterface
+{
+    public function enrich(AddressData $address, AddressResult $result): AddressResult;
+}

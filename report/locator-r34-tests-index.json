@@ -1,0 +1,16 @@
+{
+  "summary": {
+    "total_files": 0,
+    "by_dir": {},
+    "files": []
+  },
+  "categories": {
+    "Smoke": [],
+    "Contract": [],
+    "Integration": [],
+    "Unit": [],
+    "Other": []
+  },
+  "scenario_labels": [],
+  "cookbook_labels": []
+}

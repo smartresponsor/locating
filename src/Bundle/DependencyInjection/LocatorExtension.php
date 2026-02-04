@@ -1,0 +1,39 @@
+<?php
+declare(strict_types=1);
+namespace SmartResponsor\Bundle\DependencyInjection;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Extension\Extension;
+use Symfony\Component\DependencyInjection\Reference;
+use SmartResponsor\Integration\Locator\Factory\RedisFactory;
+use SmartResponsor\Integration\Locator\Cache\RedisCache;
+use SmartResponsor\Integration\Locator\RateLimit\RedisRateLimiter;
+use SmartResponsor\Integration\Locator\Http\NominatimClient;
+use SmartResponsor\Strategy\Locator\OpenStreetMapLocator;
+use SmartResponsor\Service\Locator\LocatorService;
+final class LocatorExtension extends Extension{
+  public function load(array $configs, ContainerBuilder $container): void{
+    $configuration = new Configuration();
+    $config = $this->processConfiguration($configuration, $configs);
+
+    $container->register('smartresponsor.redis', \Redis::class)
+      ->setFactory([RedisFactory::class, 'createFromDsn'])
+      ->addArgument($config['redis_dsn']);
+
+    $container->register('smartresponsor.cache', RedisCache::class)
+      ->addArgument(new Reference('smartresponsor.redis'));
+
+    $container->register('smartresponsor.rate_limiter', RedisRateLimiter::class)
+      ->addArgument(new Reference('smartresponsor.redis'));
+
+    $container->register('smartresponsor.nominatim', NominatimClient::class)
+      ->addArgument($config['nominatim_base'])
+      ->addArgument($config['nominatim_email'])
+      ->addArgument(10);
+
+    $container->register('smartresponsor.locator_impl', OpenStreetMapLocator::class)
+      ->addArgument(new Reference('smartresponsor.nominatim'));
+
+    $container->register('smartresponsor.locator', LocatorService::class)
+      ->addArgument(new Reference('smartresponsor.locator_impl'));
+  }
+}
