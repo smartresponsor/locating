@@ -16,5 +16,9 @@
     "phpunit/phpunit": "^10.0"
   },
   "minimum-stability": "stable",
-  "prefer-stable": true
+  "prefer-stable": true,
+  "scripts": {
+    "test": "phpunit -c phpunit.xml.dist",
+    "test:locator": "phpunit -c phpunit.xml.dist tests/Locator"
+  }
 }

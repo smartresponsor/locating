@@ -1,4 +1,4 @@
-Locator (SmartResponsor) — winner repository
+Locator (Smartresponsor) — winner repository
 
 This folder is a consolidated "winner" snapshot assembled from multiple archived Locator artifacts.
 
@@ -12,7 +12,7 @@ What was done
 How to use (quick)
 1) composer validate
 2) composer install
-3) vendor/bin/phpunit (if tests are configured)
+3) composer test
 
 Merge evidence
 See report/merge/ for collision index (paths where archives differed) and build statistics.
