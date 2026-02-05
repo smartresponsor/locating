@@ -1,23 +1,43 @@
 <?php
+# Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-/**
- * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
- * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
- * Comments in English only. Postgres = Data, MySQL = Infrastructure.
- */
 
 namespace Tests\Locator;
-use Smartresponsor\Layer\Locator\RetryPolicy;
-final class RetryPolicyTest {
-    public function testShouldRetry(): void {
-        $p = new RetryPolicy();
-        assert($p->shouldRetry(0, 3, 500) === true);
-        assert($p->shouldRetry(3, 3, 500) === false);
-        assert($p->shouldRetry(1, 3, 404) === false);
+
+use PHPUnit\Framework\TestCase;
+use Smartresponsor\Entity\Locator\RetryPolicy as EntityRetryPolicy;
+use Smartresponsor\Service\Locator\RetryPolicy;
+
+final class RetryPolicyTest extends TestCase
+{
+    public function testShouldRetryForRetriableStatusCodes(): void
+    {
+        $policy = new RetryPolicy();
+
+        $this->assertTrue($policy->shouldRetry(0, 3, 500));
+        $this->assertTrue($policy->shouldRetry(1, 3, 429));
+        $this->assertFalse($policy->shouldRetry(3, 3, 500));
+        $this->assertFalse($policy->shouldRetry(1, 3, 404));
     }
-    public function testDelayRange(): void {
-        $p = new RetryPolicy();
-        $d = $p->delayMs(2, 10, 200);
-        assert($d >= 0 && $d <= 200);
+
+    public function testDelayRangeIsBoundedByCap(): void
+    {
+        $policy = new RetryPolicy();
+
+        $delay = $policy->delayMs(2, 10, 200);
+
+        $this->assertGreaterThanOrEqual(0, $delay);
+        $this->assertLessThanOrEqual(40, $delay);
+    }
+
+    public function testEntityRetryPolicyDelegatesToServicePolicy(): void
+    {
+        $policy = new EntityRetryPolicy();
+
+        $this->assertTrue($policy->shouldRetry(0, 2, 503));
+
+        $delay = $policy->delayMs(3, 10, 60);
+        $this->assertGreaterThanOrEqual(0, $delay);
+        $this->assertLessThanOrEqual(60, $delay);
     }
 }

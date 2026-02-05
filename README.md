@@ -21,3 +21,7 @@ Canon notes
 - The final ZIP is flat-root (project files are at ZIP root, no outer wrapper folder).
 - .git and IDE folders were removed from the winner snapshot.
 
+
+
+Engineering hardening plan
+- See `docs/locator-engineering-plan-2026-02.md` for a prioritized production-hardening backlog and commit units.

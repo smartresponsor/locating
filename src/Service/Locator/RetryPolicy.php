@@ -1,20 +1,31 @@
 <?php
+# Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-/**
- * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
- * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
- * Comments in English only. Postgres = Data, MySQL = Infrastructure.
- */
 
 namespace Smartresponsor\Service\Locator;
-final class RetryPolicy {
-    public function shouldRetry(int $attempt, int $maxAttempt, int $statusCode): bool {
-        if ($attempt >= $maxAttempt) { return false; }
-        return in_array($statusCode, [408,429,500,502,503,504], true);
+
+final class RetryPolicy
+{
+    /**
+     * Retry transient transport/provider failures while max attempts are not reached.
+     */
+    public function shouldRetry(int $attempt, int $maxAttempt, int $statusCode): bool
+    {
+        if ($attempt >= $maxAttempt) {
+            return false;
+        }
+
+        return in_array($statusCode, [408, 429, 500, 502, 503, 504], true);
     }
-    /** Full-jitter backoff with cap */
-    public function delayMs(int $attempt, int $baseMs=50, int $capMs=1000): int {
-        $exp = min($capMs, $baseMs * (1 << max(0, min(10,$attempt))));
-        return random_int(0, $exp);
+
+    /**
+     * Full-jitter exponential backoff with cap.
+     */
+    public function delayMs(int $attempt, int $baseMs = 50, int $capMs = 1000): int
+    {
+        $exponent = max(0, min(10, $attempt));
+        $maxDelay = min($capMs, $baseMs * (1 << $exponent));
+
+        return random_int(0, $maxDelay);
     }
 }
