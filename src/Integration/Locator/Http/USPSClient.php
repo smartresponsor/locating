@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Locator\Http;
+namespace Smartresponsor\Integration\Locator\Http;
 final class USPSClient{
   public function __construct(
     private string $userId,
@@ -20,7 +20,7 @@ final class USPSClient{
       CURLOPT_RETURNTRANSFER => true,
       CURLOPT_FOLLOWLOCATION => true,
       CURLOPT_TIMEOUT => $this->timeout,
-      CURLOPT_HTTPHEADER => ['Accept: application/xml', 'User-Agent: SmartResponsor-Locator/1.0'],
+      CURLOPT_HTTPHEADER => ['Accept: application/xml', 'User-Agent: Smartresponsor-Locator/1.0'],
     ]);
     $body = curl_exec($ch);
     if ($body === false){ $err = curl_error($ch); curl_close($ch); throw new \RuntimeException('USPS HTTP: ' . $err); }

@@ -5,13 +5,13 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Tests\Locator\Service;
+namespace Smartresponsor\Tests\Locator\Service;
 
-use App\EntityInterface\Locator\TenantContextInterface;
-use App\EntityInterface\Locator\TenantLimitInterface;
-use App\InfrastructureInterface\Locator\TenantConfigRepositoryInterface;
-use App\InfrastructureInterface\Locator\TenantUsageCounterInterface;
-use App\Service\Locator\AddressQuotaGuard;
+use Smartresponsor\EntityInterface\Locator\TenantContextInterface;
+use Smartresponsor\EntityInterface\Locator\TenantLimitInterface;
+use Smartresponsor\InfrastructureInterface\Locator\TenantConfigRepositoryInterface;
+use Smartresponsor\InfrastructureInterface\Locator\TenantUsageCounterInterface;
+use Smartresponsor\Service\Locator\AddressQuotaGuard;
 use PHPUnit\Framework\TestCase;
 
 final class AddressQuotaGuardTest extends TestCase

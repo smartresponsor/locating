@@ -5,11 +5,11 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Tests\Locator\Service;
+namespace Smartresponsor\Tests\Locator\Service;
 
-use App\Entity\Locator\AddressData;
-use App\Entity\Locator\AddressSuggestion;
-use App\Service\Locator\SuggestRanker;
+use Smartresponsor\Entity\Locator\AddressData;
+use Smartresponsor\Entity\Locator\AddressSuggestion;
+use Smartresponsor\Service\Locator\SuggestRanker;
 use PHPUnit\Framework\TestCase;
 
 final class SuggestRankerTest extends TestCase

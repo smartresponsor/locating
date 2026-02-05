@@ -1,8 +1,8 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Console;
-use SmartResponsor\Service\Locator\LocatorService;
-use SmartResponsor\Model\Locator\GeoPoint;
+namespace Smartresponsor\Console;
+use Smartresponsor\Service\Locator\LocatorService;
+use Smartresponsor\Model\Locator\GeoPoint;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;

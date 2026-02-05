@@ -4,12 +4,12 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Service\Locator;
+namespace Smartresponsor\Service\Locator;
 
-use App\Entity\Locator\AddressData;
-use App\EntityInterface\Locator\AddressDataInterface;
-use App\EntityInterface\Locator\AddressInputInterface;
-use App\ServiceInterface\Locator\AddressParserCountryStrategyInterface;
+use Smartresponsor\Entity\Locator\AddressData;
+use Smartresponsor\EntityInterface\Locator\AddressDataInterface;
+use Smartresponsor\EntityInterface\Locator\AddressInputInterface;
+use Smartresponsor\ServiceInterface\Locator\AddressParserCountryStrategyInterface;
 
 final class AddressParserGeneric implements AddressParserCountryStrategyInterface
 {

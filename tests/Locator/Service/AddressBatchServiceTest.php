@@ -5,19 +5,19 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Tests\Locator\Service;
+namespace Smartresponsor\Tests\Locator\Service;
 
-use App\Entity\Locator\AddressInput;
-use App\Entity\Locator\AddressResult;
-use App\Entity\Locator\AddressStatus;
-use App\EntityInterface\Locator\AddressBatchJobInterface;
-use App\Infrastructure\Locator\InMemoryAddressBatchJobRepository;
-use App\Infrastructure\Locator\InMemoryAddressBatchMessageBus;
-use App\Infrastructure\Locator\InMemoryAddressBatchResultStorage;
-use App\Message\Locator\AddressBatchMessage;
-use App\MessageHandler\Locator\AddressBatchMessageHandler;
-use App\Service\Locator\AddressBatchService;
-use App\ServiceInterface\Locator\AddressPipelineInterface;
+use Smartresponsor\Entity\Locator\AddressInput;
+use Smartresponsor\Entity\Locator\AddressResult;
+use Smartresponsor\Entity\Locator\AddressStatus;
+use Smartresponsor\EntityInterface\Locator\AddressBatchJobInterface;
+use Smartresponsor\Infrastructure\Locator\InMemoryAddressBatchJobRepository;
+use Smartresponsor\Infrastructure\Locator\InMemoryAddressBatchMessageBus;
+use Smartresponsor\Infrastructure\Locator\InMemoryAddressBatchResultStorage;
+use Smartresponsor\Message\Locator\AddressBatchMessage;
+use Smartresponsor\MessageHandler\Locator\AddressBatchMessageHandler;
+use Smartresponsor\Service\Locator\AddressBatchService;
+use Smartresponsor\ServiceInterface\Locator\AddressPipelineInterface;
 use PHPUnit\Framework\TestCase;
 
 final class AddressBatchServiceTest extends TestCase

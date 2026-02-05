@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Locator\Decorator;
-use SmartResponsor\Contract\Locator\LocatorInterface;
-use SmartResponsor\Integration\Locator\Http\USPSClient;
-use SmartResponsor\Integration\Locator\Formatter\USPSFormatter;
-use SmartResponsor\Model\Locator\AddressData;
-use SmartResponsor\Model\Locator\GeoPoint;
+namespace Smartresponsor\Integration\Locator\Decorator;
+use Smartresponsor\Contract\Locator\LocatorInterface;
+use Smartresponsor\Integration\Locator\Http\USPSClient;
+use Smartresponsor\Integration\Locator\Formatter\USPSFormatter;
+use Smartresponsor\Model\Locator\AddressData;
+use Smartresponsor\Model\Locator\GeoPoint;
 final class USPSVerifyLocator implements LocatorInterface{
   public function __construct(private LocatorInterface $inner, private USPSClient $client){}
   private static function tryParseUSLine(string $raw): ?array{

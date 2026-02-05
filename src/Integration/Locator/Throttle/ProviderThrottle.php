@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Locator\Throttle;
+namespace Smartresponsor\Integration\Locator\Throttle;
 final class ProviderThrottle{
   private string $dir; private array $cfg=[];
   public function __construct(string $spec){

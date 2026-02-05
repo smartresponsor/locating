@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Locator\Factory;
+namespace Smartresponsor\Integration\Locator\Factory;
 use Redis;
 final class RedisFactory{
   public static function createFromDsn(string $dsn): Redis{

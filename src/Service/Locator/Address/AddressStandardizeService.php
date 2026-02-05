@@ -6,10 +6,10 @@
  */
 
 
-namespace SmartResponsor\Service\Locator\Address;
+namespace Smartresponsor\Service\Locator\Address;
 
-use SmartResponsor\Domain\Locator\Config\Env;
-use SmartResponsor\ServiceInterface\Locator\Address\AddressStandardizeServiceInterface;
+use Smartresponsor\Domain\Locator\Config\Env;
+use Smartresponsor\ServiceInterface\Locator\Address\AddressStandardizeServiceInterface;
 
 class AddressStandardizeService implements AddressStandardizeServiceInterface
 {

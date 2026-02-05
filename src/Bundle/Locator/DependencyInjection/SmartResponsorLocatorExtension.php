@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Bundle\Locator\DependencyInjection;
+namespace Smartresponsor\Bundle\Locator\DependencyInjection;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Definition;
-use SmartResponsor\Integration\Locator\{LocatorConfig, LocatorSelector};
-final class SmartResponsorLocatorExtension extends Extension {
+use Smartresponsor\Integration\Locator\{LocatorConfig, LocatorSelector};
+final class SmartresponsorLocatorExtension extends Extension {
   public function load(array $configs, ContainerBuilder $container) {
     $configuration = new Configuration();
     $cfg = $this->processConfiguration($configuration, $configs);

@@ -3,15 +3,15 @@ declare(strict_types=1);
 
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
- * SmartResponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
 namespace Tests\Locator;
 
-use App\InfrastructureInterface\Locator\LocatorFixtureReaderInterface;
-use App\Service\Locator\LocatorDemoLoop;
-use App\ServiceInterface\Locator\AddressPipelineInterface;
+use Smartresponsor\InfrastructureInterface\Locator\LocatorFixtureReaderInterface;
+use Smartresponsor\Service\Locator\LocatorDemoLoop;
+use Smartresponsor\ServiceInterface\Locator\AddressPipelineInterface;
 use PHPUnit\Framework\TestCase;
 
 final class LocatorDemoLoopTest extends TestCase
@@ -33,12 +33,12 @@ final class LocatorDemoLoopTest extends TestCase
         $counter = new class implements AddressPipelineInterface {
             public int $callCount = 0;
 
-            public function process(\App\Entity\Locator\AddressInput $input): \App\EntityInterface\Locator\AddressResultInterface
+            public function process(\Smartresponsor\Entity\Locator\AddressInput $input): \Smartresponsor\EntityInterface\Locator\AddressResultInterface
             {
                 $this->callCount++;
 
-                return \App\Entity\Locator\AddressResult::create(
-                    \App\Entity\Locator\AddressStatus::VERIFIED,
+                return \Smartresponsor\Entity\Locator\AddressResult::create(
+                    \Smartresponsor\Entity\Locator\AddressStatus::VERIFIED,
                     null
                 );
             }

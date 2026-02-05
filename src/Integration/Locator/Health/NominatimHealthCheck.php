@@ -1,8 +1,8 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Locator\Health;
-use SmartResponsor\Contract\Health\HealthCheckInterface;
-use SmartResponsor\Integration\Locator\Http\NominatimClient;
+namespace Smartresponsor\Integration\Locator\Health;
+use Smartresponsor\Contract\Health\HealthCheckInterface;
+use Smartresponsor\Integration\Locator\Http\NominatimClient;
 final class NominatimHealthCheck implements HealthCheckInterface{
   public function __construct(private NominatimClient $c){}
   public function name(): string{ return 'nominatim'; }

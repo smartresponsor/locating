@@ -5,11 +5,11 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Service\Locator;
+namespace Smartresponsor\Service\Locator;
 
-use App\Entity\Locator\GeoPoint;
-use App\InfrastructureInterface\Locator\AddressProviderBridgeInterface;
-use App\ServiceInterface\Locator\AddressProviderRouterInterface;
+use Smartresponsor\Entity\Locator\GeoPoint;
+use Smartresponsor\InfrastructureInterface\Locator\AddressProviderBridgeInterface;
+use Smartresponsor\ServiceInterface\Locator\AddressProviderRouterInterface;
 
 /**
  * Simple multi-provider router with failover.

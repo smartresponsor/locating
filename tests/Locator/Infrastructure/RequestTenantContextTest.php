@@ -5,9 +5,9 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Tests\Locator\Infrastructure;
+namespace Smartresponsor\Tests\Locator\Infrastructure;
 
-use App\Infrastructure\Locator\RequestTenantContext;
+use Smartresponsor\Infrastructure\Locator\RequestTenantContext;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;

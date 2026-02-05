@@ -6,7 +6,7 @@
  */
 
 
-namespace SmartResponsor\Infrastructure\Locator\Cache;
+namespace Smartresponsor\Infrastructure\Locator\Cache;
 
 class RedisCache
 {

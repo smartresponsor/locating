@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Locator\Log;
-use SmartResponsor\Contract\Log\LoggerInterface;
+namespace Smartresponsor\Integration\Locator\Log;
+use Smartresponsor\Contract\Log\LoggerInterface;
 final class StdoutLogger implements LoggerInterface{
   public function log(string $level, string $message, array $context=[]): void{
     $row = ['ts'=>date('c'),'level'=>$level,'msg'=>$message,'ctx'=>$context];

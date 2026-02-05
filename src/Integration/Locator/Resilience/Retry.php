@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Locator\Resilience;
+namespace Smartresponsor\Integration\Locator\Resilience;
 final class Retry{
   public static function withBackoff(callable $fn, int $attempts=3, int $baseMs=100): mixed{
     $e=null;

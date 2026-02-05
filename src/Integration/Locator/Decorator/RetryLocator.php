@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Locator\Decorator;
-use SmartResponsor\Contract\Locator\LocatorInterface;
-use SmartResponsor\Model\Locator\AddressData;
-use SmartResponsor\Model\Locator\GeoPoint;
+namespace Smartresponsor\Integration\Locator\Decorator;
+use Smartresponsor\Contract\Locator\LocatorInterface;
+use Smartresponsor\Model\Locator\AddressData;
+use Smartresponsor\Model\Locator\GeoPoint;
 final class RetryLocator implements LocatorInterface{
   public function __construct(private LocatorInterface $inner, private int $retries=2, private int $baseMs=100){}
   private function run(callable $fn){

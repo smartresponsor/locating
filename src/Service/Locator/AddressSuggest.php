@@ -5,11 +5,11 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Service\Locator;
+namespace Smartresponsor\Service\Locator;
 
-use App\EntityInterface\Locator\AddressSuggestionInterface;
-use App\InfrastructureInterface\Locator\AddressSuggestProviderInterface;
-use App\ServiceInterface\Locator\AddressSuggestInterface;
+use Smartresponsor\EntityInterface\Locator\AddressSuggestionInterface;
+use Smartresponsor\InfrastructureInterface\Locator\AddressSuggestProviderInterface;
+use Smartresponsor\ServiceInterface\Locator\AddressSuggestInterface;
 
 /**
  * Address suggest service that delegates to one or more providers.

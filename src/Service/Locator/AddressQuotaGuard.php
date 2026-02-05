@@ -5,12 +5,12 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Service\Locator;
+namespace Smartresponsor\Service\Locator;
 
-use App\EntityInterface\Locator\TenantContextInterface;
-use App\InfrastructureInterface\Locator\TenantConfigRepositoryInterface;
-use App\InfrastructureInterface\Locator\TenantUsageCounterInterface;
-use App\ServiceInterface\Locator\AddressQuotaGuardInterface;
+use Smartresponsor\EntityInterface\Locator\TenantContextInterface;
+use Smartresponsor\InfrastructureInterface\Locator\TenantConfigRepositoryInterface;
+use Smartresponsor\InfrastructureInterface\Locator\TenantUsageCounterInterface;
+use Smartresponsor\ServiceInterface\Locator\AddressQuotaGuardInterface;
 
 /**
  * Guard that enforces per-tenant quotas for address related operations.

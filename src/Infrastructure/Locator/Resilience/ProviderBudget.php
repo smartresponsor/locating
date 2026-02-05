@@ -6,8 +6,8 @@
  */
 
 
-namespace SmartResponsor\Infrastructure\Locator\Resilience;
-use SmartResponsor\Infrastructure\Locator\Cache\RedisCache;
+namespace Smartresponsor\Infrastructure\Locator\Resilience;
+use Smartresponsor\Infrastructure\Locator\Cache\RedisCache;
 class ProviderBudget {
     private RedisCache $cache; private int $perMin;
     public function __construct(RedisCache $cache, int $perMin){ $this->cache=$cache; $this->perMin=$perMin; }

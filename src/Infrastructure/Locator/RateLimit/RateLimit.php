@@ -6,8 +6,8 @@
  */
 
 
-namespace SmartResponsor\Infrastructure\Locator\RateLimit;
-use SmartResponsor\Infrastructure\Locator\Cache\RedisCache;
+namespace Smartresponsor\Infrastructure\Locator\RateLimit;
+use Smartresponsor\Infrastructure\Locator\Cache\RedisCache;
 class RateLimit {
     private RedisCache $cache; private int $rpm;
     public function __construct(RedisCache $cache, int $rpm){ $this->cache=$cache; $this->rpm=$rpm; }

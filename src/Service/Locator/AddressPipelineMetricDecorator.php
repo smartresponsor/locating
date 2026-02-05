@@ -5,12 +5,12 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Service\Locator;
+namespace Smartresponsor\Service\Locator;
 
-use App\Entity\Locator\AddressInput;
-use App\Entity\Locator\AddressResult;
-use App\InfrastructureInterface\Locator\MetricRecorderInterface;
-use App\ServiceInterface\Locator\AddressPipelineInterface;
+use Smartresponsor\Entity\Locator\AddressInput;
+use Smartresponsor\Entity\Locator\AddressResult;
+use Smartresponsor\InfrastructureInterface\Locator\MetricRecorderInterface;
+use Smartresponsor\ServiceInterface\Locator\AddressPipelineInterface;
 
 /**
  * Decorator that records latency and success/error counters for AddressPipelineInterface.

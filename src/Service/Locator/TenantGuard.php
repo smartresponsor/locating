@@ -5,9 +5,9 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Service\Locator;
+namespace Smartresponsor\Service\Locator;
 
-use App\EntityInterface\Locator\TenantContextInterface;
+use Smartresponsor\EntityInterface\Locator\TenantContextInterface;
 
 /**
  * Simple guard that ensures resource tenant matches current context.

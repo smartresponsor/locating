@@ -2,12 +2,12 @@
 declare(strict_types=1);
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
- * SmartResponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace App\Http\Locator;
-use App\Layer\Locator\{TraceContext, Span};
+namespace Smartresponsor\Http\Locator;
+use Smartresponsor\Layer\Locator\{TraceContext, Span};
 final class TraceMiddleware {
     /** Wrap handler call and return tuple: [response, spanData] */
     public function handle(callable $handler, array $query): array {

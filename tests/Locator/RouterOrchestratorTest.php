@@ -2,12 +2,12 @@
 declare(strict_types=1);
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
- * SmartResponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
 namespace Tests\Locator;
-use App\Layer\Locator\{RateLimiter,QuotaGuard,ResultCache,HealthEwma,SlaPolicy,RegionRouter,FailoverMatrix,RetryPolicy,RouterOrchestrator,TenantContext};
+use Smartresponsor\Layer\Locator\{RateLimiter,QuotaGuard,ResultCache,HealthEwma,SlaPolicy,RegionRouter,FailoverMatrix,RetryPolicy,RouterOrchestrator,TenantContext};
 final class RouterOrchestratorTest {
     public function testRouteOk(): void {
         $router = new RouterOrchestrator(new RateLimiter(), new QuotaGuard(), new ResultCache(), new HealthEwma(), new SlaPolicy(), new RegionRouter(), new FailoverMatrix(), new RetryPolicy());

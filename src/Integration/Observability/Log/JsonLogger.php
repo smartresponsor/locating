@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Observability\Log;
+namespace Smartresponsor\Integration\Observability\Log;
 final class JsonLogger{
   private ?string $file;
   public function __construct(private string $service='locator', string $target='stdout'){

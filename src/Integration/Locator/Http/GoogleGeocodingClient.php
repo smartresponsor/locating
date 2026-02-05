@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Locator\Http;
+namespace Smartresponsor\Integration\Locator\Http;
 final class GoogleGeocodingClient{
   public function __construct(
     private string $baseUrl,
@@ -26,7 +26,7 @@ final class GoogleGeocodingClient{
       CURLOPT_RETURNTRANSFER => true,
       CURLOPT_FOLLOWLOCATION => true,
       CURLOPT_TIMEOUT => $this->timeout,
-      CURLOPT_HTTPHEADER => ['Accept: application/json', 'User-Agent: SmartResponsor-Locator/1.0'],
+      CURLOPT_HTTPHEADER => ['Accept: application/json', 'User-Agent: Smartresponsor-Locator/1.0'],
     ]);
     $body = curl_exec($ch);
     if ($body === false) { $err=curl_error($ch); curl_close($ch); throw new \RuntimeException('HTTP: ' . $err); }

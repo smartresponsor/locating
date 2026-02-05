@@ -6,14 +6,14 @@
  */
 
 
-namespace SmartResponsor\Infrastructure\Locator\Http;
+namespace Smartresponsor\Infrastructure\Locator\Http;
 
-use SmartResponsor\Domain\Locator\Config\Env;
-use SmartResponsor\Service\Locator\Address\AddressParseService;
-use SmartResponsor\Service\Locator\Address\AddressStandardizeService;
-use SmartResponsor\Service\Locator\Locator\LocatorService;
-use SmartResponsor\Service\Locator\Provider\ProviderRouter;
-use SmartResponsor\Infrastructure\Locator\Cache\RedisCache;
+use Smartresponsor\Domain\Locator\Config\Env;
+use Smartresponsor\Service\Locator\Address\AddressParseService;
+use Smartresponsor\Service\Locator\Address\AddressStandardizeService;
+use Smartresponsor\Service\Locator\Locator\LocatorService;
+use Smartresponsor\Service\Locator\Provider\ProviderRouter;
+use Smartresponsor\Infrastructure\Locator\Cache\RedisCache;
 
 class Kernel
 {

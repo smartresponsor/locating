@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Model\Locator;
+namespace Smartresponsor\Model\Locator;
 final class GeoPoint{
   public function __construct(public float $latitude, public float $longitude){}
   /** @return array{lat:float,lon:float} */

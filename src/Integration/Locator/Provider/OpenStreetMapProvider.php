@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Locator\Provider;
-use SmartResponsor\Contract\Locator\Provider\LocatorProviderInterface;
-use SmartResponsor\Contract\Locator\LocatorInterface;
-use SmartResponsor\Integration\Locator\Http\NominatimClient;
-use SmartResponsor\Strategy\Locator\OpenStreetMapLocator;
+namespace Smartresponsor\Integration\Locator\Provider;
+use Smartresponsor\Contract\Locator\Provider\LocatorProviderInterface;
+use Smartresponsor\Contract\Locator\LocatorInterface;
+use Smartresponsor\Integration\Locator\Http\NominatimClient;
+use Smartresponsor\Strategy\Locator\OpenStreetMapLocator;
 final class OpenStreetMapProvider implements LocatorProviderInterface{
   public function __construct(private string $base, private ?string $email, private int $timeout, private int $priority){}
   public function getName(): string{ return 'osm'; }

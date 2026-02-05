@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Service\Locator;
-use SmartResponsor\Contract\Locator\ProviderInterface;
-use SmartResponsor\Integration\Locator\Cache\FileCache;
-use SmartResponsor\Integration\Locator\Throttle\ProviderThrottle;
-use SmartResponsor\Integration\Locator\Metrics\PrometheusExporter;
+namespace Smartresponsor\Service\Locator;
+use Smartresponsor\Contract\Locator\ProviderInterface;
+use Smartresponsor\Integration\Locator\Cache\FileCache;
+use Smartresponsor\Integration\Locator\Throttle\ProviderThrottle;
+use Smartresponsor\Integration\Locator\Metrics\PrometheusExporter;
 
 final class Aggregator{
   public function __construct(private array $providers, private FileCache $cache, private ProviderThrottle $throttle, private PrometheusExporter $metrics){}

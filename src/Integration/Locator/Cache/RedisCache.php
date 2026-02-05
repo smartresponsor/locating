@@ -1,8 +1,8 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Locator\Cache;
+namespace Smartresponsor\Integration\Locator\Cache;
 use Redis;
-use SmartResponsor\Contract\Cache\CacheInterface;
+use Smartresponsor\Contract\Cache\CacheInterface;
 final class RedisCache implements CacheInterface{
   public function __construct(private Redis $r){}
   public function get(string $key, mixed $default=null): mixed{

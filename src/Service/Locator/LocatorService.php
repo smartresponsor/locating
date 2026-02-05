@@ -6,9 +6,9 @@
  */
 
 
-namespace SmartResponsor\Service\Locator\Locator;
-use SmartResponsor\Infrastructure\Locator\Cache\RedisCache;
-use SmartResponsor\ServiceInterface\Locator\Locator\LocatorServiceInterface;
+namespace Smartresponsor\Service\Locator\Locator;
+use Smartresponsor\Infrastructure\Locator\Cache\RedisCache;
+use Smartresponsor\ServiceInterface\Locator\Locator\LocatorServiceInterface;
 class LocatorService implements LocatorServiceInterface {
     private RedisCache $cache;
     public function __construct(RedisCache $cache){ $this->cache=$cache; }

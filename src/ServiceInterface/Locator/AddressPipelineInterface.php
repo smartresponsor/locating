@@ -5,10 +5,10 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\ServiceInterface\Locator;
+namespace Smartresponsor\ServiceInterface\Locator;
 
-use App\Entity\Locator\AddressInput;
-use App\Entity\Locator\AddressResult;
+use Smartresponsor\Entity\Locator\AddressInput;
+use Smartresponsor\Entity\Locator\AddressResult;
 
 interface AddressPipelineInterface
 {

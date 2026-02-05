@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Locator\Cache;
+namespace Smartresponsor\Integration\Locator\Cache;
 final class AdaptiveTtlPolicy{
   public function __construct(
     private int $minTtl=60,

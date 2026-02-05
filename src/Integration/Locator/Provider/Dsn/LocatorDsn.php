@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Locator\Provider\Dsn;
+namespace Smartresponsor\Integration\Locator\Provider\Dsn;
 final class LocatorDsn{
   public string $scheme;
   /** @var array<string,string> */

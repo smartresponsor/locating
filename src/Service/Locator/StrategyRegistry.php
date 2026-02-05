@@ -1,8 +1,8 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Service\Locator;
-use SmartResponsor\Contract\Locator\ProviderInterface;
-use SmartResponsor\Contract\Locator\ReverseProviderInterface;
+namespace Smartresponsor\Service\Locator;
+use Smartresponsor\Contract\Locator\ProviderInterface;
+use Smartresponsor\Contract\Locator\ReverseProviderInterface;
 final class StrategyRegistry{
   private array $providers=[];
   public function add(object $p): void{ $this->providers[method_exists($p,'name')?$p->name():get_class($p)]=$p; }

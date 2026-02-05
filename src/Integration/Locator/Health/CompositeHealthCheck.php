@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Locator\Health;
-use SmartResponsor\Contract\Health\HealthCheckInterface;
+namespace Smartresponsor\Integration\Locator\Health;
+use Smartresponsor\Contract\Health\HealthCheckInterface;
 final class CompositeHealthCheck implements HealthCheckInterface{
   /** @param list<HealthCheckInterface> $checks */
   public function __construct(private array $checks){}

@@ -7,7 +7,7 @@ declare(strict_types=1);
 
 namespace Tests\Locator\Tenant;
 
-use App\Infrastructure\Locator\InMemoryTenantUsageCounter;
+use Smartresponsor\Infrastructure\Locator\InMemoryTenantUsageCounter;
 use PHPUnit\Framework\TestCase;
 
 final class TenantUsageCounterTest extends TestCase

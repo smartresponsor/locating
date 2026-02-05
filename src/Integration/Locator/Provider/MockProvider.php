@@ -1,8 +1,8 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Locator\Provider;
-use SmartResponsor\Contract\Locator\ProviderInterface;
-use SmartResponsor\Contract\Locator\ReverseProviderInterface;
+namespace Smartresponsor\Integration\Locator\Provider;
+use Smartresponsor\Contract\Locator\ProviderInterface;
+use Smartresponsor\Contract\Locator\ReverseProviderInterface;
 final class MockProvider implements ProviderInterface, ReverseProviderInterface{
   public function name(): string{ return 'mock'; }
   public function geocode(string $q): array{

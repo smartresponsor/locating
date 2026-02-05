@@ -5,7 +5,7 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Tests\Locator\Contract;
+namespace Smartresponsor\Tests\Locator\Contract;
 
 use PHPUnit\Framework\TestCase;
 

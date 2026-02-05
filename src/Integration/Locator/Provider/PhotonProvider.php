@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Locator\Provider;
-use SmartResponsor\Contract\Locator\ProviderInterface;
+namespace Smartresponsor\Integration\Locator\Provider;
+use Smartresponsor\Contract\Locator\ProviderInterface;
 final class PhotonProvider implements ProviderInterface{
   public function __construct(private string $baseUrl){}
   public function name(): string{ return 'photon'; }

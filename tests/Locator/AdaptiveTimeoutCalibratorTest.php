@@ -2,12 +2,12 @@
 declare(strict_types=1);
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
- * SmartResponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
 namespace Tests\Locator;
-use App\Layer\Locator\AdaptiveTimeoutCalibrator;
+use Smartresponsor\Layer\Locator\AdaptiveTimeoutCalibrator;
 final class AdaptiveTimeoutCalibratorTest {
     public function testCalibrate(): void {
         $c = new AdaptiveTimeoutCalibrator(200, 1500);

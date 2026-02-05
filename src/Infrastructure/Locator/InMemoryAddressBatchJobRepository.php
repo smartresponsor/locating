@@ -5,10 +5,10 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Infrastructure\Locator;
+namespace Smartresponsor\Infrastructure\Locator;
 
-use App\EntityInterface\Locator\AddressBatchJobInterface;
-use App\InfrastructureInterface\Locator\AddressBatchJobRepositoryInterface;
+use Smartresponsor\EntityInterface\Locator\AddressBatchJobInterface;
+use Smartresponsor\InfrastructureInterface\Locator\AddressBatchJobRepositoryInterface;
 
 /**
  * Simple in-memory repository suitable for development and tests.

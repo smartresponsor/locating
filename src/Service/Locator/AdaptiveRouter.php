@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Service\Locator;
+namespace Smartresponsor\Service\Locator;
 final class AdaptiveRouter{
   public function __construct(private HealthMonitor $monitor, private int $minScore=-800){}
   public function order(array $providers): array{

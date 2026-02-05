@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Observability\Trace;
+namespace Smartresponsor\Integration\Observability\Trace;
 final class Tracer{
   /** @var list<Span> */ private array $spans=[];
   private ?string $file; private ?string $httpUrl; private ?OtelZipkinExporter $zipkin=null;

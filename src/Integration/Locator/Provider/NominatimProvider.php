@@ -1,8 +1,8 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Locator\Provider;
-use SmartResponsor\Contract\Locator\ProviderInterface;
-use SmartResponsor\Contract\Locator\ReverseProviderInterface;
+namespace Smartresponsor\Integration\Locator\Provider;
+use Smartresponsor\Contract\Locator\ProviderInterface;
+use Smartresponsor\Contract\Locator\ReverseProviderInterface;
 final class NominatimProvider implements ProviderInterface, ReverseProviderInterface{
   public function __construct(private string $baseUrl){}
   public function name(): string{ return 'nominatim'; }

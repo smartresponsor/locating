@@ -6,11 +6,11 @@
  */
 
 
-namespace SmartResponsor\Service\Locator\Address;
+namespace Smartresponsor\Service\Locator\Address;
 
-use SmartResponsor\Domain\Locator\Config\Env;
-use SmartResponsor\Infrastructure\Locator\Http\HttpClient;
-use SmartResponsor\ServiceInterface\Locator\Address\AddressParseServiceInterface;
+use Smartresponsor\Domain\Locator\Config\Env;
+use Smartresponsor\Infrastructure\Locator\Http\HttpClient;
+use Smartresponsor\ServiceInterface\Locator\Address\AddressParseServiceInterface;
 
 class AddressParseService implements AddressParseServiceInterface
 {

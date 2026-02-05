@@ -6,8 +6,8 @@
  */
 
 
-namespace SmartResponsor\Infrastructure\Locator\Security;
-use SmartResponsor\Domain\Locator\Config\Env;
+namespace Smartresponsor\Infrastructure\Locator\Security;
+use Smartresponsor\Domain\Locator\Config\Env;
 class ApiKeyAuth {
     public static function assert(Env $env): void {
         $key = trim($env->get('API_KEY',''));

@@ -5,14 +5,14 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\MessageHandler\Locator;
+namespace Smartresponsor\MessageHandler\Locator;
 
-use App\Entity\Locator\AddressInput;
-use App\EntityInterface\Locator\AddressBatchJobInterface;
-use App\InfrastructureInterface\Locator\AddressBatchJobRepositoryInterface;
-use App\InfrastructureInterface\Locator\AddressBatchResultStorageInterface;
-use App\Message\Locator\AddressBatchMessage;
-use App\ServiceInterface\Locator\AddressPipelineInterface;
+use Smartresponsor\Entity\Locator\AddressInput;
+use Smartresponsor\EntityInterface\Locator\AddressBatchJobInterface;
+use Smartresponsor\InfrastructureInterface\Locator\AddressBatchJobRepositoryInterface;
+use Smartresponsor\InfrastructureInterface\Locator\AddressBatchResultStorageInterface;
+use Smartresponsor\Message\Locator\AddressBatchMessage;
+use Smartresponsor\ServiceInterface\Locator\AddressPipelineInterface;
 
 /**
  * Handles batch items by delegating to AddressPipelineInterface.

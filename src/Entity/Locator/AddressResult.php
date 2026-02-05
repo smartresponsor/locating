@@ -5,10 +5,10 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Entity\Locator;
+namespace Smartresponsor\Entity\Locator;
 
-use App\EntityInterface\Locator\AddressResultInterface;
-use App\EntityInterface\Locator\AddressValidationIssueInterface;
+use Smartresponsor\EntityInterface\Locator\AddressResultInterface;
+use Smartresponsor\EntityInterface\Locator\AddressValidationIssueInterface;
 
 /**
  * Immutable result of address validation and optional geocoding.

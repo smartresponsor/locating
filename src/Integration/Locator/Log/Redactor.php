@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Locator\Log;
+namespace Smartresponsor\Integration\Locator\Log;
 final class Redactor{
   /** @return array<string,mixed> */
   public static function mask(array $ctx): array{

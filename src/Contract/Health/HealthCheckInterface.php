@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Contract\Health;
+namespace Smartresponsor\Contract\Health;
 interface HealthCheckInterface{
   /** @return array{status:string,details?:array<string,mixed>} */
   public function check(): array;

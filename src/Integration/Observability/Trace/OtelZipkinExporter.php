@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Observability\Trace;
+namespace Smartresponsor\Integration\Observability\Trace;
 final class OtelZipkinExporter{
   public function __construct(private string $endpoint){}
   /** @param list<Span> $spans */

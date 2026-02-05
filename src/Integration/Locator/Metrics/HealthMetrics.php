@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Locator\Metrics;
+namespace Smartresponsor\Integration\Locator\Metrics;
 final class HealthMetrics{
   private int $ok=0; private int $fail=0;
   /** @var list<float> */

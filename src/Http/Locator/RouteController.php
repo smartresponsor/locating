@@ -2,13 +2,13 @@
 declare(strict_types=1);
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
- * SmartResponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace App\Http\Locator;
-use App\Layer\Locator\RouterOrchestratorInterface;
-use App\Layer\Locator\TenantContext;
+namespace Smartresponsor\Http\Locator;
+use Smartresponsor\Layer\Locator\RouterOrchestratorInterface;
+use Smartresponsor\Layer\Locator\TenantContext;
 final class RouteController {
     public function __construct(private RouterOrchestratorInterface $router){}
     public function get(array $query, string $tenantId): array {

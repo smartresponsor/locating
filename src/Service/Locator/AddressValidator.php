@@ -5,13 +5,13 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Service\Locator;
+namespace Smartresponsor\Service\Locator;
 
-use App\Entity\Locator\AddressData;
-use App\Entity\Locator\AddressStatus;
-use App\Entity\Locator\AddressValidationIssue;
-use App\EntityInterface\Locator\AddressValidationIssueInterface;
-use App\ServiceInterface\Locator\AddressValidatorInterface;
+use Smartresponsor\Entity\Locator\AddressData;
+use Smartresponsor\Entity\Locator\AddressStatus;
+use Smartresponsor\Entity\Locator\AddressValidationIssue;
+use Smartresponsor\EntityInterface\Locator\AddressValidationIssueInterface;
+use Smartresponsor\ServiceInterface\Locator\AddressValidatorInterface;
 
 final class AddressValidator implements AddressValidatorInterface
 {

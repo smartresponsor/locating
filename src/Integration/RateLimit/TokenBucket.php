@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\RateLimit;
-use SmartResponsor\Contract\RateLimit\RateLimiterInterface;
+namespace Smartresponsor\Integration\RateLimit;
+use Smartresponsor\Contract\RateLimit\RateLimiterInterface;
 final class TokenBucket implements RateLimiterInterface{
   private float $tokens;
   private float $last;

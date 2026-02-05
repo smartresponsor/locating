@@ -6,8 +6,8 @@
  */
 
 
-namespace SmartResponsor\Infrastructure\Locator\Resilience;
-use SmartResponsor\Infrastructure\Locator\Cache\RedisCache;
+namespace Smartresponsor\Infrastructure\Locator\Resilience;
+use Smartresponsor\Infrastructure\Locator\Cache\RedisCache;
 
 class CircuitBreaker {
     private RedisCache $cache; private string $name; private int $fail; private int $ttl;

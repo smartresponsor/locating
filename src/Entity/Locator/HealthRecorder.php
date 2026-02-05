@@ -2,13 +2,13 @@
 declare(strict_types=1);
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
- * SmartResponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace App\Entity\Locator;
+namespace Smartresponsor\Entity\Locator;
 
-use App\ServiceInterface\Locator\HealthRecorderInterface;
+use Smartresponsor\ServiceInterface\Locator\HealthRecorderInterface;
 final class HealthRecorder implements HealthRecorderInterface {
     /** @var array<string, array{ok:int, fail:int, total_ms:float}> */
     private array $st = [];

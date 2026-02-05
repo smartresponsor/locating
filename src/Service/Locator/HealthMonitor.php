@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Service\Locator;
+namespace Smartresponsor\Service\Locator;
 final class HealthMonitor{
   private string $path;
   private array $state=[];

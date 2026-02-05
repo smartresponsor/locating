@@ -5,10 +5,10 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Infrastructure\Locator;
+namespace Smartresponsor\Infrastructure\Locator;
 
-use App\EntityInterface\Locator\AddressResultInterface;
-use App\InfrastructureInterface\Locator\AddressBatchResultStorageInterface;
+use Smartresponsor\EntityInterface\Locator\AddressResultInterface;
+use Smartresponsor\InfrastructureInterface\Locator\AddressBatchResultStorageInterface;
 
 /**
  * In-memory result storage for batch jobs.

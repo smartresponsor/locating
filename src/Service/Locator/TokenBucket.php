@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Service\Locator;
+namespace Smartresponsor\Service\Locator;
 final class TokenBucket{
   private string $file;
   private int $capacity;
