@@ -2,19 +2,23 @@
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd"
          bootstrap="vendor/autoload.php"
-         colors="true">
+         colors="true"
+         cacheDirectory=".phpunit.cache">
     <testsuites>
+        <testsuite name="Locator">
+            <directory suffix="Test.php">tests/Locator</directory>
+        </testsuite>
         <testsuite name="Unit">
-            <directory>tests/Unit</directory>
+            <directory suffix="Test.php">tests/Unit</directory>
         </testsuite>
         <testsuite name="Integration">
-            <directory>tests/Integration</directory>
+            <directory suffix="Test.php">tests/Integration</directory>
         </testsuite>
         <testsuite name="Functional">
-            <directory>tests/Functional</directory>
+            <directory suffix="Test.php">tests/Functional</directory>
         </testsuite>
         <testsuite name="E2E">
-            <directory>tests/E2E</directory>
+            <directory suffix="Test.php">tests/E2E</directory>
         </testsuite>
     </testsuites>
     <source>
