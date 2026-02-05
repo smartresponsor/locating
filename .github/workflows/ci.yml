@@ -6,10 +6,16 @@ on:
       - "**"
   pull_request:
 
-jobs:
-  quality:
-    runs-on: ubuntu-latest
+permissions:
+  contents: read
 
+concurrency:
+  group: locator-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -19,12 +25,126 @@ jobs:
         with:
           php-version: '8.2'
           tools: composer:v2
+          coverage: none
+
+      - name: Cache composer + vendor
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.composer/cache/files
+            vendor
+          key: ${{ runner.os }}-php82-composer-${{ hashFiles('composer.json') }}
+          restore-keys: |
+            ${{ runner.os }}-php82-composer-
 
       - name: Validate composer
         run: composer validate --strict
 
       - name: Install dependencies
-        run: composer install --no-interaction --prefer-dist
+        run: composer install --no-interaction --prefer-dist --no-progress
 
-      - name: Run tests
-        run: composer test
+      - name: PHP syntax lint
+        shell: bash
+        run: |
+          mapfile -t files < <(find src tests tools public -type f -name '*.php' 2>/dev/null)
+          if [ "${#files[@]}" -eq 0 ]; then
+            echo "No PHP files found for linting."
+            exit 0
+          fi
+          for file in "${files[@]}"; do
+            php -l "$file"
+          done
+
+  test:
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: composer:v2
+          coverage: none
+
+      - name: Cache composer + vendor
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.composer/cache/files
+            vendor
+          key: ${{ runner.os }}-php82-composer-${{ hashFiles('composer.json') }}
+          restore-keys: |
+            ${{ runner.os }}-php82-composer-
+
+      - name: Install dependencies
+        run: composer install --no-interaction --prefer-dist --no-progress
+
+      - name: Run PHPUnit (locator-unit)
+        run: php vendor/bin/phpunit -c phpunit.xml.dist --testsuite locator-unit
+
+  stan:
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: composer:v2
+          coverage: none
+
+      - name: Cache composer + vendor
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.composer/cache/files
+            vendor
+          key: ${{ runner.os }}-php82-composer-${{ hashFiles('composer.json') }}
+          restore-keys: |
+            ${{ runner.os }}-php82-composer-
+
+      - name: Install dependencies
+        run: composer install --no-interaction --prefer-dist --no-progress
+
+      - name: Run PHPStan
+        run: php vendor/bin/phpstan analyse -c phpstan.neon --no-progress
+
+  smoke:
+    runs-on: ubuntu-latest
+    needs: [test, stan]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          tools: composer:v2
+          coverage: none
+
+      - name: Cache composer + vendor
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.composer/cache/files
+            vendor
+          key: ${{ runner.os }}-php82-composer-${{ hashFiles('composer.json') }}
+          restore-keys: |
+            ${{ runner.os }}-php82-composer-
+
+      - name: Install dependencies
+        run: composer install --no-interaction --prefer-dist --no-progress
+
+      - name: Run PHPUnit (locator-smoke)
+        run: php vendor/bin/phpunit -c phpunit.xml.dist --testsuite locator-smoke
+
+      - name: Run .gate check (Linux)
+        shell: bash
+        run: bash ./.gate/check/run.sh

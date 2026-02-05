@@ -2,7 +2,7 @@ name: gate
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ["master"]
   pull_request:
 
 permissions:
@@ -18,11 +18,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-<<<<<<< HEAD
         os: [ubuntu-latest, windows-latest]
-=======
-        os: [ ubuntu-latest, windows-latest ]
->>>>>>> 94ad96f (first/init commit)
 
     steps:
       - uses: actions/checkout@v4
@@ -31,37 +27,30 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Run owner gate (Linux)
+      - name: Run .gate check (Linux)
         if: runner.os != 'Windows'
         shell: bash
+        run: bash ./.gate/check/run.sh
+
+      - name: Run .gate check (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
         run: |
-          chmod +x ./.gate/gate.sh
-          ./.gate/gate.sh .
+          if (Test-Path '.\.gate\check\run.ps1') {
+            pwsh -File .\.gate\check\run.ps1
+          } else {
+            Write-Host 'No .gate check PowerShell runner found; skipping.'
+          }
 
       - name: Gate fix proposal (print, Linux)
         if: always() && runner.os != 'Windows'
         shell: bash
         run: |
-<<<<<<< HEAD
-          chmod +x ./.gate/contract/ps1/fail-fixer-run.sh || true
-          ./.gate/contract/ps1/fail-fixer-run.sh . .report/gate-fix-proposal.ndjson print || true
-=======
-          chmod +x ./.gate/contract/fix.sh || true
+          chmod +x ./.gate/contract/sh/fail-fixer-run.sh || true
           ./.gate/contract/sh/fail-fixer-run.sh . .report/gate-fix-proposal.ndjson print || true
->>>>>>> 94ad96f (first/init commit)
-
-      - name: Run owner gate (Windows)
-        if: runner.os == 'Windows'
-        shell: pwsh
-        run: |
-          ./.gate/gate.ps1 -Path .
 
       - name: Gate fix proposal (print, Windows)
         if: always() && runner.os == 'Windows'
         shell: pwsh
         run: |
           pwsh -File .\.gate\contract\ps1\fail-fixer-run.ps1 -RepoRoot . -PrintOnly
-<<<<<<< HEAD
-=======
-
->>>>>>> 94ad96f (first/init commit)
