@@ -1,5 +1,17 @@
 <?php
+# Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
+
 namespace Smartresponsor\ServiceInterface\Locator;
-use Smartresponsor\Domain\Locator\AddressData; use Smartresponsor\Domain\Locator\GeoPoint;
-interface LocatorInterface{ public function normalize(string $raw): AddressData; public function geocode(AddressData $a): GeoPoint; public function reverse(GeoPoint $p): AddressData; }
+
+use Smartresponsor\Entity\Locator\AddressData;
+use Smartresponsor\Entity\Locator\GeoPoint;
+
+interface LocatorInterface
+{
+    public function normalize(string $raw): AddressData;
+
+    public function geocode(AddressData $address): GeoPoint;
+
+    public function reverse(GeoPoint $point): AddressData;
+}
