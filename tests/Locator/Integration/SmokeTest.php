@@ -2,10 +2,12 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 
-namespace Smartresponsor\Tests\Locator\Integration;
+namespace Tests\Locator\Integration;
 
+use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 
+#[Group('smoke')]
 final class SmokeTest extends TestCase
 {
     public function testLocatorFixturesRunnerWorksAgainstLocalHarness(): void
@@ -31,7 +33,7 @@ final class SmokeTest extends TestCase
         $serverProcess = proc_open($serverCommand, $descriptorSpec, $serverPipes);
         self::assertIsResource($serverProcess);
 
-        usleep(200000);
+        usleep(250000);
 
         try {
             $runnerCommand = sprintf('%s %s', escapeshellarg(PHP_BINARY), escapeshellarg(__DIR__ . '/../../../tools/locator-fixtures-run.php'));
