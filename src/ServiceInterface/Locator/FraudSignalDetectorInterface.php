@@ -2,11 +2,11 @@
 declare(strict_types=1);
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
- * SmartResponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace App\Domain\Locator;
+namespace Smartresponsor\Domain\Locator;
 interface FraudSignalDetectorInterface {
     /**
      * Return suspicion score 0..1 (1 is highly suspicious).

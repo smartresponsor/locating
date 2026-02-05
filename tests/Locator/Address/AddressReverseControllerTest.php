@@ -5,16 +5,16 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Tests\Locator\Address;
+namespace Smartresponsor\Tests\Locator\Address;
 
-use App\Controller\Locator\AddressReverseController;
-use App\Entity\Locator\AddressData;
-use App\Entity\Locator\AddressResult;
-use App\Entity\Locator\AddressStatus;
-use App\Entity\Locator\GeoPoint;
-use App\Service\Locator\AddressQuotaGuard;
-use App\ServiceInterface\Locator\AddressQuotaGuardInterface;
-use App\ServiceInterface\Locator\AddressReverseInterface;
+use Smartresponsor\Controller\Locator\AddressReverseController;
+use Smartresponsor\Entity\Locator\AddressData;
+use Smartresponsor\Entity\Locator\AddressResult;
+use Smartresponsor\Entity\Locator\AddressStatus;
+use Smartresponsor\Entity\Locator\GeoPoint;
+use Smartresponsor\Service\Locator\AddressQuotaGuard;
+use Smartresponsor\ServiceInterface\Locator\AddressQuotaGuardInterface;
+use Smartresponsor\ServiceInterface\Locator\AddressReverseInterface;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 

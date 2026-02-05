@@ -2,13 +2,13 @@
 declare(strict_types=1);
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
- * SmartResponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
 namespace Tests\Locator;
-use App\Layer\Locator\LogEvent;
-use App\Layer\Locator\Redactor;
+use Smartresponsor\Layer\Locator\LogEvent;
+use Smartresponsor\Layer\Locator\Redactor;
 final class LogEventTest {
     public function testRedaction(): void {
         $l = new LogEvent(new Redactor());

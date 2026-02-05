@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Service\Locator;
-use SmartResponsor\Model\Locator\CanonicalAddress;
+namespace Smartresponsor\Service\Locator;
+use Smartresponsor\Model\Locator\CanonicalAddress;
 final class Normalizer{
   public function canonicalize(array $raw, string $provider): array{
     $a = new CanonicalAddress(

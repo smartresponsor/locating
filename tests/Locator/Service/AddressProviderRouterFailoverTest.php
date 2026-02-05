@@ -5,11 +5,11 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Tests\Locator\Service;
+namespace Smartresponsor\Tests\Locator\Service;
 
-use App\Entity\Locator\GeoPoint;
-use App\InfrastructureInterface\Locator\AddressProviderBridgeInterface;
-use App\Service\Locator\AddressProviderRouter;
+use Smartresponsor\Entity\Locator\GeoPoint;
+use Smartresponsor\InfrastructureInterface\Locator\AddressProviderBridgeInterface;
+use Smartresponsor\Service\Locator\AddressProviderRouter;
 use PHPUnit\Framework\TestCase;
 
 final class AddressProviderRouterFailoverTest extends TestCase

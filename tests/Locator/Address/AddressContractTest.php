@@ -3,11 +3,11 @@ declare(strict_types=1);
 
 namespace Tests\Locator\Address;
 
-use App\Entity\Locator\AddressData;
-use App\Entity\Locator\AddressResult;
-use App\Entity\Locator\AddressStatus;
-use App\Entity\Locator\AddressValidationIssue;
-use App\Entity\Locator\GeoPoint;
+use Smartresponsor\Entity\Locator\AddressData;
+use Smartresponsor\Entity\Locator\AddressResult;
+use Smartresponsor\Entity\Locator\AddressStatus;
+use Smartresponsor\Entity\Locator\AddressValidationIssue;
+use Smartresponsor\Entity\Locator\GeoPoint;
 use PHPUnit\Framework\TestCase;
 
 final class AddressContractTest extends TestCase

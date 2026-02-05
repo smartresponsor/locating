@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Locator\Http;
+namespace Smartresponsor\Integration\Locator\Http;
 final class NominatimClient{
   public function __construct(
     private string $baseUrl = 'https://nominatim.openstreetmap.org',
@@ -28,7 +28,7 @@ final class NominatimClient{
   /** @return array<mixed> */
   private function getJson(string $url): array{
     $ch = curl_init($url);
-    $ua = 'SmartResponsor-Locator/1.0 (+https://example.local)';
+    $ua = 'Smartresponsor-Locator/1.0 (+https://example.local)';
     curl_setopt_array($ch, [
       CURLOPT_RETURNTRANSFER => true,
       CURLOPT_FOLLOWLOCATION => true,

@@ -5,9 +5,9 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\ServiceInterface\Locator;
+namespace Smartresponsor\ServiceInterface\Locator;
 
-use App\EntityInterface\Locator\AddressSuggestionInterface;
+use Smartresponsor\EntityInterface\Locator\AddressSuggestionInterface;
 
 interface AddressSuggestInterface
 {

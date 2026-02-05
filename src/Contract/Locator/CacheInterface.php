@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Contract\Locator;
+namespace Smartresponsor\Contract\Locator;
 interface CacheInterface{
     public function get(string $key, mixed $default=null);
     public function set(string $key, mixed $value, int $ttlSeconds=300): void;

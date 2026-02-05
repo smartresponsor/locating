@@ -2,12 +2,12 @@
 declare(strict_types=1);
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
- * SmartResponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
 namespace Tests\Locator;
-use App\Layer\Locator\{AdaptiveOrdering, HealthEwma, CostAwarePolicy, SlaPolicy, AddressHintBias};
+use Smartresponsor\Layer\Locator\{AdaptiveOrdering, HealthEwma, CostAwarePolicy, SlaPolicy, AddressHintBias};
 final class AdaptiveOrderingTest {
     public function testOrder(): void {
         $ord = new AdaptiveOrdering(new HealthEwma(), new CostAwarePolicy(), new SlaPolicy(), (function(){ $b=new AddressHintBias(); $b->set('US','us',1.2); return $b;})());

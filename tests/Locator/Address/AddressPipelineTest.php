@@ -3,13 +3,13 @@ declare(strict_types=1);
 
 namespace Tests\Locator\Address;
 
-use App\Entity\Locator\AddressInput;
-use App\Entity\Locator\AddressStatus;
-use App\Service\Locator\AddressNormalizer;
-use App\Service\Locator\AddressParser;
-use App\Service\Locator\AddressParserGeneric;
-use App\Service\Locator\AddressPipeline;
-use App\Service\Locator\AddressValidator;
+use Smartresponsor\Entity\Locator\AddressInput;
+use Smartresponsor\Entity\Locator\AddressStatus;
+use Smartresponsor\Service\Locator\AddressNormalizer;
+use Smartresponsor\Service\Locator\AddressParser;
+use Smartresponsor\Service\Locator\AddressParserGeneric;
+use Smartresponsor\Service\Locator\AddressPipeline;
+use Smartresponsor\Service\Locator\AddressValidator;
 use PHPUnit\Framework\TestCase;
 
 final class AddressPipelineTest extends TestCase

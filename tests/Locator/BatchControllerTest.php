@@ -2,13 +2,13 @@
 declare(strict_types=1);
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
- * SmartResponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
 namespace Tests\Locator;
-use App\Http\Locator\BatchController;
-use App\Layer\Locator\BatchService;
+use Smartresponsor\Http\Locator\BatchController;
+use Smartresponsor\Layer\Locator\BatchService;
 final class BatchControllerTest {
     public function testPost(): void {
         $c = new BatchController(new BatchService());

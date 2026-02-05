@@ -2,11 +2,11 @@
 declare(strict_types=1);
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
- * SmartResponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace App\Service\Locator;
+namespace Smartresponsor\Service\Locator;
 /** Windowed counter limiter (per-key per-window) using RedisClientInterface */
 final class RateLimiterRedis implements RateLimiterInterface {
     public function __construct(private RedisClientInterface $redis) {}

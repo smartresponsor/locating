@@ -5,11 +5,11 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Service\Locator;
+namespace Smartresponsor\Service\Locator;
 
-use App\EntityInterface\Locator\AddressBatchJobInterface;
-use App\InfrastructureInterface\Locator\MetricRecorderInterface;
-use App\ServiceInterface\Locator\AddressBatchServiceInterface;
+use Smartresponsor\EntityInterface\Locator\AddressBatchJobInterface;
+use Smartresponsor\InfrastructureInterface\Locator\MetricRecorderInterface;
+use Smartresponsor\ServiceInterface\Locator\AddressBatchServiceInterface;
 
 /**
  * Decorator that records metrics for AddressBatchServiceInterface.

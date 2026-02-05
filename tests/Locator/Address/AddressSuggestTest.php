@@ -5,12 +5,12 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-        namespace App\Tests\Locator\Address;
+        namespace Smartresponsor\Tests\Locator\Address;
 
-        use App\Entity\Locator\AddressData;
-        use App\Entity\Locator\AddressSuggestion;
-        use App\Service\Locator\AddressSuggest;
-        use App\InfrastructureInterface\Locator\AddressSuggestProviderInterface;
+        use Smartresponsor\Entity\Locator\AddressData;
+        use Smartresponsor\Entity\Locator\AddressSuggestion;
+        use Smartresponsor\Service\Locator\AddressSuggest;
+        use Smartresponsor\InfrastructureInterface\Locator\AddressSuggestProviderInterface;
         use PHPUnit\Framework\TestCase;
 
         final class AddressSuggestTest extends TestCase

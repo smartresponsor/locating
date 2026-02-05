@@ -6,7 +6,7 @@
  */
 
 
-namespace SmartResponsor\Service\Locator\Config;
+namespace Smartresponsor\Service\Locator\Config;
 
 class Env
 {

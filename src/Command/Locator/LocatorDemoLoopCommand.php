@@ -5,10 +5,10 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Command\Locator;
+namespace Smartresponsor\Command\Locator;
 
-use App\CommandInterface\Locator\LocatorDemoLoopCommandInterface;
-use App\ServiceInterface\Locator\LocatorDemoLoopInterface;
+use Smartresponsor\CommandInterface\Locator\LocatorDemoLoopCommandInterface;
+use Smartresponsor\ServiceInterface\Locator\LocatorDemoLoopInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;

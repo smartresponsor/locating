@@ -5,11 +5,11 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\EntityInterface\Locator;
+namespace Smartresponsor\EntityInterface\Locator;
 
-use App\Entity\Locator\AddressData;
-use App\Entity\Locator\AddressStatus;
-use App\Entity\Locator\GeoPoint;
+use Smartresponsor\Entity\Locator\AddressData;
+use Smartresponsor\Entity\Locator\AddressStatus;
+use Smartresponsor\Entity\Locator\GeoPoint;
 
 interface AddressResultInterface
 {

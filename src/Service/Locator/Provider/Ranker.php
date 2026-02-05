@@ -6,7 +6,7 @@
  */
 
 
-namespace SmartResponsor\Service\Locator\Provider;
+namespace Smartresponsor\Service\Locator\Provider;
 class Ranker{
     public static function sort(array $items): array{
         usort($items, function($a,$b){

@@ -5,11 +5,11 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Service\Locator;
+namespace Smartresponsor\Service\Locator;
 
-use App\Entity\Locator\AddressSuggestion;
-use App\EntityInterface\Locator\AddressSuggestionInterface;
-use App\ServiceInterface\Locator\SuggestRankerInterface;
+use Smartresponsor\Entity\Locator\AddressSuggestion;
+use Smartresponsor\EntityInterface\Locator\AddressSuggestionInterface;
+use Smartresponsor\ServiceInterface\Locator\SuggestRankerInterface;
 
 final class SuggestRanker implements SuggestRankerInterface
 {

@@ -5,12 +5,12 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Service\Locator;
+namespace Smartresponsor\Service\Locator;
 
-use App\Entity\Locator\AddressInput;
-use App\InfrastructureInterface\Locator\LocatorFixtureReaderInterface;
-use App\ServiceInterface\Locator\LocatorDemoSeedInterface;
-use App\ServiceInterface\Locator\AddressPipelineInterface;
+use Smartresponsor\Entity\Locator\AddressInput;
+use Smartresponsor\InfrastructureInterface\Locator\LocatorFixtureReaderInterface;
+use Smartresponsor\ServiceInterface\Locator\LocatorDemoSeedInterface;
+use Smartresponsor\ServiceInterface\Locator\AddressPipelineInterface;
 
 final class LocatorDemoSeed implements LocatorDemoSeedInterface
 {

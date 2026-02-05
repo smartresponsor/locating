@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Locator\Decorator;
-use SmartResponsor\Contract\Locator\LocatorInterface;
-use SmartResponsor\Integration\Locator\Cache\SimpleArrayCache;
-use SmartResponsor\Model\Locator\AddressData;
-use SmartResponsor\Model\Locator\GeoPoint;
+namespace Smartresponsor\Integration\Locator\Decorator;
+use Smartresponsor\Contract\Locator\LocatorInterface;
+use Smartresponsor\Integration\Locator\Cache\SimpleArrayCache;
+use Smartresponsor\Model\Locator\AddressData;
+use Smartresponsor\Model\Locator\GeoPoint;
 final class CachedLocator implements LocatorInterface{
   public function __construct(private LocatorInterface $inner, private SimpleArrayCache $cache, private int $ttl = 600){}
   private function key(string $p, string $s): string { return 'locator:' . $p . ':' . sha1($s); }

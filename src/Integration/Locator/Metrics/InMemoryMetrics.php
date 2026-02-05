@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Locator\Metrics;
-use SmartResponsor\Contract\Metrics\MetricsInterface;
+namespace Smartresponsor\Integration\Locator\Metrics;
+use Smartresponsor\Contract\Metrics\MetricsInterface;
 final class InMemoryMetrics implements MetricsInterface{
   /** @var array<string,float> */
   private array $counters = [];

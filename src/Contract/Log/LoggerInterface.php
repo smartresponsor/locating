@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Contract\Log;
+namespace Smartresponsor\Contract\Log;
 interface LoggerInterface{
   /** @param array<string,mixed> $context */
   public function log(string $level, string $message, array $context=[]): void;

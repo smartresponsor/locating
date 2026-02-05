@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Contract\Metrics;
+namespace Smartresponsor\Contract\Metrics;
 interface MetricsInterface{
   /** @param array<string,string> $labels */
   public function inc(string $name, array $labels=[]): void;

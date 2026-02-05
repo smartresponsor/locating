@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Locator\Log\Correlation;
+namespace Smartresponsor\Integration\Locator\Log\Correlation;
 final class TraceContext{
   private static ?string $traceId=null;
   private static ?string $spanId=null;

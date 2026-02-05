@@ -2,11 +2,11 @@
 declare(strict_types=1);
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
- * SmartResponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace App\Domain\Locator;
+namespace Smartresponsor\Domain\Locator;
 interface RetryPolicyInterface {
     /** Return delay ms for attempt index (0-based). 'full' jitter means random in [0, backoffMs]. */
     public function delay(int $attempt, int $baseMs=50, int $factor=2, int $maxMs=2000, string $jitter='full'): int;

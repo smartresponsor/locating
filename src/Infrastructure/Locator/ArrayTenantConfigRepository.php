@@ -5,11 +5,11 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Infrastructure\Locator;
+namespace Smartresponsor\Infrastructure\Locator;
 
-use App\EntityInterface\Locator\TenantLimitInterface;
-use App\Entity\Locator\TenantLimit;
-use App\InfrastructureInterface\Locator\TenantConfigRepositoryInterface;
+use Smartresponsor\EntityInterface\Locator\TenantLimitInterface;
+use Smartresponsor\Entity\Locator\TenantLimit;
+use Smartresponsor\InfrastructureInterface\Locator\TenantConfigRepositoryInterface;
 
 /**
  * Simple array-based tenant config repository.

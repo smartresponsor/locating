@@ -5,12 +5,12 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Tests\Locator\Service;
+namespace Smartresponsor\Tests\Locator\Service;
 
-use App\Entity\Locator\AddressStatus;
-use App\InfrastructureInterface\Locator\ReverseHttpClientInterface;
-use App\Infrastructure\Locator\InMemoryMetricRecorder;
-use App\Service\Locator\AddressReverse;
+use Smartresponsor\Entity\Locator\AddressStatus;
+use Smartresponsor\InfrastructureInterface\Locator\ReverseHttpClientInterface;
+use Smartresponsor\Infrastructure\Locator\InMemoryMetricRecorder;
+use Smartresponsor\Service\Locator\AddressReverse;
 use PHPUnit\Framework\TestCase;
 
 final class AddressReverseTest extends TestCase

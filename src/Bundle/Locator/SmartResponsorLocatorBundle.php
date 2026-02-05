@@ -1,5 +1,5 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Bundle\Locator;
+namespace Smartresponsor\Bundle\Locator;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
-final class SmartResponsorLocatorBundle extends Bundle {}
+final class SmartresponsorLocatorBundle extends Bundle {}

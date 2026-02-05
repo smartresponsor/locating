@@ -4,10 +4,10 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\ServiceInterface\Locator;
+namespace Smartresponsor\ServiceInterface\Locator;
 
-use App\EntityInterface\Locator\AddressInputInterface;
-use App\EntityInterface\Locator\AddressDataInterface;
+use Smartresponsor\EntityInterface\Locator\AddressInputInterface;
+use Smartresponsor\EntityInterface\Locator\AddressDataInterface;
 
 interface AddressParserCountryStrategyInterface
 {

@@ -2,11 +2,11 @@
 declare(strict_types=1);
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
- * SmartResponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace App\Service\Locator;
+namespace Smartresponsor\Service\Locator;
 final class FraudSignalDetector implements FraudSignalDetectorInterface {
     public function score(array $signal): float {
         $ip = (float)($signal['ipDistanceKm'] ?? 0.0);      // > 2000km spikes suspicion

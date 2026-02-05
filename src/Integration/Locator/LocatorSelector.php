@@ -1,14 +1,14 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Locator;
-use SmartResponsor\Contract\Locator\LocatorInterface;
-use SmartResponsor\Integration\Locator\Provider\Dsn\LocatorDsn;
-use SmartResponsor\Integration\Locator\Provider\{OpenStreetMapProvider,FallbackProvider};
-use SmartResponsor\Integration\Locator\Registry\LocatorPluginRegistry;
-use SmartResponsor\Integration\Locator\Cache\LruCache;
-use SmartResponsor\Integration\Locator\Cache\AdaptiveTtlPolicy;
-use SmartResponsor\Integration\Locator\Decorator\{RetryLocator,CircuitBreakerLocator,AdaptiveMultiCachedLocator,HealthProbeLocator};
-use SmartResponsor\Integration\Locator\Metrics\{HealthMetrics,PrometheusExporter};
+namespace Smartresponsor\Integration\Locator;
+use Smartresponsor\Contract\Locator\LocatorInterface;
+use Smartresponsor\Integration\Locator\Provider\Dsn\LocatorDsn;
+use Smartresponsor\Integration\Locator\Provider\{OpenStreetMapProvider,FallbackProvider};
+use Smartresponsor\Integration\Locator\Registry\LocatorPluginRegistry;
+use Smartresponsor\Integration\Locator\Cache\LruCache;
+use Smartresponsor\Integration\Locator\Cache\AdaptiveTtlPolicy;
+use Smartresponsor\Integration\Locator\Decorator\{RetryLocator,CircuitBreakerLocator,AdaptiveMultiCachedLocator,HealthProbeLocator};
+use Smartresponsor\Integration\Locator\Metrics\{HealthMetrics,PrometheusExporter};
 final class LocatorSelector{
   private LocatorPluginRegistry $registry;
   private LruCache $cache;

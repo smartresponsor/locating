@@ -5,11 +5,11 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Infrastructure\Locator;
+namespace Smartresponsor\Infrastructure\Locator;
 
-use App\InfrastructureInterface\Locator\AddressBatchMessageBusInterface;
-use App\Message\Locator\AddressBatchMessage;
-use App\MessageHandler\Locator\AddressBatchMessageHandler;
+use Smartresponsor\InfrastructureInterface\Locator\AddressBatchMessageBusInterface;
+use Smartresponsor\Message\Locator\AddressBatchMessage;
+use Smartresponsor\MessageHandler\Locator\AddressBatchMessageHandler;
 
 /**
  * In-process message bus that immediately calls the handler.

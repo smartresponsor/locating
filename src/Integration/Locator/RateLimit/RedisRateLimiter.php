@@ -1,8 +1,8 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Locator\RateLimit;
+namespace Smartresponsor\Integration\Locator\RateLimit;
 use Redis;
-use SmartResponsor\Contract\RateLimit\RateLimiterInterface;
+use Smartresponsor\Contract\RateLimit\RateLimiterInterface;
 final class RedisRateLimiter implements RateLimiterInterface{
   public function __construct(private Redis $r){}
   public function consume(string $bucket, int $perMinute): int{

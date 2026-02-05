@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace Tests\Locator\Address;
 
-use App\Entity\Locator\AddressInput;
-use App\Service\Locator\AddressParser;
-use App\Service\Locator\AddressParserGeneric;
+use Smartresponsor\Entity\Locator\AddressInput;
+use Smartresponsor\Service\Locator\AddressParser;
+use Smartresponsor\Service\Locator\AddressParserGeneric;
 use PHPUnit\Framework\TestCase;
 
 final class AddressParserTest extends TestCase

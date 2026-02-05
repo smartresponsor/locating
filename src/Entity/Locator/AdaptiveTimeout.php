@@ -2,11 +2,11 @@
 declare(strict_types=1);
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
- * SmartResponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace App\Entity\Locator;
+namespace Smartresponsor\Entity\Locator;
 final class AdaptiveTimeout {
     private float $targetP; private int $min; private int $max; private array $buf=[];
     public function __construct(float $targetP=0.95, int $min=100, int $max=2000){

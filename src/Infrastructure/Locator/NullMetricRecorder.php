@@ -5,9 +5,9 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Infrastructure\Locator;
+namespace Smartresponsor\Infrastructure\Locator;
 
-use App\InfrastructureInterface\Locator\MetricRecorderInterface;
+use Smartresponsor\InfrastructureInterface\Locator\MetricRecorderInterface;
 
 /**
  * No-op metric recorder used when no real metric backend is configured.

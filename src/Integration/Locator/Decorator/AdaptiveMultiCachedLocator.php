@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Locator\Decorator;
-use SmartResponsor\Contract\Locator\LocatorInterface;
-use SmartResponsor\Integration\Locator\Cache\CacheInterface;
-use SmartResponsor\Integration\Locator\Cache\AdaptiveTtlPolicy;
-use SmartResponsor\Integration\Locator\Metrics\HealthMetrics;
-use SmartResponsor\Model\Locator\AddressData;
-use SmartResponsor\Model\Locator\GeoPoint;
+namespace Smartresponsor\Integration\Locator\Decorator;
+use Smartresponsor\Contract\Locator\LocatorInterface;
+use Smartresponsor\Integration\Locator\Cache\CacheInterface;
+use Smartresponsor\Integration\Locator\Cache\AdaptiveTtlPolicy;
+use Smartresponsor\Integration\Locator\Metrics\HealthMetrics;
+use Smartresponsor\Model\Locator\AddressData;
+use Smartresponsor\Model\Locator\GeoPoint;
 final class AdaptiveMultiCachedLocator implements LocatorInterface{
   private const NEG = '__NEG__';
   public function __construct(

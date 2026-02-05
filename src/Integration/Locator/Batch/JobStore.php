@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Locator\Batch;
+namespace Smartresponsor\Integration\Locator\Batch;
 final class JobStore{
   private string $dir;
   public function __construct(){

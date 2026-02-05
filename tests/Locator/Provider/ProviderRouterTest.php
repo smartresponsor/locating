@@ -5,16 +5,16 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Tests\Locator\Provider;
+namespace Smartresponsor\Tests\Locator\Provider;
 
-use App\Entity\Locator\AddressInput;
-use App\Entity\Locator\HealthRecorder;
-use App\Entity\Locator\ProviderSandbox;
-use App\Infrastructure\Locator\InMemoryMetricRecorder;
-use App\InfrastructureInterface\Locator\ProviderAdapterInterface;
-use App\Service\Locator\FailoverPlanner;
-use App\Service\Locator\ProviderRouter;
-use App\Service\Locator\SlaPolicy;
+use Smartresponsor\Entity\Locator\AddressInput;
+use Smartresponsor\Entity\Locator\HealthRecorder;
+use Smartresponsor\Entity\Locator\ProviderSandbox;
+use Smartresponsor\Infrastructure\Locator\InMemoryMetricRecorder;
+use Smartresponsor\InfrastructureInterface\Locator\ProviderAdapterInterface;
+use Smartresponsor\Service\Locator\FailoverPlanner;
+use Smartresponsor\Service\Locator\ProviderRouter;
+use Smartresponsor\Service\Locator\SlaPolicy;
 use PHPUnit\Framework\TestCase;
 
 final class ProviderRouterTest extends TestCase

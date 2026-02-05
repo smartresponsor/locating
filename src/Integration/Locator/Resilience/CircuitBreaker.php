@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Locator\Resilience;
+namespace Smartresponsor\Integration\Locator\Resilience;
 final class CircuitBreaker{
   private string $path;
   public function __construct(private string $name, private int $failThreshold=3, private int $openSeconds=30){

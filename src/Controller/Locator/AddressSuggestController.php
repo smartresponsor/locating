@@ -5,12 +5,12 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Controller\Locator;
+namespace Smartresponsor\Controller\Locator;
 
-use App\ControllerInterface\Locator\AddressSuggestControllerInterface;
-use App\ServiceInterface\Locator\AddressSuggestInterface;
-use App\ServiceInterface\Locator\AddressQuotaGuardInterface;
-use App\Service\Locator\AddressQuotaGuard;
+use Smartresponsor\ControllerInterface\Locator\AddressSuggestControllerInterface;
+use Smartresponsor\ServiceInterface\Locator\AddressSuggestInterface;
+use Smartresponsor\ServiceInterface\Locator\AddressQuotaGuardInterface;
+use Smartresponsor\Service\Locator\AddressQuotaGuard;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 

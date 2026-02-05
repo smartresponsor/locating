@@ -6,8 +6,8 @@
  */
 
 
-namespace SmartResponsor\Infrastructure\Locator\Metrics;
-use SmartResponsor\Infrastructure\Locator\Cache\RedisCache;
+namespace Smartresponsor\Infrastructure\Locator\Metrics;
+use Smartresponsor\Infrastructure\Locator\Cache\RedisCache;
 
 class Prometheus
 {

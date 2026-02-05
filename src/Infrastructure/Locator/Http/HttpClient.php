@@ -6,7 +6,7 @@
  */
 
 
-namespace SmartResponsor\Infrastructure\Locator\Http;
+namespace Smartresponsor\Infrastructure\Locator\Http;
 
 class HttpClient
 {

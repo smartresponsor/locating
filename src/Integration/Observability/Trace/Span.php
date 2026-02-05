@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Observability\Trace;
+namespace Smartresponsor\Integration\Observability\Trace;
 final class Span{
   public function __construct(
     public string $traceId,

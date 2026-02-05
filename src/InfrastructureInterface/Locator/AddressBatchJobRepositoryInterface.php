@@ -5,9 +5,9 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\InfrastructureInterface\Locator;
+namespace Smartresponsor\InfrastructureInterface\Locator;
 
-use App\EntityInterface\Locator\AddressBatchJobInterface;
+use Smartresponsor\EntityInterface\Locator\AddressBatchJobInterface;
 
 interface AddressBatchJobRepositoryInterface
 {

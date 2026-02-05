@@ -5,10 +5,10 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Infrastructure\Locator;
+namespace Smartresponsor\Infrastructure\Locator;
 
-use App\InfrastructureInterface\Locator\MetricRecorderInterface;
-use App\InfrastructureInterface\Locator\MetricSnapshotProviderInterface;
+use Smartresponsor\InfrastructureInterface\Locator\MetricRecorderInterface;
+use Smartresponsor\InfrastructureInterface\Locator\MetricSnapshotProviderInterface;
 
 /**
  * In-memory metric recorder that can be used for development and smoke tests.

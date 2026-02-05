@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Locator\Decorator;
-use SmartResponsor\Contract\Locator\LocatorInterface;
-use SmartResponsor\Contract\Log\LoggerInterface;
-use SmartResponsor\Contract\Metrics\MetricsInterface;
-use SmartResponsor\Integration\Locator\Log\Correlation\TraceContext;
-use SmartResponsor\Model\Locator\AddressData;
-use SmartResponsor\Model\Locator\GeoPoint;
+namespace Smartresponsor\Integration\Locator\Decorator;
+use Smartresponsor\Contract\Locator\LocatorInterface;
+use Smartresponsor\Contract\Log\LoggerInterface;
+use Smartresponsor\Contract\Metrics\MetricsInterface;
+use Smartresponsor\Integration\Locator\Log\Correlation\TraceContext;
+use Smartresponsor\Model\Locator\AddressData;
+use Smartresponsor\Model\Locator\GeoPoint;
 final class ObservabilityLocator implements LocatorInterface{
   public function __construct(private LocatorInterface $inner, private LoggerInterface $logger, private MetricsInterface $metrics){}
   private function withObs(string $op, callable $fn, array $ctx=[]){

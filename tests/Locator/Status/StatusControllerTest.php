@@ -5,10 +5,10 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-        namespace App\Tests\Locator\Status;
+        namespace Smartresponsor\Tests\Locator\Status;
 
-        use App\Controller\Locator\StatusController;
-        use App\Infrastructure\Locator\InMemoryMetricRecorder;
+        use Smartresponsor\Controller\Locator\StatusController;
+        use Smartresponsor\Infrastructure\Locator\InMemoryMetricRecorder;
         use PHPUnit\Framework\TestCase;
         use Symfony\Component\HttpFoundation\Request;
 

@@ -1,20 +1,20 @@
-# Location R10 – Interface namespace canon (App\\*Interface\\Locator)
+# Location R10 – Interface namespace canon (Smartresponsor\\*Interface\\Locator)
 
 Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 
-This envelope aligns all Locator interface namespaces with the SmartResponsor canon:
+This envelope aligns all Locator interface namespaces with the Smartresponsor canon:
 
-- `App\\EntityInterface\\Locator\\...`
-- `App\\ServiceInterface\\Locator\\...`
-- `App\\InfrastructureInterface\\Locator\\...`
+- `Smartresponsor\\EntityInterface\\Locator\\...`
+- `Smartresponsor\\ServiceInterface\\Locator\\...`
+- `Smartresponsor\\InfrastructureInterface\\Locator\\...`
 
 ## Scope
 
-- Replace legacy `namespace App\\Domain\\Locator;` declarations
+- Replace legacy `namespace Smartresponsor\\Domain\\Locator;` declarations
   in 78 `src/*Interface/Locator/*.php` files with layer-correct namespaces:
-  - `src/EntityInterface/Locator/...` -> `namespace App\\EntityInterface\\Locator;`
-  - `src/ServiceInterface/Locator/...` -> `namespace App\\ServiceInterface\\Locator;`
-  - `src/InfrastructureInterface/Locator/...` -> `namespace App\\InfrastructureInterface\\Locator;`
+  - `src/EntityInterface/Locator/...` -> `namespace Smartresponsor\\EntityInterface\\Locator;`
+  - `src/ServiceInterface/Locator/...` -> `namespace Smartresponsor\\ServiceInterface\\Locator;`
+  - `src/InfrastructureInterface/Locator/...` -> `namespace Smartresponsor\\InfrastructureInterface\\Locator;`
 - Keep all interface names and method signatures intact.
 - No behaviour changes in implementations; only namespace alignment.
 
@@ -23,7 +23,7 @@ This envelope aligns all Locator interface namespaces with the SmartResponsor ca
 - Makes autoloading and static analysis consistent with the folder structure.
 - Removes the last traces of the experimental `Domain` layer from the Locator component.
 - Ensures future implementations and decorators can type-hint interfaces
-  using the predictable `App\\<Layer>Interface\\Locator` pattern.
+  using the predictable `Smartresponsor\\<Layer>Interface\\Locator` pattern.
 
 ## Affected families
 
@@ -49,6 +49,6 @@ Examples (non-exhaustive):
 
 ## Post-conditions
 
-- No `namespace App\\Domain\\Locator;` remains in `src/`.
+- No `namespace Smartresponsor\\Domain\\Locator;` remains in `src/`.
 - Every interface under `src/*Interface/Locator` now has a namespace that
   matches its physical layer folder.

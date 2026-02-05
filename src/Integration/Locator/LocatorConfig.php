@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Locator;
+namespace Smartresponsor\Integration\Locator;
 final class LocatorConfig{
   /** @param list<string> $providers */
   public function __construct(

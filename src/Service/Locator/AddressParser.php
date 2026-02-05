@@ -5,11 +5,11 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Service\Locator;
+namespace Smartresponsor\Service\Locator;
 
-use App\Entity\Locator\AddressInput;
-use App\Entity\Locator\AddressData;
-use App\ServiceInterface\Locator\AddressParserInterface;
+use Smartresponsor\Entity\Locator\AddressInput;
+use Smartresponsor\Entity\Locator\AddressData;
+use Smartresponsor\ServiceInterface\Locator\AddressParserInterface;
 
 /**
  * Simple parser that prefers structured data and falls back to raw line heuristics.

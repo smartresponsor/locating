@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Locator\Cache;
+namespace Smartresponsor\Integration\Locator\Cache;
 final class LruCache implements CacheInterface{
   /** @var array<string,array{v:mixed,exp:int}> */
   private array $data=[];

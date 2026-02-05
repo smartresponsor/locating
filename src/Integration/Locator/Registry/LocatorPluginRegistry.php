@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Locator\Registry;
-use SmartResponsor\Contract\Locator\Provider\LocatorProviderInterface;
+namespace Smartresponsor\Integration\Locator\Registry;
+use Smartresponsor\Contract\Locator\Provider\LocatorProviderInterface;
 final class LocatorPluginRegistry{
   /** @var list<LocatorProviderInterface> */
   private array $providers = [];

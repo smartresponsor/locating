@@ -2,12 +2,12 @@
 declare(strict_types=1);
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
- * SmartResponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
 namespace Tests\Locator;
-use App\Layer\Locator\ProviderContractGolden;
+use Smartresponsor\Layer\Locator\ProviderContractGolden;
 final class ProviderContractGoldenTest {
     public function testGolden(): void {
         $g = new ProviderContractGolden(sys_get_temp_dir().'/golden');

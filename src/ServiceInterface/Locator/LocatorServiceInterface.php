@@ -6,7 +6,7 @@
  */
 
 
-namespace SmartResponsor\ServiceInterface\Locator\Locator;
+namespace Smartresponsor\ServiceInterface\Locator\Locator;
 
 interface LocatorServiceInterface
 {

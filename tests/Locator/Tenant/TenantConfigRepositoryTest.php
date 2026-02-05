@@ -7,7 +7,7 @@ declare(strict_types=1);
 
 namespace Tests\Locator\Tenant;
 
-use App\Infrastructure\Locator\ArrayTenantConfigRepository;
+use Smartresponsor\Infrastructure\Locator\ArrayTenantConfigRepository;
 use PHPUnit\Framework\TestCase;
 
 final class TenantConfigRepositoryTest extends TestCase

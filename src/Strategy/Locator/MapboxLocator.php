@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Strategy\Locator;
-use SmartResponsor\Contract\Locator\LocatorInterface;
-use SmartResponsor\Integration\Locator\Http\MapboxClient;
-use SmartResponsor\Model\Locator\AddressData;
-use SmartResponsor\Model\Locator\GeoPoint;
+namespace Smartresponsor\Strategy\Locator;
+use Smartresponsor\Contract\Locator\LocatorInterface;
+use Smartresponsor\Integration\Locator\Http\MapboxClient;
+use Smartresponsor\Model\Locator\AddressData;
+use Smartresponsor\Model\Locator\GeoPoint;
 final class MapboxLocator implements LocatorInterface{
   public function __construct(private MapboxClient $c){}
   public function normalize(string $raw): AddressData{

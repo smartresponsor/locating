@@ -5,9 +5,9 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\InfrastructureInterface\Locator;
+namespace Smartresponsor\InfrastructureInterface\Locator;
 
-use App\Message\Locator\AddressBatchMessage;
+use Smartresponsor\Message\Locator\AddressBatchMessage;
 
 interface AddressBatchMessageBusInterface
 {

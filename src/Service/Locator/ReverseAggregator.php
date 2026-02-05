@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Service\Locator;
-use SmartResponsor\Contract\Locator\ReverseProviderInterface;
+namespace Smartresponsor\Service\Locator;
+use Smartresponsor\Contract\Locator\ReverseProviderInterface;
 final class ReverseAggregator{
   public function __construct(private array $providers, private Normalizer $normalizer, private HealthMonitor $monitor, private AdaptiveRouter $adaptive, private CircuitBreaker $cb, private RegionRouter $region){}
   public function reverse(float $lat, float $lon, ?string $region=null): array{

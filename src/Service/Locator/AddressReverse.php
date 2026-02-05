@@ -5,15 +5,15 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Service\Locator;
+namespace Smartresponsor\Service\Locator;
 
-use App\Entity\Locator\AddressData;
-use App\Entity\Locator\AddressResult;
-use App\Entity\Locator\AddressStatus;
-use App\Entity\Locator\GeoPoint;
-use App\InfrastructureInterface\Locator\MetricRecorderInterface;
-use App\InfrastructureInterface\Locator\ReverseHttpClientInterface;
-use App\ServiceInterface\Locator\AddressReverseInterface;
+use Smartresponsor\Entity\Locator\AddressData;
+use Smartresponsor\Entity\Locator\AddressResult;
+use Smartresponsor\Entity\Locator\AddressStatus;
+use Smartresponsor\Entity\Locator\GeoPoint;
+use Smartresponsor\InfrastructureInterface\Locator\MetricRecorderInterface;
+use Smartresponsor\InfrastructureInterface\Locator\ReverseHttpClientInterface;
+use Smartresponsor\ServiceInterface\Locator\AddressReverseInterface;
 
 /**
  * Default implementation of AddressReverseInterface backed by a single

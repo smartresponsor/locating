@@ -5,7 +5,7 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\InfrastructureInterface\Locator;
+namespace Smartresponsor\InfrastructureInterface\Locator;
 
 /**
  * Load demo fixture record list for Locator from a NDJSON file.

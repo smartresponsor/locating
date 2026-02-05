@@ -5,10 +5,10 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Controller\Locator;
+namespace Smartresponsor\Controller\Locator;
 
-use App\ControllerInterface\Locator\MetricsControllerInterface;
-use App\InfrastructureInterface\Locator\MetricSnapshotProviderInterface;
+use Smartresponsor\ControllerInterface\Locator\MetricsControllerInterface;
+use Smartresponsor\InfrastructureInterface\Locator\MetricSnapshotProviderInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Service\Locator;
-use SmartResponsor\Contract\Locator\ProviderInterface;
+namespace Smartresponsor\Service\Locator;
+use Smartresponsor\Contract\Locator\ProviderInterface;
 final class ForwardAggregator{
   public function __construct(private array $providers, private HealthMonitor $monitor, private AdaptiveRouter $adaptive, private CircuitBreaker $cb, private RegionRouter $region){}
   public function locate(string $q, ?string $region=null): array{

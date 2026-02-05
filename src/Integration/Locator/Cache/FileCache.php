@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Locator\Cache;
+namespace Smartresponsor\Integration\Locator\Cache;
 final class FileCache{
   private string $dir;
   public function __construct(private int $ttl=600, private int $staleTtl=86400){

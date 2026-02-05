@@ -5,13 +5,13 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Service\Locator;
+namespace Smartresponsor\Service\Locator;
 
-use App\Entity\Locator\AddressData;
-use App\Entity\Locator\AddressResult;
-use App\ServiceInterface\Locator\AddressGeocodeBridgeInterface;
-use App\ServiceInterface\Locator\AddressProviderRouterInterface;
-use App\ServiceInterface\Locator\AddressQuotaGuardInterface;
+use Smartresponsor\Entity\Locator\AddressData;
+use Smartresponsor\Entity\Locator\AddressResult;
+use Smartresponsor\ServiceInterface\Locator\AddressGeocodeBridgeInterface;
+use Smartresponsor\ServiceInterface\Locator\AddressProviderRouterInterface;
+use Smartresponsor\ServiceInterface\Locator\AddressQuotaGuardInterface;
 
 /**
  * Optional geocoding step that uses a provider router and per-tenant quota guard.

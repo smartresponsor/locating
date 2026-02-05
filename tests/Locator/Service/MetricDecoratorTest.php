@@ -5,18 +5,18 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-        namespace App\Tests\Locator\Service;
+        namespace Smartresponsor\Tests\Locator\Service;
 
-        use App\Entity\Locator\AddressInput;
-        use App\Entity\Locator\AddressResult;
-        use App\Entity\Locator\AddressStatus;
-        use App\InfrastructureInterface\Locator\MetricRecorderInterface;
-        use App\Service\Locator\AddressBatchServiceMetricDecorator;
-        use App\Service\Locator\AddressPipelineMetricDecorator;
-        use App\Service\Locator\AddressSuggestMetricDecorator;
-        use App\ServiceInterface\Locator\AddressBatchServiceInterface;
-        use App\ServiceInterface\Locator\AddressPipelineInterface;
-        use App\ServiceInterface\Locator\AddressSuggestInterface;
+        use Smartresponsor\Entity\Locator\AddressInput;
+        use Smartresponsor\Entity\Locator\AddressResult;
+        use Smartresponsor\Entity\Locator\AddressStatus;
+        use Smartresponsor\InfrastructureInterface\Locator\MetricRecorderInterface;
+        use Smartresponsor\Service\Locator\AddressBatchServiceMetricDecorator;
+        use Smartresponsor\Service\Locator\AddressPipelineMetricDecorator;
+        use Smartresponsor\Service\Locator\AddressSuggestMetricDecorator;
+        use Smartresponsor\ServiceInterface\Locator\AddressBatchServiceInterface;
+        use Smartresponsor\ServiceInterface\Locator\AddressPipelineInterface;
+        use Smartresponsor\ServiceInterface\Locator\AddressSuggestInterface;
         use PHPUnit\Framework\TestCase;
 
         final class MetricDecoratorTest extends TestCase
@@ -65,9 +65,9 @@ declare(strict_types=1);
             public function testAddressBatchServiceMetricDecoratorRecordsCreateJob(): void
             {
                 $inner = new class implements AddressBatchServiceInterface {
-                    public function createJob(string $tenantId, array $itemList): \App\EntityInterface\Locator\AddressBatchJobInterface
+                    public function createJob(string $tenantId, array $itemList): \Smartresponsor\EntityInterface\Locator\AddressBatchJobInterface
                     {
-                        return new class implements \App\EntityInterface\Locator\AddressBatchJobInterface {
+                        return new class implements \Smartresponsor\EntityInterface\Locator\AddressBatchJobInterface {
                             public function jobId(): string
                             {
                                 return 'job-1';
@@ -78,9 +78,9 @@ declare(strict_types=1);
                                 return 'tenant-demo';
                             }
 
-                            public function jobStatus(): \App\Entity\Locator\AddressBatchJobStatus
+                            public function jobStatus(): \Smartresponsor\Entity\Locator\AddressBatchJobStatus
                             {
-                                return \App\Entity\Locator\AddressBatchJobStatus::PENDING;
+                                return \Smartresponsor\Entity\Locator\AddressBatchJobStatus::PENDING;
                             }
 
                             public function totalCount(): int
@@ -105,7 +105,7 @@ declare(strict_types=1);
                         };
                     }
 
-                    public function jobStatus(string $jobId): ?\App\EntityInterface\Locator\AddressBatchJobInterface
+                    public function jobStatus(string $jobId): ?\Smartresponsor\EntityInterface\Locator\AddressBatchJobInterface
                     {
                         return null;
                     }

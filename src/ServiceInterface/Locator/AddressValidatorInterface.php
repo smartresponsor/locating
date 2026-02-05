@@ -5,11 +5,11 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\ServiceInterface\Locator;
+namespace Smartresponsor\ServiceInterface\Locator;
 
-use App\Entity\Locator\AddressData;
-use App\Entity\Locator\AddressStatus;
-use App\EntityInterface\Locator\AddressValidationIssueInterface;
+use Smartresponsor\Entity\Locator\AddressData;
+use Smartresponsor\Entity\Locator\AddressStatus;
+use Smartresponsor\EntityInterface\Locator\AddressValidationIssueInterface;
 
 interface AddressValidatorInterface
 {

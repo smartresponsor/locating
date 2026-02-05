@@ -2,11 +2,11 @@
 declare(strict_types=1);
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
- * SmartResponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace App\Service\Locator;
+namespace Smartresponsor\Service\Locator;
 final class TimeoutCalibrator implements TimeoutCalibratorInterface {
     public function __construct(private int $minMs=200, private int $maxMs=3000){}
     public function calibrate(int $baseMs, float $p95Ms, float $errorRate): int {

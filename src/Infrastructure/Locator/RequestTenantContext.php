@@ -5,9 +5,9 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Infrastructure\Locator;
+namespace Smartresponsor\Infrastructure\Locator;
 
-use App\EntityInterface\Locator\TenantContextInterface;
+use Smartresponsor\EntityInterface\Locator\TenantContextInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 
 /**

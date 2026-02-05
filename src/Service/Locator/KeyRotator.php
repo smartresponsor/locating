@@ -2,11 +2,11 @@
 declare(strict_types=1);
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
- * SmartResponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace App\Service\Locator;
+namespace Smartresponsor\Service\Locator;
 final class KeyRotator implements KeyRotatorInterface {
     /** @var array<string, array<int, array{key:string,start:int,revoke:int}>> */
     private array $map = [];

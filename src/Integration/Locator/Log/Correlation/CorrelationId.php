@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Locator\Log\Correlation;
+namespace Smartresponsor\Integration\Locator\Log\Correlation;
 final class CorrelationId{
   private static ?string $current = null;
   public static function generate(): string{ return bin2hex(random_bytes(8)); }

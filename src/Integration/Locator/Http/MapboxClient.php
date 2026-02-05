@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Locator\Http;
-use SmartResponsor\Integration\Http\SimpleHttp;
+namespace Smartresponsor\Integration\Locator\Http;
+use Smartresponsor\Integration\Http\SimpleHttp;
 final class MapboxClient{
   public function __construct(private string $key, private string $base='https://api.mapbox.com', private int $timeout=10){}
   public function geocode(string $q): array{

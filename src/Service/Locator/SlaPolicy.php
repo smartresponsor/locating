@@ -2,13 +2,13 @@
 declare(strict_types=1);
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
- * SmartResponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace App\Service\Locator;
+namespace Smartresponsor\Service\Locator;
 
-use App\ServiceInterface\Locator\SlaPolicyInterface;
+use Smartresponsor\ServiceInterface\Locator\SlaPolicyInterface;
 final class SlaPolicy implements SlaPolicyInterface {
     public function weight(float $p95MsTarget, float $p95MsObserved, float $errorTarget, float $errorObserved): float {
         $latW = max(0.0, 1.0 - max(0.0, ($p95MsObserved - $p95MsTarget)) / max(1.0, $p95MsTarget));

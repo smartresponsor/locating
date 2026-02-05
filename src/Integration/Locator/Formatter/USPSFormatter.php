@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
-namespace SmartResponsor\Integration\Locator\Formatter;
-use SmartResponsor\Model\Locator\AddressData;
+namespace Smartresponsor\Integration\Locator\Formatter;
+use Smartresponsor\Model\Locator\AddressData;
 final class USPSFormatter{
   public static function formatZip(string $zip5, string $zip4): string{
     return $zip4 !== '' ? ($zip5 . '-' . $zip4) : $zip5;

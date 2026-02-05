@@ -5,16 +5,16 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Service\Locator;
+namespace Smartresponsor\Service\Locator;
 
-use App\Entity\Locator\AddressInput;
-use App\Entity\Locator\AddressResult;
-use App\Entity\Locator\AddressStatus;
-use App\ServiceInterface\Locator\AddressGeocodeBridgeInterface;
-use App\ServiceInterface\Locator\AddressNormalizerInterface;
-use App\ServiceInterface\Locator\AddressParserInterface;
-use App\ServiceInterface\Locator\AddressPipelineInterface;
-use App\ServiceInterface\Locator\AddressValidatorInterface;
+use Smartresponsor\Entity\Locator\AddressInput;
+use Smartresponsor\Entity\Locator\AddressResult;
+use Smartresponsor\Entity\Locator\AddressStatus;
+use Smartresponsor\ServiceInterface\Locator\AddressGeocodeBridgeInterface;
+use Smartresponsor\ServiceInterface\Locator\AddressNormalizerInterface;
+use Smartresponsor\ServiceInterface\Locator\AddressParserInterface;
+use Smartresponsor\ServiceInterface\Locator\AddressPipelineInterface;
+use Smartresponsor\ServiceInterface\Locator\AddressValidatorInterface;
 
 final class AddressPipeline implements AddressPipelineInterface
 {

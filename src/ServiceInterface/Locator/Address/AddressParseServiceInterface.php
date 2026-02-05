@@ -6,7 +6,7 @@
  */
 
 
-namespace SmartResponsor\ServiceInterface\Locator\Address;
+namespace Smartresponsor\ServiceInterface\Locator\Address;
 
 interface AddressParseServiceInterface
 {
