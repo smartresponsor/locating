@@ -33,12 +33,16 @@ jobs:
           path: |
             ~/.composer/cache/files
             vendor
-          key: ${{ runner.os }}-php82-composer-${{ hashFiles('composer.json') }}
+          key: ${{ runner.os }}-php82-composer-${{ hashFiles('composer.lock') }}
           restore-keys: |
             ${{ runner.os }}-php82-composer-
 
       - name: Validate composer
         run: composer validate --strict
+
+      - name: Ensure composer.lock exists
+        shell: bash
+        run: test -f composer.lock
 
       - name: Install dependencies
         run: composer install --no-interaction --prefer-dist --no-progress
@@ -75,9 +79,13 @@ jobs:
           path: |
             ~/.composer/cache/files
             vendor
-          key: ${{ runner.os }}-php82-composer-${{ hashFiles('composer.json') }}
+          key: ${{ runner.os }}-php82-composer-${{ hashFiles('composer.lock') }}
           restore-keys: |
             ${{ runner.os }}-php82-composer-
+
+      - name: Ensure composer.lock exists
+        shell: bash
+        run: test -f composer.lock
 
       - name: Install dependencies
         run: composer install --no-interaction --prefer-dist --no-progress
@@ -105,9 +113,13 @@ jobs:
           path: |
             ~/.composer/cache/files
             vendor
-          key: ${{ runner.os }}-php82-composer-${{ hashFiles('composer.json') }}
+          key: ${{ runner.os }}-php82-composer-${{ hashFiles('composer.lock') }}
           restore-keys: |
             ${{ runner.os }}-php82-composer-
+
+      - name: Ensure composer.lock exists
+        shell: bash
+        run: test -f composer.lock
 
       - name: Install dependencies
         run: composer install --no-interaction --prefer-dist --no-progress
@@ -135,9 +147,13 @@ jobs:
           path: |
             ~/.composer/cache/files
             vendor
-          key: ${{ runner.os }}-php82-composer-${{ hashFiles('composer.json') }}
+          key: ${{ runner.os }}-php82-composer-${{ hashFiles('composer.lock') }}
           restore-keys: |
             ${{ runner.os }}-php82-composer-
+
+      - name: Ensure composer.lock exists
+        shell: bash
+        run: test -f composer.lock
 
       - name: Install dependencies
         run: composer install --no-interaction --prefer-dist --no-progress
