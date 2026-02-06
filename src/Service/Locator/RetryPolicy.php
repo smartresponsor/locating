@@ -6,6 +6,9 @@ namespace Smartresponsor\Service\Locator;
 
 final class RetryPolicy
 {
+    /** @var list<int> */
+    private const RETRIABLE_STATUS_CODE_LIST = [408, 429, 500, 502, 503, 504];
+
     /**
      * Retry transient transport/provider failures while max attempts are not reached.
      */
@@ -15,7 +18,7 @@ final class RetryPolicy
             return false;
         }
 
-        return in_array($statusCode, [408, 429, 500, 502, 503, 504], true);
+        return in_array($statusCode, self::RETRIABLE_STATUS_CODE_LIST, true);
     }
 
     /**
