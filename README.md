@@ -54,3 +54,8 @@ GitHub Actions workflow `.github/workflows/ci.yml` runs:
 
 - Analysis: `report/locator-production-hardening-plan-2026-02.md`
 - Concrete fix plan and implementation status: `report/locator-production-hardening-fixes-2026-02.md`
+=======
+
+
+Engineering hardening plan
+- See `docs/locator-engineering-plan-2026-02.md` for a prioritized production-hardening backlog and commit units.
