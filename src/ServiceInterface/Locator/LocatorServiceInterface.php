@@ -1,12 +1,8 @@
 <?php
-/**
- * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
- * Owner: Marketing America Corp
- * Author: Oleksandr Tishchenko <dev@smartresponsor.com>
- */
+# Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
+declare(strict_types=1);
 
-
-namespace Smartresponsor\ServiceInterface\Locator\Locator;
+namespace Smartresponsor\ServiceInterface\Locator;
 
 interface LocatorServiceInterface
 {

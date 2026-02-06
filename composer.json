@@ -26,8 +26,8 @@
   "prefer-stable": true,
   "scripts": {
     "lint": "php -l src/Controller/Locator/StatusController.php",
-    "stan": "phpstan analyse -c phpstan.neon",
-    "test": "phpunit -c phpunit.xml.dist",
-    "test:locator": "phpunit -c phpunit.xml.dist tests/Locator"
+    "stan": "php vendor/bin/phpstan analyse -c phpstan.neon",
+    "test": "php vendor/bin/phpunit -c phpunit.xml.dist",
+    "test:locator": "php vendor/bin/phpunit -c phpunit.xml.dist tests/Locator"
   }
 }

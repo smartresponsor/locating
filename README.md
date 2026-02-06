@@ -1,26 +1,60 @@
-Locator (Smartresponsor) — winner repository
+# Locator (Smartresponsor)
 
-This folder is a consolidated "winner" snapshot assembled from multiple archived Locator artifacts.
+Locator is a PHP 8.2+ geocoding and address-processing component with provider routing, caching, resilience decorators, tenant-aware controls, and observability hooks.
 
-What was done
-- Unpacked all provided archives and normalized project root (no wrapper folder in the final ZIP).
-- Selected the baseline from locator-src-current.zip (kept as the primary winner).
-- Imported the R30–R40 planning/report documents into report/legacy/locator-r30-r40/.
-- Imported the sketches meta index files into report/legacy/location-sketches15-30/.
-- Repaired composer.json to be valid JSON (the same invalid composer.json was present in all inputs).
+## Quick start
 
-How to use (quick)
-1) composer validate
-2) composer install
-3) composer test
+1. Validate dependencies and metadata:
+   ```bash
+   composer validate --strict
+   ```
+2. Install dependencies:
+   ```bash
+   composer install
+   ```
+3. Run default test suite:
+   ```bash
+   composer test
+   ```
 
-Merge evidence
-See report/merge/ for collision index (paths where archives differed) and build statistics.
+## Project structure
 
-Canon notes
-- The final ZIP is flat-root (project files are at ZIP root, no outer wrapper folder).
-- .git and IDE folders were removed from the winner snapshot.
+- `src/Contract` and `src/ServiceInterface`: public and internal service contracts (currently being converged).
+- `src/Service`, `src/Entity`: domain logic and value models.
+- `src/Integration`, `src/Infrastructure`: provider adapters, caches, rate-limiters, telemetry, and runtime integration pieces.
+- `src/Controller`: HTTP endpoints for locator operations and status/metrics.
+- `config/routes`: route declarations for API endpoints.
+- `tests/Locator`: unit, integration, contract, and smoke tests.
+- `docs` and `report`: architecture notes, operational guidance, release-readiness and audit materials.
 
+## Testing matrix
+
+Defined in `phpunit.xml.dist`:
+- `locator-unit`
+- `locator-integration`
+- `locator-contract`
+- `locator-smoke`
+
+Examples:
+```bash
+php vendor/bin/phpunit -c phpunit.xml.dist --testsuite locator-unit
+php vendor/bin/phpunit -c phpunit.xml.dist --testsuite locator-contract
+```
+
+## CI
+
+GitHub Actions workflow `.github/workflows/ci.yml` runs:
+- Composer validation
+- Syntax lint
+- PHPUnit test suites
+- PHPStan analysis
+- Smoke gate checks
+
+## Hardening reports
+
+- Analysis: `report/locator-production-hardening-plan-2026-02.md`
+- Concrete fix plan and implementation status: `report/locator-production-hardening-fixes-2026-02.md`
+=======
 
 
 Engineering hardening plan
