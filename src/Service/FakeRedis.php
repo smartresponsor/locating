@@ -2,11 +2,11 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 /**
- * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * App Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace Smartresponsor\Service;
+namespace App\Service;
 final class FakeRedis implements RedisClientInterface {
     /** @var array<string, array{val:int, exp:int}> */
     private array $store = [];

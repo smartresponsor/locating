@@ -6,7 +6,7 @@
  */
 
 
-namespace Smartresponsor\Service;
+namespace App\Service;
 class Geohash {
     private static string $base32 = '0123456789bcdefghjkmnpqrstuvwxyz';
     public static function encode(float $lat, float $lon, int $precision=7): string {

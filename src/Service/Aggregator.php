@@ -1,11 +1,11 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Service;
-use Smartresponsor\Contract\ProviderInterface;
-use Smartresponsor\Integration\Cache\FileCache;
-use Smartresponsor\Integration\Throttle\ProviderThrottle;
-use Smartresponsor\Integration\Metrics\PrometheusExporter;
+namespace App\Service;
+use App\Contract\ProviderInterface;
+use App\Integration\Cache\FileCache;
+use App\Integration\Throttle\ProviderThrottle;
+use App\Integration\Metrics\PrometheusExporter;
 
 final class Aggregator{
   public function __construct(private array $providers, private FileCache $cache, private ProviderThrottle $throttle, private PrometheusExporter $metrics){}

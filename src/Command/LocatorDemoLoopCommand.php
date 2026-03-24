@@ -2,10 +2,10 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 
-namespace Smartresponsor\Command;
+namespace App\Command;
 
-use Smartresponsor\CommandInterface\LocatorDemoLoopCommandInterface;
-use Smartresponsor\ServiceInterface\LocatorDemoLoopInterface;
+use App\CommandInterface\LocatorDemoLoopCommandInterface;
+use App\ServiceInterface\LocatorDemoLoopInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;

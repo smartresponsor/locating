@@ -1,12 +1,12 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Integration\Decorator;
-use Smartresponsor\Contract\LocatorInterface;
-use Smartresponsor\Integration\Http\USPSClient;
-use Smartresponsor\Integration\Formatter\USPSFormatter;
-use Smartresponsor\Model\AddressData;
-use Smartresponsor\Model\GeoPoint;
+namespace App\Integration\Decorator;
+use App\Contract\LocatorInterface;
+use App\Integration\Http\USPSClient;
+use App\Integration\Formatter\USPSFormatter;
+use App\Model\AddressData;
+use App\Model\GeoPoint;
 final class USPSVerifyLocator implements LocatorInterface{
   public function __construct(private LocatorInterface $inner, private USPSClient $client){}
   private static function tryParseUSLine(string $raw): ?array{

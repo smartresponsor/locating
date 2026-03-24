@@ -2,12 +2,12 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 /**
- * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * App Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
 namespace Tests;
-use Smartresponsor\Layer\AdaptiveTimeout;
+use App\Layer\AdaptiveTimeout;
 final class AdaptiveTimeoutTest {
     public function testTimeoutIncreasesWithLatency(): void {
         $a = new AdaptiveTimeout(0.9, 50, 2000);

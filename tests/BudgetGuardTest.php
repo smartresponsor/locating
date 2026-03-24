@@ -2,12 +2,12 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 /**
- * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * App Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
 namespace Tests;
-use Smartresponsor\Layer\{BudgetGuard, CostCapPolicy};
+use App\Layer\{BudgetGuard, CostCapPolicy};
 final class BudgetGuardTest {
     public function testBudget(): void {
         $g = new BudgetGuard(['t'=>['geocode'=>['cap'=>10.0,'used'=>0.0]]]);

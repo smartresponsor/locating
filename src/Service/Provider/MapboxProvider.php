@@ -6,11 +6,11 @@
  */
 
 
-namespace Smartresponsor\Service\Provider;
+namespace App\Service\Provider;
 
-use Smartresponsor\Domain\Config\Env;
-use Smartresponsor\Infrastructure\Http\HttpClient;
-use Smartresponsor\ServiceInterface\Provider\GeocodeProviderInterface;
+use App\Domain\Config\Env;
+use App\Infrastructure\Http\HttpClient;
+use App\ServiceInterface\Provider\GeocodeProviderInterface;
 
 class MapboxProvider implements GeocodeProviderInterface
 {

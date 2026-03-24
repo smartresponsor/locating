@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Tests\Address;
 
-use Smartresponsor\Entity\AddressData;
-use Smartresponsor\Entity\AddressResult;
-use Smartresponsor\Entity\AddressStatus;
-use Smartresponsor\Entity\AddressValidationIssue;
-use Smartresponsor\Entity\GeoPoint;
+use App\Entity\AddressData;
+use App\Entity\AddressResult;
+use App\Entity\AddressStatus;
+use App\Entity\AddressValidationIssue;
+use App\Entity\GeoPoint;
 use PHPUnit\Framework\TestCase;
 
 final class AddressContractTest extends TestCase

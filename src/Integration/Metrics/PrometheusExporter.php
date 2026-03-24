@@ -2,7 +2,7 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 
-namespace Smartresponsor\Integration\Metrics;
+namespace App\Integration\Metrics;
 
 final class PrometheusExporter
 {

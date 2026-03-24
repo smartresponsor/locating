@@ -1,11 +1,11 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Integration\Decorator;
-use Smartresponsor\Contract\LocatorInterface;
-use Smartresponsor\Integration\Cache\CacheInterface;
-use Smartresponsor\Model\AddressData;
-use Smartresponsor\Model\GeoPoint;
+namespace App\Integration\Decorator;
+use App\Contract\LocatorInterface;
+use App\Integration\Cache\CacheInterface;
+use App\Model\AddressData;
+use App\Model\GeoPoint;
 final class MultiCachedLocator implements LocatorInterface{
   private const NEG = '__NEG__';
   public function __construct(private LocatorInterface $inner, private CacheInterface $cache, private int $ttl=600, private int $negTtl=60){}

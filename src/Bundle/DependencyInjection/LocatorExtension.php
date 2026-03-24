@@ -1,16 +1,16 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Bundle\DependencyInjection;
+namespace App\Bundle\DependencyInjection;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Reference;
-use Smartresponsor\Integration\Factory\RedisFactory;
-use Smartresponsor\Integration\Cache\RedisCache;
-use Smartresponsor\Integration\RateLimit\RedisRateLimiter;
-use Smartresponsor\Integration\Http\NominatimClient;
-use Smartresponsor\Strategy\OpenStreetMapLocator;
-use Smartresponsor\Service\LocationLocatorService;
+use App\Integration\Factory\RedisFactory;
+use App\Integration\Cache\RedisCache;
+use App\Integration\RateLimit\RedisRateLimiter;
+use App\Integration\Http\NominatimClient;
+use App\Strategy\OpenStreetMapLocator;
+use App\Service\LocationLocatorService;
 final class LocatorExtension extends Extension{
   public function load(array $configs, ContainerBuilder $container): void{
     $configuration = new Configuration();

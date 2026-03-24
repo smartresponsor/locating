@@ -2,7 +2,7 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 
-namespace Smartresponsor\Tests\Contract;
+namespace App\Tests\Contract;
 
 use PHPUnit\Framework\TestCase;
 
@@ -19,9 +19,9 @@ final class RouteControllerWiringTest extends TestCase
 
         foreach (array_values(array_unique($controllers)) as $controller) {
             self::assertStringStartsWith(
-                'Smartresponsor\\Controller\\',
+                'App\\Controller\\',
                 $controller,
-                sprintf('Controller must use Smartresponsor namespace: %s', $controller)
+                sprintf('Controller must use App namespace: %s', $controller)
             );
             self::assertTrue(class_exists($controller), sprintf('Controller class not found: %s', $controller));
             self::assertTrue(method_exists($controller, '__invoke'), sprintf('Controller must be invokable: %s', $controller));

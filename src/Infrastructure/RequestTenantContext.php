@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Infrastructure;
+namespace App\Infrastructure;
 
-use Smartresponsor\EntityInterface\TenantContextInterface;
+use App\EntityInterface\TenantContextInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 
 /**

@@ -2,11 +2,11 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 /**
- * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * App Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace Smartresponsor\Entity;
+namespace App\Entity;
 final class CostAwareness {
     public function score(float $latencyMs, float $health, float $unitCost, float $budgetLeft, float $costBias=0.5): float {
         $lat = max(1.0, $latencyMs);

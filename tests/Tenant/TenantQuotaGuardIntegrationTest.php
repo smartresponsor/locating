@@ -5,10 +5,10 @@ declare(strict_types=1);
 
 namespace Tests\Tenant;
 
-use Smartresponsor\Entity\TenantContext;
-use Smartresponsor\Infrastructure\ArrayTenantConfigRepository;
-use Smartresponsor\Infrastructure\InMemoryTenantUsageCounter;
-use Smartresponsor\Service\AddressQuotaGuard;
+use App\Entity\TenantContext;
+use App\Infrastructure\ArrayTenantConfigRepository;
+use App\Infrastructure\InMemoryTenantUsageCounter;
+use App\Service\AddressQuotaGuard;
 use PHPUnit\Framework\TestCase;
 
 final class TenantQuotaGuardIntegrationTest extends TestCase

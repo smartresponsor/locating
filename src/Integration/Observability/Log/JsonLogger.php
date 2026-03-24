@@ -1,7 +1,7 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Integration\Observability\Log;
+namespace App\Integration\Observability\Log;
 final class JsonLogger{
   private ?string $file;
   public function __construct(private string $service='locator', string $target='stdout'){

@@ -6,7 +6,7 @@
  */
 
 
-namespace Smartresponsor\ServiceInterface\Address;
+namespace App\ServiceInterface\Address;
 
 interface AddressStandardizeServiceInterface
 {

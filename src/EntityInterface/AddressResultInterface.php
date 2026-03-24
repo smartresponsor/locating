@@ -3,11 +3,11 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\EntityInterface;
+namespace App\EntityInterface;
 
-use Smartresponsor\Entity\AddressData;
-use Smartresponsor\Entity\AddressStatus;
-use Smartresponsor\Entity\GeoPoint;
+use App\Entity\AddressData;
+use App\Entity\AddressStatus;
+use App\Entity\GeoPoint;
 
 interface AddressResultInterface
 {

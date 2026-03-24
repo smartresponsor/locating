@@ -3,10 +3,10 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Infrastructure;
+namespace App\Infrastructure;
 
-use Smartresponsor\EntityInterface\AddressBatchJobInterface;
-use Smartresponsor\InfrastructureInterface\AddressBatchJobRepositoryInterface;
+use App\EntityInterface\AddressBatchJobInterface;
+use App\InfrastructureInterface\AddressBatchJobRepositoryInterface;
 
 /**
  * Simple in-memory repository suitable for development and tests.

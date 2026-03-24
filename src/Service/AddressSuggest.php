@@ -3,11 +3,11 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Service;
+namespace App\Service;
 
-use Smartresponsor\EntityInterface\AddressSuggestionInterface;
-use Smartresponsor\InfrastructureInterface\AddressSuggestProviderInterface;
-use Smartresponsor\ServiceInterface\AddressSuggestInterface;
+use App\EntityInterface\AddressSuggestionInterface;
+use App\InfrastructureInterface\AddressSuggestProviderInterface;
+use App\ServiceInterface\AddressSuggestInterface;
 
 /**
  * Address suggest service that delegates to one or more providers.

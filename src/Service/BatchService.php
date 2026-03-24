@@ -2,11 +2,11 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 /**
- * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * App Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace Smartresponsor\Service;
+namespace App\Service;
 final class BatchService {
     private int $max = 100;
     public function handle(array $items, int $deadlineMs=1000): array {

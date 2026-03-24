@@ -1,7 +1,7 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Integration\Throttle;
+namespace App\Integration\Throttle;
 final class ProviderThrottle{
   private string $dir; private array $cfg=[];
   public function __construct(string $spec){

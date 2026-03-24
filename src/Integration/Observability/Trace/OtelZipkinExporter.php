@@ -1,7 +1,7 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Integration\Observability\Trace;
+namespace App\Integration\Observability\Trace;
 final class OtelZipkinExporter{
   public function __construct(private string $endpoint){}
   /** @param list<Span> $spans */

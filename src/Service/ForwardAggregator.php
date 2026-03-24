@@ -1,8 +1,8 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Service;
-use Smartresponsor\Contract\ProviderInterface;
+namespace App\Service;
+use App\Contract\ProviderInterface;
 final class ForwardAggregator{
   public function __construct(private array $providers, private HealthMonitor $monitor, private AdaptiveRouter $adaptive, private CircuitBreaker $cb, private RegionRouter $region){}
   public function locate(string $q, ?string $region=null): array{

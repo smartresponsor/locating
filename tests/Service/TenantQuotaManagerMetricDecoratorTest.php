@@ -3,11 +3,11 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Tests\Service;
+namespace App\Tests\Service;
 
-use Smartresponsor\Infrastructure\InMemoryMetricRecorder;
-use Smartresponsor\Service\TenantQuotaManager;
-use Smartresponsor\Service\TenantQuotaManagerMetricDecorator;
+use App\Infrastructure\InMemoryMetricRecorder;
+use App\Service\TenantQuotaManager;
+use App\Service\TenantQuotaManagerMetricDecorator;
 use PHPUnit\Framework\TestCase;
 
 final class TenantQuotaManagerMetricDecoratorTest extends TestCase

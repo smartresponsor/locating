@@ -1,7 +1,7 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Integration;
+namespace App\Integration;
 final class LocatorConfig{
   /** @param list<string> $providers */
   public function __construct(

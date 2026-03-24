@@ -2,9 +2,9 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 
-namespace Smartresponsor\Console;
+namespace App\Console;
 
-use Smartresponsor\Service\LocationLocatorService;
+use App\Service\LocationLocatorService;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;

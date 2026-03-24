@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Infrastructure;
+namespace App\Infrastructure;
 
-use Smartresponsor\InfrastructureInterface\TenantUsageCounterInterface;
+use App\InfrastructureInterface\TenantUsageCounterInterface;
 
 /**
  * Naive in-memory usage counter with a simple 60 second window.

@@ -2,11 +2,11 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 /**
- * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * App Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace Smartresponsor\Service;
+namespace App\Service;
 final class ProviderOrder implements ProviderOrderInterface {
     public function __construct(private ScoreEnsemble $ensemble, private HealthEwma $health) {}
     public function rank(array $signal, BanditPolicyInterface $bandit): array {

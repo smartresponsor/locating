@@ -3,11 +3,11 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Service;
+namespace App\Service;
 
-use Smartresponsor\Entity\AddressInput;
-use Smartresponsor\Entity\AddressData;
-use Smartresponsor\ServiceInterface\AddressParserInterface;
+use App\Entity\AddressInput;
+use App\Entity\AddressData;
+use App\ServiceInterface\AddressParserInterface;
 
 /**
  * Simple parser that prefers structured data and falls back to raw line heuristics.

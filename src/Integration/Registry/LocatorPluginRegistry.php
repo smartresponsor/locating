@@ -1,8 +1,8 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Integration\Registry;
-use Smartresponsor\Contract\Provider\LocatorProviderInterface;
+namespace App\Integration\Registry;
+use App\Contract\Provider\LocatorProviderInterface;
 final class LocatorPluginRegistry{
   /** @var list<LocatorProviderInterface> */
   private array $providers = [];

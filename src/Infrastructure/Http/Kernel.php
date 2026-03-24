@@ -2,14 +2,14 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 
-namespace Smartresponsor\Infrastructure\Http;
+namespace App\Infrastructure\Http;
 
-use Smartresponsor\Domain\Config\Env;
-use Smartresponsor\Service\Address\AddressParseService;
-use Smartresponsor\Service\Address\AddressStandardizeService;
-use Smartresponsor\Service\LocationLocatorService;
-use Smartresponsor\Service\Provider\ProviderRouter;
-use Smartresponsor\Infrastructure\Cache\RedisCache;
+use App\Domain\Config\Env;
+use App\Service\Address\AddressParseService;
+use App\Service\Address\AddressStandardizeService;
+use App\Service\LocationLocatorService;
+use App\Service\Provider\ProviderRouter;
+use App\Infrastructure\Cache\RedisCache;
 
 class Kernel
 {

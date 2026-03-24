@@ -3,15 +3,15 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Service;
+namespace App\Service;
 
-use Smartresponsor\Entity\AddressData;
-use Smartresponsor\Entity\AddressResult;
-use Smartresponsor\Entity\AddressStatus;
-use Smartresponsor\Entity\GeoPoint;
-use Smartresponsor\InfrastructureInterface\MetricRecorderInterface;
-use Smartresponsor\InfrastructureInterface\ReverseHttpClientInterface;
-use Smartresponsor\ServiceInterface\AddressReverseInterface;
+use App\Entity\AddressData;
+use App\Entity\AddressResult;
+use App\Entity\AddressStatus;
+use App\Entity\GeoPoint;
+use App\InfrastructureInterface\MetricRecorderInterface;
+use App\InfrastructureInterface\ReverseHttpClientInterface;
+use App\ServiceInterface\AddressReverseInterface;
 
 /**
  * Default implementation of AddressReverseInterface backed by a single

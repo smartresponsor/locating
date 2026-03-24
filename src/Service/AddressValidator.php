@@ -3,13 +3,13 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Service;
+namespace App\Service;
 
-use Smartresponsor\Entity\AddressData;
-use Smartresponsor\Entity\AddressStatus;
-use Smartresponsor\Entity\AddressValidationIssue;
-use Smartresponsor\EntityInterface\AddressValidationIssueInterface;
-use Smartresponsor\ServiceInterface\AddressValidatorInterface;
+use App\Entity\AddressData;
+use App\Entity\AddressStatus;
+use App\Entity\AddressValidationIssue;
+use App\EntityInterface\AddressValidationIssueInterface;
+use App\ServiceInterface\AddressValidatorInterface;
 
 final class AddressValidator implements AddressValidatorInterface
 {

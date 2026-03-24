@@ -3,12 +3,12 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Service;
+namespace App\Service;
 
-use Smartresponsor\Entity\AddressInput;
-use Smartresponsor\Entity\AddressResult;
-use Smartresponsor\InfrastructureInterface\MetricRecorderInterface;
-use Smartresponsor\ServiceInterface\AddressPipelineInterface;
+use App\Entity\AddressInput;
+use App\Entity\AddressResult;
+use App\InfrastructureInterface\MetricRecorderInterface;
+use App\ServiceInterface\AddressPipelineInterface;
 
 /**
  * Decorator that records latency and success/error counters for AddressPipelineInterface.

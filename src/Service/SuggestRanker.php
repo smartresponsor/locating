@@ -3,11 +3,11 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Service;
+namespace App\Service;
 
-use Smartresponsor\Entity\AddressSuggestion;
-use Smartresponsor\EntityInterface\AddressSuggestionInterface;
-use Smartresponsor\ServiceInterface\SuggestRankerInterface;
+use App\Entity\AddressSuggestion;
+use App\EntityInterface\AddressSuggestionInterface;
+use App\ServiceInterface\SuggestRankerInterface;
 
 final class SuggestRanker implements SuggestRankerInterface
 {

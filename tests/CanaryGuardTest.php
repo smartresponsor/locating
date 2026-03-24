@@ -2,12 +2,12 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 /**
- * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * App Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
 namespace Tests;
-use Smartresponsor\Layer\CanaryGuard;
+use App\Layer\CanaryGuard;
 final class CanaryGuardTest {
     public function testDecide(): void {
         $g = new CanaryGuard(0.02, 800, 1.2);

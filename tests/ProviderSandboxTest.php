@@ -2,13 +2,13 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 /**
- * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * App Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
 namespace Tests;
-use Smartresponsor\Layer\ProviderSandbox;
-use Smartresponsor\Layer\FakeProvider;
+use App\Layer\ProviderSandbox;
+use App\Layer\FakeProvider;
 final class ProviderSandboxTest {
     public function testRoute(): void {
         $s = new ProviderSandbox();

@@ -3,11 +3,11 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Infrastructure;
+namespace App\Infrastructure;
 
-use Smartresponsor\EntityInterface\TenantLimitInterface;
-use Smartresponsor\Entity\TenantLimit;
-use Smartresponsor\InfrastructureInterface\TenantConfigRepositoryInterface;
+use App\EntityInterface\TenantLimitInterface;
+use App\Entity\TenantLimit;
+use App\InfrastructureInterface\TenantConfigRepositoryInterface;
 
 /**
  * Simple array-based tenant config repository.

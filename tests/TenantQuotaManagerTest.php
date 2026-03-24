@@ -2,12 +2,12 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 /**
- * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * App Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
 namespace Tests;
-use Smartresponsor\Layer\TenantQuotaManager;
+use App\Layer\TenantQuotaManager;
 final class TenantQuotaManagerTest {
     public function testAllowAndRemaining(): void {
         $q = new TenantQuotaManager(['t'=>['geocode'=>['limit'=>2,'used'=>0]]]);

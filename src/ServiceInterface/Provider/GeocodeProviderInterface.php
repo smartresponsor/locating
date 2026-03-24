@@ -6,7 +6,7 @@
  */
 
 
-namespace Smartresponsor\ServiceInterface\Provider;
+namespace App\ServiceInterface\Provider;
 
 interface GeocodeProviderInterface
 {

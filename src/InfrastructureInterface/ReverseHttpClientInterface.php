@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\InfrastructureInterface;
+namespace App\InfrastructureInterface;
 
 /**
  * Low-level HTTP client for reverse geocoding.

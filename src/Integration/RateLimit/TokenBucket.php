@@ -1,8 +1,8 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Integration\RateLimit;
-use Smartresponsor\Contract\RateLimit\RateLimiterInterface;
+namespace App\Integration\RateLimit;
+use App\Contract\RateLimit\RateLimiterInterface;
 final class TokenBucket implements RateLimiterInterface{
   private float $tokens;
   private float $last;

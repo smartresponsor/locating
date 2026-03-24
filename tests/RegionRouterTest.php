@@ -2,14 +2,14 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 /**
- * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * App Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
 namespace Tests;
-use Smartresponsor\Layer\RegionRouter;
-use Smartresponsor\Layer\CircuitBreaker;
-use Smartresponsor\Layer\Jitter;
+use App\Layer\RegionRouter;
+use App\Layer\CircuitBreaker;
+use App\Layer\Jitter;
 final class RegionRouterTest {
     public function testSelect(): void {
         $rr = new RegionRouter();

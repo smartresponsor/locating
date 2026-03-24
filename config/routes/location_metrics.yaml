@@ -1,5 +1,5 @@
 locator_metrics:
   path: /locator/metrics
-  controller: Smartresponsor\Controller\MetricsController
+  controller: App\Controller\MetricsController
   methods: [GET]
 

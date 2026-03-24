@@ -6,7 +6,7 @@
  */
 
 
-namespace Smartresponsor\Entity\Config;
+namespace App\Entity\Config;
 
 class Env
 {

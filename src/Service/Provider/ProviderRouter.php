@@ -6,12 +6,12 @@
  */
 
 
-namespace Smartresponsor\Service\Provider;
-use Smartresponsor\Domain\Config\Env;
-use Smartresponsor\Infrastructure\Cache\RedisCache;
-use Smartresponsor\Infrastructure\Resilience\CircuitBreaker;
-use Smartresponsor\Infrastructure\Resilience\ProviderBudget;
-use Smartresponsor\Infrastructure\Resilience\Hedger;
+namespace App\Service\Provider;
+use App\Domain\Config\Env;
+use App\Infrastructure\Cache\RedisCache;
+use App\Infrastructure\Resilience\CircuitBreaker;
+use App\Infrastructure\Resilience\ProviderBudget;
+use App\Infrastructure\Resilience\Hedger;
 
 class ProviderRouter {
     private Env $env; private RedisCache $cache;

@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Entity;
+namespace App\Entity;
 
-use Smartresponsor\EntityInterface\AddressBatchJobInterface;
+use App\EntityInterface\AddressBatchJobInterface;
 
 final class AddressBatchJob implements AddressBatchJobInterface
 {

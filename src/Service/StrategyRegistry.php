@@ -1,9 +1,9 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Service;
-use Smartresponsor\Contract\ProviderInterface;
-use Smartresponsor\Contract\ReverseProviderInterface;
+namespace App\Service;
+use App\Contract\ProviderInterface;
+use App\Contract\ReverseProviderInterface;
 final class StrategyRegistry{
   private array $providers=[];
   public function add(object $p): void{ $this->providers[method_exists($p,'name')?$p->name():get_class($p)]=$p; }

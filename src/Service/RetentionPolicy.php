@@ -3,9 +3,9 @@
 
 declare(strict_types=1);
 
-namespace Smartresponsor\Service;
+namespace App\Service;
 
-use Smartresponsor\ServiceInterface\RetentionInterface;
+use App\ServiceInterface\RetentionInterface;
 
 final class RetentionPolicy implements RetentionInterface
 {

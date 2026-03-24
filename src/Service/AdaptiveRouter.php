@@ -1,7 +1,7 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Service;
+namespace App\Service;
 final class AdaptiveRouter{
   public function __construct(private HealthMonitor $monitor, private int $minScore=-800){}
   public function order(array $providers): array{

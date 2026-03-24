@@ -3,16 +3,16 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Tests\Address;
+namespace App\Tests\Address;
 
-use Smartresponsor\Controller\AddressReverseController;
-use Smartresponsor\Entity\AddressData;
-use Smartresponsor\Entity\AddressResult;
-use Smartresponsor\Entity\AddressStatus;
-use Smartresponsor\Entity\GeoPoint;
-use Smartresponsor\Service\AddressQuotaGuard;
-use Smartresponsor\ServiceInterface\AddressQuotaGuardInterface;
-use Smartresponsor\ServiceInterface\AddressReverseInterface;
+use App\Controller\AddressReverseController;
+use App\Entity\AddressData;
+use App\Entity\AddressResult;
+use App\Entity\AddressStatus;
+use App\Entity\GeoPoint;
+use App\Service\AddressQuotaGuard;
+use App\ServiceInterface\AddressQuotaGuardInterface;
+use App\ServiceInterface\AddressReverseInterface;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 

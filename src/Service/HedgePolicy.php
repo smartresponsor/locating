@@ -2,11 +2,11 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 /**
- * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * App Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace Smartresponsor\Service;
+namespace App\Service;
 final class HedgePolicy implements HedgePolicyInterface {
     public function __construct(private float $p=0.9, private int $min=50, private int $max=1500){}
     public function delayMs(array $latencySample): int {

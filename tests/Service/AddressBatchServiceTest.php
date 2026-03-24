@@ -2,19 +2,19 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 
-namespace Smartresponsor\Tests\Service;
+namespace App\Tests\Service;
 
 use PHPUnit\Framework\TestCase;
-use Smartresponsor\Entity\AddressInput;
-use Smartresponsor\Entity\AddressResult;
-use Smartresponsor\Entity\AddressStatus;
-use Smartresponsor\EntityInterface\AddressBatchJobInterface;
-use Smartresponsor\Infrastructure\InMemoryAddressBatchJobRepository;
-use Smartresponsor\Infrastructure\InMemoryAddressBatchMessageBus;
-use Smartresponsor\Infrastructure\InMemoryAddressBatchResultStorage;
-use Smartresponsor\MessageHandler\AddressBatchMessageHandler;
-use Smartresponsor\Service\LocationAddressBatchService;
-use Smartresponsor\ServiceInterface\AddressPipelineInterface;
+use App\Entity\AddressInput;
+use App\Entity\AddressResult;
+use App\Entity\AddressStatus;
+use App\EntityInterface\AddressBatchJobInterface;
+use App\Infrastructure\InMemoryAddressBatchJobRepository;
+use App\Infrastructure\InMemoryAddressBatchMessageBus;
+use App\Infrastructure\InMemoryAddressBatchResultStorage;
+use App\MessageHandler\AddressBatchMessageHandler;
+use App\Service\LocationAddressBatchService;
+use App\ServiceInterface\AddressPipelineInterface;
 
 final class LocationAddressBatchServiceTest extends TestCase
 {

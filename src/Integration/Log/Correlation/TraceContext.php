@@ -1,7 +1,7 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Integration\Log\Correlation;
+namespace App\Integration\Log\Correlation;
 final class TraceContext{
   private static ?string $traceId=null;
   private static ?string $spanId=null;

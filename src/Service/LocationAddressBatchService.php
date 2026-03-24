@@ -2,16 +2,16 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 
-namespace Smartresponsor\Service;
+namespace App\Service;
 
-use Smartresponsor\Entity\AddressBatchJob;
-use Smartresponsor\EntityInterface\AddressBatchJobInterface;
-use Smartresponsor\EntityInterface\AddressResultInterface;
-use Smartresponsor\InfrastructureInterface\AddressBatchJobRepositoryInterface;
-use Smartresponsor\InfrastructureInterface\AddressBatchMessageBusInterface;
-use Smartresponsor\InfrastructureInterface\AddressBatchResultStorageInterface;
-use Smartresponsor\Message\AddressBatchMessage;
-use Smartresponsor\ServiceInterface\LocationAddressBatchServiceInterface;
+use App\Entity\AddressBatchJob;
+use App\EntityInterface\AddressBatchJobInterface;
+use App\EntityInterface\AddressResultInterface;
+use App\InfrastructureInterface\AddressBatchJobRepositoryInterface;
+use App\InfrastructureInterface\AddressBatchMessageBusInterface;
+use App\InfrastructureInterface\AddressBatchResultStorageInterface;
+use App\Message\AddressBatchMessage;
+use App\ServiceInterface\LocationAddressBatchServiceInterface;
 
 final class LocationAddressBatchService implements LocationAddressBatchServiceInterface
 {

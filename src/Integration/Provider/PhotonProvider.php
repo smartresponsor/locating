@@ -1,8 +1,8 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Integration\Provider;
-use Smartresponsor\Contract\ProviderInterface;
+namespace App\Integration\Provider;
+use App\Contract\ProviderInterface;
 final class PhotonProvider implements ProviderInterface{
   public function __construct(private string $baseUrl){}
   public function name(): string{ return 'photon'; }

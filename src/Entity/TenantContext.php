@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Entity;
+namespace App\Entity;
 
-use Smartresponsor\EntityInterface\TenantContextInterface;
+use App\EntityInterface\TenantContextInterface;
 
 final class TenantContext implements TenantContextInterface
 {

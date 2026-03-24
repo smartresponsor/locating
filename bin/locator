@@ -2,13 +2,13 @@
 <?php
 declare(strict_types=1);
 require __DIR__.'/../vendor/autoload.php';
-use SmartResponsor\Integration\Locator\LocatorConfig;
-use SmartResponsor\Integration\Locator\LocatorSelector;
-use SmartResponsor\Integration\Locator\Http\NominatimClient;
-use SmartResponsor\Integration\Locator\Health\{NominatimHealthCheck,CompositeHealthCheck};
-use SmartResponsor\Service\Locator\LocatorService;
-use SmartResponsor\Model\Locator\AddressData;
-use SmartResponsor\Model\Locator\GeoPoint;
+use App\Integration\Locator\LocatorConfig;
+use App\Integration\Locator\LocatorSelector;
+use App\Integration\Locator\Http\NominatimClient;
+use App\Integration\Locator\Health\{NominatimHealthCheck,CompositeHealthCheck};
+use App\Service\Locator\LocatorService;
+use App\Model\Locator\AddressData;
+use App\Model\Locator\GeoPoint;
 $cmd = $argv[1] ?? 'help';
 $cfg = new LocatorConfig(
   nominatimBaseUrl: getenv('NOMINATIM_BASE_URL') ?: 'https://nominatim.openstreetmap.org',

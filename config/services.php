@@ -2,17 +2,17 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 
-use Smartresponsor\Controller\AddressReverseController;
-use Smartresponsor\Controller\AddressSuggestController;
-use Smartresponsor\Infrastructure\InMemoryMetricRecorder;
-use Smartresponsor\InfrastructureInterface\MetricRecorderInterface;
-use Smartresponsor\InfrastructureInterface\MetricSnapshotProviderInterface;
-use Smartresponsor\Service\AddressReverse;
-use Smartresponsor\Service\AddressSuggest;
-use Smartresponsor\Service\AddressQuotaGuard;
-use Smartresponsor\ServiceInterface\AddressQuotaGuardInterface;
-use Smartresponsor\ServiceInterface\AddressReverseInterface;
-use Smartresponsor\ServiceInterface\AddressSuggestInterface;
+use App\Controller\AddressReverseController;
+use App\Controller\AddressSuggestController;
+use App\Infrastructure\InMemoryMetricRecorder;
+use App\InfrastructureInterface\MetricRecorderInterface;
+use App\InfrastructureInterface\MetricSnapshotProviderInterface;
+use App\Service\AddressReverse;
+use App\Service\AddressSuggest;
+use App\Service\AddressQuotaGuard;
+use App\ServiceInterface\AddressQuotaGuardInterface;
+use App\ServiceInterface\AddressReverseInterface;
+use App\ServiceInterface\AddressSuggestInterface;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
 return static function (ContainerConfigurator $container): void {
@@ -22,7 +22,7 @@ return static function (ContainerConfigurator $container): void {
             ->autoconfigure()
             ->private();
 
-    $services->load('Smartresponsor\\', '../src/*')
+    $services->load('App\\', '../src/*')
         ->exclude([
             '../src/{DependencyInjection,Entity,Kernel.php,Tests}',
         ]);

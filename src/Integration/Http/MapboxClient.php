@@ -1,8 +1,8 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Integration\Http;
-use Smartresponsor\Integration\Http\SimpleHttp;
+namespace App\Integration\Http;
+use App\Integration\Http\SimpleHttp;
 final class MapboxClient{
   public function __construct(private string $key, private string $base='https://api.mapbox.com', private int $timeout=10){}
   public function geocode(string $q): array{

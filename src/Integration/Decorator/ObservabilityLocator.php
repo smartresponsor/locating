@@ -1,13 +1,13 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Integration\Decorator;
-use Smartresponsor\Contract\LocatorInterface;
-use Smartresponsor\Contract\Log\LoggerInterface;
-use Smartresponsor\Contract\Metrics\MetricsInterface;
-use Smartresponsor\Integration\Log\Correlation\TraceContext;
-use Smartresponsor\Model\AddressData;
-use Smartresponsor\Model\GeoPoint;
+namespace App\Integration\Decorator;
+use App\Contract\LocatorInterface;
+use App\Contract\Log\LoggerInterface;
+use App\Contract\Metrics\MetricsInterface;
+use App\Integration\Log\Correlation\TraceContext;
+use App\Model\AddressData;
+use App\Model\GeoPoint;
 final class ObservabilityLocator implements LocatorInterface{
   public function __construct(private LocatorInterface $inner, private LoggerInterface $logger, private MetricsInterface $metrics){}
   private function withObs(string $op, callable $fn, array $ctx=[]){

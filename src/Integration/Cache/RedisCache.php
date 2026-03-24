@@ -1,9 +1,9 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Integration\Cache;
+namespace App\Integration\Cache;
 use Redis;
-use Smartresponsor\Contract\Cache\CacheInterface;
+use App\Contract\Cache\CacheInterface;
 final class RedisCache implements CacheInterface{
   public function __construct(private Redis $r){}
   public function get(string $key, mixed $default=null): mixed{

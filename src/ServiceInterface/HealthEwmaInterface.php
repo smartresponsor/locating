@@ -2,11 +2,11 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 /**
- * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * App Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace Smartresponsor\Domain;
+namespace App\Domain;
 interface HealthEwmaInterface {
     /** observe one call latency and outcome; return new health 0..1 (1 is best) */
     public function observe(float $latencyMs, bool $ok): float;

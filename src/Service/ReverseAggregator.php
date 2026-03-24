@@ -1,8 +1,8 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Service;
-use Smartresponsor\Contract\ReverseProviderInterface;
+namespace App\Service;
+use App\Contract\ReverseProviderInterface;
 final class ReverseAggregator{
   public function __construct(private array $providers, private Normalizer $normalizer, private HealthMonitor $monitor, private AdaptiveRouter $adaptive, private CircuitBreaker $cb, private RegionRouter $region){}
   public function reverse(float $lat, float $lon, ?string $region=null): array{

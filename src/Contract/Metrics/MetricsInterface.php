@@ -1,7 +1,7 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Contract\Metrics;
+namespace App\Contract\Metrics;
 interface MetricsInterface{
   /** @param array<string,string> $labels */
   public function inc(string $name, array $labels=[]): void;

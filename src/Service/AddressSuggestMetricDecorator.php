@@ -3,10 +3,10 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Service;
+namespace App\Service;
 
-use Smartresponsor\InfrastructureInterface\MetricRecorderInterface;
-use Smartresponsor\ServiceInterface\AddressSuggestInterface;
+use App\InfrastructureInterface\MetricRecorderInterface;
+use App\ServiceInterface\AddressSuggestInterface;
 
 /**
  * Decorator that records latency and count for AddressSuggestInterface.

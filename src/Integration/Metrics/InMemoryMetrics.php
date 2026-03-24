@@ -1,8 +1,8 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Integration\Metrics;
-use Smartresponsor\Contract\Metrics\MetricsInterface;
+namespace App\Integration\Metrics;
+use App\Contract\Metrics\MetricsInterface;
 final class InMemoryMetrics implements MetricsInterface{
   /** @var array<string,float> */
   private array $counters = [];

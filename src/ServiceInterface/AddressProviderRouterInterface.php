@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\ServiceInterface;
+namespace App\ServiceInterface;
 
-use Smartresponsor\Entity\GeoPoint;
+use App\Entity\GeoPoint;
 
 interface AddressProviderRouterInterface
 {

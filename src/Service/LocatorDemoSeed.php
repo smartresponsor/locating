@@ -3,12 +3,12 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Service;
+namespace App\Service;
 
-use Smartresponsor\Entity\AddressInput;
-use Smartresponsor\InfrastructureInterface\LocatorFixtureReaderInterface;
-use Smartresponsor\ServiceInterface\LocatorDemoSeedInterface;
-use Smartresponsor\ServiceInterface\AddressPipelineInterface;
+use App\Entity\AddressInput;
+use App\InfrastructureInterface\LocatorFixtureReaderInterface;
+use App\ServiceInterface\LocatorDemoSeedInterface;
+use App\ServiceInterface\AddressPipelineInterface;
 
 final class LocatorDemoSeed implements LocatorDemoSeedInterface
 {

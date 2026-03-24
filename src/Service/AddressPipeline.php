@@ -3,16 +3,16 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Service;
+namespace App\Service;
 
-use Smartresponsor\Entity\AddressInput;
-use Smartresponsor\Entity\AddressResult;
-use Smartresponsor\Entity\AddressStatus;
-use Smartresponsor\ServiceInterface\AddressGeocodeBridgeInterface;
-use Smartresponsor\ServiceInterface\AddressNormalizerInterface;
-use Smartresponsor\ServiceInterface\AddressParserInterface;
-use Smartresponsor\ServiceInterface\AddressPipelineInterface;
-use Smartresponsor\ServiceInterface\AddressValidatorInterface;
+use App\Entity\AddressInput;
+use App\Entity\AddressResult;
+use App\Entity\AddressStatus;
+use App\ServiceInterface\AddressGeocodeBridgeInterface;
+use App\ServiceInterface\AddressNormalizerInterface;
+use App\ServiceInterface\AddressParserInterface;
+use App\ServiceInterface\AddressPipelineInterface;
+use App\ServiceInterface\AddressValidatorInterface;
 
 final class AddressPipeline implements AddressPipelineInterface
 {

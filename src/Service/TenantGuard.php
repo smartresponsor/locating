@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Service;
+namespace App\Service;
 
-use Smartresponsor\EntityInterface\TenantContextInterface;
+use App\EntityInterface\TenantContextInterface;
 
 /**
  * Simple guard that ensures resource tenant matches current context.

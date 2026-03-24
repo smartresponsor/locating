@@ -2,11 +2,11 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 
-namespace Smartresponsor\Tests\Service;
+namespace App\Tests\Service;
 
-use Smartresponsor\Entity\AddressData;
-use Smartresponsor\Entity\AddressSuggestion;
-use Smartresponsor\Service\SuggestRanker;
+use App\Entity\AddressData;
+use App\Entity\AddressSuggestion;
+use App\Service\SuggestRanker;
 use PHPUnit\Framework\TestCase;
 
 final class SuggestRankerTest extends TestCase

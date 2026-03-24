@@ -6,8 +6,8 @@
  */
 
 
-namespace Smartresponsor\Infrastructure\Security;
-use Smartresponsor\Domain\Config\Env;
+namespace App\Infrastructure\Security;
+use App\Domain\Config\Env;
 class ApiKeyAuth {
     public static function assert(Env $env): void {
         $key = trim($env->get('API_KEY',''));

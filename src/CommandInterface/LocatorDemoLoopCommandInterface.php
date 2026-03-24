@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\CommandInterface;
+namespace App\CommandInterface;
 
 interface LocatorDemoLoopCommandInterface
 {

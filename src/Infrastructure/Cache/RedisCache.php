@@ -6,7 +6,7 @@
  */
 
 
-namespace Smartresponsor\Infrastructure\Cache;
+namespace App\Infrastructure\Cache;
 
 class RedisCache
 {

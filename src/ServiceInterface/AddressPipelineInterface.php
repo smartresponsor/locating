@@ -3,10 +3,10 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\ServiceInterface;
+namespace App\ServiceInterface;
 
-use Smartresponsor\Entity\AddressInput;
-use Smartresponsor\Entity\AddressResult;
+use App\Entity\AddressInput;
+use App\Entity\AddressResult;
 
 interface AddressPipelineInterface
 {

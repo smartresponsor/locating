@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Entity;
+namespace App\Entity;
 
 enum AddressBatchJobStatus: string
 {
