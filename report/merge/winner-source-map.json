@@ -151,7 +151,7 @@
       "locator-src-current.zip"
     ]
   },
-  "config/packages/location_locator.yaml": {
+  "config/packages/locator.yaml": {
     "winner_source_preferred": "locator-src-current.zip",
     "winner_source_all": [
       "winner",
@@ -162,7 +162,7 @@
       "locator-src-current.zip"
     ]
   },
-  "config/routes/location.php": {
+  "config/routes/locator.php": {
     "winner_source_preferred": "locator-src-current.zip",
     "winner_source_all": [
       "winner",
@@ -173,7 +173,7 @@
       "locator-src-current.zip"
     ]
   },
-  "config/routes/location_address_suggest.yaml": {
+  "config/routes/locator_address_suggest.yaml": {
     "winner_source_preferred": "locator-src-current.zip",
     "winner_source_all": [
       "winner",
@@ -183,7 +183,7 @@
       "locator-src-current.zip"
     ]
   },
-  "config/routes/location_metrics.yaml": {
+  "config/routes/locator_metrics.yaml": {
     "winner_source_preferred": "locator-src-current.zip",
     "winner_source_all": [
       "winner",
@@ -192,7 +192,7 @@
       "locator-src-current.zip"
     ]
   },
-  "config/routes/location_reverse.php": {
+  "config/routes/locator_reverse.php": {
     "winner_source_preferred": "locator-src-current.zip",
     "winner_source_all": [
       "winner",
@@ -201,7 +201,7 @@
       "locator-src-current.zip"
     ]
   },
-  "config/routes/location_status.yaml": {
+  "config/routes/locator_status.yaml": {
     "winner_source_preferred": "locator-src-current.zip",
     "winner_source_all": [
       "winner",

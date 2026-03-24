@@ -9,7 +9,7 @@
 - Normalized namespace mismatch in `src/ServiceInterface/Locator/LocatorServiceInterface.php` by moving from `Smartresponsor\ServiceInterface\Locator\Locator` to `Smartresponsor\ServiceInterface\Locator`.
 
 ### 2) Runtime routing correctness
-- Fixed PHP route controller namespace drift in `config/routes/location_reverse.php` (`App\Controller\...` -> `Smartresponsor\Controller\...`).
+- Fixed PHP route controller namespace drift in `config/routes/locator_reverse.php` (`App\Controller\...` -> `Smartresponsor\Controller\...`).
 - Added route-controller contract test `tests/Locator/Contract/RouteControllerWiringTest.php`:
   - parses YAML and PHP route files
   - enforces `Smartresponsor\Controller\...` namespace usage

@@ -20,7 +20,7 @@ Status endpoint:
 
 - App\ControllerInterface\Locator\StatusControllerInterface
 - App\Controller\Locator\StatusController
-- Route: GET /locator/status (config/routes/location_status.yaml)
+- Route: GET /locator/status (config/routes/locator_status.yaml)
 
 Response shape:
 

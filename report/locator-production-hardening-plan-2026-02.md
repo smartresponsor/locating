@@ -24,9 +24,9 @@
 1. **Route controller FQCNs were inconsistent with project namespace in YAML routes**.
    - YAML route configs referenced `App\Controller\...` while controllers live under `Smartresponsor\Controller\...`.
    - Fixed in this pass:
-     - `config/routes/location_address_suggest.yaml`
-     - `config/routes/location_metrics.yaml`
-     - `config/routes/location_status.yaml`
+     - `config/routes/locator_address_suggest.yaml`
+     - `config/routes/locator_metrics.yaml`
+     - `config/routes/locator_status.yaml`
 2. **HTTP front controller is minimal health payload only**.
    - `public/index.php` always returns static JSON and does not boot Symfony kernel.
    - This is acceptable for smoke/demo mode but not production API hosting.
@@ -69,7 +69,7 @@
 
 ### P0 — Runtime correctness and contract integrity
 1. **Unify route/controller namespace wiring across all route files**.
-   - Include PHP route files (e.g., `config/routes/location_reverse.php`) and verify container route loading.
+   - Include PHP route files (e.g., `config/routes/locator_reverse.php`) and verify container route loading.
 2. **Create a route wiring test suite**.
    - Assert every configured controller FQCN exists and is invokable.
 3. **Normalize primary contract package**.

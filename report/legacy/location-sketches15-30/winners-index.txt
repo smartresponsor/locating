@@ -1,8 +1,8 @@
 bin/locator <- v=16 from=location-sketch16-oct16-final.zip:bin/locator sha256=40517a0c9d53aedceefdd03ff77961204020524065efa38cb58276fc9c2f66f2 size=2724
 bin/worker.php <- v=17 from=location-sketch17-oct17-final.zip:bin/worker.php sha256=7f88acce722b3caf02876c164c0b8cb95668263ac0d46f0f75e43b1ee338e88a size=1573
 config/nginx.conf <- v=25 from=location-sketch25-oct25-final.zip:config/nginx.conf sha256=c9a306acd54e381cfee6c43d8124247c974fabd7134f1efbe175aa7a3caf2a24 size=307
-config/packages/location_locator.yaml <- v=16 from=location-sketch16-oct16-final.zip:config/packages/location_locator.yaml sha256=46ff2ab7a40ac6d16d61aab33f4bab6da902c977cd8e66f8c5d145505e6bbf72 size=176
-config/routes/location.php <- v=15 from=location-sketch15-oct15-final.zip:config/routes/location.php sha256=416a26ed87956536eb5e547f6cec8036f4360563d9319e2611f3ad72b2df6578 size=219
+config/packages/locator.yaml <- v=16 from=location-sketch16-oct16-final.zip:config/packages/locator.yaml sha256=46ff2ab7a40ac6d16d61aab33f4bab6da902c977cd8e66f8c5d145505e6bbf72 size=176
+config/routes/locator.php <- v=15 from=location-sketch15-oct15-final.zip:config/routes/locator.php sha256=416a26ed87956536eb5e547f6cec8036f4360563d9319e2611f3ad72b2df6578 size=219
 config/services.php <- v=15 from=location-sketch15-oct15-final.zip:config/services.php sha256=99fe3547edb0730671adf7330102e20b91c0a52769313af5ae570448f734d019 size=215
 docs/coding-style.md <- v=16 from=location-sketch16-oct16-final.zip:docs/coding-style.md sha256=705b86965e6f3f733f0dfc37f1272d092cf95a9b3575c29725d3871674a552cc size=53
 docs/contributing.md <- v=16 from=location-sketch16-oct16-final.zip:docs/contributing.md sha256=23382f06bd3a36ba705cb16f930921317b6eb689577f43c0fe8c155ec47dd676 size=59
