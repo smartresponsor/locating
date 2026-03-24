@@ -1,17 +1,13 @@
 <?php
-/**
- * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
- * Owner: Marketing America Corp
- * Author: Oleksandr Tishchenko <dev@smartresponsor.com>
- */
-
+# Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
+declare(strict_types=1);
 
 namespace Smartresponsor\Infrastructure\Locator\Http;
 
 use Smartresponsor\Domain\Locator\Config\Env;
 use Smartresponsor\Service\Locator\Address\AddressParseService;
 use Smartresponsor\Service\Locator\Address\AddressStandardizeService;
-use Smartresponsor\Service\Locator\Locator\LocatorService;
+use Smartresponsor\Service\Locator\LocationLocatorService;
 use Smartresponsor\Service\Locator\Provider\ProviderRouter;
 use Smartresponsor\Infrastructure\Locator\Cache\RedisCache;
 
@@ -76,7 +72,7 @@ class Kernel
                 $lon = isset($_GET['lon']) ? (float)$_GET['lon'] : null;
                 $radius = isset($_GET['radiusMeters']) ? (int)$_GET['radiusMeters'] : 1000;
                 $bbox = (string)($_GET['bbox'] ?? '');
-                $service = new LocatorService($cache);
+                $service = new LocationLocatorService($cache);
                 $res = $service->search($lat, $lon, $radius, $bbox);
                 http_response_code(200);
                 echo json_encode(['items' => $res]);

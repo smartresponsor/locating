@@ -11,9 +11,9 @@ use Smartresponsor\InfrastructureInterface\Locator\AddressBatchJobRepositoryInte
 use Smartresponsor\InfrastructureInterface\Locator\AddressBatchMessageBusInterface;
 use Smartresponsor\InfrastructureInterface\Locator\AddressBatchResultStorageInterface;
 use Smartresponsor\Message\Locator\AddressBatchMessage;
-use Smartresponsor\ServiceInterface\Locator\AddressBatchServiceInterface;
+use Smartresponsor\ServiceInterface\Locator\LocationAddressBatchServiceInterface;
 
-final class AddressBatchService implements AddressBatchServiceInterface
+final class LocationAddressBatchService implements LocationAddressBatchServiceInterface
 {
     public function __construct(
         private AddressBatchJobRepositoryInterface $jobRepository,

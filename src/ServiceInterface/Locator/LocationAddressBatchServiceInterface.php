@@ -6,7 +6,7 @@ namespace Smartresponsor\ServiceInterface\Locator;
 
 use Smartresponsor\EntityInterface\Locator\AddressBatchJobInterface;
 
-interface AddressBatchServiceInterface
+interface LocationAddressBatchServiceInterface
 {
     /**
      * @param array<int,array<string,mixed>> $itemList
