@@ -5,12 +5,12 @@ namespace Smartresponsor\Bundle\DependencyInjection;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Reference;
-use Smartresponsor\Integration\Locator\Factory\RedisFactory;
-use Smartresponsor\Integration\Locator\Cache\RedisCache;
-use Smartresponsor\Integration\Locator\RateLimit\RedisRateLimiter;
-use Smartresponsor\Integration\Locator\Http\NominatimClient;
-use Smartresponsor\Strategy\Locator\OpenStreetMapLocator;
-use Smartresponsor\Service\Locator\LocationLocatorService;
+use Smartresponsor\Integration\Factory\RedisFactory;
+use Smartresponsor\Integration\Cache\RedisCache;
+use Smartresponsor\Integration\RateLimit\RedisRateLimiter;
+use Smartresponsor\Integration\Http\NominatimClient;
+use Smartresponsor\Strategy\OpenStreetMapLocator;
+use Smartresponsor\Service\LocationLocatorService;
 final class LocatorExtension extends Extension{
   public function load(array $configs, ContainerBuilder $container): void{
     $configuration = new Configuration();

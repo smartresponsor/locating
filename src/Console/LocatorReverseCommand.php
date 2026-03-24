@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Smartresponsor\Console;
 
-use Smartresponsor\Model\Locator\GeoPoint;
-use Smartresponsor\Service\Locator\LocationLocatorService;
+use Smartresponsor\Model\GeoPoint;
+use Smartresponsor\Service\LocationLocatorService;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;

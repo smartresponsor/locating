@@ -2,17 +2,17 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 
-use Smartresponsor\Controller\Locator\AddressReverseController;
-use Smartresponsor\Controller\Locator\AddressSuggestController;
-use Smartresponsor\Infrastructure\Locator\InMemoryMetricRecorder;
-use Smartresponsor\InfrastructureInterface\Locator\MetricRecorderInterface;
-use Smartresponsor\InfrastructureInterface\Locator\MetricSnapshotProviderInterface;
-use Smartresponsor\Service\Locator\AddressReverse;
-use Smartresponsor\Service\Locator\AddressSuggest;
-use Smartresponsor\Service\Locator\AddressQuotaGuard;
-use Smartresponsor\ServiceInterface\Locator\AddressQuotaGuardInterface;
-use Smartresponsor\ServiceInterface\Locator\AddressReverseInterface;
-use Smartresponsor\ServiceInterface\Locator\AddressSuggestInterface;
+use Smartresponsor\Controller\AddressReverseController;
+use Smartresponsor\Controller\AddressSuggestController;
+use Smartresponsor\Infrastructure\InMemoryMetricRecorder;
+use Smartresponsor\InfrastructureInterface\MetricRecorderInterface;
+use Smartresponsor\InfrastructureInterface\MetricSnapshotProviderInterface;
+use Smartresponsor\Service\AddressReverse;
+use Smartresponsor\Service\AddressSuggest;
+use Smartresponsor\Service\AddressQuotaGuard;
+use Smartresponsor\ServiceInterface\AddressQuotaGuardInterface;
+use Smartresponsor\ServiceInterface\AddressReverseInterface;
+use Smartresponsor\ServiceInterface\AddressSuggestInterface;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
 return static function (ContainerConfigurator $container): void {
