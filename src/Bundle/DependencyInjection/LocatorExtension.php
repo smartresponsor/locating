@@ -1,4 +1,5 @@
 <?php
+# Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 namespace Smartresponsor\Bundle\DependencyInjection;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -9,7 +10,7 @@ use Smartresponsor\Integration\Locator\Cache\RedisCache;
 use Smartresponsor\Integration\Locator\RateLimit\RedisRateLimiter;
 use Smartresponsor\Integration\Locator\Http\NominatimClient;
 use Smartresponsor\Strategy\Locator\OpenStreetMapLocator;
-use Smartresponsor\Service\Locator\LocatorService;
+use Smartresponsor\Service\Locator\LocationLocatorService;
 final class LocatorExtension extends Extension{
   public function load(array $configs, ContainerBuilder $container): void{
     $configuration = new Configuration();
@@ -33,7 +34,7 @@ final class LocatorExtension extends Extension{
     $container->register('smartresponsor.locator_impl', OpenStreetMapLocator::class)
       ->addArgument(new Reference('smartresponsor.nominatim'));
 
-    $container->register('smartresponsor.locator', LocatorService::class)
+    $container->register('smartresponsor.locator', LocationLocatorService::class)
       ->addArgument(new Reference('smartresponsor.locator_impl'));
   }
 }

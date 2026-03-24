@@ -1,29 +1,22 @@
 <?php
+# Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-
-/*
- * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
- */
 
 namespace Smartresponsor\Service\Locator;
 
 use Smartresponsor\EntityInterface\Locator\AddressBatchJobInterface;
 use Smartresponsor\InfrastructureInterface\Locator\MetricRecorderInterface;
-use Smartresponsor\ServiceInterface\Locator\AddressBatchServiceInterface;
+use Smartresponsor\ServiceInterface\Locator\LocationAddressBatchServiceInterface;
 
 /**
- * Decorator that records metrics for AddressBatchServiceInterface.
+ * Decorator that records metrics for LocationAddressBatchServiceInterface.
  */
-final class AddressBatchServiceMetricDecorator implements AddressBatchServiceInterface
+final class LocationAddressBatchServiceMetricDecorator implements LocationAddressBatchServiceInterface
 {
-    private AddressBatchServiceInterface $inner;
-
-    private MetricRecorderInterface $metricRecorder;
-
-    public function __construct(AddressBatchServiceInterface $inner, MetricRecorderInterface $metricRecorder)
-    {
-        $this->inner = $inner;
-        $this->metricRecorder = $metricRecorder;
+    public function __construct(
+        private LocationAddressBatchServiceInterface $inner,
+        private MetricRecorderInterface $metricRecorder
+    ) {
     }
 
     public function createJob(string $tenantId, array $itemList): AddressBatchJobInterface

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Smartresponsor\ServiceInterface\Locator;
 
-interface LocatorServiceInterface
+interface LocationLocatorServiceInterface
 {
     public function search(?float $lat, ?float $lon, int $radiusMeters, string $bbox): array;
 }
