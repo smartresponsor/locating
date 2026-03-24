@@ -1,5 +1,14 @@
-smartresponsor_locator:
-  redis_dsn: '%env(LOCATOR_REDIS_DSN)%'
-  rate_per_minute: 60
-  nominatim_base: '%env(NOMINATIM_BASE_URL)%'
-  nominatim_email: '%env(NOMINATIM_EMAIL)%'
+smart_responsor_locator:
+  providers:
+    - '%env(LOCATOR_PROVIDER_DSN)%'
+    - 'fallback://?priority=0'
+  retries: 2
+  retry_base_ms: 100
+  cb_threshold: 5
+  cb_cooldown_sec: 30
+  min_ttl: 60
+  base_ttl: 300
+  max_ttl: 1800
+  neg_cache_ttl: 60
+  cache_max: 256
+  metrics_window: 256
