@@ -1,0 +1,136 @@
+{
+  "generatedAt": "2026-03-22T18:44:02.615982Z",
+  "activePaths": [
+    {
+      "runtimePath": "http-suggest",
+      "legacyDependencies": []
+    },
+    {
+      "runtimePath": "http-reverse",
+      "legacyDependencies": []
+    },
+    {
+      "runtimePath": "http-status",
+      "legacyDependencies": []
+    },
+    {
+      "runtimePath": "http-metrics",
+      "legacyDependencies": []
+    },
+    {
+      "runtimePath": "http-governance-report",
+      "legacyDependencies": []
+    },
+    {
+      "runtimePath": "http-governance-metrics",
+      "legacyDependencies": []
+    },
+    {
+      "runtimePath": "http-governance-explanations",
+      "legacyDependencies": []
+    },
+    {
+      "runtimePath": "http-governance-recommendations",
+      "legacyDependencies": []
+    },
+    {
+      "runtimePath": "http-governance-audit",
+      "legacyDependencies": []
+    },
+    {
+      "runtimePath": "http-governance-remediation-plans",
+      "legacyDependencies": []
+    },
+    {
+      "runtimePath": "http-governance-execution",
+      "legacyDependencies": []
+    },
+    {
+      "runtimePath": "http-governance-acknowledgements",
+      "legacyDependencies": []
+    },
+    {
+      "runtimePath": "batch-service",
+      "legacyDependencies": []
+    },
+    {
+      "runtimePath": "batch-dispatch",
+      "legacyDependencies": []
+    },
+    {
+      "runtimePath": "batch-handler",
+      "legacyDependencies": []
+    },
+    {
+      "runtimePath": "provider-signal-readers",
+      "legacyDependencies": [
+        {
+          "fqcn": "Smartresponsor\\Entity\\Locator\\AddressData",
+          "layer": "legacy",
+          "classification": "adapter",
+          "notes": "Direct legacy namespace import inside App class."
+        },
+        {
+          "fqcn": "Smartresponsor\\Entity\\Locator\\AddressResult",
+          "layer": "legacy",
+          "classification": "adapter",
+          "notes": "Direct legacy namespace import inside App class."
+        },
+        {
+          "fqcn": "Smartresponsor\\Entity\\Locator\\AddressStatus",
+          "layer": "legacy",
+          "classification": "adapter",
+          "notes": "Direct legacy namespace import inside App class."
+        },
+        {
+          "fqcn": "Smartresponsor\\Entity\\Locator\\GeoPoint",
+          "layer": "legacy",
+          "classification": "adapter",
+          "notes": "Direct legacy namespace import inside App class."
+        },
+        {
+          "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\AddressSuggestProviderInterface",
+          "layer": "legacy",
+          "classification": "adapter",
+          "notes": "Direct legacy namespace import inside App class."
+        },
+        {
+          "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\ReverseHttpClientInterface",
+          "layer": "legacy",
+          "classification": "adapter",
+          "notes": "Direct legacy namespace import inside App class."
+        },
+        {
+          "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\MetricRecorderInterface",
+          "layer": "legacy",
+          "classification": "adapter",
+          "notes": "Direct legacy namespace import inside App class."
+        },
+        {
+          "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\HealthMonitorInterface",
+          "layer": "legacy",
+          "classification": "adapter",
+          "notes": "Direct legacy namespace import inside App class."
+        },
+        {
+          "fqcn": "Smartresponsor\\Domain\\Locator\\TenantQuotaManagerInterface",
+          "layer": "legacy",
+          "classification": "adapter",
+          "notes": "Direct legacy namespace import inside App class."
+        },
+        {
+          "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\MetricSnapshotProviderInterface",
+          "layer": "legacy",
+          "classification": "adapter",
+          "notes": "Direct legacy namespace import inside App class."
+        },
+        {
+          "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\ProviderCostCatalogInterface",
+          "layer": "legacy",
+          "classification": "adapter",
+          "notes": "Direct legacy namespace import inside App class."
+        }
+      ]
+    }
+  ]
+}

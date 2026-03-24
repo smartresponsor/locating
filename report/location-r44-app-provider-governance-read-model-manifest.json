@@ -1,0 +1,23 @@
+{
+  "wave": 44,
+  "name": "Location",
+  "summary": "App-owned provider governance read-model and observability seam",
+  "touched": [
+    "src/EntityInterface/Location/ProviderGovernanceSnapshotInterface.php",
+    "src/Entity/Location/ProviderGovernanceSnapshot.php",
+    "src/ServiceInterface/Observability/Location/ProviderGovernanceCatalogServiceInterface.php",
+    "src/Service/Observability/Location/ProviderGovernanceCatalogService.php",
+    "src/EntityInterface/Location/LocationStatusReportInterface.php",
+    "src/Entity/Location/LocationStatusReport.php",
+    "src/Service/Observability/Location/LocationStatusReportService.php",
+    "src/Service/Observability/Location/LocationMetricsExportService.php",
+    "config/services.php",
+    "tests/Entity/Location/ProviderGovernanceSnapshotTest.php",
+    "tests/Service/Observability/Location/ProviderGovernanceCatalogServiceTest.php",
+    "tests/Service/Observability/Location/LocationStatusReportServiceTest.php",
+    "tests/Service/Observability/Location/LocationMetricsExportServiceTest.php",
+    "tests/Entity/Location/LocationStatusReportTest.php",
+    "tests/Config/LocationServicesConfigTest.php",
+    "docs/location-r44-app-provider-governance-read-model.md"
+  ]
+}

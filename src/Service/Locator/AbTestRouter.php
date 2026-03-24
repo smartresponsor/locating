@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
@@ -7,13 +8,21 @@ declare(strict_types=1);
  */
 
 namespace Smartresponsor\Service\Locator;
-final class AbTestRouter implements AbTestRouterInterface {
-    public function decide(string $tenantId, string $op, array $variant, float $ratioB): string {
-        $a = (string)($variant['A'] ?? '');
-        $b = (string)($variant['B'] ?? '');
-        if ($a==='' || $b==='') { return $a ?: $b; }
+
+use App\Bridge\Legacy\Service\Location\AbTestRouterLegacyInterface;
+
+final class AbTestRouter implements AbTestRouterLegacyInterface
+{
+    public function decide(string $tenantId, string $op, array $variant, float $ratioB): string
+    {
+        $a = (string) ($variant['A'] ?? '');
+        $b = (string) ($variant['B'] ?? '');
+        if ('' === $a || '' === $b) {
+            return $a ?: $b;
+        }
         $seed = crc32($tenantId.'|'.$op);
         $p = ($seed % 1000) / 1000.0;
+
         return ($p < max(0.0, min(1.0, $ratioB))) ? $b : $a;
     }
 }

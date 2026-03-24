@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -7,14 +8,14 @@ declare(strict_types=1);
 
 namespace Smartresponsor\Entity\Locator;
 
-use Smartresponsor\EntityInterface\Locator\AddressValidationIssueInterface;
+use App\Bridge\Legacy\Entity\Location\AddressValidationIssueLegacyInterface;
 
-final class AddressValidationIssue implements AddressValidationIssueInterface
+final class AddressValidationIssue implements AddressValidationIssueLegacyInterface
 {
     public function __construct(
         private string $field,
         private string $code,
-        private string $message
+        private string $message,
     ) {
     }
 

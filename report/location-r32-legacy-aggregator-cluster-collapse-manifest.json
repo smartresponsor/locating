@@ -1,0 +1,21 @@
+{
+  "wave": 32,
+  "message": "Location",
+  "type": "legacy-aggregator-cluster-collapse",
+  "removed": [
+    "src/Service/Locator/Aggregator.php",
+    "src/Service/Locator/ForwardAggregator.php",
+    "src/Service/Locator/ReverseAggregator.php",
+    "src/Service/Locator/AdaptiveRouter.php",
+    "src/Service/Locator/AddressSuggestMetricDecorator.php",
+    "src/ServiceInterface/Locator/AggregatorInterface.php",
+    "src/ServiceInterface/Locator/ForwardAggregatorInterface.php",
+    "src/ServiceInterface/Locator/ReverseAggregatorInterface.php",
+    "src/ServiceInterface/Locator/AdaptiveRouterInterface.php",
+    "src/ServiceInterface/Locator/AddressSuggestMetricDecoratorInterface.php"
+  ],
+  "notes": [
+    "No active Symfony wiring references detected.",
+    "Cluster was orphaned or only internally referenced."
+  ]
+}

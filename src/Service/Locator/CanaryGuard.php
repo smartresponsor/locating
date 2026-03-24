@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
@@ -7,15 +8,34 @@ declare(strict_types=1);
  */
 
 namespace Smartresponsor\Service\Locator;
-final class CanaryGuard implements CanaryGuardInterface {
-    public function __construct(private float $errGate=0.01, private float $p95Gate=900, private float $burnGate=1.2){}
-    public function decide(float $errorRate, float $p95Ms, float $budgetBurn): string {
+
+use App\Bridge\Legacy\Service\Location\CanaryGuardLegacyInterface;
+
+final class CanaryGuard implements CanaryGuardLegacyInterface
+{
+    public function __construct(private float $errGate = 0.01, private float $p95Gate = 900, private float $burnGate = 1.2)
+    {
+    }
+
+    public function decide(float $errorRate, float $p95Ms, float $budgetBurn): string
+    {
         $bad = 0;
-        if ($errorRate > $this->errGate) { $bad++; }
-        if ($p95Ms > $this->p95Gate) { $bad++; }
-        if ($budgetBurn > $this->burnGate) { $bad++; }
-        if ($bad >= 2) { return 'rollback'; }
-        if ($bad === 1) { return 'pause'; }
+        if ($errorRate > $this->errGate) {
+            ++$bad;
+        }
+        if ($p95Ms > $this->p95Gate) {
+            ++$bad;
+        }
+        if ($budgetBurn > $this->burnGate) {
+            ++$bad;
+        }
+        if ($bad >= 2) {
+            return 'rollback';
+        }
+        if (1 === $bad) {
+            return 'pause';
+        }
+
         return 'continue';
     }
 }

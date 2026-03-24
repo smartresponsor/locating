@@ -1,0 +1,4 @@
+src/ServiceInterface/Locator/Provider/GeocodeProviderInterface.php
+src/ServiceInterface/Locator/HereProviderInterface.php
+src/ServiceInterface/Locator/MapboxProviderInterface.php
+src/ServiceInterface/Locator/NominatimProviderInterface.php

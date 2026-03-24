@@ -1,0 +1,20 @@
+{
+  "wave": "12",
+  "title": "parallel-http-surface-collapse",
+  "removed": [
+    "src/Controller/Locator/AddressSuggestController.php",
+    "src/Controller/Locator/AddressReverseController.php",
+    "src/Controller/Locator/MetricsController.php",
+    "src/Controller/Locator/StatusController.php",
+    "config/routes/locator.php",
+    "tests/Locator/Address/AddressReverseControllerTest.php",
+    "tests/Locator/Status/MetricsControllerTest.php",
+    "tests/Locator/Status/StatusControllerTest.php"
+  ],
+  "added": [
+    "tests/Controller/Http/StatusControllerTest.php",
+    "tests/Controller/Http/MetricsControllerTest.php",
+    "docs/location-r12-parallel-http-surface-collapse.md",
+    "report/location-r12-parallel-http-surface-collapse-manifest.json"
+  ]
+}

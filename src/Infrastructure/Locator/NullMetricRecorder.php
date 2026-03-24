@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -7,12 +8,12 @@ declare(strict_types=1);
 
 namespace Smartresponsor\Infrastructure\Locator;
 
-use Smartresponsor\InfrastructureInterface\Locator\MetricRecorderInterface;
+use App\Bridge\Legacy\Provider\Location\LocationMetricLegacyRecorderInterface;
 
 /**
  * No-op metric recorder used when no real metric backend is configured.
  */
-final class NullMetricRecorder implements MetricRecorderInterface
+final class NullMetricRecorder implements LocationMetricLegacyRecorderInterface
 {
     public function recordLatency(string $operation, float $milliseconds): void
     {

@@ -1,0 +1,3 @@
+src/Contract/Locator/ProviderInterface.php
+src/Contract/Locator/ReverseProviderInterface.php
+src/Contract/Locator/Provider/LocatorProviderInterface.php

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -7,14 +8,15 @@ declare(strict_types=1);
 
 namespace Smartresponsor\Service\Locator;
 
-use Smartresponsor\EntityInterface\Locator\TenantContextInterface;
+use App\Bridge\Legacy\Service\Location\TenantGuardLegacyInterface;
+use App\Bridge\Legacy\Tenant\Location\TenantContextLegacyInterface;
 
 /**
  * Simple guard that ensures resource tenant matches current context.
  */
-final class TenantGuard
+final class TenantGuard implements TenantGuardLegacyInterface
 {
-    public function allow(TenantContextInterface $context, string $resourceTenant): bool
+    public function allow(TenantContextLegacyInterface $context, string $resourceTenant): bool
     {
         return $context->id() === $resourceTenant;
     }

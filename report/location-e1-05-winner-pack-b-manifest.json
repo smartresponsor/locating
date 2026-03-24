@@ -1,0 +1,10 @@
+{
+  "wave": "E1-05",
+  "component": "Locating/Location",
+  "summary": {
+    "quotaGuardSeamAppOwned": true,
+    "batchResultFactoryLegacyTypehintsRemoved": true,
+    "batchJobFactoryLegacyTypehintsRemoved": true,
+    "resultFactoryLegacyEntityTypehintsRemoved": true
+  }
+}

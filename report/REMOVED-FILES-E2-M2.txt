@@ -1,0 +1,13 @@
+src/ServiceInterface/Locator/ProviderContractGoldenInterface.php
+src/ServiceInterface/Locator/ProviderContractVersionInterface.php
+src/ServiceInterface/Locator/ProviderCostCatalogInterface.php
+src/ServiceInterface/Locator/ProviderKeyRotationInterface.php
+src/ServiceInterface/Locator/ProviderKeyVaultInterface.php
+src/ServiceInterface/Locator/ProviderSandboxInterface.php
+src/ServiceInterface/Locator/ProviderStatAggregatorInterface.php
+src/ServiceInterface/Locator/FakeProviderInterface.php
+src/InfrastructureInterface/Locator/AddressProviderBridgeInterface.php
+src/InfrastructureInterface/Locator/FakeProviderInterface.php
+src/InfrastructureInterface/Locator/ProviderAdapterInterface.php
+src/InfrastructureInterface/Locator/ProviderBudgetInterface.php
+src/Contract/Locator/Secrets/SecretsProviderInterface.php

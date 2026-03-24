@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
@@ -7,10 +8,16 @@ declare(strict_types=1);
  */
 
 namespace Smartresponsor\Service\Locator;
-final class CostAwarePolicy implements CostAwarePolicyInterface {
-    public function score(float $health, float $unitCost): float {
+
+use App\Bridge\Legacy\Service\Location\CostAwarePolicyLegacyInterface;
+
+final class CostAwarePolicy implements CostAwarePolicyLegacyInterface
+{
+    public function score(float $health, float $unitCost): float
+    {
         $h = max(0.0, min(1.0, $health));
         $c = max(0.0001, $unitCost);
-        return $h * (1.0/(1.0 + $c)); // prefer lower cost and higher health
+
+        return $h * (1.0 / (1.0 + $c)); // prefer lower cost and higher health
     }
 }

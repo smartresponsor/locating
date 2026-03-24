@@ -1,0 +1,3 @@
+Checked references for LegacyAddressSuggestCapability and LegacyAddressReverseCapability across src/, tests/, config/.
+Only dedicated legacy tests referenced these transitional adapters.
+Active config/services.php aliases AddressSuggestCapabilityInterface and AddressReverseCapabilityInterface to native App capability implementations.

@@ -1,0 +1,10 @@
+{
+  "wave": "E1-03",
+  "component": "Locating/Location",
+  "summary": {
+    "focus": "batch-runtime-bridge-squeeze",
+    "newBackendInterfaces": 3,
+    "newBackendAdapters": 3,
+    "rewiredClasses": 5
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "wave": 31,
+  "message": "Location",
+  "summary": "Collapsed orphaned legacy provider-router bridge cluster.",
+  "removed": [
+    "src/Service/Locator/AddressGeocodeBridge.php",
+    "src/Service/Locator/AddressProviderRouter.php",
+    "src/ServiceInterface/Locator/AddressGeocodeBridgeInterface.php",
+    "src/ServiceInterface/Locator/AddressProviderRouterInterface.php",
+    "tests/Locator/Service/AddressProviderRouterFailoverTest.php"
+  ],
+  "added": [
+    "docs/location-r31-legacy-provider-router-bridge-collapse.md",
+    "report/location-r31-reference-check.txt",
+    "report/location-r31-legacy-provider-router-bridge-collapse-manifest.json",
+    "report/REMOVED-FILES-R31.txt"
+  ]
+}

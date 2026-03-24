@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -7,14 +8,14 @@ declare(strict_types=1);
 
 namespace Smartresponsor\InfrastructureInterface\Locator;
 
-use Smartresponsor\EntityInterface\Locator\AddressResultInterface;
+use App\Bridge\Legacy\Entity\Location\AddressResultLegacyInterface;
 
 interface AddressBatchResultStorageInterface
 {
-    public function appendResult(string $jobId, AddressResultInterface $result): void;
+    public function appendResult(string $jobId, AddressResultLegacyInterface $result): void;
 
     /**
-     * @return AddressResultInterface[]
+     * @return AddressResultLegacyInterface[]
      */
     public function resultList(string $jobId): array;
 }

@@ -1,0 +1,11 @@
+{
+  "wave": "E1-11",
+  "component": "Locating/Location",
+  "generatedAt": "2026-03-22T20:10:26.587707Z",
+  "summary": {
+    "activeAppLegacyRefs": 0,
+    "smartresponsorNamespaceDeclarations": 420,
+    "readyToRemoveSmartresponsorMapping": false
+  },
+  "nextRecommendedPack": "E2-01 namespace rehome or purge remaining Smartresponsor classes"
+}

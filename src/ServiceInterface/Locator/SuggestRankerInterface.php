@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -7,14 +8,14 @@ declare(strict_types=1);
 
 namespace Smartresponsor\ServiceInterface\Locator;
 
-use Smartresponsor\EntityInterface\Locator\AddressSuggestionInterface;
+use App\Bridge\Legacy\Entity\Location\AddressSuggestionLegacyInterface;
 
 interface SuggestRankerInterface
 {
     /**
-     * @param AddressSuggestionInterface[] $suggestList
-     * @return AddressSuggestionInterface[]
+     * @param AddressSuggestionLegacyInterface[] $suggestList
+     *
+     * @return AddressSuggestionLegacyInterface[]
      */
     public function rank(string $query, array $suggestList, ?string $countryCode): array;
 }
-

@@ -1,0 +1,31 @@
+{
+  "wave": "07",
+  "message": "Location",
+  "summary": "App-owned result boundary for location capabilities",
+  "touched_files": [
+    "docs/location-r07-app-owned-result-boundary.md",
+    "src/Entity/Location/AddressReverseResult.php",
+    "src/Entity/Location/AddressReverseView.php",
+    "src/Entity/Location/AddressSuggestionResult.php",
+    "src/Entity/Location/AddressSuggestionView.php",
+    "src/EntityInterface/Location/AddressReverseResultInterface.php",
+    "src/EntityInterface/Location/AddressReverseViewInterface.php",
+    "src/EntityInterface/Location/AddressSuggestionResultInterface.php",
+    "src/EntityInterface/Location/AddressSuggestionViewInterface.php",
+    "src/Service/Address/Location/LegacyAddressReverseCapability.php",
+    "src/Service/Address/Location/LegacyAddressSuggestCapability.php",
+    "src/Service/Address/Location/LocationResultFactory.php",
+    "src/Service/Http/Location/LocationViewFactory.php",
+    "src/ServiceInterface/Address/Location/AddressReverseCapabilityInterface.php",
+    "src/ServiceInterface/Address/Location/AddressSuggestCapabilityInterface.php",
+    "src/ServiceInterface/Address/Location/LocationResultFactoryInterface.php",
+    "src/ServiceInterface/Http/Location/LocationViewFactoryInterface.php",
+    "tests/Entity/Location/AddressReverseResultTest.php",
+    "tests/Entity/Location/AddressSuggestionResultTest.php",
+    "tests/Service/Address/Location/LegacyAddressReverseCapabilityTest.php",
+    "tests/Service/Address/Location/LegacyAddressSuggestCapabilityTest.php",
+    "tests/Service/Address/Location/LocationResultFactoryTest.php",
+    "tests/Service/Http/Location/AddressReverseServiceTest.php",
+    "tests/Service/Http/Location/AddressSuggestServiceTest.php"
+  ]
+}

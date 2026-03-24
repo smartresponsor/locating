@@ -1,0 +1,10 @@
+Reference check for R16 legacy harness/service collapse
+
+Checked symbols:
+- ContractTestV2 / ContractTestV2Interface
+- DryRunSimulator / DryRunSimulatorInterface
+- SandboxHarness / SandboxHarnessInterface
+
+Result:
+- No live operational references found in active src/, config/, composer.json, bin/, README.md outside the target files themselves and their legacy tests.
+- Remaining occurrences after removal are expected only in historical docs/reports.

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -7,9 +8,9 @@ declare(strict_types=1);
 
 namespace Smartresponsor\Entity\Locator;
 
-use Smartresponsor\EntityInterface\Locator\TenantContextInterface;
+use App\Bridge\Legacy\Tenant\Location\TenantContextLegacyInterface;
 
-final class TenantContext implements TenantContextInterface
+final class TenantContext implements TenantContextLegacyInterface
 {
     public function __construct(private string $id)
     {

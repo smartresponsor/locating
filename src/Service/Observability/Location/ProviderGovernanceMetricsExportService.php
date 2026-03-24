@@ -1,0 +1,46 @@
+<?php
+
+declare(strict_types=1);
+
+/*
+ * Marketing America Corp. Oleksandr Tishchenko
+ * dev@highhopesamerica.com
+ */
+
+namespace App\Service\Observability\Location;
+
+use App\Entity\Location\ProviderGovernanceMetricSet;
+use App\EntityInterface\Location\ProviderGovernanceMetricSetInterface;
+use App\ServiceInterface\Observability\Location\ProviderGovernanceCatalogServiceInterface;
+use App\ServiceInterface\Observability\Location\ProviderGovernanceMetricsExportServiceInterface;
+
+final class ProviderGovernanceMetricsExportService implements ProviderGovernanceMetricsExportServiceInterface
+{
+    public function __construct(private readonly ProviderGovernanceCatalogServiceInterface $catalogService)
+    {
+    }
+
+    public function export(): ProviderGovernanceMetricSetInterface
+    {
+        $lines = [
+            '# HELP locator_provider_success_rate Locator provider success rate by source.',
+            '# TYPE locator_provider_success_rate gauge',
+            '# HELP locator_provider_quota_allowed Locator provider quota availability by source.',
+            '# TYPE locator_provider_quota_allowed gauge',
+            '# HELP locator_provider_unit_cost Locator provider unit cost by source.',
+            '# TYPE locator_provider_unit_cost gauge',
+            '# HELP locator_provider_degraded Locator provider degraded state by source.',
+            '# TYPE locator_provider_degraded gauge',
+        ];
+
+        foreach ($this->catalogService->catalog() as $snapshot) {
+            $degraded = ($snapshot->successRate() < 0.9 || false === $snapshot->quotaAllowed()) ? 1 : 0;
+            $lines[] = sprintf('locator_provider_success_rate{source="%s",operation="%s"} %.5f', $snapshot->sourceKey(), $snapshot->operation(), $snapshot->successRate());
+            $lines[] = sprintf('locator_provider_quota_allowed{source="%s",operation="%s"} %d', $snapshot->sourceKey(), $snapshot->operation(), $snapshot->quotaAllowed() ? 1 : 0);
+            $lines[] = sprintf('locator_provider_unit_cost{source="%s",operation="%s"} %.5f', $snapshot->sourceKey(), $snapshot->operation(), $snapshot->unitCost());
+            $lines[] = sprintf('locator_provider_degraded{source="%s",operation="%s"} %d', $snapshot->sourceKey(), $snapshot->operation(), $degraded);
+        }
+
+        return new ProviderGovernanceMetricSet('location', $lines);
+    }
+}

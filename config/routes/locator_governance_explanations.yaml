@@ -1,0 +1,4 @@
+locator_governance_explanations:
+  path: /location/governance/explanations
+  controller: App\Controller\Http\Location\GovernanceExplanationController
+  methods: [GET]

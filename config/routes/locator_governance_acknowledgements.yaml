@@ -1,0 +1,4 @@
+location_governance_acknowledgements:
+  path: /location/governance/acknowledgements
+  controller: App\Controller\Http\Location\GovernanceAcknowledgementController
+  methods: [POST]

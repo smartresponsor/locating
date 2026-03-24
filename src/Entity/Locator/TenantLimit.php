@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -7,14 +8,14 @@ declare(strict_types=1);
 
 namespace Smartresponsor\Entity\Locator;
 
-use Smartresponsor\EntityInterface\Locator\TenantLimitInterface;
+use App\Bridge\Legacy\Tenant\Location\TenantLimitLegacyInterface;
 
-final class TenantLimit implements TenantLimitInterface
+final class TenantLimit implements TenantLimitLegacyInterface
 {
     public function __construct(
         private string $tenantId,
         private string $operation,
-        private int $limitPerMinute
+        private int $limitPerMinute,
     ) {
     }
 

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -7,17 +8,16 @@ declare(strict_types=1);
 
 namespace Smartresponsor\Tests\Locator\Service;
 
+use PHPUnit\Framework\TestCase;
 use Smartresponsor\Entity\Locator\AddressStatus;
-use Smartresponsor\InfrastructureInterface\Locator\ReverseHttpClientInterface;
 use Smartresponsor\Infrastructure\Locator\InMemoryMetricRecorder;
 use Smartresponsor\Service\Locator\AddressReverse;
-use PHPUnit\Framework\TestCase;
 
 final class AddressReverseTest extends TestCase
 {
     public function testReverseBuildsVerifiedResultWhenAddressIsComplete(): void
     {
-        $client = new class() implements ReverseHttpClientInterface {
+        $client = new class implements ReverseHttpClientInterface {
             public function reverse(float $latitude, float $longitude, ?string $countryCode = null): array
             {
                 return [
@@ -51,7 +51,7 @@ final class AddressReverseTest extends TestCase
 
     public function testReverseMarksRejectedWhenAlmostNoData(): void
     {
-        $client = new class() implements ReverseHttpClientInterface {
+        $client = new class implements ReverseHttpClientInterface {
             public function reverse(float $latitude, float $longitude, ?string $countryCode = null): array
             {
                 return [

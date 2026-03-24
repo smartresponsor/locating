@@ -1,0 +1,3 @@
+src/EntityInterface/Locator/AddressSuggestionInterface.php
+src/EntityInterface/Locator/AddressResultInterface.php
+src/EntityInterface/Locator/AddressValidationIssueInterface.php

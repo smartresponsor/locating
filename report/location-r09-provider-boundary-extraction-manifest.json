@@ -1,0 +1,17 @@
+{
+  "wave": "09",
+  "message": "provider-boundary-extraction",
+  "touched_files": [
+    "src/ServiceInterface/Provider/Location/AddressSuggestionProviderInterface.php",
+    "src/ServiceInterface/Provider/Location/AddressReverseProviderInterface.php",
+    "src/Service/Provider/Location/LegacyAddressSuggestionProvider.php",
+    "src/Service/Provider/Location/LegacyAddressReverseProvider.php",
+    "src/Service/Address/Location/AddressSuggestCapability.php",
+    "src/Service/Address/Location/AddressReverseCapability.php",
+    "tests/Service/Provider/Location/LegacyAddressSuggestionProviderTest.php",
+    "tests/Service/Provider/Location/LegacyAddressReverseProviderTest.php",
+    "tests/Service/Address/Location/AddressSuggestCapabilityTest.php",
+    "tests/Service/Address/Location/AddressReverseCapabilityTest.php",
+    "docs/location-r09-provider-boundary-extraction.md"
+  ]
+}

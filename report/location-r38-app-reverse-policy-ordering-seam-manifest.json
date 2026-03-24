@@ -1,0 +1,21 @@
+{
+  "wave": 38,
+  "message": "Location",
+  "focus": "app reverse policy ordering seam",
+  "touched": [
+    "config/services.php",
+    "src/ServiceInterface/Provider/Location/AddressReverseSourceInterface.php",
+    "src/Service/Provider/Location/LegacyAddressReverseProvider.php",
+    "src/ServiceInterface/Provider/Location/AddressReverseSourceHealthPolicyInterface.php",
+    "src/ServiceInterface/Provider/Location/AddressReverseSourceQuotaPolicyInterface.php",
+    "src/Service/Provider/Location/LegacyHealthAwareAddressReverseSourceHealthPolicy.php",
+    "src/Service/Provider/Location/LegacyQuotaAwareAddressReverseSourceQuotaPolicy.php",
+    "src/Service/Provider/Location/PolicyAddressReverseSourceOrder.php",
+    "tests/Config/LocationServicesConfigTest.php",
+    "tests/Service/Provider/Location/OrderedAddressReverseProviderTest.php",
+    "tests/Service/Provider/Location/PolicyAddressReverseSourceOrderTest.php",
+    "tests/Service/Provider/Location/LegacyHealthAwareAddressReverseSourceHealthPolicyTest.php",
+    "tests/Service/Provider/Location/LegacyQuotaAwareAddressReverseSourceQuotaPolicyTest.php",
+    "docs/location-r38-app-reverse-policy-ordering-seam.md"
+  ]
+}

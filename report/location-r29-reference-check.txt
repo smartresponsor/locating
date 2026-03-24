@@ -1,0 +1,6 @@
+Checked for references before removal.
+No live runtime/config references remained for:
+- Smartresponsor\Infrastructure\Locator\InMemoryAddressBatchJobRepository
+- Smartresponsor\Infrastructure\Locator\InMemoryAddressBatchMessageBus
+- Smartresponsor\Infrastructure\Locator\InMemoryAddressBatchResultStorage
+Matches were limited to the removed files and their dedicated legacy tests.

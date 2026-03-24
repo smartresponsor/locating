@@ -1,4 +1,4 @@
 locator_address_suggest:
-  path: /locator/address/suggest
-  controller: App\Controller\Locator\AddressSuggestController
+  path: /location/address/suggest
+  controller: App\Controller\Http\Location\AddressSuggestController
   methods: [GET]

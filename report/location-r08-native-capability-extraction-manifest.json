@@ -1,0 +1,13 @@
+{
+  "wave": "08",
+  "message": "native capability extraction",
+  "touched": [
+    "composer.json",
+    "src/Service/Address/Location/AddressSuggestCapability.php",
+    "src/Service/Address/Location/AddressReverseCapability.php",
+    "tests/Service/Address/Location/AddressSuggestCapabilityTest.php",
+    "tests/Service/Address/Location/AddressReverseCapabilityTest.php",
+    "docs/location-r08-native-capability-extraction.md",
+    "report/location-r08-native-capability-extraction-manifest.json"
+  ]
+}

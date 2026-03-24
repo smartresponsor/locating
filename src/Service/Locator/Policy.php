@@ -1,10 +1,13 @@
 <?php
-# Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
+
+// Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 
 namespace Smartresponsor\Service\Locator;
 
-final class Policy
+use App\Bridge\Legacy\Service\Location\PolicyLegacyInterface;
+
+final class Policy implements PolicyLegacyInterface
 {
     public function __construct(private array $cfg)
     {
@@ -22,7 +25,7 @@ final class Policy
     public static function fromEnv(): self
     {
         $json = getenv('LOCATOR_POLICY_JSON') ?: '';
-        if ($json !== '') {
+        if ('' !== $json) {
             $cfg = json_decode($json, true) ?: [];
         } else {
             $cfg = [

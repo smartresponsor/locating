@@ -1,0 +1,23 @@
+{
+  "wave": "03",
+  "package": "locating/location",
+  "summary": {
+    "app_controller_http_location_files": [
+      "src/Controller/Http/Location/AddressReverseController.php",
+      "src/Controller/Http/Location/AddressSuggestController.php",
+      "src/Controller/Http/Location/MetricsController.php",
+      "src/Controller/Http/Location/StatusController.php"
+    ],
+    "app_controller_interface_http_location_files": [
+      "src/ControllerInterface/Http/Location/AddressReverseControllerInterface.php",
+      "src/ControllerInterface/Http/Location/AddressSuggestControllerInterface.php",
+      "src/ControllerInterface/Http/Location/MetricsControllerInterface.php",
+      "src/ControllerInterface/Http/Location/StatusControllerInterface.php"
+    ],
+    "command_files": [
+      "src/Command/Address/LocationNormalizeCommand.php",
+      "src/Command/Geo/LocationReverseCommand.php"
+    ],
+    "removed_shallow_command_location_path": true
+  }
+}

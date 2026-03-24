@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
@@ -7,14 +8,23 @@ declare(strict_types=1);
  */
 
 namespace Smartresponsor\Service\Locator;
-final class AdaptiveTimeoutCalibrator implements AdaptiveTimeoutCalibratorInterface {
-    public function __construct(private int $minMs=200, private int $maxMs=2000){}
-    public function calibrate(float $p95Ms, float $errorRate, int $currentMs): int {
-        $t = (int)round($p95Ms * (1.1 + min(0.5, $errorRate*0.8)));
+
+use App\Bridge\Legacy\Service\Location\AdaptiveTimeoutCalibratorLegacyInterface;
+
+final class AdaptiveTimeoutCalibrator implements AdaptiveTimeoutCalibratorLegacyInterface
+{
+    public function __construct(private int $minMs = 200, private int $maxMs = 2000)
+    {
+    }
+
+    public function calibrate(float $p95Ms, float $errorRate, int $currentMs): int
+    {
+        $t = (int) round($p95Ms * (1.1 + min(0.5, $errorRate * 0.8)));
         $t = max($this->minMs, min($this->maxMs, $t));
         // damp change to avoid oscillation
         $alpha = 0.3;
-        $res = (int)round((1-$alpha)*$currentMs + $alpha*$t);
+        $res = (int) round((1 - $alpha) * $currentMs + $alpha * $t);
+
         return max($this->minMs, min($this->maxMs, $res));
     }
 }

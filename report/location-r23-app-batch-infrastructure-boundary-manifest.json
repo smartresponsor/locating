@@ -1,0 +1,23 @@
+{
+  "wave": 23,
+  "message": "app-batch-infrastructure-boundary",
+  "added": [
+    "src/InfrastructureInterface/Batch/Location/AddressBatchJobStoreInterface.php",
+    "src/InfrastructureInterface/Batch/Location/AddressBatchMessageDispatcherInterface.php",
+    "src/InfrastructureInterface/Batch/Location/AddressBatchResultReaderInterface.php",
+    "src/Infrastructure/Batch/Location/LegacyAddressBatchJobStore.php",
+    "src/Infrastructure/Batch/Location/LegacyAddressBatchMessageDispatcher.php",
+    "src/Infrastructure/Batch/Location/LegacyAddressBatchResultReader.php",
+    "tests/Infrastructure/Batch/Location/LegacyAddressBatchJobStoreTest.php",
+    "tests/Infrastructure/Batch/Location/LegacyAddressBatchMessageDispatcherTest.php",
+    "tests/Infrastructure/Batch/Location/LegacyAddressBatchResultReaderTest.php",
+    "docs/location-r23-app-batch-infrastructure-boundary.md",
+    "report/location-r23-app-batch-infrastructure-boundary-manifest.json"
+  ],
+  "modified": [
+    "src/Service/Batch/Location/AddressBatchService.php",
+    "config/services.php",
+    "tests/Service/Batch/Location/AddressBatchServiceTest.php"
+  ],
+  "removed": []
+}

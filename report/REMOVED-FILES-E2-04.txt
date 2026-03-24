@@ -1,0 +1,4 @@
+src/InfrastructureInterface/Locator/MetricRecorderInterface.php
+src/ServiceInterface/Locator/HealthMonitorInterface.php
+src/InfrastructureInterface/Locator/ProviderCostCatalogInterface.php
+src/ServiceInterface/Locator/TenantQuotaManagerInterface.php

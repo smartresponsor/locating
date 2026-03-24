@@ -1,0 +1,23 @@
+{
+  "wave": 29,
+  "message": "Location",
+  "summary": "Collapsed legacy in-memory batch repository/storage cluster and removed dedicated legacy adapter tests.",
+  "removed_files": [
+    "src/Infrastructure/Locator/InMemoryAddressBatchJobRepository.php",
+    "src/Infrastructure/Locator/InMemoryAddressBatchMessageBus.php",
+    "src/Infrastructure/Locator/InMemoryAddressBatchResultStorage.php",
+    "src/InfrastructureInterface/Locator/InMemoryAddressBatchJobRepositoryInterface.php",
+    "src/InfrastructureInterface/Locator/InMemoryAddressBatchMessageBusInterface.php",
+    "src/InfrastructureInterface/Locator/InMemoryAddressBatchResultStorageInterface.php",
+    "tests/Infrastructure/Batch/Location/LegacyAddressBatchJobProgressWriterTest.php",
+    "tests/Infrastructure/Batch/Location/LegacyAddressBatchJobStoreTest.php",
+    "tests/Infrastructure/Batch/Location/LegacyAddressBatchResultReaderTest.php",
+    "tests/Infrastructure/Batch/Location/LegacyAddressBatchResultWriterTest.php"
+  ],
+  "added_files": [
+    "docs/location-r29-legacy-inmemory-batch-cluster-collapse.md",
+    "report/location-r29-reference-check.txt",
+    "report/location-r29-legacy-inmemory-batch-cluster-collapse-manifest.json",
+    "report/REMOVED-FILES-R29.txt"
+  ]
+}

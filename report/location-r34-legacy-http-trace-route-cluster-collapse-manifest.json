@@ -1,0 +1,16 @@
+{
+  "wave": 34,
+  "message": "Location",
+  "summary": "Collapse orphan legacy HTTP trace/route cluster",
+  "removed_files": [
+    "src/Http/Locator/RouteController.php",
+    "src/Http/Locator/TraceMiddleware.php",
+    "tests/Locator/TraceSpanTest.php"
+  ],
+  "added_files": [
+    "docs/location-r34-legacy-http-trace-route-cluster-collapse.md",
+    "report/location-r34-reference-check.txt",
+    "report/location-r34-legacy-http-trace-route-cluster-collapse-manifest.json",
+    "report/REMOVED-FILES-R34.txt"
+  ]
+}

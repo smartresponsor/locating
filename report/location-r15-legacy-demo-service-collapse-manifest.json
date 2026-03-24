@@ -1,0 +1,17 @@
+{
+  "wave": "15",
+  "title": "legacy demo service collapse",
+  "removed": [
+    "src/Service/Locator/LocatorDemoLoop.php",
+    "src/Service/Locator/LocatorDemoSeed.php",
+    "src/ServiceInterface/Locator/LocatorDemoLoopInterface.php",
+    "src/ServiceInterface/Locator/LocatorDemoSeedInterface.php",
+    "tests/Locator/LocatorDemoLoopTest.php",
+    "tests/Locator/LocatorDemoSeedTest.php"
+  ],
+  "added": [
+    "docs/location-r15-legacy-demo-service-collapse.md",
+    "report/location-r15-reference-check.txt",
+    "report/location-r15-legacy-demo-service-collapse-manifest.json"
+  ]
+}

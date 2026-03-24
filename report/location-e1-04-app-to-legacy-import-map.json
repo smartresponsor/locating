@@ -1,0 +1,401 @@
+{
+  "generatedAt": "2026-03-22T19:18:46Z",
+  "items": [
+    {
+      "appClass": "App\\ServiceInterface\\Address\\Location",
+      "appPath": "src/ServiceInterface/Address/Location/LocationResultFactoryInterface.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\EntityInterface\\Locator\\AddressResultInterface",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        },
+        {
+          "legacyFqcn": "Smartresponsor\\EntityInterface\\Locator\\AddressSuggestionInterface",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\ServiceInterface\\Bridge\\Batch\\Location",
+      "appPath": "src/ServiceInterface/Bridge/Batch/Location/LegacyAddressResultFactoryInterface.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\EntityInterface\\Locator\\AddressResultInterface",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\ServiceInterface\\Batch\\Location",
+      "appPath": "src/ServiceInterface/Batch/Location/AddressBatchJobFactoryInterface.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\EntityInterface\\Locator\\AddressBatchJobInterface as LegacyAddressBatchJobInterface",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\Service\\Http\\Location",
+      "appPath": "src/Service/Http/Location/LocationQuotaGuard.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\Service\\Locator\\AddressQuotaGuard as InnerAddressQuotaGuard",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        },
+        {
+          "legacyFqcn": "Smartresponsor\\ServiceInterface\\Locator\\AddressQuotaGuardInterface as InnerAddressQuotaGuardInterface",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\Service\\Address\\Location",
+      "appPath": "src/Service/Address/Location/LocationResultFactory.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\EntityInterface\\Locator\\AddressResultInterface",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        },
+        {
+          "legacyFqcn": "Smartresponsor\\EntityInterface\\Locator\\AddressSuggestionInterface",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        },
+        {
+          "legacyFqcn": "Smartresponsor\\EntityInterface\\Locator\\AddressValidationIssueInterface",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\Service\\Provider\\Location",
+      "appPath": "src/Service/Provider/Location/LegacyAddressReverseProvider.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\Entity\\Locator\\AddressData",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        },
+        {
+          "legacyFqcn": "Smartresponsor\\Entity\\Locator\\AddressResult",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        },
+        {
+          "legacyFqcn": "Smartresponsor\\Entity\\Locator\\AddressStatus",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        },
+        {
+          "legacyFqcn": "Smartresponsor\\Entity\\Locator\\GeoPoint",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\Service\\Bridge\\Batch\\Location",
+      "appPath": "src/Service/Bridge/Batch/Location/LegacyAddressResultFactory.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\Entity\\Locator\\AddressData",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        },
+        {
+          "legacyFqcn": "Smartresponsor\\Entity\\Locator\\AddressResult",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        },
+        {
+          "legacyFqcn": "Smartresponsor\\Entity\\Locator\\AddressStatus",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        },
+        {
+          "legacyFqcn": "Smartresponsor\\Entity\\Locator\\AddressValidationIssue",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        },
+        {
+          "legacyFqcn": "Smartresponsor\\EntityInterface\\Locator\\AddressResultInterface",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\Service\\Batch\\Location",
+      "appPath": "src/Service/Batch/Location/AddressBatchJobFactory.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\EntityInterface\\Locator\\AddressBatchJobInterface as LegacyAddressBatchJobInterface",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\InfrastructureInterface\\Batch\\Location",
+      "appPath": "src/InfrastructureInterface/Batch/Location/AddressBatchJobRepositoryBackendInterface.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\EntityInterface\\Locator\\AddressBatchJobInterface as LegacyAddressBatchJobInterface",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\InfrastructureInterface\\Batch\\Location",
+      "appPath": "src/InfrastructureInterface/Batch/Location/AddressBatchResultStorageBackendInterface.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\EntityInterface\\Locator\\AddressResultInterface",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\Infrastructure\\Provider\\Location",
+      "appPath": "src/Infrastructure/Provider/Location/SmartresponsorAddressSuggestBackend.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\AddressSuggestProviderInterface",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\Infrastructure\\Provider\\Location",
+      "appPath": "src/Infrastructure/Provider/Location/SmartresponsorAddressReverseHttpBackend.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\ReverseHttpClientInterface",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\Infrastructure\\Provider\\Location",
+      "appPath": "src/Infrastructure/Provider/Location/SmartresponsorLocationMetricBackend.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\MetricRecorderInterface",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\Infrastructure\\Provider\\Location",
+      "appPath": "src/Infrastructure/Provider/Location/SmartresponsorProviderHealthSnapshotBackend.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\ServiceInterface\\Locator\\HealthMonitorInterface",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\Infrastructure\\Provider\\Location",
+      "appPath": "src/Infrastructure/Provider/Location/SmartresponsorProviderMetricSnapshotBackend.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\MetricSnapshotProviderInterface",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\Infrastructure\\Provider\\Location",
+      "appPath": "src/Infrastructure/Provider/Location/SmartresponsorProviderCostCatalogBackend.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\ProviderCostCatalogInterface",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\Infrastructure\\Provider\\Location",
+      "appPath": "src/Infrastructure/Provider/Location/SmartresponsorProviderQuotaDecisionBackend.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\Domain\\Locator\\TenantQuotaManagerInterface",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\Infrastructure\\Batch\\Location",
+      "appPath": "src/Infrastructure/Batch/Location/LegacyAddressBatchJobStore.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\Entity\\Locator\\AddressBatchJob as LegacyAddressBatchJob",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\Infrastructure\\Batch\\Location",
+      "appPath": "src/Infrastructure/Batch/Location/LegacyAddressBatchResultReader.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\EntityInterface\\Locator\\AddressResultInterface",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\Infrastructure\\Batch\\Location",
+      "appPath": "src/Infrastructure/Batch/Location/LegacyAddressBatchJobProgressWriter.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\EntityInterface\\Locator\\AddressBatchJobInterface as LegacyAddressBatchJobInterface",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\Infrastructure\\Batch\\Location",
+      "appPath": "src/Infrastructure/Batch/Location/SmartresponsorAddressBatchJobRepositoryBackend.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\EntityInterface\\Locator\\AddressBatchJobInterface as LegacyAddressBatchJobInterface",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        },
+        {
+          "legacyFqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\AddressBatchJobRepositoryInterface",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\Infrastructure\\Batch\\Location",
+      "appPath": "src/Infrastructure/Batch/Location/SmartresponsorAddressBatchResultStorageBackend.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\EntityInterface\\Locator\\AddressResultInterface",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        },
+        {
+          "legacyFqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\AddressBatchResultStorageInterface",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\Infrastructure\\Batch\\Location",
+      "appPath": "src/Infrastructure/Batch/Location/SmartresponsorAddressBatchLegacyMessageBusBackend.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\AddressBatchMessageBusInterface as LegacyAddressBatchMessageBusInterface",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        },
+        {
+          "legacyFqcn": "Smartresponsor\\Message\\Locator\\AddressBatchMessage",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\Command\\Address",
+      "appPath": "src/Command/Address/LocationNormalizeCommand.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\Model\\Locator\\CanonicalAddress",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        },
+        {
+          "legacyFqcn": "Smartresponsor\\Service\\Locator\\LocatorService",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\Command\\Geo",
+      "appPath": "src/Command/Geo/LocationReverseCommand.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\Model\\Locator\\GeoPoint",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        },
+        {
+          "legacyFqcn": "Smartresponsor\\Service\\Locator\\LocatorService",
+          "usageType": "use-import",
+          "classification": "adapter",
+          "notes": "Direct legacy import still present in App namespace"
+        }
+      ]
+    }
+  ]
+}

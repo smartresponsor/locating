@@ -1,0 +1,14 @@
+Wave: R32
+Scope: legacy aggregator cluster collapse
+
+Verified symbols had no live references in src/, config/, tests/ outside removed files themselves:
+- Aggregator
+- ForwardAggregator
+- ReverseAggregator
+- AdaptiveRouter
+- AddressSuggestMetricDecorator
+- AggregatorInterface
+- ForwardAggregatorInterface
+- ReverseAggregatorInterface
+- AdaptiveRouterInterface
+- AddressSuggestMetricDecoratorInterface

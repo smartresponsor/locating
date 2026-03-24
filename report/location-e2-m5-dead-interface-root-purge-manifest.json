@@ -1,0 +1,33 @@
+{
+  "wave": "E2-M5",
+  "title": "Dead interface root purge",
+  "removedCount": 25,
+  "removedFiles": [
+    "src/ServiceInterface/Locator/AddressCanonicalizerInterface.php",
+    "src/ServiceInterface/Locator/AddressInterface.php",
+    "src/ServiceInterface/Locator/BatchSchedulerInterface.php",
+    "src/ServiceInterface/Locator/ConfidenceScoreInterface.php",
+    "src/ServiceInterface/Locator/CostAwarenessInterface.php",
+    "src/ServiceInterface/Locator/EnvInterface.php",
+    "src/ServiceInterface/Locator/ErasureJobInterface.php",
+    "src/ServiceInterface/Locator/GeohashInterface.php",
+    "src/ServiceInterface/Locator/JitterInterface.php",
+    "src/ServiceInterface/Locator/LatencyForecastInterface.php",
+    "src/ServiceInterface/Locator/PiiAnonymizerInterface.php",
+    "src/ServiceInterface/Locator/RateLimiterMemoryInterface.php",
+    "src/ServiceInterface/Locator/RateLimiterRedisInterface.php",
+    "src/ServiceInterface/Locator/RedactorInterface.php",
+    "src/ServiceInterface/Locator/RouteDecisionInterface.php",
+    "src/InfrastructureInterface/Locator/ApiKeyAuthInterface.php",
+    "src/InfrastructureInterface/Locator/ArrayTenantConfigRepositoryInterface.php",
+    "src/InfrastructureInterface/Locator/CurlHttpClientInterface.php",
+    "src/InfrastructureInterface/Locator/FixtureHttpClientInterface.php",
+    "src/InfrastructureInterface/Locator/JsonlReaderInterface.php",
+    "src/InfrastructureInterface/Locator/JsonlWriterInterface.php",
+    "src/InfrastructureInterface/Locator/KernelInterface.php",
+    "src/InfrastructureInterface/Locator/NullMetricRecorderInterface.php",
+    "src/InfrastructureInterface/Locator/RedisCacheInterface.php",
+    "src/InfrastructureInterface/Locator/TracingLocatorInterface.php"
+  ],
+  "notes": "Removed dead legacy service and infrastructure interface declarations with no remaining references outside their own files."
+}

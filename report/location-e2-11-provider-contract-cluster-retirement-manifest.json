@@ -1,0 +1,9 @@
+{
+  "wave": "E2-11",
+  "component": "Locating/Location",
+  "summary": {
+    "retiredContracts": 3,
+    "newBridgeContracts": 3,
+    "rewiredFiles": 6
+  }
+}

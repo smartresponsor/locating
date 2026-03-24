@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -7,11 +8,11 @@ declare(strict_types=1);
 
 namespace Smartresponsor\InfrastructureInterface\Locator;
 
-use Smartresponsor\EntityInterface\Locator\AddressBatchJobInterface;
+use App\Bridge\Legacy\Entity\Location\AddressBatchJobLegacyInterface;
 
 interface AddressBatchJobRepositoryInterface
 {
-    public function save(AddressBatchJobInterface $job): void;
+    public function save(AddressBatchJobLegacyInterface $job): void;
 
-    public function find(string $jobId): ?AddressBatchJobInterface;
+    public function find(string $jobId): ?AddressBatchJobLegacyInterface;
 }

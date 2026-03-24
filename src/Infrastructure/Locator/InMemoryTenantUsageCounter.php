@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -7,13 +8,13 @@ declare(strict_types=1);
 
 namespace Smartresponsor\Infrastructure\Locator;
 
-use Smartresponsor\InfrastructureInterface\Locator\TenantUsageCounterInterface;
+use App\Bridge\Legacy\Infrastructure\Location\InMemoryTenantUsageCounterInterface;
 
 /**
  * Naive in-memory usage counter with a simple 60 second window.
  * This implementation is process-local and can be replaced with Redis or database backed counter.
  */
-final class InMemoryTenantUsageCounter implements TenantUsageCounterInterface
+final class InMemoryTenantUsageCounter implements InMemoryTenantUsageCounterInterface
 {
     /**
      * @var array<string,array{windowStart:int,count:int}>
@@ -26,7 +27,7 @@ final class InMemoryTenantUsageCounter implements TenantUsageCounterInterface
             return false;
         }
 
-        $key = $tenantId . ':' . $operation;
+        $key = $tenantId.':'.$operation;
         $now = time();
 
         $window = $this->state[$key] ?? ['windowStart' => $now, 'count' => 0];
@@ -42,7 +43,7 @@ final class InMemoryTenantUsageCounter implements TenantUsageCounterInterface
             return false;
         }
 
-        $window['count']++;
+        ++$window['count'];
         $this->state[$key] = $window;
 
         return true;

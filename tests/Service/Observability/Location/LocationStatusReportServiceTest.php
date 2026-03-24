@@ -1,0 +1,38 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Tests\Service\Observability\Location;
+
+use App\Entity\Location\ProviderGovernanceSnapshot;
+use App\Entity\Location\ProviderMetricSnapshot;
+use App\Infrastructure\Provider\Location\InMemoryProviderMetricSnapshotStore;
+use App\Service\Observability\Location\LocationStatusReportService;
+use App\ServiceInterface\Observability\Location\ProviderGovernanceCatalogServiceInterface;
+use PHPUnit\Framework\TestCase;
+
+final class LocationStatusReportServiceTest extends TestCase
+{
+    public function testItBuildsStatusReportWithGovernanceSection(): void
+    {
+        $service = new LocationStatusReportService(
+            new InMemoryProviderMetricSnapshotStore([
+                'suggest' => new ProviderMetricSnapshot('suggest', 10, 0, 120.0, 0.0),
+            ]),
+            new class implements ProviderGovernanceCatalogServiceInterface {
+                public function catalog(): array
+                {
+                    return [
+                        'legacy-suggest' => new ProviderGovernanceSnapshot('legacy-suggest', 'suggest', 0.98, 111.0, true, 0.25),
+                    ];
+                }
+            },
+        );
+
+        $report = $service->report();
+
+        self::assertSame('ok', $report->status());
+        self::assertArrayHasKey('legacy-suggest', $report->governance());
+        self::assertArrayHasKey('governance', $report->toArray());
+    }
+}

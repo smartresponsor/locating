@@ -1,0 +1,5 @@
+src/ServiceInterface/Locator/AbTestRouterInterface.php
+src/ServiceInterface/Locator/AdaptiveOrderingInterface.php
+src/ServiceInterface/Locator/AdaptiveQuotaInterface.php
+src/ServiceInterface/Locator/AdaptiveTimeoutCalibratorInterface.php
+src/ServiceInterface/Locator/AdaptiveTimeoutInterface.php

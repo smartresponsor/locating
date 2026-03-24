@@ -1,0 +1,24 @@
+{
+  "wave": 52,
+  "message": "app governance acknowledgement update surface",
+  "added": [
+    "src/EntityInterface/Location/ProviderGovernanceAcknowledgementInterface.php",
+    "src/EntityInterface/Location/ProviderGovernanceAcknowledgementReportInterface.php",
+    "src/Entity/Location/ProviderGovernanceAcknowledgement.php",
+    "src/Entity/Location/ProviderGovernanceAcknowledgementReport.php",
+    "src/ServiceInterface/Observability/Location/ProviderGovernanceAcknowledgementServiceInterface.php",
+    "src/Service/Observability/Location/ProviderGovernanceAcknowledgementService.php",
+    "src/ControllerInterface/Http/Location/GovernanceAcknowledgementControllerInterface.php",
+    "src/Controller/Http/Location/GovernanceAcknowledgementController.php",
+    "config/routes/locator_governance_acknowledgements.yaml",
+    "tests/Entity/Location/ProviderGovernanceAcknowledgementReportTest.php",
+    "tests/Service/Observability/Location/ProviderGovernanceAcknowledgementServiceTest.php",
+    "tests/Controller/Http/GovernanceAcknowledgementControllerTest.php",
+    "tests/Config/LocationGovernanceAcknowledgementConfigTest.php",
+    "docs/location-r52-app-governance-acknowledgement-surface.md",
+    "report/location-r52-app-governance-acknowledgement-surface-manifest.json"
+  ],
+  "modified": [
+    "config/services.php"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "wave": "E2-10",
+  "component": "Locating/Location",
+  "generatedAt": "2026-03-22",
+  "changedFiles": [
+    "src/Contract/Locator/Provider/LocatorProviderInterface.php",
+    "src/Integration/RateLimit/TokenBucket.php",
+    "src/Integration/Locator/Decorator/AdaptiveMultiCachedLocator.php",
+    "src/Integration/Locator/Decorator/CachedLocator.php",
+    "src/Integration/Locator/Decorator/CircuitBreakerLocator.php",
+    "src/Integration/Locator/Decorator/GracefulLocator.php",
+    "src/Integration/Locator/Decorator/HealthProbeLocator.php",
+    "src/Integration/Locator/Decorator/MultiCachedLocator.php",
+    "src/Integration/Locator/Decorator/ObservabilityLocator.php",
+    "src/Integration/Locator/Decorator/RateLimitedLocator.php",
+    "src/Integration/Locator/Decorator/RetryLocator.php",
+    "src/Integration/Locator/Decorator/TryFallbackLocator.php",
+    "src/Integration/Locator/Decorator/USPSVerifyLocator.php",
+    "src/Integration/Locator/Fallback/FallbackLocator.php",
+    "src/Integration/Locator/Health/CompositeHealthCheck.php",
+    "src/Integration/Locator/Health/NominatimHealthCheck.php",
+    "src/Integration/Locator/Log/StdoutLogger.php",
+    "src/Integration/Locator/Metrics/InMemoryMetrics.php",
+    "src/Integration/Locator/Provider/FallbackProvider.php",
+    "src/Integration/Locator/RateLimit/RedisRateLimiter.php"
+  ],
+  "removedFiles": [
+    "src/Contract/Locator/LocatorInterface.php",
+    "src/Contract/Log/LoggerInterface.php",
+    "src/Contract/Metrics/MetricsInterface.php",
+    "src/Contract/Health/HealthCheckInterface.php",
+    "src/Contract/RateLimit/RateLimiterInterface.php"
+  ],
+  "bridgeContracts": [
+    "src/Bridge/Legacy/Contract/Location/LocatorLegacyInterface.php",
+    "src/Bridge/Legacy/Contract/Location/LoggerLegacyInterface.php",
+    "src/Bridge/Legacy/Contract/Location/MetricsLegacyInterface.php",
+    "src/Bridge/Legacy/Contract/Location/HealthCheckLegacyInterface.php",
+    "src/Bridge/Legacy/Contract/Location/RateLimiterLegacyInterface.php"
+  ]
+}

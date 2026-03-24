@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -7,25 +8,25 @@ declare(strict_types=1);
 
 namespace Smartresponsor\Service\Locator;
 
-use Smartresponsor\Domain\Locator\TenantQuotaManagerInterface;
-use Smartresponsor\InfrastructureInterface\Locator\MetricRecorderInterface;
+use App\Bridge\Legacy\Provider\Location\LocationMetricLegacyRecorderInterface;
+use App\Bridge\Legacy\Provider\Location\ProviderQuotaDecisionLegacyManagerInterface;
 
 /**
  * Decorator for TenantQuotaManagerInterface that records basic counters
  * for allow and deny decisions per operation.
  */
-final class TenantQuotaManagerMetricDecorator implements TenantQuotaManagerInterface
+final class TenantQuotaManagerMetricDecorator implements ProviderQuotaDecisionLegacyManagerInterface
 {
-    private TenantQuotaManagerInterface $inner;
+    private ProviderQuotaDecisionLegacyManagerInterface $inner;
 
-    private MetricRecorderInterface $metricRecorder;
+    private LocationMetricLegacyRecorderInterface $metricRecorder;
 
     private string $metricPrefix;
 
     public function __construct(
-        TenantQuotaManagerInterface $inner,
-        MetricRecorderInterface $metricRecorder,
-        string $metricPrefix = 'tenant_quota'
+        ProviderQuotaDecisionLegacyManagerInterface $inner,
+        LocationMetricLegacyRecorderInterface $metricRecorder,
+        string $metricPrefix = 'tenant_quota',
     ) {
         $this->inner = $inner;
         $this->metricRecorder = $metricRecorder;
@@ -36,7 +37,7 @@ final class TenantQuotaManagerMetricDecorator implements TenantQuotaManagerInter
     {
         $ok = $this->inner->allow($tenantId, $op, $unit, $consume);
 
-        $key = $this->metricPrefix . '_' . $op;
+        $key = $this->metricPrefix.'_'.$op;
         $this->metricRecorder->incrementCounter($key, $ok ? 'ok' : 'error');
 
         return $ok;

@@ -1,0 +1,10 @@
+{
+  "wave": "E2-08",
+  "component": "Locating/Location",
+  "summary": {
+    "retiredContracts": 5,
+    "newBridgeContracts": 3,
+    "updatedLegacyImplementations": 4
+  },
+  "focus": "bounded helper contract namespace retirement"
+}

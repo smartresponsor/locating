@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
@@ -8,15 +9,15 @@ declare(strict_types=1);
 
 namespace Smartresponsor\Entity\Locator;
 
-use Smartresponsor\InfrastructureInterface\Locator\ProviderAdapterInterface;
+use App\Bridge\Legacy\Provider\Location\ProviderAdapterLegacyInterface;
 
 final class ProviderSandbox
 {
-    /** @var array<string,ProviderAdapterInterface> */
+    /** @var array<string,ProviderAdapterLegacyInterface> */
     private array $adapter = [];
 
     /** Register adapter under provider id */
-    public function register(string $providerId, ProviderAdapterInterface $adapter): void
+    public function register(string $providerId, ProviderAdapterLegacyInterface $adapter): void
     {
         $this->adapter[$providerId] = $adapter;
     }
@@ -25,6 +26,7 @@ final class ProviderSandbox
      * Route call to a specific provider id.
      *
      * @param array<string,mixed> $request
+     *
      * @return array<string,mixed>
      */
     public function route(string $providerId, array $request): array

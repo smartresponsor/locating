@@ -1,0 +1,4 @@
+location_governance_execution:
+  path: /location/governance/execution
+  controller: App\Controller\Http\Location\GovernanceExecutionController
+  methods: [GET]

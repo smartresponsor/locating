@@ -1,0 +1,23 @@
+{
+  "wave": 27,
+  "title": "app-message-bus-seam",
+  "added": [
+    "src/InfrastructureInterface/Batch/Location/AddressBatchMessageBusInterface.php",
+    "src/Infrastructure/Batch/Location/LegacyAddressBatchMessageBus.php",
+    "src/Infrastructure/Batch/Location/InMemoryAddressBatchMessageBus.php",
+    "src/Infrastructure/Batch/Location/MessageBusAddressBatchMessageDispatcher.php",
+    "tests/Infrastructure/Batch/Location/LegacyAddressBatchMessageBusTest.php",
+    "tests/Infrastructure/Batch/Location/InMemoryAddressBatchMessageBusTest.php",
+    "tests/Infrastructure/Batch/Location/MessageBusAddressBatchMessageDispatcherTest.php",
+    "docs/location-r27-app-message-bus-seam.md",
+    "report/location-r27-app-message-bus-seam-manifest.json"
+  ],
+  "changed": [
+    "config/services.php",
+    "tests/Service/Batch/Location/AddressBatchServiceTest.php"
+  ],
+  "removed": [
+    "src/Infrastructure/Batch/Location/LegacyAddressBatchMessageDispatcher.php",
+    "tests/Infrastructure/Batch/Location/LegacyAddressBatchMessageDispatcherTest.php"
+  ]
+}

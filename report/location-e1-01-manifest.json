@@ -1,0 +1,22 @@
+{
+  "wave": "E1-01",
+  "component": "Locating/Location",
+  "generatedAt": "2026-03-22T18:44:02.615982Z",
+  "summary": {
+    "remainingSmartresponsorClasses": 442,
+    "remainingLocatorPaths": 602,
+    "appToLegacyImports": 78,
+    "bridgeBlockers": 58,
+    "forbiddenRootsStillPopulated": 5
+  },
+  "classificationTotals": {
+    "winner": 0,
+    "adapter": 97,
+    "duplicate": 8,
+    "dead": 337
+  },
+  "nextRecommendedPacks": [
+    "E1-04 Winner Pack A",
+    "E1-07 Duplicate Purge A"
+  ]
+}

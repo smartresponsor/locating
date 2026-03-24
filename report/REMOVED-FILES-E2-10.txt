@@ -1,0 +1,5 @@
+src/Contract/Locator/LocatorInterface.php
+src/Contract/Log/LoggerInterface.php
+src/Contract/Metrics/MetricsInterface.php
+src/Contract/Health/HealthCheckInterface.php
+src/Contract/RateLimit/RateLimiterInterface.php

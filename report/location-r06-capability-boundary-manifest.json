@@ -1,0 +1,17 @@
+{
+  "wave": "06",
+  "title": "capability-boundary-extraction",
+  "changed_files": [
+    "src/ServiceInterface/Address/Location/AddressSuggestCapabilityInterface.php",
+    "src/ServiceInterface/Address/Location/AddressReverseCapabilityInterface.php",
+    "src/Service/Address/Location/LegacyAddressSuggestCapability.php",
+    "src/Service/Address/Location/LegacyAddressReverseCapability.php",
+    "src/Service/Http/Location/AddressSuggestService.php",
+    "src/Service/Http/Location/AddressReverseService.php",
+    "tests/Service/Address/Location/LegacyAddressSuggestCapabilityTest.php",
+    "tests/Service/Address/Location/LegacyAddressReverseCapabilityTest.php",
+    "tests/Service/Http/Location/AddressSuggestServiceTest.php",
+    "tests/Service/Http/Location/AddressReverseServiceTest.php",
+    "docs/location-r06-capability-boundary.md"
+  ]
+}

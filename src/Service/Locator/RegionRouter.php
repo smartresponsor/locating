@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
@@ -7,15 +8,25 @@ declare(strict_types=1);
  */
 
 namespace Smartresponsor\Service\Locator;
-final class RegionRouter {
+
+use App\Bridge\Legacy\Service\Location\RegionRouterLegacyInterface;
+
+final class RegionRouter implements RegionRouterLegacyInterface
+{
     /** Select region by health and SLA weight (simplified) */
-    public function select(array $regionHealth, array $slaWeight): string {
-        $best=''; $score=-1.0;
-        foreach($regionHealth as $r=>$h){
-            $w = (float)($slaWeight[$r] ?? 1.0);
+    public function select(array $regionHealth, array $slaWeight): string
+    {
+        $best = '';
+        $score = -1.0;
+        foreach ($regionHealth as $r => $h) {
+            $w = (float) ($slaWeight[$r] ?? 1.0);
             $s = $h * $w;
-            if ($s > $score){ $score=$s; $best=$r; }
+            if ($s > $score) {
+                $score = $s;
+                $best = $r;
+            }
         }
+
         return $best;
     }
 }

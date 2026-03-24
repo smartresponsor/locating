@@ -1,0 +1,10 @@
+{
+  "wave": 18,
+  "message": "batch-consumer-app-pipeline",
+  "scope": [
+    "message-handler",
+    "batch-consumer",
+    "services-config",
+    "legacy-result-projection"
+  ]
+}

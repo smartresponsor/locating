@@ -1,0 +1,21 @@
+{
+  "wave": 25,
+  "message": "app-message-boundary-extraction",
+  "added": [
+    "docs/location-r25-app-message-boundary-extraction.md",
+    "src/Message/Batch/Location/AddressBatchMessage.php",
+    "src/MessageHandler/Batch/Location/AddressBatchMessageHandler.php",
+    "src/MessageHandlerInterface/Batch/Location/AddressBatchMessageHandlerInterface.php",
+    "src/MessageInterface/Batch/Location/AddressBatchMessageInterface.php",
+    "tests/Message/Batch/Location/AddressBatchMessageTest.php",
+    "tests/MessageHandler/Batch/Location/AddressBatchMessageHandlerTest.php",
+    "tests/MessageHandler/Locator/AddressBatchMessageHandlerAdapterTest.php"
+  ],
+  "changed": [
+    "config/services.php",
+    "src/MessageHandler/Locator/AddressBatchMessageHandler.php"
+  ],
+  "removed": [
+    "tests/MessageHandler/Locator/AddressBatchMessageHandlerTest.php"
+  ]
+}

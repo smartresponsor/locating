@@ -1,0 +1,14 @@
+{
+  "wave": "E2-05",
+  "title": "Service contract namespace retirement",
+  "retired": [
+    "src/ServiceInterface/Locator/AddressSuggestInterface.php",
+    "src/ServiceInterface/Locator/AddressReverseInterface.php",
+    "src/ServiceInterface/Locator/AddressQuotaGuardInterface.php"
+  ],
+  "added": [
+    "src/Bridge/Legacy/Service/Location/AddressSuggestLegacyServiceInterface.php",
+    "src/Bridge/Legacy/Service/Location/AddressReverseLegacyServiceInterface.php",
+    "src/Bridge/Legacy/Service/Location/AddressQuotaGuardLegacyServiceInterface.php"
+  ]
+}

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
@@ -7,17 +8,32 @@ declare(strict_types=1);
  */
 
 namespace Smartresponsor\Service\Locator;
-final class RegionTimeoutPolicy implements RegionTimeoutPolicyInterface {
+
+use App\Bridge\Legacy\Service\Location\RegionTimeoutPolicyLegacyInterface;
+
+final class RegionTimeoutPolicy implements RegionTimeoutPolicyLegacyInterface
+{
     /** @var array<string, array<string, array<string,int>>> prov=>region=>op=>ms */
     private array $m = [];
-    public function add(string $providerId, string $region, string $op, int $timeoutMs): void {
+
+    public function add(string $providerId, string $region, string $op, int $timeoutMs): void
+    {
         $this->m[$providerId][$region][$op] = max(1, $timeoutMs);
     }
-    public function timeout(string $providerId, string $region, string $op, int $defaultMs): int {
+
+    public function timeout(string $providerId, string $region, string $op, int $defaultMs): int
+    {
         $p = $this->m[$providerId] ?? [];
-        if (isset($p[$region][$op])) { return $p[$region][$op]; }
-        if (isset($p['*'][$op])) { return $p['*'][$op]; }
-        if (isset(($this->m['*'] ?? [])[$region][$op])) { return $this->m['*'][$region][$op]; }
+        if (isset($p[$region][$op])) {
+            return $p[$region][$op];
+        }
+        if (isset($p['*'][$op])) {
+            return $p['*'][$op];
+        }
+        if (isset(($this->m['*'] ?? [])[$region][$op])) {
+            return $this->m['*'][$region][$op];
+        }
+
         return max(1, $defaultMs);
     }
 }

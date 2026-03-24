@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -7,36 +8,28 @@ declare(strict_types=1);
 
 namespace Smartresponsor\Entity\Locator;
 
-use Smartresponsor\EntityInterface\Locator\AddressResultInterface;
-use Smartresponsor\EntityInterface\Locator\AddressValidationIssueInterface;
+use App\Bridge\Legacy\Entity\Location\AddressResultLegacyInterface;
+use App\Bridge\Legacy\Entity\Location\AddressValidationIssueLegacyInterface;
 
-/**
- * Immutable result of address validation and optional geocoding.
- */
-final class AddressResult implements AddressResultInterface
+final class AddressResult implements AddressResultLegacyInterface
 {
     /**
-     * @param AddressValidationIssueInterface[] $issues
+     * @param AddressValidationIssueLegacyInterface[] $issues
      */
     public function __construct(
         private AddressStatus $status,
         private ?AddressData $addressData,
         private array $issues,
         private ?GeoPoint $geoPoint,
-        private ?string $providerKey
+        private ?string $providerKey,
     ) {
     }
 
     /**
-     * @param AddressValidationIssueInterface[] $issues
+     * @param AddressValidationIssueLegacyInterface[] $issues
      */
-    public static function create(
-        AddressStatus $status,
-        ?AddressData $addressData,
-        array $issues = [],
-        ?GeoPoint $geoPoint = null,
-        ?string $providerKey = null
-    ): self {
+    public static function create(AddressStatus $status, ?AddressData $addressData, array $issues = [], ?GeoPoint $geoPoint = null, ?string $providerKey = null): self
+    {
         return new self($status, $addressData, $issues, $geoPoint, $providerKey);
     }
 
@@ -70,20 +63,12 @@ final class AddressResult implements AddressResultInterface
         return [
             'status' => $this->status->value,
             'address' => $this->addressData?->toArray(),
-            'issues' => array_map(
-                static fn (AddressValidationIssueInterface $issue): array => [
-                    'field' => $issue->field(),
-                    'code' => $issue->code(),
-                    'message' => $issue->message(),
-                ],
-                $this->issues
-            ),
-            'geoPoint' => $this->geoPoint
-                ? [
-                    'latitude' => $this->geoPoint->latitude,
-                    'longitude' => $this->geoPoint->longitude,
-                ]
-                : null,
+            'issues' => array_map(static fn (AddressValidationIssueLegacyInterface $issue): array => [
+                'field' => $issue->field(),
+                'code' => $issue->code(),
+                'message' => $issue->message(),
+            ], $this->issues),
+            'geoPoint' => $this->geoPoint ? ['latitude' => $this->geoPoint->latitude, 'longitude' => $this->geoPoint->longitude] : null,
             'providerKey' => $this->providerKey,
         ];
     }

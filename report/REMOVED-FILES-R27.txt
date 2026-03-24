@@ -1,0 +1,2 @@
+src/Infrastructure/Batch/Location/LegacyAddressBatchMessageDispatcher.php
+tests/Infrastructure/Batch/Location/LegacyAddressBatchMessageDispatcherTest.php

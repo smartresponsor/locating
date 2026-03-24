@@ -1,0 +1,27 @@
+{
+  "wave": 43,
+  "message": "Location",
+  "touched_files": [
+    "src/EntityInterface/Location/ProviderCostSignalInterface.php",
+    "src/Entity/Location/ProviderCostSignal.php",
+    "src/ServiceInterface/Provider/Location/ProviderCostSignalReaderInterface.php",
+    "src/InfrastructureInterface/Provider/Location/ProviderCostCatalogGatewayInterface.php",
+    "src/Infrastructure/Provider/Location/LegacyProviderCostCatalogGateway.php",
+    "src/ServiceInterface/Provider/Location/AddressSuggestionSourceCostPolicyInterface.php",
+    "src/ServiceInterface/Provider/Location/AddressReverseSourceCostPolicyInterface.php",
+    "src/Service/Provider/Location/LegacyProviderCostSignalReader.php",
+    "src/Service/Provider/Location/LegacyCostAwareAddressSuggestionSourceCostPolicy.php",
+    "src/Service/Provider/Location/LegacyCostAwareAddressReverseSourceCostPolicy.php",
+    "src/Service/Provider/Location/PolicyAddressSuggestionSourceOrder.php",
+    "src/Service/Provider/Location/PolicyAddressReverseSourceOrder.php",
+    "config/services.php",
+    "tests/Entity/Location/ProviderCostSignalTest.php",
+    "tests/Infrastructure/Provider/Location/LegacyProviderCostCatalogGatewayTest.php",
+    "tests/Service/Provider/Location/LegacyProviderCostSignalReaderTest.php",
+    "tests/Service/Provider/Location/PolicyAddressSuggestionSourceOrderTest.php",
+    "tests/Service/Provider/Location/PolicyAddressReverseSourceOrderTest.php",
+    "tests/Config/LocationServicesConfigTest.php",
+    "docs/location-r43-app-provider-cost-ordering-seam.md"
+  ],
+  "status": "ok"
+}

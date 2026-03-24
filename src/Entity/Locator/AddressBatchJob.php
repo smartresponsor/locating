@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -7,9 +8,9 @@ declare(strict_types=1);
 
 namespace Smartresponsor\Entity\Locator;
 
-use Smartresponsor\EntityInterface\Locator\AddressBatchJobInterface;
+use App\Bridge\Legacy\Entity\Location\AddressBatchJobLegacyInterface;
 
-final class AddressBatchJob implements AddressBatchJobInterface
+final class AddressBatchJob implements AddressBatchJobLegacyInterface
 {
     private AddressBatchJobStatus $status;
 
@@ -22,7 +23,7 @@ final class AddressBatchJob implements AddressBatchJobInterface
     public function __construct(
         private string $jobId,
         private string $tenantId,
-        private int $totalCount
+        private int $totalCount,
     ) {
         $now = new \DateTimeImmutable('now');
         $this->status = AddressBatchJobStatus::PENDING;
@@ -86,8 +87,8 @@ final class AddressBatchJob implements AddressBatchJobInterface
 
     public function incrementProcessed(): void
     {
-        $this->processedCount++;
-        if ($this->processedCount >= $this->totalCount && $this->status !== AddressBatchJobStatus::FAILED) {
+        ++$this->processedCount;
+        if ($this->processedCount >= $this->totalCount && AddressBatchJobStatus::FAILED !== $this->status) {
             $this->status = AddressBatchJobStatus::COMPLETED;
         }
         $this->touch();

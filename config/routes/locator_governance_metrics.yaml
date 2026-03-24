@@ -1,0 +1,4 @@
+locator_governance_metrics:
+  path: /location/governance/metrics
+  controller: App\Controller\Http\Location\GovernanceMetricsController
+  methods: [GET]

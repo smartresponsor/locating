@@ -1,0 +1,37 @@
+{
+  "wave": "E1-02",
+  "component": "Locating/Location",
+  "base": "Locating-E1-01-Location-cumulative.zip",
+  "summary": {
+    "appOwnedBackendInterfacesAdded": 7,
+    "edgeBackendAdaptersAdded": 7,
+    "providerRuntimeBridgeBlockersExtracted": 7,
+    "globalConfigLegacyRefsRemaining": 6
+  },
+  "touchedFiles": [
+    "config/services.php",
+    "src/Infrastructure/Provider/Location/LegacyAddressSuggestGateway.php",
+    "src/Infrastructure/Provider/Location/LegacyAddressReverseGateway.php",
+    "src/Infrastructure/Provider/Location/LegacyLocationMetricRecorder.php",
+    "src/Infrastructure/Provider/Location/LegacyProviderHealthSnapshotStore.php",
+    "src/Infrastructure/Provider/Location/LegacyProviderMetricSnapshotStore.php",
+    "src/Infrastructure/Provider/Location/LegacyProviderCostCatalogGateway.php",
+    "src/Infrastructure/Provider/Location/LegacyProviderQuotaDecisionGateway.php",
+    "src/Infrastructure/Provider/Location/SmartresponsorAddressSuggestBackend.php",
+    "src/Infrastructure/Provider/Location/SmartresponsorAddressReverseHttpBackend.php",
+    "src/Infrastructure/Provider/Location/SmartresponsorLocationMetricBackend.php",
+    "src/Infrastructure/Provider/Location/SmartresponsorProviderHealthSnapshotBackend.php",
+    "src/Infrastructure/Provider/Location/SmartresponsorProviderMetricSnapshotBackend.php",
+    "src/Infrastructure/Provider/Location/SmartresponsorProviderCostCatalogBackend.php",
+    "src/Infrastructure/Provider/Location/SmartresponsorProviderQuotaDecisionBackend.php",
+    "src/InfrastructureInterface/Provider/Location/AddressSuggestBackendInterface.php",
+    "src/InfrastructureInterface/Provider/Location/AddressReverseHttpBackendInterface.php",
+    "src/InfrastructureInterface/Provider/Location/LocationMetricBackendInterface.php",
+    "src/InfrastructureInterface/Provider/Location/ProviderHealthSnapshotBackendInterface.php",
+    "src/InfrastructureInterface/Provider/Location/ProviderMetricSnapshotBackendInterface.php",
+    "src/InfrastructureInterface/Provider/Location/ProviderCostCatalogBackendInterface.php",
+    "src/InfrastructureInterface/Provider/Location/ProviderQuotaDecisionBackendInterface.php",
+    "docs/location-e1-02-provider-runtime-bridge-squeeze.md",
+    "report/location-e1-02-provider-runtime-bridge-squeeze-manifest.json"
+  ]
+}

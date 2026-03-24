@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -7,22 +8,22 @@ declare(strict_types=1);
 
 namespace Smartresponsor\Service\Locator;
 
-use Smartresponsor\EntityInterface\Locator\AddressSuggestionInterface;
-use Smartresponsor\InfrastructureInterface\Locator\AddressSuggestProviderInterface;
-use Smartresponsor\ServiceInterface\Locator\AddressSuggestInterface;
+use App\Bridge\Legacy\Entity\Location\AddressSuggestionLegacyInterface;
+use App\Bridge\Legacy\Provider\Location\AddressSuggestLegacyProviderInterface;
+use App\Bridge\Legacy\Service\Location\AddressSuggestLegacyServiceInterface;
 
 /**
  * Address suggest service that delegates to one or more providers.
  */
-final class AddressSuggest implements AddressSuggestInterface
+final class AddressSuggest implements AddressSuggestLegacyServiceInterface
 {
     /**
-     * @var AddressSuggestProviderInterface[]
+     * @var AddressSuggestLegacyProviderInterface[]
      */
     private array $providers;
 
     /**
-     * @param iterable<AddressSuggestProviderInterface> $providers
+     * @param iterable<AddressSuggestLegacyProviderInterface> $providers
      */
     public function __construct(iterable $providers)
     {
@@ -34,7 +35,7 @@ final class AddressSuggest implements AddressSuggestInterface
 
     public function suggest(string $query, ?string $countryCode = null, int $limit = 5): array
     {
-        if ($query === '') {
+        if ('' === $query) {
             return [];
         }
 
@@ -42,11 +43,14 @@ final class AddressSuggest implements AddressSuggestInterface
 
         foreach ($this->providers as $provider) {
             $items = $provider->suggest($query, $countryCode, $limit);
-            if ($items === []) {
+            if ([] === $items) {
                 continue;
             }
 
             foreach ($items as $item) {
+                if (!$item instanceof AddressSuggestionLegacyInterface) {
+                    continue;
+                }
                 $result[] = $item;
                 if (count($result) >= $limit) {
                     return $result;

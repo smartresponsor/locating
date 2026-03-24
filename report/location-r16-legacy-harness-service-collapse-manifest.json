@@ -1,0 +1,25 @@
+{
+  "wave": "16",
+  "title": "legacy harness service collapse",
+  "removed_files": [
+    "src/Service/Locator/ContractTestV2.php",
+    "src/ServiceInterface/Locator/ContractTestV2Interface.php",
+    "tests/Locator/ContractTestV2Test.php",
+    "src/Service/Locator/DryRunSimulator.php",
+    "src/ServiceInterface/Locator/DryRunSimulatorInterface.php",
+    "tests/Locator/DryRunSimulatorTest.php",
+    "src/Service/Locator/SandboxHarness.php",
+    "src/ServiceInterface/Locator/SandboxHarnessInterface.php",
+    "tests/Locator/SandboxHarnessTest.php"
+  ],
+  "added_files": [
+    "docs/location-r16-legacy-harness-service-collapse.md",
+    "report/location-r16-reference-check.txt",
+    "report/location-r16-legacy-harness-service-collapse-manifest.json",
+    "report/REMOVED-FILES-R16.txt"
+  ],
+  "notes": [
+    "Removed self-contained legacy harness/test utility cluster with no live operational references.",
+    "Active App HTTP and service vertical remains unchanged by this wave."
+  ]
+}

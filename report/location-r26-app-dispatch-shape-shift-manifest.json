@@ -1,0 +1,18 @@
+{
+  "wave": 26,
+  "title": "app-dispatch-shape-shift",
+  "summary": {
+    "dispatch_boundary_message_owned_by_app": true,
+    "legacy_message_translation_isolated_in_adapter": true,
+    "batch_service_constructs_app_message": true
+  },
+  "touched_files": [
+    "src/InfrastructureInterface/Batch/Location/AddressBatchMessageDispatcherInterface.php",
+    "src/Infrastructure/Batch/Location/LegacyAddressBatchMessageDispatcher.php",
+    "src/Service/Batch/Location/AddressBatchService.php",
+    "tests/Infrastructure/Batch/Location/LegacyAddressBatchMessageDispatcherTest.php",
+    "tests/Service/Batch/Location/AddressBatchServiceTest.php",
+    "docs/location-r26-app-dispatch-shape-shift.md",
+    "report/location-r26-app-dispatch-shape-shift-manifest.json"
+  ]
+}

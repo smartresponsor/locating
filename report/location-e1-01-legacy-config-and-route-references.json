@@ -1,0 +1,101 @@
+{
+  "generatedAt": "2026-03-22T18:44:02.615982Z",
+  "items": [
+    {
+      "file": "config/services.php",
+      "reference": "Smartresponsor\\MessageHandler\\Locator\\AddressBatchMessageHandler",
+      "referenceType": "service-definition",
+      "active": true,
+      "replacementTarget": "App contract or deeper adapter seam",
+      "classification": "adapter"
+    },
+    {
+      "file": "config/services.php",
+      "reference": "Smartresponsor\\InfrastructureInterface\\Locator\\AddressSuggestProviderInterface",
+      "referenceType": "service-definition",
+      "active": true,
+      "replacementTarget": "App contract or deeper adapter seam",
+      "classification": "adapter"
+    },
+    {
+      "file": "config/services.php",
+      "reference": "Smartresponsor\\InfrastructureInterface\\Locator\\ReverseHttpClientInterface",
+      "referenceType": "service-definition",
+      "active": true,
+      "replacementTarget": "App contract or deeper adapter seam",
+      "classification": "adapter"
+    },
+    {
+      "file": "config/services.php",
+      "reference": "Smartresponsor\\InfrastructureInterface\\Locator\\MetricRecorderInterface",
+      "referenceType": "service-definition",
+      "active": true,
+      "replacementTarget": "App contract or deeper adapter seam",
+      "classification": "adapter"
+    },
+    {
+      "file": "config/services.php",
+      "reference": "Smartresponsor\\ServiceInterface\\Locator\\HealthMonitorInterface",
+      "referenceType": "service-definition",
+      "active": true,
+      "replacementTarget": "App contract or deeper adapter seam",
+      "classification": "adapter"
+    },
+    {
+      "file": "config/services.php",
+      "reference": "Smartresponsor\\InfrastructureInterface\\Locator\\MetricSnapshotProviderInterface",
+      "referenceType": "service-definition",
+      "active": true,
+      "replacementTarget": "App contract or deeper adapter seam",
+      "classification": "adapter"
+    },
+    {
+      "file": "config/services.php",
+      "reference": "Smartresponsor\\InfrastructureInterface\\Locator\\ProviderCostCatalogInterface",
+      "referenceType": "service-definition",
+      "active": true,
+      "replacementTarget": "App contract or deeper adapter seam",
+      "classification": "adapter"
+    },
+    {
+      "file": "config/services.php",
+      "reference": "Smartresponsor\\Domain\\Locator\\TenantQuotaManagerInterface",
+      "referenceType": "service-definition",
+      "active": true,
+      "replacementTarget": "App contract or deeper adapter seam",
+      "classification": "adapter"
+    },
+    {
+      "file": "config/services.php",
+      "reference": "Smartresponsor\\InfrastructureInterface\\Locator\\AddressBatchJobRepositoryInterface",
+      "referenceType": "service-definition",
+      "active": true,
+      "replacementTarget": "App contract or deeper adapter seam",
+      "classification": "adapter"
+    },
+    {
+      "file": "config/services.php",
+      "reference": "Smartresponsor\\InfrastructureInterface\\Locator\\AddressBatchMessageBusInterface",
+      "referenceType": "service-definition",
+      "active": true,
+      "replacementTarget": "App contract or deeper adapter seam",
+      "classification": "adapter"
+    },
+    {
+      "file": "config/services.php",
+      "reference": "Smartresponsor\\InfrastructureInterface\\Locator\\AddressBatchResultStorageInterface",
+      "referenceType": "service-definition",
+      "active": true,
+      "replacementTarget": "App contract or deeper adapter seam",
+      "classification": "adapter"
+    },
+    {
+      "file": "composer.json",
+      "reference": "Smartresponsor\\\\",
+      "referenceType": "autoload",
+      "active": true,
+      "replacementTarget": "App contract or deeper adapter seam",
+      "classification": "adapter"
+    }
+  ]
+}

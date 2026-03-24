@@ -1,0 +1,3 @@
+src/EntityInterface/Locator/AddressInputInterface.php
+src/EntityInterface/Locator/AddressDataInterface.php
+src/EntityInterface/Locator/AddressBatchJobInterface.php

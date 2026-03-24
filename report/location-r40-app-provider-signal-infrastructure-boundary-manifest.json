@@ -1,0 +1,24 @@
+{
+  "wave": 40,
+  "message": "Location",
+  "summary": "Extracted App-owned provider signal infrastructure boundary behind health/quota signal readers.",
+  "added": [
+    "src/InfrastructureInterface/Provider/Location/ProviderHealthSnapshotStoreInterface.php",
+    "src/InfrastructureInterface/Provider/Location/ProviderQuotaDecisionGatewayInterface.php",
+    "src/Infrastructure/Provider/Location/LegacyProviderHealthSnapshotStore.php",
+    "src/Infrastructure/Provider/Location/LegacyProviderQuotaDecisionGateway.php",
+    "tests/Infrastructure/Provider/Location/LegacyProviderHealthSnapshotStoreTest.php",
+    "tests/Infrastructure/Provider/Location/LegacyProviderQuotaDecisionGatewayTest.php",
+    "docs/location-r40-app-provider-signal-infrastructure-boundary.md",
+    "report/location-r40-app-provider-signal-infrastructure-boundary-manifest.json"
+  ],
+  "modified": [
+    "src/Service/Provider/Location/LegacyProviderHealthSignalReader.php",
+    "src/Service/Provider/Location/LegacyProviderQuotaSignalReader.php",
+    "config/services.php",
+    "tests/Service/Provider/Location/LegacyProviderHealthSignalReaderTest.php",
+    "tests/Service/Provider/Location/LegacyProviderQuotaSignalReaderTest.php",
+    "tests/Config/LocationServicesConfigTest.php"
+  ],
+  "removed": []
+}

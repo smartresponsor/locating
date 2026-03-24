@@ -1,0 +1,23 @@
+{
+  "wave": 45,
+  "message": "app-governance-controller-surface",
+  "added": [
+    "src/EntityInterface/Location/ProviderGovernanceReportInterface.php",
+    "src/Entity/Location/ProviderGovernanceReport.php",
+    "src/ServiceInterface/Observability/Location/ProviderGovernanceReportServiceInterface.php",
+    "src/Service/Observability/Location/ProviderGovernanceReportService.php",
+    "src/ControllerInterface/Http/Location/GovernanceControllerInterface.php",
+    "src/Controller/Http/Location/GovernanceController.php",
+    "config/routes/locator_governance.yaml",
+    "tests/Entity/Location/ProviderGovernanceReportTest.php",
+    "tests/Service/Observability/Location/ProviderGovernanceReportServiceTest.php",
+    "tests/Controller/Http/GovernanceControllerTest.php",
+    "tests/Config/LocationGovernanceConfigTest.php",
+    "docs/location-r45-app-governance-controller-surface.md",
+    "report/location-r45-app-governance-controller-surface-manifest.json"
+  ],
+  "modified": [
+    "config/services.php"
+  ],
+  "removed": []
+}

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
@@ -8,27 +9,27 @@ declare(strict_types=1);
 
 namespace Smartresponsor\Service\Locator;
 
-use Smartresponsor\InfrastructureInterface\Locator\ProviderAdapterInterface;
+use App\Bridge\Legacy\Provider\Location\ProviderAdapterLegacyInterface;
 
-final class FakeProvider implements ProviderAdapterInterface
+final class FakeProvider implements ProviderAdapterLegacyInterface
 {
     public function __construct(
         private string $name,
         private float $lat = 29.76,
-        private float $lon = -95.37
+        private float $lon = -95.37,
     ) {
     }
 
     public function call(array $request): array
     {
-        $q = (string)($request['q'] ?? 'unknown');
+        $q = (string) ($request['q'] ?? 'unknown');
 
         return [
             'status' => 'ok',
             'q' => $q,
             'lat' => $this->lat,
             'lon' => $this->lon,
-            'text' => $this->name . ' ' . $q,
+            'text' => $this->name.' '.$q,
         ];
     }
 }

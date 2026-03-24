@@ -1,0 +1,7 @@
+src/Integration/Locator/Provider/GoogleProvider.php
+src/Integration/Locator/Provider/MapboxProvider.php
+src/Integration/Locator/Provider/OpenStreetMapProvider.php
+src/Integration/Locator/LocatorSelector.php
+src/Integration/Locator/Health/HealthChecker.php
+src/Infrastructure/Locator/LocatorSelector.php
+src/InfrastructureInterface/Locator/LocatorSelectorInterface.php

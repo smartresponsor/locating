@@ -1,0 +1,87 @@
+Reference check for removed symbols
+docs/location-r42-legacy-observability-helper-cluster-collapse.md:7:- `src/Service/Locator/TraceMiddleware.php`
+docs/location-r42-legacy-observability-helper-cluster-collapse.md:8:- `src/Service/Locator/OtelExporter.php`
+docs/location-r42-legacy-observability-helper-cluster-collapse.md:9:- `src/ServiceInterface/Locator/TraceMiddlewareInterface.php`
+docs/location-r42-legacy-observability-helper-cluster-collapse.md:10:- `src/ServiceInterface/Locator/OtelExporterInterface.php`
+docs/location-r42-legacy-observability-helper-cluster-collapse.md:11:- `src/Infrastructure/Locator/StructuredLogger.php`
+docs/location-r42-legacy-observability-helper-cluster-collapse.md:12:- `src/Infrastructure/Locator/TraceMiddleware.php`
+docs/location-r42-legacy-observability-helper-cluster-collapse.md:13:- `src/Infrastructure/Locator/OtelExporter.php`
+report/location-r42-legacy-observability-helper-cluster-collapse-manifest.json:5:    "src/Service/Locator/TraceMiddleware.php",
+report/location-r42-legacy-observability-helper-cluster-collapse-manifest.json:6:    "src/Service/Locator/OtelExporter.php",
+report/location-r42-legacy-observability-helper-cluster-collapse-manifest.json:7:    "src/ServiceInterface/Locator/TraceMiddlewareInterface.php",
+report/location-r42-legacy-observability-helper-cluster-collapse-manifest.json:8:    "src/ServiceInterface/Locator/OtelExporterInterface.php",
+report/location-r42-legacy-observability-helper-cluster-collapse-manifest.json:9:    "src/Infrastructure/Locator/StructuredLogger.php",
+report/location-r42-legacy-observability-helper-cluster-collapse-manifest.json:10:    "src/Infrastructure/Locator/TraceMiddleware.php",
+report/location-r42-legacy-observability-helper-cluster-collapse-manifest.json:11:    "src/Infrastructure/Locator/OtelExporter.php",
+report/location-r42-legacy-observability-helper-cluster-collapse-manifest.json:13:    "src/InfrastructureInterface/Locator/StructuredLoggerInterface.php",
+report/location-r42-legacy-observability-helper-cluster-collapse-manifest.json:14:    "src/InfrastructureInterface/Locator/TraceMiddlewareInterface.php",
+report/location-r42-legacy-observability-helper-cluster-collapse-manifest.json:15:    "src/InfrastructureInterface/Locator/OtelExporterInterface.php",
+report/location-r42-legacy-observability-helper-cluster-collapse-manifest.json:16:    "src/InfrastructureInterface/Locator/PrometheusInterface.php",
+report/location-r42-legacy-observability-helper-cluster-collapse-manifest.json:17:    "tests/Locator/StructuredLoggerTest.php",
+report/location-r42-legacy-observability-helper-cluster-collapse-manifest.json:18:    "tests/Locator/TraceMiddlewareTest.php",
+report/location-r42-legacy-observability-helper-cluster-collapse-manifest.json:19:    "tests/Locator/OtelExporterTest.php"
+report/REMOVED-FILES-R42.txt:1:src/Service/Locator/TraceMiddleware.php
+report/REMOVED-FILES-R42.txt:2:src/Service/Locator/OtelExporter.php
+report/REMOVED-FILES-R42.txt:3:src/ServiceInterface/Locator/TraceMiddlewareInterface.php
+report/REMOVED-FILES-R42.txt:4:src/ServiceInterface/Locator/OtelExporterInterface.php
+report/REMOVED-FILES-R42.txt:5:src/Infrastructure/Locator/StructuredLogger.php
+report/REMOVED-FILES-R42.txt:6:src/Infrastructure/Locator/TraceMiddleware.php
+report/REMOVED-FILES-R42.txt:7:src/Infrastructure/Locator/OtelExporter.php
+report/REMOVED-FILES-R42.txt:9:src/InfrastructureInterface/Locator/StructuredLoggerInterface.php
+report/REMOVED-FILES-R42.txt:10:src/InfrastructureInterface/Locator/TraceMiddlewareInterface.php
+report/REMOVED-FILES-R42.txt:11:src/InfrastructureInterface/Locator/OtelExporterInterface.php
+report/REMOVED-FILES-R42.txt:12:src/InfrastructureInterface/Locator/PrometheusInterface.php
+report/REMOVED-FILES-R42.txt:13:tests/Locator/StructuredLoggerTest.php
+report/REMOVED-FILES-R42.txt:14:tests/Locator/TraceMiddlewareTest.php
+report/REMOVED-FILES-R42.txt:15:tests/Locator/OtelExporterTest.php
+docs/location-r34-legacy-http-trace-route-cluster-collapse.md:7:- `src/Http/Locator/TraceMiddleware.php`
+report/legacy/location-sketches15-30/winners-index.txt:98:src/Infrastructure/Locator/OtelExporter.php <- v=30 from=location-sketch30-oct30-final.zip:src/Infrastructure/Locator/OtelExporter.php sha256=58aa7f64ce9c2355be24a023d976fc7974aca03cf4de2f701cfd12534db20f70 size=996
+report/legacy/location-sketches15-30/winners-index.txt:136:src/Infrastructure/Locator/StructuredLogger.php <- v=30 from=location-sketch30-oct30-final.zip:src/Infrastructure/Locator/StructuredLogger.php sha256=e813b82a54a345623d3366e82db3fb21444f4ea544b63209764dbab02e23f254 size=601
+report/legacy/location-sketches15-30/winners-index.txt:146:src/Infrastructure/Locator/TraceMiddleware.php <- v=30 from=location-sketch30-oct30-final.zip:src/Infrastructure/Locator/TraceMiddleware.php sha256=e5664510e9c6de36c318f0ec315b268b0f2bc4d5dff63737f1930aee4a15fdb9 size=1031
+report/legacy/location-sketches15-30/winners-index.txt:196:src/DomainInterface/Locator/OtelExporterInterface.php <- v=30 from=location-sketch30-oct30-final.zip:src/DomainInterface/Locator/OtelExporterInterface.php sha256=477c07c4681a5541a790bdb0090688e14e7188845de256529c411daf2ce0c6ea size=458
+report/legacy/location-sketches15-30/winners-index.txt:227:src/DomainInterface/Locator/StructuredLoggerInterface.php <- v=30 from=location-sketch30-oct30-final.zip:src/DomainInterface/Locator/StructuredLoggerInterface.php sha256=fe567d915a8c041aa5863bef165fee3803c7cb097b8d25436bd60719e2b630d1 size=467
+report/legacy/location-sketches15-30/winners-index.txt:235:src/DomainInterface/Locator/TraceMiddlewareInterface.php <- v=30 from=location-sketch30-oct30-final.zip:src/DomainInterface/Locator/TraceMiddlewareInterface.php sha256=9dcf0f3c7b7cb16b084cc6182ab6989704edea20fce67cde8ec622bfb114ece3 size=629
+report/legacy/location-sketches15-30/winners-index.txt:241:src/Http/Locator/TraceMiddleware.php <- v=30 from=location-sketch30-oct30-final.zip:src/Http/Locator/TraceMiddleware.php sha256=80762c9d827cc5a07dadd6f2383c1f60bb4b907b292c29b8423a92ae6a493558 size=734
+report/legacy/location-sketches15-30/winners-index.txt:406:tests/Locator/OtelExporterTest.php <- v=30 from=location-sketch30-oct30-final.zip:tests/Locator/OtelExporterTest.php sha256=16f42a2da473048762cf0ace1d95f822dbef16e516eaab00d6197e5a7f686a69 size=645
+report/legacy/location-sketches15-30/winners-index.txt:438:tests/Locator/StructuredLoggerTest.php <- v=30 from=location-sketch30-oct30-final.zip:tests/Locator/StructuredLoggerTest.php sha256=467426a399dae05e069e846cf363dfc9956deefa6ddef04606d526a78a14c833 size=632
+report/legacy/location-sketches15-30/winners-index.txt:446:tests/Locator/TraceMiddlewareTest.php <- v=30 from=location-sketch30-oct30-final.zip:tests/Locator/TraceMiddlewareTest.php sha256=d11b551cdc39c8e6806bc798b350caa646fa3fe86492d5769d34422045cb019a size=590
+report/location-r2-api-drift-manifest.json:9:      "src/Http/Locator/TraceMiddleware.php",
+report/location-r2-api-drift-manifest.json:34:    "src/Http/Locator/TraceMiddleware.php",
+report/location-r2-api-drift-manifest.json:86:    "tests/Locator/OtelExporterTest.php",
+report/location-r2-api-drift-manifest.json:118:    "tests/Locator/StructuredLoggerTest.php",
+report/location-r2-api-drift-manifest.json:126:    "tests/Locator/TraceMiddlewareTest.php",
+report/legacy/location-sketches15-30/collisions.txt:242:src/DomainInterface/Locator/OtelExporterInterface.php
+report/legacy/location-sketches15-30/collisions.txt:243:  [LOSER] v=30 size=388 sha256=0c0daf04dd0429a4045c5224cdf979d8c6655da8350317d4103eb9060fd89f86 from=location-sketch30-oct30-final.zip:src/LayerInterface/Domaine/OtelExporterInterface.php
+report/legacy/location-sketches15-30/collisions.txt:244:  [WINNER] v=30 size=458 sha256=477c07c4681a5541a790bdb0090688e14e7188845de256529c411daf2ce0c6ea from=location-sketch30-oct30-final.zip:src/DomainInterface/Locator/OtelExporterInterface.php
+report/legacy/location-sketches15-30/collisions.txt:366:src/DomainInterface/Locator/StructuredLoggerInterface.php
+report/legacy/location-sketches15-30/collisions.txt:367:  [LOSER] v=30 size=405 sha256=7ca17da2d0e8235e3150e0cbf2a0b4d564c75e7720d5f5a491edf479aa1beb4e from=location-sketch30-oct30-final.zip:src/LayerInterface/Domaine/StructuredLoggerInterface.php
+report/legacy/location-sketches15-30/collisions.txt:368:  [WINNER] v=30 size=467 sha256=fe567d915a8c041aa5863bef165fee3803c7cb097b8d25436bd60719e2b630d1 from=location-sketch30-oct30-final.zip:src/DomainInterface/Locator/StructuredLoggerInterface.php
+report/legacy/location-sketches15-30/collisions.txt:398:src/DomainInterface/Locator/TraceMiddlewareInterface.php
+report/legacy/location-sketches15-30/collisions.txt:399:  [LOSER] v=30 size=443 sha256=3c411cbf72efae868ece7e00a7d05348b5e1be4965615adcae2214ad35b512ae from=location-sketch30-oct30-final.zip:src/LayerInterface/Domaine/TraceMiddlewareInterface.php
+report/legacy/location-sketches15-30/collisions.txt:400:  [WINNER] v=30 size=629 sha256=9dcf0f3c7b7cb16b084cc6182ab6989704edea20fce67cde8ec622bfb114ece3 from=location-sketch30-oct30-final.zip:src/DomainInterface/Locator/TraceMiddlewareInterface.php
+report/location-r1-interface-mirror-manifest.json:79:    "src/InfrastructureInterface/Locator/PrometheusInterface.php",
+report/location-r0-app-namespace-manifest.json:213:      "file": "src/InfrastructureInterface/Locator/StructuredLoggerInterface.php",
+report/location-r0-app-namespace-manifest.json:823:      "file": "src/ServiceInterface/Locator/OtelExporterInterface.php",
+report/location-r0-app-namespace-manifest.json:983:      "file": "src/ServiceInterface/Locator/TraceMiddlewareInterface.php",
+report/merge/winner-source-map.json:1919:  "src/Http/Locator/TraceMiddleware.php": {
+report/merge/winner-source-map.json:2158:  "src/Infrastructure/Locator/OtelExporter.php": {
+report/merge/winner-source-map.json:2232:  "src/Infrastructure/Locator/StructuredLogger.php": {
+report/merge/winner-source-map.json:2243:  "src/Infrastructure/Locator/TraceMiddleware.php": {
+report/merge/winner-source-map.json:2787:  "src/InfrastructureInterface/Locator/OtelExporterInterface.php": {
+report/merge/winner-source-map.json:2817:  "src/InfrastructureInterface/Locator/PrometheusInterface.php": {
+report/merge/winner-source-map.json:2913:  "src/InfrastructureInterface/Locator/StructuredLoggerInterface.php": {
+report/merge/winner-source-map.json:2943:  "src/InfrastructureInterface/Locator/TraceMiddlewareInterface.php": {
+report/merge/winner-source-map.json:4465:  "src/Service/Locator/OtelExporter.php": {
+report/merge/winner-source-map.json:4972:  "src/Service/Locator/TraceMiddleware.php": {
+report/merge/winner-source-map.json:5878:  "src/ServiceInterface/Locator/OtelExporterInterface.php": {
+report/merge/winner-source-map.json:6364:  "src/ServiceInterface/Locator/TraceMiddlewareInterface.php": {
+report/merge/winner-source-map.json:7115:  "tests/Locator/OtelExporterTest.php": {
+report/merge/winner-source-map.json:7467:  "tests/Locator/StructuredLoggerTest.php": {
+report/merge/winner-source-map.json:7555:  "tests/Locator/TraceMiddlewareTest.php": {
+report/merge/collision.json:663:    "path": "src/InfrastructureInterface/Locator/StructuredLoggerInterface.php",
+report/location-r34-legacy-http-trace-route-cluster-collapse-manifest.json:7:    "src/Http/Locator/TraceMiddleware.php",
+report/location-r34-reference-check.txt:3:- Smartresponsor\Http\Locator\TraceMiddleware
+report/location-r34-reference-check.txt:8:- Http TraceMiddleware was referenced only by tests/Locator/TraceSpanTest.php
+report/REMOVED-FILES-R34.txt:2:src/Http/Locator/TraceMiddleware.php
+docs/location-r10-interface-namespace-canon.md:41:  - `TraceMiddlewareInterface`, `TracePropagatorInterface`
+docs/location-r10-interface-namespace-canon.md:48:  - `BudgetTelemetryInterface`, `StructuredLoggerInterface`

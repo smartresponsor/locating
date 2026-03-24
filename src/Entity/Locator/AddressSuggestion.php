@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -7,14 +8,14 @@ declare(strict_types=1);
 
 namespace Smartresponsor\Entity\Locator;
 
-use Smartresponsor\EntityInterface\Locator\AddressSuggestionInterface;
+use App\Bridge\Legacy\Entity\Location\AddressSuggestionLegacyInterface;
 
-final class AddressSuggestion implements AddressSuggestionInterface
+final class AddressSuggestion implements AddressSuggestionLegacyInterface
 {
     public function __construct(
         private string $label,
         private AddressData $addressData,
-        private ?string $providerKey = null
+        private ?string $providerKey = null,
     ) {
     }
 

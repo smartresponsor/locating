@@ -1,0 +1,18 @@
+{
+  "wave": 24,
+  "component": "Locating/Location",
+  "title": "app-batch-handler-infrastructure-boundary",
+  "touched": [
+    "src/InfrastructureInterface/Batch/Location/AddressBatchJobProgressWriterInterface.php",
+    "src/InfrastructureInterface/Batch/Location/AddressBatchResultWriterInterface.php",
+    "src/Infrastructure/Batch/Location/LegacyAddressBatchJobProgressWriter.php",
+    "src/Infrastructure/Batch/Location/LegacyAddressBatchResultWriter.php",
+    "src/MessageHandler/Locator/AddressBatchMessageHandler.php",
+    "config/services.php",
+    "tests/Infrastructure/Batch/Location/LegacyAddressBatchJobProgressWriterTest.php",
+    "tests/Infrastructure/Batch/Location/LegacyAddressBatchResultWriterTest.php",
+    "tests/MessageHandler/Locator/AddressBatchMessageHandlerTest.php",
+    "docs/location-r24-app-batch-handler-infrastructure-boundary.md",
+    "report/location-r24-app-batch-handler-infrastructure-boundary-manifest.json"
+  ]
+}

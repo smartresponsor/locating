@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -6,8 +7,6 @@ declare(strict_types=1);
  */
 
 namespace Smartresponsor\Infrastructure\Locator;
-
-use Smartresponsor\InfrastructureInterface\Locator\ReverseHttpClientInterface;
 
 /**
  * Simple reverse geocoding client backed by OpenStreetMap Nominatim API.
@@ -20,7 +19,7 @@ final class NominatimReverseHttpClient implements ReverseHttpClientInterface
     public function __construct(
         private string $baseUrl = 'https://nominatim.openstreetmap.org',
         private ?string $email = null,
-        private int $timeoutSeconds = 5
+        private int $timeoutSeconds = 5,
     ) {
     }
 
@@ -31,23 +30,23 @@ final class NominatimReverseHttpClient implements ReverseHttpClientInterface
     {
         $query = [
             'format' => 'jsonv2',
-            'lat' => (string)$latitude,
-            'lon' => (string)$longitude,
+            'lat' => (string) $latitude,
+            'lon' => (string) $longitude,
             'addressdetails' => '1',
         ];
 
-        if ($countryCode !== null && $countryCode !== '') {
+        if (null !== $countryCode && '' !== $countryCode) {
             $query['countrycodes'] = strtolower($countryCode);
         }
 
-        if ($this->email !== null && $this->email !== '') {
+        if (null !== $this->email && '' !== $this->email) {
             $query['email'] = $this->email;
         }
 
-        $url = rtrim($this->baseUrl, '/') . '/reverse?' . http_build_query($query);
+        $url = rtrim($this->baseUrl, '/').'/reverse?'.http_build_query($query);
 
         $handle = curl_init($url);
-        if ($handle === false) {
+        if (false === $handle) {
             throw new \RuntimeException('Failed to initialize curl for Nominatim reverse request');
         }
 
@@ -61,20 +60,19 @@ final class NominatimReverseHttpClient implements ReverseHttpClientInterface
         ]);
 
         $body = curl_exec($handle);
-        if ($body === false) {
+        if (false === $body) {
             $error = curl_error($handle);
             curl_close($handle);
-            throw new \RuntimeException('Nominatim reverse request failed: ' . $error);
+            throw new \RuntimeException('Nominatim reverse request failed: '.$error);
         }
 
         $statusCode = curl_getinfo($handle, CURLINFO_HTTP_CODE);
         curl_close($handle);
 
         if ($statusCode < 200 || $statusCode >= 300) {
-            throw new \RuntimeException('Nominatim reverse request failed with HTTP ' . $statusCode);
+            throw new \RuntimeException('Nominatim reverse request failed with HTTP '.$statusCode);
         }
 
-        /** @var mixed $decoded */
         $decoded = json_decode($body, true);
         if (!is_array($decoded)) {
             throw new \RuntimeException('Nominatim reverse response is not a JSON object');

@@ -1,0 +1,29 @@
+{
+  "wave": "r01",
+  "workspace": "Locating",
+  "entity": "Location",
+  "current_slice": "Locating.zip",
+  "summary": {
+    "forbidden_root_dirs_present": [
+      "src/Bundle",
+      "src/Console",
+      "src/Contract",
+      "src/Domain",
+      "src/DomainInterface",
+      "src/Integration",
+      "src/Model",
+      "src/Strategy"
+    ],
+    "src_locator_dir_count": 55,
+    "src_location_dir_count": 0,
+    "src_locating_dir_count": 0,
+    "smartresponsor_namespace_file_count": 521,
+    "app_namespace_file_count": 0,
+    "todo_or_stub_hits_count": 4
+  },
+  "notes": [
+    "The current slice is built around Locator rather than canonical Location tails.",
+    "The current slice uses Smartresponsor\\ as the only PHP namespace root.",
+    "Wave r01 adds an executable gate for protocol enforcement before broader structural refactoring."
+  ]
+}

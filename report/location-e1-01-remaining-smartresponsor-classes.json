@@ -1,0 +1,3984 @@
+{
+  "generatedAt": "2026-03-22T18:44:02.615982Z",
+  "component": "Locating/Location",
+  "items": [
+    {
+      "path": "src/Bundle/LocatorBundle.php",
+      "fqcn": "Smartresponsor\\Bundle\\LocatorBundle",
+      "layer": "other",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Strategy/Locator/GoogleLocator.php",
+      "fqcn": "Smartresponsor\\Strategy\\Locator\\GoogleLocator",
+      "layer": "strategy",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Strategy/Locator/MapboxLocator.php",
+      "fqcn": "Smartresponsor\\Strategy\\Locator\\MapboxLocator",
+      "layer": "strategy",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Strategy/Locator/OpenStreetMapLocator.php",
+      "fqcn": "Smartresponsor\\Strategy\\Locator\\OpenStreetMapLocator",
+      "layer": "strategy",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Strategy/Locator/USPSLocator.php",
+      "fqcn": "Smartresponsor\\Strategy\\Locator\\USPSLocator",
+      "layer": "strategy",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AbTestRouterInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\AbTestRouterInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AdaptiveOrderingInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\AdaptiveOrderingInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AdaptiveProviderOrderInterface.php",
+      "fqcn": "Smartresponsor\\LayerInterface\\Domaine\\AdaptiveProviderOrderInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AdaptiveQuotaInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\AdaptiveQuotaInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AdaptiveTimeoutCalibratorInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\AdaptiveTimeoutCalibratorInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AdaptiveTimeoutInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\AdaptiveTimeoutInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AddressCanonicalizerInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\AddressCanonicalizerInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AddressHintBiasInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\AddressHintBiasInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AddressInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\AddressInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AddressQuotaGuardInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\AddressQuotaGuardInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AddressReverseInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\AddressReverseInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AddressSuggestInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\AddressSuggestInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AddressSuggestRankerInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\AddressSuggestRankerInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AnomalyDetectorInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\AnomalyDetectorInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/BanditPolicyInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\BanditPolicyInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/BanditRouterInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\BanditRouterInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/BatchGeocodeEndpointInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\BatchGeocodeEndpointInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/BatchSchedulerInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\BatchSchedulerInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/BudgetGuardInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\BudgetGuardInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/CanaryGuardInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\CanaryGuardInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/CanaryToggleInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\CanaryToggleInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/CellIndexInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\CellIndexInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/CircuitBreakerInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\CircuitBreakerInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/CircuitTuningPolicyInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\CircuitTuningPolicyInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ColdStartWarmupInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\ColdStartWarmupInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ConfidenceEnsembleInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\ConfidenceEnsembleInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ConfidenceScoreInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\ConfidenceScoreInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/CostAwarenessInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\CostAwarenessInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/CostAwarePolicyInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\CostAwarePolicyInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/CostCapPolicyInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\CostCapPolicyInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/CostRoutePlannerInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\CostRoutePlannerInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/DeferredLookupInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\DeferredLookupInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/DegradeManagerInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\DegradeManagerInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/EnvInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\EnvInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ErasureJobInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\ErasureJobInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/FailoverMatrixInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\FailoverMatrixInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/FailoverPlannerInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\FailoverPlannerInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/FakeProviderInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\FakeProviderInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/FakeRedisInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\FakeRedisInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/FraudSignalDetectorInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\FraudSignalDetectorInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/GeoFencePolicyInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\GeoFencePolicyInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/GeohashInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\GeohashInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/HealthEwmaInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\HealthEwmaInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/HealthMonitorInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\HealthMonitorInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/HealthRecorderInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\HealthRecorderInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/HedgePolicyInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\HedgePolicyInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/HedgerInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\HedgerInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/HereProviderInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\HereProviderInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/HintBiasInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\HintBiasInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/IdempotencyKeyStoreInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\IdempotencyKeyStoreInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/IdempotencyStoreInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\IdempotencyStoreInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/IpAuthzPolicyInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\IpAuthzPolicyInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/JitterInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\JitterInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/KeyRotatorInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\KeyRotatorInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/KeyStoreInterface.php",
+      "fqcn": "Smartresponsor\\LayerInterface\\Domaine\\KeyStoreInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/LatencyForecastInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\LatencyForecastInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/LocatorInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\LocatorInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/LocatorServiceInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\Locator\\LocatorServiceInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/LogEventInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\LogEventInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/MapboxProviderInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\MapboxProviderInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/NominatimProviderInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\NominatimProviderInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/NormalizerInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\NormalizerInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/PiiAnonymizerInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\PiiAnonymizerInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/PolicyInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\PolicyInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ProbabilisticFailoverInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\ProbabilisticFailoverInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ProviderAuthzPolicyInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\ProviderAuthzPolicyInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ProviderContractGoldenInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\ProviderContractGoldenInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ProviderContractVersionInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\ProviderContractVersionInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ProviderCostCatalogInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\ProviderCostCatalogInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ProviderKeyRotationInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\ProviderKeyRotationInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ProviderKeyVaultInterface.php",
+      "fqcn": "Smartresponsor\\LayerInterface\\Domaine\\ProviderKeyVaultInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ProviderOrderInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\ProviderOrderInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ProviderRouterInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\ProviderRouterInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ProviderSandboxInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\ProviderSandboxInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ProviderStatAggregatorInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\ProviderStatAggregatorInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/QuotaGuardInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\QuotaGuardInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RaceExecutorInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\RaceExecutorInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RaceRunnerInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\RaceRunnerInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RankerInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\RankerInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RateLimiterInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\RateLimiterInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RateLimiterMemoryInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\RateLimiterMemoryInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RateLimiterRedisInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\RateLimiterRedisInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RecordReplayStoreInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\RecordReplayStoreInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RedactorInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\RedactorInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RegionPolicyEngineInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\RegionPolicyEngineInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RegionQuotaSchedulerInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\RegionQuotaSchedulerInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RegionRouterInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\RegionRouterInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RegionTimeoutPolicyInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\RegionTimeoutPolicyInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RequestCoalescerInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\RequestCoalescerInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RetentionInterface.php",
+      "fqcn": "Smartresponsor\\LayerInterface\\Domaine\\RetentionInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RetentionPolicyInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\RetentionPolicyInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RetentionSweeperInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\RetentionSweeperInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RetryPolicyInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\RetryPolicyInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RouteDecisionInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\RouteDecisionInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RouterOrchestratorInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\RouterOrchestratorInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ScoreEnsembleInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\ScoreEnsembleInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ShadowTrafficInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\ShadowTrafficInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/SlaPolicyInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\SlaPolicyInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/StrategyRegistryInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\StrategyRegistryInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/SuggestRankerInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\SuggestRankerInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/TenantContextInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\TenantContextInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/TenantGuardInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\TenantGuardInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/TenantQuotaInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\TenantQuotaInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/TenantQuotaManagerInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\TenantQuotaManagerInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/TenantResourceQuotaInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\TenantResourceQuotaInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/TenantSeparatorInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\TenantSeparatorInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/TimeoutCalibratorInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\TimeoutCalibratorInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ToggleInterface.php",
+      "fqcn": "Smartresponsor\\LayerInterface\\Domaine\\ToggleInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/TokenBucketInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\TokenBucketInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/TracePropagatorInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\TracePropagatorInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/Address/AddressParseServiceInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\Address\\AddressParseServiceInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/Address/AddressStandardizeServiceInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\Address\\AddressStandardizeServiceInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/ServiceInterface/Locator/Provider/GeocodeProviderInterface.php",
+      "fqcn": "Smartresponsor\\ServiceInterface\\Locator\\Provider\\GeocodeProviderInterface",
+      "layer": "service-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/AbTestRouter.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\AbTestRouter",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/AdaptiveOrdering.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\AdaptiveOrdering",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/AdaptiveProviderOrder.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\AdaptiveProviderOrder",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/AdaptiveQuota.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\AdaptiveQuota",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/AdaptiveTimeout.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\AdaptiveTimeout",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/AdaptiveTimeoutCalibrator.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\AdaptiveTimeoutCalibrator",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/AddressCanonicalizer.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\AddressCanonicalizer",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/AddressHintBias.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\AddressHintBias",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/AddressQuotaGuard.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\AddressQuotaGuard",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/AddressReverse.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\AddressReverse",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/AddressSuggest.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\AddressSuggest",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/AddressSuggestRanker.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\AddressSuggestRanker",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/AnomalyDetector.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\AnomalyDetector",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/BanditPolicy.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\BanditPolicy",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/BanditRouter.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\BanditRouter",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/BatchGeocodeEndpoint.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\BatchGeocodeEndpoint",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/BatchScheduler.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\BatchScheduler",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/BudgetGuard.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\BudgetGuard",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/CanaryGuard.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\CanaryGuard",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/CanaryToggle.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\CanaryToggle",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/CellIndex.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\CellIndex",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/CircuitBreaker.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\CircuitBreaker",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/CircuitTuningPolicy.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\CircuitTuningPolicy",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/ColdStartWarmup.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\ColdStartWarmup",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/ConfidenceEnsemble.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\ConfidenceEnsemble",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/ConfidenceScore.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\ConfidenceScore",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/CostAwareness.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\CostAwareness",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/CostAwarePolicy.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\CostAwarePolicy",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/CostCapPolicy.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\CostCapPolicy",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/CostRoutePlanner.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\CostRoutePlanner",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/DeferredLookup.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\DeferredLookup",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/DegradeManager.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\DegradeManager",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/ErasureJob.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\ErasureJob",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/FailoverMatrix.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\FailoverMatrix",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/FailoverPlanner.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\FailoverPlanner",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/FakeProvider.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\FakeProvider",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/FakeRedis.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\FakeRedis",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/FraudSignalDetector.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\FraudSignalDetector",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/GeoFencePolicy.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\GeoFencePolicy",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/Geohash.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\Locator\\Geohash",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/HealthEwma.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\HealthEwma",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/HealthMonitor.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\HealthMonitor",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/HedgePolicy.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\HedgePolicy",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/Hedger.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\Hedger",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/HintBias.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\HintBias",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/IdempotencyKeyStore.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\IdempotencyKeyStore",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/IdempotencyStore.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\IdempotencyStore",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/IpAuthzPolicy.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\IpAuthzPolicy",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/Jitter.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\Jitter",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/KeyRotator.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\KeyRotator",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/KeyStore.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\KeyStore",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/LatencyForecast.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\LatencyForecast",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/LocatorService.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\Locator\\LocatorService",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/LogEvent.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\LogEvent",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/Normalizer.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\Normalizer",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/PiiAnonymizer.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\PiiAnonymizer",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/Policy.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\Policy",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/ProbabilisticFailover.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\ProbabilisticFailover",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/ProviderAuthzPolicy.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\ProviderAuthzPolicy",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/ProviderContractGolden.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\ProviderContractGolden",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/ProviderContractVersion.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\ProviderContractVersion",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/ProviderCostCatalog.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\ProviderCostCatalog",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/ProviderKeyRotation.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\ProviderKeyRotation",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/ProviderKeyVault.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\ProviderKeyVault",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/ProviderOrder.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\ProviderOrder",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/ProviderRouter.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\ProviderRouter",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/ProviderSandbox.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\ProviderSandbox",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/ProviderStatAggregator.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\ProviderStatAggregator",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/QuotaExceededException.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\QuotaExceededException",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/QuotaGuard.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\QuotaGuard",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/RaceExecutor.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\RaceExecutor",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/RaceRunner.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\RaceRunner",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/RateLimiter.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\RateLimiter",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/RateLimiterMemory.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\RateLimiterMemory",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/RateLimiterRedis.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\RateLimiterRedis",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/Redactor.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\Redactor",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/RegionPolicyEngine.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\RegionPolicyEngine",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/RegionQuotaScheduler.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\RegionQuotaScheduler",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/RegionRouter.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\RegionRouter",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/RegionTimeoutPolicy.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\RegionTimeoutPolicy",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/RequestCoalescer.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\RequestCoalescer",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/RetentionPolicy.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\RetentionInterface",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/RetentionSweeper.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\RetentionSweeper",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/RetryPolicy.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\RetryPolicy",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/RouteDecision.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\RouteDecision",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/RouterOrchestrator.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\RouterOrchestrator",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/ScoreEnsemble.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\ScoreEnsemble",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/ShadowTraffic.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\ShadowTraffic",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/SlaPolicy.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\SlaPolicy",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/StrategyRegistry.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\StrategyRegistry",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/SuggestRanker.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\SuggestRanker",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/TenantGuard.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\TenantGuard",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/TenantQuota.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\TenantQuota",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/TenantQuotaManager.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\TenantQuotaManager",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/TenantQuotaManagerMetricDecorator.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\TenantQuotaManagerMetricDecorator",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/TenantResourceQuota.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\TenantResourceQuota",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/TenantSeparator.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\TenantSeparator",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/TimeoutCalibrator.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\TimeoutCalibrator",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/Toggle.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\Toggle",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/TokenBucket.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\TokenBucket",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/TracePropagator.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\TracePropagator",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/Address/AddressParseService.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\Address\\AddressParseService",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/Address/AddressStandardizeService.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\Address\\AddressStandardizeService",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/Config/Env.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\Config\\Env",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/Provider/HereProvider.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\Provider\\HereProvider",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/Provider/MapboxProvider.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\Provider\\MapboxProvider",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/Provider/NominatimProvider.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\Provider\\NominatimProvider",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/Provider/ProviderRouter.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\Provider\\ProviderRouter",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Service/Locator/Provider/Ranker.php",
+      "fqcn": "Smartresponsor\\Service\\Locator\\Provider\\Ranker",
+      "layer": "service",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Model/Locator/AddressData.php",
+      "fqcn": "Smartresponsor\\Model\\Locator\\AddressData",
+      "layer": "model",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Model/Locator/CanonicalAddress.php",
+      "fqcn": "Smartresponsor\\Model\\Locator\\CanonicalAddress",
+      "layer": "model",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Model/Locator/GeoPoint.php",
+      "fqcn": "Smartresponsor\\Model\\Locator\\GeoPoint",
+      "layer": "model",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/MessageHandler/Locator/AddressBatchMessageHandler.php",
+      "fqcn": "Smartresponsor\\MessageHandler\\Locator\\AddressBatchMessageHandler",
+      "layer": "message-handler",
+      "appEquivalent": "App\\MessageHandler\\Batch\\Location\\AddressBatchMessageHandler",
+      "usedInActiveRuntime": false,
+      "classification": "duplicate",
+      "notes": ""
+    },
+    {
+      "path": "src/Message/Locator/AddressBatchMessage.php",
+      "fqcn": "Smartresponsor\\Message\\Locator\\AddressBatchMessage",
+      "layer": "message",
+      "appEquivalent": "App\\Message\\Batch\\Location\\AddressBatchMessage",
+      "usedInActiveRuntime": false,
+      "classification": "duplicate",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Http/SimpleHttp.php",
+      "fqcn": "Smartresponsor\\Integration\\Http\\SimpleHttp",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/AddressPort.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\AddressPort",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/LocatorConfig.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\LocatorConfig",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/LocatorSelector.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\LocatorSelector",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/RateLimit/TokenBucket.php",
+      "fqcn": "Smartresponsor\\Integration\\RateLimit\\TokenBucket",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Observability/Log/JsonLogger.php",
+      "fqcn": "Smartresponsor\\Integration\\Observability\\Log\\JsonLogger",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Observability/Trace/OtelZipkinExporter.php",
+      "fqcn": "Smartresponsor\\Integration\\Observability\\Trace\\OtelZipkinExporter",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Observability/Trace/Span.php",
+      "fqcn": "Smartresponsor\\Integration\\Observability\\Trace\\Span",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Observability/Trace/Tracer.php",
+      "fqcn": "Smartresponsor\\Integration\\Observability\\Trace\\Tracer",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Batch/JobStore.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Batch\\JobStore",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Cache/AdaptiveTtlPolicy.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Cache\\AdaptiveTtlPolicy",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Cache/CacheInterface.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Cache\\CacheInterface",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Cache/FileCache.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Cache\\FileCache",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Cache/LruCache.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Cache\\LruCache",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Cache/RedisCache.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Cache\\RedisCache",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Cache/SimpleArrayCache.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Cache\\SimpleArrayCache",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Decorator/AdaptiveMultiCachedLocator.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Decorator\\AdaptiveMultiCachedLocator",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Decorator/CachedLocator.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Decorator\\CachedLocator",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Decorator/CircuitBreakerLocator.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Decorator\\CircuitBreakerLocator",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Decorator/GracefulLocator.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Decorator\\GracefulLocator",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Decorator/HealthProbeLocator.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Decorator\\HealthProbeLocator",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Decorator/MultiCachedLocator.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Decorator\\MultiCachedLocator",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Decorator/ObservabilityLocator.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Decorator\\ObservabilityLocator",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Decorator/RateLimitedLocator.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Decorator\\RateLimitedLocator",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Decorator/RetryLocator.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Decorator\\RetryLocator",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Decorator/TryFallbackLocator.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Decorator\\TryFallbackLocator",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Decorator/USPSVerifyLocator.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Decorator\\USPSVerifyLocator",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Factory/RedisFactory.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Factory\\RedisFactory",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Fallback/FallbackLocator.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Fallback\\FallbackLocator",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Formatter/USPSFormatter.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Formatter\\USPSFormatter",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Health/CompositeHealthCheck.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Health\\CompositeHealthCheck",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Health/HealthChecker.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Health\\HealthChecker",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Health/NominatimHealthCheck.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Health\\NominatimHealthCheck",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Http/GoogleGeocodingClient.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Http\\GoogleGeocodingClient",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Http/MapboxClient.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Http\\MapboxClient",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Http/NominatimClient.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Http\\NominatimClient",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Http/USPSClient.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Http\\USPSClient",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Log/Redactor.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Log\\Redactor",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Log/StdoutLogger.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Log\\StdoutLogger",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Metrics/HealthMetrics.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Metrics\\HealthMetrics",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Metrics/InMemoryMetrics.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Metrics\\InMemoryMetrics",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Metrics/PrometheusExporter.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Metrics\\PrometheusExporter",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Provider/FallbackProvider.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Provider\\FallbackProvider",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Provider/GoogleProvider.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Provider\\GoogleProvider",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Provider/MapboxProvider.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Provider\\MapboxProvider",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Provider/MockProvider.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Provider\\MockProvider",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Provider/NominatimProvider.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Provider\\NominatimProvider",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Provider/OpenStreetMapProvider.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Provider\\OpenStreetMapProvider",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Provider/PhotonProvider.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Provider\\PhotonProvider",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/RateLimit/RateLimiter.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\RateLimit\\RateLimiter",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/RateLimit/RedisRateLimiter.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\RateLimit\\RedisRateLimiter",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Registry/LocatorPluginRegistry.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Registry\\LocatorPluginRegistry",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Resilience/CircuitBreaker.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Resilience\\CircuitBreaker",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Resilience/Retry.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Resilience\\Retry",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Secrets/EnvSecretsProvider.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Secrets\\EnvSecretsProvider",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Throttle/ProviderThrottle.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Throttle\\ProviderThrottle",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Provider/Dsn/LocatorDsn.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Provider\\Dsn\\LocatorDsn",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Log/Correlation/CorrelationId.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Log\\Correlation\\CorrelationId",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Integration/Locator/Log/Correlation/TraceContext.php",
+      "fqcn": "Smartresponsor\\Integration\\Locator\\Log\\Correlation\\TraceContext",
+      "layer": "integration",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/AddressBatchJobRepositoryInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\AddressBatchJobRepositoryInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/AddressBatchMessageBusInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\AddressBatchMessageBusInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": "App\\InfrastructureInterface\\Batch\\Location\\AddressBatchMessageBusInterface",
+      "usedInActiveRuntime": false,
+      "classification": "duplicate",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/AddressBatchResultStorageInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\AddressBatchResultStorageInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/AddressProviderBridgeInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\AddressProviderBridgeInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/AddressSuggestProviderInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\AddressSuggestProviderInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/ApiKeyAuthInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\ApiKeyAuthInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/ArrayTenantConfigRepositoryInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\ArrayTenantConfigRepositoryInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/BudgetTelemetryInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\BudgetTelemetryInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/CacheInvalidatorInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\CacheInvalidatorInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/CacheProbeInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\CacheProbeInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/CacheTtlPolicyInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\CacheTtlPolicyInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/CacheWarmerInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\CacheWarmerInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/CircuitBreakerInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\CircuitBreakerInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/CurlHttpClientInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\CurlHttpClientInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/DeferredLookupQueueInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\DeferredLookupQueueInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/FakeProviderInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\FakeProviderInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/FakeRedisInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\FakeRedisInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/FixtureHttpClientInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\FixtureHttpClientInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/HealthMetricInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\HealthMetricInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/HedgerInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\HedgerInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/HttpClientInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\HttpClientInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/InMemoryMetricRecorderInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\InMemoryMetricRecorderInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/InMemoryTenantUsageCounterInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\InMemoryTenantUsageCounterInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/JsonlReaderInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\JsonlReaderInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/JsonlWriterInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\JsonlWriterInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/KernelInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\KernelInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/LocatorConfigInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\LocatorConfigInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/LocatorFixtureReaderInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\LocatorFixtureReaderInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/LocatorSelectorInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\LocatorSelectorInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/LogEventInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\LogEventInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/LoggerInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\LoggerInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/MetricRecorderInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\MetricRecorderInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/MetricSnapshotProviderInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\MetricSnapshotProviderInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/NullMetricRecorderInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\NullMetricRecorderInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/PriorityBatchQueueInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\PriorityBatchQueueInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/PriorityQueueInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\PriorityQueueInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/ProviderAdapterInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\ProviderAdapterInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/ProviderBudgetInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\ProviderBudgetInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/ProviderCostCatalogInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\ProviderCostCatalogInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/RateLimitInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\RateLimitInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/RedisCacheInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\RedisCacheInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/RedisClientInterface.php",
+      "fqcn": "Smartresponsor\\LayerInterface\\Domaine\\RedisClientInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/ResultCacheInterface.php",
+      "fqcn": "Smartresponsor\\LayerInterface\\Domaine\\ResultCacheInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/ReverseHttpClientInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\ReverseHttpClientInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/SandboxHarnessInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\SandboxHarnessInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/TenantConfigRepositoryInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\TenantConfigRepositoryInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/TenantUsageCounterInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\TenantUsageCounterInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/TracePropagatorInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\TracePropagatorInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/TracingLocatorInterface.php",
+      "fqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\TracingLocatorInterface",
+      "layer": "infrastructure-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/ArrayTenantConfigRepository.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\ArrayTenantConfigRepository",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/BudgetTelemetry.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\BudgetTelemetry",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/CacheInvalidator.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\CacheInvalidator",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/CacheProbe.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\CacheProbe",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/CacheTtlPolicy.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\CacheTtlPolicy",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/CacheWarmer.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\CacheWarmer",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/DeferredLookupQueue.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\DeferredLookupQueue",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/FakeProvider.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\FakeProvider",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/FakeRedis.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\FakeRedis",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/HealthMetric.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\HealthMetric",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/InMemoryMetricRecorder.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\InMemoryMetricRecorder",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/InMemoryTenantUsageCounter.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\InMemoryTenantUsageCounter",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/LocatorConfig.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\LocatorConfig",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/LocatorFixtureReader.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\LocatorFixtureReader",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/LocatorSelector.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\LocatorSelector",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/LogEvent.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\LogEvent",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/NominatimReverseHttpClient.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\NominatimReverseHttpClient",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/NullMetricRecorder.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\NullMetricRecorder",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/PriorityBatchQueue.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\PriorityBatchQueue",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/PriorityQueue.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\PriorityQueue",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/ProviderCostCatalog.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\ProviderCostCatalog",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/RequestTenantContext.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\RequestTenantContext",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/ResultCache.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\ResultCache",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/SandboxHarness.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\SandboxHarness",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/TracePropagator.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\TracePropagator",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/Cache/RedisCache.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\Cache\\RedisCache",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/Decorator/TracingLocator.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\Decorator\\TracingLocator",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/Http/CurlHttpClient.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\Http\\CurlHttpClient",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/Http/FixtureHttpClient.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\Http\\FixtureHttpClient",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/Http/HttpClient.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\Http\\HttpClient",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/Http/HttpClientInterface.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\Http\\HttpClientInterface",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/Http/Kernel.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\Http\\Kernel",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/Io/JsonlReader.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\Io\\JsonlReader",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/Io/JsonlWriter.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\Io\\JsonlWriter",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/RateLimit/RateLimit.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\RateLimit\\RateLimit",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/Resilience/CircuitBreaker.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\Resilience\\CircuitBreaker",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/Resilience/Hedger.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\Resilience\\Hedger",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/Resilience/ProviderBudget.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\Resilience\\ProviderBudget",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Infrastructure/Locator/Security/ApiKeyAuth.php",
+      "fqcn": "Smartresponsor\\Infrastructure\\Locator\\Security\\ApiKeyAuth",
+      "layer": "infrastructure",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/EntityInterface/Locator/AddressBatchJobInterface.php",
+      "fqcn": "Smartresponsor\\EntityInterface\\Locator\\AddressBatchJobInterface",
+      "layer": "entity-interface",
+      "appEquivalent": "App\\EntityInterface\\Location\\AddressBatchJobInterface",
+      "usedInActiveRuntime": false,
+      "classification": "duplicate",
+      "notes": ""
+    },
+    {
+      "path": "src/EntityInterface/Locator/AddressDataInterface.php",
+      "fqcn": "Smartresponsor\\EntityInterface\\Locator\\AddressDataInterface",
+      "layer": "entity-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/EntityInterface/Locator/AddressInputInterface.php",
+      "fqcn": "Smartresponsor\\EntityInterface\\Locator\\AddressInputInterface",
+      "layer": "entity-interface",
+      "appEquivalent": "App\\EntityInterface\\Location\\AddressInputInterface",
+      "usedInActiveRuntime": false,
+      "classification": "duplicate",
+      "notes": ""
+    },
+    {
+      "path": "src/EntityInterface/Locator/AddressInterface.php",
+      "fqcn": "Smartresponsor\\EntityInterface\\Locator\\AddressInterface",
+      "layer": "entity-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/EntityInterface/Locator/AddressResultInterface.php",
+      "fqcn": "Smartresponsor\\EntityInterface\\Locator\\AddressResultInterface",
+      "layer": "entity-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/EntityInterface/Locator/AddressSuggestionInterface.php",
+      "fqcn": "Smartresponsor\\EntityInterface\\Locator\\AddressSuggestionInterface",
+      "layer": "entity-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/EntityInterface/Locator/AddressValidationIssueInterface.php",
+      "fqcn": "Smartresponsor\\EntityInterface\\Locator\\AddressValidationIssueInterface",
+      "layer": "entity-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/EntityInterface/Locator/HealthRecorderInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\HealthRecorderInterface",
+      "layer": "entity-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/EntityInterface/Locator/RecordReplayStoreInterface.php",
+      "fqcn": "Smartresponsor\\Domain\\Locator\\RecordReplayStoreInterface",
+      "layer": "entity-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/EntityInterface/Locator/TenantContextInterface.php",
+      "fqcn": "Smartresponsor\\EntityInterface\\Locator\\TenantContextInterface",
+      "layer": "entity-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/EntityInterface/Locator/TenantLimitInterface.php",
+      "fqcn": "Smartresponsor\\EntityInterface\\Locator\\TenantLimitInterface",
+      "layer": "entity-interface",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Entity/Locator/AdaptiveTimeout.php",
+      "fqcn": "Smartresponsor\\Entity\\Locator\\AdaptiveTimeout",
+      "layer": "entity",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Entity/Locator/AddressBatchJob.php",
+      "fqcn": "Smartresponsor\\Entity\\Locator\\AddressBatchJob",
+      "layer": "entity",
+      "appEquivalent": "App\\Entity\\Location\\AddressBatchJob",
+      "usedInActiveRuntime": false,
+      "classification": "duplicate",
+      "notes": ""
+    },
+    {
+      "path": "src/Entity/Locator/AddressBatchJobStatus.php",
+      "fqcn": "Smartresponsor\\Entity\\Locator\\AddressBatchJobStatus",
+      "layer": "entity",
+      "appEquivalent": "App\\Entity\\Location\\AddressBatchJobStatus",
+      "usedInActiveRuntime": false,
+      "classification": "duplicate",
+      "notes": ""
+    },
+    {
+      "path": "src/Entity/Locator/AddressData.php",
+      "fqcn": "Smartresponsor\\Entity\\Locator\\AddressData",
+      "layer": "entity",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Entity/Locator/AddressInput.php",
+      "fqcn": "Smartresponsor\\Entity\\Locator\\AddressInput",
+      "layer": "entity",
+      "appEquivalent": "App\\Entity\\Location\\AddressInput",
+      "usedInActiveRuntime": false,
+      "classification": "duplicate",
+      "notes": ""
+    },
+    {
+      "path": "src/Entity/Locator/AddressResult.php",
+      "fqcn": "Smartresponsor\\Entity\\Locator\\AddressResult",
+      "layer": "entity",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Entity/Locator/AddressStatus.php",
+      "fqcn": "Smartresponsor\\Entity\\Locator\\AddressStatus",
+      "layer": "entity",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Entity/Locator/AddressSuggestion.php",
+      "fqcn": "Smartresponsor\\Entity\\Locator\\AddressSuggestion",
+      "layer": "entity",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Entity/Locator/AddressValidationIssue.php",
+      "fqcn": "Smartresponsor\\Entity\\Locator\\AddressValidationIssue",
+      "layer": "entity",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Entity/Locator/BatchScheduler.php",
+      "fqcn": "Smartresponsor\\Entity\\Locator\\BatchScheduler",
+      "layer": "entity",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Entity/Locator/ConfidenceScore.php",
+      "fqcn": "Smartresponsor\\Entity\\Locator\\ConfidenceScore",
+      "layer": "entity",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Entity/Locator/CostAwareness.php",
+      "fqcn": "Smartresponsor\\Entity\\Locator\\CostAwareness",
+      "layer": "entity",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Entity/Locator/ErasureJob.php",
+      "fqcn": "Smartresponsor\\Entity\\Locator\\ErasureJob",
+      "layer": "entity",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Entity/Locator/FailoverMatrix.php",
+      "fqcn": "Smartresponsor\\Entity\\Locator\\FailoverMatrix",
+      "layer": "entity",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Entity/Locator/GeoPoint.php",
+      "fqcn": "Smartresponsor\\Entity\\Locator\\GeoPoint",
+      "layer": "entity",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Entity/Locator/HealthMetric.php",
+      "fqcn": "Smartresponsor\\Entity\\Locator\\HealthMetric",
+      "layer": "entity",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Entity/Locator/HealthRecorder.php",
+      "fqcn": "Smartresponsor\\Entity\\Locator\\HealthRecorder",
+      "layer": "entity",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Entity/Locator/HintBias.php",
+      "fqcn": "Smartresponsor\\Entity\\Locator\\HintBias",
+      "layer": "entity",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Entity/Locator/Jitter.php",
+      "fqcn": "Smartresponsor\\Entity\\Locator\\Jitter",
+      "layer": "entity",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Entity/Locator/LatencyForecast.php",
+      "fqcn": "Smartresponsor\\Entity\\Locator\\LatencyForecast",
+      "layer": "entity",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Entity/Locator/LogEvent.php",
+      "fqcn": "Smartresponsor\\Entity\\Locator\\LogEvent",
+      "layer": "entity",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Entity/Locator/PiiAnonymizer.php",
+      "fqcn": "Smartresponsor\\Entity\\Locator\\PiiAnonymizer",
+      "layer": "entity",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Entity/Locator/PriorityQueue.php",
+      "fqcn": "Smartresponsor\\Entity\\Locator\\PriorityQueue",
+      "layer": "entity",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Entity/Locator/ProviderSandbox.php",
+      "fqcn": "Smartresponsor\\Entity\\Locator\\ProviderSandbox",
+      "layer": "entity",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Entity/Locator/QuotaGuard.php",
+      "fqcn": "Smartresponsor\\Entity\\Locator\\QuotaGuard",
+      "layer": "entity",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Entity/Locator/RecordReplayStore.php",
+      "fqcn": "Smartresponsor\\Entity\\Locator\\RecordReplayStore",
+      "layer": "entity",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "adapter",
+      "notes": ""
+    },
+    {
+      "path": "src/Entity/Locator/Redactor.php",
+      "fqcn": "Smartresponsor\\Entity\\Locator\\Redactor",
+      "layer": "entity",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Entity/Locator/RegionRouter.php",
+      "fqcn": "Smartresponsor\\Entity\\Locator\\RegionRouter",
+      "layer": "entity",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Entity/Locator/RetryPolicy.php",
+      "fqcn": "Smartresponsor\\Entity\\Locator\\RetryPolicy",
+      "layer": "entity",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Entity/Locator/RouteDecision.php",
+      "fqcn": "Smartresponsor\\Entity\\Locator\\RouteDecision",
+      "layer": "entity",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Entity/Locator/Span.php",
+      "fqcn": "Smartresponsor\\Entity\\Locator\\Span",
+      "layer": "entity",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Entity/Locator/TenantContext.php",
+      "fqcn": "Smartresponsor\\Entity\\Locator\\TenantContext",
+      "layer": "entity",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Entity/Locator/TenantGuard.php",
+      "fqcn": "Smartresponsor\\Entity\\Locator\\TenantGuard",
+      "layer": "entity",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Entity/Locator/TenantLimit.php",
+      "fqcn": "Smartresponsor\\Entity\\Locator\\TenantLimit",
+      "layer": "entity",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Entity/Locator/TraceContext.php",
+      "fqcn": "Smartresponsor\\Entity\\Locator\\TraceContext",
+      "layer": "entity",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Entity/Locator/Config/Env.php",
+      "fqcn": "Smartresponsor\\Entity\\Locator\\Config\\Env",
+      "layer": "entity",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Contract/Cache/CacheInterface.php",
+      "fqcn": "Smartresponsor\\Contract\\Cache\\CacheInterface",
+      "layer": "contract",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Contract/Health/HealthCheckInterface.php",
+      "fqcn": "Smartresponsor\\Contract\\Health\\HealthCheckInterface",
+      "layer": "contract",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Contract/Locator/CacheInterface.php",
+      "fqcn": "Smartresponsor\\Contract\\Locator\\CacheInterface",
+      "layer": "contract",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Contract/Locator/LocatorInterface.php",
+      "fqcn": "Smartresponsor\\Contract\\Locator\\LocatorInterface",
+      "layer": "contract",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Contract/Locator/ProviderInterface.php",
+      "fqcn": "Smartresponsor\\Contract\\Locator\\ProviderInterface",
+      "layer": "contract",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Contract/Locator/ReverseProviderInterface.php",
+      "fqcn": "Smartresponsor\\Contract\\Locator\\ReverseProviderInterface",
+      "layer": "contract",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Contract/Log/LoggerInterface.php",
+      "fqcn": "Smartresponsor\\Contract\\Log\\LoggerInterface",
+      "layer": "contract",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Contract/Metrics/MetricsInterface.php",
+      "fqcn": "Smartresponsor\\Contract\\Metrics\\MetricsInterface",
+      "layer": "contract",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Contract/RateLimit/RateLimiterInterface.php",
+      "fqcn": "Smartresponsor\\Contract\\RateLimit\\RateLimiterInterface",
+      "layer": "contract",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Contract/Locator/Provider/LocatorProviderInterface.php",
+      "fqcn": "Smartresponsor\\Contract\\Locator\\Provider\\LocatorProviderInterface",
+      "layer": "contract",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Contract/Locator/Secrets/SecretsProviderInterface.php",
+      "fqcn": "Smartresponsor\\Contract\\Locator\\Secrets\\SecretsProviderInterface",
+      "layer": "contract",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Bundle/DependencyInjection/Configuration.php",
+      "fqcn": "Smartresponsor\\Bundle\\DependencyInjection\\Configuration",
+      "layer": "other",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Bundle/DependencyInjection/LocatorExtension.php",
+      "fqcn": "Smartresponsor\\Bundle\\DependencyInjection\\LocatorExtension",
+      "layer": "other",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Bundle/Locator/SmartResponsorLocatorBundle.php",
+      "fqcn": "Smartresponsor\\Bundle\\Locator\\SmartresponsorLocatorBundle",
+      "layer": "other",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Bundle/Locator/DependencyInjection/Configuration.php",
+      "fqcn": "Smartresponsor\\Bundle\\Locator\\DependencyInjection\\Configuration",
+      "layer": "other",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    },
+    {
+      "path": "src/Bundle/Locator/DependencyInjection/SmartResponsorLocatorExtension.php",
+      "fqcn": "Smartresponsor\\Bundle\\Locator\\DependencyInjection\\SmartresponsorLocatorExtension",
+      "layer": "other",
+      "appEquivalent": null,
+      "usedInActiveRuntime": false,
+      "classification": "dead",
+      "notes": ""
+    }
+  ]
+}

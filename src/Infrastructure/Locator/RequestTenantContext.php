@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -7,7 +8,7 @@ declare(strict_types=1);
 
 namespace Smartresponsor\Infrastructure\Locator;
 
-use Smartresponsor\EntityInterface\Locator\TenantContextInterface;
+use App\Bridge\Legacy\Tenant\Location\TenantContextLegacyInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
@@ -19,7 +20,7 @@ use Symfony\Component\HttpFoundation\RequestStack;
  *   3. LOCATOR_DEFAULT_TENANT environment variable
  *   4. 'demo' fallback
  */
-final class RequestTenantContext implements TenantContextInterface
+final class RequestTenantContext implements TenantContextLegacyInterface
 {
     private const HEADER_NAME = 'X-SR-Tenant';
     private const QUERY_NAME = 'tenant';
@@ -32,25 +33,25 @@ final class RequestTenantContext implements TenantContextInterface
     public function id(): string
     {
         $request = $this->requestStack->getCurrentRequest();
-        if ($request === null) {
-            $envValue = (string)($_ENV['LOCATOR_DEFAULT_TENANT'] ?? $_SERVER['LOCATOR_DEFAULT_TENANT'] ?? '');
-            $fallback = $envValue !== '' ? $envValue : self::DEFAULT_TENANT;
+        if (null === $request) {
+            $envValue = (string) ($_ENV['LOCATOR_DEFAULT_TENANT'] ?? $_SERVER['LOCATOR_DEFAULT_TENANT'] ?? '');
+            $fallback = '' !== $envValue ? $envValue : self::DEFAULT_TENANT;
 
             return $fallback;
         }
 
-        $headerValue = (string)$request->headers->get(self::HEADER_NAME, '');
-        if ($headerValue !== '') {
+        $headerValue = (string) $request->headers->get(self::HEADER_NAME, '');
+        if ('' !== $headerValue) {
             return $this->normalize($headerValue);
         }
 
-        $queryValue = (string)$request->query->get(self::QUERY_NAME, '');
-        if ($queryValue !== '') {
+        $queryValue = (string) $request->query->get(self::QUERY_NAME, '');
+        if ('' !== $queryValue) {
             return $this->normalize($queryValue);
         }
 
-        $envValue = (string)($_ENV['LOCATOR_DEFAULT_TENANT'] ?? $_SERVER['LOCATOR_DEFAULT_TENANT'] ?? '');
-        if ($envValue !== '') {
+        $envValue = (string) ($_ENV['LOCATOR_DEFAULT_TENANT'] ?? $_SERVER['LOCATOR_DEFAULT_TENANT'] ?? '');
+        if ('' !== $envValue) {
             return $this->normalize($envValue);
         }
 
@@ -60,7 +61,7 @@ final class RequestTenantContext implements TenantContextInterface
     private function normalize(string $value): string
     {
         $value = trim($value);
-        if ($value === '') {
+        if ('' === $value) {
             return self::DEFAULT_TENANT;
         }
 

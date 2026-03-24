@@ -1,0 +1,9 @@
+src/Bundle/LocatorBundle.php
+src/Bundle/DependencyInjection/LocatorExtension.php
+src/Bundle/Locator/SmartResponsorLocatorBundle.php
+src/Bundle/Locator/DependencyInjection/SmartResponsorLocatorExtension.php
+src/Strategy/Locator/GoogleLocator.php
+src/Strategy/Locator/MapboxLocator.php
+src/Strategy/Locator/OpenStreetMapLocator.php
+src/Strategy/Locator/USPSLocator.php
+tests/Locator/Unit/NormalizationTest.php

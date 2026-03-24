@@ -1,0 +1,4821 @@
+{
+  "generatedAt": "2026-03-22T19:18:46Z",
+  "items": [
+    {
+      "path": "tests/Locator",
+      "kind": "dir",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/Address",
+      "kind": "dir",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/Contract",
+      "kind": "dir",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/Fixture",
+      "kind": "dir",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/Infrastructure",
+      "kind": "dir",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/Integration",
+      "kind": "dir",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/Provider",
+      "kind": "dir",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/Service",
+      "kind": "dir",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/Smoke",
+      "kind": "dir",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/Tenant",
+      "kind": "dir",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/Unit",
+      "kind": "dir",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/AbTestRouterTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/AdaptiveOrderingTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/AdaptiveProviderOrderTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/AdaptiveQuotaTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/AdaptiveTimeoutCalibratorTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/AdaptiveTimeoutTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/AddressCanonicalizerTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/AddressHintBiasTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/AnomalyDetectorTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/BanditPolicyTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/BanditRouterTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/BatchGeocodeEndpointTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/BudgetGuardTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/BudgetTelemetryTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/CacheInvalidationTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/CacheInvalidatorTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/CacheProbeTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/CacheWarmerTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/CanaryGuardTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/CanaryToggleTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/CellIndexTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/CircuitBreakerTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/CircuitTuningPolicyTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/ColdStartWarmupTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/ConfidenceEnsembleTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/ConfidenceScoreTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/CostAwarenessTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/CostAwarePolicyTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/CostRoutePlannerTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/DeferredLookupQueueTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/DeferredLookupTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/DegradeManagerTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/FailoverMatrixTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/FailoverPlannerTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/FraudSignalDetectorTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/GeoFencePolicyTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/HealthEwmaTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/HealthMetricRepoTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/HealthRecorderTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/HedgePolicyTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/HedgerTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/HintBiasTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/IdempotencyKeyStoreTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/IdempotencyStoreTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/IpAuthzPolicyTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/KeyRotatorTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/LatencyForecastTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/LogEventTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/PriorityBatchQueueTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/PriorityQueueTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/ProbabilisticFailoverTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/ProviderAuthzPolicyTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/ProviderContractGoldenTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/ProviderContractVersionTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/ProviderKeyRotationTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/ProviderKeyVaultTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/ProviderOrderTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/ProviderSandboxTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/ProviderStatAggregatorTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/QuotaGuardTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/RaceExecutorTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/RaceRunnerTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/RateLimiterMemoryTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/RateLimiterRedisTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/RateLimiterTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/RecordReplayStoreTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/RegionPolicyEngineTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/RegionQuotaSchedulerTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/RegionRouterTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/RegionTimeoutPolicyTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/RequestCoalescerTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/ResultCacheTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/RetentionPolicyTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/RetryPolicyTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/RouterOrchestratorTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/ScoreEnsembleTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/ShadowTrafficTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/SlaPolicyTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/TenantGuardTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/TenantQuotaManagerTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/TenantQuotaTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/TenantResourceQuotaTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/TenantSeparatorTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/TimeoutCalibratorTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/ToggleTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/TracePropagatorTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/Address/AddressContractTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/Address/AddressSuggestTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/Contract/LocatorOpenApiPresenceTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/Fixture/address-golden.ndjson",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/Fixture/AddressFixtureFileTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/Infrastructure/RequestTenantContextTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/Integration/SmokeTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/Provider/ProviderRouterTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/Service/AddressQuotaGuardTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/Service/AddressReverseTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/Service/AddressSuggestRankerTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/Service/SuggestRankerTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/Service/TenantQuotaManagerMetricDecoratorTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/Smoke/PublicIndexSmokeTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/Tenant/TenantConfigRepositoryTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/Tenant/TenantQuotaGuardIntegrationTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/Tenant/TenantUsageCounterTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/Locator/Unit/NormalizationTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/MessageHandler/Locator",
+      "kind": "dir",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "tests/MessageHandler/Locator/AddressBatchMessageHandlerAdapterTest.php",
+      "kind": "file",
+      "active": false,
+      "category": "tests",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Bundle/Locator",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Bundle/Locator/DependencyInjection",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Bundle/Locator/SmartResponsorLocatorBundle.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Bundle/Locator/DependencyInjection/Configuration.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Bundle/Locator/DependencyInjection/SmartResponsorLocatorExtension.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Strategy/Locator",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Strategy/Locator/GoogleLocator.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Strategy/Locator/MapboxLocator.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Strategy/Locator/OpenStreetMapLocator.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Strategy/Locator/USPSLocator.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/Address",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/Provider",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/.gitkeep",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AbTestRouterInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AdaptiveOrderingInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AdaptiveProviderOrderInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AdaptiveQuotaInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AdaptiveTimeoutCalibratorInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AdaptiveTimeoutInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AddressCanonicalizerInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AddressHintBiasInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AddressInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AddressQuotaGuardInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AddressReverseInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AddressSuggestInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AddressSuggestRankerInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AnomalyDetectorInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/BanditPolicyInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/BanditRouterInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/BatchGeocodeEndpointInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/BatchSchedulerInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/BudgetGuardInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/CanaryGuardInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/CanaryToggleInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/CellIndexInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/CircuitBreakerInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/CircuitTuningPolicyInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ColdStartWarmupInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ConfidenceEnsembleInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ConfidenceScoreInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/CostAwarenessInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/CostAwarePolicyInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/CostCapPolicyInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/CostRoutePlannerInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/DeferredLookupInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/DegradeManagerInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/EnvInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ErasureJobInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/FailoverMatrixInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/FailoverPlannerInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/FakeProviderInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/FakeRedisInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/FraudSignalDetectorInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/GeoFencePolicyInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/GeohashInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/HealthEwmaInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/HealthMonitorInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/HealthRecorderInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/HedgePolicyInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/HedgerInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/HereProviderInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/HintBiasInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/IdempotencyKeyStoreInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/IdempotencyStoreInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/IpAuthzPolicyInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/JitterInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/KeyRotatorInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/KeyStoreInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/LatencyForecastInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/LocatorInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/LocatorServiceInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/LogEventInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/MapboxProviderInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/NominatimProviderInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/NormalizerInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/PiiAnonymizerInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/PolicyInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ProbabilisticFailoverInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ProviderAuthzPolicyInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ProviderContractGoldenInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ProviderContractVersionInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ProviderCostCatalogInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ProviderKeyRotationInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ProviderKeyVaultInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ProviderOrderInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ProviderRouterInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ProviderSandboxInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ProviderStatAggregatorInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/QuotaGuardInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RaceExecutorInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RaceRunnerInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RankerInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RateLimiterInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RateLimiterMemoryInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RateLimiterRedisInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RecordReplayStoreInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RedactorInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RegionPolicyEngineInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RegionQuotaSchedulerInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RegionRouterInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RegionTimeoutPolicyInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RequestCoalescerInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RetentionInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RetentionPolicyInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RetentionSweeperInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RetryPolicyInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RouteDecisionInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RouterOrchestratorInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ScoreEnsembleInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ShadowTrafficInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/SlaPolicyInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/StrategyRegistryInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/SuggestRankerInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/TenantContextInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/TenantGuardInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/TenantQuotaInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/TenantQuotaManagerInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/TenantResourceQuotaInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/TenantSeparatorInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/TimeoutCalibratorInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ToggleInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/TokenBucketInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/TracePropagatorInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/Address/AddressParseServiceInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/Address/AddressStandardizeServiceInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/Provider/GeocodeProviderInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/Address",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/Config",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/Provider",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/.gitkeep",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/AbTestRouter.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/AdaptiveOrdering.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/AdaptiveProviderOrder.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/AdaptiveQuota.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/AdaptiveTimeout.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/AdaptiveTimeoutCalibrator.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/AddressCanonicalizer.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/AddressHintBias.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/AddressQuotaGuard.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/AddressReverse.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/AddressSuggest.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/AddressSuggestRanker.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/AnomalyDetector.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/BanditPolicy.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/BanditRouter.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/BatchGeocodeEndpoint.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/BatchScheduler.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/BudgetGuard.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/CanaryGuard.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/CanaryToggle.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/CellIndex.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/CircuitBreaker.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/CircuitTuningPolicy.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/ColdStartWarmup.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/ConfidenceEnsemble.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/ConfidenceScore.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/CostAwareness.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/CostAwarePolicy.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/CostCapPolicy.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/CostRoutePlanner.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/DeferredLookup.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/DegradeManager.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/ErasureJob.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/FailoverMatrix.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/FailoverPlanner.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/FakeProvider.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/FakeRedis.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/FraudSignalDetector.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/GeoFencePolicy.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/Geohash.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/HealthEwma.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/HealthMonitor.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/HedgePolicy.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/Hedger.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/HintBias.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/IdempotencyKeyStore.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/IdempotencyStore.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/IpAuthzPolicy.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/Jitter.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/KeyRotator.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/KeyStore.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/LatencyForecast.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/LocatorService.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/LogEvent.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/Normalizer.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/PiiAnonymizer.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/Policy.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/ProbabilisticFailover.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/ProviderAuthzPolicy.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/ProviderContractGolden.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/ProviderContractVersion.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/ProviderCostCatalog.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/ProviderKeyRotation.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/ProviderKeyVault.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/ProviderOrder.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/ProviderRouter.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/ProviderSandbox.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/ProviderStatAggregator.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/QuotaExceededException.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/QuotaGuard.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/RaceExecutor.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/RaceRunner.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/RateLimiter.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/RateLimiterMemory.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/RateLimiterRedis.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/Redactor.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/RegionPolicyEngine.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/RegionQuotaScheduler.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/RegionRouter.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/RegionTimeoutPolicy.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/RequestCoalescer.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/RetentionPolicy.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/RetentionSweeper.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/RetryPolicy.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/RouteDecision.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/RouterOrchestrator.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/ScoreEnsemble.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/ShadowTraffic.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/SlaPolicy.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/StrategyRegistry.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/SuggestRanker.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/TenantGuard.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/TenantQuota.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/TenantQuotaManager.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/TenantQuotaManagerMetricDecorator.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/TenantResourceQuota.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/TenantSeparator.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/TimeoutCalibrator.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/Toggle.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/TokenBucket.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/TracePropagator.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/Address/AddressParseService.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/Address/AddressStandardizeService.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/Config/Env.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/Provider/HereProvider.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/Provider/MapboxProvider.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/Provider/NominatimProvider.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/Provider/ProviderRouter.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Service/Locator/Provider/Ranker.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Model/Locator",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Model/Locator/AddressData.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Model/Locator/CanonicalAddress.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Model/Locator/GeoPoint.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/MessageHandler/Locator",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/MessageHandler/Locator/AddressBatchMessageHandler.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Message/Locator",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Message/Locator/AddressBatchMessage.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Batch",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Cache",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Decorator",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Factory",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Fallback",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Formatter",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Health",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Http",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Log",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Metrics",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Provider",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/RateLimit",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Registry",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Resilience",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Secrets",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Throttle",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/AddressPort.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/LocatorConfig.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/LocatorSelector.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Batch/JobStore.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Cache/AdaptiveTtlPolicy.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Cache/CacheInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Cache/FileCache.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Cache/LruCache.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Cache/RedisCache.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Cache/SimpleArrayCache.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Decorator/AdaptiveMultiCachedLocator.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Decorator/CachedLocator.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Decorator/CircuitBreakerLocator.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Decorator/GracefulLocator.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Decorator/HealthProbeLocator.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Decorator/MultiCachedLocator.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Decorator/ObservabilityLocator.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Decorator/RateLimitedLocator.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Decorator/RetryLocator.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Decorator/TryFallbackLocator.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Decorator/USPSVerifyLocator.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Factory/RedisFactory.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Fallback/FallbackLocator.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Formatter/USPSFormatter.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Health/CompositeHealthCheck.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Health/HealthChecker.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Health/NominatimHealthCheck.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Http/GoogleGeocodingClient.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Http/MapboxClient.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Http/NominatimClient.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Http/USPSClient.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Log/Correlation",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Log/Redactor.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Log/StdoutLogger.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Log/Correlation/CorrelationId.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Log/Correlation/TraceContext.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Metrics/HealthMetrics.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Metrics/InMemoryMetrics.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Metrics/PrometheusExporter.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Provider/Dsn",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Provider/FallbackProvider.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Provider/GoogleProvider.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Provider/MapboxProvider.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Provider/MockProvider.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Provider/NominatimProvider.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Provider/OpenStreetMapProvider.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Provider/PhotonProvider.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Provider/Dsn/LocatorDsn.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/RateLimit/RateLimiter.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/RateLimit/RedisRateLimiter.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Registry/LocatorPluginRegistry.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Resilience/CircuitBreaker.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Resilience/Retry.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Secrets/EnvSecretsProvider.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Integration/Locator/Throttle/ProviderThrottle.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/.gitkeep",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/AddressBatchJobRepositoryInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/AddressBatchMessageBusInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/AddressBatchResultStorageInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/AddressProviderBridgeInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/AddressSuggestProviderInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/ApiKeyAuthInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/ArrayTenantConfigRepositoryInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/BudgetTelemetryInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/CacheInvalidatorInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/CacheProbeInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/CacheTtlPolicyInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/CacheWarmerInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/CircuitBreakerInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/CurlHttpClientInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/DeferredLookupQueueInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/FakeProviderInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/FakeRedisInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/FixtureHttpClientInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/HealthMetricInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/HedgerInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/HttpClientInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/InMemoryMetricRecorderInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/InMemoryTenantUsageCounterInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/JsonlReaderInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/JsonlWriterInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/KernelInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/LocatorConfigInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/LocatorFixtureReaderInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/LocatorSelectorInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/LogEventInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/LoggerInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/MetricRecorderInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/MetricSnapshotProviderInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/NullMetricRecorderInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/PriorityBatchQueueInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/PriorityQueueInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/ProviderAdapterInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/ProviderBudgetInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/ProviderCostCatalogInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/RateLimitInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/RedisCacheInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/RedisClientInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/ResultCacheInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/ReverseHttpClientInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/SandboxHarnessInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/TenantConfigRepositoryInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/TenantUsageCounterInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/TracePropagatorInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/TracingLocatorInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/Cache",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/Decorator",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/Http",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/Io",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/RateLimit",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/Resilience",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/Security",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/.gitkeep",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/ArrayTenantConfigRepository.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/BudgetTelemetry.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/CacheInvalidator.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/CacheProbe.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/CacheTtlPolicy.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/CacheWarmer.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/DeferredLookupQueue.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/FakeProvider.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/FakeRedis.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/HealthMetric.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/InMemoryMetricRecorder.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/InMemoryTenantUsageCounter.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/LocatorConfig.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/LocatorFixtureReader.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/LocatorSelector.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/LogEvent.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/NominatimReverseHttpClient.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/NullMetricRecorder.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/PriorityBatchQueue.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/PriorityQueue.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/ProviderCostCatalog.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/RequestTenantContext.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/ResultCache.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/SandboxHarness.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/TracePropagator.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/Cache/RedisCache.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/Decorator/TracingLocator.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/Http/CurlHttpClient.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/Http/FixtureHttpClient.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/Http/HttpClient.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/Http/HttpClientInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/Http/Kernel.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/Io/JsonlReader.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/Io/JsonlWriter.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/RateLimit/RateLimit.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/Resilience/CircuitBreaker.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/Resilience/Hedger.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/Resilience/ProviderBudget.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Infrastructure/Locator/Security/ApiKeyAuth.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/EntityInterface/Locator",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/EntityInterface/Locator/.gitkeep",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/EntityInterface/Locator/AddressBatchJobInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/EntityInterface/Locator/AddressDataInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/EntityInterface/Locator/AddressInputInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/EntityInterface/Locator/AddressInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/EntityInterface/Locator/AddressResultInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/EntityInterface/Locator/AddressSuggestionInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/EntityInterface/Locator/AddressValidationIssueInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/EntityInterface/Locator/HealthRecorderInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/EntityInterface/Locator/RecordReplayStoreInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/EntityInterface/Locator/TenantContextInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/EntityInterface/Locator/TenantLimitInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/Config",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/.gitkeep",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/AdaptiveTimeout.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/AddressBatchJob.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/AddressBatchJobStatus.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/AddressData.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/AddressInput.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/AddressResult.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/AddressStatus.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/AddressSuggestion.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/AddressValidationIssue.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/BatchScheduler.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/ConfidenceScore.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/CostAwareness.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/ErasureJob.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/FailoverMatrix.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/GeoPoint.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/HealthMetric.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/HealthRecorder.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/HintBias.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/Jitter.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/LatencyForecast.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/LogEvent.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/PiiAnonymizer.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/PriorityQueue.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/ProviderSandbox.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/QuotaGuard.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/RecordReplayStore.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/Redactor.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/RegionRouter.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/RetryPolicy.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/RouteDecision.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/Span.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/TenantContext.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/TenantGuard.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/TenantLimit.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/TraceContext.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Entity/Locator/Config/Env.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/DomainInterface/Locator",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/DomainInterface/Locator/.gitkeep",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Domain/Locator",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Domain/Locator/.gitkeep",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Contract/Locator",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Contract/Locator/Provider",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Contract/Locator/Secrets",
+      "kind": "dir",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Contract/Locator/CacheInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Contract/Locator/LocatorInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Contract/Locator/ProviderInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Contract/Locator/ReverseProviderInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Contract/Locator/Provider/LocatorProviderInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    },
+    {
+      "path": "src/Contract/Locator/Secrets/SecretsProviderInterface.php",
+      "kind": "file",
+      "active": false,
+      "category": "src",
+      "classification": "dead",
+      "notes": "Locator-named path surviving in current slice"
+    }
+  ]
+}

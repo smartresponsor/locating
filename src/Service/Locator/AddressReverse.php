@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -7,26 +8,26 @@ declare(strict_types=1);
 
 namespace Smartresponsor\Service\Locator;
 
+use App\Bridge\Legacy\Service\Location\AddressReverseLegacyServiceInterface;
 use Smartresponsor\Entity\Locator\AddressData;
 use Smartresponsor\Entity\Locator\AddressResult;
 use Smartresponsor\Entity\Locator\AddressStatus;
 use Smartresponsor\Entity\Locator\GeoPoint;
 use Smartresponsor\InfrastructureInterface\Locator\MetricRecorderInterface;
 use Smartresponsor\InfrastructureInterface\Locator\ReverseHttpClientInterface;
-use Smartresponsor\ServiceInterface\Locator\AddressReverseInterface;
 
 /**
- * Default implementation of AddressReverseInterface backed by a single
+ * Default implementation of AddressReverseLegacyServiceInterface backed by a single
  * HTTP reverse geocoding client.
  *
  * For now we rely on Nominatim-compatible payloads but keep the mapping
  * defensive so that providers can be swapped later.
  */
-final class AddressReverse implements AddressReverseInterface
+final class AddressReverse implements AddressReverseLegacyServiceInterface
 {
     public function __construct(
         private ReverseHttpClientInterface $client,
-        private ?MetricRecorderInterface $metricRecorder = null
+        private ?MetricRecorderInterface $metricRecorder = null,
     ) {
     }
 
@@ -44,19 +45,19 @@ final class AddressReverse implements AddressReverseInterface
 
             $streetParts = [];
             if (!empty($address['road'])) {
-                $streetParts[] = (string)$address['road'];
+                $streetParts[] = (string) $address['road'];
             }
             if (!empty($address['house_number'])) {
-                $streetParts[] = (string)$address['house_number'];
+                $streetParts[] = (string) $address['house_number'];
             }
 
             $street = trim(implode(' ', $streetParts));
-            $city = (string)($address['city'] ?? $address['town'] ?? $address['village'] ?? '');
-            $region = (string)($address['state'] ?? '');
-            $postalCode = (string)($address['postcode'] ?? '');
-            $country = (string)($address['country'] ?? '');
-            $countryCodeValue = (string)($address['country_code'] ?? '');
-            if ($countryCodeValue !== '') {
+            $city = (string) ($address['city'] ?? $address['town'] ?? $address['village'] ?? '');
+            $region = (string) ($address['state'] ?? '');
+            $postalCode = (string) ($address['postcode'] ?? '');
+            $country = (string) ($address['country'] ?? '');
+            $countryCodeValue = (string) ($address['country_code'] ?? '');
+            if ('' !== $countryCodeValue) {
                 $countryCodeValue = strtoupper($countryCodeValue);
             }
 
@@ -74,8 +75,8 @@ final class AddressReverse implements AddressReverseInterface
             // Simple confidence classification based on how many components we have.
             $filled = 0;
             foreach (['street', 'city', 'region', 'postalCode', 'countryCode'] as $key) {
-                if ($dataArray[$key] !== '') {
-                    $filled++;
+                if ('' !== $dataArray[$key]) {
+                    ++$filled;
                 }
             }
 
@@ -113,7 +114,7 @@ final class AddressReverse implements AddressReverseInterface
 
     private function recordMetric(string $result, float $start): void
     {
-        if ($this->metricRecorder === null) {
+        if (null === $this->metricRecorder) {
             return;
         }
 

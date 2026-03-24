@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
@@ -7,25 +8,37 @@ declare(strict_types=1);
  */
 
 namespace Smartresponsor\Service\Locator;
-final class AddressCanonicalizer implements AddressInterface {
-    public function normalize(array $raw, string $locale='en'): array {
+
+use App\Bridge\Legacy\Helper\Location\AddressCanonicalizerLegacyInterface;
+
+final class AddressCanonicalizer implements AddressCanonicalizerLegacyInterface
+{
+    public function normalize(array $raw, string $locale = 'en'): array
+    {
         $out = [
-            'street' => self::norm((string)($raw['street'] ?? '')),
-            'city'   => self::title((string)($raw['city'] ?? '')),
-            'state'  => strtoupper((string)($raw['state'] ?? '')),
-            'postal' => preg_replace('/\s+/', '', (string)($raw['postal'] ?? '')),
-            'country'=> strtoupper((string)($raw['country'] ?? '')),
+            'street' => self::norm((string) ($raw['street'] ?? '')),
+            'city' => self::title((string) ($raw['city'] ?? '')),
+            'state' => strtoupper((string) ($raw['state'] ?? '')),
+            'postal' => preg_replace('/\s+/', '', (string) ($raw['postal'] ?? '')),
+            'country' => strtoupper((string) ($raw['country'] ?? '')),
             'locale' => $locale,
         ];
+
         return $out;
     }
-    private static function norm(string $v): string {
+
+    private static function norm(string $v): string
+    {
         $v = trim($v);
         $v = preg_replace('/\s+/', ' ', $v);
+
         return $v;
     }
-    private static function title(string $v): string {
+
+    private static function title(string $v): string
+    {
         $v = strtolower($v);
-        return preg_replace_callback('/\b([a-z])/', fn($m)=>strtoupper($m[1]), $v);
+
+        return preg_replace_callback('/\b([a-z])/', fn ($m) => strtoupper($m[1]), $v);
     }
 }

@@ -1,0 +1,3 @@
+src/InfrastructureInterface/Locator/AddressSuggestProviderInterface.php
+src/InfrastructureInterface/Locator/ReverseHttpClientInterface.php
+src/InfrastructureInterface/Locator/MetricSnapshotProviderInterface.php

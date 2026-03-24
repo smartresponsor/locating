@@ -1,0 +1,17 @@
+{
+  "wave": 33,
+  "message": "legacy-batch-controller-cluster-collapse",
+  "removed_files": [
+    "src/Http/Locator/BatchController.php",
+    "src/Service/Locator/BatchService.php",
+    "src/ServiceInterface/Locator/BatchServiceInterface.php",
+    "src/Entity/Locator/BatchService.php",
+    "tests/Locator/BatchControllerTest.php"
+  ],
+  "added_files": [
+    "docs/location-r33-legacy-batch-controller-cluster-collapse.md",
+    "report/location-r33-reference-check.txt",
+    "report/REMOVED-FILES-R33.txt",
+    "report/location-r33-legacy-batch-controller-cluster-collapse-manifest.json"
+  ]
+}

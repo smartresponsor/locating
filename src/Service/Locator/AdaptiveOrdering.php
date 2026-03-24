@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
@@ -7,25 +8,33 @@ declare(strict_types=1);
  */
 
 namespace Smartresponsor\Service\Locator;
-final class AdaptiveOrdering implements AdaptiveOrderingInterface {
+
+use App\Bridge\Legacy\Service\Location\AdaptiveOrderingLegacyInterface;
+
+final class AdaptiveOrdering implements AdaptiveOrderingLegacyInterface
+{
     public function __construct(
         private HealthEwma $health,
         private CostAwarePolicy $costPolicy,
         private SlaPolicy $sla,
-        private AddressHintBias $bias
-    ) {}
-    public function order(string $region, array $provider, array $signal, array $cost, array $hint): array {
+        private AddressHintBias $bias,
+    ) {
+    }
+
+    public function order(string $region, array $provider, array $signal, array $cost, array $hint): array
+    {
         $score = [];
         foreach ($provider as $id) {
-            $s = $signal[$id] ?? ['latency_ms'=>250.0,'error_rate'=>0.02,'health'=>0.8];
-            $h = isset($s['health']) ? (float)$s['health'] : $this->health->health((float)$s['latency_ms'], (float)$s['error_rate']);
-            $c = (float)($cost[$id] ?? 1.0);
+            $s = $signal[$id] ?? ['latency_ms' => 250.0, 'error_rate' => 0.02, 'health' => 0.8];
+            $h = isset($s['health']) ? (float) $s['health'] : $this->health->health((float) $s['latency_ms'], (float) $s['error_rate']);
+            $c = (float) ($cost[$id] ?? 1.0);
             $cw = $this->costPolicy->score($h, $c);
-            $sl = $this->sla->weight(300.0, (float)$s['latency_ms'], 0.02, (float)$s['error_rate']);
+            $sl = $this->sla->weight(300.0, (float) $s['latency_ms'], 0.02, (float) $s['error_rate']);
             $bw = $this->bias->weight($hint, $region);
-            $score[$id] = $cw * (0.6 + 0.4*$sl) * $bw;
+            $score[$id] = $cw * (0.6 + 0.4 * $sl) * $bw;
         }
         arsort($score, SORT_NUMERIC);
+
         return array_keys($score);
     }
 }

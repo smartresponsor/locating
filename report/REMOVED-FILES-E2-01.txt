@@ -1,0 +1,3 @@
+src/Message/Locator/AddressBatchMessage.php
+src/MessageHandler/Locator/AddressBatchMessageHandler.php
+src/InfrastructureInterface/Locator/AddressBatchMessageBusInterface.php

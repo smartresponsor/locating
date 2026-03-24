@@ -1,6 +1,0 @@
-<?php
-declare(strict_types=1);
-namespace Smartresponsor\Infrastructure\Locator;
-use Smartresponsor\ServiceInterface\Locator\LocatorInterface; use Smartresponsor\Strategy\Locator\OpenStreetMapLocator; use Smartresponsor\Strategy\Locator\GoogleLocator; use Smartresponsor\Strategy\Locator\USPSLocator; use Smartresponsor\Integration\Locator\Http\NominatimClient; use Smartresponsor\Integration\Locator\Http\GoogleGeocodingClient; use Smartresponsor\Integration\Locator\Http\USPSClient; use Smartresponsor\Integration\Locator\Decorator\RateLimitedLocator; use Smartresponsor\Integration\Locator\Cache\SimpleArrayCache; use Smartresponsor\Integration\Locator\Decorator\CachedLocator;
-final class LocatorSelector{ public function __construct(private readonly LocatorConfig $cfg){}
-public function getActiveStrategy(): LocatorInterface{ $base = match(strtolower($this->cfg->strategy)){ 'google' => new GoogleLocator(new GoogleGeocodingClient($this->cfg->googleApiKey)), 'usps' => new USPSLocator(new USPSClient(userId:getenv('USPS_USERID')?:'')), default => new OpenStreetMapLocator(new NominatimClient($this->cfg->nominatimBaseUrl, $this->cfg->nominatimEmail)),}; $wrapped=new RateLimitedLocator($base,120); $wrapped=new CachedLocator($wrapped, new SimpleArrayCache(), 600); return $wrapped; } }

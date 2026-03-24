@@ -1,0 +1,20 @@
+Wave R21 reference check
+========================
+
+Target legacy address pipeline cluster:
+- Smartresponsor\\Service\\Locator\\AddressParser
+- Smartresponsor\\Service\\Locator\\AddressParserGeneric
+- Smartresponsor\\Service\\Locator\\AddressNormalizer
+- Smartresponsor\\Service\\Locator\\AddressValidator
+- Smartresponsor\\Service\\Locator\\AddressPipeline
+- Smartresponsor\\Service\\Locator\\AddressPipelineMetricDecorator
+- matching ServiceInterface\\Locator contracts
+
+Finding:
+- Active Symfony config/services wiring already points to App\\Service\\Address\\Location\\AddressParser,
+  AddressNormalizer, AddressValidator, and AddressPipeline.
+- Active runtime consumer AddressBatchMessageHandler already depends on
+  App\\ServiceInterface\\Address\\Location\\AddressPipelineInterface.
+- Remaining references to the legacy pipeline cluster were limited to the legacy classes themselves
+  and their dedicated legacy tests under tests/Locator/Address.
+- No active config/routes or config/services bindings depended on the removed Smartresponsor pipeline surface.

@@ -1,0 +1,10 @@
+{
+  "wave": "04",
+  "name": "Locating-04-Location",
+  "focus": "app-http-service-vertical",
+  "notes": [
+    "Added App service interfaces and adapters for HTTP Location vertical",
+    "Fixed reverse quota constant mismatch through adapter mapping",
+    "Switched new controllers away from direct Smartresponsor service dependencies"
+  ]
+}

@@ -1,10 +1,13 @@
 <?php
-# Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
+
+// Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 
 namespace Smartresponsor\Service\Locator;
 
-final class RetryPolicy
+use App\Bridge\Legacy\Service\Location\RetryPolicyLegacyInterface;
+
+final class RetryPolicy implements RetryPolicyLegacyInterface
 {
     /**
      * Retry transient transport/provider failures while max attempts are not reached.

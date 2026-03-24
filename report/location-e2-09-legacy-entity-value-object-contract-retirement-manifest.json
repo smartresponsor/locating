@@ -1,0 +1,5 @@
+{
+  "wave": "E2-09",
+  "component": "Locating/Location",
+  "summary": "Retire remaining legacy entity/value-object contracts for AddressInput, AddressData, AddressBatchJob behind App Bridge contracts."
+}

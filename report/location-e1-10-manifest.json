@@ -1,0 +1,13 @@
+{
+  "wave": "E1-10",
+  "component": "Locating/Location",
+  "summary": {
+    "appFilesWithLegacyRefs": 0,
+    "edgeAdapters": 0,
+    "residualBlockers": 0
+  },
+  "artifacts": [
+    "docs/location-e1-10-command-delegacy-and-readiness.md",
+    "report/location-e1-10-bridge-squeeze-check.txt"
+  ]
+}

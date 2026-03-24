@@ -1,0 +1,2105 @@
+{
+  "generatedAt": "2026-03-22T20:10:26.587707Z",
+  "items": [
+    {
+      "path": "src/Bundle/DependencyInjection/Configuration.php",
+      "namespace": "Smartresponsor\\Bundle\\DependencyInjection",
+      "layer": "other"
+    },
+    {
+      "path": "src/Bundle/Locator/DependencyInjection/Configuration.php",
+      "namespace": "Smartresponsor\\Bundle\\Locator\\DependencyInjection",
+      "layer": "other"
+    },
+    {
+      "path": "src/Contract/Cache/CacheInterface.php",
+      "namespace": "Smartresponsor\\Contract\\Cache",
+      "layer": "contract"
+    },
+    {
+      "path": "src/Contract/Health/HealthCheckInterface.php",
+      "namespace": "Smartresponsor\\Contract\\Health",
+      "layer": "contract"
+    },
+    {
+      "path": "src/Contract/Locator/CacheInterface.php",
+      "namespace": "Smartresponsor\\Contract\\Locator",
+      "layer": "contract"
+    },
+    {
+      "path": "src/Contract/Locator/LocatorInterface.php",
+      "namespace": "Smartresponsor\\Contract\\Locator",
+      "layer": "contract"
+    },
+    {
+      "path": "src/Contract/Locator/Provider/LocatorProviderInterface.php",
+      "namespace": "Smartresponsor\\Contract\\Locator\\Provider",
+      "layer": "contract"
+    },
+    {
+      "path": "src/Contract/Locator/ProviderInterface.php",
+      "namespace": "Smartresponsor\\Contract\\Locator",
+      "layer": "contract"
+    },
+    {
+      "path": "src/Contract/Locator/ReverseProviderInterface.php",
+      "namespace": "Smartresponsor\\Contract\\Locator",
+      "layer": "contract"
+    },
+    {
+      "path": "src/Contract/Locator/Secrets/SecretsProviderInterface.php",
+      "namespace": "Smartresponsor\\Contract\\Locator\\Secrets",
+      "layer": "contract"
+    },
+    {
+      "path": "src/Contract/Log/LoggerInterface.php",
+      "namespace": "Smartresponsor\\Contract\\Log",
+      "layer": "contract"
+    },
+    {
+      "path": "src/Contract/Metrics/MetricsInterface.php",
+      "namespace": "Smartresponsor\\Contract\\Metrics",
+      "layer": "contract"
+    },
+    {
+      "path": "src/Contract/RateLimit/RateLimiterInterface.php",
+      "namespace": "Smartresponsor\\Contract\\RateLimit",
+      "layer": "contract"
+    },
+    {
+      "path": "src/Entity/Locator/AdaptiveTimeout.php",
+      "namespace": "Smartresponsor\\Entity\\Locator",
+      "layer": "entity"
+    },
+    {
+      "path": "src/Entity/Locator/AddressBatchJob.php",
+      "namespace": "Smartresponsor\\Entity\\Locator",
+      "layer": "entity"
+    },
+    {
+      "path": "src/Entity/Locator/AddressBatchJobStatus.php",
+      "namespace": "Smartresponsor\\Entity\\Locator",
+      "layer": "entity"
+    },
+    {
+      "path": "src/Entity/Locator/AddressData.php",
+      "namespace": "Smartresponsor\\Entity\\Locator",
+      "layer": "entity"
+    },
+    {
+      "path": "src/Entity/Locator/AddressInput.php",
+      "namespace": "Smartresponsor\\Entity\\Locator",
+      "layer": "entity"
+    },
+    {
+      "path": "src/Entity/Locator/AddressResult.php",
+      "namespace": "Smartresponsor\\Entity\\Locator",
+      "layer": "entity"
+    },
+    {
+      "path": "src/Entity/Locator/AddressStatus.php",
+      "namespace": "Smartresponsor\\Entity\\Locator",
+      "layer": "entity"
+    },
+    {
+      "path": "src/Entity/Locator/AddressSuggestion.php",
+      "namespace": "Smartresponsor\\Entity\\Locator",
+      "layer": "entity"
+    },
+    {
+      "path": "src/Entity/Locator/AddressValidationIssue.php",
+      "namespace": "Smartresponsor\\Entity\\Locator",
+      "layer": "entity"
+    },
+    {
+      "path": "src/Entity/Locator/BatchScheduler.php",
+      "namespace": "Smartresponsor\\Entity\\Locator",
+      "layer": "entity"
+    },
+    {
+      "path": "src/Entity/Locator/ConfidenceScore.php",
+      "namespace": "Smartresponsor\\Entity\\Locator",
+      "layer": "entity"
+    },
+    {
+      "path": "src/Entity/Locator/Config/Env.php",
+      "namespace": "Smartresponsor\\Entity\\Locator\\Config",
+      "layer": "entity"
+    },
+    {
+      "path": "src/Entity/Locator/CostAwareness.php",
+      "namespace": "Smartresponsor\\Entity\\Locator",
+      "layer": "entity"
+    },
+    {
+      "path": "src/Entity/Locator/ErasureJob.php",
+      "namespace": "Smartresponsor\\Entity\\Locator",
+      "layer": "entity"
+    },
+    {
+      "path": "src/Entity/Locator/FailoverMatrix.php",
+      "namespace": "Smartresponsor\\Entity\\Locator",
+      "layer": "entity"
+    },
+    {
+      "path": "src/Entity/Locator/GeoPoint.php",
+      "namespace": "Smartresponsor\\Entity\\Locator",
+      "layer": "entity"
+    },
+    {
+      "path": "src/Entity/Locator/HealthMetric.php",
+      "namespace": "Smartresponsor\\Entity\\Locator",
+      "layer": "entity"
+    },
+    {
+      "path": "src/Entity/Locator/HealthRecorder.php",
+      "namespace": "Smartresponsor\\Entity\\Locator",
+      "layer": "entity"
+    },
+    {
+      "path": "src/Entity/Locator/HintBias.php",
+      "namespace": "Smartresponsor\\Entity\\Locator",
+      "layer": "entity"
+    },
+    {
+      "path": "src/Entity/Locator/Jitter.php",
+      "namespace": "Smartresponsor\\Entity\\Locator",
+      "layer": "entity"
+    },
+    {
+      "path": "src/Entity/Locator/LatencyForecast.php",
+      "namespace": "Smartresponsor\\Entity\\Locator",
+      "layer": "entity"
+    },
+    {
+      "path": "src/Entity/Locator/LogEvent.php",
+      "namespace": "Smartresponsor\\Entity\\Locator",
+      "layer": "entity"
+    },
+    {
+      "path": "src/Entity/Locator/PiiAnonymizer.php",
+      "namespace": "Smartresponsor\\Entity\\Locator",
+      "layer": "entity"
+    },
+    {
+      "path": "src/Entity/Locator/PriorityQueue.php",
+      "namespace": "Smartresponsor\\Entity\\Locator",
+      "layer": "entity"
+    },
+    {
+      "path": "src/Entity/Locator/ProviderSandbox.php",
+      "namespace": "Smartresponsor\\Entity\\Locator",
+      "layer": "entity"
+    },
+    {
+      "path": "src/Entity/Locator/QuotaGuard.php",
+      "namespace": "Smartresponsor\\Entity\\Locator",
+      "layer": "entity"
+    },
+    {
+      "path": "src/Entity/Locator/RecordReplayStore.php",
+      "namespace": "Smartresponsor\\Entity\\Locator",
+      "layer": "entity"
+    },
+    {
+      "path": "src/Entity/Locator/Redactor.php",
+      "namespace": "Smartresponsor\\Entity\\Locator",
+      "layer": "entity"
+    },
+    {
+      "path": "src/Entity/Locator/RegionRouter.php",
+      "namespace": "Smartresponsor\\Entity\\Locator",
+      "layer": "entity"
+    },
+    {
+      "path": "src/Entity/Locator/RetryPolicy.php",
+      "namespace": "Smartresponsor\\Entity\\Locator",
+      "layer": "entity"
+    },
+    {
+      "path": "src/Entity/Locator/RouteDecision.php",
+      "namespace": "Smartresponsor\\Entity\\Locator",
+      "layer": "entity"
+    },
+    {
+      "path": "src/Entity/Locator/Span.php",
+      "namespace": "Smartresponsor\\Entity\\Locator",
+      "layer": "entity"
+    },
+    {
+      "path": "src/Entity/Locator/TenantContext.php",
+      "namespace": "Smartresponsor\\Entity\\Locator",
+      "layer": "entity"
+    },
+    {
+      "path": "src/Entity/Locator/TenantGuard.php",
+      "namespace": "Smartresponsor\\Entity\\Locator",
+      "layer": "entity"
+    },
+    {
+      "path": "src/Entity/Locator/TenantLimit.php",
+      "namespace": "Smartresponsor\\Entity\\Locator",
+      "layer": "entity"
+    },
+    {
+      "path": "src/Entity/Locator/TraceContext.php",
+      "namespace": "Smartresponsor\\Entity\\Locator",
+      "layer": "entity"
+    },
+    {
+      "path": "src/EntityInterface/Locator/AddressBatchJobInterface.php",
+      "namespace": "Smartresponsor\\EntityInterface\\Locator",
+      "layer": "entity-interface"
+    },
+    {
+      "path": "src/EntityInterface/Locator/AddressDataInterface.php",
+      "namespace": "Smartresponsor\\EntityInterface\\Locator",
+      "layer": "entity-interface"
+    },
+    {
+      "path": "src/EntityInterface/Locator/AddressInputInterface.php",
+      "namespace": "Smartresponsor\\EntityInterface\\Locator",
+      "layer": "entity-interface"
+    },
+    {
+      "path": "src/EntityInterface/Locator/AddressInterface.php",
+      "namespace": "Smartresponsor\\EntityInterface\\Locator",
+      "layer": "entity-interface"
+    },
+    {
+      "path": "src/EntityInterface/Locator/AddressResultInterface.php",
+      "namespace": "Smartresponsor\\EntityInterface\\Locator",
+      "layer": "entity-interface"
+    },
+    {
+      "path": "src/EntityInterface/Locator/AddressSuggestionInterface.php",
+      "namespace": "Smartresponsor\\EntityInterface\\Locator",
+      "layer": "entity-interface"
+    },
+    {
+      "path": "src/EntityInterface/Locator/AddressValidationIssueInterface.php",
+      "namespace": "Smartresponsor\\EntityInterface\\Locator",
+      "layer": "entity-interface"
+    },
+    {
+      "path": "src/EntityInterface/Locator/HealthRecorderInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "entity-interface"
+    },
+    {
+      "path": "src/EntityInterface/Locator/RecordReplayStoreInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "entity-interface"
+    },
+    {
+      "path": "src/EntityInterface/Locator/TenantContextInterface.php",
+      "namespace": "Smartresponsor\\EntityInterface\\Locator",
+      "layer": "entity-interface"
+    },
+    {
+      "path": "src/EntityInterface/Locator/TenantLimitInterface.php",
+      "namespace": "Smartresponsor\\EntityInterface\\Locator",
+      "layer": "entity-interface"
+    },
+    {
+      "path": "src/Infrastructure/Locator/ArrayTenantConfigRepository.php",
+      "namespace": "Smartresponsor\\Infrastructure\\Locator",
+      "layer": "infrastructure"
+    },
+    {
+      "path": "src/Infrastructure/Locator/BudgetTelemetry.php",
+      "namespace": "Smartresponsor\\Infrastructure\\Locator",
+      "layer": "infrastructure"
+    },
+    {
+      "path": "src/Infrastructure/Locator/Cache/RedisCache.php",
+      "namespace": "Smartresponsor\\Infrastructure\\Locator\\Cache",
+      "layer": "infrastructure"
+    },
+    {
+      "path": "src/Infrastructure/Locator/CacheInvalidator.php",
+      "namespace": "Smartresponsor\\Infrastructure\\Locator",
+      "layer": "infrastructure"
+    },
+    {
+      "path": "src/Infrastructure/Locator/CacheProbe.php",
+      "namespace": "Smartresponsor\\Infrastructure\\Locator",
+      "layer": "infrastructure"
+    },
+    {
+      "path": "src/Infrastructure/Locator/CacheTtlPolicy.php",
+      "namespace": "Smartresponsor\\Infrastructure\\Locator",
+      "layer": "infrastructure"
+    },
+    {
+      "path": "src/Infrastructure/Locator/CacheWarmer.php",
+      "namespace": "Smartresponsor\\Infrastructure\\Locator",
+      "layer": "infrastructure"
+    },
+    {
+      "path": "src/Infrastructure/Locator/DeferredLookupQueue.php",
+      "namespace": "Smartresponsor\\Infrastructure\\Locator",
+      "layer": "infrastructure"
+    },
+    {
+      "path": "src/Infrastructure/Locator/FakeProvider.php",
+      "namespace": "Smartresponsor\\Infrastructure\\Locator",
+      "layer": "infrastructure"
+    },
+    {
+      "path": "src/Infrastructure/Locator/FakeRedis.php",
+      "namespace": "Smartresponsor\\Infrastructure\\Locator",
+      "layer": "infrastructure"
+    },
+    {
+      "path": "src/Infrastructure/Locator/HealthMetric.php",
+      "namespace": "Smartresponsor\\Infrastructure\\Locator",
+      "layer": "infrastructure"
+    },
+    {
+      "path": "src/Infrastructure/Locator/Http/HttpClient.php",
+      "namespace": "Smartresponsor\\Infrastructure\\Locator\\Http",
+      "layer": "infrastructure"
+    },
+    {
+      "path": "src/Infrastructure/Locator/Http/Kernel.php",
+      "namespace": "Smartresponsor\\Infrastructure\\Locator\\Http",
+      "layer": "infrastructure"
+    },
+    {
+      "path": "src/Infrastructure/Locator/InMemoryMetricRecorder.php",
+      "namespace": "Smartresponsor\\Infrastructure\\Locator",
+      "layer": "infrastructure"
+    },
+    {
+      "path": "src/Infrastructure/Locator/InMemoryTenantUsageCounter.php",
+      "namespace": "Smartresponsor\\Infrastructure\\Locator",
+      "layer": "infrastructure"
+    },
+    {
+      "path": "src/Infrastructure/Locator/LocatorConfig.php",
+      "namespace": "Smartresponsor\\Infrastructure\\Locator",
+      "layer": "infrastructure"
+    },
+    {
+      "path": "src/Infrastructure/Locator/LocatorFixtureReader.php",
+      "namespace": "Smartresponsor\\Infrastructure\\Locator",
+      "layer": "infrastructure"
+    },
+    {
+      "path": "src/Infrastructure/Locator/LogEvent.php",
+      "namespace": "Smartresponsor\\Infrastructure\\Locator",
+      "layer": "infrastructure"
+    },
+    {
+      "path": "src/Infrastructure/Locator/NominatimReverseHttpClient.php",
+      "namespace": "Smartresponsor\\Infrastructure\\Locator",
+      "layer": "infrastructure"
+    },
+    {
+      "path": "src/Infrastructure/Locator/NullMetricRecorder.php",
+      "namespace": "Smartresponsor\\Infrastructure\\Locator",
+      "layer": "infrastructure"
+    },
+    {
+      "path": "src/Infrastructure/Locator/PriorityBatchQueue.php",
+      "namespace": "Smartresponsor\\Infrastructure\\Locator",
+      "layer": "infrastructure"
+    },
+    {
+      "path": "src/Infrastructure/Locator/PriorityQueue.php",
+      "namespace": "Smartresponsor\\Infrastructure\\Locator",
+      "layer": "infrastructure"
+    },
+    {
+      "path": "src/Infrastructure/Locator/ProviderCostCatalog.php",
+      "namespace": "Smartresponsor\\Infrastructure\\Locator",
+      "layer": "infrastructure"
+    },
+    {
+      "path": "src/Infrastructure/Locator/RateLimit/RateLimit.php",
+      "namespace": "Smartresponsor\\Infrastructure\\Locator\\RateLimit",
+      "layer": "infrastructure"
+    },
+    {
+      "path": "src/Infrastructure/Locator/RequestTenantContext.php",
+      "namespace": "Smartresponsor\\Infrastructure\\Locator",
+      "layer": "infrastructure"
+    },
+    {
+      "path": "src/Infrastructure/Locator/Resilience/CircuitBreaker.php",
+      "namespace": "Smartresponsor\\Infrastructure\\Locator\\Resilience",
+      "layer": "infrastructure"
+    },
+    {
+      "path": "src/Infrastructure/Locator/Resilience/Hedger.php",
+      "namespace": "Smartresponsor\\Infrastructure\\Locator\\Resilience",
+      "layer": "infrastructure"
+    },
+    {
+      "path": "src/Infrastructure/Locator/Resilience/ProviderBudget.php",
+      "namespace": "Smartresponsor\\Infrastructure\\Locator\\Resilience",
+      "layer": "infrastructure"
+    },
+    {
+      "path": "src/Infrastructure/Locator/ResultCache.php",
+      "namespace": "Smartresponsor\\Infrastructure\\Locator",
+      "layer": "infrastructure"
+    },
+    {
+      "path": "src/Infrastructure/Locator/SandboxHarness.php",
+      "namespace": "Smartresponsor\\Infrastructure\\Locator",
+      "layer": "infrastructure"
+    },
+    {
+      "path": "src/Infrastructure/Locator/Security/ApiKeyAuth.php",
+      "namespace": "Smartresponsor\\Infrastructure\\Locator\\Security",
+      "layer": "infrastructure"
+    },
+    {
+      "path": "src/Infrastructure/Locator/TracePropagator.php",
+      "namespace": "Smartresponsor\\Infrastructure\\Locator",
+      "layer": "infrastructure"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/AddressBatchJobRepositoryInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/AddressBatchMessageBusInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/AddressBatchResultStorageInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/AddressProviderBridgeInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/AddressSuggestProviderInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/ApiKeyAuthInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/ArrayTenantConfigRepositoryInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/BudgetTelemetryInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/CacheInvalidatorInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/CacheProbeInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/CacheTtlPolicyInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/CacheWarmerInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/CircuitBreakerInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/CurlHttpClientInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/DeferredLookupQueueInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/FakeProviderInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/FakeRedisInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/FixtureHttpClientInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/HealthMetricInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/HedgerInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/HttpClientInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/InMemoryMetricRecorderInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/InMemoryTenantUsageCounterInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/JsonlReaderInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/JsonlWriterInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/KernelInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/LocatorConfigInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/LocatorFixtureReaderInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/LogEventInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/MetricRecorderInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/MetricSnapshotProviderInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/NullMetricRecorderInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/PriorityBatchQueueInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/PriorityQueueInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/ProviderAdapterInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/ProviderBudgetInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/ProviderCostCatalogInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/RateLimitInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/RedisCacheInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/RedisClientInterface.php",
+      "namespace": "Smartresponsor\\LayerInterface\\Domaine",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/ResultCacheInterface.php",
+      "namespace": "Smartresponsor\\LayerInterface\\Domaine",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/ReverseHttpClientInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/SandboxHarnessInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/TenantConfigRepositoryInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/TenantUsageCounterInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/TracePropagatorInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/InfrastructureInterface/Locator/TracingLocatorInterface.php",
+      "namespace": "Smartresponsor\\InfrastructureInterface\\Locator",
+      "layer": "infrastructure-interface"
+    },
+    {
+      "path": "src/Integration/Http/SimpleHttp.php",
+      "namespace": "Smartresponsor\\Integration\\Http",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/AddressPort.php",
+      "namespace": "Smartresponsor\\Integration\\Locator",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Batch/JobStore.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Batch",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Cache/AdaptiveTtlPolicy.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Cache",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Cache/CacheInterface.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Cache",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Cache/FileCache.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Cache",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Cache/LruCache.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Cache",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Cache/RedisCache.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Cache",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Cache/SimpleArrayCache.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Cache",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Decorator/AdaptiveMultiCachedLocator.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Decorator",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Decorator/CachedLocator.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Decorator",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Decorator/CircuitBreakerLocator.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Decorator",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Decorator/GracefulLocator.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Decorator",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Decorator/HealthProbeLocator.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Decorator",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Decorator/MultiCachedLocator.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Decorator",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Decorator/ObservabilityLocator.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Decorator",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Decorator/RateLimitedLocator.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Decorator",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Decorator/RetryLocator.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Decorator",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Decorator/TryFallbackLocator.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Decorator",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Decorator/USPSVerifyLocator.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Decorator",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Factory/RedisFactory.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Factory",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Fallback/FallbackLocator.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Fallback",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Formatter/USPSFormatter.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Formatter",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Health/CompositeHealthCheck.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Health",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Health/NominatimHealthCheck.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Health",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Http/GoogleGeocodingClient.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Http",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Http/MapboxClient.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Http",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Http/NominatimClient.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Http",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Http/USPSClient.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Http",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/LocatorConfig.php",
+      "namespace": "Smartresponsor\\Integration\\Locator",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Log/Correlation/CorrelationId.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Log\\Correlation",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Log/Correlation/TraceContext.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Log\\Correlation",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Log/Redactor.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Log",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Log/StdoutLogger.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Log",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Metrics/HealthMetrics.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Metrics",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Metrics/InMemoryMetrics.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Metrics",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Metrics/PrometheusExporter.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Metrics",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Provider/Dsn/LocatorDsn.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Provider\\Dsn",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Provider/FallbackProvider.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Provider",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Provider/MockProvider.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Provider",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Provider/NominatimProvider.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Provider",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Provider/PhotonProvider.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Provider",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/RateLimit/RateLimiter.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\RateLimit",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/RateLimit/RedisRateLimiter.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\RateLimit",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Registry/LocatorPluginRegistry.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Registry",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Resilience/CircuitBreaker.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Resilience",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Resilience/Retry.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Resilience",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Secrets/EnvSecretsProvider.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Secrets",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Locator/Throttle/ProviderThrottle.php",
+      "namespace": "Smartresponsor\\Integration\\Locator\\Throttle",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Observability/Log/JsonLogger.php",
+      "namespace": "Smartresponsor\\Integration\\Observability\\Log",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Observability/Trace/OtelZipkinExporter.php",
+      "namespace": "Smartresponsor\\Integration\\Observability\\Trace",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Observability/Trace/Span.php",
+      "namespace": "Smartresponsor\\Integration\\Observability\\Trace",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/Observability/Trace/Tracer.php",
+      "namespace": "Smartresponsor\\Integration\\Observability\\Trace",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Integration/RateLimit/TokenBucket.php",
+      "namespace": "Smartresponsor\\Integration\\RateLimit",
+      "layer": "integration"
+    },
+    {
+      "path": "src/Message/Locator/AddressBatchMessage.php",
+      "namespace": "Smartresponsor\\Message\\Locator",
+      "layer": "message"
+    },
+    {
+      "path": "src/MessageHandler/Locator/AddressBatchMessageHandler.php",
+      "namespace": "Smartresponsor\\MessageHandler\\Locator",
+      "layer": "message-handler"
+    },
+    {
+      "path": "src/Model/Locator/AddressData.php",
+      "namespace": "Smartresponsor\\Model\\Locator",
+      "layer": "model"
+    },
+    {
+      "path": "src/Model/Locator/CanonicalAddress.php",
+      "namespace": "Smartresponsor\\Model\\Locator",
+      "layer": "model"
+    },
+    {
+      "path": "src/Model/Locator/GeoPoint.php",
+      "namespace": "Smartresponsor\\Model\\Locator",
+      "layer": "model"
+    },
+    {
+      "path": "src/Service/Locator/AbTestRouter.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/AdaptiveOrdering.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/AdaptiveProviderOrder.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/AdaptiveQuota.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/AdaptiveTimeout.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/AdaptiveTimeoutCalibrator.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/Address/AddressParseService.php",
+      "namespace": "Smartresponsor\\Service\\Locator\\Address",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/Address/AddressStandardizeService.php",
+      "namespace": "Smartresponsor\\Service\\Locator\\Address",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/AddressCanonicalizer.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/AddressHintBias.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/AddressQuotaGuard.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/AddressReverse.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/AddressSuggest.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/AddressSuggestRanker.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/AnomalyDetector.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/BanditPolicy.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/BanditRouter.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/BatchGeocodeEndpoint.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/BatchScheduler.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/BudgetGuard.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/CanaryGuard.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/CanaryToggle.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/CellIndex.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/CircuitBreaker.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/CircuitTuningPolicy.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/ColdStartWarmup.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/ConfidenceEnsemble.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/ConfidenceScore.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/Config/Env.php",
+      "namespace": "Smartresponsor\\Service\\Locator\\Config",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/CostAwarePolicy.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/CostAwareness.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/CostCapPolicy.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/CostRoutePlanner.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/DeferredLookup.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/DegradeManager.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/ErasureJob.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/FailoverMatrix.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/FailoverPlanner.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/FakeProvider.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/FakeRedis.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/FraudSignalDetector.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/GeoFencePolicy.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/Geohash.php",
+      "namespace": "Smartresponsor\\Service\\Locator\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/HealthEwma.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/HealthMonitor.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/HedgePolicy.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/Hedger.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/HintBias.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/IdempotencyKeyStore.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/IdempotencyStore.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/IpAuthzPolicy.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/Jitter.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/KeyRotator.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/KeyStore.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/LatencyForecast.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/LocatorService.php",
+      "namespace": "Smartresponsor\\Service\\Locator\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/LogEvent.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/Normalizer.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/PiiAnonymizer.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/Policy.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/ProbabilisticFailover.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/Provider/HereProvider.php",
+      "namespace": "Smartresponsor\\Service\\Locator\\Provider",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/Provider/MapboxProvider.php",
+      "namespace": "Smartresponsor\\Service\\Locator\\Provider",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/Provider/NominatimProvider.php",
+      "namespace": "Smartresponsor\\Service\\Locator\\Provider",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/Provider/ProviderRouter.php",
+      "namespace": "Smartresponsor\\Service\\Locator\\Provider",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/Provider/Ranker.php",
+      "namespace": "Smartresponsor\\Service\\Locator\\Provider",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/ProviderAuthzPolicy.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/ProviderContractGolden.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/ProviderContractVersion.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/ProviderCostCatalog.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/ProviderKeyRotation.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/ProviderKeyVault.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/ProviderOrder.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/ProviderRouter.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/ProviderSandbox.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/ProviderStatAggregator.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/QuotaExceededException.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/QuotaGuard.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/RaceExecutor.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/RaceRunner.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/RateLimiter.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/RateLimiterMemory.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/RateLimiterRedis.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/Redactor.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/RegionPolicyEngine.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/RegionQuotaScheduler.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/RegionRouter.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/RegionTimeoutPolicy.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/RequestCoalescer.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/RetentionPolicy.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/RetentionSweeper.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/RetryPolicy.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/RouteDecision.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/RouterOrchestrator.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/ScoreEnsemble.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/ShadowTraffic.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/SlaPolicy.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/StrategyRegistry.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/SuggestRanker.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/TenantGuard.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/TenantQuota.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/TenantQuotaManager.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/TenantQuotaManagerMetricDecorator.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/TenantResourceQuota.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/TenantSeparator.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/TimeoutCalibrator.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/Toggle.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/TokenBucket.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/Service/Locator/TracePropagator.php",
+      "namespace": "Smartresponsor\\Service\\Locator",
+      "layer": "service"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AbTestRouterInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AdaptiveOrderingInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AdaptiveProviderOrderInterface.php",
+      "namespace": "Smartresponsor\\LayerInterface\\Domaine",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AdaptiveQuotaInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AdaptiveTimeoutCalibratorInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AdaptiveTimeoutInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/Address/AddressParseServiceInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator\\Address",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/Address/AddressStandardizeServiceInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator\\Address",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AddressCanonicalizerInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AddressHintBiasInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AddressInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AddressQuotaGuardInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AddressReverseInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AddressSuggestInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AddressSuggestRankerInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/AnomalyDetectorInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/BanditPolicyInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/BanditRouterInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/BatchGeocodeEndpointInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/BatchSchedulerInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/BudgetGuardInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/CanaryGuardInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/CanaryToggleInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/CellIndexInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/CircuitBreakerInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/CircuitTuningPolicyInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ColdStartWarmupInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ConfidenceEnsembleInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ConfidenceScoreInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/CostAwarePolicyInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/CostAwarenessInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/CostCapPolicyInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/CostRoutePlannerInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/DeferredLookupInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/DegradeManagerInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/EnvInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ErasureJobInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/FailoverMatrixInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/FailoverPlannerInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/FakeProviderInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/FakeRedisInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/FraudSignalDetectorInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/GeoFencePolicyInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/GeohashInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/HealthEwmaInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/HealthMonitorInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/HealthRecorderInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/HedgePolicyInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/HedgerInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/HereProviderInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/HintBiasInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/IdempotencyKeyStoreInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/IdempotencyStoreInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/IpAuthzPolicyInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/JitterInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/KeyRotatorInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/KeyStoreInterface.php",
+      "namespace": "Smartresponsor\\LayerInterface\\Domaine",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/LatencyForecastInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/LocatorInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/LocatorServiceInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/LogEventInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/MapboxProviderInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/NominatimProviderInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/NormalizerInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/PiiAnonymizerInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/PolicyInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ProbabilisticFailoverInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/Provider/GeocodeProviderInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator\\Provider",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ProviderAuthzPolicyInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ProviderContractGoldenInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ProviderContractVersionInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ProviderCostCatalogInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ProviderKeyRotationInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ProviderKeyVaultInterface.php",
+      "namespace": "Smartresponsor\\LayerInterface\\Domaine",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ProviderOrderInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ProviderRouterInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ProviderSandboxInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ProviderStatAggregatorInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/QuotaGuardInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RaceExecutorInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RaceRunnerInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RankerInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RateLimiterInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RateLimiterMemoryInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RateLimiterRedisInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RecordReplayStoreInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RedactorInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RegionPolicyEngineInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RegionQuotaSchedulerInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RegionRouterInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RegionTimeoutPolicyInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RequestCoalescerInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RetentionInterface.php",
+      "namespace": "Smartresponsor\\LayerInterface\\Domaine",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RetentionPolicyInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RetentionSweeperInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RetryPolicyInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RouteDecisionInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/RouterOrchestratorInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ScoreEnsembleInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ShadowTrafficInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/SlaPolicyInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/StrategyRegistryInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/SuggestRankerInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/TenantContextInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/TenantGuardInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/TenantQuotaInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/TenantQuotaManagerInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/TenantResourceQuotaInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/TenantSeparatorInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/TimeoutCalibratorInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/ToggleInterface.php",
+      "namespace": "Smartresponsor\\LayerInterface\\Domaine",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/TokenBucketInterface.php",
+      "namespace": "Smartresponsor\\ServiceInterface\\Locator",
+      "layer": "service-interface"
+    },
+    {
+      "path": "src/ServiceInterface/Locator/TracePropagatorInterface.php",
+      "namespace": "Smartresponsor\\Domain\\Locator",
+      "layer": "service-interface"
+    }
+  ]
+}

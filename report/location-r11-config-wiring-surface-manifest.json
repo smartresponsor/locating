@@ -1,0 +1,11 @@
+{
+  "wave": 11,
+  "message": "config wiring surface",
+  "active_slice": "Locating-10-Location-cumulative.zip",
+  "changes": [
+    "wired canonical App service aliases in config/services.php",
+    "repointed route controllers to App\\Controller\\Http\\Location",
+    "normalized route paths from /locator to /location for the new surface",
+    "added config regression tests"
+  ]
+}

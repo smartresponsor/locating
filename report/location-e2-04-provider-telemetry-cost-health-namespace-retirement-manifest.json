@@ -1,0 +1,11 @@
+{
+  "wave": "E2-04",
+  "component": "Locating/Location",
+  "focus": "provider telemetry/cost/health namespace retirement",
+  "retired": [
+    "src/InfrastructureInterface/Locator/MetricRecorderInterface.php",
+    "src/ServiceInterface/Locator/HealthMonitorInterface.php",
+    "src/InfrastructureInterface/Locator/ProviderCostCatalogInterface.php",
+    "src/ServiceInterface/Locator/TenantQuotaManagerInterface.php"
+  ]
+}

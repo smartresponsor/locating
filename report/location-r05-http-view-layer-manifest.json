@@ -1,0 +1,29 @@
+{
+  "wave": "05",
+  "name": "Locating-05-Location",
+  "focus": "HTTP view-layer isolation with App-owned DTOs and mapper",
+  "added": [
+    "src/EntityInterface/Location/AddressViewInterface.php",
+    "src/EntityInterface/Location/AddressSuggestionViewInterface.php",
+    "src/EntityInterface/Location/AddressReverseViewInterface.php",
+    "src/Entity/Location/AddressView.php",
+    "src/Entity/Location/AddressSuggestionView.php",
+    "src/Entity/Location/AddressReverseView.php",
+    "src/ServiceInterface/Http/Location/LocationViewFactoryInterface.php",
+    "src/Service/Http/Location/LocationViewFactory.php",
+    "tests/Entity/Location/AddressViewTest.php",
+    "tests/Service/Http/Location/LocationViewFactoryTest.php",
+    "docs/location-r05-http-view-layer.md",
+    "report/location-r05-http-view-layer-manifest.json"
+  ],
+  "changed": [
+    "src/ServiceInterface/Http/Location/AddressSuggestServiceInterface.php",
+    "src/ServiceInterface/Http/Location/AddressReverseServiceInterface.php",
+    "src/Service/Http/Location/AddressSuggestService.php",
+    "src/Service/Http/Location/AddressReverseService.php",
+    "src/Controller/Http/Location/AddressSuggestController.php",
+    "src/Controller/Http/Location/AddressReverseController.php",
+    "tests/Controller/Http/AddressSuggestControllerTest.php",
+    "tests/Controller/Http/AddressReverseControllerTest.php"
+  ]
+}

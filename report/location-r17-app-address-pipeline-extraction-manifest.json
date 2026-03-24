@@ -1,0 +1,32 @@
+{
+  "wave": 17,
+  "message": "app-address-pipeline-extraction",
+  "adds": [
+    "src/EntityInterface/Location/AddressInputInterface.php",
+    "src/Entity/Location/AddressInput.php",
+    "src/EntityInterface/Location/AddressIssueInterface.php",
+    "src/Entity/Location/AddressIssue.php",
+    "src/EntityInterface/Location/AddressPipelineResultInterface.php",
+    "src/Entity/Location/AddressPipelineResult.php",
+    "src/ServiceInterface/Address/Location/AddressParserInterface.php",
+    "src/ServiceInterface/Address/Location/AddressNormalizerInterface.php",
+    "src/ServiceInterface/Address/Location/AddressValidatorInterface.php",
+    "src/ServiceInterface/Address/Location/AddressPipelineInterface.php",
+    "src/Service/Address/Location/AddressParser.php",
+    "src/Service/Address/Location/AddressNormalizer.php",
+    "src/Service/Address/Location/AddressValidator.php",
+    "src/Service/Address/Location/AddressPipeline.php",
+    "tests/Service/Address/Location/AddressParserTest.php",
+    "tests/Service/Address/Location/AddressNormalizerTest.php",
+    "tests/Service/Address/Location/AddressValidatorTest.php",
+    "tests/Service/Address/Location/AddressPipelineTest.php",
+    "tests/Entity/Location/AddressViewGetterTest.php",
+    "docs/location-r17-app-address-pipeline-extraction.md"
+  ],
+  "updates": [
+    "src/EntityInterface/Location/AddressViewInterface.php",
+    "src/Entity/Location/AddressView.php",
+    "config/services.php"
+  ],
+  "removes": []
+}

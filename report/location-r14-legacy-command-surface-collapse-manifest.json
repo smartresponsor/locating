@@ -1,0 +1,16 @@
+{
+  "wave": "14",
+  "component": "Locating/Location",
+  "title": "legacy command surface collapse",
+  "active_base": "Locating-13-Location-cumulative.zip",
+  "removed": [
+    "src/Command/Locator/LocatorDemoLoopCommand.php",
+    "src/Command/Locator/LocatorDemoSeedCommand.php",
+    "src/CommandInterface/Locator/LocatorDemoLoopCommandInterface.php",
+    "src/CommandInterface/Locator/LocatorDemoSeedCommandInterface.php"
+  ],
+  "notes": [
+    "Repository-wide grep showed no live references outside the removed files themselves.",
+    "This wave intentionally leaves legacy demo services for later controlled evaluation."
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "generatedAt": "2026-03-22T19:54:30Z",
+  "edgeAdapters": [
+    "src/Infrastructure/Batch/Location/SmartresponsorAddressBatchJobRecord.php",
+    "src/Infrastructure/Batch/Location/SmartresponsorAddressBatchJobRecordFactoryBackend.php",
+    "src/Infrastructure/Batch/Location/SmartresponsorAddressBatchJobRepositoryBackend.php",
+    "src/Infrastructure/Batch/Location/SmartresponsorAddressBatchLegacyMessageBusBackend.php",
+    "src/Infrastructure/Batch/Location/SmartresponsorAddressBatchLegacyResultBackend.php",
+    "src/Infrastructure/Batch/Location/SmartresponsorAddressBatchResultRecord.php",
+    "src/Infrastructure/Batch/Location/SmartresponsorAddressBatchResultStorageBackend.php",
+    "src/Infrastructure/Provider/Location/SmartresponsorAddressReverseHttpBackend.php",
+    "src/Infrastructure/Provider/Location/SmartresponsorAddressSuggestBackend.php",
+    "src/Infrastructure/Provider/Location/SmartresponsorLocationMetricBackend.php",
+    "src/Infrastructure/Provider/Location/SmartresponsorProviderCostCatalogBackend.php",
+    "src/Infrastructure/Provider/Location/SmartresponsorProviderHealthSnapshotBackend.php",
+    "src/Infrastructure/Provider/Location/SmartresponsorProviderMetricSnapshotBackend.php",
+    "src/Infrastructure/Provider/Location/SmartresponsorProviderQuotaDecisionBackend.php",
+    "src/Service/Http/Location/SmartresponsorLocationQuotaGuardBackend.php"
+  ],
+  "residualBlockers": [
+    "src/Command/Address/LocationNormalizeCommand.php",
+    "src/Command/Geo/LocationReverseCommand.php"
+  ]
+}

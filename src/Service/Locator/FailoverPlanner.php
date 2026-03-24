@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
@@ -8,17 +9,24 @@ declare(strict_types=1);
 
 namespace Smartresponsor\Service\Locator;
 
-use Smartresponsor\ServiceInterface\Locator\FailoverPlannerInterface;
-final class FailoverPlanner implements FailoverPlannerInterface {
-    public function __construct(private SlaPolicy $sla) {}
-    public function plan(string $region, array $provider, array $signal): array {
+use App\Bridge\Legacy\Service\Location\FailoverPlannerLegacyInterface;
+
+final class FailoverPlanner implements FailoverPlannerLegacyInterface
+{
+    public function __construct(private SlaPolicy $sla)
+    {
+    }
+
+    public function plan(string $region, array $provider, array $signal): array
+    {
         $score = [];
         foreach ($provider as $id) {
-            $s = $signal[$id] ?? ['p95_ms'=>300.0,'error_rate'=>0.02];
-            $w = $this->sla->weight(300.0, (float)$s['p95_ms'], 0.02, (float)$s['error_rate']);
+            $s = $signal[$id] ?? ['p95_ms' => 300.0, 'error_rate' => 0.02];
+            $w = $this->sla->weight(300.0, (float) $s['p95_ms'], 0.02, (float) $s['error_rate']);
             $score[$id] = $w;
         }
         arsort($score, SORT_NUMERIC);
+
         return array_keys($score);
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
@@ -8,12 +9,12 @@ declare(strict_types=1);
 
 namespace Smartresponsor\Service\Locator;
 
+use App\Bridge\Legacy\Entity\Location\AddressInputLegacyInterface;
+use App\Bridge\Legacy\Helper\Location\HealthRecorderLegacyInterface;
+use App\Bridge\Legacy\Service\Location\ProviderRouterLegacyInterface;
 use Smartresponsor\Entity\Locator\ProviderSandbox;
-use Smartresponsor\EntityInterface\Locator\AddressInputInterface;
 use Smartresponsor\InfrastructureInterface\Locator\MetricRecorderInterface;
 use Smartresponsor\ServiceInterface\Locator\FailoverPlannerInterface;
-use Smartresponsor\ServiceInterface\Locator\HealthRecorderInterface;
-use Smartresponsor\ServiceInterface\Locator\ProviderRouterInterface;
 
 /**
  * ProviderRouter orchestrates provider calls with failover and simple SLA awareness.
@@ -21,20 +22,20 @@ use Smartresponsor\ServiceInterface\Locator\ProviderRouterInterface;
  * It does not know about HTTP or external APIs directly – only about ProviderAdapterInterface
  * registered inside ProviderSandbox and high-level metrics provided by HealthRecorderInterface.
  */
-final class ProviderRouter implements ProviderRouterInterface
+final class ProviderRouter implements ProviderRouterLegacyInterface
 {
     public function __construct(
         private ProviderSandbox $sandbox,
         private FailoverPlannerInterface $failoverPlanner,
-        private HealthRecorderInterface $healthRecorder,
+        private HealthRecorderLegacyInterface $healthRecorder,
         private MetricRecorderInterface $metricRecorder,
     ) {
     }
 
-    public function route(AddressInputInterface $input, string $region, string $tenantId, array $provider): array
+    public function route(AddressInputLegacyInterface $input, string $region, string $tenantId, array $provider): array
     {
         $provider = array_values(array_unique(array_filter($provider, 'strlen')));
-        if ($provider === []) {
+        if ([] === $provider) {
             return [
                 'status' => 'error',
                 'error' => 'no_provider_configured',
@@ -46,15 +47,15 @@ final class ProviderRouter implements ProviderRouterInterface
         // Build signal map for FailoverPlanner.
         $signal = [];
         foreach ($provider as $id) {
-            $snap = $this->healthRecorder->snapshot('provider:' . $id);
+            $snap = $this->healthRecorder->snapshot('provider:'.$id);
             $signal[$id] = [
-                'p95_ms' => (float)($snap['avg_ms'] ?? 300.0),
-                'error_rate' => (float)($snap['error_rate'] ?? 0.02),
+                'p95_ms' => (float) ($snap['avg_ms'] ?? 300.0),
+                'error_rate' => (float) ($snap['error_rate'] ?? 0.02),
             ];
         }
 
         $chain = $this->failoverPlanner->plan($region, $provider, $signal);
-        if ($chain === []) {
+        if ([] === $chain) {
             $chain = $provider;
         }
 
@@ -75,27 +76,27 @@ final class ProviderRouter implements ProviderRouterInterface
                 $ms = (microtime(true) - $start) * 1000.0;
                 $lastLatency = $ms;
 
-                $status = (string)($result['status'] ?? 'ok');
-                $this->metricRecorder->recordLatency('provider_' . $id, $ms);
+                $status = (string) ($result['status'] ?? 'ok');
+                $this->metricRecorder->recordLatency('provider_'.$id, $ms);
 
-                if ($status === 'ok') {
-                    $this->healthRecorder->ok('provider:' . $id, $ms);
-                    $this->metricRecorder->incrementCounter('provider_' . $id, 'ok');
+                if ('ok' === $status) {
+                    $this->healthRecorder->ok('provider:'.$id, $ms);
+                    $this->metricRecorder->incrementCounter('provider_'.$id, 'ok');
                     $result['latencyMs'] = $ms;
 
                     return $result;
                 }
 
                 // Non-ok status – treat as failure and move on to next provider.
-                $this->healthRecorder->fail('provider:' . $id, $ms);
-                $this->metricRecorder->incrementCounter('provider_' . $id, $status);
+                $this->healthRecorder->fail('provider:'.$id, $ms);
+                $this->metricRecorder->incrementCounter('provider_'.$id, $status);
                 $lastError = $status;
             } catch (\Throwable $e) {
                 $ms = (microtime(true) - $start) * 1000.0;
                 $lastLatency = $ms;
-                $this->healthRecorder->fail('provider:' . $id, $ms);
-                $this->metricRecorder->recordLatency('provider_' . $id, $ms);
-                $this->metricRecorder->incrementCounter('provider_' . $id, 'exception');
+                $this->healthRecorder->fail('provider:'.$id, $ms);
+                $this->metricRecorder->recordLatency('provider_'.$id, $ms);
+                $this->metricRecorder->incrementCounter('provider_'.$id, 'exception');
                 $lastError = $e->getMessage();
                 // Continue to next provider in chain.
             }

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
@@ -7,16 +8,29 @@ declare(strict_types=1);
  */
 
 namespace Smartresponsor\Service\Locator;
-final class ProviderSandbox {
-    /** @var array<string, ProviderAdapterInterface> */
+
+use App\Bridge\Legacy\Provider\Location\ProviderAdapterLegacyInterface;
+
+final class ProviderSandbox
+{
+    /** @var array<string, ProviderAdapterLegacyInterface> */
     private array $adapter = [];
+
     /** Register adapter under provider id */
-    public function register(string $providerId, ProviderAdapterInterface $adapter): void { $this->adapter[$providerId] = $adapter; }
+    public function register(string $providerId, ProviderAdapterLegacyInterface $adapter): void
+    {
+        $this->adapter[$providerId] = $adapter;
+    }
+
     /** Route call to a specific provider id */
-    public function route(string $providerId, array $request): array {
-        if (!isset($this->adapter[$providerId])) { return ['status'=>'error','error'=>'provider_not_found']; }
+    public function route(string $providerId, array $request): array
+    {
+        if (!isset($this->adapter[$providerId])) {
+            return ['status' => 'error', 'error' => 'provider_not_found'];
+        }
         $res = $this->adapter[$providerId]->call($request);
         $res['_provider'] = $providerId;
+
         return $res;
     }
 }

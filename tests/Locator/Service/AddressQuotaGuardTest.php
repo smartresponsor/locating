@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -7,18 +8,18 @@ declare(strict_types=1);
 
 namespace Smartresponsor\Tests\Locator\Service;
 
-use Smartresponsor\EntityInterface\Locator\TenantContextInterface;
-use Smartresponsor\EntityInterface\Locator\TenantLimitInterface;
+use App\Bridge\Legacy\Tenant\Location\TenantContextLegacyInterface;
+use App\Bridge\Legacy\Tenant\Location\TenantLimitLegacyInterface;
+use PHPUnit\Framework\TestCase;
 use Smartresponsor\InfrastructureInterface\Locator\TenantConfigRepositoryInterface;
 use Smartresponsor\InfrastructureInterface\Locator\TenantUsageCounterInterface;
 use Smartresponsor\Service\Locator\AddressQuotaGuard;
-use PHPUnit\Framework\TestCase;
 
 final class AddressQuotaGuardTest extends TestCase
 {
     public function testAllowedWhenNoLimitConfigured(): void
     {
-        $tenantContext = new class implements TenantContextInterface {
+        $tenantContext = new class implements TenantContextLegacyInterface {
             public function id(): string
             {
                 return 'tenant-demo';
@@ -26,7 +27,7 @@ final class AddressQuotaGuardTest extends TestCase
         };
 
         $configRepository = new class implements TenantConfigRepositoryInterface {
-            public function findLimit(string $tenantId, string $operation): ?TenantLimitInterface
+            public function findLimit(string $tenantId, string $operation): ?TenantLimitLegacyInterface
             {
                 return null;
             }
@@ -46,14 +47,14 @@ final class AddressQuotaGuardTest extends TestCase
 
     public function testDeniedWhenLimitIsZero(): void
     {
-        $tenantContext = new class implements TenantContextInterface {
+        $tenantContext = new class implements TenantContextLegacyInterface {
             public function id(): string
             {
                 return 'tenant-zero';
             }
         };
 
-        $limit = new class implements TenantLimitInterface {
+        $limit = new class implements TenantLimitLegacyInterface {
             public function tenantId(): string
             {
                 return 'tenant-zero';
@@ -71,11 +72,11 @@ final class AddressQuotaGuardTest extends TestCase
         };
 
         $configRepository = new class($limit) implements TenantConfigRepositoryInterface {
-            public function __construct(private TenantLimitInterface $limit)
+            public function __construct(private TenantLimitLegacyInterface $limit)
             {
             }
 
-            public function findLimit(string $tenantId, string $operation): ?TenantLimitInterface
+            public function findLimit(string $tenantId, string $operation): ?TenantLimitLegacyInterface
             {
                 return $this->limit;
             }
@@ -95,14 +96,14 @@ final class AddressQuotaGuardTest extends TestCase
 
     public function testDelegatesToUsageCounterWhenLimitPositive(): void
     {
-        $tenantContext = new class implements TenantContextInterface {
+        $tenantContext = new class implements TenantContextLegacyInterface {
             public function id(): string
             {
                 return 'tenant-one';
             }
         };
 
-        $limit = new class implements TenantLimitInterface {
+        $limit = new class implements TenantLimitLegacyInterface {
             public function tenantId(): string
             {
                 return 'tenant-one';
@@ -120,11 +121,11 @@ final class AddressQuotaGuardTest extends TestCase
         };
 
         $configRepository = new class($limit) implements TenantConfigRepositoryInterface {
-            public function __construct(private TenantLimitInterface $limit)
+            public function __construct(private TenantLimitLegacyInterface $limit)
             {
             }
 
-            public function findLimit(string $tenantId, string $operation): ?TenantLimitInterface
+            public function findLimit(string $tenantId, string $operation): ?TenantLimitLegacyInterface
             {
                 return $this->limit;
             }
@@ -136,7 +137,7 @@ final class AddressQuotaGuardTest extends TestCase
 
             public function increment(string $tenantId, string $operation, int $limitPerMinute): bool
             {
-                $this->callCount++;
+                ++$this->callCount;
                 $this->lastArgs = [$tenantId, $operation, $limitPerMinute];
 
                 return true;

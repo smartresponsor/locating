@@ -1,0 +1,8 @@
+No syntax errors detected in /tmp/e215/src/Bridge/Legacy/Service/Location/BudgetGuardLegacyInterface.php
+No syntax errors detected in /tmp/e215/src/Bridge/Legacy/Service/Location/CanaryGuardLegacyInterface.php
+No syntax errors detected in /tmp/e215/src/Bridge/Legacy/Service/Location/CanaryToggleLegacyInterface.php
+No syntax errors detected in /tmp/e215/src/Bridge/Legacy/Service/Location/DegradeManagerLegacyInterface.php
+No syntax errors detected in /tmp/e215/src/Service/Locator/BudgetGuard.php
+No syntax errors detected in /tmp/e215/src/Service/Locator/CanaryGuard.php
+No syntax errors detected in /tmp/e215/src/Service/Locator/CanaryToggle.php
+No syntax errors detected in /tmp/e215/src/Service/Locator/DegradeManager.php

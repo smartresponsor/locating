@@ -1,0 +1,10 @@
+{
+  "wave": 39,
+  "token": "Location",
+  "title": "app-provider-signal-read-model",
+  "summary": [
+    "Added App-owned provider health and quota signal DTOs",
+    "Added App-owned provider signal reader interfaces and legacy adapters",
+    "Rebound suggest/reverse policy services to App signal readers"
+  ]
+}

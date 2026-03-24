@@ -1,0 +1,63 @@
+{
+  "generatedAt": "2026-03-22T20:10:26.587707Z",
+  "smartresponsorNamespaceDeclarations": 420,
+  "layerCounts": {
+    "other": 2,
+    "contract": 11,
+    "entity": 36,
+    "entity-interface": 11,
+    "infrastructure": 32,
+    "infrastructure-interface": 47,
+    "integration": 54,
+    "message": 1,
+    "message-handler": 1,
+    "model": 3,
+    "service": 109,
+    "service-interface": 113
+  },
+  "forbiddenRootsStillPopulated": [
+    {
+      "root": "src/Contract",
+      "fileCount": 11,
+      "sample": [
+        "src/Contract/Cache/CacheInterface.php",
+        "src/Contract/Health/HealthCheckInterface.php",
+        "src/Contract/Locator/CacheInterface.php",
+        "src/Contract/Locator/LocatorInterface.php",
+        "src/Contract/Locator/ProviderInterface.php",
+        "src/Contract/Locator/ReverseProviderInterface.php",
+        "src/Contract/Log/LoggerInterface.php",
+        "src/Contract/Metrics/MetricsInterface.php",
+        "src/Contract/RateLimit/RateLimiterInterface.php",
+        "src/Contract/Locator/Provider/LocatorProviderInterface.php"
+      ]
+    },
+    {
+      "root": "src/Model",
+      "fileCount": 3,
+      "sample": [
+        "src/Model/Locator/AddressData.php",
+        "src/Model/Locator/CanonicalAddress.php",
+        "src/Model/Locator/GeoPoint.php"
+      ]
+    },
+    {
+      "root": "src/Integration",
+      "fileCount": 54,
+      "sample": [
+        "src/Integration/Http/SimpleHttp.php",
+        "src/Integration/Locator/AddressPort.php",
+        "src/Integration/Locator/LocatorConfig.php",
+        "src/Integration/RateLimit/TokenBucket.php",
+        "src/Integration/Observability/Log/JsonLogger.php",
+        "src/Integration/Observability/Trace/OtelZipkinExporter.php",
+        "src/Integration/Observability/Trace/Span.php",
+        "src/Integration/Observability/Trace/Tracer.php",
+        "src/Integration/Locator/Batch/JobStore.php",
+        "src/Integration/Locator/Cache/AdaptiveTtlPolicy.php"
+      ]
+    }
+  ],
+  "readyToRemoveSmartresponsorMapping": false,
+  "reason": "Smartresponsor namespace declarations still exist in source tree"
+}

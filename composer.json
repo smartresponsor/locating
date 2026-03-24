@@ -1,15 +1,16 @@
 {
-  "name": "smartresponsor/locator",
-  "description": "Locator — utility engine for normalization, validation, and geocoding (DOM&DRIVE layer-first isolation).",
-  "type": "library",
+  "name": "locating/location",
+  "description": "Location Symfony-oriented application for normalization, validation, and geocoding workflows.",
+  "type": "project",
   "license": "proprietary",
   "autoload": {
     "psr-4": {
+      "App\\": "src/",
       "Smartresponsor\\": "src/"
     }
   },
   "require": {
-    "php": ">=8.2",
+    "php": "^8.4",
     "ext-json": "*",
     "symfony/config": "^7.2",
     "symfony/console": "^7.2",
@@ -19,15 +20,42 @@
     "symfony/routing": "^7.2"
   },
   "require-dev": {
-    "phpstan/phpstan": "^2.1",
-    "phpunit/phpunit": "^10.0"
-  },
+        "doctrine/doctrine-fixtures-bundle": "^3.6",
+        "doctrine/doctrine-migrations-bundle": "^3.4",
+        "friendsofphp/php-cs-fixer": "^3.94",
+        "phpmd/phpmd": "^2.15",
+        "phpstan/phpstan": "^1.12",
+        "phpunit/phpunit": "^10.5"
+    },
   "minimum-stability": "stable",
   "prefer-stable": true,
   "scripts": {
-    "lint": "php -l src/Controller/Locator/StatusController.php",
+    "lint": [
+      "php -l src/Service/Address/Location/AddressSuggestCapability.php",
+      "php -l src/Service/Address/Location/AddressReverseCapability.php",
+      "php -l .gate/check/location-protocol-canon.php"
+    ],
     "stan": "phpstan analyse -c phpstan.neon",
     "test": "phpunit -c phpunit.xml.dist",
-    "test:locator": "phpunit -c phpunit.xml.dist tests/Locator"
+    "test:locator": "phpunit -c phpunit.xml.dist tests/Locator",
+    "canon": "php .gate/check/location-protocol-canon.php",
+    "test:location": "phpunit -c phpunit.xml.dist",
+    "bridge:squeeze": "php .gate/check/location-bridge-squeeze.php",
+    "bridge:shutdown:readiness": "php .gate/check/location-bridge-shutdown-readiness.php"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "smartresponsor-canon": {
+      "workspace_name": "Locating",
+      "entity_name": "Location",
+      "root_namespace": "App\\",
+      "transition_namespace_compat": "Smartresponsor\\",
+      "author": "Oleksandr Tishchenko",
+      "author_email": "dev@highhopesamerica.com"
+    }
   }
 }

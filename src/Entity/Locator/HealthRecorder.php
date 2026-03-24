@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
@@ -8,21 +9,40 @@ declare(strict_types=1);
 
 namespace Smartresponsor\Entity\Locator;
 
-use Smartresponsor\ServiceInterface\Locator\HealthRecorderInterface;
-final class HealthRecorder implements HealthRecorderInterface {
+use App\Bridge\Legacy\Helper\Location\HealthRecorderLegacyInterface;
+
+final class HealthRecorder implements HealthRecorderLegacyInterface
+{
     /** @var array<string, array{ok:int, fail:int, total_ms:float}> */
     private array $st = [];
-    public function ok(string $key, float $latencyMs): void { $this->add($key, true, $latencyMs); }
-    public function fail(string $key, float $latencyMs): void { $this->add($key, false, $latencyMs); }
-    private function add(string $key, bool $ok, float $latencyMs): void {
-        $r = $this->st[$key] ?? ['ok'=>0,'fail'=>0,'total_ms'=>0.0];
-        if ($ok) { $r['ok'] += 1; } else { $r['fail'] += 1; }
+
+    public function ok(string $key, float $latencyMs): void
+    {
+        $this->add($key, true, $latencyMs);
+    }
+
+    public function fail(string $key, float $latencyMs): void
+    {
+        $this->add($key, false, $latencyMs);
+    }
+
+    private function add(string $key, bool $ok, float $latencyMs): void
+    {
+        $r = $this->st[$key] ?? ['ok' => 0, 'fail' => 0, 'total_ms' => 0.0];
+        if ($ok) {
+            ++$r['ok'];
+        } else {
+            ++$r['fail'];
+        }
         $r['total_ms'] += max(0.0, $latencyMs);
         $this->st[$key] = $r;
     }
-    public function snapshot(string $key): array {
-        $r = $this->st[$key] ?? ['ok'=>0,'fail'=>0,'total_ms'=>0.0];
+
+    public function snapshot(string $key): array
+    {
+        $r = $this->st[$key] ?? ['ok' => 0, 'fail' => 0, 'total_ms' => 0.0];
         $n = max(1, $r['ok'] + $r['fail']);
-        return ['ok'=>$r['ok'],'fail'=>$r['fail'],'avg_ms'=>$r['total_ms']/$n,'error_rate'=>($r['fail']/$n)];
+
+        return ['ok' => $r['ok'], 'fail' => $r['fail'], 'avg_ms' => $r['total_ms'] / $n, 'error_rate' => ($r['fail'] / $n)];
     }
 }

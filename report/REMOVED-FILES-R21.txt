@@ -1,0 +1,15 @@
+src/Service/Locator/AddressParser.php
+src/Service/Locator/AddressParserGeneric.php
+src/Service/Locator/AddressNormalizer.php
+src/Service/Locator/AddressValidator.php
+src/Service/Locator/AddressPipeline.php
+src/Service/Locator/AddressPipelineMetricDecorator.php
+src/ServiceInterface/Locator/AddressParserInterface.php
+src/ServiceInterface/Locator/AddressParserGenericInterface.php
+src/ServiceInterface/Locator/AddressParserCountryStrategyInterface.php
+src/ServiceInterface/Locator/AddressNormalizerInterface.php
+src/ServiceInterface/Locator/AddressValidatorInterface.php
+src/ServiceInterface/Locator/AddressPipelineInterface.php
+src/ServiceInterface/Locator/AddressPipelineMetricDecoratorInterface.php
+tests/Locator/Address/AddressParserTest.php
+tests/Locator/Address/AddressPipelineTest.php

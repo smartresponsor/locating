@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -7,7 +8,7 @@ declare(strict_types=1);
 
 namespace Smartresponsor\Infrastructure\Locator;
 
-use Smartresponsor\InfrastructureInterface\Locator\LocatorFixtureReaderInterface;
+use App\Bridge\Legacy\Infrastructure\Location\LocatorFixtureReaderInterface;
 
 final class LocatorFixtureReader implements LocatorFixtureReaderInterface
 {
@@ -23,14 +24,14 @@ final class LocatorFixtureReader implements LocatorFixtureReaderInterface
         $recordList = [];
         $handle = fopen($filePath, 'r');
 
-        if ($handle === false) {
+        if (false === $handle) {
             throw new \RuntimeException(sprintf('Unable to open Locator demo fixture file: %s', $filePath));
         }
 
         try {
             while (($line = fgets($handle)) !== false) {
                 $line = trim($line);
-                if ($line === '') {
+                if ('' === $line) {
                     continue;
                 }
 

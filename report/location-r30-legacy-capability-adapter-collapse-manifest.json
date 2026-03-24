@@ -1,0 +1,16 @@
+{
+  "wave": 30,
+  "message": "Location",
+  "summary": "Collapsed orphaned transitional legacy capability adapters after native App capability/provider extraction.",
+  "removed": [
+    "src/Service/Address/Location/LegacyAddressSuggestCapability.php",
+    "src/Service/Address/Location/LegacyAddressReverseCapability.php",
+    "tests/Service/Address/Location/LegacyAddressSuggestCapabilityTest.php",
+    "tests/Service/Address/Location/LegacyAddressReverseCapabilityTest.php"
+  ],
+  "kept_active": [
+    "src/Service/Address/Location/AddressSuggestCapability.php",
+    "src/Service/Address/Location/AddressReverseCapability.php",
+    "config/services.php"
+  ]
+}

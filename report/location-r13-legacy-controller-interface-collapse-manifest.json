@@ -1,0 +1,18 @@
+{
+  "wave": 13,
+  "title": "legacy-controller-interface-collapse",
+  "removed": [
+    "src/ControllerInterface/Locator/AddressSuggestControllerInterface.php",
+    "src/ControllerInterface/Locator/AddressReverseControllerInterface.php",
+    "src/ControllerInterface/Locator/MetricsControllerInterface.php",
+    "src/ControllerInterface/Locator/StatusControllerInterface.php"
+  ],
+  "added": [
+    "docs/location-r13-legacy-controller-interface-collapse.md",
+    "report/location-r13-legacy-controller-interface-collapse-manifest.json"
+  ],
+  "notes": [
+    "No live references to removed legacy controller interfaces were found under src, config, or tests.",
+    "Legacy controller interface surface collapsed after R12 controller implementation removal."
+  ]
+}

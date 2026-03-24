@@ -1,0 +1,10 @@
+{
+  "wave": "E2-06",
+  "component": "Locating/Location",
+  "summary": {
+    "retiredContracts": 3,
+    "newBridgeContracts": 3,
+    "updatedImplementations": 6,
+    "updatedTests": 1
+  }
+}

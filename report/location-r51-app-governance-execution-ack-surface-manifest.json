@@ -1,0 +1,28 @@
+{
+  "wave": 51,
+  "name": "Locating-51-Location",
+  "focus": "app-governance-execution-ack-surface",
+  "base": "Locating-50-Location-cumulative.zip",
+  "added": [
+    "src/EntityInterface/Location/ProviderGovernanceExecutionStepStatusInterface.php",
+    "src/Entity/Location/ProviderGovernanceExecutionStepStatus.php",
+    "src/EntityInterface/Location/ProviderGovernanceExecutionItemInterface.php",
+    "src/Entity/Location/ProviderGovernanceExecutionItem.php",
+    "src/EntityInterface/Location/ProviderGovernanceExecutionReportInterface.php",
+    "src/Entity/Location/ProviderGovernanceExecutionReport.php",
+    "src/ServiceInterface/Observability/Location/ProviderGovernanceExecutionServiceInterface.php",
+    "src/Service/Observability/Location/ProviderGovernanceExecutionService.php",
+    "src/ControllerInterface/Http/Location/GovernanceExecutionControllerInterface.php",
+    "src/Controller/Http/Location/GovernanceExecutionController.php",
+    "config/routes/locator_governance_execution.yaml",
+    "tests/Entity/Location/ProviderGovernanceExecutionReportTest.php",
+    "tests/Service/Observability/Location/ProviderGovernanceExecutionServiceTest.php",
+    "tests/Controller/Http/GovernanceExecutionControllerTest.php",
+    "tests/Config/LocationGovernanceExecutionConfigTest.php",
+    "docs/location-r51-app-governance-execution-ack-surface.md",
+    "report/location-r51-app-governance-execution-ack-surface-manifest.json"
+  ],
+  "updated": [
+    "config/services.php"
+  ]
+}

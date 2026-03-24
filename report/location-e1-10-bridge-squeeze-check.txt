@@ -1,0 +1,3 @@
+App files with legacy refs: 0
+Edge adapters: 0
+Residual blockers: 0

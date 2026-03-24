@@ -1,0 +1,9 @@
+{
+  "wave": "E2-M1",
+  "component": "Locating/Location",
+  "summary": {
+    "retiredLegacyInterfaces": 11,
+    "newBridgeInterfaces": 11,
+    "updatedImplementations": 11
+  }
+}

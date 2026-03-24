@@ -1,0 +1,1136 @@
+{
+  "generatedAt": "2026-03-22T18:44:02.615982Z",
+  "items": [
+    {
+      "testPath": "tests/Locator/AbTestRouterTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\AbTestRouter"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/AdaptiveOrderingTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/AdaptiveProviderOrderTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\AdaptiveProviderOrder"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/AdaptiveQuotaTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\AdaptiveQuota"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/AdaptiveTimeoutCalibratorTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\AdaptiveTimeoutCalibrator"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/AdaptiveTimeoutTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\AdaptiveTimeout"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/AddressCanonicalizerTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\AddressCanonicalizer"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/AddressHintBiasTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\AddressHintBias"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/AnomalyDetectorTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\AnomalyDetector"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/BanditPolicyTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\BanditPolicy"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/BanditRouterTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\BanditRouter"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/BatchGeocodeEndpointTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/BudgetGuardTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/BudgetTelemetryTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\BudgetTelemetry"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/CacheInvalidationTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/CacheInvalidatorTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\CacheInvalidator"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/CacheProbeTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\CacheProbe"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/CacheWarmerTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/CanaryGuardTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\CanaryGuard"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/CanaryToggleTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\CanaryToggle"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/CellIndexTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\CellIndex"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/CircuitBreakerTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\CircuitBreaker"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/CircuitTuningPolicyTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\CircuitTuningPolicy"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/ColdStartWarmupTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/ConfidenceEnsembleTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\ConfidenceEnsemble"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/ConfidenceScoreTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\ConfidenceScore"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/CostAwarenessTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\CostAwareness"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/CostAwarePolicyTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\CostAwarePolicy"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/CostRoutePlannerTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\CostRoutePlanner"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/DeferredLookupQueueTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\DeferredLookupQueue"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/DeferredLookupTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\DeferredLookup"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/DegradeManagerTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\DegradeManager"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/FailoverMatrixTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\FailoverMatrix"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/FailoverPlannerTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/FraudSignalDetectorTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\FraudSignalDetector"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/GeoFencePolicyTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\GeoFencePolicy"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/HealthEwmaTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\HealthEwma",
+        "Smartresponsor\\Layer\\Locator\\RouteDecision"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/HealthMetricRepoTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\HealthMetric"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/HealthRecorderTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\HealthRecorder"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/HedgePolicyTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\HedgePolicy"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/HedgerTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\Hedger"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/HintBiasTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\HintBias"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/IdempotencyKeyStoreTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\IdempotencyKeyStore"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/IdempotencyStoreTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\IdempotencyStore"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/IpAuthzPolicyTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\IpAuthzPolicy"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/KeyRotatorTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\KeyRotator"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/LatencyForecastTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\LatencyForecast"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/LogEventTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\LogEvent",
+        "Smartresponsor\\Layer\\Locator\\Redactor"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/PriorityBatchQueueTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\PriorityBatchQueue"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/PriorityQueueTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\BatchScheduler",
+        "Smartresponsor\\Layer\\Locator\\PriorityQueue"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/ProbabilisticFailoverTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\ProbabilisticFailover"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/ProviderAuthzPolicyTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\ProviderAuthzPolicy"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/ProviderContractGoldenTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\ProviderContractGolden"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/ProviderContractVersionTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\ProviderContractVersion"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/ProviderKeyRotationTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\ProviderKeyRotation"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/ProviderKeyVaultTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\ProviderKeyVault"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/ProviderOrderTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/ProviderSandboxTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\FakeProvider",
+        "Smartresponsor\\Layer\\Locator\\ProviderSandbox"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/ProviderStatAggregatorTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\ProviderStatAggregator"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/QuotaGuardTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\QuotaGuard"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/RaceExecutorTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\RaceExecutor"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/RaceRunnerTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\RaceRunner"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/RateLimiterMemoryTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\RateLimiterMemory"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/RateLimiterRedisTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/RateLimiterTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\RateLimiter"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/RecordReplayStoreTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\RecordReplayStore"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/RegionPolicyEngineTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\RegionPolicyEngine"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/RegionQuotaSchedulerTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\RegionQuotaScheduler"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/RegionRouterTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\CircuitBreaker",
+        "Smartresponsor\\Layer\\Locator\\Jitter",
+        "Smartresponsor\\Layer\\Locator\\RegionRouter"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/RegionTimeoutPolicyTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\RegionTimeoutPolicy"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/RequestCoalescerTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\RequestCoalescer"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/ResultCacheTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\ResultCache"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/RetentionPolicyTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/RetryPolicyTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Entity\\Locator\\RetryPolicy",
+        "Smartresponsor\\Service\\Locator\\RetryPolicy"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/RouterOrchestratorTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/ScoreEnsembleTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\ScoreEnsemble"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/ShadowTrafficTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\ShadowTraffic"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/SlaPolicyTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\SlaPolicy"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/TenantGuardTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\TenantContext",
+        "Smartresponsor\\Layer\\Locator\\TenantGuard"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/TenantQuotaManagerTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\TenantQuotaManager"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/TenantQuotaTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\TenantQuota"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/TenantResourceQuotaTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\TenantResourceQuota"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/TenantSeparatorTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\TenantSeparator"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/TimeoutCalibratorTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\TimeoutCalibrator"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/ToggleTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\Toggle"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/TracePropagatorTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Layer\\Locator\\TracePropagator"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Service/Http/Location/LocationQuotaGuardTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\ServiceInterface\\Locator\\AddressQuotaGuardInterface",
+        "Smartresponsor\\Service\\Locator\\AddressQuotaGuard"
+      ],
+      "testRole": "mixed",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Service/Http/Location/LocationViewFactoryTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\EntityInterface\\Locator\\AddressValidationIssueInterface",
+        "Smartresponsor\\Entity\\Locator\\AddressData",
+        "Smartresponsor\\Entity\\Locator\\AddressResult",
+        "Smartresponsor\\Entity\\Locator\\AddressStatus",
+        "Smartresponsor\\Entity\\Locator\\AddressSuggestion",
+        "Smartresponsor\\Entity\\Locator\\GeoPoint"
+      ],
+      "testRole": "mixed",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Service/Address/Location/LocationResultFactoryTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Entity\\Locator\\AddressData",
+        "Smartresponsor\\Entity\\Locator\\AddressResult",
+        "Smartresponsor\\Entity\\Locator\\AddressStatus",
+        "Smartresponsor\\Entity\\Locator\\AddressSuggestion",
+        "Smartresponsor\\Entity\\Locator\\GeoPoint"
+      ],
+      "testRole": "mixed",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Service/Provider/Location/LegacyAddressSuggestionProviderTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Entity\\Locator\\AddressData",
+        "Smartresponsor\\Entity\\Locator\\AddressSuggestion",
+        "Smartresponsor\\InfrastructureInterface\\Locator\\AddressSuggestProviderInterface"
+      ],
+      "testRole": "mixed",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Service/Provider/Location/LegacyAddressReverseProviderTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\InfrastructureInterface\\Locator\\MetricRecorderInterface",
+        "Smartresponsor\\InfrastructureInterface\\Locator\\ReverseHttpClientInterface"
+      ],
+      "testRole": "mixed",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Service/Bridge/Batch/Location/LegacyAddressResultFactoryTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Entity\\Locator\\AddressStatus"
+      ],
+      "testRole": "mixed",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Service/Batch/Location/AddressBatchJobFactoryTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Entity\\Locator\\AddressBatchJob"
+      ],
+      "testRole": "mixed",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Infrastructure/Provider/Location/LegacyAddressSuggestGatewayTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Entity\\Locator\\AddressData",
+        "Smartresponsor\\Entity\\Locator\\AddressSuggestion",
+        "Smartresponsor\\InfrastructureInterface\\Locator\\AddressSuggestProviderInterface"
+      ],
+      "testRole": "mixed",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Infrastructure/Provider/Location/LegacyAddressReverseGatewayTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\InfrastructureInterface\\Locator\\ReverseHttpClientInterface"
+      ],
+      "testRole": "mixed",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Infrastructure/Provider/Location/LegacyLocationMetricRecorderTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\InfrastructureInterface\\Locator\\MetricRecorderInterface"
+      ],
+      "testRole": "mixed",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Infrastructure/Provider/Location/LegacyProviderHealthSnapshotStoreTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\ServiceInterface\\Locator\\HealthMonitorInterface"
+      ],
+      "testRole": "mixed",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Infrastructure/Provider/Location/LegacyProviderQuotaDecisionGatewayTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Domain\\Locator\\TenantQuotaManagerInterface"
+      ],
+      "testRole": "mixed",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Infrastructure/Provider/Location/LegacyProviderMetricSnapshotStoreTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Infrastructure\\Locator\\InMemoryMetricRecorder"
+      ],
+      "testRole": "mixed",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Infrastructure/Provider/Location/LegacyProviderCostCatalogGatewayTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\InfrastructureInterface\\Locator\\ProviderCostCatalogInterface"
+      ],
+      "testRole": "mixed",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Infrastructure/Batch/Location/LegacyAddressBatchMessageBusTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\InfrastructureInterface\\Locator\\AddressBatchMessageBusInterface",
+        "Smartresponsor\\Message\\Locator\\AddressBatchMessage"
+      ],
+      "testRole": "mixed",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/MessageHandler/Locator/AddressBatchMessageHandlerAdapterTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\MessageHandler\\Locator\\AddressBatchMessageHandler",
+        "Smartresponsor\\Message\\Locator\\AddressBatchMessage"
+      ],
+      "testRole": "mixed",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/Address/AddressContractTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Entity\\Locator\\AddressData",
+        "Smartresponsor\\Entity\\Locator\\AddressResult",
+        "Smartresponsor\\Entity\\Locator\\AddressStatus",
+        "Smartresponsor\\Entity\\Locator\\AddressValidationIssue",
+        "Smartresponsor\\Entity\\Locator\\GeoPoint"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/Address/AddressSuggestTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Entity\\Locator\\AddressData",
+        "Smartresponsor\\Entity\\Locator\\AddressSuggestion",
+        "Smartresponsor\\InfrastructureInterface\\Locator\\AddressSuggestProviderInterface",
+        "Smartresponsor\\Service\\Locator\\AddressSuggest",
+        "Smartresponsor\\Tests\\Locator\\Address"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/Contract/LocatorOpenApiPresenceTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Tests\\Locator\\Contract"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/Fixture/AddressFixtureFileTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Tests\\Locator\\Fixture"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/Infrastructure/RequestTenantContextTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Infrastructure\\Locator\\RequestTenantContext",
+        "Smartresponsor\\Tests\\Locator\\Infrastructure"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/Integration/SmokeTest.php",
+      "legacyDependencies": [],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/Provider/ProviderRouterTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Entity\\Locator\\AddressInput",
+        "Smartresponsor\\Entity\\Locator\\HealthRecorder",
+        "Smartresponsor\\Entity\\Locator\\ProviderSandbox",
+        "Smartresponsor\\InfrastructureInterface\\Locator\\ProviderAdapterInterface",
+        "Smartresponsor\\Infrastructure\\Locator\\InMemoryMetricRecorder",
+        "Smartresponsor\\Service\\Locator\\FailoverPlanner",
+        "Smartresponsor\\Service\\Locator\\ProviderRouter",
+        "Smartresponsor\\Service\\Locator\\SlaPolicy",
+        "Smartresponsor\\Tests\\Locator\\Provider"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/Service/AddressQuotaGuardTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\EntityInterface\\Locator\\TenantContextInterface",
+        "Smartresponsor\\EntityInterface\\Locator\\TenantLimitInterface",
+        "Smartresponsor\\InfrastructureInterface\\Locator\\TenantConfigRepositoryInterface",
+        "Smartresponsor\\InfrastructureInterface\\Locator\\TenantUsageCounterInterface",
+        "Smartresponsor\\Service\\Locator\\AddressQuotaGuard",
+        "Smartresponsor\\Tests\\Locator\\Service"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/Service/AddressReverseTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Entity\\Locator\\AddressStatus",
+        "Smartresponsor\\InfrastructureInterface\\Locator\\ReverseHttpClientInterface",
+        "Smartresponsor\\Infrastructure\\Locator\\InMemoryMetricRecorder",
+        "Smartresponsor\\Service\\Locator\\AddressReverse",
+        "Smartresponsor\\Tests\\Locator\\Service"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/Service/AddressSuggestRankerTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Entity\\Locator\\AddressData",
+        "Smartresponsor\\Entity\\Locator\\AddressSuggestion",
+        "Smartresponsor\\Service\\Locator\\AddressSuggestRanker",
+        "Smartresponsor\\Tests\\Locator\\Service"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/Service/SuggestRankerTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Entity\\Locator\\AddressData",
+        "Smartresponsor\\Entity\\Locator\\AddressSuggestion",
+        "Smartresponsor\\Service\\Locator\\SuggestRanker",
+        "Smartresponsor\\Tests\\Locator\\Service"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/Service/TenantQuotaManagerMetricDecoratorTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Infrastructure\\Locator\\InMemoryMetricRecorder",
+        "Smartresponsor\\Service\\Locator\\TenantQuotaManager",
+        "Smartresponsor\\Service\\Locator\\TenantQuotaManagerMetricDecorator",
+        "Smartresponsor\\Tests\\Locator\\Service"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/Smoke/PublicIndexSmokeTest.php",
+      "legacyDependencies": [],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/Tenant/TenantConfigRepositoryTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Infrastructure\\Locator\\ArrayTenantConfigRepository"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/Tenant/TenantQuotaGuardIntegrationTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Entity\\Locator\\TenantContext",
+        "Smartresponsor\\Infrastructure\\Locator\\ArrayTenantConfigRepository",
+        "Smartresponsor\\Infrastructure\\Locator\\InMemoryTenantUsageCounter",
+        "Smartresponsor\\Service\\Locator\\AddressQuotaGuard"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/Tenant/TenantUsageCounterTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Infrastructure\\Locator\\InMemoryTenantUsageCounter"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    },
+    {
+      "testPath": "tests/Locator/Unit/NormalizationTest.php",
+      "legacyDependencies": [
+        "Smartresponsor\\Integration\\Locator\\Http\\NominatimClient",
+        "Smartresponsor\\Strategy\\Locator\\OpenStreetMapLocator"
+      ],
+      "testRole": "legacy-only",
+      "blocksDeletion": true,
+      "notes": "Legacy namespace or Locator path still present."
+    }
+  ]
+}

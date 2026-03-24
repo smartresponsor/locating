@@ -1,0 +1,13 @@
+{
+  "generatedAt": "2026-03-22T19:18:46Z",
+  "items": [
+    {
+      "file": "config/services.php",
+      "reference": "Smartresponsor\\MessageHandler\\Locator\\AddressBatchMessageHandler",
+      "referenceType": "service-definition",
+      "active": true,
+      "replacementTarget": null,
+      "classification": "adapter"
+    }
+  ]
+}

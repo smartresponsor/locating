@@ -1,0 +1,3 @@
+src/EntityInterface/Locator/TenantContextInterface.php
+src/EntityInterface/Locator/TenantLimitInterface.php
+src/InfrastructureInterface/Locator/TenantConfigRepositoryInterface.php

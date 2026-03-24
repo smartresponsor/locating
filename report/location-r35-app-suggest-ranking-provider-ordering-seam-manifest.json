@@ -1,0 +1,25 @@
+{
+  "wave": 35,
+  "token": "Location",
+  "focus": "app-suggest-ranking-provider-ordering-seam",
+  "base": "Locating-34-Location-cumulative.zip",
+  "added": [
+    "src/ServiceInterface/Provider/Location/AddressSuggestionSourceInterface.php",
+    "src/ServiceInterface/Provider/Location/AddressSuggestionRankerInterface.php",
+    "src/ServiceInterface/Provider/Location/AddressSuggestionSourceOrderInterface.php",
+    "src/Service/Provider/Location/AddressSuggestionRanker.php",
+    "src/Service/Provider/Location/StaticAddressSuggestionSourceOrder.php",
+    "src/Service/Provider/Location/OrderedAddressSuggestionProvider.php",
+    "tests/Service/Provider/Location/AddressSuggestionRankerTest.php",
+    "tests/Service/Provider/Location/OrderedAddressSuggestionProviderTest.php",
+    "docs/location-r35-app-suggest-ranking-provider-ordering-seam.md",
+    "report/location-r35-app-suggest-ranking-provider-ordering-seam-manifest.json"
+  ],
+  "modified": [
+    "src/Service/Provider/Location/LegacyAddressSuggestionProvider.php",
+    "config/services.php",
+    "tests/Config/LocationServicesConfigTest.php",
+    "tests/Service/Address/Location/AddressSuggestCapabilityTest.php"
+  ],
+  "removed": []
+}

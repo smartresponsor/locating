@@ -1,0 +1,18 @@
+Reference check summary for legacy batch service surface before removal:
+
+- src/Service/Locator/AddressBatchService.php
+- src/Service/Locator/AddressBatchServiceMetricDecorator.php
+- src/ServiceInterface/Locator/AddressBatchServiceInterface.php
+- src/ServiceInterface/Locator/AddressBatchServiceMetricDecoratorInterface.php
+
+Search scope:
+- src/
+- tests/
+- config/
+- composer.json
+- README.md
+- bin/
+
+Outcome:
+- No live operational references remained outside the legacy batch service files themselves and their dedicated legacy tests.
+- Active references in config/services.php point to App-owned batch service classes only.

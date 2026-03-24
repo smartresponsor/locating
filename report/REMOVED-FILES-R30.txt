@@ -1,0 +1,4 @@
+src/Service/Address/Location/LegacyAddressSuggestCapability.php
+src/Service/Address/Location/LegacyAddressReverseCapability.php
+tests/Service/Address/Location/LegacyAddressSuggestCapabilityTest.php
+tests/Service/Address/Location/LegacyAddressReverseCapabilityTest.php

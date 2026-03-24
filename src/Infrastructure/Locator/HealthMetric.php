@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
@@ -7,8 +8,13 @@ declare(strict_types=1);
  */
 
 namespace Smartresponsor\Infrastructure\Locator;
-final class HealthMetric {
-    public function serialize(string $provider, string $region, float $health, int $ts): array {
-        return ['provider'=>$provider,'region'=>$region,'health'=>$health,'ts'=>$ts];
+
+use App\Bridge\Legacy\Infrastructure\Location\HealthMetricInterface;
+
+final class HealthMetric implements HealthMetricInterface
+{
+    public function serialize(string $provider, string $region, float $health, int $ts): array
+    {
+        return ['provider' => $provider, 'region' => $region, 'health' => $health, 'ts' => $ts];
     }
 }

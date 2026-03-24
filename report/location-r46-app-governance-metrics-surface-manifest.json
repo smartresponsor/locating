@@ -1,0 +1,20 @@
+{
+  "wave": 46,
+  "message": "app-governance-metrics-surface",
+  "touched": [
+    "src/EntityInterface/Location/ProviderGovernanceMetricSetInterface.php",
+    "src/Entity/Location/ProviderGovernanceMetricSet.php",
+    "src/ServiceInterface/Observability/Location/ProviderGovernanceMetricsExportServiceInterface.php",
+    "src/Service/Observability/Location/ProviderGovernanceMetricsExportService.php",
+    "src/ControllerInterface/Http/Location/GovernanceMetricsControllerInterface.php",
+    "src/Controller/Http/Location/GovernanceMetricsController.php",
+    "config/routes/locator_governance_metrics.yaml",
+    "config/services.php",
+    "tests/Entity/Location/ProviderGovernanceMetricSetTest.php",
+    "tests/Service/Observability/Location/ProviderGovernanceMetricsExportServiceTest.php",
+    "tests/Controller/Http/GovernanceMetricsControllerTest.php",
+    "tests/Config/LocationGovernanceMetricsConfigTest.php",
+    "docs/location-r46-app-governance-metrics-surface.md",
+    "report/location-r46-app-governance-metrics-surface-manifest.json"
+  ]
+}

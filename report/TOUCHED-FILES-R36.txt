@@ -1,0 +1,15 @@
+config/services.php
+src/ServiceInterface/Provider/Location/AddressReverseSourceInterface.php
+src/ServiceInterface/Provider/Location/AddressReverseSourceOrderInterface.php
+src/ServiceInterface/Provider/Location/AddressReverseResultNormalizerInterface.php
+src/Service/Provider/Location/StaticAddressReverseSourceOrder.php
+src/Service/Provider/Location/AddressReverseResultNormalizer.php
+src/Service/Provider/Location/OrderedAddressReverseProvider.php
+src/Service/Provider/Location/LegacyAddressReverseProvider.php
+tests/Service/Provider/Location/AddressReverseResultNormalizerTest.php
+tests/Service/Provider/Location/OrderedAddressReverseProviderTest.php
+tests/Service/Address/Location/AddressReverseCapabilityTest.php
+tests/Config/LocationServicesConfigTest.php
+docs/location-r36-app-reverse-provider-selection-normalization-seam.md
+report/location-r36-app-reverse-provider-selection-normalization-seam-manifest.json
+report/TOUCHED-FILES-R36.txt

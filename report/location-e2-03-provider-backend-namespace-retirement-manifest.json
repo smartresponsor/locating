@@ -1,0 +1,16 @@
+{
+  "wave": "E2-03",
+  "component": "Locating/Location",
+  "summary": {
+    "retiredNamespaceCluster": [
+      "Smartresponsor\\InfrastructureInterface\\Locator\\AddressSuggestProviderInterface",
+      "Smartresponsor\\InfrastructureInterface\\Locator\\ReverseHttpClientInterface",
+      "Smartresponsor\\InfrastructureInterface\\Locator\\MetricSnapshotProviderInterface"
+    ],
+    "newBridgeContracts": [
+      "App\\Bridge\\Legacy\\Provider\\Location\\AddressSuggestLegacyProviderInterface",
+      "App\\Bridge\\Legacy\\Provider\\Location\\AddressReverseLegacyHttpClientInterface",
+      "App\\Bridge\\Legacy\\Provider\\Location\\ProviderMetricSnapshotLegacyProviderInterface"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "wave": 19,
+  "code": "Location",
+  "title": "App batch service surface",
+  "changes": {
+    "added": [
+      "src/ServiceInterface/Batch/Location/AddressBatchServiceInterface.php",
+      "src/Service/Batch/Location/AddressBatchService.php",
+      "src/Service/Batch/Location/AddressBatchServiceMetricDecorator.php",
+      "tests/Service/Batch/Location/AddressBatchServiceTest.php",
+      "tests/Service/Batch/Location/AddressBatchServiceMetricDecoratorTest.php",
+      "tests/Config/LocationBatchServicesConfigTest.php",
+      "docs/location-r19-app-batch-service-surface.md"
+    ],
+    "modified": [
+      "config/services.php"
+    ]
+  }
+}

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -7,20 +8,20 @@ declare(strict_types=1);
 
 namespace Smartresponsor\Entity\Locator;
 
-use Smartresponsor\EntityInterface\Locator\AddressInputInterface;
+use App\Bridge\Legacy\Entity\Location\AddressInputLegacyInterface;
 
-final class AddressInput implements AddressInputInterface
+final class AddressInput implements AddressInputLegacyInterface
 {
     public function __construct(
         private string $rawLine,
-        private array $data = []
+        private array $data = [],
     ) {
     }
 
     public static function fromArray(array $payload): self
     {
-        $raw = (string)($payload['raw'] ?? '');
-        $data = (array)($payload['data'] ?? []);
+        $raw = (string) ($payload['raw'] ?? '');
+        $data = (array) ($payload['data'] ?? []);
 
         return new self($raw, $data);
     }

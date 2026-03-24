@@ -1,0 +1,32 @@
+{
+  "wave": 41,
+  "message": "Location",
+  "summary": "Extract App-owned observability read-model and services for status/metrics controllers",
+  "added": [
+    "src/EntityInterface/Location/ProviderMetricSnapshotInterface.php",
+    "src/Entity/Location/ProviderMetricSnapshot.php",
+    "src/EntityInterface/Location/LocationStatusReportInterface.php",
+    "src/Entity/Location/LocationStatusReport.php",
+    "src/InfrastructureInterface/Provider/Location/ProviderMetricSnapshotStoreInterface.php",
+    "src/Infrastructure/Provider/Location/LegacyProviderMetricSnapshotStore.php",
+    "src/Infrastructure/Provider/Location/InMemoryProviderMetricSnapshotStore.php",
+    "src/ServiceInterface/Observability/Location/LocationStatusReportServiceInterface.php",
+    "src/ServiceInterface/Observability/Location/LocationMetricsExportServiceInterface.php",
+    "src/Service/Observability/Location/LocationStatusReportService.php",
+    "src/Service/Observability/Location/LocationMetricsExportService.php",
+    "tests/Entity/Location/ProviderMetricSnapshotTest.php",
+    "tests/Entity/Location/LocationStatusReportTest.php",
+    "tests/Infrastructure/Provider/Location/LegacyProviderMetricSnapshotStoreTest.php",
+    "tests/Service/Observability/Location/LocationStatusReportServiceTest.php",
+    "tests/Service/Observability/Location/LocationMetricsExportServiceTest.php",
+    "docs/location-r41-app-observability-read-model-boundary.md"
+  ],
+  "updated": [
+    "src/Controller/Http/Location/StatusController.php",
+    "src/Controller/Http/Location/MetricsController.php",
+    "config/services.php",
+    "tests/Controller/Http/StatusControllerTest.php",
+    "tests/Controller/Http/MetricsControllerTest.php",
+    "tests/Config/LocationServicesConfigTest.php"
+  ]
+}

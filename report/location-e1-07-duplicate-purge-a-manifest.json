@@ -1,0 +1,20 @@
+{
+  "wave": "E1-07",
+  "component": "Locating/Location",
+  "summary": {
+    "removedFiles": 9,
+    "removedClusters": [
+      "legacy-locator-bundle-bootstrap",
+      "legacy-locator-provider-strategies",
+      "legacy-strategy-only-test"
+    ]
+  },
+  "sources": [
+    "E1-04 delete shortlist",
+    "E1-04 bridge blockers refresh"
+  ],
+  "notes": [
+    "No active App runtime wiring depends on the removed bundle/bootstrap surface.",
+    "Strategy class references may remain inside dead legacy clusters and can be purged in later waves."
+  ]
+}

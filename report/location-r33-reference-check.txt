@@ -1,0 +1,13 @@
+Reference check performed for removed legacy batch controller cluster.
+
+Checked surfaces:
+- src/
+- tests/
+- config/
+- composer.json
+- README.md
+
+Findings before removal:
+- BatchController referenced only by tests/Locator/BatchControllerTest.php
+- Smartresponsor\Layer\Locator\BatchService appeared only inside the removed controller and its test
+- no active Symfony routing or current App service wiring referenced this cluster

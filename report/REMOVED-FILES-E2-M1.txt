@@ -1,0 +1,11 @@
+src/ServiceInterface/Locator/BanditPolicyInterface.php
+src/ServiceInterface/Locator/CircuitTuningPolicyInterface.php
+src/ServiceInterface/Locator/CostAwarePolicyInterface.php
+src/ServiceInterface/Locator/CostCapPolicyInterface.php
+src/ServiceInterface/Locator/GeoFencePolicyInterface.php
+src/ServiceInterface/Locator/IpAuthzPolicyInterface.php
+src/ServiceInterface/Locator/PolicyInterface.php
+src/ServiceInterface/Locator/ProviderAuthzPolicyInterface.php
+src/ServiceInterface/Locator/RegionPolicyEngineInterface.php
+src/ServiceInterface/Locator/RegionTimeoutPolicyInterface.php
+src/ServiceInterface/Locator/SlaPolicyInterface.php

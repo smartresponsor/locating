@@ -25,3 +25,12 @@ Canon notes
 
 Engineering hardening plan
 - See `docs/locator-engineering-plan-2026-02.md` for a prioritized production-hardening backlog and commit units.
+
+Current canonization note (r01)
+- This current slice is under active migration toward the Locating/Location Symfony-oriented canon.
+- The executable protocol gate added in `.gate/check/location-protocol-canon.php` is the starting control rail for the next cumulative waves.
+
+Current canonization note (r02)
+- Composer identity is now aligned toward `locating/location` and `App\` as the target production root.
+- `Smartresponsor\` remains only as a temporary compatibility bridge while cumulative namespace migration is still in progress.
+- Forbidden `src/Console` was evacuated in favor of canonical commands under `src/Command/Location/`.

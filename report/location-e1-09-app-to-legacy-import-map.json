@@ -1,0 +1,227 @@
+{
+  "generatedAt": "2026-03-22T19:54:30Z",
+  "items": [
+    {
+      "appClass": "App\\Command\\Address\\LocationNormalizeCommand",
+      "appPath": "src/Command/Address/LocationNormalizeCommand.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\Model\\Locator\\CanonicalAddress",
+          "usageType": "use-import",
+          "classification": "bridge-blocker"
+        },
+        {
+          "legacyFqcn": "Smartresponsor\\Service\\Locator\\LocatorService",
+          "usageType": "use-import",
+          "classification": "bridge-blocker"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\Command\\Geo\\LocationReverseCommand",
+      "appPath": "src/Command/Geo/LocationReverseCommand.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\Model\\Locator\\GeoPoint",
+          "usageType": "use-import",
+          "classification": "bridge-blocker"
+        },
+        {
+          "legacyFqcn": "Smartresponsor\\Service\\Locator\\LocatorService",
+          "usageType": "use-import",
+          "classification": "bridge-blocker"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\Infrastructure\\Batch\\Location\\SmartresponsorAddressBatchJobRepositoryBackend",
+      "appPath": "src/Infrastructure/Batch/Location/SmartresponsorAddressBatchJobRepositoryBackend.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\AddressBatchJobRepositoryInterface",
+          "usageType": "use-import",
+          "classification": "edge-adapter"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\Infrastructure\\Batch\\Location\\SmartresponsorAddressBatchResultStorageBackend",
+      "appPath": "src/Infrastructure/Batch/Location/SmartresponsorAddressBatchResultStorageBackend.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\AddressBatchResultStorageInterface",
+          "usageType": "use-import",
+          "classification": "edge-adapter"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\Infrastructure\\Batch\\Location\\SmartresponsorAddressBatchLegacyMessageBusBackend",
+      "appPath": "src/Infrastructure/Batch/Location/SmartresponsorAddressBatchLegacyMessageBusBackend.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\AddressBatchMessageBusInterface",
+          "usageType": "inline-reference",
+          "classification": "edge-adapter"
+        },
+        {
+          "legacyFqcn": "Smartresponsor\\Message\\Locator\\AddressBatchMessage",
+          "usageType": "use-import",
+          "classification": "edge-adapter"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\Infrastructure\\Batch\\Location\\SmartresponsorAddressBatchJobRecord",
+      "appPath": "src/Infrastructure/Batch/Location/SmartresponsorAddressBatchJobRecord.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\EntityInterface\\Locator\\AddressBatchJobInterface",
+          "usageType": "inline-reference",
+          "classification": "edge-adapter"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\Infrastructure\\Batch\\Location\\SmartresponsorAddressBatchResultRecord",
+      "appPath": "src/Infrastructure/Batch/Location/SmartresponsorAddressBatchResultRecord.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\EntityInterface\\Locator\\AddressResultInterface",
+          "usageType": "inline-reference",
+          "classification": "edge-adapter"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\Infrastructure\\Batch\\Location\\SmartresponsorAddressBatchJobRecordFactoryBackend",
+      "appPath": "src/Infrastructure/Batch/Location/SmartresponsorAddressBatchJobRecordFactoryBackend.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\Entity\\Locator\\AddressBatchJob",
+          "usageType": "inline-reference",
+          "classification": "edge-adapter"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\Infrastructure\\Batch\\Location\\SmartresponsorAddressBatchLegacyResultBackend",
+      "appPath": "src/Infrastructure/Batch/Location/SmartresponsorAddressBatchLegacyResultBackend.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\Entity\\Locator\\AddressData",
+          "usageType": "use-import",
+          "classification": "edge-adapter"
+        },
+        {
+          "legacyFqcn": "Smartresponsor\\Entity\\Locator\\AddressResult",
+          "usageType": "use-import",
+          "classification": "edge-adapter"
+        },
+        {
+          "legacyFqcn": "Smartresponsor\\Entity\\Locator\\AddressStatus",
+          "usageType": "use-import",
+          "classification": "edge-adapter"
+        },
+        {
+          "legacyFqcn": "Smartresponsor\\Entity\\Locator\\AddressValidationIssue",
+          "usageType": "use-import",
+          "classification": "edge-adapter"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\Infrastructure\\Provider\\Location\\SmartresponsorAddressSuggestBackend",
+      "appPath": "src/Infrastructure/Provider/Location/SmartresponsorAddressSuggestBackend.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\AddressSuggestProviderInterface",
+          "usageType": "use-import",
+          "classification": "edge-adapter"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\Infrastructure\\Provider\\Location\\SmartresponsorAddressReverseHttpBackend",
+      "appPath": "src/Infrastructure/Provider/Location/SmartresponsorAddressReverseHttpBackend.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\ReverseHttpClientInterface",
+          "usageType": "use-import",
+          "classification": "edge-adapter"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\Infrastructure\\Provider\\Location\\SmartresponsorLocationMetricBackend",
+      "appPath": "src/Infrastructure/Provider/Location/SmartresponsorLocationMetricBackend.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\MetricRecorderInterface",
+          "usageType": "use-import",
+          "classification": "edge-adapter"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\Infrastructure\\Provider\\Location\\SmartresponsorProviderHealthSnapshotBackend",
+      "appPath": "src/Infrastructure/Provider/Location/SmartresponsorProviderHealthSnapshotBackend.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\ServiceInterface\\Locator\\HealthMonitorInterface",
+          "usageType": "use-import",
+          "classification": "edge-adapter"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\Infrastructure\\Provider\\Location\\SmartresponsorProviderMetricSnapshotBackend",
+      "appPath": "src/Infrastructure/Provider/Location/SmartresponsorProviderMetricSnapshotBackend.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\MetricSnapshotProviderInterface",
+          "usageType": "use-import",
+          "classification": "edge-adapter"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\Infrastructure\\Provider\\Location\\SmartresponsorProviderCostCatalogBackend",
+      "appPath": "src/Infrastructure/Provider/Location/SmartresponsorProviderCostCatalogBackend.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\InfrastructureInterface\\Locator\\ProviderCostCatalogInterface",
+          "usageType": "use-import",
+          "classification": "edge-adapter"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\Infrastructure\\Provider\\Location\\SmartresponsorProviderQuotaDecisionBackend",
+      "appPath": "src/Infrastructure/Provider/Location/SmartresponsorProviderQuotaDecisionBackend.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\Domain\\Locator\\TenantQuotaManagerInterface",
+          "usageType": "use-import",
+          "classification": "edge-adapter"
+        }
+      ]
+    },
+    {
+      "appClass": "App\\Service\\Http\\Location\\SmartresponsorLocationQuotaGuardBackend",
+      "appPath": "src/Service/Http/Location/SmartresponsorLocationQuotaGuardBackend.php",
+      "legacyImports": [
+        {
+          "legacyFqcn": "Smartresponsor\\ServiceInterface\\Locator\\AddressQuotaGuardInterface",
+          "usageType": "inline-reference",
+          "classification": "edge-adapter"
+        },
+        {
+          "legacyFqcn": "Smartresponsor\\Service\\Locator\\AddressQuotaGuard",
+          "usageType": "inline-reference",
+          "classification": "edge-adapter"
+        }
+      ]
+    }
+  ]
+}

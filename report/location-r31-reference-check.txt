@@ -1,0 +1,12 @@
+Reference check performed against the active Locating-30 cumulative slice.
+
+Removed cluster:
+- src/Service/Locator/AddressGeocodeBridge.php
+- src/Service/Locator/AddressProviderRouter.php
+- src/ServiceInterface/Locator/AddressGeocodeBridgeInterface.php
+- src/ServiceInterface/Locator/AddressProviderRouterInterface.php
+- tests/Locator/Service/AddressProviderRouterFailoverTest.php
+
+Operational note:
+- active Symfony wiring remains on App-owned boundaries
+- config/services.php retained and checked for syntax

@@ -1,0 +1,10 @@
+References before removal:
+src/CommandInterface/Locator/LocatorDemoLoopCommandInterface.php:10:interface LocatorDemoLoopCommandInterface
+src/CommandInterface/Locator/LocatorDemoSeedCommandInterface.php:10:interface LocatorDemoSeedCommandInterface
+src/Command/Locator/LocatorDemoLoopCommand.php:7:use Smartresponsor\CommandInterface\Locator\LocatorDemoLoopCommandInterface;
+src/Command/Locator/LocatorDemoLoopCommand.php:14:final class LocatorDemoLoopCommand extends Command implements LocatorDemoLoopCommandInterface
+src/Command/Locator/LocatorDemoLoopCommand.php:16:    protected static $defaultName = 'locator:demo:loop';
+src/Command/Locator/LocatorDemoSeedCommand.php:7:use Smartresponsor\CommandInterface\Locator\LocatorDemoSeedCommandInterface;
+src/Command/Locator/LocatorDemoSeedCommand.php:14:final class LocatorDemoSeedCommand extends Command implements LocatorDemoSeedCommandInterface
+src/Command/Locator/LocatorDemoSeedCommand.php:16:    protected static $defaultName = 'locator:demo:seed';
+References after removal:

@@ -1,0 +1,25 @@
+{
+  "wave": "r02",
+  "workspace": "Locating",
+  "entity": "Location",
+  "summary": {
+    "package_name": "locating/location",
+    "package_type": "project",
+    "runtime_php": "^8.4",
+    "removed_forbidden_root": "src/Console",
+    "added_canonical_command_tail": "src/Command/Location"
+  },
+  "touched_files": [
+    "composer.json",
+    "README.md",
+    "docs/location-r02-composer-command-canon.md",
+    "report/location-r02-composer-command-manifest.json",
+    "src/Command/Location/LocationNormalizeCommand.php",
+    "src/Command/Location/LocationReverseCommand.php",
+    ".gate/check/location-protocol-canon.php"
+  ],
+  "removed_files": [
+    "src/Console/LocatorNormalizeCommand.php",
+    "src/Console/LocatorReverseCommand.php"
+  ]
+}

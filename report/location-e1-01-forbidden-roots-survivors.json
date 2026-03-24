@@ -1,0 +1,455 @@
+{
+  "generatedAt": "2026-03-22T18:44:02.615982Z",
+  "roots": [
+    {
+      "root": "src/Contract",
+      "fileCount": 11,
+      "usedInActiveRuntime": false,
+      "items": [
+        {
+          "path": "src/Contract/Cache/CacheInterface.php",
+          "fqcn": "Smartresponsor\\Contract\\Cache\\CacheInterface",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Contract/Health/HealthCheckInterface.php",
+          "fqcn": "Smartresponsor\\Contract\\Health\\HealthCheckInterface",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Contract/Locator/CacheInterface.php",
+          "fqcn": "Smartresponsor\\Contract\\Locator\\CacheInterface",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Contract/Locator/LocatorInterface.php",
+          "fqcn": "Smartresponsor\\Contract\\Locator\\LocatorInterface",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Contract/Locator/ProviderInterface.php",
+          "fqcn": "Smartresponsor\\Contract\\Locator\\ProviderInterface",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Contract/Locator/ReverseProviderInterface.php",
+          "fqcn": "Smartresponsor\\Contract\\Locator\\ReverseProviderInterface",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Contract/Log/LoggerInterface.php",
+          "fqcn": "Smartresponsor\\Contract\\Log\\LoggerInterface",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Contract/Metrics/MetricsInterface.php",
+          "fqcn": "Smartresponsor\\Contract\\Metrics\\MetricsInterface",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Contract/RateLimit/RateLimiterInterface.php",
+          "fqcn": "Smartresponsor\\Contract\\RateLimit\\RateLimiterInterface",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Contract/Locator/Provider/LocatorProviderInterface.php",
+          "fqcn": "Smartresponsor\\Contract\\Locator\\Provider\\LocatorProviderInterface",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Contract/Locator/Secrets/SecretsProviderInterface.php",
+          "fqcn": "Smartresponsor\\Contract\\Locator\\Secrets\\SecretsProviderInterface",
+          "classification": "dead"
+        }
+      ]
+    },
+    {
+      "root": "src/Model",
+      "fileCount": 3,
+      "usedInActiveRuntime": false,
+      "items": [
+        {
+          "path": "src/Model/Locator/AddressData.php",
+          "fqcn": "Smartresponsor\\Model\\Locator\\AddressData",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Model/Locator/CanonicalAddress.php",
+          "fqcn": "Smartresponsor\\Model\\Locator\\CanonicalAddress",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Model/Locator/GeoPoint.php",
+          "fqcn": "Smartresponsor\\Model\\Locator\\GeoPoint",
+          "classification": "dead"
+        }
+      ]
+    },
+    {
+      "root": "src/Strategy",
+      "fileCount": 4,
+      "usedInActiveRuntime": false,
+      "items": [
+        {
+          "path": "src/Strategy/Locator/GoogleLocator.php",
+          "fqcn": "Smartresponsor\\Strategy\\Locator\\GoogleLocator",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Strategy/Locator/MapboxLocator.php",
+          "fqcn": "Smartresponsor\\Strategy\\Locator\\MapboxLocator",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Strategy/Locator/OpenStreetMapLocator.php",
+          "fqcn": "Smartresponsor\\Strategy\\Locator\\OpenStreetMapLocator",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Strategy/Locator/USPSLocator.php",
+          "fqcn": "Smartresponsor\\Strategy\\Locator\\USPSLocator",
+          "classification": "dead"
+        }
+      ]
+    },
+    {
+      "root": "src/Integration",
+      "fileCount": 59,
+      "usedInActiveRuntime": false,
+      "items": [
+        {
+          "path": "src/Integration/Http/SimpleHttp.php",
+          "fqcn": "Smartresponsor\\Integration\\Http\\SimpleHttp",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/AddressPort.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\AddressPort",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/LocatorConfig.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\LocatorConfig",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/LocatorSelector.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\LocatorSelector",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/RateLimit/TokenBucket.php",
+          "fqcn": "Smartresponsor\\Integration\\RateLimit\\TokenBucket",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Observability/Log/JsonLogger.php",
+          "fqcn": "Smartresponsor\\Integration\\Observability\\Log\\JsonLogger",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Observability/Trace/OtelZipkinExporter.php",
+          "fqcn": "Smartresponsor\\Integration\\Observability\\Trace\\OtelZipkinExporter",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Observability/Trace/Span.php",
+          "fqcn": "Smartresponsor\\Integration\\Observability\\Trace\\Span",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Observability/Trace/Tracer.php",
+          "fqcn": "Smartresponsor\\Integration\\Observability\\Trace\\Tracer",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Batch/JobStore.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Batch\\JobStore",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Cache/AdaptiveTtlPolicy.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Cache\\AdaptiveTtlPolicy",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Cache/CacheInterface.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Cache\\CacheInterface",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Cache/FileCache.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Cache\\FileCache",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Cache/LruCache.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Cache\\LruCache",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Cache/RedisCache.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Cache\\RedisCache",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Cache/SimpleArrayCache.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Cache\\SimpleArrayCache",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Decorator/AdaptiveMultiCachedLocator.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Decorator\\AdaptiveMultiCachedLocator",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Decorator/CachedLocator.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Decorator\\CachedLocator",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Decorator/CircuitBreakerLocator.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Decorator\\CircuitBreakerLocator",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Decorator/GracefulLocator.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Decorator\\GracefulLocator",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Decorator/HealthProbeLocator.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Decorator\\HealthProbeLocator",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Decorator/MultiCachedLocator.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Decorator\\MultiCachedLocator",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Decorator/ObservabilityLocator.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Decorator\\ObservabilityLocator",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Decorator/RateLimitedLocator.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Decorator\\RateLimitedLocator",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Decorator/RetryLocator.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Decorator\\RetryLocator",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Decorator/TryFallbackLocator.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Decorator\\TryFallbackLocator",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Decorator/USPSVerifyLocator.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Decorator\\USPSVerifyLocator",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Factory/RedisFactory.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Factory\\RedisFactory",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Fallback/FallbackLocator.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Fallback\\FallbackLocator",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Formatter/USPSFormatter.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Formatter\\USPSFormatter",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Health/CompositeHealthCheck.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Health\\CompositeHealthCheck",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Health/HealthChecker.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Health\\HealthChecker",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Health/NominatimHealthCheck.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Health\\NominatimHealthCheck",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Http/GoogleGeocodingClient.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Http\\GoogleGeocodingClient",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Http/MapboxClient.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Http\\MapboxClient",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Http/NominatimClient.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Http\\NominatimClient",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Http/USPSClient.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Http\\USPSClient",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Log/Redactor.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Log\\Redactor",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Log/StdoutLogger.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Log\\StdoutLogger",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Metrics/HealthMetrics.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Metrics\\HealthMetrics",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Metrics/InMemoryMetrics.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Metrics\\InMemoryMetrics",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Metrics/PrometheusExporter.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Metrics\\PrometheusExporter",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Provider/FallbackProvider.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Provider\\FallbackProvider",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Provider/GoogleProvider.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Provider\\GoogleProvider",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Provider/MapboxProvider.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Provider\\MapboxProvider",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Provider/MockProvider.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Provider\\MockProvider",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Provider/NominatimProvider.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Provider\\NominatimProvider",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Provider/OpenStreetMapProvider.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Provider\\OpenStreetMapProvider",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Provider/PhotonProvider.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Provider\\PhotonProvider",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/RateLimit/RateLimiter.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\RateLimit\\RateLimiter",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/RateLimit/RedisRateLimiter.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\RateLimit\\RedisRateLimiter",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Registry/LocatorPluginRegistry.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Registry\\LocatorPluginRegistry",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Resilience/CircuitBreaker.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Resilience\\CircuitBreaker",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Resilience/Retry.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Resilience\\Retry",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Secrets/EnvSecretsProvider.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Secrets\\EnvSecretsProvider",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Throttle/ProviderThrottle.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Throttle\\ProviderThrottle",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Provider/Dsn/LocatorDsn.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Provider\\Dsn\\LocatorDsn",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Log/Correlation/CorrelationId.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Log\\Correlation\\CorrelationId",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Integration/Locator/Log/Correlation/TraceContext.php",
+          "fqcn": "Smartresponsor\\Integration\\Locator\\Log\\Correlation\\TraceContext",
+          "classification": "dead"
+        }
+      ]
+    },
+    {
+      "root": "src/Bundle",
+      "fileCount": 6,
+      "usedInActiveRuntime": false,
+      "items": [
+        {
+          "path": "src/Bundle/LocatorBundle.php",
+          "fqcn": "Smartresponsor\\Bundle\\LocatorBundle",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Bundle/DependencyInjection/Configuration.php",
+          "fqcn": "Smartresponsor\\Bundle\\DependencyInjection\\Configuration",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Bundle/DependencyInjection/LocatorExtension.php",
+          "fqcn": "Smartresponsor\\Bundle\\DependencyInjection\\LocatorExtension",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Bundle/Locator/SmartResponsorLocatorBundle.php",
+          "fqcn": "Smartresponsor\\Bundle\\Locator\\SmartresponsorLocatorBundle",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Bundle/Locator/DependencyInjection/Configuration.php",
+          "fqcn": "Smartresponsor\\Bundle\\Locator\\DependencyInjection\\Configuration",
+          "classification": "dead"
+        },
+        {
+          "path": "src/Bundle/Locator/DependencyInjection/SmartResponsorLocatorExtension.php",
+          "fqcn": "Smartresponsor\\Bundle\\Locator\\DependencyInjection\\SmartresponsorLocatorExtension",
+          "classification": "dead"
+        }
+      ]
+    }
+  ]
+}

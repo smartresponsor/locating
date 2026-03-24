@@ -1,0 +1,8 @@
+src/ServiceInterface/Locator/FailoverMatrixInterface.php
+src/ServiceInterface/Locator/FailoverPlannerInterface.php
+src/ServiceInterface/Locator/ProbabilisticFailoverInterface.php
+src/ServiceInterface/Locator/HedgePolicyInterface.php
+src/ServiceInterface/Locator/HedgerInterface.php
+src/ServiceInterface/Locator/RaceExecutorInterface.php
+src/ServiceInterface/Locator/RaceRunnerInterface.php
+src/ServiceInterface/Locator/RetryPolicyInterface.php

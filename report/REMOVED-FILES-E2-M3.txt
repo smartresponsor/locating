@@ -1,0 +1,14 @@
+src/InfrastructureInterface/Locator/CacheInvalidatorInterface.php
+src/InfrastructureInterface/Locator/CacheProbeInterface.php
+src/InfrastructureInterface/Locator/CacheTtlPolicyInterface.php
+src/InfrastructureInterface/Locator/CacheWarmerInterface.php
+src/InfrastructureInterface/Locator/DeferredLookupQueueInterface.php
+src/InfrastructureInterface/Locator/HealthMetricInterface.php
+src/InfrastructureInterface/Locator/InMemoryTenantUsageCounterInterface.php
+src/InfrastructureInterface/Locator/LocatorConfigInterface.php
+src/InfrastructureInterface/Locator/LocatorFixtureReaderInterface.php
+src/InfrastructureInterface/Locator/PriorityBatchQueueInterface.php
+src/InfrastructureInterface/Locator/PriorityQueueInterface.php
+src/InfrastructureInterface/Locator/RateLimitInterface.php
+src/InfrastructureInterface/Locator/ResultCacheInterface.php
+src/InfrastructureInterface/Locator/TracePropagatorInterface.php

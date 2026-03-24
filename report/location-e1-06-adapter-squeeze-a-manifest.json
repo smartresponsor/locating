@@ -1,0 +1,31 @@
+{
+  "wave": "E1-06",
+  "component": "Locating/Location",
+  "generatedAt": "2026-03-22T19:38:30.391917Z",
+  "summary": {
+    "theme": "Adapter Squeeze A",
+    "scope": [
+      "batch legacy construction",
+      "result record construction"
+    ],
+    "directLegacyConstructionRemovedFrom": [
+      "App\\Infrastructure\\Batch\\Location\\LegacyAddressBatchJobStore",
+      "App\\Service\\Bridge\\Batch\\Location\\LegacyAddressResultFactory"
+    ]
+  },
+  "newFiles": [
+    "src/InfrastructureInterface/Batch/Location/AddressBatchJobRecordFactoryBackendInterface.php",
+    "src/Infrastructure/Batch/Location/SmartresponsorAddressBatchJobRecordFactoryBackend.php",
+    "src/InfrastructureInterface/Batch/Location/AddressBatchLegacyResultBackendInterface.php",
+    "src/Infrastructure/Batch/Location/SmartresponsorAddressBatchLegacyResultBackend.php",
+    "docs/location-e1-06-adapter-squeeze-a-batch-legacy-construction.md",
+    "tests/Infrastructure/Batch/Location/SmartresponsorAddressBatchJobRecordFactoryBackendTest.php",
+    "tests/Infrastructure/Batch/Location/SmartresponsorAddressBatchLegacyResultBackendTest.php",
+    "tests/Service/Bridge/Batch/Location/LegacyAddressResultFactoryTest.php"
+  ],
+  "updatedFiles": [
+    "config/services.php",
+    "src/Infrastructure/Batch/Location/LegacyAddressBatchJobStore.php",
+    "src/Service/Bridge/Batch/Location/LegacyAddressResultFactory.php"
+  ]
+}

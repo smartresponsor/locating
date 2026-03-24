@@ -1,0 +1,4 @@
+locator_governance_recommendations:
+  path: /location/governance/recommendations
+  controller: App\Controller\Http\Location\GovernanceRecommendationController
+  methods: [GET]

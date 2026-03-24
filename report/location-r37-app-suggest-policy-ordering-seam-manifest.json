@@ -1,0 +1,25 @@
+{
+  "wave": 37,
+  "token": "Location",
+  "summary": "Introduced App-owned health/quota-aware suggest source ordering and rewired active suggest path away from static ordering.",
+  "added": [
+    "src/ServiceInterface/Provider/Location/AddressSuggestionSourceHealthPolicyInterface.php",
+    "src/ServiceInterface/Provider/Location/AddressSuggestionSourceQuotaPolicyInterface.php",
+    "src/Service/Provider/Location/LegacyHealthAwareAddressSuggestionSourceHealthPolicy.php",
+    "src/Service/Provider/Location/LegacyQuotaAwareAddressSuggestionSourceQuotaPolicy.php",
+    "src/Service/Provider/Location/PolicyAddressSuggestionSourceOrder.php",
+    "tests/Service/Provider/Location/PolicyAddressSuggestionSourceOrderTest.php",
+    "tests/Service/Provider/Location/LegacyHealthAwareAddressSuggestionSourceHealthPolicyTest.php",
+    "tests/Service/Provider/Location/LegacyQuotaAwareAddressSuggestionSourceQuotaPolicyTest.php",
+    "docs/location-r37-app-suggest-policy-ordering-seam.md",
+    "report/location-r37-app-suggest-policy-ordering-seam-manifest.json"
+  ],
+  "changed": [
+    "src/ServiceInterface/Provider/Location/AddressSuggestionSourceInterface.php",
+    "src/Service/Provider/Location/LegacyAddressSuggestionProvider.php",
+    "tests/Service/Provider/Location/OrderedAddressSuggestionProviderTest.php",
+    "tests/Config/LocationServicesConfigTest.php",
+    "config/services.php"
+  ],
+  "removed": []
+}

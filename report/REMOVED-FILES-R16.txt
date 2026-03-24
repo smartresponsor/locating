@@ -1,0 +1,9 @@
+src/Service/Locator/ContractTestV2.php
+src/ServiceInterface/Locator/ContractTestV2Interface.php
+tests/Locator/ContractTestV2Test.php
+src/Service/Locator/DryRunSimulator.php
+src/ServiceInterface/Locator/DryRunSimulatorInterface.php
+tests/Locator/DryRunSimulatorTest.php
+src/Service/Locator/SandboxHarness.php
+src/ServiceInterface/Locator/SandboxHarnessInterface.php
+tests/Locator/SandboxHarnessTest.php

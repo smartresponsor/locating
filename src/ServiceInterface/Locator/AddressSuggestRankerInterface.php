@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -7,16 +8,14 @@ declare(strict_types=1);
 
 namespace Smartresponsor\ServiceInterface\Locator;
 
-use Smartresponsor\EntityInterface\Locator\AddressSuggestionInterface;
+use App\Bridge\Legacy\Entity\Location\AddressSuggestionLegacyInterface;
 
-/**
- * Rank suggestions according to fuzzy match and locale/country hints.
- */
 interface AddressSuggestRankerInterface
 {
     /**
-     * @param AddressSuggestionInterface[] $items
-     * @return AddressSuggestionInterface[]
+     * @param AddressSuggestionLegacyInterface[] $items
+     *
+     * @return AddressSuggestionLegacyInterface[]
      */
     public function rank(string $query, ?string $countryCode, ?string $locale, array $items): array;
 }

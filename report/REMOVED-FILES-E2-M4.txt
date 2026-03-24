@@ -1,0 +1,12 @@
+src/ServiceInterface/Locator/HealthEwmaInterface.php
+src/ServiceInterface/Locator/QuotaGuardInterface.php
+src/ServiceInterface/Locator/RegionQuotaSchedulerInterface.php
+src/ServiceInterface/Locator/RegionRouterInterface.php
+src/ServiceInterface/Locator/TenantGuardInterface.php
+src/ServiceInterface/Locator/TenantQuotaInterface.php
+src/ServiceInterface/Locator/TenantResourceQuotaInterface.php
+src/ServiceInterface/Locator/TenantSeparatorInterface.php
+src/ServiceInterface/Locator/TimeoutCalibratorInterface.php
+src/ServiceInterface/Locator/ToggleInterface.php
+src/ServiceInterface/Locator/TokenBucketInterface.php
+src/ServiceInterface/Locator/TracePropagatorInterface.php

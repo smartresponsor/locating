@@ -1,0 +1,6 @@
+src/Service/Locator/AddressBatchService.php
+src/Service/Locator/AddressBatchServiceMetricDecorator.php
+src/ServiceInterface/Locator/AddressBatchServiceInterface.php
+src/ServiceInterface/Locator/AddressBatchServiceMetricDecoratorInterface.php
+tests/Locator/Service/AddressBatchServiceTest.php
+tests/Locator/Service/MetricDecoratorTest.php

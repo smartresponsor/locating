@@ -1,0 +1,15 @@
+{
+  "wave": 28,
+  "token": "Locating",
+  "entity": "Location",
+  "summary": "Added an App-owned in-memory batch runtime store and switched active batch runtime tests to the App-only path.",
+  "added": [
+    "src/Infrastructure/Batch/Location/InMemoryAddressBatchRuntimeStore.php",
+    "tests/Infrastructure/Batch/Location/InMemoryAddressBatchRuntimeStoreTest.php"
+  ],
+  "updated": [
+    "tests/Service/Batch/Location/AddressBatchServiceTest.php",
+    "tests/MessageHandler/Batch/Location/AddressBatchMessageHandlerTest.php"
+  ],
+  "removed": []
+}

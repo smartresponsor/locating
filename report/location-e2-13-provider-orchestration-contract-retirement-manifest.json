@@ -1,0 +1,15 @@
+{
+  "wave": "E2-13",
+  "component": "Locating/Location",
+  "summary": {
+    "retiredContracts": 4,
+    "newBridgeContracts": 4,
+    "updatedImplementations": 4
+  },
+  "removedFiles": [
+    "src/ServiceInterface/Locator/ProviderRouterInterface.php",
+    "src/ServiceInterface/Locator/StrategyRegistryInterface.php",
+    "src/ServiceInterface/Locator/ProviderOrderInterface.php",
+    "src/ServiceInterface/Locator/AdaptiveProviderOrderInterface.php"
+  ]
+}

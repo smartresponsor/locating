@@ -1,0 +1,4 @@
+src/ServiceInterface/Locator/ProviderRouterInterface.php
+src/ServiceInterface/Locator/StrategyRegistryInterface.php
+src/ServiceInterface/Locator/ProviderOrderInterface.php
+src/ServiceInterface/Locator/AdaptiveProviderOrderInterface.php

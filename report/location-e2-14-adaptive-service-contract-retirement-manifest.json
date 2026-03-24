@@ -1,0 +1,6 @@
+{
+  "wave": "E2-14",
+  "summary": "Adaptive service contract namespace retirement",
+  "removedInterfaces": 5,
+  "newBridgeContracts": 5
+}

@@ -1,0 +1,61 @@
+{
+  "generatedAt": "2026-03-22T19:54:30Z",
+  "segments": [
+    {
+      "segment": "Service",
+      "count": 109
+    },
+    {
+      "segment": "Domain",
+      "count": 69
+    },
+    {
+      "segment": "Integration",
+      "count": 54
+    },
+    {
+      "segment": "ServiceInterface",
+      "count": 48
+    },
+    {
+      "segment": "InfrastructureInterface",
+      "count": 39
+    },
+    {
+      "segment": "Infrastructure",
+      "count": 38
+    },
+    {
+      "segment": "Entity",
+      "count": 36
+    },
+    {
+      "segment": "Contract",
+      "count": 11
+    },
+    {
+      "segment": "EntityInterface",
+      "count": 9
+    },
+    {
+      "segment": "LayerInterface",
+      "count": 7
+    },
+    {
+      "segment": "Model",
+      "count": 3
+    },
+    {
+      "segment": "Bundle",
+      "count": 2
+    },
+    {
+      "segment": "Message",
+      "count": 1
+    },
+    {
+      "segment": "MessageHandler",
+      "count": 1
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+src/ServiceInterface/Locator/BudgetGuardInterface.php
+src/ServiceInterface/Locator/CanaryGuardInterface.php
+src/ServiceInterface/Locator/CanaryToggleInterface.php
+src/ServiceInterface/Locator/DegradeManagerInterface.php

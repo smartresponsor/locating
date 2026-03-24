@@ -1,0 +1,14 @@
+{
+  "wave": "E2-01",
+  "component": "Locating/Location",
+  "focus": "batch message namespace retirement",
+  "retiredNamespaces": [
+    "Smartresponsor\Message\Locator",
+    "Smartresponsor\MessageHandler\Locator",
+    "Smartresponsor\InfrastructureInterface\Locator"
+  ],
+  "notes": [
+    "Moved legacy batch message bridge to App\Bridge\Legacy\Batch\Location",
+    "Active App runtime remains legacy-free"
+  ]
+}

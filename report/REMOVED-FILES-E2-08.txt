@@ -1,0 +1,5 @@
+src/ServiceInterface/Locator/HealthRecorderInterface.php
+src/ServiceInterface/Locator/RecordReplayStoreInterface.php
+src/EntityInterface/Locator/AddressInterface.php
+src/EntityInterface/Locator/HealthRecorderInterface.php
+src/EntityInterface/Locator/RecordReplayStoreInterface.php

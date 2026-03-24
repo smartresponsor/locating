@@ -1,0 +1,9 @@
+{
+  "wave": "E1-08",
+  "component": "Locating/Location",
+  "summary": {
+    "removedFiles": 7,
+    "scope": "legacy integration/selector cluster purge",
+    "runtimeImpact": "no active App runtime wiring removed"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "wave": "20",
+  "message": "legacy-batch-service-collapse",
+  "removed_files": [
+    "src/Service/Locator/AddressBatchService.php",
+    "src/Service/Locator/AddressBatchServiceMetricDecorator.php",
+    "src/ServiceInterface/Locator/AddressBatchServiceInterface.php",
+    "src/ServiceInterface/Locator/AddressBatchServiceMetricDecoratorInterface.php",
+    "tests/Locator/Service/AddressBatchServiceTest.php",
+    "tests/Locator/Service/MetricDecoratorTest.php"
+  ],
+  "added_files": [
+    "docs/location-r20-legacy-batch-service-collapse.md",
+    "report/location-r20-reference-check.txt",
+    "report/location-r20-legacy-batch-service-collapse-manifest.json",
+    "report/REMOVED-FILES-R20.txt"
+  ],
+  "status": "completed"
+}

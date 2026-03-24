@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -7,18 +8,18 @@ declare(strict_types=1);
 
 namespace Smartresponsor\Infrastructure\Locator;
 
-use Smartresponsor\EntityInterface\Locator\TenantLimitInterface;
+use App\Bridge\Legacy\Tenant\Location\TenantConfigLegacyRepositoryInterface;
+use App\Bridge\Legacy\Tenant\Location\TenantLimitLegacyInterface;
 use Smartresponsor\Entity\Locator\TenantLimit;
-use Smartresponsor\InfrastructureInterface\Locator\TenantConfigRepositoryInterface;
 
 /**
  * Simple array-based tenant config repository.
  * It can be replaced by a database or remote configuration source.
  */
-final class ArrayTenantConfigRepository implements TenantConfigRepositoryInterface
+final class ArrayTenantConfigRepository implements TenantConfigLegacyRepositoryInterface
 {
     /**
-     * @var array<string,TenantLimitInterface>
+     * @var array<string,TenantLimitLegacyInterface>
      */
     private array $limitByKey;
 
@@ -39,7 +40,7 @@ final class ArrayTenantConfigRepository implements TenantConfigRepositoryInterfa
         }
     }
 
-    public function findLimit(string $tenantId, string $operation): ?TenantLimitInterface
+    public function findLimit(string $tenantId, string $operation): ?TenantLimitLegacyInterface
     {
         $key = $this->key($tenantId, $operation);
 
@@ -48,6 +49,6 @@ final class ArrayTenantConfigRepository implements TenantConfigRepositoryInterfa
 
     private function key(string $tenantId, string $operation): string
     {
-        return $tenantId . ':' . $operation;
+        return $tenantId.':'.$operation;
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -7,14 +8,13 @@ declare(strict_types=1);
 
 namespace Smartresponsor\Infrastructure\Locator;
 
-use Smartresponsor\InfrastructureInterface\Locator\MetricRecorderInterface;
-use Smartresponsor\InfrastructureInterface\Locator\MetricSnapshotProviderInterface;
+use App\Bridge\Legacy\Provider\Location\LocationMetricLegacyRecorderInterface;
 
 /**
  * In-memory metric recorder that can be used for development and smoke tests.
  * It collects basic aggregates for latency and error rate per operation.
  */
-final class InMemoryMetricRecorder implements MetricRecorderInterface, MetricSnapshotProviderInterface
+final class InMemoryMetricRecorder implements LocationMetricLegacyRecorderInterface
 {
     /**
      * @var array<string,float>
@@ -43,7 +43,7 @@ final class InMemoryMetricRecorder implements MetricRecorderInterface, MetricSna
 
     public function incrementCounter(string $operation, string $result): void
     {
-        if ($result === 'error') {
+        if ('error' === $result) {
             $this->errorCountByOperation[$operation] = ($this->errorCountByOperation[$operation] ?? 0) + 1;
         }
     }

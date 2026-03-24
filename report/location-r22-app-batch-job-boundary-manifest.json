@@ -1,0 +1,24 @@
+{
+  "wave": 22,
+  "slug": "app-batch-job-boundary",
+  "summary": "Introduces App-owned batch job entity/status/factory and switches App batch services to return App batch job contracts.",
+  "added": [
+    "src/EntityInterface/Location/AddressBatchJobInterface.php",
+    "src/Entity/Location/AddressBatchJobStatus.php",
+    "src/Entity/Location/AddressBatchJob.php",
+    "src/ServiceInterface/Batch/Location/AddressBatchJobFactoryInterface.php",
+    "src/Service/Batch/Location/AddressBatchJobFactory.php",
+    "tests/Entity/Location/AddressBatchJobTest.php",
+    "tests/Service/Batch/Location/AddressBatchJobFactoryTest.php"
+  ],
+  "modified": [
+    "src/ServiceInterface/Batch/Location/AddressBatchServiceInterface.php",
+    "src/Service/Batch/Location/AddressBatchService.php",
+    "src/Service/Batch/Location/AddressBatchServiceMetricDecorator.php",
+    "config/services.php",
+    "tests/Service/Batch/Location/AddressBatchServiceTest.php",
+    "tests/Service/Batch/Location/AddressBatchServiceMetricDecoratorTest.php",
+    "tests/Config/LocationBatchServicesConfigTest.php"
+  ],
+  "removed": []
+}

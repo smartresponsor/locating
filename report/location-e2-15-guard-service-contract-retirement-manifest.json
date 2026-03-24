@@ -1,0 +1,17 @@
+{
+  "wave": "E2-15",
+  "title": "Guard service contract namespace retirement",
+  "retiredInterfaces": [
+    "src/ServiceInterface/Locator/BudgetGuardInterface.php",
+    "src/ServiceInterface/Locator/CanaryGuardInterface.php",
+    "src/ServiceInterface/Locator/CanaryToggleInterface.php",
+    "src/ServiceInterface/Locator/DegradeManagerInterface.php"
+  ],
+  "newBridgeContracts": [
+    "src/Bridge/Legacy/Service/Location/BudgetGuardLegacyInterface.php",
+    "src/Bridge/Legacy/Service/Location/CanaryGuardLegacyInterface.php",
+    "src/Bridge/Legacy/Service/Location/CanaryToggleLegacyInterface.php",
+    "src/Bridge/Legacy/Service/Location/DegradeManagerLegacyInterface.php"
+  ],
+  "status": "ok"
+}
