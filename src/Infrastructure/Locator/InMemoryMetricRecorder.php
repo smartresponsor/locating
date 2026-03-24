@@ -1,9 +1,6 @@
 <?php
+# Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-
-/*
- * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
- */
 
 namespace Smartresponsor\Infrastructure\Locator;
 
@@ -29,6 +26,11 @@ final class InMemoryMetricRecorder implements MetricRecorderInterface, MetricSna
     /**
      * @var array<string,int>
      */
+    private array $counterCountByOperation = [];
+
+    /**
+     * @var array<string,int>
+     */
     private array $errorCountByOperation = [];
 
     public function recordLatency(string $operation, float $milliseconds): void
@@ -43,6 +45,8 @@ final class InMemoryMetricRecorder implements MetricRecorderInterface, MetricSna
 
     public function incrementCounter(string $operation, string $result): void
     {
+        $this->counterCountByOperation[$operation] = ($this->counterCountByOperation[$operation] ?? 0) + 1;
+
         if ($result === 'error') {
             $this->errorCountByOperation[$operation] = ($this->errorCountByOperation[$operation] ?? 0) + 1;
         }
@@ -52,7 +56,16 @@ final class InMemoryMetricRecorder implements MetricRecorderInterface, MetricSna
     {
         $snapshot = [];
 
-        foreach ($this->countByOperation as $operation => $count) {
+        $operationList = array_values(array_unique(array_merge(
+            array_keys($this->countByOperation),
+            array_keys($this->counterCountByOperation),
+            array_keys($this->errorCountByOperation)
+        )));
+
+        foreach ($operationList as $operation) {
+            $latencyCount = $this->countByOperation[$operation] ?? 0;
+            $counterCount = $this->counterCountByOperation[$operation] ?? 0;
+            $count = max($latencyCount, $counterCount);
             $sum = $this->latencySumByOperation[$operation] ?? 0.0;
             $errorCount = $this->errorCountByOperation[$operation] ?? 0;
 
