@@ -1,1 +1,1 @@
-<?php declare(strict_types=1); namespace Smartresponsor\Infrastructure\Http; final class CurlHttpClient implements HttpClientInterface{ public function get(string $u,array $o=[]): array{ return []; } public function getRaw(string $u,array $o=[]): string{ return ''; } }
+<?php declare(strict_types=1); namespace App\Infrastructure\Http; final class CurlHttpClient implements HttpClientInterface{ public function get(string $u,array $o=[]): array{ return []; } public function getRaw(string $u,array $o=[]): string{ return ''; } }

@@ -6,8 +6,8 @@
  */
 
 
-namespace Smartresponsor\Infrastructure\Metrics;
-use Smartresponsor\Infrastructure\Cache\RedisCache;
+namespace App\Infrastructure\Metrics;
+use App\Infrastructure\Cache\RedisCache;
 
 class Prometheus
 {

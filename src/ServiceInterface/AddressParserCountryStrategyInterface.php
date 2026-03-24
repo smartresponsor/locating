@@ -4,10 +4,10 @@ declare(strict_types=1);
 /**
  */
 
-namespace Smartresponsor\ServiceInterface;
+namespace App\ServiceInterface;
 
-use Smartresponsor\EntityInterface\AddressInputInterface;
-use Smartresponsor\EntityInterface\AddressDataInterface;
+use App\EntityInterface\AddressInputInterface;
+use App\EntityInterface\AddressDataInterface;
 
 interface AddressParserCountryStrategyInterface
 {

@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Infrastructure;
+namespace App\Infrastructure;
 
-use Smartresponsor\InfrastructureInterface\MetricRecorderInterface;
+use App\InfrastructureInterface\MetricRecorderInterface;
 
 /**
  * No-op metric recorder used when no real metric backend is configured.

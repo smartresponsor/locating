@@ -1,9 +1,9 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Integration\RateLimit;
+namespace App\Integration\RateLimit;
 use Redis;
-use Smartresponsor\Contract\RateLimit\RateLimiterInterface;
+use App\Contract\RateLimit\RateLimiterInterface;
 final class RedisRateLimiter implements RateLimiterInterface{
   public function __construct(private Redis $r){}
   public function consume(string $bucket, int $perMinute): int{

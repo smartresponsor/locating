@@ -1,9 +1,9 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Integration\Provider;
-use Smartresponsor\Contract\ProviderInterface;
-use Smartresponsor\Contract\ReverseProviderInterface;
+namespace App\Integration\Provider;
+use App\Contract\ProviderInterface;
+use App\Contract\ReverseProviderInterface;
 final class MockProvider implements ProviderInterface, ReverseProviderInterface{
   public function name(): string{ return 'mock'; }
   public function geocode(string $q): array{

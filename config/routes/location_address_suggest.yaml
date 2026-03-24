@@ -1,4 +1,4 @@
 locator_address_suggest:
   path: /locator/address/suggest
-  controller: Smartresponsor\Controller\AddressSuggestController
+  controller: App\Controller\AddressSuggestController
   methods: [GET]

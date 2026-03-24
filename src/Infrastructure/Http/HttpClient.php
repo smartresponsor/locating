@@ -6,7 +6,7 @@
  */
 
 
-namespace Smartresponsor\Infrastructure\Http;
+namespace App\Infrastructure\Http;
 
 class HttpClient
 {

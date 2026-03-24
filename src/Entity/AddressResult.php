@@ -3,10 +3,10 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Entity;
+namespace App\Entity;
 
-use Smartresponsor\EntityInterface\AddressResultInterface;
-use Smartresponsor\EntityInterface\AddressValidationIssueInterface;
+use App\EntityInterface\AddressResultInterface;
+use App\EntityInterface\AddressValidationIssueInterface;
 
 /**
  * Immutable result of address validation and optional geocoding.

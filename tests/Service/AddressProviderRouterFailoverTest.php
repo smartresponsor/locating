@@ -3,11 +3,11 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Tests\Service;
+namespace App\Tests\Service;
 
-use Smartresponsor\Entity\GeoPoint;
-use Smartresponsor\InfrastructureInterface\AddressProviderBridgeInterface;
-use Smartresponsor\Service\AddressProviderRouter;
+use App\Entity\GeoPoint;
+use App\InfrastructureInterface\AddressProviderBridgeInterface;
+use App\Service\AddressProviderRouter;
 use PHPUnit\Framework\TestCase;
 
 final class AddressProviderRouterFailoverTest extends TestCase

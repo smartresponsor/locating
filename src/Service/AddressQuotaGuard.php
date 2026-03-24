@@ -3,12 +3,12 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Service;
+namespace App\Service;
 
-use Smartresponsor\EntityInterface\TenantContextInterface;
-use Smartresponsor\InfrastructureInterface\TenantConfigRepositoryInterface;
-use Smartresponsor\InfrastructureInterface\TenantUsageCounterInterface;
-use Smartresponsor\ServiceInterface\AddressQuotaGuardInterface;
+use App\EntityInterface\TenantContextInterface;
+use App\InfrastructureInterface\TenantConfigRepositoryInterface;
+use App\InfrastructureInterface\TenantUsageCounterInterface;
+use App\ServiceInterface\AddressQuotaGuardInterface;
 
 /**
  * Guard that enforces per-tenant quotas for address related operations.

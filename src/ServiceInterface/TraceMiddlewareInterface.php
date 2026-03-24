@@ -2,11 +2,11 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 /**
- * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * App Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace Smartresponsor\Domain;
+namespace App\Domain;
 interface TraceMiddlewareInterface {
     /** Enrich outgoing headers with traceparent; if absent, create one. Returns header map. */
     public function inject(array $header): array;

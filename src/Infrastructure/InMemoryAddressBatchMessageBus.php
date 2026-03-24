@@ -3,11 +3,11 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Infrastructure;
+namespace App\Infrastructure;
 
-use Smartresponsor\InfrastructureInterface\AddressBatchMessageBusInterface;
-use Smartresponsor\Message\AddressBatchMessage;
-use Smartresponsor\MessageHandler\AddressBatchMessageHandler;
+use App\InfrastructureInterface\AddressBatchMessageBusInterface;
+use App\Message\AddressBatchMessage;
+use App\MessageHandler\AddressBatchMessageHandler;
 
 /**
  * In-process message bus that immediately calls the handler.

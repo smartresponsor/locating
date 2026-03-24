@@ -1,7 +1,7 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Integration\Http;
+namespace App\Integration\Http;
 final class NominatimClient{
   public function __construct(
     private string $baseUrl = 'https://nominatim.openstreetmap.org',
@@ -29,7 +29,7 @@ final class NominatimClient{
   /** @return array<mixed> */
   private function getJson(string $url): array{
     $ch = curl_init($url);
-    $ua = 'Smartresponsor-Locator/1.0 (+https://example.local)';
+    $ua = 'App-Locator/1.0 (+https://example.local)';
     curl_setopt_array($ch, [
       CURLOPT_RETURNTRANSFER => true,
       CURLOPT_FOLLOWLOCATION => true,

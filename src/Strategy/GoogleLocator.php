@@ -1,11 +1,11 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Strategy;
-use Smartresponsor\Contract\LocatorInterface;
-use Smartresponsor\Integration\Http\GoogleGeocodingClient;
-use Smartresponsor\Model\AddressData;
-use Smartresponsor\Model\GeoPoint;
+namespace App\Strategy;
+use App\Contract\LocatorInterface;
+use App\Integration\Http\GoogleGeocodingClient;
+use App\Model\AddressData;
+use App\Model\GeoPoint;
 final class GoogleLocator implements LocatorInterface{
   public function __construct(private GoogleGeocodingClient $client){}
   private static function mapAddressComponents(array $components): array{

@@ -3,10 +3,10 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Service;
+namespace App\Service;
 
-use Smartresponsor\EntityInterface\AddressSuggestionInterface;
-use Smartresponsor\ServiceInterface\AddressSuggestRankerInterface;
+use App\EntityInterface\AddressSuggestionInterface;
+use App\ServiceInterface\AddressSuggestRankerInterface;
 
 /**
  * Default implementation of AddressSuggestRankerInterface.

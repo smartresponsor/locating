@@ -3,10 +3,10 @@
 declare(strict_types=1);
 
 
-        namespace Smartresponsor\Tests\Status;
+        namespace App\Tests\Status;
 
-        use Smartresponsor\Controller\StatusController;
-        use Smartresponsor\Infrastructure\InMemoryMetricRecorder;
+        use App\Controller\StatusController;
+        use App\Infrastructure\InMemoryMetricRecorder;
         use PHPUnit\Framework\TestCase;
         use Symfony\Component\HttpFoundation\Request;
 

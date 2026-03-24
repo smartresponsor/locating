@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Service;
+namespace App\Service;
 
 /**
  * Exception thrown when a tenant exceeds a configured quota for a batch operation.

@@ -2,13 +2,13 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 /**
- * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * App Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace Smartresponsor\Infrastructure;
+namespace App\Infrastructure;
 
-use Smartresponsor\InfrastructureInterface\ProviderAdapterInterface;
+use App\InfrastructureInterface\ProviderAdapterInterface;
 
 final class FakeProvider implements ProviderAdapterInterface
 {

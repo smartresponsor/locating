@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Entity;
+namespace App\Entity;
 
-use Smartresponsor\EntityInterface\TenantLimitInterface;
+use App\EntityInterface\TenantLimitInterface;
 
 final class TenantLimit implements TenantLimitInterface
 {

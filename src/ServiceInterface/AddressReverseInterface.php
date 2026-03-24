@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\ServiceInterface;
+namespace App\ServiceInterface;
 
-use Smartresponsor\EntityInterface\AddressResultInterface;
+use App\EntityInterface\AddressResultInterface;
 
 /**
  * High-level reverse geocoding service.

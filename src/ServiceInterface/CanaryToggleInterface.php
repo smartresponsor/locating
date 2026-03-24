@@ -2,11 +2,11 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 /**
- * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * App Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace Smartresponsor\Domain;
+namespace App\Domain;
 interface CanaryToggleInterface {
     /** Return true if flag is enabled for a tenant/user bucket. */
     public function isEnabled(string $flag, string $tenantId, ?string $userId=null): bool;

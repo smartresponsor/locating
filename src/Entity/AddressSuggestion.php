@@ -2,9 +2,9 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 
-namespace Smartresponsor\Entity;
+namespace App\Entity;
 
-use Smartresponsor\EntityInterface\AddressSuggestionInterface;
+use App\EntityInterface\AddressSuggestionInterface;
 
 final class AddressSuggestion implements AddressSuggestionInterface
 {

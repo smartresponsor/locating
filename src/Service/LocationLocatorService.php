@@ -2,10 +2,10 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 
-namespace Smartresponsor\Service;
+namespace App\Service;
 
-use Smartresponsor\Infrastructure\Cache\RedisCache;
-use Smartresponsor\ServiceInterface\LocationLocatorServiceInterface;
+use App\Infrastructure\Cache\RedisCache;
+use App\ServiceInterface\LocationLocatorServiceInterface;
 
 class LocationLocatorService implements LocationLocatorServiceInterface
 {

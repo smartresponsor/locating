@@ -4,12 +4,12 @@ declare(strict_types=1);
 /**
  */
 
-namespace Smartresponsor\Service;
+namespace App\Service;
 
-use Smartresponsor\Entity\AddressData;
-use Smartresponsor\EntityInterface\AddressDataInterface;
-use Smartresponsor\EntityInterface\AddressInputInterface;
-use Smartresponsor\ServiceInterface\AddressParserCountryStrategyInterface;
+use App\Entity\AddressData;
+use App\EntityInterface\AddressDataInterface;
+use App\EntityInterface\AddressInputInterface;
+use App\ServiceInterface\AddressParserCountryStrategyInterface;
 
 final class AddressParserGeneric implements AddressParserCountryStrategyInterface
 {

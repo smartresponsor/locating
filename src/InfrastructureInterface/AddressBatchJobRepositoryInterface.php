@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\InfrastructureInterface;
+namespace App\InfrastructureInterface;
 
-use Smartresponsor\EntityInterface\AddressBatchJobInterface;
+use App\EntityInterface\AddressBatchJobInterface;
 
 interface AddressBatchJobRepositoryInterface
 {

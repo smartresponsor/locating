@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Tests\Infrastructure;
+namespace App\Tests\Infrastructure;
 
-use Smartresponsor\Infrastructure\RequestTenantContext;
+use App\Infrastructure\RequestTenantContext;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;

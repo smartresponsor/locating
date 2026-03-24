@@ -1,7 +1,7 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Integration\Factory;
+namespace App\Integration\Factory;
 use Redis;
 final class RedisFactory{
   public static function createFromDsn(string $dsn): Redis{

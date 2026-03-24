@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Infrastructure;
+namespace App\Infrastructure;
 
-use Smartresponsor\InfrastructureInterface\LocatorFixtureReaderInterface;
+use App\InfrastructureInterface\LocatorFixtureReaderInterface;
 
 final class LocatorFixtureReader implements LocatorFixtureReaderInterface
 {

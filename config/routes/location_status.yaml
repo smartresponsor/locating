@@ -1,4 +1,4 @@
 locator_status:
   path: /locator/status
-  controller: Smartresponsor\Controller\StatusController
+  controller: App\Controller\StatusController
   methods: [GET]

@@ -2,13 +2,13 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 /**
- * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * App Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace Smartresponsor\Service;
+namespace App\Service;
 
-use Smartresponsor\ServiceInterface\FailoverPlannerInterface;
+use App\ServiceInterface\FailoverPlannerInterface;
 final class FailoverPlanner implements FailoverPlannerInterface {
     public function __construct(private SlaPolicy $sla) {}
     public function plan(string $region, array $provider, array $signal): array {

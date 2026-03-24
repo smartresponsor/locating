@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Tests\Address;
 
-use Smartresponsor\Entity\AddressInput;
-use Smartresponsor\Entity\AddressStatus;
-use Smartresponsor\Service\AddressNormalizer;
-use Smartresponsor\Service\AddressParser;
-use Smartresponsor\Service\AddressParserGeneric;
-use Smartresponsor\Service\AddressPipeline;
-use Smartresponsor\Service\AddressValidator;
+use App\Entity\AddressInput;
+use App\Entity\AddressStatus;
+use App\Service\AddressNormalizer;
+use App\Service\AddressParser;
+use App\Service\AddressParserGeneric;
+use App\Service\AddressPipeline;
+use App\Service\AddressValidator;
 use PHPUnit\Framework\TestCase;
 
 final class AddressPipelineTest extends TestCase

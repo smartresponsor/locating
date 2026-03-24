@@ -1,11 +1,11 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Integration\Decorator;
-use Smartresponsor\Contract\LocatorInterface;
-use Smartresponsor\Integration\Cache\SimpleArrayCache;
-use Smartresponsor\Model\AddressData;
-use Smartresponsor\Model\GeoPoint;
+namespace App\Integration\Decorator;
+use App\Contract\LocatorInterface;
+use App\Integration\Cache\SimpleArrayCache;
+use App\Model\AddressData;
+use App\Model\GeoPoint;
 final class CachedLocator implements LocatorInterface{
   public function __construct(private LocatorInterface $inner, private SimpleArrayCache $cache, private int $ttl = 600){}
   private function key(string $p, string $s): string { return 'locator:' . $p . ':' . sha1($s); }

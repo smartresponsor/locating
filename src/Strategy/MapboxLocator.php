@@ -1,11 +1,11 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Strategy;
-use Smartresponsor\Contract\LocatorInterface;
-use Smartresponsor\Integration\Http\MapboxClient;
-use Smartresponsor\Model\AddressData;
-use Smartresponsor\Model\GeoPoint;
+namespace App\Strategy;
+use App\Contract\LocatorInterface;
+use App\Integration\Http\MapboxClient;
+use App\Model\AddressData;
+use App\Model\GeoPoint;
 final class MapboxLocator implements LocatorInterface{
   public function __construct(private MapboxClient $c){}
   public function normalize(string $raw): AddressData{

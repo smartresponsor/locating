@@ -2,11 +2,11 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 
-namespace Smartresponsor\Service;
+namespace App\Service;
 
-use Smartresponsor\EntityInterface\AddressBatchJobInterface;
-use Smartresponsor\InfrastructureInterface\MetricRecorderInterface;
-use Smartresponsor\ServiceInterface\LocationAddressBatchServiceInterface;
+use App\EntityInterface\AddressBatchJobInterface;
+use App\InfrastructureInterface\MetricRecorderInterface;
+use App\ServiceInterface\LocationAddressBatchServiceInterface;
 
 /**
  * Decorator that records metrics for LocationAddressBatchServiceInterface.

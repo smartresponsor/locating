@@ -3,18 +3,18 @@
 declare(strict_types=1);
 
 /**
- * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * App Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
 namespace Tests;
 
-use Smartresponsor\Infrastructure\LocatorFixtureReader;
-use Smartresponsor\Service\AddressNormalizer;
-use Smartresponsor\Service\AddressParser;
-use Smartresponsor\Service\AddressPipeline;
-use Smartresponsor\Service\AddressValidator;
-use Smartresponsor\Service\LocatorDemoSeed;
+use App\Infrastructure\LocatorFixtureReader;
+use App\Service\AddressNormalizer;
+use App\Service\AddressParser;
+use App\Service\AddressPipeline;
+use App\Service\AddressValidator;
+use App\Service\LocatorDemoSeed;
 use PHPUnit\Framework\TestCase;
 
 final class LocatorDemoSeedTest extends TestCase

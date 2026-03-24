@@ -2,20 +2,20 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 
-namespace Smartresponsor\Tests\Bundle;
+namespace App\Tests\Bundle;
 
-use Smartresponsor\Bundle\DependencyInjection\SmartresponsorLocatorExtension;
-use Smartresponsor\Integration\LocatorConfig;
-use Smartresponsor\Integration\LocatorSelector;
+use App\Bundle\DependencyInjection\AppLocatorExtension;
+use App\Integration\LocatorConfig;
+use App\Integration\LocatorSelector;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-final class SmartresponsorLocatorExtensionTest extends TestCase
+final class AppLocatorExtensionTest extends TestCase
 {
     public function testExtensionRegistersConfigAndSelectorUsingValidatedConfigTree(): void
     {
         $container = new ContainerBuilder();
-        $extension = new SmartresponsorLocatorExtension();
+        $extension = new AppLocatorExtension();
 
         $extension->load([
             [

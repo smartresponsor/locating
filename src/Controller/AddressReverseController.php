@@ -3,12 +3,12 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Controller;
+namespace App\Controller;
 
-use Smartresponsor\ControllerInterface\AddressReverseControllerInterface;
-use Smartresponsor\ServiceInterface\AddressReverseInterface;
-use Smartresponsor\ServiceInterface\AddressQuotaGuardInterface;
-use Smartresponsor\Service\AddressQuotaGuard;
+use App\ControllerInterface\AddressReverseControllerInterface;
+use App\ServiceInterface\AddressReverseInterface;
+use App\ServiceInterface\AddressQuotaGuardInterface;
+use App\Service\AddressQuotaGuard;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 

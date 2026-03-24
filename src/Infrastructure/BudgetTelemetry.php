@@ -2,7 +2,7 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 
-namespace Smartresponsor\Infrastructure;
+namespace App\Infrastructure;
 
 final class BudgetTelemetry implements BudgetTelemetryInterface
 {

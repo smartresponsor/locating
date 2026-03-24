@@ -3,13 +3,13 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Service;
+namespace App\Service;
 
-use Smartresponsor\Entity\AddressData;
-use Smartresponsor\Entity\AddressResult;
-use Smartresponsor\ServiceInterface\AddressGeocodeBridgeInterface;
-use Smartresponsor\ServiceInterface\AddressProviderRouterInterface;
-use Smartresponsor\ServiceInterface\AddressQuotaGuardInterface;
+use App\Entity\AddressData;
+use App\Entity\AddressResult;
+use App\ServiceInterface\AddressGeocodeBridgeInterface;
+use App\ServiceInterface\AddressProviderRouterInterface;
+use App\ServiceInterface\AddressQuotaGuardInterface;
 
 /**
  * Optional geocoding step that uses a provider router and per-tenant quota guard.

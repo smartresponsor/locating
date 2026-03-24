@@ -2,12 +2,12 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 /**
- * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * App Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace Smartresponsor\Http;
-use Smartresponsor\Layer\{TraceContext, Span};
+namespace App\Http;
+use App\Layer\{TraceContext, Span};
 final class TraceMiddleware {
     /** Wrap handler call and return tuple: [response, spanData] */
     public function handle(callable $handler, array $query): array {

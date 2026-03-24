@@ -1,10 +1,10 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Integration\Fallback;
-use Smartresponsor\Contract\LocatorInterface;
-use Smartresponsor\Model\AddressData;
-use Smartresponsor\Model\GeoPoint;
+namespace App\Integration\Fallback;
+use App\Contract\LocatorInterface;
+use App\Model\AddressData;
+use App\Model\GeoPoint;
 final class FallbackLocator implements LocatorInterface{
   public function normalize(string $raw): AddressData{
     // dumb split

@@ -6,7 +6,7 @@
  */
 
 
-namespace Smartresponsor\Infrastructure\Resilience;
+namespace App\Infrastructure\Resilience;
 class Hedger {
     public static function race(array $callables, int $hedgeDelayMs): array {
         // Simple sequential hedging: start first, after delay start second; return first successful

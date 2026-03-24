@@ -1,7 +1,7 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Integration\Metrics;
+namespace App\Integration\Metrics;
 final class HealthMetrics{
   private int $ok=0; private int $fail=0;
   /** @var list<float> */

@@ -3,10 +3,10 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Controller;
+namespace App\Controller;
 
-use Smartresponsor\ControllerInterface\StatusControllerInterface;
-use Smartresponsor\InfrastructureInterface\MetricSnapshotProviderInterface;
+use App\ControllerInterface\StatusControllerInterface;
+use App\InfrastructureInterface\MetricSnapshotProviderInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 

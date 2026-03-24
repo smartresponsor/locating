@@ -2,19 +2,19 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 
-namespace Smartresponsor\Tests\Service;
+namespace App\Tests\Service;
 
 use PHPUnit\Framework\TestCase;
-use Smartresponsor\Entity\AddressInput;
-use Smartresponsor\Entity\AddressResult;
-use Smartresponsor\Entity\AddressStatus;
-use Smartresponsor\InfrastructureInterface\MetricRecorderInterface;
-use Smartresponsor\Service\AddressPipelineMetricDecorator;
-use Smartresponsor\Service\AddressSuggestMetricDecorator;
-use Smartresponsor\Service\LocationAddressBatchServiceMetricDecorator;
-use Smartresponsor\ServiceInterface\AddressPipelineInterface;
-use Smartresponsor\ServiceInterface\AddressSuggestInterface;
-use Smartresponsor\ServiceInterface\LocationAddressBatchServiceInterface;
+use App\Entity\AddressInput;
+use App\Entity\AddressResult;
+use App\Entity\AddressStatus;
+use App\InfrastructureInterface\MetricRecorderInterface;
+use App\Service\AddressPipelineMetricDecorator;
+use App\Service\AddressSuggestMetricDecorator;
+use App\Service\LocationAddressBatchServiceMetricDecorator;
+use App\ServiceInterface\AddressPipelineInterface;
+use App\ServiceInterface\AddressSuggestInterface;
+use App\ServiceInterface\LocationAddressBatchServiceInterface;
 
 final class MetricDecoratorTest extends TestCase
 {
@@ -62,9 +62,9 @@ final class MetricDecoratorTest extends TestCase
     public function testLocationAddressBatchServiceMetricDecoratorRecordsCreateJob(): void
     {
         $inner = new class implements LocationAddressBatchServiceInterface {
-            public function createJob(string $tenantId, array $itemList): \Smartresponsor\EntityInterface\AddressBatchJobInterface
+            public function createJob(string $tenantId, array $itemList): \App\EntityInterface\AddressBatchJobInterface
             {
-                return new class implements \Smartresponsor\EntityInterface\AddressBatchJobInterface {
+                return new class implements \App\EntityInterface\AddressBatchJobInterface {
                     public function jobId(): string
                     {
                         return 'job-1';
@@ -75,9 +75,9 @@ final class MetricDecoratorTest extends TestCase
                         return 'tenant-demo';
                     }
 
-                    public function jobStatus(): \Smartresponsor\Entity\AddressBatchJobStatus
+                    public function jobStatus(): \App\Entity\AddressBatchJobStatus
                     {
-                        return \Smartresponsor\Entity\AddressBatchJobStatus::PENDING;
+                        return \App\Entity\AddressBatchJobStatus::PENDING;
                     }
 
                     public function totalCount(): int
@@ -102,7 +102,7 @@ final class MetricDecoratorTest extends TestCase
                 };
             }
 
-            public function jobStatus(string $jobId): ?\Smartresponsor\EntityInterface\AddressBatchJobInterface
+            public function jobStatus(string $jobId): ?\App\EntityInterface\AddressBatchJobInterface
             {
                 return null;
             }

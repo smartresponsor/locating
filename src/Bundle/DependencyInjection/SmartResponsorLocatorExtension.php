@@ -2,16 +2,16 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 
-namespace Smartresponsor\Bundle\DependencyInjection;
+namespace App\Bundle\DependencyInjection;
 
-use Smartresponsor\Integration\LocatorConfig;
-use Smartresponsor\Integration\LocatorSelector;
+use App\Integration\LocatorConfig;
+use App\Integration\LocatorSelector;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Reference;
 
-final class SmartresponsorLocatorExtension extends Extension
+final class AppLocatorExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container): void
     {

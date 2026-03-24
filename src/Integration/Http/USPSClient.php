@@ -1,7 +1,7 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Integration\Http;
+namespace App\Integration\Http;
 final class USPSClient{
   public function __construct(
     private string $userId,
@@ -21,7 +21,7 @@ final class USPSClient{
       CURLOPT_RETURNTRANSFER => true,
       CURLOPT_FOLLOWLOCATION => true,
       CURLOPT_TIMEOUT => $this->timeout,
-      CURLOPT_HTTPHEADER => ['Accept: application/xml', 'User-Agent: Smartresponsor-Locator/1.0'],
+      CURLOPT_HTTPHEADER => ['Accept: application/xml', 'User-Agent: App-Locator/1.0'],
     ]);
     $body = curl_exec($ch);
     if ($body === false){ $err = curl_error($ch); curl_close($ch); throw new \RuntimeException('USPS HTTP: ' . $err); }

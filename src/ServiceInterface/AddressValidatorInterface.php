@@ -3,11 +3,11 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\ServiceInterface;
+namespace App\ServiceInterface;
 
-use Smartresponsor\Entity\AddressData;
-use Smartresponsor\Entity\AddressStatus;
-use Smartresponsor\EntityInterface\AddressValidationIssueInterface;
+use App\Entity\AddressData;
+use App\Entity\AddressStatus;
+use App\EntityInterface\AddressValidationIssueInterface;
 
 interface AddressValidatorInterface
 {

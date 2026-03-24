@@ -3,10 +3,10 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Service;
+namespace App\Service;
 
-use Smartresponsor\Domain\TenantQuotaManagerInterface;
-use Smartresponsor\InfrastructureInterface\MetricRecorderInterface;
+use App\Domain\TenantQuotaManagerInterface;
+use App\InfrastructureInterface\MetricRecorderInterface;
 
 /**
  * Decorator for TenantQuotaManagerInterface that records basic counters

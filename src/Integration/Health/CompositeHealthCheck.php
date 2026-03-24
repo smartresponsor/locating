@@ -1,8 +1,8 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Integration\Health;
-use Smartresponsor\Contract\Health\HealthCheckInterface;
+namespace App\Integration\Health;
+use App\Contract\Health\HealthCheckInterface;
 final class CompositeHealthCheck implements HealthCheckInterface{
   /** @param list<HealthCheckInterface> $checks */
   public function __construct(private array $checks){}

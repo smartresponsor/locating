@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Message;
+namespace App\Message;
 
 final class AddressBatchMessage
 {

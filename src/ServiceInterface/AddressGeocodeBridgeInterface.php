@@ -3,10 +3,10 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\ServiceInterface;
+namespace App\ServiceInterface;
 
-use Smartresponsor\Entity\AddressData;
-use Smartresponsor\Entity\AddressResult;
+use App\Entity\AddressData;
+use App\Entity\AddressResult;
 
 interface AddressGeocodeBridgeInterface
 {

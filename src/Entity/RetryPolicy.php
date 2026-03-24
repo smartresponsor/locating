@@ -2,12 +2,12 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 
-namespace Smartresponsor\Entity;
+namespace App\Entity;
 
-use Smartresponsor\Service\RetryPolicy as ServiceRetryPolicy;
+use App\Service\RetryPolicy as ServiceRetryPolicy;
 
 /**
- * @deprecated Use Smartresponsor\Service\RetryPolicy directly.
+ * @deprecated Use App\Service\RetryPolicy directly.
  */
 final class RetryPolicy extends ServiceRetryPolicy
 {

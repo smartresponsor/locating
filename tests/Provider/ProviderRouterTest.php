@@ -3,16 +3,16 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Tests\Provider;
+namespace App\Tests\Provider;
 
-use Smartresponsor\Entity\AddressInput;
-use Smartresponsor\Entity\HealthRecorder;
-use Smartresponsor\Entity\ProviderSandbox;
-use Smartresponsor\Infrastructure\InMemoryMetricRecorder;
-use Smartresponsor\InfrastructureInterface\ProviderAdapterInterface;
-use Smartresponsor\Service\FailoverPlanner;
-use Smartresponsor\Service\ProviderRouter;
-use Smartresponsor\Service\SlaPolicy;
+use App\Entity\AddressInput;
+use App\Entity\HealthRecorder;
+use App\Entity\ProviderSandbox;
+use App\Infrastructure\InMemoryMetricRecorder;
+use App\InfrastructureInterface\ProviderAdapterInterface;
+use App\Service\FailoverPlanner;
+use App\Service\ProviderRouter;
+use App\Service\SlaPolicy;
 use PHPUnit\Framework\TestCase;
 
 final class ProviderRouterTest extends TestCase

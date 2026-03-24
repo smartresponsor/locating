@@ -3,10 +3,10 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Service;
+namespace App\Service;
 
-use Smartresponsor\Entity\AddressData;
-use Smartresponsor\ServiceInterface\AddressNormalizerInterface;
+use App\Entity\AddressData;
+use App\ServiceInterface\AddressNormalizerInterface;
 
 final class AddressNormalizer implements AddressNormalizerInterface
 {

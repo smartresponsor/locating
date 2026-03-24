@@ -12,10 +12,10 @@
  */
 
 
-namespace Smartresponsor\Service\Provider;
-use Smartresponsor\Domain\Config\Env;
-use Smartresponsor\Infrastructure\Http\HttpClient;
-use Smartresponsor\ServiceInterface\Provider\GeocodeProviderInterface;
+namespace App\Service\Provider;
+use App\Domain\Config\Env;
+use App\Infrastructure\Http\HttpClient;
+use App\ServiceInterface\Provider\GeocodeProviderInterface;
 class NominatimProvider implements GeocodeProviderInterface{
     private Env $env; private HttpClient $http;
     public function __construct(Env $env){$this->env=$env; $this->http=new HttpClient();}
@@ -24,7 +24,7 @@ class NominatimProvider implements GeocodeProviderInterface{
         $base=rtrim($this->env->get('NOMINATIM_URL','https://nominatim.openstreetmap.org'),'/');
         $url=$base.'/search?format=jsonv2&q='.rawurlencode($q).'&limit=5&addressdetails=1';
         if($country)$url.='&countrycodes='.rawurlencode(strtolower($country));
-        [$code,$body]=$this->http->get($url, ['User-Agent'=>'Smartresponsor-Locator/1.0']); if($code!==200) return [];
+        [$code,$body]=$this->http->get($url, ['User-Agent'=>'App-Locator/1.0']); if($code!==200) return [];
         $d=json_decode($body,true); $out=[];
         foreach(($d??[]) as $it){
             $out[]=[ 'formatted'=>$it['display_name'] ?? '', 'lat'=>isset($it['lat'])?(float)$it['lat']:null,
@@ -34,7 +34,7 @@ class NominatimProvider implements GeocodeProviderInterface{
     public function reverse(float $lat,float $lon): array{
         $base=rtrim($this->env->get('NOMINATIM_URL','https://nominatim.openstreetmap.org'),'/');
         $url=$base.'/reverse?format=jsonv2&lat='.$lat.'&lon='.$lon;
-        [$code,$body]=$this->http->get($url, ['User-Agent'=>'Smartresponsor-Locator/1.0']); if($code!==200) return [];
+        [$code,$body]=$this->http->get($url, ['User-Agent'=>'App-Locator/1.0']); if($code!==200) return [];
         $d=json_decode($body,true); if(!is_array($d)) return [];
         return [[ 'formatted'=>$d['display_name'] ?? '', 'lat'=>$lat, 'lon'=>$lon, 'source'=>'nominatim', 'confidence'=>0.5 ]];
     }

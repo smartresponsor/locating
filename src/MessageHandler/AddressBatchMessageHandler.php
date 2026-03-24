@@ -3,14 +3,14 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\MessageHandler;
+namespace App\MessageHandler;
 
-use Smartresponsor\Entity\AddressInput;
-use Smartresponsor\EntityInterface\AddressBatchJobInterface;
-use Smartresponsor\InfrastructureInterface\AddressBatchJobRepositoryInterface;
-use Smartresponsor\InfrastructureInterface\AddressBatchResultStorageInterface;
-use Smartresponsor\Message\AddressBatchMessage;
-use Smartresponsor\ServiceInterface\AddressPipelineInterface;
+use App\Entity\AddressInput;
+use App\EntityInterface\AddressBatchJobInterface;
+use App\InfrastructureInterface\AddressBatchJobRepositoryInterface;
+use App\InfrastructureInterface\AddressBatchResultStorageInterface;
+use App\Message\AddressBatchMessage;
+use App\ServiceInterface\AddressPipelineInterface;
 
 /**
  * Handles batch items by delegating to AddressPipelineInterface.

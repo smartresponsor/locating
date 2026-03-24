@@ -2,18 +2,18 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 
-namespace Smartresponsor\Tests\Service;
+namespace App\Tests\Service;
 
-use Smartresponsor\Entity\AddressStatus;
-use Smartresponsor\Infrastructure\InMemoryMetricRecorder;
-use Smartresponsor\Service\AddressReverse;
+use App\Entity\AddressStatus;
+use App\Infrastructure\InMemoryMetricRecorder;
+use App\Service\AddressReverse;
 use PHPUnit\Framework\TestCase;
 
 final class AddressReverseTest extends TestCase
 {
     public function testReverseBuildsVerifiedResultWhenAddressIsComplete(): void
     {
-        $client = new class() implements \Smartresponsor\InfrastructureInterface\ReverseHttpClientInterface {
+        $client = new class() implements \App\InfrastructureInterface\ReverseHttpClientInterface {
             public function reverse(float $latitude, float $longitude, ?string $countryCode = null): array
             {
                 return [
@@ -47,7 +47,7 @@ final class AddressReverseTest extends TestCase
 
     public function testReverseMarksRejectedWhenAlmostNoData(): void
     {
-        $client = new class() implements \Smartresponsor\InfrastructureInterface\ReverseHttpClientInterface {
+        $client = new class() implements \App\InfrastructureInterface\ReverseHttpClientInterface {
             public function reverse(float $latitude, float $longitude, ?string $countryCode = null): array
             {
                 return [

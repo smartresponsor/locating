@@ -1,11 +1,11 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Integration\Provider;
-use Smartresponsor\Contract\Provider\LocatorProviderInterface;
-use Smartresponsor\Contract\LocatorInterface;
-use Smartresponsor\Integration\Http\MapboxClient;
-use Smartresponsor\Strategy\MapboxLocator;
+namespace App\Integration\Provider;
+use App\Contract\Provider\LocatorProviderInterface;
+use App\Contract\LocatorInterface;
+use App\Integration\Http\MapboxClient;
+use App\Strategy\MapboxLocator;
 final class MapboxProvider implements LocatorProviderInterface{
   public function __construct(private string $key, private int $timeout, private int $priority){}
   public function getName(): string{ return 'mapbox'; }

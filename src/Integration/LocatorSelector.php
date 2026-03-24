@@ -1,15 +1,15 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Integration;
-use Smartresponsor\Contract\LocatorInterface;
-use Smartresponsor\Integration\Provider\Dsn\LocatorDsn;
-use Smartresponsor\Integration\Provider\{OpenStreetMapProvider,FallbackProvider};
-use Smartresponsor\Integration\Registry\LocatorPluginRegistry;
-use Smartresponsor\Integration\Cache\LruCache;
-use Smartresponsor\Integration\Cache\AdaptiveTtlPolicy;
-use Smartresponsor\Integration\Decorator\{RetryLocator,CircuitBreakerLocator,AdaptiveMultiCachedLocator,HealthProbeLocator};
-use Smartresponsor\Integration\Metrics\{HealthMetrics,PrometheusExporter};
+namespace App\Integration;
+use App\Contract\LocatorInterface;
+use App\Integration\Provider\Dsn\LocatorDsn;
+use App\Integration\Provider\{OpenStreetMapProvider,FallbackProvider};
+use App\Integration\Registry\LocatorPluginRegistry;
+use App\Integration\Cache\LruCache;
+use App\Integration\Cache\AdaptiveTtlPolicy;
+use App\Integration\Decorator\{RetryLocator,CircuitBreakerLocator,AdaptiveMultiCachedLocator,HealthProbeLocator};
+use App\Integration\Metrics\{HealthMetrics,PrometheusExporter};
 final class LocatorSelector{
   private LocatorPluginRegistry $registry;
   private LruCache $cache;

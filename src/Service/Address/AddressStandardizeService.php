@@ -6,10 +6,10 @@
  */
 
 
-namespace Smartresponsor\Service\Address;
+namespace App\Service\Address;
 
-use Smartresponsor\Domain\Config\Env;
-use Smartresponsor\ServiceInterface\Address\AddressStandardizeServiceInterface;
+use App\Domain\Config\Env;
+use App\ServiceInterface\Address\AddressStandardizeServiceInterface;
 
 class AddressStandardizeService implements AddressStandardizeServiceInterface
 {

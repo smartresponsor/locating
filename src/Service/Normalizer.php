@@ -1,8 +1,8 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Service;
-use Smartresponsor\Model\CanonicalAddress;
+namespace App\Service;
+use App\Model\CanonicalAddress;
 final class Normalizer{
   public function canonicalize(array $raw, string $provider): array{
     $a = new CanonicalAddress(

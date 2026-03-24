@@ -3,11 +3,11 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Service;
+namespace App\Service;
 
-use Smartresponsor\Entity\GeoPoint;
-use Smartresponsor\InfrastructureInterface\AddressProviderBridgeInterface;
-use Smartresponsor\ServiceInterface\AddressProviderRouterInterface;
+use App\Entity\GeoPoint;
+use App\InfrastructureInterface\AddressProviderBridgeInterface;
+use App\ServiceInterface\AddressProviderRouterInterface;
 
 /**
  * Simple multi-provider router with failover.

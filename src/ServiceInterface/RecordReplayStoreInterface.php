@@ -2,11 +2,11 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 /**
- * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * App Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace Smartresponsor\ServiceInterface;
+namespace App\ServiceInterface;
 interface RecordReplayStoreInterface {
     /** Record response by key (provider/op/input-hash). */
     public function record(string $key, array $request, array $response): void;

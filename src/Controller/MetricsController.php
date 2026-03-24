@@ -3,10 +3,10 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Controller;
+namespace App\Controller;
 
-use Smartresponsor\ControllerInterface\MetricsControllerInterface;
-use Smartresponsor\InfrastructureInterface\MetricSnapshotProviderInterface;
+use App\ControllerInterface\MetricsControllerInterface;
+use App\InfrastructureInterface\MetricSnapshotProviderInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 

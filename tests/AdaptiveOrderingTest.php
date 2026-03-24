@@ -2,12 +2,12 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 /**
- * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * App Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
 namespace Tests;
-use Smartresponsor\Layer\{AdaptiveOrdering, HealthEwma, CostAwarePolicy, SlaPolicy, AddressHintBias};
+use App\Layer\{AdaptiveOrdering, HealthEwma, CostAwarePolicy, SlaPolicy, AddressHintBias};
 final class AdaptiveOrderingTest {
     public function testOrder(): void {
         $ord = new AdaptiveOrdering(new HealthEwma(), new CostAwarePolicy(), new SlaPolicy(), (function(){ $b=new AddressHintBias(); $b->set('US','us',1.2); return $b;})());

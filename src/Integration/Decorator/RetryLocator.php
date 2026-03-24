@@ -1,10 +1,10 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Integration\Decorator;
-use Smartresponsor\Contract\LocatorInterface;
-use Smartresponsor\Model\AddressData;
-use Smartresponsor\Model\GeoPoint;
+namespace App\Integration\Decorator;
+use App\Contract\LocatorInterface;
+use App\Model\AddressData;
+use App\Model\GeoPoint;
 final class RetryLocator implements LocatorInterface{
   public function __construct(private LocatorInterface $inner, private int $retries=2, private int $baseMs=100){}
   private function run(callable $fn){

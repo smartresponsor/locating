@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\EntityInterface;
+namespace App\EntityInterface;
 
 interface AddressInputInterface
 {

@@ -3,10 +3,10 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Infrastructure;
+namespace App\Infrastructure;
 
-use Smartresponsor\EntityInterface\AddressResultInterface;
-use Smartresponsor\InfrastructureInterface\AddressBatchResultStorageInterface;
+use App\EntityInterface\AddressResultInterface;
+use App\InfrastructureInterface\AddressBatchResultStorageInterface;
 
 /**
  * In-memory result storage for batch jobs.

@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Tests;
 
 use PHPUnit\Framework\TestCase;
-use Smartresponsor\Entity\RetryPolicy as EntityRetryPolicy;
-use Smartresponsor\Service\RetryPolicy;
+use App\Entity\RetryPolicy as EntityRetryPolicy;
+use App\Service\RetryPolicy;
 
 final class RetryPolicyTest extends TestCase
 {

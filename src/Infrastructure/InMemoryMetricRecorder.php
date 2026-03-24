@@ -2,10 +2,10 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 
-namespace Smartresponsor\Infrastructure;
+namespace App\Infrastructure;
 
-use Smartresponsor\InfrastructureInterface\MetricRecorderInterface;
-use Smartresponsor\InfrastructureInterface\MetricSnapshotProviderInterface;
+use App\InfrastructureInterface\MetricRecorderInterface;
+use App\InfrastructureInterface\MetricSnapshotProviderInterface;
 
 /**
  * In-memory metric recorder that can be used for development and smoke tests.

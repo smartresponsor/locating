@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Infrastructure;
+namespace App\Infrastructure;
 
-use Smartresponsor\InfrastructureInterface\ReverseHttpClientInterface;
+use App\InfrastructureInterface\ReverseHttpClientInterface;
 
 /**
  * Simple reverse geocoding client backed by OpenStreetMap Nominatim API.

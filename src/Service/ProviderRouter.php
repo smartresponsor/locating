@@ -2,18 +2,18 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 /**
- * Smartresponsor Canon: single-hyphen naming, mirror interfaces, singular names only.
+ * App Canon: single-hyphen naming, mirror interfaces, singular names only.
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace Smartresponsor\Service;
+namespace App\Service;
 
-use Smartresponsor\Entity\ProviderSandbox;
-use Smartresponsor\EntityInterface\AddressInputInterface;
-use Smartresponsor\InfrastructureInterface\MetricRecorderInterface;
-use Smartresponsor\ServiceInterface\FailoverPlannerInterface;
-use Smartresponsor\ServiceInterface\HealthRecorderInterface;
-use Smartresponsor\ServiceInterface\ProviderRouterInterface;
+use App\Entity\ProviderSandbox;
+use App\EntityInterface\AddressInputInterface;
+use App\InfrastructureInterface\MetricRecorderInterface;
+use App\ServiceInterface\FailoverPlannerInterface;
+use App\ServiceInterface\HealthRecorderInterface;
+use App\ServiceInterface\ProviderRouterInterface;
 
 /**
  * ProviderRouter orchestrates provider calls with failover and simple SLA awareness.

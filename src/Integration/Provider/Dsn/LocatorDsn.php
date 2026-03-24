@@ -1,7 +1,7 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Integration\Provider\Dsn;
+namespace App\Integration\Provider\Dsn;
 final class LocatorDsn{
   public string $scheme;
   /** @var array<string,string> */

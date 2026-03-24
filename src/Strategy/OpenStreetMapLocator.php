@@ -1,11 +1,11 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Strategy;
-use Smartresponsor\Contract\LocatorInterface;
-use Smartresponsor\Integration\Http\NominatimClient;
-use Smartresponsor\Model\AddressData;
-use Smartresponsor\Model\GeoPoint;
+namespace App\Strategy;
+use App\Contract\LocatorInterface;
+use App\Integration\Http\NominatimClient;
+use App\Model\AddressData;
+use App\Model\GeoPoint;
 final class OpenStreetMapLocator implements LocatorInterface{
   public function __construct(private NominatimClient $client){}
   public function normalize(string $raw): AddressData{

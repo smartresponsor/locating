@@ -1,7 +1,7 @@
 <?php
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Integration\Observability\Trace;
+namespace App\Integration\Observability\Trace;
 final class Span{
   public function __construct(
     public string $traceId,

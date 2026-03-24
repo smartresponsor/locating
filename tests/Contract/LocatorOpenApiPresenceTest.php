@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Tests\Contract;
+namespace App\Tests\Contract;
 
 use PHPUnit\Framework\TestCase;
 

@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 
-namespace Smartresponsor\Tests\Fixture;
+namespace App\Tests\Fixture;
 
 use PHPUnit\Framework\TestCase;
 

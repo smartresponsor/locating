@@ -2,11 +2,11 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 
-namespace Smartresponsor\Tests\Service;
+namespace App\Tests\Service;
 
-use Smartresponsor\EntityInterface\TenantContextInterface;
-use Smartresponsor\EntityInterface\TenantLimitInterface;
-use Smartresponsor\Service\AddressQuotaGuard;
+use App\EntityInterface\TenantContextInterface;
+use App\EntityInterface\TenantLimitInterface;
+use App\Service\AddressQuotaGuard;
 use PHPUnit\Framework\TestCase;
 
 final class AddressQuotaGuardTest extends TestCase
@@ -20,14 +20,14 @@ final class AddressQuotaGuardTest extends TestCase
             }
         };
 
-        $configRepository = new class implements \Smartresponsor\InfrastructureInterface\TenantConfigRepositoryInterface {
+        $configRepository = new class implements \App\InfrastructureInterface\TenantConfigRepositoryInterface {
             public function findLimit(string $tenantId, string $operation): ?TenantLimitInterface
             {
                 return null;
             }
         };
 
-        $usageCounter = new class implements \Smartresponsor\InfrastructureInterface\TenantUsageCounterInterface {
+        $usageCounter = new class implements \App\InfrastructureInterface\TenantUsageCounterInterface {
             public function increment(string $tenantId, string $operation, int $limitPerMinute): bool
             {
                 return true;
@@ -65,7 +65,7 @@ final class AddressQuotaGuardTest extends TestCase
             }
         };
 
-        $configRepository = new class($limit) implements \Smartresponsor\InfrastructureInterface\TenantConfigRepositoryInterface {
+        $configRepository = new class($limit) implements \App\InfrastructureInterface\TenantConfigRepositoryInterface {
             public function __construct(private TenantLimitInterface $limit)
             {
             }
@@ -76,7 +76,7 @@ final class AddressQuotaGuardTest extends TestCase
             }
         };
 
-        $usageCounter = new class implements \Smartresponsor\InfrastructureInterface\TenantUsageCounterInterface {
+        $usageCounter = new class implements \App\InfrastructureInterface\TenantUsageCounterInterface {
             public function increment(string $tenantId, string $operation, int $limitPerMinute): bool
             {
                 throw new \RuntimeException('increment must not be called when limitPerMinute is zero');
@@ -114,7 +114,7 @@ final class AddressQuotaGuardTest extends TestCase
             }
         };
 
-        $configRepository = new class($limit) implements \Smartresponsor\InfrastructureInterface\TenantConfigRepositoryInterface {
+        $configRepository = new class($limit) implements \App\InfrastructureInterface\TenantConfigRepositoryInterface {
             public function __construct(private TenantLimitInterface $limit)
             {
             }
@@ -125,7 +125,7 @@ final class AddressQuotaGuardTest extends TestCase
             }
         };
 
-        $usageCounter = new class implements \Smartresponsor\InfrastructureInterface\TenantUsageCounterInterface {
+        $usageCounter = new class implements \App\InfrastructureInterface\TenantUsageCounterInterface {
             public int $callCount = 0;
             public array $lastArgs = [];
 
