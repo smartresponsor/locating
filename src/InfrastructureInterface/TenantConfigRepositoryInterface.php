@@ -1,0 +1,13 @@
+<?php
+# Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
+declare(strict_types=1);
+
+
+namespace Smartresponsor\InfrastructureInterface;
+
+use Smartresponsor\EntityInterface\TenantLimitInterface;
+
+interface TenantConfigRepositoryInterface
+{
+    public function findLimit(string $tenantId, string $operation): ?TenantLimitInterface;
+}

@@ -1,6 +1,7 @@
 <?php
+# Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-namespace Smartresponsor\Model\Locator;
+namespace Smartresponsor\Model;
 final class GeoPoint{
   public function __construct(public float $latitude, public float $longitude){}
   /** @return array{lat:float,lon:float} */

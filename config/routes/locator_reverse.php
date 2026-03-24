@@ -6,6 +6,6 @@ use Symfony\Component\Routing\Loader\Configurator\RoutingConfigurator;
 
 return static function (RoutingConfigurator $routes): void {
     $routes->add('locator_address_reverse', '/locator/address/reverse')
-        ->controller('Smartresponsor\\Controller\\Locator\\AddressReverseController')
+        ->controller('Smartresponsor\\Controller\\\AddressReverseController')
         ->methods(['GET']);
 };

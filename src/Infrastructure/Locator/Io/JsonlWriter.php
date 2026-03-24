@@ -1,1 +1,0 @@
-<?php declare(strict_types=1); namespace Smartresponsor\Infrastructure\Locator\Io; final class JsonlWriter{ public static function append(string $p,array $r): void{ file_put_contents($p,json_encode($r)+"\n",FILE_APPEND);} }

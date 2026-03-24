@@ -1,1 +1,0 @@
-<?php declare(strict_types=1); namespace Smartresponsor\Infrastructure\Locator\Io; final class JsonlReader{ public static function read(string $p): \Generator{ $f=fopen($p,'r'); while(($l=fgets($f))!==false){ $j=json_decode($l,true); if(is_array($j)) yield $j; } fclose($f);} }

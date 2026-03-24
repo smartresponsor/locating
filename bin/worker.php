@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 require __DIR__.'/../vendor/autoload.php';
-use SmartResponsor\Integration\Locator\Batch\JobStore;
-use SmartResponsor\Integration\Locator\Provider\MockProvider;
-use SmartResponsor\Integration\Locator\Provider\NominatimProvider;
-use SmartResponsor\Service\Locator\Aggregator;
+use SmartResponsor\Integration\Batch\JobStore;
+use SmartResponsor\Integration\Provider\MockProvider;
+use SmartResponsor\Integration\Provider\NominatimProvider;
+use SmartResponsor\Service\Aggregator;
 
 $store=new JobStore();
 $order = array_values(array_filter(array_map('trim', explode(',', getenv('LOCATOR_PROVIDERS') ?: 'mock,nominatim'))));

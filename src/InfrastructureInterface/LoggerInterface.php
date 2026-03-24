@@ -1,0 +1,1 @@
+<?php declare(strict_types=1); namespace Smartresponsor\InfrastructureInterface; interface LoggerInterface{ public function info(string $m,array $c=[]):void; public function error(string $m,array $c=[]):void; }
