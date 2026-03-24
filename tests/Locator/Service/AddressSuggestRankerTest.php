@@ -1,9 +1,6 @@
 <?php
+# Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-
-/*
- * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
- */
 
 namespace Smartresponsor\Tests\Locator\Service;
 
@@ -35,10 +32,10 @@ final class AddressSuggestRankerTest extends TestCase
         $ranker = new AddressSuggestRanker();
 
         $dataUs = new AddressData('Main Street 1', 'City', 'Region', '12345', 'US');
-        $dataDe = new AddressData('Hauptstrasse 1', 'Berlin', 'BE', '10115', 'DE');
+        $dataDe = new AddressData('Main Street 1', 'Berlin', 'BE', '10115', 'DE');
 
         $us = new AddressSuggestion('Main Street 1', $dataUs, 'test');
-        $de = new AddressSuggestion('Hauptstrasse 1', $dataDe, 'test');
+        $de = new AddressSuggestion('Main Street 1', $dataDe, 'test');
 
         $ranked = $ranker->rank('Main', null, 'de_DE', [$us, $de]);
 

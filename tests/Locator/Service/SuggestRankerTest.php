@@ -1,9 +1,6 @@
 <?php
+# Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-
-/*
- * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
- */
 
 namespace Smartresponsor\Tests\Locator\Service;
 
@@ -70,4 +67,3 @@ final class SuggestRankerTest extends TestCase
         self::assertNotSame([], $ranked[0]->rankReason());
     }
 }
-

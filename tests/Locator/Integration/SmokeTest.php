@@ -62,7 +62,7 @@ final class SmokeTest extends TestCase
             self::assertSame('', trim($stderr));
             self::assertSame(0, $runnerExitCode);
             self::assertStringContainsString('Locator golden fixture run', $stdout);
-            self::assertStringContainsString('/locator/status', $stdout);
+            self::assertStringContainsString('/locator/address/suggest', $stdout);
             self::assertStringContainsString('HTTP/1.1 200 OK', $stdout);
         } finally {
             proc_terminate($serverProcess);

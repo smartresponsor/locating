@@ -1,9 +1,6 @@
 <?php
+# Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-
-/*
- * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
- */
 
 namespace Smartresponsor\Entity\Locator;
 
@@ -14,7 +11,9 @@ final class AddressSuggestion implements AddressSuggestionInterface
     public function __construct(
         private string $label,
         private AddressData $addressData,
-        private ?string $providerKey = null
+        private ?string $providerKey = null,
+        private ?float $score = null,
+        private array $rankReason = []
     ) {
     }
 
@@ -33,12 +32,33 @@ final class AddressSuggestion implements AddressSuggestionInterface
         return $this->providerKey;
     }
 
+    public function score(): ?float
+    {
+        return $this->score;
+    }
+
+    public function rankReason(): array
+    {
+        return $this->rankReason;
+    }
+
+    public function withScore(float $score, array $reason): self
+    {
+        $clone = clone $this;
+        $clone->score = $score;
+        $clone->rankReason = $reason;
+
+        return $clone;
+    }
+
     public function toArray(): array
     {
         return [
             'label' => $this->label,
             'address' => $this->addressData->toArray(),
             'providerKey' => $this->providerKey,
+            'score' => $this->score,
+            'rankReason' => $this->rankReason,
         ];
     }
 }

@@ -6,7 +6,15 @@
          cacheDirectory=".phpunit.cache">
     <testsuites>
         <testsuite name="locator-unit">
-            <directory suffix="Test.php">tests/Locator</directory>
+            <directory suffix="Test.php">tests/Locator/Address</directory>
+            <directory suffix="Test.php">tests/Locator/Bundle</directory>
+            <directory suffix="Test.php">tests/Locator/Fixture</directory>
+            <directory suffix="Test.php">tests/Locator/Infrastructure</directory>
+            <directory suffix="Test.php">tests/Locator/Provider</directory>
+            <directory suffix="Test.php">tests/Locator/Service</directory>
+            <directory suffix="Test.php">tests/Locator/Status</directory>
+            <directory suffix="Test.php">tests/Locator/Tenant</directory>
+            <directory suffix="Test.php">tests/Locator/Unit</directory>
             <exclude>tests/Locator/Integration</exclude>
             <exclude>tests/Locator/Contract</exclude>
             <exclude>tests/Locator/Smoke</exclude>
