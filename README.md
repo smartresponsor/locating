@@ -21,6 +21,7 @@ Locator is a PHP 8.2+ geocoding and address-processing component with provider r
 
 - `src/Contract` and `src/ServiceInterface`: public and internal service contracts (currently being converged).
 - `src/Service`, `src/Entity`: domain logic and value models.
+- No `src/Domain` wrapper directory: code is grouped by technical layer wrappers only.
 - `src/Integration`, `src/Infrastructure`: provider adapters, caches, rate-limiters, telemetry, and runtime integration pieces.
 - `src/Controller`: HTTP endpoints for locator operations and status/metrics.
 - `config/routes`: route declarations for API endpoints.
