@@ -1,21 +1,22 @@
 <?php
+
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 
 namespace App\Tests\Bundle;
 
-use App\Bundle\DependencyInjection\AppLocatorExtension;
+use App\Bundle\DependencyInjection\SmartResponsorLocatorExtension;
 use App\Integration\LocatorConfig;
 use App\Integration\LocatorSelector;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-final class AppLocatorExtensionTest extends TestCase
+final class SmartResponsorLocatorExtensionTest extends TestCase
 {
     public function testExtensionRegistersConfigAndSelectorUsingValidatedConfigTree(): void
     {
         $container = new ContainerBuilder();
-        $extension = new AppLocatorExtension();
+        $extension = new SmartResponsorLocatorExtension();
 
         $extension->load([
             [

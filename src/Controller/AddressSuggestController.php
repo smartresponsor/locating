@@ -1,14 +1,14 @@
 <?php
+
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-
 
 namespace App\Controller;
 
 use App\ControllerInterface\AddressSuggestControllerInterface;
-use App\ServiceInterface\AddressSuggestInterface;
-use App\ServiceInterface\AddressQuotaGuardInterface;
 use App\Service\AddressQuotaGuard;
+use App\ServiceInterface\AddressQuotaGuardInterface;
+use App\ServiceInterface\AddressSuggestInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -51,7 +51,13 @@ final class AddressSuggestController implements AddressSuggestControllerInterfac
 
         $result = [];
         foreach ($items as $item) {
-            $result[] = $item->toArray();
+            $result[] = [
+                'label' => $item->label(),
+                'address' => $item->addressData()->toArray(),
+                'providerKey' => $item->providerKey(),
+                'score' => $item->score(),
+                'rankReason' => $item->rankReason(),
+            ];
         }
 
         return new JsonResponse(['items' => $result]);

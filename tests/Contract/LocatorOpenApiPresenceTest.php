@@ -1,7 +1,7 @@
 <?php
+
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-
 
 namespace App\Tests\Contract;
 
@@ -11,7 +11,7 @@ final class LocatorOpenApiPresenceTest extends TestCase
 {
     public function testOpenApiFileExistsAndContainsCorePaths(): void
     {
-        $path = __DIR__ . '/../../../openapi/locator-v1.yaml';
+        $path = dirname(__DIR__, 2) . '/openapi/locator-v1.yaml';
 
         self::assertFileExists($path, 'OpenAPI contract file must exist');
 

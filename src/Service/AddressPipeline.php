@@ -1,7 +1,7 @@
 <?php
+
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-
 
 namespace App\Service;
 
@@ -44,5 +44,10 @@ final class AddressPipeline implements AddressPipelineInterface
         }
 
         return $this->geocodeBridge->enrich($normalized, $result);
+    }
+
+    public function handle(AddressInput $input): AddressResult
+    {
+        return $this->process($input);
     }
 }

@@ -16,7 +16,7 @@ if (PHP_SAPI !== 'cli') {
  * It sends HTTP requests to a running Locator instance using the golden
  * fixture set defined in:
  *
- *   tests/Locator/Fixture/address-golden.ndjson
+ *   tests/Fixture/address-golden.ndjson
  *
  * Usage:
  *   php tools/locator-fixtures-run.php
@@ -26,10 +26,12 @@ if (PHP_SAPI !== 'cli') {
  *   LOCATOR_TENANT     Tenant id header (default: demo)
  */
 
-$baseUrl = getenv('LOCATOR_BASE_URL') ?: 'http://localhost:8000';
-$tenant = getenv('LOCATOR_TENANT') ?: 'demo';
+$baseUrl = getenv('LOCATOR_BASE_URL');
+$tenant = getenv('LOCATOR_TENANT');
+$baseUrl = is_string($baseUrl) && $baseUrl !== '' ? $baseUrl : 'http://localhost:8000';
+$tenant = is_string($tenant) && $tenant !== '' ? $tenant : 'demo';
 
-$fixturePath = __DIR__ . '/../tests/Locator/Fixture/address-golden.ndjson';
+$fixturePath = __DIR__ . '/../tests/Fixture/address-golden.ndjson';
 
 if (!is_file($fixturePath)) {
     fwrite(STDERR, "Fixture file not found: {$fixturePath}\n");
@@ -53,6 +55,7 @@ while (($line = fgets($handle)) !== false) {
     }
 
     $index++;
+    /** @var array{id?: mixed, kind?: mixed, input?: array<string, mixed>} $record */
     $record = json_decode($line, true, 512, JSON_THROW_ON_ERROR);
 
     $id = $record['id'] ?? (string)$index;
@@ -108,6 +111,9 @@ while (($line = fgets($handle)) !== false) {
 
 fclose($handle);
 
+/**
+ * @param array<string, mixed> $input
+ */
 function build_url(string $baseUrl, string $kind, array $input): string
 {
     $baseUrl = rtrim($baseUrl, '/');

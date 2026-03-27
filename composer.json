@@ -19,15 +19,34 @@
     "symfony/routing": "^7.2"
   },
   "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.89",
     "phpstan/phpstan": "^2.1",
-    "phpunit/phpunit": "^10.0"
+    "phpunit/phpunit": "^10.0",
+    "symfony/panther": "^2.2"
   },
   "minimum-stability": "stable",
   "prefer-stable": true,
   "scripts": {
-    "lint": "php -l src/Controller/Locator/StatusController.php",
-    "stan": "php vendor/bin/phpstan analyse -c phpstan.neon",
+    "lint": [
+      "@php -r '$paths=[\"src\",\"tests\",\"tools\",\"public\",\"config\"]; $rii=new RecursiveIteratorIterator(new RecursiveDirectoryIterator(getcwd())); foreach($rii as $file){ if(!$file->isFile() || $file->getExtension() !== \"php\"){ continue; } $path=str_replace(\"\\\\\", \"/\", $file->getPathname()); $ok=false; foreach($paths as $prefix){ if(str_starts_with($path, getcwd().\"/\".$prefix.\"/\")){ $ok=true; break; } } if($ok){ passthru(\"php -l \".escapeshellarg($path), $code); if($code !== 0){ exit($code); } } }'"
+    ],
+    "stan": "bash bin/phpstan.sh",
     "test": "php vendor/bin/phpunit -c phpunit.xml.dist",
-    "test:locator": "php vendor/bin/phpunit -c phpunit.xml.dist tests/Locator"
+    "test:unit": "php vendor/bin/phpunit -c phpunit.xml.dist --testsuite locator-unit",
+    "test:integration": "php vendor/bin/phpunit -c phpunit.xml.dist --testsuite locator-integration",
+    "test:contract": "php vendor/bin/phpunit -c phpunit.xml.dist --testsuite locator-contract",
+    "test:smoke": "php vendor/bin/phpunit -c phpunit.xml.dist --testsuite locator-smoke",
+    "test:panther": "bash bin/panther-test.sh",
+    "cs:check": "bash bin/cs-check.sh",
+    "cs:fix": "bash bin/cs-fix.sh",
+    "server:start": "bash bin/server-start.sh",
+    "server:stop": "bash bin/server-stop.sh",
+    "docker:build": "docker compose build",
+    "docker:up": "docker compose up -d --build",
+    "docker:down": "docker compose down --remove-orphans",
+    "fixtures:dry-run": "php tools/locator-fixtures-run.php",
+    "fixtures:docker:dry-run": "docker compose exec -T app env LOCATOR_BASE_URL=http://127.0.0.1:8000 php tools/locator-fixtures-run.php",
+    "e2e": "npx playwright test --project=chromium",
+    "test:locator": "@test"
   }
 }

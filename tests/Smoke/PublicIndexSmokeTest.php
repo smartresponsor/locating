@@ -1,4 +1,5 @@
 <?php
+
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 
@@ -12,7 +13,7 @@ final class PublicIndexSmokeTest extends TestCase
 {
     public function testPublicIndexReturnsJsonContract(): void
     {
-        $command = sprintf('%s %s', escapeshellarg(PHP_BINARY), escapeshellarg(__DIR__ . '/../../../public/index.php'));
+        $command = sprintf('%s %s', escapeshellarg(PHP_BINARY), escapeshellarg(dirname(__DIR__, 2) . '/public/index.php'));
         $output = shell_exec($command);
 
         self::assertNotNull($output);

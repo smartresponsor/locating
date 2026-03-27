@@ -1,4 +1,5 @@
 <?php
+
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 
@@ -11,8 +12,8 @@ final class RouteControllerWiringTest extends TestCase
     public function testEveryConfiguredControllerClassExists(): void
     {
         $controllers = array_merge(
-            $this->controllersFromYamlRoutes(__DIR__ . '/../../../config/routes'),
-            $this->controllersFromPhpRoutes(__DIR__ . '/../../../config/routes')
+            $this->controllersFromYamlRoutes(dirname(__DIR__, 2) . '/config/routes'),
+            $this->controllersFromPhpRoutes(dirname(__DIR__, 2) . '/config/routes')
         );
 
         self::assertNotEmpty($controllers, 'No controllers found in route configuration.');
@@ -69,7 +70,7 @@ final class RouteControllerWiringTest extends TestCase
 
             if (preg_match_all('/->controller\(\s*[\"\']([^\"\']+)[\"\']\s*\)/', $content, $matches) > 0) {
                 foreach ($matches[1] as $controller) {
-                    $controllers[] = $controller;
+                    $controllers[] = stripcslashes($controller);
                 }
             }
         }

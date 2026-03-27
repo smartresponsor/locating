@@ -1,0 +1,13 @@
+{
+  "name": "locator-local-tooling",
+  "private": true,
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "chrome-devtools-mcp": "^0.20.3",
+    "chromedriver": "^142.0.3"
+  },
+  "scripts": {
+    "e2e": "playwright test --project=chromium",
+    "mcp:chrome": "chrome-devtools-mcp --headless --isolated --no-usage-statistics --no-performance-crux"
+  }
+}

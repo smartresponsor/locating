@@ -1,7 +1,7 @@
 <?php
+
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-
 
 namespace App\Tests\Status;
 
@@ -39,4 +39,3 @@ final class MetricsControllerTest extends TestCase
         self::assertStringContainsString('locator_request_error_rate{operation="address_pipeline"}', $body);
     }
 }
-

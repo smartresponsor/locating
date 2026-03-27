@@ -1,14 +1,13 @@
 <?php
+
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-
 
 namespace App\Controller;
 
 use App\ControllerInterface\AddressReverseControllerInterface;
-use App\ServiceInterface\AddressReverseInterface;
 use App\ServiceInterface\AddressQuotaGuardInterface;
-use App\Service\AddressQuotaGuard;
+use App\ServiceInterface\AddressReverseInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -17,6 +16,8 @@ use Symfony\Component\HttpFoundation\Request;
  */
 final class AddressReverseController implements AddressReverseControllerInterface
 {
+    private const OPERATION_REVERSE = 'reverse';
+
     public function __construct(
         private AddressReverseInterface $reverseService,
         private ?AddressQuotaGuardInterface $quotaGuard = null
@@ -50,7 +51,7 @@ final class AddressReverseController implements AddressReverseControllerInterfac
         }
 
         if ($this->quotaGuard !== null) {
-            $allowed = $this->quotaGuard->isAllowed(AddressQuotaGuard::OPERATION_REVERSE);
+            $allowed = $this->quotaGuard->isAllowed(self::OPERATION_REVERSE);
             if (!$allowed) {
                 return new JsonResponse(
                     ['quotaExceeded' => true],

@@ -1,0 +1,14 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: deploy/docker/Dockerfile
+    ports:
+      - "9081:8000"
+    volumes:
+      - ./:/app
+    working_dir: /app
+    environment:
+      APP_ENV: dev
+      LOCATOR_DEFAULT_TENANT: demo
+      PHP_INI_SCAN_DIR: /usr/local/etc/php/conf.d

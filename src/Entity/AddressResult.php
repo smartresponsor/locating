@@ -1,7 +1,7 @@
 <?php
+
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-
 
 namespace App\Entity;
 
@@ -84,5 +84,33 @@ final class AddressResult implements AddressResultInterface
                 : null,
             'providerKey' => $this->providerKey,
         ];
+    }
+
+    public function componentValue(string $key): ?string
+    {
+        if ($this->addressData === null) {
+            return null;
+        }
+
+        return $this->addressData->toArray()[$key] ?? null;
+    }
+
+    public function normalizedLine(): ?string
+    {
+        if ($this->addressData === null) {
+            return null;
+        }
+
+        $parts = [
+            $this->addressData->street(),
+            $this->addressData->city(),
+            $this->addressData->region(),
+            $this->addressData->postalCode(),
+            $this->addressData->countryCode(),
+        ];
+
+        $parts = array_values(array_filter($parts, static fn (string $part): bool => $part !== ''));
+
+        return $parts === [] ? null : implode(', ', $parts);
     }
 }

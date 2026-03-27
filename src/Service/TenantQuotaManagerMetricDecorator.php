@@ -1,12 +1,12 @@
 <?php
+
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 
-
 namespace App\Service;
 
-use App\Domain\TenantQuotaManagerInterface;
 use App\InfrastructureInterface\MetricRecorderInterface;
+use App\ServiceInterface\TenantQuotaManagerInterface;
 
 /**
  * Decorator for TenantQuotaManagerInterface that records basic counters

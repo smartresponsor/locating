@@ -1,0 +1,2 @@
+{"status":"verified","address":{"street":"Main Street 1","city":"Austin","region":"TX","postalCode":"78701","countryCode":"US"},"issues":[],"geoPoint":{"latitude":30.2672,"longitude":-97.7431},"providerKey":"fixture-provider"}
+{"status":"partial","address":{"street":"Main Street 1","city":"Austin","region":"","postalCode":"","countryCode":"US"},"issues":[{"field":"postalCode","code":"missing","message":"postalCode is required"}],"geoPoint":null,"providerKey":null}

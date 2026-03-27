@@ -1,4 +1,5 @@
 <?php
+
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 /**
@@ -24,7 +25,7 @@ final class AddressParserGeneric implements AddressParserCountryStrategyInterfac
         $trimmed = \trim($rawLine);
 
         if ($trimmed === '') {
-            return new AddressData(null, null, null, null, null, null, null);
+            return new AddressData('', '', '', '', '');
         }
 
         $parts = \array_values(
@@ -56,14 +57,13 @@ final class AddressParserGeneric implements AddressParserCountryStrategyInterfac
         }
 
         return new AddressData(
-            $countryCode,
-            $region,
-            $city,
-            $postalCode,
-            $street,
+            $street ?? '',
+            $city ?? '',
+            $region ?? '',
+            $postalCode ?? '',
+            $countryCode ?? '',
             $house,
             $unit
         );
     }
 }
-

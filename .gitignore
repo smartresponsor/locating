@@ -1,18 +1,24 @@
 # Composer
 /vendor/
-composer.lock
+/node_modules/
 
 # Logs and caches
 /var/logs/
+/var/log/
 /var/cache/
 /var/sessions/
+/var/run/
 /build/
 /coverage/
 /allure-results/
 /allure-report/
+/playwright-report/
+/test-results/
 
 # PHPUnit
 .phpunit.result.cache
+.phpunit.cache/
+.php-cs-fixer.cache
 
 # IDE and editors
 /.idea/

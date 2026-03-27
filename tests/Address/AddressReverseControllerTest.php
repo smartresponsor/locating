@@ -1,7 +1,7 @@
 <?php
+
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
-
 
 namespace App\Tests\Address;
 
@@ -10,7 +10,6 @@ use App\Entity\AddressData;
 use App\Entity\AddressResult;
 use App\Entity\AddressStatus;
 use App\Entity\GeoPoint;
-use App\Service\AddressQuotaGuard;
 use App\ServiceInterface\AddressQuotaGuardInterface;
 use App\ServiceInterface\AddressReverseInterface;
 use PHPUnit\Framework\TestCase;
@@ -34,7 +33,7 @@ final class AddressReverseControllerTest extends TestCase
     {
         $service = $this->createStub(AddressReverseInterface::class);
 
-        $quotaGuard = new class() implements AddressQuotaGuardInterface {
+        $quotaGuard = new class () implements AddressQuotaGuardInterface {
             public function isAllowed(string $operation): bool
             {
                 return false;
@@ -56,7 +55,7 @@ final class AddressReverseControllerTest extends TestCase
 
     public function testSuccessfulReverseReturnsPayload(): void
     {
-        $service = new class() implements AddressReverseInterface {
+        $service = new class () implements AddressReverseInterface {
             public function reverse(float $latitude, float $longitude, ?string $countryCode = null): AddressResult
             {
                 $data = AddressData::fromArray([

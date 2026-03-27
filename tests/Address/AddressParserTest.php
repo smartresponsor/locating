@@ -1,4 +1,5 @@
 <?php
+
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 
@@ -53,4 +54,3 @@ final class AddressParserTest extends TestCase
         $this->assertSame('Main Street 1', $data->street());
     }
 }
-

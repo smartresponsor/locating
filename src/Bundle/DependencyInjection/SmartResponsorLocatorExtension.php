@@ -1,4 +1,5 @@
 <?php
+
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 
@@ -11,7 +12,7 @@ use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Reference;
 
-final class AppLocatorExtension extends Extension
+final class SmartResponsorLocatorExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container): void
     {

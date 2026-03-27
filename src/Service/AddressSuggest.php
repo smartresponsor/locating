@@ -1,11 +1,10 @@
 <?php
+
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 
-
 namespace App\Service;
 
-use App\EntityInterface\AddressSuggestionInterface;
 use App\InfrastructureInterface\AddressSuggestProviderInterface;
 use App\ServiceInterface\AddressSuggestInterface;
 

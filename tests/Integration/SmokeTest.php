@@ -1,4 +1,5 @@
 <?php
+
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 
@@ -12,16 +13,14 @@ final class SmokeTest extends TestCase
 {
     public function testLocatorFixturesRunnerWorksAgainstLocalHarness(): void
     {
-        $port = 18080;
-        $docRoot = realpath(__DIR__ . '/../../../public');
-        self::assertNotFalse($docRoot);
+        $port = $this->reserveFreePort();
+        $projectRoot = dirname(__DIR__, 2);
 
         $serverCommand = sprintf(
-            '%s -S 127.0.0.1:%d -t %s %s',
+            '%s -S 127.0.0.1:%d %s',
             escapeshellarg(PHP_BINARY),
             $port,
-            escapeshellarg($docRoot),
-            escapeshellarg($docRoot . '/index.php'),
+            escapeshellarg($projectRoot . '/router.php'),
         );
 
         $descriptorSpec = [
@@ -30,13 +29,13 @@ final class SmokeTest extends TestCase
             2 => ['file', 'php://temp', 'w+'],
         ];
 
-        $serverProcess = proc_open($serverCommand, $descriptorSpec, $serverPipes);
+        $serverProcess = proc_open($serverCommand, $descriptorSpec, $serverPipes, $projectRoot);
         self::assertIsResource($serverProcess);
 
         usleep(250000);
 
         try {
-            $runnerCommand = sprintf('%s %s', escapeshellarg(PHP_BINARY), escapeshellarg(__DIR__ . '/../../../tools/locator-fixtures-run.php'));
+            $runnerCommand = sprintf('%s %s', escapeshellarg(PHP_BINARY), escapeshellarg(dirname(__DIR__, 2) . '/tools/locator-fixtures-run.php'));
             $runnerDescriptorSpec = [
                 0 => ['pipe', 'r'],
                 1 => ['pipe', 'w'],
@@ -68,5 +67,19 @@ final class SmokeTest extends TestCase
             proc_terminate($serverProcess);
             proc_close($serverProcess);
         }
+    }
+
+    private function reserveFreePort(): int
+    {
+        $socket = stream_socket_server('tcp://127.0.0.1:0', $errno, $errorMessage);
+        self::assertNotFalse($socket, $errorMessage);
+
+        $address = stream_socket_get_name($socket, false);
+        fclose($socket);
+
+        self::assertIsString($address);
+        $parts = explode(':', $address);
+
+        return (int) end($parts);
     }
 }
