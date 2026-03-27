@@ -7,7 +7,10 @@
     "psr-4": {
       "App\\": "src/",
       "Smartresponsor\\": "src/"
-    }
+    },
+    "classmap": [
+      "src/"
+    ]
   },
   "require": {
     "php": "^8.4",
@@ -31,17 +34,36 @@
   "prefer-stable": true,
   "scripts": {
     "lint": [
-      "php -l src/Service/Address/Location/AddressSuggestCapability.php",
-      "php -l src/Service/Address/Location/AddressReverseCapability.php",
+      "php -l src/Service/Address/AddressSuggestCapability.php",
+      "php -l src/Service/Address/AddressReverseCapability.php",
       "php -l .gate/check/location-protocol-canon.php"
     ],
     "stan": "phpstan analyse -c phpstan.neon",
     "test": "phpunit -c phpunit.xml.dist",
+    "test:security:symfony": "phpunit -c phpunit.xml.dist --testsuite security",
     "test:locator": "phpunit -c phpunit.xml.dist tests/Locator",
     "canon": "php .gate/check/location-protocol-canon.php",
     "test:location": "phpunit -c phpunit.xml.dist",
     "bridge:squeeze": "php .gate/check/location-bridge-squeeze.php",
-    "bridge:shutdown:readiness": "php .gate/check/location-bridge-shutdown-readiness.php"
+    "bridge:shutdown:readiness": "php .gate/check/location-bridge-shutdown-readiness.php",
+    "security:composer-audit": "composer audit --locked --format=plain",
+    "security:importmap-audit": "@php tools/security/importmap-audit.php",
+    "security:gitleaks": "@php tools/security/gitleaks-scan.php",
+    "security:semgrep": "@php tools/security/semgrep-scan.php",
+    "pipeline:local:full": [
+      "composer validate --strict",
+      "@lint",
+      "@stan",
+      "@test",
+      "@test:security:symfony",
+      "@security:composer-audit",
+      "@security:importmap-audit",
+      "@security:gitleaks",
+      "@security:semgrep",
+      "@canon",
+      "@bridge:squeeze",
+      "@bridge:shutdown:readiness"
+    ]
   },
   "autoload-dev": {
     "psr-4": {

@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace App\Command\Geo;
 
-use App\ServiceInterface\Http\Location\AddressReverseServiceInterface;
+use App\ServiceInterface\Http\Location\LocationAddressReverseServiceInterface;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -19,7 +19,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 #[AsCommand(name: 'location:reverse', description: 'Reverse-geocode a point into the canonical location payload.')]
 final class LocationReverseCommand extends Command
 {
-    public function __construct(private readonly AddressReverseServiceInterface $addressReverseService)
+    public function __construct(private readonly LocationAddressReverseServiceInterface $addressReverseService)
     {
         parent::__construct();
     }

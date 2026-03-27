@@ -16,8 +16,8 @@ declare(strict_types=1);
 namespace Smartresponsor\Service\Locator\Provider;
 
 use App\Bridge\Legacy\Service\Location\NominatimProviderLegacyInterface;
-use Smartresponsor\Domain\Locator\Config\Env;
 use Smartresponsor\Infrastructure\Locator\Http\HttpClient;
+use Smartresponsor\Service\Locator\Config\Env;
 
 class NominatimProvider implements NominatimProviderLegacyInterface
 {
@@ -53,7 +53,7 @@ class NominatimProvider implements NominatimProviderLegacyInterface
                 'lon' => isset($it['lon']) ? (float) $it['lon'] : null, 'source' => 'nominatim', 'confidence' => (float) ($it['importance'] ?? 0.4)];
         }
 
-return $out;
+        return $out;
     }
 
     public function reverse(float $lat, float $lon): array
@@ -81,6 +81,6 @@ return $out;
                 'lat' => $r['lat'] ?? null, 'lon' => $r['lon'] ?? null, 'score' => $r['confidence'] ?? 0.5];
         }
 
-return $out;
+        return $out;
     }
 }

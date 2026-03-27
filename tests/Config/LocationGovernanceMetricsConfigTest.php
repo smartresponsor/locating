@@ -15,7 +15,7 @@ final class LocationGovernanceMetricsConfigTest extends TestCase
 
         self::assertStringContainsString('/location/governance/metrics', $routes);
         self::assertStringContainsString('GovernanceMetricsController', $routes);
-        self::assertStringContainsString('ProviderGovernanceMetricsExportServiceInterface::class', $services);
-        self::assertStringContainsString('ProviderGovernanceMetricsExportService::class', $services);
+        self::assertStringContainsString('LocationProviderGovernanceMetricsExportServiceInterface::class', $services);
+        self::assertStringContainsString('LocationProviderGovernanceMetricsExportService::class', $services);
     }
 }

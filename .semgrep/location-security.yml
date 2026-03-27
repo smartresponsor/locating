@@ -1,0 +1,24 @@
+rules:
+  - id: php-dangerous-eval
+    message: Avoid eval in application code.
+    languages: [php]
+    severity: ERROR
+    patterns:
+      - pattern: eval(...)
+  - id: php-dangerous-shell-exec
+    message: Avoid shell command execution in application code.
+    languages: [php]
+    severity: ERROR
+    patterns:
+      - pattern-either:
+          - pattern: shell_exec(...)
+          - pattern: exec(...)
+          - pattern: system(...)
+          - pattern: passthru(...)
+          - pattern: proc_open(...)
+  - id: php-dangerous-unserialize
+    message: Avoid unserialize on untrusted data.
+    languages: [php]
+    severity: ERROR
+    patterns:
+      - pattern: unserialize(...)

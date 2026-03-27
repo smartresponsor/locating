@@ -7,7 +7,7 @@ namespace Tests\Controller\Http;
 use App\Controller\Http\Location\GovernanceAcknowledgementController;
 use App\Entity\Location\ProviderGovernanceAcknowledgement;
 use App\Entity\Location\ProviderGovernanceAcknowledgementReport;
-use App\ServiceInterface\Observability\Location\ProviderGovernanceAcknowledgementServiceInterface;
+use App\ServiceInterface\Observability\Location\LocationProviderGovernanceAcknowledgementServiceInterface;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -15,7 +15,7 @@ final class GovernanceAcknowledgementControllerTest extends TestCase
 {
     public function testReturnsGovernanceAcknowledgementPayload(): void
     {
-        $service = new class implements ProviderGovernanceAcknowledgementServiceInterface {
+        $service = new class implements LocationProviderGovernanceAcknowledgementServiceInterface {
             public function acknowledge(array $payload): \App\EntityInterface\Location\ProviderGovernanceAcknowledgementReportInterface
             {
                 return new ProviderGovernanceAcknowledgementReport('location', [

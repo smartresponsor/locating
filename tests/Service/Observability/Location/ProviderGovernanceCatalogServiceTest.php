@@ -7,17 +7,17 @@ namespace Tests\Service\Observability\Location;
 use App\Entity\Location\ProviderCostSignal;
 use App\Entity\Location\ProviderHealthSignal;
 use App\Entity\Location\ProviderQuotaSignal;
-use App\Service\Observability\Location\ProviderGovernanceCatalogService;
+use App\Service\Observability\Location\LocationProviderGovernanceCatalogService;
 use App\ServiceInterface\Provider\Location\ProviderCostSignalReaderInterface;
 use App\ServiceInterface\Provider\Location\ProviderHealthSignalReaderInterface;
 use App\ServiceInterface\Provider\Location\ProviderQuotaSignalReaderInterface;
 use PHPUnit\Framework\TestCase;
 
-final class ProviderGovernanceCatalogServiceTest extends TestCase
+final class LocationProviderGovernanceCatalogServiceTest extends TestCase
 {
     public function testItBuildsGovernanceCatalog(): void
     {
-        $service = new ProviderGovernanceCatalogService(
+        $service = new LocationProviderGovernanceCatalogService(
             new class implements ProviderHealthSignalReaderInterface {
                 public function read(string $sourceKey): \App\EntityInterface\Location\ProviderHealthSignalInterface
                 {

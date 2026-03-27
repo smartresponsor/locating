@@ -8,15 +8,15 @@ use App\Entity\Location\AddressBatchJob;
 use App\Entity\Location\AddressBatchJobStatus;
 use App\EntityInterface\Location\AddressBatchJobInterface;
 use App\InfrastructureInterface\Provider\Location\LocationMetricRecorderInterface;
-use App\Service\Batch\Location\AddressBatchServiceMetricDecorator;
-use App\ServiceInterface\Batch\Location\AddressBatchServiceInterface;
+use App\Service\Batch\Location\LocationAddressBatchServiceMetricDecorator;
+use App\ServiceInterface\Batch\Location\LocationAddressBatchServiceInterface;
 use PHPUnit\Framework\TestCase;
 
-final class AddressBatchServiceMetricDecoratorTest extends TestCase
+final class LocationAddressBatchServiceMetricDecoratorTest extends TestCase
 {
     public function testCreateJobRecordsSuccessMetrics(): void
     {
-        $inner = new class implements AddressBatchServiceInterface {
+        $inner = new class implements LocationAddressBatchServiceInterface {
             public function createJob(string $tenantId, array $itemList): AddressBatchJobInterface
             {
                 return new AddressBatchJob('job-1', 'tenant-demo', AddressBatchJobStatus::PENDING, 0, 0, new \DateTimeImmutable(), new \DateTimeImmutable());
@@ -34,7 +34,7 @@ final class AddressBatchServiceMetricDecoratorTest extends TestCase
         };
 
         $recorder = new BatchMetricRecorderSpy();
-        $decorator = new AddressBatchServiceMetricDecorator($inner, $recorder);
+        $decorator = new LocationAddressBatchServiceMetricDecorator($inner, $recorder);
 
         $job = $decorator->createJob('tenant-demo', []);
 
@@ -45,7 +45,7 @@ final class AddressBatchServiceMetricDecoratorTest extends TestCase
 
     public function testCreateJobRecordsErrorMetrics(): void
     {
-        $inner = new class implements AddressBatchServiceInterface {
+        $inner = new class implements LocationAddressBatchServiceInterface {
             public function createJob(string $tenantId, array $itemList): AddressBatchJobInterface
             {
                 throw new \RuntimeException('fail');
@@ -63,7 +63,7 @@ final class AddressBatchServiceMetricDecoratorTest extends TestCase
         };
 
         $recorder = new BatchMetricRecorderSpy();
-        $decorator = new AddressBatchServiceMetricDecorator($inner, $recorder);
+        $decorator = new LocationAddressBatchServiceMetricDecorator($inner, $recorder);
 
         $this->expectException(\RuntimeException::class);
         try {

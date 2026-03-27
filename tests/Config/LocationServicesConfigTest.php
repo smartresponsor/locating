@@ -13,8 +13,8 @@ final class LocationServicesConfigTest extends TestCase
         $content = file_get_contents(__DIR__.'/../../config/services.php');
         self::assertIsString($content);
 
-        self::assertStringContainsString('AddressSuggestServiceInterface::class, AddressSuggestService::class', $content);
-        self::assertStringContainsString('AddressReverseServiceInterface::class, AddressReverseService::class', $content);
+        self::assertStringContainsString('LocationAddressSuggestServiceInterface::class, LocationAddressSuggestService::class', $content);
+        self::assertStringContainsString('LocationAddressReverseServiceInterface::class, LocationAddressReverseService::class', $content);
         self::assertStringContainsString('AddressSuggestCapabilityInterface::class, AddressSuggestCapability::class', $content);
         self::assertStringContainsString('AddressReverseCapabilityInterface::class, AddressReverseCapability::class', $content);
         self::assertStringContainsString('AddressSuggestionProviderInterface::class, OrderedAddressSuggestionProvider::class', $content);

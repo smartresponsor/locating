@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
@@ -6,5 +7,9 @@ declare(strict_types=1);
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace Smartresponsor\LayerInterface\Domaine;
-interface RetentionInterface { public function policy(): array; }
+namespace Smartresponsor\ServiceInterface\Locator;
+
+interface RetentionInterface
+{
+    public function policy(): array;
+}

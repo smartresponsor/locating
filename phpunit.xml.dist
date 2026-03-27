@@ -21,6 +21,9 @@
             <directory suffix="Test.php">tests/Locator/Smoke</directory>
             <file>tests/Locator/Integration/SmokeTest.php</file>
         </testsuite>
+        <testsuite name="security">
+            <directory suffix="Test.php">tests/Security</directory>
+        </testsuite>
     </testsuites>
     <source>
         <include>

@@ -8,7 +8,7 @@ use App\Controller\Http\Location\GovernanceExecutionController;
 use App\Entity\Location\ProviderGovernanceExecutionItem;
 use App\Entity\Location\ProviderGovernanceExecutionReport;
 use App\Entity\Location\ProviderGovernanceExecutionStepStatus;
-use App\ServiceInterface\Observability\Location\ProviderGovernanceExecutionServiceInterface;
+use App\ServiceInterface\Observability\Location\LocationProviderGovernanceExecutionServiceInterface;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -16,7 +16,7 @@ final class GovernanceExecutionControllerTest extends TestCase
 {
     public function testReturnsGovernanceExecutionPayload(): void
     {
-        $service = new class implements ProviderGovernanceExecutionServiceInterface {
+        $service = new class implements LocationProviderGovernanceExecutionServiceInterface {
             public function report(): \App\EntityInterface\Location\ProviderGovernanceExecutionReportInterface
             {
                 return new ProviderGovernanceExecutionReport('location', [

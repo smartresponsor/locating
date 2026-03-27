@@ -7,15 +7,15 @@ namespace Tests\Service\Observability\Location;
 use App\Entity\Location\ProviderGovernanceRemediationPlan;
 use App\Entity\Location\ProviderGovernanceRemediationPlanReport;
 use App\Entity\Location\ProviderGovernanceRemediationStep;
-use App\Service\Observability\Location\ProviderGovernanceExecutionService;
-use App\ServiceInterface\Observability\Location\ProviderGovernanceRemediationPlanServiceInterface;
+use App\Service\Observability\Location\LocationProviderGovernanceExecutionService;
+use App\ServiceInterface\Observability\Location\LocationProviderGovernanceRemediationPlanServiceInterface;
 use PHPUnit\Framework\TestCase;
 
-final class ProviderGovernanceExecutionServiceTest extends TestCase
+final class LocationProviderGovernanceExecutionServiceTest extends TestCase
 {
     public function testBuildsAcknowledgementAwareExecutionState(): void
     {
-        $plans = new class implements ProviderGovernanceRemediationPlanServiceInterface {
+        $plans = new class implements LocationProviderGovernanceRemediationPlanServiceInterface {
             public function report(): \App\EntityInterface\Location\ProviderGovernanceRemediationPlanReportInterface
             {
                 return new ProviderGovernanceRemediationPlanReport('location', [
@@ -32,7 +32,7 @@ final class ProviderGovernanceExecutionServiceTest extends TestCase
             }
         };
 
-        $report = (new ProviderGovernanceExecutionService($plans))->report();
+        $report = (new LocationProviderGovernanceExecutionService($plans))->report();
         self::assertSame('pending-acknowledgement', $report->providers()['alpha']->acknowledgementState());
         self::assertTrue($report->providers()['alpha']->steps()[0]->acknowledgementRequired());
     }

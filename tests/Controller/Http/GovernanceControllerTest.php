@@ -7,7 +7,7 @@ namespace Tests\Controller\Http;
 use App\Controller\Http\Location\GovernanceController;
 use App\Entity\Location\ProviderGovernanceReport;
 use App\Entity\Location\ProviderGovernanceSnapshot;
-use App\ServiceInterface\Observability\Location\ProviderGovernanceReportServiceInterface;
+use App\ServiceInterface\Observability\Location\LocationProviderGovernanceReportServiceInterface;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,8 +16,8 @@ final class GovernanceControllerTest extends TestCase
 {
     public function testControllerReturnsGovernanceReportPayload(): void
     {
-        /** @var ProviderGovernanceReportServiceInterface&MockObject $service */
-        $service = $this->createMock(ProviderGovernanceReportServiceInterface::class);
+        /** @var LocationProviderGovernanceReportServiceInterface&MockObject $service */
+        $service = $this->createMock(LocationProviderGovernanceReportServiceInterface::class);
         $service->method('report')->willReturn(new ProviderGovernanceReport('location', [
             'legacy-suggest' => new ProviderGovernanceSnapshot('legacy-suggest', 'suggest', 0.95, 48.0, true, 0.001),
         ]));

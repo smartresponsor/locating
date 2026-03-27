@@ -5,22 +5,22 @@ declare(strict_types=1);
 namespace Tests\Service\Observability\Location;
 
 use App\Entity\Location\ProviderGovernanceSnapshot;
-use App\Service\Observability\Location\ProviderGovernanceMetricsExportService;
-use App\ServiceInterface\Observability\Location\ProviderGovernanceCatalogServiceInterface;
+use App\Service\Observability\Location\LocationProviderGovernanceMetricsExportService;
+use App\ServiceInterface\Observability\Location\LocationProviderGovernanceCatalogServiceInterface;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
-final class ProviderGovernanceMetricsExportServiceTest extends TestCase
+final class LocationProviderGovernanceMetricsExportServiceTest extends TestCase
 {
     public function testServiceBuildsGovernanceMetrics(): void
     {
-        /** @var ProviderGovernanceCatalogServiceInterface&MockObject $catalog */
-        $catalog = $this->createMock(ProviderGovernanceCatalogServiceInterface::class);
+        /** @var LocationProviderGovernanceCatalogServiceInterface&MockObject $catalog */
+        $catalog = $this->createMock(LocationProviderGovernanceCatalogServiceInterface::class);
         $catalog->method('catalog')->willReturn([
             'legacy-suggest' => new ProviderGovernanceSnapshot('legacy-suggest', 'suggest', 0.82, 58.0, false, 0.004),
         ]);
 
-        $service = new ProviderGovernanceMetricsExportService($catalog);
+        $service = new LocationProviderGovernanceMetricsExportService($catalog);
         $metrics = $service->export()->toPrometheus();
 
         self::assertStringContainsString('locator_provider_success_rate{source="legacy-suggest",operation="suggest"}', $metrics);

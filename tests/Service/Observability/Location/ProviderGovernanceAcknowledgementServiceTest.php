@@ -7,15 +7,15 @@ namespace Tests\Service\Observability\Location;
 use App\Entity\Location\ProviderGovernanceExecutionItem;
 use App\Entity\Location\ProviderGovernanceExecutionReport;
 use App\Entity\Location\ProviderGovernanceExecutionStepStatus;
-use App\Service\Observability\Location\ProviderGovernanceAcknowledgementService;
-use App\ServiceInterface\Observability\Location\ProviderGovernanceExecutionServiceInterface;
+use App\Service\Observability\Location\LocationProviderGovernanceAcknowledgementService;
+use App\ServiceInterface\Observability\Location\LocationProviderGovernanceExecutionServiceInterface;
 use PHPUnit\Framework\TestCase;
 
-final class ProviderGovernanceAcknowledgementServiceTest extends TestCase
+final class LocationProviderGovernanceAcknowledgementServiceTest extends TestCase
 {
     public function testBuildsAcknowledgementOutcomeReport(): void
     {
-        $execution = new class implements ProviderGovernanceExecutionServiceInterface {
+        $execution = new class implements LocationProviderGovernanceExecutionServiceInterface {
             public function report(): \App\EntityInterface\Location\ProviderGovernanceExecutionReportInterface
             {
                 return new ProviderGovernanceExecutionReport('location', [
@@ -30,7 +30,7 @@ final class ProviderGovernanceAcknowledgementServiceTest extends TestCase
             }
         };
 
-        $report = (new ProviderGovernanceAcknowledgementService($execution))->acknowledge([
+        $report = (new LocationProviderGovernanceAcknowledgementService($execution))->acknowledge([
             'acknowledgements' => [
                 'alpha' => [
                     'reduce-traffic-share' => ['outcome' => 'approved', 'note' => 'Proceed.'],

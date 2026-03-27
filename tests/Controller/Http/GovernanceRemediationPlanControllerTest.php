@@ -8,7 +8,7 @@ use App\Controller\Http\Location\GovernanceRemediationPlanController;
 use App\Entity\Location\ProviderGovernanceRemediationPlan;
 use App\Entity\Location\ProviderGovernanceRemediationPlanReport;
 use App\Entity\Location\ProviderGovernanceRemediationStep;
-use App\ServiceInterface\Observability\Location\ProviderGovernanceRemediationPlanServiceInterface;
+use App\ServiceInterface\Observability\Location\LocationProviderGovernanceRemediationPlanServiceInterface;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -16,7 +16,7 @@ final class GovernanceRemediationPlanControllerTest extends TestCase
 {
     public function testReturnsRemediationPlanPayload(): void
     {
-        $service = new class implements ProviderGovernanceRemediationPlanServiceInterface {
+        $service = new class implements LocationProviderGovernanceRemediationPlanServiceInterface {
             public function report(): \App\EntityInterface\Location\ProviderGovernanceRemediationPlanReportInterface
             {
                 return new ProviderGovernanceRemediationPlanReport('location', [

@@ -1,19 +1,20 @@
 <?php
+
+declare(strict_types=1);
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  * Owner: Marketing America Corp
- * Author: Oleksandr Tishchenko <dev@smartresponsor.com>
+ * Author: Oleksandr Tishchenko <dev@smartresponsor.com>.
  */
-
 
 namespace Smartresponsor\Infrastructure\Locator\Http;
 
-use Smartresponsor\Domain\Locator\Config\Env;
+use Smartresponsor\Infrastructure\Locator\Cache\RedisCache;
 use Smartresponsor\Service\Locator\Address\AddressParseService;
 use Smartresponsor\Service\Locator\Address\AddressStandardizeService;
+use Smartresponsor\Service\Locator\Config\Env;
 use Smartresponsor\Service\Locator\Locator\LocatorService;
 use Smartresponsor\Service\Locator\Provider\ProviderRouter;
-use Smartresponsor\Infrastructure\Locator\Cache\RedisCache;
 
 class Kernel
 {
@@ -30,56 +31,62 @@ class Kernel
         $standard = new AddressStandardizeService($env);
 
         try {
-            if ($method === 'POST' && $uri === '/parse') {
+            if ('POST' === $method && '/parse' === $uri) {
                 $in = json_decode(file_get_contents('php://input') ?: '{}', true) ?: [];
-                $address = (string)($in['address'] ?? '');
-                $locale = (string)($in['locale'] ?? 'en');
+                $address = (string) ($in['address'] ?? '');
+                $locale = (string) ($in['locale'] ?? 'en');
                 $res = $parse->parse($address, $locale);
                 http_response_code(200);
                 echo json_encode($res);
+
                 return;
             }
-            if ($method === 'POST' && $uri === '/standardize') {
+            if ('POST' === $method && '/standardize' === $uri) {
                 $in = json_decode(file_get_contents('php://input') ?: '{}', true) ?: [];
                 $res = $standard->standardize($in);
                 http_response_code(200);
                 echo json_encode($res);
+
                 return;
             }
-            if ($method === 'GET' && $uri === '/geocode') {
-                $q = (string)($_GET['q'] ?? '');
-                $country = (string)($_GET['country'] ?? '');
+            if ('GET' === $method && '/geocode' === $uri) {
+                $q = (string) ($_GET['q'] ?? '');
+                $country = (string) ($_GET['country'] ?? '');
                 $res = $router->geocode($q, $country);
                 http_response_code(200);
                 echo json_encode(['items' => $res]);
+
                 return;
             }
-            if ($method === 'GET' && $uri === '/reverse') {
-                $lat = (float)($_GET['lat'] ?? 0);
-                $lon = (float)($_GET['lon'] ?? 0);
+            if ('GET' === $method && '/reverse' === $uri) {
+                $lat = (float) ($_GET['lat'] ?? 0);
+                $lon = (float) ($_GET['lon'] ?? 0);
                 $res = $router->reverse($lat, $lon);
                 http_response_code(200);
                 echo json_encode(['items' => $res]);
+
                 return;
             }
-            if ($method === 'GET' && $uri === '/autocomplete') {
-                $q = (string)($_GET['q'] ?? '');
-                $country = (string)($_GET['country'] ?? '');
-                $bbox = (string)($_GET['bbox'] ?? '');
+            if ('GET' === $method && '/autocomplete' === $uri) {
+                $q = (string) ($_GET['q'] ?? '');
+                $country = (string) ($_GET['country'] ?? '');
+                $bbox = (string) ($_GET['bbox'] ?? '');
                 $res = $router->autocomplete($q, $country, $bbox);
                 http_response_code(200);
                 echo json_encode(['suggestions' => $res]);
+
                 return;
             }
-            if ($method === 'GET' && $uri === '/store/search') {
-                $lat = isset($_GET['lat']) ? (float)$_GET['lat'] : null;
-                $lon = isset($_GET['lon']) ? (float)$_GET['lon'] : null;
-                $radius = isset($_GET['radiusMeters']) ? (int)$_GET['radiusMeters'] : 1000;
-                $bbox = (string)($_GET['bbox'] ?? '');
+            if ('GET' === $method && '/store/search' === $uri) {
+                $lat = isset($_GET['lat']) ? (float) $_GET['lat'] : null;
+                $lon = isset($_GET['lon']) ? (float) $_GET['lon'] : null;
+                $radius = isset($_GET['radiusMeters']) ? (int) $_GET['radiusMeters'] : 1000;
+                $bbox = (string) ($_GET['bbox'] ?? '');
                 $service = new LocatorService($cache);
                 $res = $service->search($lat, $lon, $radius, $bbox);
                 http_response_code(200);
                 echo json_encode(['items' => $res]);
+
                 return;
             }
             http_response_code(404);

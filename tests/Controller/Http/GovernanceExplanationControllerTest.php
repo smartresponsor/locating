@@ -7,7 +7,7 @@ namespace Tests\Controller\Http;
 use App\Controller\Http\Location\GovernanceExplanationController;
 use App\Entity\Location\ProviderGovernanceExplanation;
 use App\Entity\Location\ProviderGovernanceExplanationReport;
-use App\ServiceInterface\Observability\Location\ProviderGovernanceExplanationServiceInterface;
+use App\ServiceInterface\Observability\Location\LocationProviderGovernanceExplanationServiceInterface;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,8 +16,8 @@ final class GovernanceExplanationControllerTest extends TestCase
 {
     public function testControllerReturnsGovernanceExplanationPayload(): void
     {
-        /** @var ProviderGovernanceExplanationServiceInterface&MockObject $service */
-        $service = $this->createMock(ProviderGovernanceExplanationServiceInterface::class);
+        /** @var LocationProviderGovernanceExplanationServiceInterface&MockObject $service */
+        $service = $this->createMock(LocationProviderGovernanceExplanationServiceInterface::class);
         $service->method('report')->willReturn(new ProviderGovernanceExplanationReport('location', [
             'legacy-suggest' => new ProviderGovernanceExplanation('legacy-suggest', 'suggest', 'warning', ['unit-cost-high']),
         ]));

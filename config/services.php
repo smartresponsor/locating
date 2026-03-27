@@ -75,25 +75,25 @@ use App\Service\Address\Location\AddressSuggestCapability;
 use App\Service\Address\Location\AddressValidator;
 use App\Service\Address\Location\LocationResultFactory;
 use App\Service\Batch\Location\AddressBatchJobFactory;
-use App\Service\Batch\Location\AddressBatchService;
-use App\Service\Batch\Location\AddressBatchServiceMetricDecorator;
+use App\Service\Batch\Location\LocationAddressBatchService;
+use App\Service\Batch\Location\LocationAddressBatchServiceMetricDecorator;
 use App\Service\Bridge\Batch\Location\LegacyAddressResultFactory;
-use App\Service\Http\Location\AddressReverseService;
-use App\Service\Http\Location\AddressSuggestService;
+use App\Service\Http\Location\LocationAddressReverseService;
+use App\Service\Http\Location\LocationAddressSuggestService;
 use App\Service\Http\Location\LocationQuotaGuard;
 use App\Service\Http\Location\LocationViewFactory;
 use App\Service\Http\Location\SmartresponsorLocationQuotaGuardBackend;
 use App\Service\Observability\Location\LocationMetricsExportService;
+use App\Service\Observability\Location\LocationProviderGovernanceAcknowledgementService;
+use App\Service\Observability\Location\LocationProviderGovernanceAuditService;
+use App\Service\Observability\Location\LocationProviderGovernanceCatalogService;
+use App\Service\Observability\Location\LocationProviderGovernanceExecutionService;
+use App\Service\Observability\Location\LocationProviderGovernanceExplanationService;
+use App\Service\Observability\Location\LocationProviderGovernanceMetricsExportService;
+use App\Service\Observability\Location\LocationProviderGovernanceRecommendationService;
+use App\Service\Observability\Location\LocationProviderGovernanceRemediationPlanService;
+use App\Service\Observability\Location\LocationProviderGovernanceReportService;
 use App\Service\Observability\Location\LocationStatusReportService;
-use App\Service\Observability\Location\ProviderGovernanceAcknowledgementService;
-use App\Service\Observability\Location\ProviderGovernanceAuditService;
-use App\Service\Observability\Location\ProviderGovernanceCatalogService;
-use App\Service\Observability\Location\ProviderGovernanceExecutionService;
-use App\Service\Observability\Location\ProviderGovernanceExplanationService;
-use App\Service\Observability\Location\ProviderGovernanceMetricsExportService;
-use App\Service\Observability\Location\ProviderGovernanceRecommendationService;
-use App\Service\Observability\Location\ProviderGovernanceRemediationPlanService;
-use App\Service\Observability\Location\ProviderGovernanceReportService;
 use App\Service\Provider\Location\AddressReverseResultNormalizer;
 use App\Service\Provider\Location\AddressSuggestionRanker;
 use App\Service\Provider\Location\LegacyAddressReverseProvider;
@@ -121,24 +121,24 @@ use App\ServiceInterface\Address\Location\AddressSuggestCapabilityInterface;
 use App\ServiceInterface\Address\Location\AddressValidatorInterface;
 use App\ServiceInterface\Address\Location\LocationResultFactoryInterface;
 use App\ServiceInterface\Batch\Location\AddressBatchJobFactoryInterface;
-use App\ServiceInterface\Batch\Location\AddressBatchServiceInterface;
+use App\ServiceInterface\Batch\Location\LocationAddressBatchServiceInterface;
 use App\ServiceInterface\Bridge\Batch\Location\LegacyAddressResultFactoryInterface;
-use App\ServiceInterface\Http\Location\AddressReverseServiceInterface;
-use App\ServiceInterface\Http\Location\AddressSuggestServiceInterface;
+use App\ServiceInterface\Http\Location\LocationAddressReverseServiceInterface;
+use App\ServiceInterface\Http\Location\LocationAddressSuggestServiceInterface;
 use App\ServiceInterface\Http\Location\LocationQuotaGuardBackendInterface;
 use App\ServiceInterface\Http\Location\LocationQuotaGuardInterface;
 use App\ServiceInterface\Http\Location\LocationViewFactoryInterface;
 use App\ServiceInterface\Observability\Location\LocationMetricsExportServiceInterface;
+use App\ServiceInterface\Observability\Location\LocationProviderGovernanceAcknowledgementServiceInterface;
+use App\ServiceInterface\Observability\Location\LocationProviderGovernanceAuditServiceInterface;
+use App\ServiceInterface\Observability\Location\LocationProviderGovernanceCatalogServiceInterface;
+use App\ServiceInterface\Observability\Location\LocationProviderGovernanceExecutionServiceInterface;
+use App\ServiceInterface\Observability\Location\LocationProviderGovernanceExplanationServiceInterface;
+use App\ServiceInterface\Observability\Location\LocationProviderGovernanceMetricsExportServiceInterface;
+use App\ServiceInterface\Observability\Location\LocationProviderGovernanceRecommendationServiceInterface;
+use App\ServiceInterface\Observability\Location\LocationProviderGovernanceRemediationPlanServiceInterface;
+use App\ServiceInterface\Observability\Location\LocationProviderGovernanceReportServiceInterface;
 use App\ServiceInterface\Observability\Location\LocationStatusReportServiceInterface;
-use App\ServiceInterface\Observability\Location\ProviderGovernanceAcknowledgementServiceInterface;
-use App\ServiceInterface\Observability\Location\ProviderGovernanceAuditServiceInterface;
-use App\ServiceInterface\Observability\Location\ProviderGovernanceCatalogServiceInterface;
-use App\ServiceInterface\Observability\Location\ProviderGovernanceExecutionServiceInterface;
-use App\ServiceInterface\Observability\Location\ProviderGovernanceExplanationServiceInterface;
-use App\ServiceInterface\Observability\Location\ProviderGovernanceMetricsExportServiceInterface;
-use App\ServiceInterface\Observability\Location\ProviderGovernanceRecommendationServiceInterface;
-use App\ServiceInterface\Observability\Location\ProviderGovernanceRemediationPlanServiceInterface;
-use App\ServiceInterface\Observability\Location\ProviderGovernanceReportServiceInterface;
 use App\ServiceInterface\Provider\Location\AddressReverseProviderInterface;
 use App\ServiceInterface\Provider\Location\AddressReverseResultNormalizerInterface;
 use App\ServiceInterface\Provider\Location\AddressReverseSourceCostPolicyInterface;
@@ -199,19 +199,19 @@ return static function (ContainerConfigurator $container): void {
     $services->alias(LocationViewFactoryInterface::class, LocationViewFactory::class);
     $services->alias(LocationQuotaGuardBackendInterface::class, SmartresponsorLocationQuotaGuardBackend::class);
     $services->alias(LocationQuotaGuardInterface::class, LocationQuotaGuard::class);
-    $services->alias(AddressSuggestServiceInterface::class, AddressSuggestService::class);
-    $services->alias(AddressReverseServiceInterface::class, AddressReverseService::class);
+    $services->alias(LocationAddressSuggestServiceInterface::class, LocationAddressSuggestService::class);
+    $services->alias(LocationAddressReverseServiceInterface::class, LocationAddressReverseService::class);
     $services->alias(LocationStatusReportServiceInterface::class, LocationStatusReportService::class);
     $services->alias(LocationMetricsExportServiceInterface::class, LocationMetricsExportService::class);
-    $services->alias(ProviderGovernanceCatalogServiceInterface::class, ProviderGovernanceCatalogService::class);
-    $services->alias(ProviderGovernanceReportServiceInterface::class, ProviderGovernanceReportService::class);
-    $services->alias(ProviderGovernanceMetricsExportServiceInterface::class, ProviderGovernanceMetricsExportService::class);
-    $services->alias(ProviderGovernanceExplanationServiceInterface::class, ProviderGovernanceExplanationService::class);
-    $services->alias(ProviderGovernanceRecommendationServiceInterface::class, ProviderGovernanceRecommendationService::class);
-    $services->alias(ProviderGovernanceAuditServiceInterface::class, ProviderGovernanceAuditService::class);
-    $services->alias(ProviderGovernanceRemediationPlanServiceInterface::class, ProviderGovernanceRemediationPlanService::class);
-    $services->alias(ProviderGovernanceExecutionServiceInterface::class, ProviderGovernanceExecutionService::class);
-    $services->alias(ProviderGovernanceAcknowledgementServiceInterface::class, ProviderGovernanceAcknowledgementService::class);
+    $services->alias(LocationProviderGovernanceCatalogServiceInterface::class, LocationProviderGovernanceCatalogService::class);
+    $services->alias(LocationProviderGovernanceReportServiceInterface::class, LocationProviderGovernanceReportService::class);
+    $services->alias(LocationProviderGovernanceMetricsExportServiceInterface::class, LocationProviderGovernanceMetricsExportService::class);
+    $services->alias(LocationProviderGovernanceExplanationServiceInterface::class, LocationProviderGovernanceExplanationService::class);
+    $services->alias(LocationProviderGovernanceRecommendationServiceInterface::class, LocationProviderGovernanceRecommendationService::class);
+    $services->alias(LocationProviderGovernanceAuditServiceInterface::class, LocationProviderGovernanceAuditService::class);
+    $services->alias(LocationProviderGovernanceRemediationPlanServiceInterface::class, LocationProviderGovernanceRemediationPlanService::class);
+    $services->alias(LocationProviderGovernanceExecutionServiceInterface::class, LocationProviderGovernanceExecutionService::class);
+    $services->alias(LocationProviderGovernanceAcknowledgementServiceInterface::class, LocationProviderGovernanceAcknowledgementService::class);
     $services->alias(AddressParserInterface::class, AddressParser::class);
     $services->alias(AddressNormalizerInterface::class, AddressNormalizer::class);
     $services->alias(AddressValidatorInterface::class, AddressValidator::class);
@@ -224,7 +224,7 @@ return static function (ContainerConfigurator $container): void {
     $services->alias(AddressBatchResultReaderInterface::class, LegacyAddressBatchResultReader::class);
     $services->alias(AddressBatchJobProgressWriterInterface::class, LegacyAddressBatchJobProgressWriter::class);
     $services->alias(AddressBatchResultWriterInterface::class, LegacyAddressBatchResultWriter::class);
-    $services->alias(AddressBatchServiceInterface::class, AddressBatchServiceMetricDecorator::class);
+    $services->alias(LocationAddressBatchServiceInterface::class, LocationAddressBatchServiceMetricDecorator::class);
     $services->alias(AddressBatchJobRepositoryBackendInterface::class, SmartresponsorAddressBatchJobRepositoryBackend::class);
     $services->alias(AddressBatchResultStorageBackendInterface::class, SmartresponsorAddressBatchResultStorageBackend::class);
     $services->alias(AddressBatchLegacyMessageBusBackendInterface::class, SmartresponsorAddressBatchLegacyMessageBusBackend::class);
@@ -454,16 +454,16 @@ return static function (ContainerConfigurator $container): void {
             service(LegacyAddressResultFactoryInterface::class),
         ]);
 
-    $services->set(AddressBatchService::class)
+    $services->set(LocationAddressBatchService::class)
         ->args([
             service(AddressBatchJobStoreInterface::class),
             service(AddressBatchMessageDispatcherInterface::class),
             service(AddressBatchResultReaderInterface::class),
         ]);
 
-    $services->set(AddressBatchServiceMetricDecorator::class)
+    $services->set(LocationAddressBatchServiceMetricDecorator::class)
         ->args([
-            service(AddressBatchService::class),
+            service(LocationAddressBatchService::class),
             service(LocationMetricRecorderInterface::class),
         ]);
 
@@ -472,13 +472,13 @@ return static function (ContainerConfigurator $container): void {
     $services->set(GovernanceController::class)
         ->public()
         ->args([
-            service(ProviderGovernanceReportServiceInterface::class),
+            service(LocationProviderGovernanceReportServiceInterface::class),
         ]);
 
     $services->set(GovernanceMetricsController::class)
         ->public()
         ->args([
-            service(ProviderGovernanceMetricsExportServiceInterface::class),
+            service(LocationProviderGovernanceMetricsExportServiceInterface::class),
         ]);
 
     $services->set(AppAddressBatchMessageHandler::class)
@@ -493,19 +493,19 @@ return static function (ContainerConfigurator $container): void {
            service(AddressBatchMessageHandlerInterface::class),
        ]);
 
-    $services->set(AddressSuggestService::class)
+    $services->set(LocationAddressSuggestService::class)
         ->args([
             service(AddressSuggestCapabilityInterface::class),
             service(LocationViewFactoryInterface::class),
         ]);
 
-    $services->set(AddressReverseService::class)
+    $services->set(LocationAddressReverseService::class)
         ->args([
             service(AddressReverseCapabilityInterface::class),
             service(LocationViewFactoryInterface::class),
         ]);
 
-    $services->set(ProviderGovernanceCatalogService::class)
+    $services->set(LocationProviderGovernanceCatalogService::class)
         ->args([
             service(ProviderHealthSignalReaderInterface::class),
             service(ProviderQuotaSignalReaderInterface::class),
@@ -516,70 +516,70 @@ return static function (ContainerConfigurator $container): void {
             ],
         ]);
 
-    $services->set(ProviderGovernanceReportService::class)
+    $services->set(LocationProviderGovernanceReportService::class)
         ->args([
-            service(ProviderGovernanceCatalogServiceInterface::class),
+            service(LocationProviderGovernanceCatalogServiceInterface::class),
         ]);
 
-    $services->set(ProviderGovernanceMetricsExportService::class)
+    $services->set(LocationProviderGovernanceMetricsExportService::class)
         ->args([
-            service(ProviderGovernanceCatalogServiceInterface::class),
+            service(LocationProviderGovernanceCatalogServiceInterface::class),
         ]);
 
-    $services->set(ProviderGovernanceExplanationService::class)
+    $services->set(LocationProviderGovernanceExplanationService::class)
         ->args([
-            service(ProviderGovernanceCatalogServiceInterface::class),
+            service(LocationProviderGovernanceCatalogServiceInterface::class),
         ]);
 
-    $services->set(ProviderGovernanceRecommendationService::class)
+    $services->set(LocationProviderGovernanceRecommendationService::class)
         ->args([
-            service(ProviderGovernanceExplanationServiceInterface::class),
+            service(LocationProviderGovernanceExplanationServiceInterface::class),
         ]);
 
-    $services->set(ProviderGovernanceAuditService::class)
+    $services->set(LocationProviderGovernanceAuditService::class)
         ->args([
-            service(ProviderGovernanceExplanationServiceInterface::class),
-            service(ProviderGovernanceRecommendationServiceInterface::class),
+            service(LocationProviderGovernanceExplanationServiceInterface::class),
+            service(LocationProviderGovernanceRecommendationServiceInterface::class),
         ]);
 
-    $services->set(ProviderGovernanceRemediationPlanService::class)
+    $services->set(LocationProviderGovernanceRemediationPlanService::class)
         ->args([
-            service(ProviderGovernanceAuditServiceInterface::class),
+            service(LocationProviderGovernanceAuditServiceInterface::class),
         ]);
 
-    $services->set(ProviderGovernanceExecutionService::class)
+    $services->set(LocationProviderGovernanceExecutionService::class)
         ->args([
-            service(ProviderGovernanceRemediationPlanServiceInterface::class),
+            service(LocationProviderGovernanceRemediationPlanServiceInterface::class),
         ]);
 
-    $services->set(ProviderGovernanceAcknowledgementService::class)
+    $services->set(LocationProviderGovernanceAcknowledgementService::class)
         ->args([
-            service(ProviderGovernanceExecutionServiceInterface::class),
+            service(LocationProviderGovernanceExecutionServiceInterface::class),
         ]);
 
     $services->set(LocationStatusReportService::class)
         ->args([
             service(ProviderMetricSnapshotStoreInterface::class),
-            service(ProviderGovernanceCatalogServiceInterface::class),
+            service(LocationProviderGovernanceCatalogServiceInterface::class),
         ]);
 
     $services->set(LocationMetricsExportService::class)
         ->args([
             service(ProviderMetricSnapshotStoreInterface::class),
-            service(ProviderGovernanceCatalogServiceInterface::class),
+            service(LocationProviderGovernanceCatalogServiceInterface::class),
         ]);
 
     $services->set(AddressSuggestController::class)
         ->public()
         ->args([
-            service(AddressSuggestServiceInterface::class),
+            service(LocationAddressSuggestServiceInterface::class),
             service(LocationQuotaGuardInterface::class),
         ]);
 
     $services->set(AddressReverseController::class)
         ->public()
         ->args([
-            service(AddressReverseServiceInterface::class),
+            service(LocationAddressReverseServiceInterface::class),
             service(LocationQuotaGuardInterface::class),
         ]);
 
@@ -598,36 +598,36 @@ return static function (ContainerConfigurator $container): void {
     $services->set(GovernanceExplanationController::class)
         ->public()
         ->args([
-            service(ProviderGovernanceExplanationServiceInterface::class),
+            service(LocationProviderGovernanceExplanationServiceInterface::class),
         ]);
 
     $services->set(GovernanceRecommendationController::class)
         ->public()
         ->args([
-            service(ProviderGovernanceRecommendationServiceInterface::class),
+            service(LocationProviderGovernanceRecommendationServiceInterface::class),
         ]);
 
     $services->set(GovernanceAuditController::class)
         ->public()
         ->args([
-            service(ProviderGovernanceAuditServiceInterface::class),
+            service(LocationProviderGovernanceAuditServiceInterface::class),
         ]);
 
     $services->set(GovernanceRemediationPlanController::class)
         ->public()
         ->args([
-            service(ProviderGovernanceRemediationPlanServiceInterface::class),
+            service(LocationProviderGovernanceRemediationPlanServiceInterface::class),
         ]);
 
     $services->set(GovernanceExecutionController::class)
         ->public()
         ->args([
-            service(ProviderGovernanceExecutionServiceInterface::class),
+            service(LocationProviderGovernanceExecutionServiceInterface::class),
         ]);
 
     $services->set(GovernanceAcknowledgementController::class)
         ->public()
         ->args([
-            service(ProviderGovernanceAcknowledgementServiceInterface::class),
+            service(LocationProviderGovernanceAcknowledgementServiceInterface::class),
         ]);
 };

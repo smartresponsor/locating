@@ -15,7 +15,7 @@ final class LocationGovernanceConfigTest extends TestCase
 
         self::assertStringContainsString('/location/governance', $routes);
         self::assertStringContainsString('GovernanceController', $routes);
-        self::assertStringContainsString('ProviderGovernanceReportServiceInterface::class', $services);
-        self::assertStringContainsString('ProviderGovernanceReportService::class', $services);
+        self::assertStringContainsString('LocationProviderGovernanceReportServiceInterface::class', $services);
+        self::assertStringContainsString('LocationProviderGovernanceReportService::class', $services);
     }
 }

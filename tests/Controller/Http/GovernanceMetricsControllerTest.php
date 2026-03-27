@@ -6,7 +6,7 @@ namespace Tests\Controller\Http;
 
 use App\Controller\Http\Location\GovernanceMetricsController;
 use App\Entity\Location\ProviderGovernanceMetricSet;
-use App\ServiceInterface\Observability\Location\ProviderGovernanceMetricsExportServiceInterface;
+use App\ServiceInterface\Observability\Location\LocationProviderGovernanceMetricsExportServiceInterface;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,8 +15,8 @@ final class GovernanceMetricsControllerTest extends TestCase
 {
     public function testControllerReturnsGovernanceMetricsPayload(): void
     {
-        /** @var ProviderGovernanceMetricsExportServiceInterface&MockObject $service */
-        $service = $this->createMock(ProviderGovernanceMetricsExportServiceInterface::class);
+        /** @var LocationProviderGovernanceMetricsExportServiceInterface&MockObject $service */
+        $service = $this->createMock(LocationProviderGovernanceMetricsExportServiceInterface::class);
         $service->method('export')->willReturn(new ProviderGovernanceMetricSet('location', [
             '# HELP locator_provider_degraded Locator provider degraded state by source.',
             'locator_provider_degraded{source="legacy-suggest",operation="suggest"} 1',

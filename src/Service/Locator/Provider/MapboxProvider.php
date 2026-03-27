@@ -10,8 +10,8 @@ declare(strict_types=1);
 namespace Smartresponsor\Service\Locator\Provider;
 
 use App\Bridge\Legacy\Service\Location\MapboxProviderLegacyInterface;
-use Smartresponsor\Domain\Locator\Config\Env;
 use Smartresponsor\Infrastructure\Locator\Http\HttpClient;
+use Smartresponsor\Service\Locator\Config\Env;
 
 class MapboxProvider implements MapboxProviderLegacyInterface
 {

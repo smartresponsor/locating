@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
@@ -6,11 +7,17 @@ declare(strict_types=1);
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace Smartresponsor\LayerInterface\Domaine;
-interface RedisClientInterface {
+namespace Smartresponsor\InfrastructureInterface\Locator;
+
+interface RedisClientInterface
+{
     public function incrby(string $key, int $n): int;
+
     public function get(string $key): ?string;
+
     public function expire(string $key, int $ttl): void;
+
     public function pttl(string $key): int;
+
     public function del(string $key): void;
 }

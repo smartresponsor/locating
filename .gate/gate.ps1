@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 param(
     [Parameter(Mandatory = $false)]
@@ -40,23 +39,17 @@ function GateProposalPrint([string]$filePath) {
 $proposalFile = Join-Path $RepoRoot ".report/gate-fix-proposal.ndjson"
 GateProposalInit $proposalFile
 
-# baseline SAFE proposals
 GateProposalAdd $proposalFile @{ op="path.ensure_dir"; level="info"; path=".report"; note="gate suggestion" }
 GateProposalAdd $proposalFile @{ op="chmod.add_x"; level="error"; path=".gate/gate.sh"; note="gate suggestion" }
-
 GateProposalAdd $proposalFile @{ op="file.ensure_exists"; level="error"; path=".gitattributes"; note="gate suggestion" }
 GateProposalAdd $proposalFile @{ op="file.append_lines"; level="error"; path=".gitattributes"; lines=@("* text=auto eol=lf"); note="gate suggestion" }
-
 GateProposalAdd $proposalFile @{ op="file.ensure_exists"; level="error"; path=".gitignore"; note="gate suggestion" }
 GateProposalAdd $proposalFile @{ op="file.append_lines"; level="error"; path=".gitignore"; lines=@(".DS_Store","Thumbs.db","node_modules/","/.env.local","/.env.*.local"); note="gate suggestion" }
-
 GateProposalAdd $proposalFile @{ op="file.ensure_exists"; level="error"; path="README.md"; note="gate suggestion" }
 GateProposalAdd $proposalFile @{ op="file.write_text"; level="error"; path="README.md"; guard="missing_only"; text="# Repo`n`nGate proposal: README created.`n"; note="gate suggestion" }
-
 GateProposalAdd $proposalFile @{ op="file.ensure_exists"; level="error"; path="MANIFEST.json"; note="gate suggestion" }
 GateProposalAdd $proposalFile @{ op="file.write_text"; level="error"; path="MANIFEST.json"; guard="missing_only"; text="{`n  `"name`": `"`",`n  `"version`": `"0.0.0`",`n  `"note`": `"Gate proposal: manifest created`"`n}`n"; note="gate suggestion" }
 
-# mode
 $mode = "consumer"
 if ($env:GITHUB_REPOSITORY -match "/canonization$") {
     $mode = "canon"
@@ -81,7 +74,6 @@ function GateRun([string]$title, [scriptblock]$fn) {
     }
 }
 
-# Contract
 if ($mode -eq "canon") {
     GateRun "root-contract-check" { & (Join-Path $RepoRoot ".gate/contract/ps1/root-contract-check.ps1") -RepoRoot $RepoRoot }
 } else {
@@ -89,8 +81,6 @@ if ($mode -eq "canon") {
 }
 
 GateRun "gitignore-template-check" { & (Join-Path $RepoRoot ".gate/contract/ps1/gitignore-template-check.ps1") -RepoRoot $RepoRoot }
-
-# Linting
 GateRun "copyright-header-check" { & (Join-Path $RepoRoot ".gate/linting/ps1/copyright-header-check.ps1") -RepoRoot $RepoRoot }
 GateRun "layer-mirror-check" { & (Join-Path $RepoRoot ".gate/linting/ps1/layer-mirror-check.ps1") -RepoRoot $RepoRoot }
 GateRun "doc-name-check" { & (Join-Path $RepoRoot ".gate/linting/ps1/doc-name-check.ps1") -RepoRoot $RepoRoot }
@@ -102,34 +92,3 @@ if ($Quality) {
 
 Write-Host "[gate] Gate OK"
 GateProposalPrint $proposalFile
-=======
-\
-# Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
-param(
-  [Parameter(Mandatory=$false)]
-  [Alias('Path')]
-  [string]$RepoRoot = "."
-)
-
-Set-StrictMode -Version Latest
-$ErrorActionPreference = 'Stop'
-
-$resolved = (Resolve-Path -Path $RepoRoot).Path
-
-# If caller passed the .gate folder as root (common when invoked from menu), normalize to parent.
-if ((Split-Path -Leaf $resolved) -eq ".gate") {
-  $resolved = Split-Path -Parent $resolved
-}
-
-if (-not (Get-Command bash -ErrorAction SilentlyContinue)) {
-  throw "bash not found. Install Git for Windows (Git Bash) or provide bash in PATH."
-}
-
-$gateSh = Join-Path $resolved ".gate\gate.sh"
-if (-not (Test-Path -LiteralPath $gateSh -PathType Leaf)) {
-  throw "gate.sh not found at $gateSh"
-}
-
-bash $gateSh $resolved
-exit $LASTEXITCODE
->>>>>>> 94ad96f (first/init commit)

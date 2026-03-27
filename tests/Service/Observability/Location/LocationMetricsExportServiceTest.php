@@ -8,7 +8,7 @@ use App\Entity\Location\ProviderGovernanceSnapshot;
 use App\Entity\Location\ProviderMetricSnapshot;
 use App\Infrastructure\Provider\Location\InMemoryProviderMetricSnapshotStore;
 use App\Service\Observability\Location\LocationMetricsExportService;
-use App\ServiceInterface\Observability\Location\ProviderGovernanceCatalogServiceInterface;
+use App\ServiceInterface\Observability\Location\LocationProviderGovernanceCatalogServiceInterface;
 use PHPUnit\Framework\TestCase;
 
 final class LocationMetricsExportServiceTest extends TestCase
@@ -19,7 +19,7 @@ final class LocationMetricsExportServiceTest extends TestCase
             new InMemoryProviderMetricSnapshotStore([
                 'suggest' => new ProviderMetricSnapshot('suggest', 10, 1, 120.0, 0.1),
             ]),
-            new class implements ProviderGovernanceCatalogServiceInterface {
+            new class implements LocationProviderGovernanceCatalogServiceInterface {
                 public function catalog(): array
                 {
                     return [

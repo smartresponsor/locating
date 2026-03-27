@@ -12,13 +12,13 @@ final class LocationBatchServicesConfigTest extends TestCase
     {
         $contents = (string) file_get_contents(__DIR__.'/../../config/services.php');
 
-        self::assertStringContainsString('use App\\Service\\Batch\\Location\\AddressBatchService;', $contents);
-        self::assertStringContainsString('use App\\Service\\Batch\\Location\\AddressBatchServiceMetricDecorator;', $contents);
-        self::assertStringContainsString('use App\\ServiceInterface\\Batch\\Location\\AddressBatchServiceInterface;', $contents);
+        self::assertStringContainsString('use App\\Service\\Batch\\Location\\LocationAddressBatchService;', $contents);
+        self::assertStringContainsString('use App\\Service\\Batch\\Location\\LocationAddressBatchServiceMetricDecorator;', $contents);
+        self::assertStringContainsString('use App\\ServiceInterface\\Batch\\Location\\LocationAddressBatchServiceInterface;', $contents);
         self::assertStringContainsString('$services->alias(AddressBatchJobFactoryInterface::class, AddressBatchJobFactory::class);', $contents);
-        self::assertStringContainsString('$services->alias(AddressBatchServiceInterface::class, AddressBatchServiceMetricDecorator::class);', $contents);
+        self::assertStringContainsString('$services->alias(LocationAddressBatchServiceInterface::class, LocationAddressBatchServiceMetricDecorator::class);', $contents);
         self::assertStringContainsString("$services->set(AddressBatchJobFactory::class);", $contents);
-        self::assertStringContainsString("$services->set(AddressBatchService::class)", $contents);
-        self::assertStringContainsString("$services->set(AddressBatchServiceMetricDecorator::class)", $contents);
+        self::assertStringContainsString("$services->set(LocationAddressBatchService::class)", $contents);
+        self::assertStringContainsString("$services->set(LocationAddressBatchServiceMetricDecorator::class)", $contents);
     }
 }

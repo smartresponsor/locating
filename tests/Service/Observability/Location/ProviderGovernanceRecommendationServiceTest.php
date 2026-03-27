@@ -6,17 +6,17 @@ namespace Tests\Service\Observability\Location;
 
 use App\Entity\Location\ProviderGovernanceExplanation;
 use App\Entity\Location\ProviderGovernanceExplanationReport;
-use App\Service\Observability\Location\ProviderGovernanceRecommendationService;
-use App\ServiceInterface\Observability\Location\ProviderGovernanceExplanationServiceInterface;
+use App\Service\Observability\Location\LocationProviderGovernanceRecommendationService;
+use App\ServiceInterface\Observability\Location\LocationProviderGovernanceExplanationServiceInterface;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
-final class ProviderGovernanceRecommendationServiceTest extends TestCase
+final class LocationProviderGovernanceRecommendationServiceTest extends TestCase
 {
     public function testServiceMapsReasonsToActions(): void
     {
-        /** @var ProviderGovernanceExplanationServiceInterface&MockObject $explanations */
-        $explanations = $this->createMock(ProviderGovernanceExplanationServiceInterface::class);
+        /** @var LocationProviderGovernanceExplanationServiceInterface&MockObject $explanations */
+        $explanations = $this->createMock(LocationProviderGovernanceExplanationServiceInterface::class);
         $explanations->method('report')->willReturn(new ProviderGovernanceExplanationReport('location', [
             'legacy-suggest' => new ProviderGovernanceExplanation(
                 'legacy-suggest',
@@ -26,7 +26,7 @@ final class ProviderGovernanceRecommendationServiceTest extends TestCase
             ),
         ]));
 
-        $service = new ProviderGovernanceRecommendationService($explanations);
+        $service = new LocationProviderGovernanceRecommendationService($explanations);
         $report = $service->report();
         $payload = $report->toArray();
 

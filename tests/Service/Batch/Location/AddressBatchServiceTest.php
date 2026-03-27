@@ -10,11 +10,11 @@ use App\Infrastructure\Batch\Location\InMemoryAddressBatchMessageBus;
 use App\Infrastructure\Batch\Location\InMemoryAddressBatchRuntimeStore;
 use App\Infrastructure\Batch\Location\MessageBusAddressBatchMessageDispatcher;
 use App\MessageHandler\Batch\Location\AddressBatchMessageHandler;
-use App\Service\Batch\Location\AddressBatchService;
+use App\Service\Batch\Location\LocationAddressBatchService;
 use App\ServiceInterface\Address\Location\AddressPipelineInterface;
 use PHPUnit\Framework\TestCase;
 
-final class AddressBatchServiceTest extends TestCase
+final class LocationAddressBatchServiceTest extends TestCase
 {
     public function testCreateJobAndProcessItemsWithAppOwnedInMemoryRuntime(): void
     {
@@ -34,7 +34,7 @@ final class AddressBatchServiceTest extends TestCase
         $handler = new AddressBatchMessageHandler($pipeline, $runtimeStore, $runtimeStore);
         $messageBus = new InMemoryAddressBatchMessageBus($handler);
 
-        $service = new AddressBatchService(
+        $service = new LocationAddressBatchService(
             $runtimeStore,
             new MessageBusAddressBatchMessageDispatcher($messageBus),
             $runtimeStore,

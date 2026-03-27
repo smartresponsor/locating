@@ -8,16 +8,16 @@ use App\Entity\Location\ProviderGovernanceExplanation;
 use App\Entity\Location\ProviderGovernanceExplanationReport;
 use App\Entity\Location\ProviderGovernanceRecommendation;
 use App\Entity\Location\ProviderGovernanceRecommendationReport;
-use App\Service\Observability\Location\ProviderGovernanceAuditService;
-use App\ServiceInterface\Observability\Location\ProviderGovernanceExplanationServiceInterface;
-use App\ServiceInterface\Observability\Location\ProviderGovernanceRecommendationServiceInterface;
+use App\Service\Observability\Location\LocationProviderGovernanceAuditService;
+use App\ServiceInterface\Observability\Location\LocationProviderGovernanceExplanationServiceInterface;
+use App\ServiceInterface\Observability\Location\LocationProviderGovernanceRecommendationServiceInterface;
 use PHPUnit\Framework\TestCase;
 
-final class ProviderGovernanceAuditServiceTest extends TestCase
+final class LocationProviderGovernanceAuditServiceTest extends TestCase
 {
     public function testBuildsAuditDecisionFromExplanationAndRecommendation(): void
     {
-        $explanations = new class implements ProviderGovernanceExplanationServiceInterface {
+        $explanations = new class implements LocationProviderGovernanceExplanationServiceInterface {
             public function report(): \App\EntityInterface\Location\ProviderGovernanceExplanationReportInterface
             {
                 return new ProviderGovernanceExplanationReport('location', [
@@ -25,7 +25,7 @@ final class ProviderGovernanceAuditServiceTest extends TestCase
                 ]);
             }
         };
-        $recommendations = new class implements ProviderGovernanceRecommendationServiceInterface {
+        $recommendations = new class implements LocationProviderGovernanceRecommendationServiceInterface {
             public function report(): \App\EntityInterface\Location\ProviderGovernanceRecommendationReportInterface
             {
                 return new ProviderGovernanceRecommendationReport('location', [
@@ -34,7 +34,7 @@ final class ProviderGovernanceAuditServiceTest extends TestCase
             }
         };
 
-        $report = (new ProviderGovernanceAuditService($explanations, $recommendations))->report();
+        $report = (new LocationProviderGovernanceAuditService($explanations, $recommendations))->report();
 
         self::assertSame('deprioritize-provider', $report->providers()['alpha']->decision());
     }

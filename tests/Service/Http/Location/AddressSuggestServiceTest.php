@@ -7,12 +7,12 @@ namespace Tests\Service\Http\Location;
 use App\Entity\Location\AddressSuggestionResult;
 use App\Entity\Location\AddressSuggestionView;
 use App\Entity\Location\AddressView;
-use App\Service\Http\Location\AddressSuggestService;
+use App\Service\Http\Location\LocationAddressSuggestService;
 use App\ServiceInterface\Address\Location\AddressSuggestCapabilityInterface;
 use App\ServiceInterface\Http\Location\LocationViewFactoryInterface;
 use PHPUnit\Framework\TestCase;
 
-final class AddressSuggestServiceTest extends TestCase
+final class LocationAddressSuggestServiceTest extends TestCase
 {
     public function testUsesAppOwnedCapabilityResultInsteadOfLegacyLocatorEntity(): void
     {
@@ -47,7 +47,7 @@ final class AddressSuggestServiceTest extends TestCase
             }
         };
 
-        $service = new AddressSuggestService($capability, $factory);
+        $service = new LocationAddressSuggestService($capability, $factory);
         $items = $service->suggest('Main', 'US');
 
         self::assertCount(1, $items);

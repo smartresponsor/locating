@@ -7,12 +7,12 @@ namespace Tests\Service\Http\Location;
 use App\Entity\Location\AddressReverseResult;
 use App\Entity\Location\AddressReverseView;
 use App\Entity\Location\AddressView;
-use App\Service\Http\Location\AddressReverseService;
+use App\Service\Http\Location\LocationAddressReverseService;
 use App\ServiceInterface\Address\Location\AddressReverseCapabilityInterface;
 use App\ServiceInterface\Http\Location\LocationViewFactoryInterface;
 use PHPUnit\Framework\TestCase;
 
-final class AddressReverseServiceTest extends TestCase
+final class LocationAddressReverseServiceTest extends TestCase
 {
     public function testUsesAppOwnedCapabilityResultInsteadOfLegacyLocatorEntity(): void
     {
@@ -51,7 +51,7 @@ final class AddressReverseServiceTest extends TestCase
             }
         };
 
-        $service = new AddressReverseService($capability, $factory);
+        $service = new LocationAddressReverseService($capability, $factory);
         $item = $service->reverse(29.7604, -95.3698, 'US');
 
         self::assertSame('valid', $item->status());
