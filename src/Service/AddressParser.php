@@ -29,11 +29,27 @@ final class AddressParser implements AddressParserInterface
 
     public function parse(AddressInput $input): AddressData
     {
+        $strategyResult = $this->parseWithStrategy($input);
+        if ($strategyResult !== null) {
+            return $strategyResult;
+        }
+
+        $data = $input->data();
+
+        if (!empty($data)) {
+            return AddressData::fromArray($data);
+        }
+
+        return $this->parseRawLine($input->rawLine());
+    }
+
+    private function parseWithStrategy(AddressInput $input): ?AddressData
+    {
         foreach ($this->strategyList as $strategy) {
             if (
-                method_exists($strategy, 'supportCountryCode') &&
-                method_exists($strategy, 'parse') &&
-                $strategy->supportCountryCode($input->countryCode())
+                method_exists($strategy, 'supportCountryCode')
+                && method_exists($strategy, 'parse')
+                && $strategy->supportCountryCode($input->countryCode())
             ) {
                 $parsed = $strategy->parse($input);
 
@@ -43,18 +59,18 @@ final class AddressParser implements AddressParserInterface
             }
         }
 
-        $data = $input->data();
+        return null;
+    }
 
-        if (!empty($data)) {
-            return AddressData::fromArray($data);
-        }
-
-        $raw = trim($input->rawLine());
-        if ($raw === '') {
+    private function parseRawLine(string $rawLine): AddressData
+    {
+        $rawLine = trim($rawLine);
+        if ($rawLine === '') {
             return new AddressData('', '', '', '', '');
         }
 
-        $parts = array_map('trim', explode(',', $raw));
+        $parts = array_map('trim', explode(',', $rawLine));
+
         $street = $parts[0] ?? '';
         $city = $parts[1] ?? '';
         $region = $parts[2] ?? '';

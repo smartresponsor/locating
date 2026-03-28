@@ -36,11 +36,11 @@ final class AddressData implements AddressDataInterface
     public function toArray(): array
     {
         return [
-            'street' => $this->street,
-            'city' => $this->city,
-            'region' => $this->region,
-            'postalCode' => $this->postalCode,
-            'countryCode' => $this->countryCode,
+            'street' => $this->street(),
+            'city' => $this->city(),
+            'region' => $this->region(),
+            'postalCode' => $this->postalCode(),
+            'countryCode' => $this->countryCode(),
         ];
     }
 
@@ -85,11 +85,11 @@ final class AddressData implements AddressDataInterface
     public function toComponentMap(): array
     {
         return array_filter([
-            'street' => $this->street,
-            'city' => $this->city,
-            'region' => $this->region,
-            'postalCode' => $this->postalCode,
-            'countryCode' => $this->countryCode,
+            'street' => $this->street(),
+            'city' => $this->city(),
+            'region' => $this->region(),
+            'postalCode' => $this->postalCode(),
+            'countryCode' => $this->countryCode(),
             'house' => $this->house ?? '',
             'unit' => $this->unit ?? '',
         ], static fn (string $value): bool => $value !== '');

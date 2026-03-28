@@ -25,21 +25,9 @@ final class AddressInput implements AddressInputInterface
         ?string $house = null,
         ?string $unit = null
     ) {
-        if (is_array($data)) {
-            $this->data = $data;
-
-            return;
-        }
-
-        $this->data = array_filter([
-            'countryCode' => $data ?? $countryCode,
-            'region' => $region,
-            'city' => $city,
-            'postalCode' => $postalCode,
-            'street' => $street,
-            'house' => $house,
-            'unit' => $unit,
-        ], static fn (mixed $value): bool => $value !== null && $value !== '');
+        $this->data = is_array($data)
+            ? $data
+            : self::buildStructuredData($data ?? $countryCode, $region, $city, $postalCode, $street, $house, $unit);
     }
 
     public static function fromArray(array $payload): self
@@ -70,8 +58,43 @@ final class AddressInput implements AddressInputInterface
 
     public function countryCode(): ?string
     {
-        $value = $this->data['countryCode'] ?? null;
+        return self::normalizeCountryCode($this->data['countryCode'] ?? null);
+    }
 
-        return is_string($value) && $value !== '' ? strtoupper($value) : null;
+    /**
+     * @return array<string, string>
+     */
+    private static function buildStructuredData(
+        ?string $countryCode,
+        ?string $region,
+        ?string $city,
+        ?string $postalCode,
+        ?string $street,
+        ?string $house,
+        ?string $unit
+    ): array {
+        $values = [
+            'countryCode' => self::normalizeCountryCode($countryCode),
+            'region' => $region,
+            'city' => $city,
+            'postalCode' => $postalCode,
+            'street' => $street,
+            'house' => $house,
+            'unit' => $unit,
+        ];
+
+        return array_filter(
+            $values,
+            static fn (?string $value): bool => $value !== null && $value !== ''
+        );
+    }
+
+    private static function normalizeCountryCode(mixed $value): ?string
+    {
+        if (!is_string($value) || $value === '') {
+            return null;
+        }
+
+        return strtoupper($value);
     }
 }

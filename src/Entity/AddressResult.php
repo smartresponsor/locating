@@ -13,6 +13,14 @@ use App\EntityInterface\AddressValidationIssueInterface;
  */
 final class AddressResult implements AddressResultInterface
 {
+    private const NORMALIZED_LINE_KEYS = [
+        'street',
+        'city',
+        'region',
+        'postalCode',
+        'countryCode',
+    ];
+
     /**
      * @param AddressValidationIssueInterface[] $issues
      */
@@ -92,7 +100,9 @@ final class AddressResult implements AddressResultInterface
             return null;
         }
 
-        return $this->addressData->toArray()[$key] ?? null;
+        $components = $this->addressData->toComponentMap();
+
+        return $components[$key] ?? null;
     }
 
     public function normalizedLine(): ?string
@@ -101,15 +111,15 @@ final class AddressResult implements AddressResultInterface
             return null;
         }
 
-        $parts = [
-            $this->addressData->street(),
-            $this->addressData->city(),
-            $this->addressData->region(),
-            $this->addressData->postalCode(),
-            $this->addressData->countryCode(),
-        ];
+        $components = $this->addressData->toArray();
+        $parts = [];
 
-        $parts = array_values(array_filter($parts, static fn (string $part): bool => $part !== ''));
+        foreach (self::NORMALIZED_LINE_KEYS as $key) {
+            $value = $components[$key] ?? '';
+            if ($value !== '') {
+                $parts[] = $value;
+            }
+        }
 
         return $parts === [] ? null : implode(', ', $parts);
     }
