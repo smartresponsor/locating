@@ -7,8 +7,9 @@ namespace App\Locating\Service;
 use App\Locating\Model\AddressInput;
 use App\Locating\Model\AddressPipelineResult;
 use App\Locating\Model\AddressView;
+use App\Locating\ServiceInterface\AddressPipelineInterface;
 
-final readonly class AddressPipeline
+final readonly class AddressPipeline implements AddressPipelineInterface
 {
     public function process(AddressInput $input): AddressPipelineResult
     {
