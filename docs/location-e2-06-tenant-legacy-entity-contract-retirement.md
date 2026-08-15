@@ -13,8 +13,8 @@ This wave retires the remaining Smartresponsor tenant context/limit/config contr
 - `App\Bridge\Legacy\Tenant\Location\TenantConfigLegacyRepositoryInterface`
 
 ## Updated implementations
-- `Smartresponsor\Infrastructure\Locator\RequestTenantContext`
+- `App\Infrastructure\Location\Tenant\RequestTenantContext`
 - `Smartresponsor\Entity\Locator\TenantContext`
 - `Smartresponsor\Entity\Locator\TenantLimit`
-- `Smartresponsor\Infrastructure\Locator\ArrayTenantConfigRepository`
+- `App\Infrastructure\Location\Tenant\ArrayTenantConfigRepository`
 - `Smartresponsor\Service\Locator\AddressQuotaGuard`

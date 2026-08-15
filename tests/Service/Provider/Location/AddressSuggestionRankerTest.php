@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Tests\Service\Provider\Location;
+namespace App\Locating\Tests\Service\Provider\Location;
 
-use App\Entity\Location\AddressSuggestionResult;
-use App\Entity\Location\AddressView;
-use App\Service\Provider\Location\AddressSuggestionRanker;
+use App\Locating\Model\Location\AddressSuggestionResult;
+use App\Locating\Model\Location\AddressView;
+use App\Locating\Service\Provider\Location\AddressSuggestionRanker;
 use PHPUnit\Framework\TestCase;
 
 final class AddressSuggestionRankerTest extends TestCase

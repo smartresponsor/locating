@@ -1,0 +1,3 @@
+locator_address_reverse:
+  path: /location/address/reverse
+  methods: [GET]

@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace Tests\Service\Http\Location;
+namespace App\Locating\Tests\Service\Http\Location;
 
-use App\Bridge\Legacy\Entity\Location\AddressValidationIssueLegacyInterface;
-use App\Service\Http\Location\LocationViewFactory;
+use App\Locating\Model\Location\AddressData;
+use App\Locating\Model\Location\AddressResult;
+use App\Locating\Model\Location\AddressStatus;
+use App\Locating\Model\Location\AddressSuggestion;
+use App\Locating\Model\Location\GeoPoint;
+use App\Locating\ModelInterface\Location\AddressIssueInterface;
+use App\Locating\Service\Http\Location\LocationViewFactory;
 use PHPUnit\Framework\TestCase;
-use Smartresponsor\Entity\Locator\AddressData;
-use Smartresponsor\Entity\Locator\AddressResult;
-use Smartresponsor\Entity\Locator\AddressStatus;
-use Smartresponsor\Entity\Locator\AddressSuggestion;
-use Smartresponsor\Entity\Locator\GeoPoint;
 
 final class LocationViewFactoryTest extends TestCase
 {
-    public function testCreatesSuggestionViewFromLegacySuggestion(): void
+    public function testCreatesSuggestionViewFromSuggestionResult(): void
     {
         $factory = new LocationViewFactory();
         $view = $factory->createSuggestionView(new AddressSuggestion('123 Main St, Houston, TX', new AddressData('123 Main St', 'Houston', 'TX', '77002', 'US'), 'mapbox'));
@@ -26,10 +26,10 @@ final class LocationViewFactoryTest extends TestCase
         ], $view->toArray());
     }
 
-    public function testCreatesReverseViewFromLegacyResult(): void
+    public function testCreatesReverseViewFromResult(): void
     {
         $factory = new LocationViewFactory();
-        $issue = new class implements AddressValidationIssueLegacyInterface {
+        $issue = new class () implements AddressIssueInterface {
             public function field(): string
             {
                 return 'postalCode';
@@ -44,10 +44,19 @@ final class LocationViewFactoryTest extends TestCase
             {
                 return 'Postal code format mismatch.';
             }
+
+            public function toArray(): array
+            {
+                return [
+                    'field' => $this->field(),
+                    'code' => $this->code(),
+                    'message' => $this->message(),
+                ];
+            }
         };
-        $view = $factory->createReverseView(AddressResult::create(AddressStatus::VALID, new AddressData('123 Main St', 'Houston', 'TX', '77002', 'US'), [$issue], new GeoPoint(29.7604, -95.3698), 'here'));
+        $view = $factory->createReverseView(AddressResult::create(AddressStatus::VERIFIED, new AddressData('123 Main St', 'Houston', 'TX', '77002', 'US'), [$issue], new GeoPoint(29.7604, -95.3698), 'here'));
         self::assertSame([
-            'status' => 'valid',
+            'status' => 'verified',
             'address' => ['street' => '123 Main St', 'city' => 'Houston', 'region' => 'TX', 'postalCode' => '77002', 'countryCode' => 'US'],
             'issues' => [['field' => 'postalCode', 'code' => 'format', 'message' => 'Postal code format mismatch.']],
             'geoPoint' => ['latitude' => 29.7604, 'longitude' => -95.3698],

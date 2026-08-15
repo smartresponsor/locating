@@ -1,8 +1,9 @@
 <?php
+
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 
-namespace Tests\Locator\Smoke;
+namespace App\Locating\Tests\Locator\Smoke;
 
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
@@ -21,6 +22,6 @@ final class PublicIndexSmokeTest extends TestCase
 
         self::assertSame('ok', $payload['status'] ?? null);
         self::assertSame('locator-sketch30', $payload['component'] ?? null);
-        self::assertArrayHasKey('time', $payload);
+        self::assertSame(['status', 'component'], array_keys($payload));
     }
 }

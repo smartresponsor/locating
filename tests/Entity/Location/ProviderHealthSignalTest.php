@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Tests\Entity\Location;
+namespace App\Locating\Tests\Entity\Location;
 
-use App\Entity\Location\ProviderHealthSignal;
+use App\Locating\Model\Location\ProviderHealthSignal;
 use PHPUnit\Framework\TestCase;
 
 final class ProviderHealthSignalTest extends TestCase

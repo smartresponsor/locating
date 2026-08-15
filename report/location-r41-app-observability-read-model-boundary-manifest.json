@@ -22,11 +22,11 @@
     "docs/location-r41-app-observability-read-model-boundary.md"
   ],
   "updated": [
-    "src/Controller/Http/Location/StatusController.php",
-    "src/Controller/Http/Location/MetricsController.php",
+    "src/Service/Http/Location/LocationStatusHttpService.php",
+    "src/Service/Http/Location/LocationMetricsHttpService.php",
     "config/services.php",
-    "tests/Controller/Http/StatusControllerTest.php",
-    "tests/Controller/Http/MetricsControllerTest.php",
+    "tests/Service/Http/LocationStatusHttpServiceTest.php",
+    "tests/Service/Http/LocationMetricsHttpServiceTest.php",
     "tests/Config/LocationServicesConfigTest.php"
   ]
 }

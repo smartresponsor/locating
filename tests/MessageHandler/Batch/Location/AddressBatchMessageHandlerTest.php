@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace App\Tests\MessageHandler\Batch\Location;
+namespace App\Locating\Tests\MessageHandler\Batch\Location;
 
-use App\Entity\Location\AddressPipelineResult;
-use App\Entity\Location\AddressView;
-use App\Infrastructure\Batch\Location\InMemoryAddressBatchRuntimeStore;
-use App\Message\Batch\Location\AddressBatchMessage;
-use App\MessageHandler\Batch\Location\AddressBatchMessageHandler;
-use App\ServiceInterface\Address\Location\AddressPipelineInterface;
+use App\Locating\Infrastructure\Batch\Location\InMemoryAddressBatchRuntimeStore;
+use App\Locating\Message\Batch\Location\AddressBatchMessage;
+use App\Locating\MessageHandler\Batch\Location\AddressBatchMessageHandler;
+use App\Locating\Model\Location\AddressPipelineResult;
+use App\Locating\Model\Location\AddressView;
+use App\Locating\ServiceInterface\Address\Location\AddressPipelineInterface;
 use PHPUnit\Framework\TestCase;
 
 final class AddressBatchMessageHandlerTest extends TestCase
@@ -19,8 +19,8 @@ final class AddressBatchMessageHandlerTest extends TestCase
         $runtimeStore = new InMemoryAddressBatchRuntimeStore();
         $job = $runtimeStore->create('tenant-a', 1);
 
-        $pipeline = new class implements AddressPipelineInterface {
-            public function process(\App\EntityInterface\Location\AddressInputInterface $input): \App\EntityInterface\Location\AddressPipelineResultInterface
+        $pipeline = new class () implements AddressPipelineInterface {
+            public function process(\App\Locating\ModelInterface\Location\AddressInputInterface $input): \App\Locating\ModelInterface\Location\AddressPipelineResultInterface
             {
                 return new AddressPipelineResult(
                     AddressPipelineResult::STATUS_VERIFIED,

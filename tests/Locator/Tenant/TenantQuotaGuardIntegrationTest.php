@@ -1,16 +1,17 @@
 <?php
+
 declare(strict_types=1);
 
 /*
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace Tests\Locator\Tenant;
+namespace App\Locating\Tests\Locator\Tenant;
 
-use Smartresponsor\Entity\Locator\TenantContext;
-use Smartresponsor\Infrastructure\Locator\ArrayTenantConfigRepository;
-use Smartresponsor\Infrastructure\Locator\InMemoryTenantUsageCounter;
-use Smartresponsor\Service\Locator\AddressQuotaGuard;
+use App\Locating\Infrastructure\Location\Tenant\ArrayTenantConfigRepository;
+use App\Locating\Infrastructure\Location\Tenant\InMemoryTenantUsageCounter;
+use App\Locating\Model\Location\Tenant\TenantContext;
+use App\Locating\Service\Address\Location\AddressQuotaGuard;
 use PHPUnit\Framework\TestCase;
 
 final class TenantQuotaGuardIntegrationTest extends TestCase

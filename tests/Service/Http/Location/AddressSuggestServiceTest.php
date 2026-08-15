@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace Tests\Service\Http\Location;
+namespace App\Locating\Tests\Service\Http\Location;
 
-use App\Entity\Location\AddressSuggestionResult;
-use App\Entity\Location\AddressSuggestionView;
-use App\Entity\Location\AddressView;
-use App\Service\Http\Location\LocationAddressSuggestService;
-use App\ServiceInterface\Address\Location\AddressSuggestCapabilityInterface;
-use App\ServiceInterface\Http\Location\LocationViewFactoryInterface;
+use App\Locating\Model\Location\AddressSuggestionResult;
+use App\Locating\Model\Location\AddressSuggestionView;
+use App\Locating\Model\Location\AddressView;
+use App\Locating\Service\Http\Location\LocationAddressSuggestService;
+use App\Locating\ServiceInterface\Address\Location\AddressSuggestCapabilityInterface;
+use App\Locating\ServiceInterface\Http\Location\LocationViewFactoryInterface;
 use PHPUnit\Framework\TestCase;
 
 final class LocationAddressSuggestServiceTest extends TestCase
 {
-    public function testUsesAppOwnedCapabilityResultInsteadOfLegacyLocatorEntity(): void
+    public function testUsesAppOwnedCapabilityResultInsteadOfLocatorEntity(): void
     {
-        $capability = new class implements AddressSuggestCapabilityInterface {
+        $capability = new class () implements AddressSuggestCapabilityInterface {
             public function suggest(string $query, ?string $countryCode = null, int $limit = 5): array
             {
                 TestCase::assertSame('Main', $query);
@@ -31,8 +31,8 @@ final class LocationAddressSuggestServiceTest extends TestCase
             }
         };
 
-        $factory = new class implements LocationViewFactoryInterface {
-            public function createSuggestionView(\App\EntityInterface\Location\AddressSuggestionResultInterface $suggestion): \App\EntityInterface\Location\AddressSuggestionViewInterface
+        $factory = new class () implements LocationViewFactoryInterface {
+            public function createSuggestionView(\App\Locating\ModelInterface\Location\AddressSuggestionResultInterface $suggestion): \App\Locating\ModelInterface\Location\AddressSuggestionViewInterface
             {
                 return new AddressSuggestionView(
                     $suggestion->label(),
@@ -41,7 +41,7 @@ final class LocationAddressSuggestServiceTest extends TestCase
                 );
             }
 
-            public function createReverseView(\App\EntityInterface\Location\AddressReverseResultInterface $result): \App\EntityInterface\Location\AddressReverseViewInterface
+            public function createReverseView(\App\Locating\ModelInterface\Location\AddressReverseResultInterface $result): \App\Locating\ModelInterface\Location\AddressReverseViewInterface
             {
                 throw new \LogicException('Not needed.');
             }

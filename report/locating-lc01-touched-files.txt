@@ -1,0 +1,8 @@
+.gate/check/location-protocol-canon.php
+README.md
+composer.json
+deploy/nginx/nginx.conf
+docs/locating-canonization-audit-and-milestone.md
+docs/locator-quickstart-docker.md
+tools/canon/location-structure-audit.php
+DELETE: config/nginx.conf

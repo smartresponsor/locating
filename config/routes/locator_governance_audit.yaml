@@ -1,4 +1,3 @@
 location_governance_audit:
   path: /location/governance/audit
-  controller: App\Controller\Http\Location\GovernanceAuditController
   methods: [GET]

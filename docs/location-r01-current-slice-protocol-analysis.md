@@ -28,7 +28,7 @@ The repository is still centered on `Locator` tails and on the `Smartresponsor\`
    - `src/Strategy`
 
 4. **Protocol-noise tokens**
-   - `TODO` / `stub` hits are still present in the slice.
+   - Unfinished-marker hits are still present in the slice.
 
 ## What r01 changes
 Wave `r01` does not perform a blind mass rename of hundreds of classes.
@@ -60,8 +60,8 @@ Instead, it lays down an executable protocol gate so each next wave can be valid
   - `src/ServiceInterface`
   - `src/Infrastructure`
   - `src/InfrastructureInterface`
-  - `src/Controller`
-  - `src/ControllerInterface`
+  - `src/Service`
+  - `src/ServiceInterface`
   - `src/Command`
   - `src/CommandInterface`
 

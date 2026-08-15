@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\Tests\Infrastructure\Batch\Location;
+namespace App\Locating\Tests\Infrastructure\Batch\Location;
 
-use App\Infrastructure\Batch\Location\MessageBusAddressBatchMessageDispatcher;
-use App\InfrastructureInterface\Batch\Location\AddressBatchMessageBusInterface;
-use App\Message\Batch\Location\AddressBatchMessage;
-use App\MessageInterface\Batch\Location\AddressBatchMessageInterface;
+use App\Locating\Infrastructure\Batch\Location\MessageBusAddressBatchMessageDispatcher;
+use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchMessageBusInterface;
+use App\Locating\Message\Batch\Location\AddressBatchMessage;
+use App\Locating\MessageInterface\Batch\Location\AddressBatchMessageInterface;
 use PHPUnit\Framework\TestCase;
 
 final class MessageBusAddressBatchMessageDispatcherTest extends TestCase
@@ -15,7 +15,7 @@ final class MessageBusAddressBatchMessageDispatcherTest extends TestCase
     public function testDispatchDelegatesToAppMessageBus(): void
     {
         $captured = null;
-        $bus = new class($captured) implements AddressBatchMessageBusInterface {
+        $bus = new class ($captured) implements AddressBatchMessageBusInterface {
             public function __construct(private mixed &$captured)
             {
             }

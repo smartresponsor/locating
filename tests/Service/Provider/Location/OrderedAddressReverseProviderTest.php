@@ -2,27 +2,27 @@
 
 declare(strict_types=1);
 
-namespace Tests\Service\Provider\Location;
+namespace App\Locating\Tests\Service\Provider\Location;
 
-use App\Entity\Location\AddressReverseResult;
-use App\Entity\Location\AddressView;
-use App\Service\Provider\Location\AddressReverseResultNormalizer;
-use App\Service\Provider\Location\OrderedAddressReverseProvider;
-use App\Service\Provider\Location\PolicyAddressReverseSourceOrder;
-use App\ServiceInterface\Provider\Location\AddressReverseSourceInterface;
+use App\Locating\Model\Location\AddressReverseResult;
+use App\Locating\Model\Location\AddressView;
+use App\Locating\Service\Provider\Location\AddressReverseResultNormalizer;
+use App\Locating\Service\Provider\Location\OrderedAddressReverseProvider;
+use App\Locating\Service\Provider\Location\PolicyAddressReverseSourceOrder;
+use App\Locating\ServiceInterface\Provider\Location\AddressReverseSourceInterface;
 use PHPUnit\Framework\TestCase;
 
 final class OrderedAddressReverseProviderTest extends TestCase
 {
     public function testReverseUsesOrderedSourceAndNormalizesResult(): void
     {
-        $source = new class implements AddressReverseSourceInterface {
+        $source = new class () implements AddressReverseSourceInterface {
             public function sourceKey(): string
             {
                 return 'reverse-a';
             }
 
-            public function reverse(float $latitude, float $longitude, ?string $countryCode = null): \App\EntityInterface\Location\AddressReverseResultInterface
+            public function reverse(float $latitude, float $longitude, ?string $countryCode = null): \App\Locating\ModelInterface\Location\AddressReverseResultInterface
             {
                 return new AddressReverseResult(
                     'verified',
@@ -37,13 +37,13 @@ final class OrderedAddressReverseProviderTest extends TestCase
         $provider = new OrderedAddressReverseProvider(
             [$source],
             new PolicyAddressReverseSourceOrder(
-                new class implements \App\ServiceInterface\Provider\Location\AddressReverseSourceHealthPolicyInterface {
+                new class () implements \App\Locating\ServiceInterface\Provider\Location\AddressReverseSourceHealthPolicyInterface {
                     public function score(string $sourceKey): float
                     {
                         return 0.9;
                     }
                 },
-                new class implements \App\ServiceInterface\Provider\Location\AddressReverseSourceQuotaPolicyInterface {
+                new class () implements \App\Locating\ServiceInterface\Provider\Location\AddressReverseSourceQuotaPolicyInterface {
                     public function allows(string $sourceKey, float $latitude, float $longitude, ?string $countryCode = null): bool
                     {
                         return true;

@@ -59,3 +59,15 @@ For a more production-like setup you can:
 
 This quickstart is intentionally minimal and focused on helping developers
 to get a working Locator instance on their machines in a few minutes.
+
+## 4. Canonical deploy file location
+
+The canonical nginx configuration for Locating now lives at:
+
+```text
+deploy/nginx/nginx.conf
+```
+
+The older `config/nginx.conf` location is treated as a retired root-structure artifact.
+Do not add new Docker, nginx, compose, or deployment files under `config/`; keep runtime
+application configuration in `config/` and deploy/runtime envelope files under `deploy/`.

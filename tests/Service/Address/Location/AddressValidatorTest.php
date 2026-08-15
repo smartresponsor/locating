@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Tests\Service\Address\Location;
+namespace App\Locating\Tests\Service\Address\Location;
 
-use App\Entity\Location\AddressPipelineResult;
-use App\Entity\Location\AddressView;
-use App\Service\Address\Location\AddressValidator;
+use App\Locating\Model\Location\AddressPipelineResult;
+use App\Locating\Model\Location\AddressView;
+use App\Locating\Service\Address\Location\AddressValidator;
 use PHPUnit\Framework\TestCase;
 
 final class AddressValidatorTest extends TestCase

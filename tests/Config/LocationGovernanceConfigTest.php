@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Config;
+namespace App\Locating\Tests\Config;
 
 use PHPUnit\Framework\TestCase;
 
@@ -14,7 +14,7 @@ final class LocationGovernanceConfigTest extends TestCase
         $services = (string) file_get_contents(__DIR__.'/../../config/services.php');
 
         self::assertStringContainsString('/location/governance', $routes);
-        self::assertStringContainsString('GovernanceController', $routes);
+        self::assertStringContainsString('LocationGovernanceHttpService', $routes);
         self::assertStringContainsString('LocationProviderGovernanceReportServiceInterface::class', $services);
         self::assertStringContainsString('LocationProviderGovernanceReportService::class', $services);
     }

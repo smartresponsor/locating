@@ -2,10 +2,10 @@
   "wave": 13,
   "title": "legacy-controller-interface-collapse",
   "removed": [
-    "src/ControllerInterface/Locator/AddressSuggestControllerInterface.php",
-    "src/ControllerInterface/Locator/AddressReverseControllerInterface.php",
-    "src/ControllerInterface/Locator/MetricsControllerInterface.php",
-    "src/ControllerInterface/Locator/StatusControllerInterface.php"
+    "src/ServiceInterface/Locator/LocationAddressSuggestHttpServiceInterface.php",
+    "src/ServiceInterface/Locator/LocationAddressReverseHttpServiceInterface.php",
+    "src/ServiceInterface/Locator/LocationMetricsHttpServiceInterface.php",
+    "src/ServiceInterface/Locator/LocationStatusHttpServiceInterface.php"
   ],
   "added": [
     "docs/location-r13-legacy-controller-interface-collapse.md",

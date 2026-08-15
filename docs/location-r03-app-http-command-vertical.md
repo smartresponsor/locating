@@ -9,8 +9,8 @@ This wave continues from the previous cumulative slice only.
   - `src/Command/Address/LocationNormalizeCommand.php`
   - `src/Command/Geo/LocationReverseCommand.php`
 - introduced the first `App\...` HTTP controller vertical in a depth-safe location tail:
-  - `src/Controller/Http/Location/...`
-  - `src/ControllerInterface/Http/Location/...`
+  - `src/Service/Http/Location/...`
+  - `src/ServiceInterface/Http/Location/...`
 - tightened the canon gate so `Location` tails under `src` now require deeper placement (`src/.../.../Location/...`) except for `src/Entity/Location/...`
 
 ## Why this wave matters
@@ -25,4 +25,4 @@ The repository still contains a large `Smartresponsor\...` body and several forb
 
 ## Next target
 
-Wave 04 should start moving one bounded business vertical from `Smartresponsor\Controller\Locator` and related service wiring toward `App\...` with matching service-interface bridges or replacements.
+Wave 04 should start moving one bounded business vertical from `Smartresponsor\Service\Locator` and related service wiring toward `App\...` with matching service-interface bridges or replacements.

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Tests\Service\Observability\Location;
+namespace App\Locating\Tests\Service\Observability\Location;
 
-use App\Entity\Location\ProviderGovernanceSnapshot;
-use App\Service\Observability\Location\LocationProviderGovernanceMetricsExportService;
-use App\ServiceInterface\Observability\Location\LocationProviderGovernanceCatalogServiceInterface;
+use App\Locating\ReadModel\Observability\Location\ProviderGovernanceSnapshot;
+use App\Locating\Service\Observability\Location\LocationProviderGovernanceMetricsExportService;
+use App\Locating\ServiceInterface\Observability\Location\LocationProviderGovernanceCatalogServiceInterface;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 

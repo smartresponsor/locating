@@ -31,8 +31,8 @@ src/Contract/Locator/Secrets/SecretsProviderInterface.php <- v=16 from=location-
 src/Contract/Log/LoggerInterface.php <- v=16 from=location-sketch16-oct16-final.zip:src/Contract/Log/LoggerInterface.php sha256=50906451de78d2af7471b4df162a6dca6ca4679cbc58f0b584c6f0d1064febcf size=447
 src/Contract/Metrics/MetricsInterface.php <- v=16 from=location-sketch16-oct16-final.zip:src/Contract/Metrics/MetricsInterface.php sha256=c7fdb632d454537be3a14fe0cd5daefb9783e913be5f7099ceb04fa85fb04c26 size=407
 src/Contract/RateLimit/RateLimiterInterface.php <- v=16 from=location-sketch16-oct16-final.zip:src/Contract/RateLimit/RateLimiterInterface.php sha256=7c022defb4a820179a2f0826b1aef7b7a11b065a24b6de4e93060a095ba21f27 size=272
-src/Controller/Locator/.gitkeep <- v=30 from=location-sketch30-oct30-final.zip:src/Controller/Locator/.gitkeep sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 size=0
-src/ControllerInterface/Locator/.gitkeep <- v=30 from=location-sketch30-oct30-final.zip:src/ControllerInterface/Locator/.gitkeep sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 size=0
+src/Service/Locator/.gitkeep <- v=30 from=location-sketch30-oct30-final.zip:src/Service/Locator/.gitkeep sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 size=0
+src/ServiceInterface/Locator/.gitkeep <- v=30 from=location-sketch30-oct30-final.zip:src/ServiceInterface/Locator/.gitkeep sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 size=0
 src/Domain/Locator/.gitkeep <- v=30 from=location-sketch30-oct30-final.zip:src/Domain/Locator/.gitkeep sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 size=0
 src/Service/Locator/AbTestRouter.php <- v=30 from=location-sketch30-oct30-final.zip:src/Service/Locator/AbTestRouter.php sha256=b5a49aef06359027b2dc3c63173b173c906ac4e6bcd732cc2a6fff22bc33cb72 size=743
 src/Service/Locator/AdaptiveOrdering.php <- v=30 from=location-sketch30-oct30-final.zip:src/Service/Locator/AdaptiveOrdering.php sha256=c530ec276acdb67c0aa475561c6b29d0d95e7c31eafdb98afaaf2868f083aaf3 size=1345
@@ -236,8 +236,8 @@ src/DomainInterface/Locator/TraceMiddlewareInterface.php <- v=30 from=location-s
 src/DomainInterface/Locator/TracePropagatorInterface.php <- v=30 from=location-sketch30-oct30-final.zip:src/DomainInterface/Locator/TracePropagatorInterface.php sha256=714be0f8d1f3c11d8c943fa39f7cd8edaed45a78e02f4511c21a0fba7528d13a size=579
 src/Entity/Locator/.gitkeep <- v=30 from=location-sketch30-oct30-final.zip:src/Entity/Locator/.gitkeep sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 size=0
 src/EntityInterface/Locator/.gitkeep <- v=30 from=location-sketch30-oct30-final.zip:src/EntityInterface/Locator/.gitkeep sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 size=0
-src/Http/Locator/BatchController.php <- v=30 from=location-sketch30-oct30-final.zip:src/Http/Locator/BatchController.php sha256=697f8b82c91922d9c0598ed5b914781f4564e1db3a68333de59322aa025a25f4 size=651
-src/Http/Locator/RouteController.php <- v=30 from=location-sketch30-oct30-final.zip:src/Http/Locator/RouteController.php sha256=b8a88ce1bfe2b99f6678f015f5bed459a89161391318c81b6dd4bae32fdd702c size=719
+src/Http/Locator/BatchService.php <- v=30 from=location-sketch30-oct30-final.zip:src/Http/Locator/BatchService.php sha256=697f8b82c91922d9c0598ed5b914781f4564e1db3a68333de59322aa025a25f4 size=651
+src/Http/Locator/RouteService.php <- v=30 from=location-sketch30-oct30-final.zip:src/Http/Locator/RouteService.php sha256=b8a88ce1bfe2b99f6678f015f5bed459a89161391318c81b6dd4bae32fdd702c size=719
 src/Http/Locator/TraceMiddleware.php <- v=30 from=location-sketch30-oct30-final.zip:src/Http/Locator/TraceMiddleware.php sha256=80762c9d827cc5a07dadd6f2383c1f60bb4b907b292c29b8423a92ae6a493558 size=734
 src/Infrastructure/Locator/.gitkeep <- v=30 from=location-sketch30-oct30-final.zip:src/Infrastructure/Locator/.gitkeep sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 size=0
 src/Infrastructure/Locator/Cache/RedisCache.php <- v=25 from=location-sketch25-oct25-final.zip:src/Infrastructure/Locator/Cache/RedisCache.php sha256=19047e5deff01b7b50344efbdc4d0b6c7e8c3dea7f8bce2c6c561327ad50ea3e size=1116
@@ -362,7 +362,7 @@ tests/Locator/AddressHintBiasTest.php <- v=30 from=location-sketch30-oct30-final
 tests/Locator/AnomalyDetectorTest.php <- v=30 from=location-sketch30-oct30-final.zip:tests/Locator/AnomalyDetectorTest.php sha256=e8df083eee957514fbe42fa2b7c239f3529c42bbd5d285956f8652892bf4077e size=533
 tests/Locator/BanditPolicyTest.php <- v=30 from=location-sketch30-oct30-final.zip:tests/Locator/BanditPolicyTest.php sha256=6e84ac1989e59fdf4c9de58e1ad828eb18b91fa37ed6c84255f33c47cba5ae15 size=590
 tests/Locator/BanditRouterTest.php <- v=30 from=location-sketch30-oct30-final.zip:tests/Locator/BanditRouterTest.php sha256=7e50d891dcafceb1b53288889cbce50d7ac6f698a1b577bc51d51f227d3626eb size=785
-tests/Locator/BatchControllerTest.php <- v=30 from=location-sketch30-oct30-final.zip:tests/Locator/BatchControllerTest.php sha256=c4776270352e967648899c9d57e3ee066979ec6374bd8a0d8a1f9cb04491997f size=631
+tests/Locator/BatchServiceTest.php <- v=30 from=location-sketch30-oct30-final.zip:tests/Locator/BatchServiceTest.php sha256=c4776270352e967648899c9d57e3ee066979ec6374bd8a0d8a1f9cb04491997f size=631
 tests/Locator/BatchGeocodeEndpointTest.php <- v=30 from=location-sketch30-oct30-final.zip:tests/Locator/BatchGeocodeEndpointTest.php sha256=9f4f200827ee038900361d6c5086b19845cfc472a2b1e5580f614909453a3c7d size=800
 tests/Locator/BudgetGuardTest.php <- v=30 from=location-sketch30-oct30-final.zip:tests/Locator/BudgetGuardTest.php sha256=cb033e7c8d2492083c26eb06d0a7d75e243912e17753b795f2ffeb5fd30a723e size=741
 tests/Locator/BudgetTelemetryTest.php <- v=30 from=location-sketch30-oct30-final.zip:tests/Locator/BudgetTelemetryTest.php sha256=2d5f4a1a94540326cfbb9fa8f0712bbbcd28782914c5a410940ae10b51586e00 size=640

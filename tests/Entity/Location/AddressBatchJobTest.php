@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Tests\Entity\Location;
+namespace App\Locating\Tests\Entity\Location;
 
-use App\Entity\Location\AddressBatchJob;
-use App\Entity\Location\AddressBatchJobStatus;
+use App\Locating\Model\Location\AddressBatchJob;
+use App\Locating\Model\Location\AddressBatchJobStatus;
 use PHPUnit\Framework\TestCase;
 
 final class AddressBatchJobTest extends TestCase

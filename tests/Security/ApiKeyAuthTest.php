@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Security;
+namespace App\Locating\Tests\Security;
 
 use PHPUnit\Framework\TestCase;
 

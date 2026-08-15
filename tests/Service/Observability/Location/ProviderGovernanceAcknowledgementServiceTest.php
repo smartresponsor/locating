@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace Tests\Service\Observability\Location;
+namespace App\Locating\Tests\Service\Observability\Location;
 
-use App\Entity\Location\ProviderGovernanceExecutionItem;
-use App\Entity\Location\ProviderGovernanceExecutionReport;
-use App\Entity\Location\ProviderGovernanceExecutionStepStatus;
-use App\Service\Observability\Location\LocationProviderGovernanceAcknowledgementService;
-use App\ServiceInterface\Observability\Location\LocationProviderGovernanceExecutionServiceInterface;
+use App\Locating\ReadModel\Observability\Location\ProviderGovernanceExecutionItem;
+use App\Locating\ReadModel\Observability\Location\ProviderGovernanceExecutionReport;
+use App\Locating\ReadModel\Observability\Location\ProviderGovernanceExecutionStepStatus;
+use App\Locating\Service\Observability\Location\LocationProviderGovernanceAcknowledgementService;
+use App\Locating\ServiceInterface\Observability\Location\LocationProviderGovernanceExecutionServiceInterface;
 use PHPUnit\Framework\TestCase;
 
 final class LocationProviderGovernanceAcknowledgementServiceTest extends TestCase
 {
     public function testBuildsAcknowledgementOutcomeReport(): void
     {
-        $execution = new class implements LocationProviderGovernanceExecutionServiceInterface {
-            public function report(): \App\EntityInterface\Location\ProviderGovernanceExecutionReportInterface
+        $execution = new class () implements LocationProviderGovernanceExecutionServiceInterface {
+            public function report(): \App\Locating\ReadModelInterface\Observability\Location\ProviderGovernanceExecutionReportInterface
             {
                 return new ProviderGovernanceExecutionReport('location', [
                     'alpha' => new ProviderGovernanceExecutionItem(

@@ -8,7 +8,7 @@ $sample = [];
 foreach ($iterator as $file) {
     if (!$file->isFile() || $file->getExtension() !== 'php') { continue; }
     $content = file_get_contents($file->getPathname());
-    if ($content !== false && preg_match('/^namespace\s+Smartresponsor\\/m', $content) === 1) {
+    if ($content !== false && preg_match('/^namespace\s+App\Locating\\/m', $content) === 1) {
         $count++;
         if (count($sample) < 50) {
             $sample[] = str_replace($root . DIRECTORY_SEPARATOR, '', $file->getPathname());

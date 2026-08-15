@@ -21,9 +21,9 @@
     "src/ServiceInterface/Http/Location/AddressReverseServiceInterface.php",
     "src/Service/Http/Location/AddressSuggestService.php",
     "src/Service/Http/Location/AddressReverseService.php",
-    "src/Controller/Http/Location/AddressSuggestController.php",
-    "src/Controller/Http/Location/AddressReverseController.php",
-    "tests/Controller/Http/AddressSuggestControllerTest.php",
-    "tests/Controller/Http/AddressReverseControllerTest.php"
+    "src/Service/Http/Location/LocationAddressSuggestHttpService.php",
+    "src/Service/Http/Location/LocationAddressReverseHttpService.php",
+    "tests/Service/Http/LocationAddressSuggestHttpServiceTest.php",
+    "tests/Service/Http/LocationAddressReverseHttpServiceTest.php"
   ]
 }

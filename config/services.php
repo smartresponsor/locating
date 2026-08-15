@@ -2,158 +2,157 @@
 
 declare(strict_types=1);
 
-use App\Bridge\Legacy\Batch\Location\AddressBatchLegacyMessageHandler;
-use App\Controller\Http\Location\AddressReverseController;
-use App\Controller\Http\Location\AddressSuggestController;
-use App\Controller\Http\Location\GovernanceAcknowledgementController;
-use App\Controller\Http\Location\GovernanceAuditController;
-use App\Controller\Http\Location\GovernanceController;
-use App\Controller\Http\Location\GovernanceExecutionController;
-use App\Controller\Http\Location\GovernanceExplanationController;
-use App\Controller\Http\Location\GovernanceMetricsController;
-use App\Controller\Http\Location\GovernanceRecommendationController;
-use App\Controller\Http\Location\GovernanceRemediationPlanController;
-use App\Controller\Http\Location\MetricsController;
-use App\Controller\Http\Location\StatusController;
-use App\Infrastructure\Batch\Location\LegacyAddressBatchJobProgressWriter;
-use App\Infrastructure\Batch\Location\LegacyAddressBatchJobStore;
-use App\Infrastructure\Batch\Location\LegacyAddressBatchMessageBus;
-use App\Infrastructure\Batch\Location\LegacyAddressBatchResultReader;
-use App\Infrastructure\Batch\Location\LegacyAddressBatchResultWriter;
-use App\Infrastructure\Batch\Location\MessageBusAddressBatchMessageDispatcher;
-use App\Infrastructure\Batch\Location\SmartresponsorAddressBatchJobRecordFactoryBackend;
-use App\Infrastructure\Batch\Location\SmartresponsorAddressBatchJobRepositoryBackend;
-use App\Infrastructure\Batch\Location\SmartresponsorAddressBatchLegacyMessageBusBackend;
-use App\Infrastructure\Batch\Location\SmartresponsorAddressBatchLegacyResultBackend;
-use App\Infrastructure\Batch\Location\SmartresponsorAddressBatchResultStorageBackend;
-use App\Infrastructure\Provider\Location\LegacyAddressReverseGateway;
-use App\Infrastructure\Provider\Location\LegacyAddressSuggestGateway;
-use App\Infrastructure\Provider\Location\LegacyLocationMetricRecorder;
-use App\Infrastructure\Provider\Location\LegacyProviderCostCatalogGateway;
-use App\Infrastructure\Provider\Location\LegacyProviderHealthSnapshotStore;
-use App\Infrastructure\Provider\Location\LegacyProviderMetricSnapshotStore;
-use App\Infrastructure\Provider\Location\LegacyProviderQuotaDecisionGateway;
-use App\Infrastructure\Provider\Location\SmartresponsorAddressReverseHttpBackend;
-use App\Infrastructure\Provider\Location\SmartresponsorAddressSuggestBackend;
-use App\Infrastructure\Provider\Location\SmartresponsorLocationMetricBackend;
-use App\Infrastructure\Provider\Location\SmartresponsorProviderCostCatalogBackend;
-use App\Infrastructure\Provider\Location\SmartresponsorProviderHealthSnapshotBackend;
-use App\Infrastructure\Provider\Location\SmartresponsorProviderMetricSnapshotBackend;
-use App\Infrastructure\Provider\Location\SmartresponsorProviderQuotaDecisionBackend;
-use App\InfrastructureInterface\Batch\Location\AddressBatchJobProgressWriterInterface;
-use App\InfrastructureInterface\Batch\Location\AddressBatchJobRecordFactoryBackendInterface;
-use App\InfrastructureInterface\Batch\Location\AddressBatchJobRepositoryBackendInterface;
-use App\InfrastructureInterface\Batch\Location\AddressBatchJobStoreInterface;
-use App\InfrastructureInterface\Batch\Location\AddressBatchLegacyMessageBusBackendInterface;
-use App\InfrastructureInterface\Batch\Location\AddressBatchLegacyResultBackendInterface;
-use App\InfrastructureInterface\Batch\Location\AddressBatchMessageBusInterface;
-use App\InfrastructureInterface\Batch\Location\AddressBatchMessageDispatcherInterface;
-use App\InfrastructureInterface\Batch\Location\AddressBatchResultReaderInterface;
-use App\InfrastructureInterface\Batch\Location\AddressBatchResultStorageBackendInterface;
-use App\InfrastructureInterface\Batch\Location\AddressBatchResultWriterInterface;
-use App\InfrastructureInterface\Provider\Location\AddressReverseGatewayInterface;
-use App\InfrastructureInterface\Provider\Location\AddressReverseHttpBackendInterface;
-use App\InfrastructureInterface\Provider\Location\AddressSuggestBackendInterface;
-use App\InfrastructureInterface\Provider\Location\AddressSuggestGatewayInterface;
-use App\InfrastructureInterface\Provider\Location\LocationMetricBackendInterface;
-use App\InfrastructureInterface\Provider\Location\LocationMetricRecorderInterface;
-use App\InfrastructureInterface\Provider\Location\ProviderCostCatalogBackendInterface;
-use App\InfrastructureInterface\Provider\Location\ProviderCostCatalogGatewayInterface;
-use App\InfrastructureInterface\Provider\Location\ProviderHealthSnapshotBackendInterface;
-use App\InfrastructureInterface\Provider\Location\ProviderHealthSnapshotStoreInterface;
-use App\InfrastructureInterface\Provider\Location\ProviderMetricSnapshotBackendInterface;
-use App\InfrastructureInterface\Provider\Location\ProviderMetricSnapshotStoreInterface;
-use App\InfrastructureInterface\Provider\Location\ProviderQuotaDecisionBackendInterface;
-use App\InfrastructureInterface\Provider\Location\ProviderQuotaDecisionGatewayInterface;
-use App\MessageHandler\Batch\Location\AddressBatchMessageHandler as AppAddressBatchMessageHandler;
-use App\MessageHandlerInterface\Batch\Location\AddressBatchMessageHandlerInterface;
-use App\Service\Address\Location\AddressNormalizer;
-use App\Service\Address\Location\AddressParser;
-use App\Service\Address\Location\AddressPipeline;
-use App\Service\Address\Location\AddressReverseCapability;
-use App\Service\Address\Location\AddressSuggestCapability;
-use App\Service\Address\Location\AddressValidator;
-use App\Service\Address\Location\LocationResultFactory;
-use App\Service\Batch\Location\AddressBatchJobFactory;
-use App\Service\Batch\Location\LocationAddressBatchService;
-use App\Service\Batch\Location\LocationAddressBatchServiceMetricDecorator;
-use App\Service\Bridge\Batch\Location\LegacyAddressResultFactory;
-use App\Service\Http\Location\LocationAddressReverseService;
-use App\Service\Http\Location\LocationAddressSuggestService;
-use App\Service\Http\Location\LocationQuotaGuard;
-use App\Service\Http\Location\LocationViewFactory;
-use App\Service\Http\Location\SmartresponsorLocationQuotaGuardBackend;
-use App\Service\Observability\Location\LocationMetricsExportService;
-use App\Service\Observability\Location\LocationProviderGovernanceAcknowledgementService;
-use App\Service\Observability\Location\LocationProviderGovernanceAuditService;
-use App\Service\Observability\Location\LocationProviderGovernanceCatalogService;
-use App\Service\Observability\Location\LocationProviderGovernanceExecutionService;
-use App\Service\Observability\Location\LocationProviderGovernanceExplanationService;
-use App\Service\Observability\Location\LocationProviderGovernanceMetricsExportService;
-use App\Service\Observability\Location\LocationProviderGovernanceRecommendationService;
-use App\Service\Observability\Location\LocationProviderGovernanceRemediationPlanService;
-use App\Service\Observability\Location\LocationProviderGovernanceReportService;
-use App\Service\Observability\Location\LocationStatusReportService;
-use App\Service\Provider\Location\AddressReverseResultNormalizer;
-use App\Service\Provider\Location\AddressSuggestionRanker;
-use App\Service\Provider\Location\LegacyAddressReverseProvider;
-use App\Service\Provider\Location\LegacyAddressSuggestionProvider;
-use App\Service\Provider\Location\LegacyCostAwareAddressReverseSourceCostPolicy;
-use App\Service\Provider\Location\LegacyCostAwareAddressSuggestionSourceCostPolicy;
-use App\Service\Provider\Location\LegacyHealthAwareAddressReverseSourceHealthPolicy;
-use App\Service\Provider\Location\LegacyHealthAwareAddressSuggestionSourceHealthPolicy;
-use App\Service\Provider\Location\LegacyProviderCostSignalReader;
-use App\Service\Provider\Location\LegacyProviderHealthSignalReader;
-use App\Service\Provider\Location\LegacyProviderQuotaSignalReader;
-use App\Service\Provider\Location\LegacyQuotaAwareAddressReverseSourceQuotaPolicy;
-use App\Service\Provider\Location\LegacyQuotaAwareAddressSuggestionSourceQuotaPolicy;
-use App\Service\Provider\Location\OrderedAddressReverseProvider;
-use App\Service\Provider\Location\OrderedAddressSuggestionProvider;
-use App\Service\Provider\Location\PolicyAddressReverseSourceOrder;
-use App\Service\Provider\Location\PolicyAddressSuggestionSourceOrder;
-use App\Service\Provider\Location\StaticAddressReverseSourceOrder;
-use App\Service\Provider\Location\StaticAddressSuggestionSourceOrder;
-use App\ServiceInterface\Address\Location\AddressNormalizerInterface;
-use App\ServiceInterface\Address\Location\AddressParserInterface;
-use App\ServiceInterface\Address\Location\AddressPipelineInterface;
-use App\ServiceInterface\Address\Location\AddressReverseCapabilityInterface;
-use App\ServiceInterface\Address\Location\AddressSuggestCapabilityInterface;
-use App\ServiceInterface\Address\Location\AddressValidatorInterface;
-use App\ServiceInterface\Address\Location\LocationResultFactoryInterface;
-use App\ServiceInterface\Batch\Location\AddressBatchJobFactoryInterface;
-use App\ServiceInterface\Batch\Location\LocationAddressBatchServiceInterface;
-use App\ServiceInterface\Bridge\Batch\Location\LegacyAddressResultFactoryInterface;
-use App\ServiceInterface\Http\Location\LocationAddressReverseServiceInterface;
-use App\ServiceInterface\Http\Location\LocationAddressSuggestServiceInterface;
-use App\ServiceInterface\Http\Location\LocationQuotaGuardBackendInterface;
-use App\ServiceInterface\Http\Location\LocationQuotaGuardInterface;
-use App\ServiceInterface\Http\Location\LocationViewFactoryInterface;
-use App\ServiceInterface\Observability\Location\LocationMetricsExportServiceInterface;
-use App\ServiceInterface\Observability\Location\LocationProviderGovernanceAcknowledgementServiceInterface;
-use App\ServiceInterface\Observability\Location\LocationProviderGovernanceAuditServiceInterface;
-use App\ServiceInterface\Observability\Location\LocationProviderGovernanceCatalogServiceInterface;
-use App\ServiceInterface\Observability\Location\LocationProviderGovernanceExecutionServiceInterface;
-use App\ServiceInterface\Observability\Location\LocationProviderGovernanceExplanationServiceInterface;
-use App\ServiceInterface\Observability\Location\LocationProviderGovernanceMetricsExportServiceInterface;
-use App\ServiceInterface\Observability\Location\LocationProviderGovernanceRecommendationServiceInterface;
-use App\ServiceInterface\Observability\Location\LocationProviderGovernanceRemediationPlanServiceInterface;
-use App\ServiceInterface\Observability\Location\LocationProviderGovernanceReportServiceInterface;
-use App\ServiceInterface\Observability\Location\LocationStatusReportServiceInterface;
-use App\ServiceInterface\Provider\Location\AddressReverseProviderInterface;
-use App\ServiceInterface\Provider\Location\AddressReverseResultNormalizerInterface;
-use App\ServiceInterface\Provider\Location\AddressReverseSourceCostPolicyInterface;
-use App\ServiceInterface\Provider\Location\AddressReverseSourceHealthPolicyInterface;
-use App\ServiceInterface\Provider\Location\AddressReverseSourceOrderInterface;
-use App\ServiceInterface\Provider\Location\AddressReverseSourceQuotaPolicyInterface;
-use App\ServiceInterface\Provider\Location\AddressSuggestionProviderInterface;
-use App\ServiceInterface\Provider\Location\AddressSuggestionRankerInterface;
-use App\ServiceInterface\Provider\Location\AddressSuggestionSourceCostPolicyInterface;
-use App\ServiceInterface\Provider\Location\AddressSuggestionSourceHealthPolicyInterface;
-use App\ServiceInterface\Provider\Location\AddressSuggestionSourceOrderInterface;
-use App\ServiceInterface\Provider\Location\AddressSuggestionSourceQuotaPolicyInterface;
-use App\ServiceInterface\Provider\Location\ProviderCostSignalReaderInterface;
-use App\ServiceInterface\Provider\Location\ProviderHealthSignalReaderInterface;
-use App\ServiceInterface\Provider\Location\ProviderQuotaSignalReaderInterface;
+use App\Locating\Infrastructure\Batch\Location\AddressBatchJobProgressWriter;
+use App\Locating\Infrastructure\Batch\Location\AddressBatchJobRecordFactoryBackend;
+use App\Locating\Infrastructure\Batch\Location\AddressBatchJobRepositoryBackend;
+use App\Locating\Infrastructure\Batch\Location\AddressBatchJobStore;
+use App\Locating\Infrastructure\Batch\Location\AddressBatchMessageBus;
+use App\Locating\Infrastructure\Batch\Location\AddressBatchMessageBusBackend;
+use App\Locating\Infrastructure\Batch\Location\AddressBatchResultBackend;
+use App\Locating\Infrastructure\Batch\Location\AddressBatchResultReader;
+use App\Locating\Infrastructure\Batch\Location\AddressBatchResultStorageBackend;
+use App\Locating\Infrastructure\Batch\Location\AddressBatchResultWriter;
+use App\Locating\Infrastructure\Batch\Location\MessageBusAddressBatchMessageDispatcher;
+use App\Locating\Infrastructure\Provider\Location\AddressReverseGateway;
+use App\Locating\Infrastructure\Provider\Location\AddressReverseHttpBackend;
+use App\Locating\Infrastructure\Provider\Location\AddressSuggestBackend;
+use App\Locating\Infrastructure\Provider\Location\AddressSuggestGateway;
+use App\Locating\Infrastructure\Provider\Location\LocationMetricBackend;
+use App\Locating\Infrastructure\Provider\Location\LocationMetricRecorder;
+use App\Locating\Infrastructure\Provider\Location\Provider\ProviderCostCatalogGateway;
+use App\Locating\Infrastructure\Provider\Location\ProviderCostCatalogBackend;
+use App\Locating\Infrastructure\Provider\Location\ProviderHealthSnapshotBackend;
+use App\Locating\Infrastructure\Provider\Location\ProviderHealthSnapshotStore;
+use App\Locating\Infrastructure\Provider\Location\ProviderMetricSnapshotBackend;
+use App\Locating\Infrastructure\Provider\Location\ProviderMetricSnapshotStore;
+use App\Locating\Infrastructure\Provider\Location\ProviderQuotaDecisionBackend;
+use App\Locating\Infrastructure\Provider\Location\ProviderQuotaDecisionGateway;
+use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchJobProgressWriterInterface;
+use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchJobRecordFactoryBackendInterface;
+use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchJobRepositoryBackendInterface;
+use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchJobStoreInterface;
+use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchMessageBusBackendInterface;
+use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchMessageBusInterface;
+use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchMessageDispatcherInterface;
+use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchResultBackendInterface;
+use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchResultReaderInterface;
+use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchResultStorageBackendInterface;
+use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchResultWriterInterface;
+use App\Locating\InfrastructureInterface\Provider\Location\Backend\AddressSuggestBackendInterface;
+use App\Locating\InfrastructureInterface\Provider\Location\Backend\LocationMetricBackendInterface;
+use App\Locating\InfrastructureInterface\Provider\Location\Backend\ProviderCostCatalogBackendInterface;
+use App\Locating\InfrastructureInterface\Provider\Location\Backend\ProviderHealthSnapshotBackendInterface;
+use App\Locating\InfrastructureInterface\Provider\Location\Backend\ProviderMetricSnapshotBackendInterface;
+use App\Locating\InfrastructureInterface\Provider\Location\Backend\ProviderQuotaDecisionBackendInterface;
+use App\Locating\InfrastructureInterface\Provider\Location\Gateway\AddressReverseGatewayInterface;
+use App\Locating\InfrastructureInterface\Provider\Location\Gateway\AddressSuggestGatewayInterface;
+use App\Locating\InfrastructureInterface\Provider\Location\Gateway\ProviderCostCatalogGatewayInterface;
+use App\Locating\InfrastructureInterface\Provider\Location\Gateway\ProviderQuotaDecisionGatewayInterface;
+use App\Locating\InfrastructureInterface\Provider\Location\Http\AddressReverseHttpBackendInterface;
+use App\Locating\InfrastructureInterface\Provider\Location\Metrics\LocationMetricRecorderInterface;
+use App\Locating\InfrastructureInterface\Provider\Location\Store\ProviderHealthSnapshotStoreInterface;
+use App\Locating\InfrastructureInterface\Provider\Location\Store\ProviderMetricSnapshotStoreInterface;
+use App\Locating\MessageHandler\Batch\Location\AddressBatchMessageHandler;
+use App\Locating\MessageHandlerInterface\Batch\Location\AddressBatchMessageHandlerInterface;
+use App\Locating\Service\Address\Location\AddressNormalizer;
+use App\Locating\Service\Address\Location\AddressParser;
+use App\Locating\Service\Address\Location\AddressPipeline;
+use App\Locating\Service\Address\Location\AddressReverseCapability;
+use App\Locating\Service\Address\Location\AddressSuggestCapability;
+use App\Locating\Service\Address\Location\AddressValidator;
+use App\Locating\Service\Address\Location\LocationResultFactory;
+use App\Locating\Service\Batch\Location\AddressBatchJobFactory;
+use App\Locating\Service\Batch\Location\AddressResultFactory;
+use App\Locating\Service\Batch\Location\LocationAddressBatchService;
+use App\Locating\Service\Batch\Location\LocationAddressBatchServiceMetricDecorator;
+use App\Locating\Service\Http\Location\LocationAddressReverseHttpService;
+use App\Locating\Service\Http\Location\LocationAddressReverseService;
+use App\Locating\Service\Http\Location\LocationAddressSuggestHttpService;
+use App\Locating\Service\Http\Location\LocationAddressSuggestService;
+use App\Locating\Service\Http\Location\LocationGovernanceAcknowledgementHttpService;
+use App\Locating\Service\Http\Location\LocationGovernanceAuditHttpService;
+use App\Locating\Service\Http\Location\LocationGovernanceExecutionHttpService;
+use App\Locating\Service\Http\Location\LocationGovernanceExplanationHttpService;
+use App\Locating\Service\Http\Location\LocationGovernanceHttpService;
+use App\Locating\Service\Http\Location\LocationGovernanceMetricsHttpService;
+use App\Locating\Service\Http\Location\LocationGovernanceRecommendationHttpService;
+use App\Locating\Service\Http\Location\LocationGovernanceRemediationPlanHttpService;
+use App\Locating\Service\Http\Location\LocationMetricsHttpService;
+use App\Locating\Service\Http\Location\LocationQuotaGuard;
+use App\Locating\Service\Http\Location\LocationQuotaGuardBackend;
+use App\Locating\Service\Http\Location\LocationStatusHttpService;
+use App\Locating\Service\Http\Location\LocationViewFactory;
+use App\Locating\Service\Observability\Location\LocationMetricsExportService;
+use App\Locating\Service\Observability\Location\LocationProviderGovernanceAcknowledgementService;
+use App\Locating\Service\Observability\Location\LocationProviderGovernanceAuditService;
+use App\Locating\Service\Observability\Location\LocationProviderGovernanceCatalogService;
+use App\Locating\Service\Observability\Location\LocationProviderGovernanceExecutionService;
+use App\Locating\Service\Observability\Location\LocationProviderGovernanceExplanationService;
+use App\Locating\Service\Observability\Location\LocationProviderGovernanceMetricsExportService;
+use App\Locating\Service\Observability\Location\LocationProviderGovernanceRecommendationService;
+use App\Locating\Service\Observability\Location\LocationProviderGovernanceRemediationPlanService;
+use App\Locating\Service\Observability\Location\LocationProviderGovernanceReportService;
+use App\Locating\Service\Observability\Location\LocationStatusReportService;
+use App\Locating\Service\Provider\Location\AddressReverseProvider;
+use App\Locating\Service\Provider\Location\AddressReverseResultNormalizer;
+use App\Locating\Service\Provider\Location\AddressSuggestionProvider;
+use App\Locating\Service\Provider\Location\AddressSuggestionRanker;
+use App\Locating\Service\Provider\Location\CostAwareAddressReverseSourceCostPolicy;
+use App\Locating\Service\Provider\Location\CostAwareAddressSuggestionSourceCostPolicy;
+use App\Locating\Service\Provider\Location\HealthAwareAddressReverseSourceHealthPolicy;
+use App\Locating\Service\Provider\Location\HealthAwareAddressSuggestionSourceHealthPolicy;
+use App\Locating\Service\Provider\Location\OrderedAddressReverseProvider;
+use App\Locating\Service\Provider\Location\OrderedAddressSuggestionProvider;
+use App\Locating\Service\Provider\Location\PolicyAddressReverseSourceOrder;
+use App\Locating\Service\Provider\Location\PolicyAddressSuggestionSourceOrder;
+use App\Locating\Service\Provider\Location\ProviderCostSignalReader;
+use App\Locating\Service\Provider\Location\ProviderHealthSignalReader;
+use App\Locating\Service\Provider\Location\ProviderQuotaSignalReader;
+use App\Locating\Service\Provider\Location\QuotaAwareAddressReverseSourceQuotaPolicy;
+use App\Locating\Service\Provider\Location\QuotaAwareAddressSuggestionSourceQuotaPolicy;
+use App\Locating\Service\Provider\Location\StaticAddressReverseSourceOrder;
+use App\Locating\Service\Provider\Location\StaticAddressSuggestionSourceOrder;
+use App\Locating\ServiceInterface\Address\Location\AddressNormalizerInterface;
+use App\Locating\ServiceInterface\Address\Location\AddressParserInterface;
+use App\Locating\ServiceInterface\Address\Location\AddressPipelineInterface;
+use App\Locating\ServiceInterface\Address\Location\AddressReverseCapabilityInterface;
+use App\Locating\ServiceInterface\Address\Location\AddressSuggestCapabilityInterface;
+use App\Locating\ServiceInterface\Address\Location\AddressValidatorInterface;
+use App\Locating\ServiceInterface\Address\Location\LocationResultFactoryInterface;
+use App\Locating\ServiceInterface\Batch\Location\AddressBatchJobFactoryInterface;
+use App\Locating\ServiceInterface\Batch\Location\AddressResultFactoryInterface;
+use App\Locating\ServiceInterface\Batch\Location\LocationAddressBatchServiceInterface;
+use App\Locating\ServiceInterface\Http\Location\LocationAddressReverseServiceInterface;
+use App\Locating\ServiceInterface\Http\Location\LocationAddressSuggestServiceInterface;
+use App\Locating\ServiceInterface\Http\Location\LocationQuotaGuardBackendInterface;
+use App\Locating\ServiceInterface\Http\Location\LocationQuotaGuardInterface;
+use App\Locating\ServiceInterface\Http\Location\LocationViewFactoryInterface;
+use App\Locating\ServiceInterface\Observability\Location\LocationMetricsExportServiceInterface;
+use App\Locating\ServiceInterface\Observability\Location\LocationProviderGovernanceAcknowledgementServiceInterface;
+use App\Locating\ServiceInterface\Observability\Location\LocationProviderGovernanceAuditServiceInterface;
+use App\Locating\ServiceInterface\Observability\Location\LocationProviderGovernanceCatalogServiceInterface;
+use App\Locating\ServiceInterface\Observability\Location\LocationProviderGovernanceExecutionServiceInterface;
+use App\Locating\ServiceInterface\Observability\Location\LocationProviderGovernanceExplanationServiceInterface;
+use App\Locating\ServiceInterface\Observability\Location\LocationProviderGovernanceMetricsExportServiceInterface;
+use App\Locating\ServiceInterface\Observability\Location\LocationProviderGovernanceRecommendationServiceInterface;
+use App\Locating\ServiceInterface\Observability\Location\LocationProviderGovernanceRemediationPlanServiceInterface;
+use App\Locating\ServiceInterface\Observability\Location\LocationProviderGovernanceReportServiceInterface;
+use App\Locating\ServiceInterface\Observability\Location\LocationStatusReportServiceInterface;
+use App\Locating\ServiceInterface\Provider\Location\AddressReverseProviderInterface;
+use App\Locating\ServiceInterface\Provider\Location\AddressReverseResultNormalizerInterface;
+use App\Locating\ServiceInterface\Provider\Location\AddressReverseSourceCostPolicyInterface;
+use App\Locating\ServiceInterface\Provider\Location\AddressReverseSourceHealthPolicyInterface;
+use App\Locating\ServiceInterface\Provider\Location\AddressReverseSourceOrderInterface;
+use App\Locating\ServiceInterface\Provider\Location\AddressReverseSourceQuotaPolicyInterface;
+use App\Locating\ServiceInterface\Provider\Location\AddressSuggestionProviderInterface;
+use App\Locating\ServiceInterface\Provider\Location\AddressSuggestionRankerInterface;
+use App\Locating\ServiceInterface\Provider\Location\AddressSuggestionSourceCostPolicyInterface;
+use App\Locating\ServiceInterface\Provider\Location\AddressSuggestionSourceHealthPolicyInterface;
+use App\Locating\ServiceInterface\Provider\Location\AddressSuggestionSourceOrderInterface;
+use App\Locating\ServiceInterface\Provider\Location\AddressSuggestionSourceQuotaPolicyInterface;
+use App\Locating\ServiceInterface\Provider\Location\ProviderCostSignalReaderInterface;
+use App\Locating\ServiceInterface\Provider\Location\ProviderHealthSignalReaderInterface;
+use App\Locating\ServiceInterface\Provider\Location\ProviderQuotaSignalReaderInterface;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
 use function Symfony\Component\DependencyInjection\Loader\Configurator\service;
@@ -164,40 +163,40 @@ return static function (ContainerConfigurator $container): void {
             ->autowire()
             ->autoconfigure();
 
-    $services->alias(AddressSuggestBackendInterface::class, SmartresponsorAddressSuggestBackend::class);
-    $services->alias(AddressReverseHttpBackendInterface::class, SmartresponsorAddressReverseHttpBackend::class);
-    $services->alias(LocationMetricBackendInterface::class, SmartresponsorLocationMetricBackend::class);
-    $services->alias(ProviderHealthSnapshotBackendInterface::class, SmartresponsorProviderHealthSnapshotBackend::class);
-    $services->alias(ProviderMetricSnapshotBackendInterface::class, SmartresponsorProviderMetricSnapshotBackend::class);
-    $services->alias(ProviderCostCatalogBackendInterface::class, SmartresponsorProviderCostCatalogBackend::class);
-    $services->alias(ProviderQuotaDecisionBackendInterface::class, SmartresponsorProviderQuotaDecisionBackend::class);
-    $services->alias(AddressSuggestGatewayInterface::class, LegacyAddressSuggestGateway::class);
-    $services->alias(AddressReverseGatewayInterface::class, LegacyAddressReverseGateway::class);
-    $services->alias(LocationMetricRecorderInterface::class, LegacyLocationMetricRecorder::class);
-    $services->alias(ProviderHealthSnapshotStoreInterface::class, LegacyProviderHealthSnapshotStore::class);
-    $services->alias(ProviderMetricSnapshotStoreInterface::class, LegacyProviderMetricSnapshotStore::class);
-    $services->alias(ProviderCostCatalogGatewayInterface::class, LegacyProviderCostCatalogGateway::class);
-    $services->alias(ProviderQuotaDecisionGatewayInterface::class, LegacyProviderQuotaDecisionGateway::class);
+    $services->alias(AddressSuggestBackendInterface::class, AddressSuggestBackend::class);
+    $services->alias(AddressReverseHttpBackendInterface::class, AddressReverseHttpBackend::class);
+    $services->alias(LocationMetricBackendInterface::class, LocationMetricBackend::class);
+    $services->alias(ProviderHealthSnapshotBackendInterface::class, ProviderHealthSnapshotBackend::class);
+    $services->alias(ProviderMetricSnapshotBackendInterface::class, ProviderMetricSnapshotBackend::class);
+    $services->alias(ProviderCostCatalogBackendInterface::class, ProviderCostCatalogBackend::class);
+    $services->alias(ProviderQuotaDecisionBackendInterface::class, ProviderQuotaDecisionBackend::class);
+    $services->alias(AddressSuggestGatewayInterface::class, AddressSuggestGateway::class);
+    $services->alias(AddressReverseGatewayInterface::class, AddressReverseGateway::class);
+    $services->alias(LocationMetricRecorderInterface::class, LocationMetricRecorder::class);
+    $services->alias(ProviderHealthSnapshotStoreInterface::class, ProviderHealthSnapshotStore::class);
+    $services->alias(ProviderMetricSnapshotStoreInterface::class, ProviderMetricSnapshotStore::class);
+    $services->alias(ProviderCostCatalogGatewayInterface::class, ProviderCostCatalogGateway::class);
+    $services->alias(ProviderQuotaDecisionGatewayInterface::class, ProviderQuotaDecisionGateway::class);
     $services->alias(AddressSuggestionProviderInterface::class, OrderedAddressSuggestionProvider::class);
     $services->alias(AddressReverseProviderInterface::class, OrderedAddressReverseProvider::class);
     $services->alias(AddressSuggestionRankerInterface::class, AddressSuggestionRanker::class);
-    $services->alias(AddressSuggestionSourceHealthPolicyInterface::class, LegacyHealthAwareAddressSuggestionSourceHealthPolicy::class);
-    $services->alias(ProviderHealthSignalReaderInterface::class, LegacyProviderHealthSignalReader::class);
-    $services->alias(ProviderQuotaSignalReaderInterface::class, LegacyProviderQuotaSignalReader::class);
-    $services->alias(ProviderCostSignalReaderInterface::class, LegacyProviderCostSignalReader::class);
-    $services->alias(AddressSuggestionSourceQuotaPolicyInterface::class, LegacyQuotaAwareAddressSuggestionSourceQuotaPolicy::class);
-    $services->alias(AddressSuggestionSourceCostPolicyInterface::class, LegacyCostAwareAddressSuggestionSourceCostPolicy::class);
+    $services->alias(AddressSuggestionSourceHealthPolicyInterface::class, HealthAwareAddressSuggestionSourceHealthPolicy::class);
+    $services->alias(ProviderHealthSignalReaderInterface::class, ProviderHealthSignalReader::class);
+    $services->alias(ProviderQuotaSignalReaderInterface::class, ProviderQuotaSignalReader::class);
+    $services->alias(ProviderCostSignalReaderInterface::class, ProviderCostSignalReader::class);
+    $services->alias(AddressSuggestionSourceQuotaPolicyInterface::class, QuotaAwareAddressSuggestionSourceQuotaPolicy::class);
+    $services->alias(AddressSuggestionSourceCostPolicyInterface::class, CostAwareAddressSuggestionSourceCostPolicy::class);
     $services->alias(AddressSuggestionSourceOrderInterface::class, PolicyAddressSuggestionSourceOrder::class);
-    $services->alias(AddressReverseSourceHealthPolicyInterface::class, LegacyHealthAwareAddressReverseSourceHealthPolicy::class);
-    $services->alias(AddressReverseSourceQuotaPolicyInterface::class, LegacyQuotaAwareAddressReverseSourceQuotaPolicy::class);
-    $services->alias(AddressReverseSourceCostPolicyInterface::class, LegacyCostAwareAddressReverseSourceCostPolicy::class);
+    $services->alias(AddressReverseSourceHealthPolicyInterface::class, HealthAwareAddressReverseSourceHealthPolicy::class);
+    $services->alias(AddressReverseSourceQuotaPolicyInterface::class, QuotaAwareAddressReverseSourceQuotaPolicy::class);
+    $services->alias(AddressReverseSourceCostPolicyInterface::class, CostAwareAddressReverseSourceCostPolicy::class);
     $services->alias(AddressReverseSourceOrderInterface::class, PolicyAddressReverseSourceOrder::class);
     $services->alias(AddressReverseResultNormalizerInterface::class, AddressReverseResultNormalizer::class);
     $services->alias(AddressSuggestCapabilityInterface::class, AddressSuggestCapability::class);
     $services->alias(AddressReverseCapabilityInterface::class, AddressReverseCapability::class);
     $services->alias(LocationResultFactoryInterface::class, LocationResultFactory::class);
     $services->alias(LocationViewFactoryInterface::class, LocationViewFactory::class);
-    $services->alias(LocationQuotaGuardBackendInterface::class, SmartresponsorLocationQuotaGuardBackend::class);
+    $services->alias(LocationQuotaGuardBackendInterface::class, LocationQuotaGuardBackend::class);
     $services->alias(LocationQuotaGuardInterface::class, LocationQuotaGuard::class);
     $services->alias(LocationAddressSuggestServiceInterface::class, LocationAddressSuggestService::class);
     $services->alias(LocationAddressReverseServiceInterface::class, LocationAddressReverseService::class);
@@ -216,71 +215,71 @@ return static function (ContainerConfigurator $container): void {
     $services->alias(AddressNormalizerInterface::class, AddressNormalizer::class);
     $services->alias(AddressValidatorInterface::class, AddressValidator::class);
     $services->alias(AddressPipelineInterface::class, AddressPipeline::class);
-    $services->alias(LegacyAddressResultFactoryInterface::class, LegacyAddressResultFactory::class);
+    $services->alias(AddressResultFactoryInterface::class, AddressResultFactory::class);
     $services->alias(AddressBatchJobFactoryInterface::class, AddressBatchJobFactory::class);
-    $services->alias(AddressBatchJobStoreInterface::class, LegacyAddressBatchJobStore::class);
-    $services->alias(AddressBatchMessageBusInterface::class, LegacyAddressBatchMessageBus::class);
+    $services->alias(AddressBatchJobStoreInterface::class, AddressBatchJobStore::class);
+    $services->alias(AddressBatchMessageBusInterface::class, AddressBatchMessageBus::class);
     $services->alias(AddressBatchMessageDispatcherInterface::class, MessageBusAddressBatchMessageDispatcher::class);
-    $services->alias(AddressBatchResultReaderInterface::class, LegacyAddressBatchResultReader::class);
-    $services->alias(AddressBatchJobProgressWriterInterface::class, LegacyAddressBatchJobProgressWriter::class);
-    $services->alias(AddressBatchResultWriterInterface::class, LegacyAddressBatchResultWriter::class);
+    $services->alias(AddressBatchResultReaderInterface::class, AddressBatchResultReader::class);
+    $services->alias(AddressBatchJobProgressWriterInterface::class, AddressBatchJobProgressWriter::class);
+    $services->alias(AddressBatchResultWriterInterface::class, AddressBatchResultWriter::class);
     $services->alias(LocationAddressBatchServiceInterface::class, LocationAddressBatchServiceMetricDecorator::class);
-    $services->alias(AddressBatchJobRepositoryBackendInterface::class, SmartresponsorAddressBatchJobRepositoryBackend::class);
-    $services->alias(AddressBatchResultStorageBackendInterface::class, SmartresponsorAddressBatchResultStorageBackend::class);
-    $services->alias(AddressBatchLegacyMessageBusBackendInterface::class, SmartresponsorAddressBatchLegacyMessageBusBackend::class);
-    $services->alias(AddressBatchJobRecordFactoryBackendInterface::class, SmartresponsorAddressBatchJobRecordFactoryBackend::class);
-    $services->alias(AddressBatchLegacyResultBackendInterface::class, SmartresponsorAddressBatchLegacyResultBackend::class);
+    $services->alias(AddressBatchJobRepositoryBackendInterface::class, AddressBatchJobRepositoryBackend::class);
+    $services->alias(AddressBatchResultStorageBackendInterface::class, AddressBatchResultStorageBackend::class);
+    $services->alias(AddressBatchMessageBusBackendInterface::class, AddressBatchMessageBusBackend::class);
+    $services->alias(AddressBatchJobRecordFactoryBackendInterface::class, AddressBatchJobRecordFactoryBackend::class);
+    $services->alias(AddressBatchResultBackendInterface::class, AddressBatchResultBackend::class);
 
-    $services->set(SmartresponsorAddressSuggestBackend::class);
+    $services->set(AddressSuggestBackend::class);
 
-    $services->set(LegacyAddressSuggestGateway::class)
+    $services->set(AddressSuggestGateway::class)
         ->args([
             service(AddressSuggestBackendInterface::class),
         ]);
 
-    $services->set(SmartresponsorAddressReverseHttpBackend::class);
+    $services->set(AddressReverseHttpBackend::class);
 
-    $services->set(LegacyAddressReverseGateway::class)
+    $services->set(AddressReverseGateway::class)
         ->args([
             service(AddressReverseHttpBackendInterface::class),
         ]);
 
-    $services->set(SmartresponsorLocationMetricBackend::class);
+    $services->set(LocationMetricBackend::class);
 
-    $services->set(LegacyLocationMetricRecorder::class)
+    $services->set(LocationMetricRecorder::class)
         ->args([
             service(LocationMetricBackendInterface::class),
         ]);
 
-    $services->set(SmartresponsorProviderHealthSnapshotBackend::class);
+    $services->set(ProviderHealthSnapshotBackend::class);
 
-    $services->set(LegacyProviderHealthSnapshotStore::class)
+    $services->set(ProviderHealthSnapshotStore::class)
         ->args([
             service(ProviderHealthSnapshotBackendInterface::class),
         ]);
 
-    $services->set(SmartresponsorProviderMetricSnapshotBackend::class);
+    $services->set(ProviderMetricSnapshotBackend::class);
 
-    $services->set(LegacyProviderMetricSnapshotStore::class)
+    $services->set(ProviderMetricSnapshotStore::class)
         ->args([
             service(ProviderMetricSnapshotBackendInterface::class),
         ]);
 
-    $services->set(SmartresponsorProviderCostCatalogBackend::class);
+    $services->set(ProviderCostCatalogBackend::class);
 
-    $services->set(LegacyProviderCostCatalogGateway::class)
+    $services->set(ProviderCostCatalogGateway::class)
         ->args([
             service(ProviderCostCatalogBackendInterface::class),
         ]);
 
-    $services->set(SmartresponsorProviderQuotaDecisionBackend::class);
+    $services->set(ProviderQuotaDecisionBackend::class);
 
-    $services->set(LegacyProviderQuotaDecisionGateway::class)
+    $services->set(ProviderQuotaDecisionGateway::class)
         ->args([
             service(ProviderQuotaDecisionBackendInterface::class),
         ]);
 
-    $services->set(LegacyAddressSuggestionProvider::class)
+    $services->set(AddressSuggestionProvider::class)
         ->args([
             service(AddressSuggestGatewayInterface::class),
             service(LocationResultFactoryInterface::class),
@@ -288,34 +287,34 @@ return static function (ContainerConfigurator $container): void {
 
     $services->set(AddressSuggestionRanker::class);
 
-    $services->set(LegacyProviderHealthSignalReader::class)
+    $services->set(ProviderHealthSignalReader::class)
         ->args([
             service(ProviderHealthSnapshotStoreInterface::class),
         ]);
 
-    $services->set(LegacyProviderQuotaSignalReader::class)
+    $services->set(ProviderQuotaSignalReader::class)
         ->args([
             service(ProviderQuotaDecisionGatewayInterface::class),
             'default',
         ]);
 
-    $services->set(LegacyProviderCostSignalReader::class)
+    $services->set(ProviderCostSignalReader::class)
         ->args([
             service(ProviderCostCatalogGatewayInterface::class),
             'global',
         ]);
 
-    $services->set(LegacyHealthAwareAddressSuggestionSourceHealthPolicy::class)
+    $services->set(HealthAwareAddressSuggestionSourceHealthPolicy::class)
         ->args([
             service(ProviderHealthSignalReaderInterface::class),
         ]);
 
-    $services->set(LegacyQuotaAwareAddressSuggestionSourceQuotaPolicy::class)
+    $services->set(QuotaAwareAddressSuggestionSourceQuotaPolicy::class)
         ->args([
             service(ProviderQuotaSignalReaderInterface::class),
         ]);
 
-    $services->set(LegacyCostAwareAddressSuggestionSourceCostPolicy::class)
+    $services->set(CostAwareAddressSuggestionSourceCostPolicy::class)
         ->args([
             service(ProviderCostSignalReaderInterface::class),
         ]);
@@ -331,12 +330,12 @@ return static function (ContainerConfigurator $container): void {
 
     $services->set(OrderedAddressSuggestionProvider::class)
         ->args([
-            [service(LegacyAddressSuggestionProvider::class)],
+            [service(AddressSuggestionProvider::class)],
             service(AddressSuggestionSourceOrderInterface::class),
             service(AddressSuggestionRankerInterface::class),
         ]);
 
-    $services->set(LegacyAddressReverseProvider::class)
+    $services->set(AddressReverseProvider::class)
         ->args([
             service(AddressReverseGatewayInterface::class),
             service(LocationResultFactoryInterface::class),
@@ -345,17 +344,17 @@ return static function (ContainerConfigurator $container): void {
 
     $services->set(AddressReverseResultNormalizer::class);
 
-    $services->set(LegacyHealthAwareAddressReverseSourceHealthPolicy::class)
+    $services->set(HealthAwareAddressReverseSourceHealthPolicy::class)
         ->args([
             service(ProviderHealthSignalReaderInterface::class),
         ]);
 
-    $services->set(LegacyQuotaAwareAddressReverseSourceQuotaPolicy::class)
+    $services->set(QuotaAwareAddressReverseSourceQuotaPolicy::class)
         ->args([
             service(ProviderQuotaSignalReaderInterface::class),
         ]);
 
-    $services->set(LegacyCostAwareAddressReverseSourceCostPolicy::class)
+    $services->set(CostAwareAddressReverseSourceCostPolicy::class)
         ->args([
             service(ProviderCostSignalReaderInterface::class),
         ]);
@@ -371,7 +370,7 @@ return static function (ContainerConfigurator $container): void {
 
     $services->set(OrderedAddressReverseProvider::class)
         ->args([
-            [service(LegacyAddressReverseProvider::class)],
+            [service(AddressReverseProvider::class)],
             service(AddressReverseSourceOrderInterface::class),
             service(AddressReverseResultNormalizerInterface::class),
         ]);
@@ -400,37 +399,37 @@ return static function (ContainerConfigurator $container): void {
             service(AddressValidatorInterface::class),
         ]);
 
-    $services->set(LegacyAddressResultFactory::class)
+    $services->set(AddressResultFactory::class)
         ->args([
-            service(AddressBatchLegacyResultBackendInterface::class),
+            service(AddressBatchResultBackendInterface::class),
         ]);
 
     $services->set(AddressBatchJobFactory::class);
 
-    $services->set(SmartresponsorAddressBatchJobRepositoryBackend::class)
+    $services->set(AddressBatchJobRepositoryBackend::class)
         ->args([
             service(AddressBatchJobRepositoryBackendInterface::class),
         ]);
 
-    $services->set(SmartresponsorAddressBatchLegacyMessageBusBackend::class)
+    $services->set(AddressBatchMessageBusBackend::class)
         ->args([
-            service(AddressBatchLegacyMessageBusBackendInterface::class),
+            service(AddressBatchMessageBusBackendInterface::class),
         ]);
 
-    $services->set(SmartresponsorAddressBatchResultStorageBackend::class)
+    $services->set(AddressBatchResultStorageBackend::class)
         ->args([
             service(AddressBatchResultStorageBackendInterface::class),
         ]);
 
-    $services->set(LegacyAddressBatchJobStore::class)
+    $services->set(AddressBatchJobStore::class)
         ->args([
             service(AddressBatchJobRepositoryBackendInterface::class),
             service(AddressBatchJobFactoryInterface::class),
         ]);
 
-    $services->set(LegacyAddressBatchMessageBus::class)
+    $services->set(AddressBatchMessageBus::class)
         ->args([
-            service(AddressBatchLegacyMessageBusBackendInterface::class),
+            service(AddressBatchMessageBusBackendInterface::class),
         ]);
 
     $services->set(MessageBusAddressBatchMessageDispatcher::class)
@@ -438,20 +437,20 @@ return static function (ContainerConfigurator $container): void {
             service(AddressBatchMessageBusInterface::class),
         ]);
 
-    $services->set(LegacyAddressBatchResultReader::class)
+    $services->set(AddressBatchResultReader::class)
         ->args([
             service(AddressBatchResultStorageBackendInterface::class),
         ]);
 
-    $services->set(LegacyAddressBatchJobProgressWriter::class)
+    $services->set(AddressBatchJobProgressWriter::class)
         ->args([
             service(AddressBatchJobRepositoryBackendInterface::class),
         ]);
 
-    $services->set(LegacyAddressBatchResultWriter::class)
+    $services->set(AddressBatchResultWriter::class)
         ->args([
             service(AddressBatchResultStorageBackendInterface::class),
-            service(LegacyAddressResultFactoryInterface::class),
+            service(AddressResultFactoryInterface::class),
         ]);
 
     $services->set(LocationAddressBatchService::class)
@@ -467,31 +466,26 @@ return static function (ContainerConfigurator $container): void {
             service(LocationMetricRecorderInterface::class),
         ]);
 
-    $services->alias(AddressBatchMessageHandlerInterface::class, AppAddressBatchMessageHandler::class);
+    $services->alias(AddressBatchMessageHandlerInterface::class, AddressBatchMessageHandler::class);
 
-    $services->set(GovernanceController::class)
+    $services->set(LocationGovernanceHttpService::class)
         ->public()
         ->args([
             service(LocationProviderGovernanceReportServiceInterface::class),
         ]);
 
-    $services->set(GovernanceMetricsController::class)
+    $services->set(LocationGovernanceMetricsHttpService::class)
         ->public()
         ->args([
             service(LocationProviderGovernanceMetricsExportServiceInterface::class),
         ]);
 
-    $services->set(AppAddressBatchMessageHandler::class)
+    $services->set(AddressBatchMessageHandler::class)
         ->args([
             service(AddressPipelineInterface::class),
             service(AddressBatchJobProgressWriterInterface::class),
             service(AddressBatchResultWriterInterface::class),
         ]);
-
-    $services->set(AddressBatchLegacyMessageHandler::class)
-       ->args([
-           service(AddressBatchMessageHandlerInterface::class),
-       ]);
 
     $services->set(LocationAddressSuggestService::class)
         ->args([
@@ -511,8 +505,8 @@ return static function (ContainerConfigurator $container): void {
             service(ProviderQuotaSignalReaderInterface::class),
             service(ProviderCostSignalReaderInterface::class),
             [
-                'legacy-suggest' => 'suggest',
-                'legacy-reverse' => 'reverse',
+                'suggest' => 'suggest',
+                'reverse' => 'reverse',
             ],
         ]);
 
@@ -569,63 +563,63 @@ return static function (ContainerConfigurator $container): void {
             service(LocationProviderGovernanceCatalogServiceInterface::class),
         ]);
 
-    $services->set(AddressSuggestController::class)
+    $services->set(LocationAddressSuggestHttpService::class)
         ->public()
         ->args([
             service(LocationAddressSuggestServiceInterface::class),
             service(LocationQuotaGuardInterface::class),
         ]);
 
-    $services->set(AddressReverseController::class)
+    $services->set(LocationAddressReverseHttpService::class)
         ->public()
         ->args([
             service(LocationAddressReverseServiceInterface::class),
             service(LocationQuotaGuardInterface::class),
         ]);
 
-    $services->set(StatusController::class)
+    $services->set(LocationStatusHttpService::class)
         ->public()
         ->args([
             service(LocationStatusReportServiceInterface::class),
         ]);
 
-    $services->set(MetricsController::class)
+    $services->set(LocationMetricsHttpService::class)
         ->public()
         ->args([
             service(LocationMetricsExportServiceInterface::class),
         ]);
 
-    $services->set(GovernanceExplanationController::class)
+    $services->set(LocationGovernanceExplanationHttpService::class)
         ->public()
         ->args([
             service(LocationProviderGovernanceExplanationServiceInterface::class),
         ]);
 
-    $services->set(GovernanceRecommendationController::class)
+    $services->set(LocationGovernanceRecommendationHttpService::class)
         ->public()
         ->args([
             service(LocationProviderGovernanceRecommendationServiceInterface::class),
         ]);
 
-    $services->set(GovernanceAuditController::class)
+    $services->set(LocationGovernanceAuditHttpService::class)
         ->public()
         ->args([
             service(LocationProviderGovernanceAuditServiceInterface::class),
         ]);
 
-    $services->set(GovernanceRemediationPlanController::class)
+    $services->set(LocationGovernanceRemediationPlanHttpService::class)
         ->public()
         ->args([
             service(LocationProviderGovernanceRemediationPlanServiceInterface::class),
         ]);
 
-    $services->set(GovernanceExecutionController::class)
+    $services->set(LocationGovernanceExecutionHttpService::class)
         ->public()
         ->args([
             service(LocationProviderGovernanceExecutionServiceInterface::class),
         ]);
 
-    $services->set(GovernanceAcknowledgementController::class)
+    $services->set(LocationGovernanceAcknowledgementHttpService::class)
         ->public()
         ->args([
             service(LocationProviderGovernanceAcknowledgementServiceInterface::class),

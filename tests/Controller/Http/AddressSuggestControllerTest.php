@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tests\Controller\Http;
+namespace App\Locating\Tests\Controller\Http;
 
-use App\Controller\Http\Location\AddressSuggestController;
-use App\Entity\Location\AddressSuggestionView;
-use App\Entity\Location\AddressView;
-use App\ServiceInterface\Http\Location\LocationAddressSuggestServiceInterface;
-use App\ServiceInterface\Http\Location\LocationQuotaGuardInterface;
+use App\Locating\Controller\Http\Location\AddressSuggestController;
+use App\Locating\Model\Location\AddressSuggestionView;
+use App\Locating\Model\Location\AddressView;
+use App\Locating\ServiceInterface\Http\Location\LocationAddressSuggestServiceInterface;
+use App\Locating\ServiceInterface\Http\Location\LocationQuotaGuardInterface;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -16,7 +16,7 @@ final class AddressSuggestControllerTest extends TestCase
 {
     public function testReturnsEmptyItemsForBlankQuery(): void
     {
-        $service = new class implements LocationAddressSuggestServiceInterface {
+        $service = new class () implements LocationAddressSuggestServiceInterface {
             public function suggest(string $query, ?string $countryCode = null, int $limit = 5): array
             {
                 return [new AddressSuggestionView('should not run', AddressView::fromArray([]), null)];
@@ -31,7 +31,7 @@ final class AddressSuggestControllerTest extends TestCase
 
     public function testCapsLimitAndReturnsSerializedItems(): void
     {
-        $service = new class implements LocationAddressSuggestServiceInterface {
+        $service = new class () implements LocationAddressSuggestServiceInterface {
             public function suggest(string $query, ?string $countryCode = null, int $limit = 5): array
             {
                 TestCase::assertSame('Main', $query);
@@ -52,7 +52,7 @@ final class AddressSuggestControllerTest extends TestCase
             }
         };
 
-        $guard = new class implements LocationQuotaGuardInterface {
+        $guard = new class () implements LocationQuotaGuardInterface {
             public function isAllowed(string $operation): bool
             {
                 TestCase::assertSame(self::OPERATION_SUGGEST, $operation);

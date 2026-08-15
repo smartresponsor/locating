@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Tests\Config;
+namespace App\Locating\Tests\Config;
 
 use PHPUnit\Framework\TestCase;
 
 final class LocationGovernanceExplanationConfigTest extends TestCase
 {
-    public function testGovernanceExplanationRouteTargetsAppController(): void
+    public function testGovernanceExplanationRouteTargetsAppService(): void
     {
         $route = file_get_contents(__DIR__.'/../../config/routes/locator_governance_explanations.yaml');
 
         self::assertIsString($route);
         self::assertStringContainsString('/location/governance/explanations', $route);
-        self::assertStringContainsString('App\\Controller\\Http\\Location\\GovernanceExplanationController', $route);
+        self::assertStringContainsString('App\Locating\\Service\\Http\\Location\\LocationGovernanceExplanationHttpService', $route);
     }
 }

@@ -1,0 +1,11 @@
+.php-cs-fixer.dist.php
+.gate/check/location-root-tooling-canon.php
+tools/canon/location-root-tooling-audit.php
+tools/canon/location-structure-audit.php
+docs/locating-lc02-root-tooling-cleanup.md
+report/locating-lc02-touched-files.txt
+composer.json
+
+Apply script retires with backup only:
+.php-cs-fixer.php
+php-cs-fixer.dist.php

@@ -7,10 +7,10 @@ declare(strict_types=1);
  * dev@highhopesamerica.com
  */
 
-namespace App\Command\Address;
+namespace App\Locating\Command\Address;
 
-use App\Entity\Location\AddressInput;
-use App\ServiceInterface\Address\Location\AddressPipelineInterface;
+use App\Locating\Model\Location\AddressInput;
+use App\Locating\ServiceInterface\Address\Location\AddressPipelineInterface;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;

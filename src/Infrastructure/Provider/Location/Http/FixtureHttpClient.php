@@ -1,0 +1,20 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\Locating\Infrastructure\Provider\Location\Http;
+
+final class FixtureHttpClient implements HttpClientInterface
+{
+    public function __construct(private string $dir)
+    {
+    } public function get(string $u, array $o = []): array
+    {
+        $f = $this->dir.'/'.md5($u).'.json';
+        return file_exists($f) ? json_decode(file_get_contents($f), true) ?: [] : [];
+    } public function getRaw(string $u, array $o = []): string
+    {
+        $f = $this->dir.'/'.md5($u).'.xml';
+        return file_exists($f) ? file_get_contents($f) : '';
+    }
+}

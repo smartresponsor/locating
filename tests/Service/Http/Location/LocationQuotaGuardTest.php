@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Tests\Service\Http\Location;
+namespace App\Locating\Tests\Service\Http\Location;
 
-use App\Service\Http\Location\LocationQuotaGuard;
-use App\ServiceInterface\Http\Location\LocationQuotaGuardBackendInterface;
-use App\ServiceInterface\Http\Location\LocationQuotaGuardInterface;
+use App\Locating\Service\Http\Location\LocationQuotaGuard;
+use App\Locating\ServiceInterface\Http\Location\LocationQuotaGuardBackendInterface;
+use App\Locating\ServiceInterface\Http\Location\LocationQuotaGuardInterface;
 use PHPUnit\Framework\TestCase;
 
 final class LocationQuotaGuardTest extends TestCase
 {
     public function testMapsSuggestAndReverseOperationsToBackendMethods(): void
     {
-        $backend = new class implements LocationQuotaGuardBackendInterface {
+        $backend = new class () implements LocationQuotaGuardBackendInterface {
             public bool $suggestCalled = false;
             public bool $reverseCalled = false;
 

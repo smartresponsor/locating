@@ -1,15 +1,16 @@
 <?php
+
 declare(strict_types=1);
 
 /*
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace Smartresponsor\Tests\Locator\Service;
+namespace App\Locating\Tests\Locator\Service;
 
-use Smartresponsor\Infrastructure\Locator\InMemoryMetricRecorder;
-use Smartresponsor\Service\Locator\TenantQuotaManager;
-use Smartresponsor\Service\Locator\TenantQuotaManagerMetricDecorator;
+use App\Locating\Infrastructure\Provider\Location\Metrics\InMemoryMetricRecorder;
+use App\Locating\Service\Location\Tenant\TenantQuotaManager;
+use App\Locating\Service\Location\Tenant\TenantQuotaManagerMetricDecorator;
 use PHPUnit\Framework\TestCase;
 
 final class TenantQuotaManagerMetricDecoratorTest extends TestCase

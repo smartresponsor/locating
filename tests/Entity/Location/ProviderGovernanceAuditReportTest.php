@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Tests\Entity\Location;
+namespace App\Locating\Tests\Entity\Location;
 
-use App\Entity\Location\ProviderGovernanceAuditEntry;
-use App\Entity\Location\ProviderGovernanceAuditReport;
+use App\Locating\Model\Location\ProviderGovernanceAuditEntry;
+use App\Locating\Model\Location\ProviderGovernanceAuditReport;
 use PHPUnit\Framework\TestCase;
 
 final class ProviderGovernanceAuditReportTest extends TestCase

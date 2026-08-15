@@ -1248,7 +1248,7 @@
       "locator-src-current.zip"
     ]
   },
-  "src/Controller/Locator/.gitkeep": {
+  "src/Service/Locator/.gitkeep": {
     "winner_source_preferred": "locator-src-current.zip",
     "winner_source_all": [
       "winner",
@@ -1259,7 +1259,7 @@
       "locator-src-current.zip"
     ]
   },
-  "src/Controller/Locator/AddressReverseController.php": {
+  "src/Service/Locator/LocationAddressReverseHttpService.php": {
     "winner_source_preferred": "locator-src-current.zip",
     "winner_source_all": [
       "winner",
@@ -1268,26 +1268,7 @@
       "locator-src-current.zip"
     ]
   },
-  "src/Controller/Locator/AddressSuggestController.php": {
-    "winner_source_preferred": "locator-src-current.zip",
-    "winner_source_all": [
-      "winner",
-      "locator-src.zip",
-      "locator-src (4).zip",
-      "locator-src (5).zip",
-      "locator-src-current.zip"
-    ]
-  },
-  "src/Controller/Locator/MetricsController.php": {
-    "winner_source_preferred": "locator-src-current.zip",
-    "winner_source_all": [
-      "winner",
-      "locator-src (4).zip",
-      "locator-src (5).zip",
-      "locator-src-current.zip"
-    ]
-  },
-  "src/Controller/Locator/StatusController.php": {
+  "src/Service/Locator/LocationAddressSuggestHttpService.php": {
     "winner_source_preferred": "locator-src-current.zip",
     "winner_source_all": [
       "winner",
@@ -1297,7 +1278,26 @@
       "locator-src-current.zip"
     ]
   },
-  "src/ControllerInterface/Locator/.gitkeep": {
+  "src/Service/Locator/LocationMetricsHttpService.php": {
+    "winner_source_preferred": "locator-src-current.zip",
+    "winner_source_all": [
+      "winner",
+      "locator-src (4).zip",
+      "locator-src (5).zip",
+      "locator-src-current.zip"
+    ]
+  },
+  "src/Service/Locator/LocationStatusHttpService.php": {
+    "winner_source_preferred": "locator-src-current.zip",
+    "winner_source_all": [
+      "winner",
+      "locator-src.zip",
+      "locator-src (4).zip",
+      "locator-src (5).zip",
+      "locator-src-current.zip"
+    ]
+  },
+  "src/ServiceInterface/Locator/.gitkeep": {
     "winner_source_preferred": "locator-src-current.zip",
     "winner_source_all": [
       "winner",
@@ -1308,7 +1308,7 @@
       "locator-src-current.zip"
     ]
   },
-  "src/ControllerInterface/Locator/AddressReverseControllerInterface.php": {
+  "src/ServiceInterface/Locator/LocationAddressReverseHttpServiceInterface.php": {
     "winner_source_preferred": "locator-src-current.zip",
     "winner_source_all": [
       "winner",
@@ -1317,7 +1317,7 @@
       "locator-src-current.zip"
     ]
   },
-  "src/ControllerInterface/Locator/AddressSuggestControllerInterface.php": {
+  "src/ServiceInterface/Locator/LocationAddressSuggestHttpServiceInterface.php": {
     "winner_source_preferred": "locator-src-current.zip",
     "winner_source_all": [
       "winner",
@@ -1327,7 +1327,7 @@
       "locator-src-current.zip"
     ]
   },
-  "src/ControllerInterface/Locator/MetricsControllerInterface.php": {
+  "src/ServiceInterface/Locator/LocationMetricsHttpServiceInterface.php": {
     "winner_source_preferred": "locator-src-current.zip",
     "winner_source_all": [
       "winner",
@@ -1336,7 +1336,7 @@
       "locator-src-current.zip"
     ]
   },
-  "src/ControllerInterface/Locator/StatusControllerInterface.php": {
+  "src/ServiceInterface/Locator/LocationStatusHttpServiceInterface.php": {
     "winner_source_preferred": "locator-src-current.zip",
     "winner_source_all": [
       "winner",
@@ -1894,7 +1894,7 @@
       "locator-src-current.zip"
     ]
   },
-  "src/Http/Locator/BatchController.php": {
+  "src/Http/Locator/BatchService.php": {
     "winner_source_preferred": "locator-src-current.zip",
     "winner_source_all": [
       "winner",
@@ -1905,7 +1905,7 @@
       "locator-src-current.zip"
     ]
   },
-  "src/Http/Locator/RouteController.php": {
+  "src/Http/Locator/RouteService.php": {
     "winner_source_preferred": "locator-src-current.zip",
     "winner_source_all": [
       "winner",
@@ -6654,7 +6654,7 @@
       "locator-src-current.zip"
     ]
   },
-  "tests/Locator/BatchControllerTest.php": {
+  "tests/Locator/BatchServiceTest.php": {
     "winner_source_preferred": "locator-src-current.zip",
     "winner_source_all": [
       "winner",
@@ -7614,7 +7614,7 @@
       "locator-src-current.zip"
     ]
   },
-  "tests/Locator/Address/AddressReverseControllerTest.php": {
+  "tests/Locator/Address/LocationAddressReverseHttpServiceTest.php": {
     "winner_source_preferred": "locator-src-current.zip",
     "winner_source_all": [
       "winner",
@@ -7764,7 +7764,7 @@
       "locator-src-current.zip"
     ]
   },
-  "tests/Locator/Status/MetricsControllerTest.php": {
+  "tests/Locator/Status/LocationMetricsHttpServiceTest.php": {
     "winner_source_preferred": "locator-src-current.zip",
     "winner_source_all": [
       "winner",
@@ -7773,7 +7773,7 @@
       "locator-src-current.zip"
     ]
   },
-  "tests/Locator/Status/StatusControllerTest.php": {
+  "tests/Locator/Status/LocationStatusHttpServiceTest.php": {
     "winner_source_preferred": "locator-src-current.zip",
     "winner_source_all": [
       "winner",

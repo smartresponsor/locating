@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Tests\Controller\Http;
+namespace App\Locating\Tests\Controller\Http;
 
-use App\Controller\Http\Location\GovernanceAcknowledgementController;
-use App\Entity\Location\ProviderGovernanceAcknowledgement;
-use App\Entity\Location\ProviderGovernanceAcknowledgementReport;
-use App\ServiceInterface\Observability\Location\LocationProviderGovernanceAcknowledgementServiceInterface;
+use App\Locating\Controller\Http\Location\GovernanceAcknowledgementController;
+use App\Locating\ReadModel\Observability\Location\ProviderGovernanceAcknowledgement;
+use App\Locating\ReadModel\Observability\Location\ProviderGovernanceAcknowledgementReport;
+use App\Locating\ServiceInterface\Observability\Location\LocationProviderGovernanceAcknowledgementServiceInterface;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -15,8 +15,8 @@ final class GovernanceAcknowledgementControllerTest extends TestCase
 {
     public function testReturnsGovernanceAcknowledgementPayload(): void
     {
-        $service = new class implements LocationProviderGovernanceAcknowledgementServiceInterface {
-            public function acknowledge(array $payload): \App\EntityInterface\Location\ProviderGovernanceAcknowledgementReportInterface
+        $service = new class () implements LocationProviderGovernanceAcknowledgementServiceInterface {
+            public function acknowledge(array $payload): \App\Locating\ReadModelInterface\Observability\Location\ProviderGovernanceAcknowledgementReportInterface
             {
                 return new ProviderGovernanceAcknowledgementReport('location', [
                     'alpha:reduce-traffic-share' => new ProviderGovernanceAcknowledgement('alpha', 'reduce-traffic-share', 'approved', 'acknowledged', 'acknowledged', true, 'Proceed.'),

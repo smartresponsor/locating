@@ -14,6 +14,7 @@ composer.lock
 
 # PHPUnit
 .phpunit.result.cache
+/.phpunit.cache/
 
 # IDE and editors
 /.idea/
@@ -30,3 +31,11 @@ Thumbs.db
 
 /archives/
 /Archives/
+/.codebase-memory/
+/*.zip
+
+# Generated canon reports
+/report/locating-*-latest.*
+/report/locating-service-locator-address-reference-map.md
+/report/locating-service-family-normalization-shortlist.md
+/report/locating-entity-family-normalization-shortlist.md

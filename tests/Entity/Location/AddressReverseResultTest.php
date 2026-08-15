@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Tests\Entity\Location;
+namespace App\Locating\Tests\Entity\Location;
 
-use App\Entity\Location\AddressReverseResult;
-use App\Entity\Location\AddressView;
+use App\Locating\Model\Location\AddressReverseResult;
+use App\Locating\Model\Location\AddressView;
 use PHPUnit\Framework\TestCase;
 
 final class AddressReverseResultTest extends TestCase

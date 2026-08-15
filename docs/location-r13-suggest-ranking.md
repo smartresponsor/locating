@@ -37,7 +37,7 @@ Each suggestion gets:
 HTTP contract
 -------------
 
-The `AddressSuggestController` continues to return the same top-level structure:
+The `LocationAddressSuggestHttpService` continues to return the same top-level structure:
 
 - On success:
 

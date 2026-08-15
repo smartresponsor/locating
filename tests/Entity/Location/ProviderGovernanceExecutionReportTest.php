@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Tests\Entity\Location;
+namespace App\Locating\Tests\Entity\Location;
 
-use App\Entity\Location\ProviderGovernanceExecutionItem;
-use App\Entity\Location\ProviderGovernanceExecutionReport;
-use App\Entity\Location\ProviderGovernanceExecutionStepStatus;
+use App\Locating\Model\Location\ProviderGovernanceExecutionItem;
+use App\Locating\Model\Location\ProviderGovernanceExecutionReport;
+use App\Locating\Model\Location\ProviderGovernanceExecutionStepStatus;
 use PHPUnit\Framework\TestCase;
 
 final class ProviderGovernanceExecutionReportTest extends TestCase

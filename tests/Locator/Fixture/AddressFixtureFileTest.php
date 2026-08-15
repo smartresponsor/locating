@@ -1,11 +1,12 @@
 <?php
+
 declare(strict_types=1);
 
 /*
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace Smartresponsor\Tests\Locator\Fixture;
+namespace App\Locating\Tests\Locator\Fixture;
 
 use PHPUnit\Framework\TestCase;
 

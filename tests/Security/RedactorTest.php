@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Tests\Security;
+namespace App\Locating\Tests\Security;
 
+use App\Locating\Integration\Provider\Location\Metrics\Log\Redactor;
 use PHPUnit\Framework\TestCase;
-use Smartresponsor\Integration\Locator\Log\Redactor;
 
 final class RedactorTest extends TestCase
 {

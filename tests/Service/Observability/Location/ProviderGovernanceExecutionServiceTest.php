@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace Tests\Service\Observability\Location;
+namespace App\Locating\Tests\Service\Observability\Location;
 
-use App\Entity\Location\ProviderGovernanceRemediationPlan;
-use App\Entity\Location\ProviderGovernanceRemediationPlanReport;
-use App\Entity\Location\ProviderGovernanceRemediationStep;
-use App\Service\Observability\Location\LocationProviderGovernanceExecutionService;
-use App\ServiceInterface\Observability\Location\LocationProviderGovernanceRemediationPlanServiceInterface;
+use App\Locating\ReadModel\Observability\Location\ProviderGovernanceRemediationPlan;
+use App\Locating\ReadModel\Observability\Location\ProviderGovernanceRemediationPlanReport;
+use App\Locating\ReadModel\Observability\Location\ProviderGovernanceRemediationStep;
+use App\Locating\Service\Observability\Location\LocationProviderGovernanceExecutionService;
+use App\Locating\ServiceInterface\Observability\Location\LocationProviderGovernanceRemediationPlanServiceInterface;
 use PHPUnit\Framework\TestCase;
 
 final class LocationProviderGovernanceExecutionServiceTest extends TestCase
 {
     public function testBuildsAcknowledgementAwareExecutionState(): void
     {
-        $plans = new class implements LocationProviderGovernanceRemediationPlanServiceInterface {
-            public function report(): \App\EntityInterface\Location\ProviderGovernanceRemediationPlanReportInterface
+        $plans = new class () implements LocationProviderGovernanceRemediationPlanServiceInterface {
+            public function report(): \App\Locating\ReadModelInterface\Observability\Location\ProviderGovernanceRemediationPlanReportInterface
             {
                 return new ProviderGovernanceRemediationPlanReport('location', [
                     'alpha' => new ProviderGovernanceRemediationPlan(

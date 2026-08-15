@@ -1,4 +1,3 @@
 locator_governance_remediation_plans:
   path: /location/governance/remediation-plans
-  controller: App\Controller\Http\Location\GovernanceRemediationPlanController
   methods: [GET]

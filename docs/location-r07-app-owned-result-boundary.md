@@ -16,6 +16,6 @@ This wave removes `Smartresponsor\EntityInterface\Locator\...` from the public `
 
 The boundary is now:
 
-`Controller -> App HTTP Service -> App Capability Interface -> App Result Interface -> App Legacy Adapter -> Smartresponsor legacy`
+`Service -> App HTTP Service -> App Capability Interface -> App Result Interface -> App Legacy Adapter -> Smartresponsor legacy`
 
 Legacy locator entities are now isolated inside adapter/factory internals.

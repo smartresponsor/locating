@@ -1,11 +1,12 @@
 <?php
+
 declare(strict_types=1);
 
 /*
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace Smartresponsor\Tests\Locator\Contract;
+namespace App\Locating\Tests\Locator\Contract;
 
 use PHPUnit\Framework\TestCase;
 

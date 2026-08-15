@@ -1,3 +1,3 @@
-src/Http/Locator/RouteController.php
+src/Http/Locator/RouteService.php
 src/Http/Locator/TraceMiddleware.php
 tests/Locator/TraceSpanTest.php

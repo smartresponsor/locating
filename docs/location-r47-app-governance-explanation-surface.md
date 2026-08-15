@@ -5,7 +5,7 @@ This wave introduces an App-owned governance explanation path for provider polic
 ## Added
 - `ProviderGovernanceExplanation` and `ProviderGovernanceExplanationReport`
 - `ProviderGovernanceExplanationService`
-- `GovernanceExplanationController`
+- `LocationGovernanceExplanationHttpService`
 - route `/location/governance/explanations`
 
 ## Purpose

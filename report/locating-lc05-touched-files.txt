@@ -1,0 +1,5 @@
+.gate/check/location-entity-family-canon.php
+composer.json
+docs/locating-lc05-entity-family-map.md
+report/locating-lc05-touched-files.txt
+tools/canon/location-entity-family-map.php

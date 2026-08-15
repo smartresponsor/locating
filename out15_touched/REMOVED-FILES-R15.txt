@@ -1,6 +1,0 @@
-src/Service/Locator/LocatorDemoLoop.php
-src/Service/Locator/LocatorDemoSeed.php
-src/ServiceInterface/Locator/LocatorDemoLoopInterface.php
-src/ServiceInterface/Locator/LocatorDemoSeedInterface.php
-tests/Locator/LocatorDemoLoopTest.php
-tests/Locator/LocatorDemoSeedTest.php

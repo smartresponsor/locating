@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Tests\Service\Address\Location;
+namespace App\Locating\Tests\Service\Address\Location;
 
-use App\Entity\Location\AddressInput;
-use App\Service\Address\Location\AddressParser;
+use App\Locating\Model\Location\AddressInput;
+use App\Locating\Service\Address\Location\AddressParser;
 use PHPUnit\Framework\TestCase;
 
 final class AddressParserTest extends TestCase

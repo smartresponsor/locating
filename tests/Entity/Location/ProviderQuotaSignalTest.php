@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Tests\Entity\Location;
+namespace App\Locating\Tests\Entity\Location;
 
-use App\Entity\Location\ProviderQuotaSignal;
+use App\Locating\Model\Location\ProviderQuotaSignal;
 use PHPUnit\Framework\TestCase;
 
 final class ProviderQuotaSignalTest extends TestCase

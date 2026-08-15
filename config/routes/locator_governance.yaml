@@ -1,4 +1,3 @@
 locator_governance:
   path: /location/governance
-  controller: App\Controller\Http\Location\GovernanceController
   methods: [GET]

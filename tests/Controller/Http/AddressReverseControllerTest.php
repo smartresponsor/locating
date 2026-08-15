@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tests\Controller\Http;
+namespace App\Locating\Tests\Controller\Http;
 
-use App\Controller\Http\Location\AddressReverseController;
-use App\Entity\Location\AddressReverseView;
-use App\Entity\Location\AddressView;
-use App\ServiceInterface\Http\Location\LocationAddressReverseServiceInterface;
-use App\ServiceInterface\Http\Location\LocationQuotaGuardInterface;
+use App\Locating\Controller\Http\Location\AddressReverseController;
+use App\Locating\Model\Location\AddressReverseView;
+use App\Locating\Model\Location\AddressView;
+use App\Locating\ServiceInterface\Http\Location\LocationAddressReverseServiceInterface;
+use App\Locating\ServiceInterface\Http\Location\LocationQuotaGuardInterface;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -16,7 +16,7 @@ final class AddressReverseControllerTest extends TestCase
 {
     public function testReturnsBadRequestWhenCoordinatesAreMissing(): void
     {
-        $service = new class implements LocationAddressReverseServiceInterface {
+        $service = new class () implements LocationAddressReverseServiceInterface {
             public function reverse(float $latitude, float $longitude, ?string $countryCode = null): AddressReverseView
             {
                 return new AddressReverseView('valid', AddressView::fromArray([]), [], null, null);
@@ -32,14 +32,14 @@ final class AddressReverseControllerTest extends TestCase
 
     public function testReturnsQuotaExceededWhenGuardBlocksReverse(): void
     {
-        $service = new class implements LocationAddressReverseServiceInterface {
+        $service = new class () implements LocationAddressReverseServiceInterface {
             public function reverse(float $latitude, float $longitude, ?string $countryCode = null): AddressReverseView
             {
                 return new AddressReverseView('valid', AddressView::fromArray([]), [], null, null);
             }
         };
 
-        $guard = new class implements LocationQuotaGuardInterface {
+        $guard = new class () implements LocationQuotaGuardInterface {
             public function isAllowed(string $operation): bool
             {
                 TestCase::assertSame(self::OPERATION_REVERSE, $operation);

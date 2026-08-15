@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Tests\Entity\Location;
+namespace App\Locating\Tests\Entity\Location;
 
-use App\Entity\Location\ProviderGovernanceAcknowledgement;
-use App\Entity\Location\ProviderGovernanceAcknowledgementReport;
+use App\Locating\Model\Location\ProviderGovernanceAcknowledgement;
+use App\Locating\Model\Location\ProviderGovernanceAcknowledgementReport;
 use PHPUnit\Framework\TestCase;
 
 final class ProviderGovernanceAcknowledgementReportTest extends TestCase

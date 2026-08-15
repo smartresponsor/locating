@@ -3,7 +3,7 @@
 This wave removes an orphaned legacy HTTP mini-cluster under `src/Http/Locator`.
 
 Removed:
-- `src/Http/Locator/RouteController.php`
+- `src/Http/Locator/RouteService.php`
 - `src/Http/Locator/TraceMiddleware.php`
 - `tests/Locator/TraceSpanTest.php`
 

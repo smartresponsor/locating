@@ -7,9 +7,9 @@ declare(strict_types=1);
  * dev@highhopesamerica.com
  */
 
-namespace App\Command\Geo;
+namespace App\Locating\Command\Geo;
 
-use App\ServiceInterface\Http\Location\LocationAddressReverseServiceInterface;
+use App\Locating\ServiceInterface\Http\Location\LocationAddressReverseServiceInterface;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;

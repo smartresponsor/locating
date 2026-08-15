@@ -7,9 +7,9 @@ declare(strict_types=1);
  * dev@highhopesamerica.com
  */
 
-namespace App\Tests\Entity\Location;
+namespace App\Locating\Tests\Entity\Location;
 
-use App\Entity\Location\ProviderMetricSnapshot;
+use App\Locating\Model\Location\ProviderMetricSnapshot;
 use PHPUnit\Framework\TestCase;
 
 final class ProviderMetricSnapshotTest extends TestCase

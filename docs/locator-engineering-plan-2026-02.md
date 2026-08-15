@@ -2,7 +2,7 @@
 
 ## Scope and baseline reviewed
 - Composition and runtime entry points: `composer.json`, `public/index.php`, `Makefile`.
-- Layered source tree: `src/Controller`, `src/Service`, `src/Entity`, `src/Integration`, `src/Infrastructure`, plus `*Interface` families.
+- Layered source tree: `src/Service`, `src/Service`, `src/Entity`, `src/Integration`, `src/Infrastructure`, plus `*Interface` families.
 - Test and quality gates: `phpunit.xml.dist`, `.github/workflows/ci.yml`, `.github/workflows/gate.yml`.
 - Contract and docs: `openapi/locator-v1.yaml`, `docs/locator-openapi-v1.yaml`, `README.md`, `docs/contributing.md`.
 
@@ -23,8 +23,8 @@
      - `src/Service/Locator/TenantGuard.php` and `src/Entity/Locator/TenantGuard.php`
 3. **Interface fragmentation is high.**
    - Overlapping interface families exist under `src/Contract/*`, `src/ServiceInterface/*`, `src/InfrastructureInterface/*`, and `src/EntityInterface/*`, making dependency direction and ownership harder to reason about.
-4. **Controllers still carry orchestration/policy logic.**
-   - `AddressSuggestController` performs request parsing, limit normalization, quota decision, and response mapping in one class.
+4. **Services still carry orchestration/policy logic.**
+   - `LocationAddressSuggestHttpService` performs request parsing, limit normalization, quota decision, and response mapping in one class.
 
 #### Impact
 - Harder refactors, potential inconsistent behavior between duplicated classes, and slower onboarding.
@@ -112,7 +112,7 @@
 
 ### P1 — Architecture hardening (1-2 months)
 1. **Create `src/Domain/Locator` canonical policy model** (retry/failover/quota/tenant) and move invariants there.
-2. **Define dependency direction rule set** (Controller -> Application Service -> Domain -> Integration).
+2. **Define dependency direction rule set** (Service -> Application Service -> Domain -> Integration).
 3. **Reduce interface families to one ownership model** (`Contract` for public ports, internal interfaces near implementation).
 4. **Extract controller request parsing into dedicated request DTO/mapper classes.**
 
@@ -153,7 +153,7 @@
 ### Refactor Block RB-2: Namespace simplification
 - Remove duplicate concept classes across `Entity`, `Service`, `Infrastructure` where business semantics are identical.
 
-### Refactor Block RB-3: Controller slimming
+### Refactor Block RB-3: Service slimming
 - Move request normalization and response mapping into dedicated mappers/DTOs.
 
 ### Refactor Block RB-4: Contract and docs coherence

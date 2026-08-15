@@ -1,13 +1,14 @@
 <?php
+
 declare(strict_types=1);
 
-namespace Tests\Locator\Address;
+namespace App\Locating\Tests\Locator\Address;
 
-use Smartresponsor\Entity\Locator\AddressData;
-use Smartresponsor\Entity\Locator\AddressResult;
-use Smartresponsor\Entity\Locator\AddressStatus;
-use Smartresponsor\Entity\Locator\AddressValidationIssue;
-use Smartresponsor\Entity\Locator\GeoPoint;
+use App\Locating\Model\Location\AddressData;
+use App\Locating\Model\Location\AddressResult;
+use App\Locating\Model\Location\AddressStatus;
+use App\Locating\Model\Location\AddressValidationIssue;
+use App\Locating\Model\Location\GeoPoint;
 use PHPUnit\Framework\TestCase;
 
 final class AddressContractTest extends TestCase
@@ -81,25 +82,25 @@ final class AddressContractTest extends TestCase
                 $providerKey
             );
 
-            $this->assertSame($status, $result->status(), 'Status must match');
-            $this->assertNotNull($result->addressData(), 'AddressData must not be null');
-            $this->assertSame($addressDataArray, $result->addressData()->toArray(), 'AddressData array must be equal');
+            $this->assertSame($statusValue, $result->status(), 'Status must match');
+            $this->assertNotNull($result->address(), 'Address must not be null');
+            $this->assertSame($addressDataArray, $result->address()->toArray(), 'Address array must be equal');
 
             $this->assertCount(count($issues), $result->issues(), 'Issues count must match');
 
             foreach ($result->issues() as $index => $issue) {
                 $expected = $issues[$index];
-                $this->assertSame($expected->field(), $issue->field(), 'Issue field must match');
-                $this->assertSame($expected->code(), $issue->code(), 'Issue code must match');
-                $this->assertSame($expected->message(), $issue->message(), 'Issue message must match');
+                $this->assertSame($expected->field(), $issue['field'], 'Issue field must match');
+                $this->assertSame($expected->code(), $issue['code'], 'Issue code must match');
+                $this->assertSame($expected->message(), $issue['message'], 'Issue message must match');
             }
 
             if ($geoPoint === null) {
                 $this->assertNull($result->geoPoint(), 'GeoPoint must be null when not provided');
             } else {
                 $this->assertNotNull($result->geoPoint(), 'GeoPoint must not be null');
-                $this->assertSame($geoPoint->latitude, $result->geoPoint()->latitude);
-                $this->assertSame($geoPoint->longitude, $result->geoPoint()->longitude);
+                $this->assertSame($geoPoint->latitude, $result->geoPoint()['latitude']);
+                $this->assertSame($geoPoint->longitude, $result->geoPoint()['longitude']);
             }
 
             $array = $result->toArray();

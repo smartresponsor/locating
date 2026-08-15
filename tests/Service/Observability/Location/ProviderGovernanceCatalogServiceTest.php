@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Tests\Service\Observability\Location;
+namespace App\Locating\Tests\Service\Observability\Location;
 
-use App\Entity\Location\ProviderCostSignal;
-use App\Entity\Location\ProviderHealthSignal;
-use App\Entity\Location\ProviderQuotaSignal;
-use App\Service\Observability\Location\LocationProviderGovernanceCatalogService;
-use App\ServiceInterface\Provider\Location\ProviderCostSignalReaderInterface;
-use App\ServiceInterface\Provider\Location\ProviderHealthSignalReaderInterface;
-use App\ServiceInterface\Provider\Location\ProviderQuotaSignalReaderInterface;
+use App\Locating\ReadModel\Observability\Location\ProviderCostSignal;
+use App\Locating\ReadModel\Observability\Location\ProviderHealthSignal;
+use App\Locating\ReadModel\Observability\Location\ProviderQuotaSignal;
+use App\Locating\Service\Observability\Location\LocationProviderGovernanceCatalogService;
+use App\Locating\ServiceInterface\Provider\Location\ProviderCostSignalReaderInterface;
+use App\Locating\ServiceInterface\Provider\Location\ProviderHealthSignalReaderInterface;
+use App\Locating\ServiceInterface\Provider\Location\ProviderQuotaSignalReaderInterface;
 use PHPUnit\Framework\TestCase;
 
 final class LocationProviderGovernanceCatalogServiceTest extends TestCase
@@ -18,20 +18,20 @@ final class LocationProviderGovernanceCatalogServiceTest extends TestCase
     public function testItBuildsGovernanceCatalog(): void
     {
         $service = new LocationProviderGovernanceCatalogService(
-            new class implements ProviderHealthSignalReaderInterface {
-                public function read(string $sourceKey): \App\EntityInterface\Location\ProviderHealthSignalInterface
+            new class () implements ProviderHealthSignalReaderInterface {
+                public function read(string $sourceKey): \App\Locating\ReadModelInterface\Observability\Location\ProviderHealthSignalInterface
                 {
                     return new ProviderHealthSignal($sourceKey, 0.95, 150.0);
                 }
             },
-            new class implements ProviderQuotaSignalReaderInterface {
-                public function read(string $sourceKey, string $operation, array $context = []): \App\EntityInterface\Location\ProviderQuotaSignalInterface
+            new class () implements ProviderQuotaSignalReaderInterface {
+                public function read(string $sourceKey, string $operation, array $context = []): \App\Locating\ReadModelInterface\Observability\Location\ProviderQuotaSignalInterface
                 {
                     return new ProviderQuotaSignal($sourceKey, $operation, true);
                 }
             },
-            new class implements ProviderCostSignalReaderInterface {
-                public function read(string $sourceKey, string $operation, array $context = []): \App\EntityInterface\Location\ProviderCostSignalInterface
+            new class () implements ProviderCostSignalReaderInterface {
+                public function read(string $sourceKey, string $operation, array $context = []): \App\Locating\ReadModelInterface\Observability\Location\ProviderCostSignalInterface
                 {
                     return new ProviderCostSignal($sourceKey, $operation, 'global', 0.31);
                 }

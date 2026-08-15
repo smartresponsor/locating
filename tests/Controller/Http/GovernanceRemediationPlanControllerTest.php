@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tests\Controller\Http;
+namespace App\Locating\Tests\Controller\Http;
 
-use App\Controller\Http\Location\GovernanceRemediationPlanController;
-use App\Entity\Location\ProviderGovernanceRemediationPlan;
-use App\Entity\Location\ProviderGovernanceRemediationPlanReport;
-use App\Entity\Location\ProviderGovernanceRemediationStep;
-use App\ServiceInterface\Observability\Location\LocationProviderGovernanceRemediationPlanServiceInterface;
+use App\Locating\Controller\Http\Location\GovernanceRemediationPlanController;
+use App\Locating\ReadModel\Observability\Location\ProviderGovernanceRemediationPlan;
+use App\Locating\ReadModel\Observability\Location\ProviderGovernanceRemediationPlanReport;
+use App\Locating\ReadModel\Observability\Location\ProviderGovernanceRemediationStep;
+use App\Locating\ServiceInterface\Observability\Location\LocationProviderGovernanceRemediationPlanServiceInterface;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -16,8 +16,8 @@ final class GovernanceRemediationPlanControllerTest extends TestCase
 {
     public function testReturnsRemediationPlanPayload(): void
     {
-        $service = new class implements LocationProviderGovernanceRemediationPlanServiceInterface {
-            public function report(): \App\EntityInterface\Location\ProviderGovernanceRemediationPlanReportInterface
+        $service = new class () implements LocationProviderGovernanceRemediationPlanServiceInterface {
+            public function report(): \App\Locating\ReadModelInterface\Observability\Location\ProviderGovernanceRemediationPlanReportInterface
             {
                 return new ProviderGovernanceRemediationPlanReport('location', [
                     'alpha' => new ProviderGovernanceRemediationPlan('alpha', 'suggest', 'warning', 'monitor-provider', ['latency-high'], ['investigate-provider-latency'], [new ProviderGovernanceRemediationStep('investigate-provider-latency', 'medium', 'Investigate provider latency.', 'operations')]),

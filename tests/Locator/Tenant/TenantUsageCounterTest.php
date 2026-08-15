@@ -1,13 +1,14 @@
 <?php
+
 declare(strict_types=1);
 
 /*
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace Tests\Locator\Tenant;
+namespace App\Locating\Tests\Locator\Tenant;
 
-use Smartresponsor\Infrastructure\Locator\InMemoryTenantUsageCounter;
+use App\Locating\Infrastructure\Location\Tenant\InMemoryTenantUsageCounter;
 use PHPUnit\Framework\TestCase;
 
 final class TenantUsageCounterTest extends TestCase

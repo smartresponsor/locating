@@ -9,9 +9,9 @@ plus a PHPUnit guard for the JSON contract.
 ## Scope
 
 - Provide a concrete implementation of `MetricSnapshotProviderInterface`
-  for use by `StatusController`.
+  for use by `LocationStatusHttpService`.
 - Ensure metric aggregation is deterministic and suitable for smoke tests.
-- Fix the `StatusControllerTest` so it validates the endpoint contract.
+- Fix the `LocationStatusHttpServiceTest` so it validates the endpoint contract.
 
 ## Files
 
@@ -24,9 +24,9 @@ plus a PHPUnit guard for the JSON contract.
     - error rate
   - Intended for development and tests; not a replacement for Prometheus.
 
-- `tests/Locator/Status/StatusControllerTest.php`
+- `tests/Locator/Status/LocationStatusHttpServiceTest.php`
   - Constructs `InMemoryMetricRecorder`, records a happy-path metric for `address_pipeline`.
-  - Invokes `StatusController` with an empty `Request`.
+  - Invokes `LocationStatusHttpService` with an empty `Request`.
   - Asserts:
     - HTTP 200 status code.
     - JSON body contains `service = locator` and `status = ok`.
@@ -51,7 +51,7 @@ plus a PHPUnit guard for the JSON contract.
 ]
 ```
 
-`StatusController` uses this snapshot to derive an overall `status` field:
+`LocationStatusHttpService` uses this snapshot to derive an overall `status` field:
 
 - `ok` – when no operation exceeds soft thresholds for latency/error.
 - `degraded` – when any operation is over the threshold.

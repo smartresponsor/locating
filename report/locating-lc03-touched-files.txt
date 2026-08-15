@@ -1,0 +1,5 @@
+composer.json
+.gate/check/location-source-inventory-canon.php
+tools/canon/location-source-inventory.php
+docs/locating-lc03-source-inventory-and-class-form.md
+report/locating-lc03-touched-files.txt

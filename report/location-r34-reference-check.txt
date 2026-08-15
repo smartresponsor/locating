@@ -1,8 +1,8 @@
 Checked references for:
-- Smartresponsor\Http\Locator\RouteController
+- Smartresponsor\Http\Locator\RouteService
 - Smartresponsor\Http\Locator\TraceMiddleware
 
 Result:
 - no live references in config/services.php or config/routes/*
-- RouteController had no external references
+- RouteService had no external references
 - Http TraceMiddleware was referenced only by tests/Locator/TraceSpanTest.php

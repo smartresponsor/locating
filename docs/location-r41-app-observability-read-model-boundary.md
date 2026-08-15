@@ -10,12 +10,12 @@ Wave 41 extracts the active status and metrics HTTP surface away from direct leg
 
 ## Shift in runtime
 Before:
-- StatusController -> legacy MetricSnapshotProviderInterface
-- MetricsController -> legacy MetricSnapshotProviderInterface
+- LocationStatusHttpService -> legacy MetricSnapshotProviderInterface
+- LocationMetricsHttpService -> legacy MetricSnapshotProviderInterface
 
 After:
-- StatusController -> App LocationStatusReportServiceInterface -> App ProviderMetricSnapshotStoreInterface -> legacy adapter
-- MetricsController -> App LocationMetricsExportServiceInterface -> App ProviderMetricSnapshotStoreInterface -> legacy adapter
+- LocationStatusHttpService -> App LocationStatusReportServiceInterface -> App ProviderMetricSnapshotStoreInterface -> legacy adapter
+- LocationMetricsHttpService -> App LocationMetricsExportServiceInterface -> App ProviderMetricSnapshotStoreInterface -> legacy adapter
 
 ## Effect
 The public observability surface no longer depends directly on the legacy locator metric snapshot shape.

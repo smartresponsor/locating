@@ -2,23 +2,68 @@
 
 declare(strict_types=1);
 
-namespace App\Tests\Service\Batch\Location;
+namespace App\Locating\Tests\Service\Batch\Location;
 
-use App\Entity\Location\AddressBatchJobStatus;
-use App\Service\Batch\Location\AddressBatchJobFactory;
+use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchJobRecordInterface;
+use App\Locating\Model\Location\AddressBatchJobStatus;
+use App\Locating\Service\Batch\Location\AddressBatchJobFactory;
 use PHPUnit\Framework\TestCase;
-use Smartresponsor\Entity\Locator\AddressBatchJob;
 
 final class AddressBatchJobFactoryTest extends TestCase
 {
-    public function testCreatesAppBatchJobFromLegacyBatchJob(): void
+    public function testCreatesAppBatchJobFromCanonicalBatchRecord(): void
     {
-        $legacyJob = new AddressBatchJob('job-1', 'tenant-demo', 4);
-        $legacyJob->markRun();
-        $legacyJob->incrementProcessed();
+        $record = new class () implements AddressBatchJobRecordInterface {
+            private string $status = 'running';
+
+            public function jobId(): string
+            {
+                return 'job-1';
+            }
+
+            public function tenantId(): string
+            {
+                return 'tenant-demo';
+            }
+
+            public function jobStatusValue(): string
+            {
+                return $this->status;
+            }
+
+            public function totalCount(): int
+            {
+                return 4;
+            }
+
+            public function processedCount(): int
+            {
+                return 1;
+            }
+
+            public function createdAt(): \DateTimeImmutable
+            {
+                return new \DateTimeImmutable('2025-01-01 00:00:00');
+            }
+
+            public function updatedAt(): \DateTimeImmutable
+            {
+                return new \DateTimeImmutable('2025-01-01 00:01:00');
+            }
+
+            public function markRun(): void
+            {
+                $this->status = 'running';
+            }
+
+            public function incrementProcessed(): void
+            {
+                $this->status = 'running';
+            }
+        };
 
         $factory = new AddressBatchJobFactory();
-        $job = $factory->create($legacyJob);
+        $job = $factory->create($record);
 
         self::assertSame('job-1', $job->jobId());
         self::assertSame('tenant-demo', $job->tenantId());

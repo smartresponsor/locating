@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Tests\Service\Provider\Location;
+namespace App\Locating\Tests\Service\Provider\Location;
 
-use App\Entity\Location\AddressReverseResult;
-use App\Entity\Location\AddressView;
-use App\Service\Provider\Location\AddressReverseResultNormalizer;
+use App\Locating\Model\Location\AddressReverseResult;
+use App\Locating\Model\Location\AddressView;
+use App\Locating\Service\Provider\Location\AddressReverseResultNormalizer;
 use PHPUnit\Framework\TestCase;
 
 final class AddressReverseResultNormalizerTest extends TestCase

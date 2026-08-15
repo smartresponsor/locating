@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace Tests\Service\Address\Location;
+namespace App\Locating\Tests\Service\Address\Location;
 
-use App\Entity\Location\AddressReverseResult;
-use App\Entity\Location\AddressView;
-use App\Service\Address\Location\AddressReverseCapability;
-use App\ServiceInterface\Provider\Location\AddressReverseProviderInterface;
+use App\Locating\Model\Location\AddressReverseResult;
+use App\Locating\Model\Location\AddressView;
+use App\Locating\Service\Address\Location\AddressReverseCapability;
+use App\Locating\ServiceInterface\Provider\Location\AddressReverseProviderInterface;
 use PHPUnit\Framework\TestCase;
 
 final class AddressReverseCapabilityTest extends TestCase
 {
     public function testReverseDelegatesToAppOwnedProviderBoundary(): void
     {
-        $provider = new class implements AddressReverseProviderInterface {
-            public function reverse(float $latitude, float $longitude, ?string $countryCode = null): \App\EntityInterface\Location\AddressReverseResultInterface
+        $provider = new class () implements AddressReverseProviderInterface {
+            public function reverse(float $latitude, float $longitude, ?string $countryCode = null): \App\Locating\ModelInterface\Location\AddressReverseResultInterface
             {
                 return new AddressReverseResult('verified', new AddressView('Main St 10', 'Houston', 'Texas', '77001', 'US'), [], ['latitude' => $latitude, 'longitude' => $longitude], 'nominatim');
             }

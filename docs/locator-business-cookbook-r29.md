@@ -132,7 +132,7 @@ Minimal flow
 
 2) Submit a batch job
 
-- Call a batch endpoint or service (for example via `BatchController` or
+- Call a batch endpoint or service (for example via `BatchService` or
   message-based batch pipeline):
 
   - provide the list of items;

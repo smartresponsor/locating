@@ -1,7 +1,0 @@
-Checked references for:
-- LocatorDemoLoop
-- LocatorDemoSeed
-
-Result:
-- No live operational references remain in src/, config/, composer.json, bin/, README.md.
-- Remaining hits before deletion were confined to the removed demo services/interfaces/tests, historical reports, and historical docs.

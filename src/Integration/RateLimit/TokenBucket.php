@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Smartresponsor\Integration\RateLimit;
+namespace App\Locating\Integration\RateLimit;
 
 final class TokenBucket implements RateLimiterInterface
 {

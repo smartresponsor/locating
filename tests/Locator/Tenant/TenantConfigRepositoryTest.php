@@ -1,13 +1,14 @@
 <?php
+
 declare(strict_types=1);
 
 /*
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace Tests\Locator\Tenant;
+namespace App\Locating\Tests\Locator\Tenant;
 
-use Smartresponsor\Infrastructure\Locator\ArrayTenantConfigRepository;
+use App\Locating\Infrastructure\Location\Tenant\ArrayTenantConfigRepository;
 use PHPUnit\Framework\TestCase;
 
 final class TenantConfigRepositoryTest extends TestCase

@@ -5,7 +5,7 @@ This wave introduces an App-owned governance audit surface for provider decision
 Added:
 - ProviderGovernanceAuditEntry / ProviderGovernanceAuditReport
 - ProviderGovernanceAuditService
-- GovernanceAuditController
+- LocationGovernanceAuditHttpService
 - `/location/governance/audit`
 
 The audit surface combines explanations and recommendations into a decision log with an explicit operator-facing decision field.

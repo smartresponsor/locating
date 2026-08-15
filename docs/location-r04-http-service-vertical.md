@@ -8,7 +8,7 @@ Added `App\ServiceInterface\Http\Location\...` and `App\Service\Http\Location\..
 
 ## Defect fixed
 
-`AddressReverseController` from the previous wave referenced `AddressQuotaGuard::OPERATION_REVERSE`, but the legacy guard defines `OPERATION_GEOCODE` and `OPERATION_SUGGEST` only.
+`LocationAddressReverseHttpService` from the previous wave referenced `AddressQuotaGuard::OPERATION_REVERSE`, but the legacy guard defines `OPERATION_GEOCODE` and `OPERATION_SUGGEST` only.
 
 Wave 04 fixes that by introducing `LocationQuotaGuardInterface::OPERATION_REVERSE` in the new `App\...` layer and mapping it to the legacy geocode quota operation inside the adapter.
 

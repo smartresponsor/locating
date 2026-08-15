@@ -3,7 +3,7 @@
   "message": "Location",
   "summary": "Collapse orphan legacy HTTP trace/route cluster",
   "removed_files": [
-    "src/Http/Locator/RouteController.php",
+    "src/Http/Locator/RouteService.php",
     "src/Http/Locator/TraceMiddleware.php",
     "tests/Locator/TraceSpanTest.php"
   ],

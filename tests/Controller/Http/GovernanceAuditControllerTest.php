@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Tests\Controller\Http;
+namespace App\Locating\Tests\Controller\Http;
 
-use App\Controller\Http\Location\GovernanceAuditController;
-use App\Entity\Location\ProviderGovernanceAuditEntry;
-use App\Entity\Location\ProviderGovernanceAuditReport;
-use App\ServiceInterface\Observability\Location\LocationProviderGovernanceAuditServiceInterface;
+use App\Locating\Controller\Http\Location\GovernanceAuditController;
+use App\Locating\ReadModel\Observability\Location\ProviderGovernanceAuditEntry;
+use App\Locating\ReadModel\Observability\Location\ProviderGovernanceAuditReport;
+use App\Locating\ServiceInterface\Observability\Location\LocationProviderGovernanceAuditServiceInterface;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -15,8 +15,8 @@ final class GovernanceAuditControllerTest extends TestCase
 {
     public function testReturnsAuditPayload(): void
     {
-        $service = new class implements LocationProviderGovernanceAuditServiceInterface {
-            public function report(): \App\EntityInterface\Location\ProviderGovernanceAuditReportInterface
+        $service = new class () implements LocationProviderGovernanceAuditServiceInterface {
+            public function report(): \App\Locating\ReadModelInterface\Observability\Location\ProviderGovernanceAuditReportInterface
             {
                 return new ProviderGovernanceAuditReport('location', [
                     'alpha' => new ProviderGovernanceAuditEntry('alpha', 'suggest', 'warning', ['latency-high'], ['monitor'], 'monitor-provider'),

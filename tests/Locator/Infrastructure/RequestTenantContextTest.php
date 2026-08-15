@@ -1,13 +1,14 @@
 <?php
+
 declare(strict_types=1);
 
 /*
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace Smartresponsor\Tests\Locator\Infrastructure;
+namespace App\Locating\Tests\Locator\Infrastructure;
 
-use Smartresponsor\Infrastructure\Locator\RequestTenantContext;
+use App\Locating\Infrastructure\Location\Tenant\RequestTenantContext;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;

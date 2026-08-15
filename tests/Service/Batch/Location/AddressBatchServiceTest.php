@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace App\Tests\Service\Batch\Location;
+namespace App\Locating\Tests\Service\Batch\Location;
 
-use App\Entity\Location\AddressPipelineResult;
-use App\Entity\Location\AddressView;
-use App\Infrastructure\Batch\Location\InMemoryAddressBatchMessageBus;
-use App\Infrastructure\Batch\Location\InMemoryAddressBatchRuntimeStore;
-use App\Infrastructure\Batch\Location\MessageBusAddressBatchMessageDispatcher;
-use App\MessageHandler\Batch\Location\AddressBatchMessageHandler;
-use App\Service\Batch\Location\LocationAddressBatchService;
-use App\ServiceInterface\Address\Location\AddressPipelineInterface;
+use App\Locating\Infrastructure\Batch\Location\InMemoryAddressBatchMessageBus;
+use App\Locating\Infrastructure\Batch\Location\InMemoryAddressBatchRuntimeStore;
+use App\Locating\Infrastructure\Batch\Location\MessageBusAddressBatchMessageDispatcher;
+use App\Locating\MessageHandler\Batch\Location\AddressBatchMessageHandler;
+use App\Locating\Model\Location\AddressPipelineResult;
+use App\Locating\Model\Location\AddressView;
+use App\Locating\Service\Batch\Location\LocationAddressBatchService;
+use App\Locating\ServiceInterface\Address\Location\AddressPipelineInterface;
 use PHPUnit\Framework\TestCase;
 
 final class LocationAddressBatchServiceTest extends TestCase
@@ -20,8 +20,8 @@ final class LocationAddressBatchServiceTest extends TestCase
     {
         $runtimeStore = new InMemoryAddressBatchRuntimeStore();
 
-        $pipeline = new class implements AddressPipelineInterface {
-            public function process(\App\EntityInterface\Location\AddressInputInterface $input): \App\EntityInterface\Location\AddressPipelineResultInterface
+        $pipeline = new class () implements AddressPipelineInterface {
+            public function process(\App\Locating\ModelInterface\Location\AddressInputInterface $input): \App\Locating\ModelInterface\Location\AddressPipelineResultInterface
             {
                 return new AddressPipelineResult(
                     AddressPipelineResult::STATUS_VERIFIED,

@@ -18,7 +18,7 @@
       "src/ServiceInterface/Locator/BatchServiceInterface.php"
     ],
     "handle_call_files": [
-      "src/Http/Locator/BatchController.php",
+      "src/Http/Locator/BatchService.php",
       "src/Service/Locator/AddressPipelineMetricDecorator.php",
       "tests/Locator/BatchGeocodeEndpointTest.php",
       "tests/Locator/TraceSpanTest.php",
@@ -29,8 +29,8 @@
   "address_pipeline_file": "src/Service/Locator/AddressPipeline.php",
   "address_pipeline_decorator_file": "src/Service/Locator/AddressPipelineMetricDecorator.php",
   "layer_namespace_fixed_files": [
-    "src/Http/Locator/BatchController.php",
-    "src/Http/Locator/RouteController.php",
+    "src/Http/Locator/BatchService.php",
+    "src/Http/Locator/RouteService.php",
     "src/Http/Locator/TraceMiddleware.php",
     "tests/Locator/AbTestRouterTest.php",
     "tests/Locator/AdaptiveOrderingTest.php",
@@ -43,7 +43,7 @@
     "tests/Locator/AnomalyDetectorTest.php",
     "tests/Locator/BanditPolicyTest.php",
     "tests/Locator/BanditRouterTest.php",
-    "tests/Locator/BatchControllerTest.php",
+    "tests/Locator/BatchServiceTest.php",
     "tests/Locator/BatchGeocodeEndpointTest.php",
     "tests/Locator/BudgetGuardTest.php",
     "tests/Locator/BudgetTelemetryTest.php",

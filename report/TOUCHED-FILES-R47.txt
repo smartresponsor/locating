@@ -4,13 +4,13 @@ src/EntityInterface/Location/ProviderGovernanceExplanationReportInterface.php
 src/Entity/Location/ProviderGovernanceExplanationReport.php
 src/ServiceInterface/Observability/Location/ProviderGovernanceExplanationServiceInterface.php
 src/Service/Observability/Location/ProviderGovernanceExplanationService.php
-src/ControllerInterface/Http/Location/GovernanceExplanationControllerInterface.php
-src/Controller/Http/Location/GovernanceExplanationController.php
+src/ServiceInterface/Http/Location/LocationGovernanceExplanationHttpServiceInterface.php
+src/Service/Http/Location/LocationGovernanceExplanationHttpService.php
 config/routes/locator_governance_explanations.yaml
 config/services.php
 tests/Entity/Location/ProviderGovernanceExplanationReportTest.php
 tests/Service/Observability/Location/ProviderGovernanceExplanationServiceTest.php
-tests/Controller/Http/GovernanceExplanationControllerTest.php
+tests/Service/Http/LocationGovernanceExplanationHttpServiceTest.php
 tests/Config/LocationGovernanceExplanationConfigTest.php
 docs/location-r47-app-governance-explanation-surface.md
 report/location-r47-app-governance-explanation-surface-manifest.json

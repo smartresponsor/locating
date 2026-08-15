@@ -1,36 +1,47 @@
-Locator (Smartresponsor) — winner repository
+# Locating
 
-This folder is a consolidated "winner" snapshot assembled from multiple archived Locator artifacts.
+`locating/location` is the SmartResponsor stateless location-processing component for address parsing, normalization, validation, suggestion, reverse lookup, provider routing, and geospatial support.
 
-What was done
-- Unpacked all provided archives and normalized project root (no wrapper folder in the final ZIP).
-- Selected the baseline from locator-src-current.zip (kept as the primary winner).
-- Imported the R30–R40 planning/report documents into report/legacy/locator-r30-r40/.
-- Imported the sketches meta index files into report/legacy/location-sketches15-30/.
-- Repaired composer.json to be valid JSON (the same invalid composer.json was present in all inputs).
+## Component boundary
 
-How to use (quick)
-1) composer validate
-2) composer install
-3) composer test
+Locating owns computation and provider orchestration. It does not own durable Doctrine address persistence. Durable address records belong to Addressing; the host application coordinates Locating validation with Addressing persistence.
 
-Merge evidence
-See report/merge/ for collision index (paths where archives differed) and build statistics.
+The canonical PHP namespace is `App\Locating\` and Composer maps it directly to `src/`. Namespace and filesystem paths are required to match PSR-4 exactly.
 
-Canon notes
-- The final ZIP is flat-root (project files are at ZIP root, no outer wrapper folder).
-- .git and IDE folders were removed from the winner snapshot.
+The current runtime is organized around canonical component layers such as:
 
+- `Model` / `ModelInterface` for immutable inputs, results, and value shapes.
+- `Service` / `ServiceInterface` for application behavior and contracts.
+- `Infrastructure` / `InfrastructureInterface` for runtime backends.
+- `Integration` for external provider/client implementations.
+- `ReadModel` / `ReadModelInterface` for observability and governance projections.
+- `Controller` / `ControllerInterface`, `Message`, and `MessageHandler` for transport boundaries.
 
+Legacy `Smartresponsor\*`, `Bridge/Legacy`, parallel `*/Locator` runtime trees, and Entity-shaped non-persistent value objects are retired from the active component surface.
 
-Engineering hardening plan
-- See `docs/locator-engineering-plan-2026-02.md` for a prioritized production-hardening backlog and commit units.
+## Validation
 
-Current canonization note (r01)
-- This current slice is under active migration toward the Locating/Location Symfony-oriented canon.
-- The executable protocol gate added in `.gate/check/location-protocol-canon.php` is the starting control rail for the next cumulative waves.
+Use the repository-declared Composer scripts:
 
-Current canonization note (r02)
-- Composer identity is now aligned toward `locating/location` and `App\` as the target production root.
-- `Smartresponsor\` remains only as a temporary compatibility bridge while cumulative namespace migration is still in progress.
-- Forbidden `src/Console` was evacuated in favor of canonical commands under `src/Command/Location/`.
+```text
+composer validate
+composer run-script cs:check
+composer run-script lint
+composer run-script test
+composer run-script canon
+composer run-script stan
+```
+
+`composer run-script canon` verifies the component namespace/path contract and the cumulative Locating normalization gates under `.gate/check/` and `tools/canon/`.
+
+Generated `report/locating-*-latest.*` files are diagnostic outputs and are intentionally not source-controlled because they include run timestamps. Historical migration evidence remains under `report/` and `docs/` where it is explicitly retained.
+
+## Runtime notes
+
+Provider-specific runtime and infrastructure live under `Provider/Location` rather than a parallel `Locator` hierarchy. Address pipeline consumers should depend on `App\Locating\ServiceInterface\AddressPipelineInterface` rather than the concrete implementation.
+
+Deployment configuration belongs under `deploy/`; legacy root/archive deployment artifacts are not part of the runtime contract.
+
+## Historical documentation
+
+The repository contains historical engineering and canonization notes under `docs/` and `report/legacy/`. They document how the consolidated source was reduced to the current Locating component but are not authoritative over the current code, Composer configuration, executable gates, or tests.

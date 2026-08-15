@@ -18,8 +18,8 @@ Interfaces and implementation:
 
 Status endpoint:
 
-- App\ControllerInterface\Locator\StatusControllerInterface
-- App\Controller\Locator\StatusController
+- App\ServiceInterface\Locator\LocationStatusHttpServiceInterface
+- App\Service\Locator\LocationStatusHttpService
 - Route: GET /locator/status (config/routes/locator_status.yaml)
 
 Response shape:

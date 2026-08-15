@@ -13,4 +13,4 @@ Rationale:
 
 Effect:
 - the cumulative slice loses another dead `Locator` cluster,
-- no active `App\Controller\Http\Location\...` or new `App\Service\...` path depends on these classes.
+- no active `App\Service\Http\Location\...` or new `App\Service\...` path depends on these classes.

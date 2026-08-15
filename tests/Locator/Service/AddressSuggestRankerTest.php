@@ -1,15 +1,16 @@
 <?php
+
 declare(strict_types=1);
 
 /*
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace Smartresponsor\Tests\Locator\Service;
+namespace App\Locating\Tests\Locator\Service;
 
-use Smartresponsor\Entity\Locator\AddressData;
-use Smartresponsor\Entity\Locator\AddressSuggestion;
-use Smartresponsor\Service\Locator\AddressSuggestRanker;
+use App\Locating\Model\Location\AddressData;
+use App\Locating\Model\Location\AddressSuggestion;
+use App\Locating\Service\Address\Location\AddressSuggestRanker;
 use PHPUnit\Framework\TestCase;
 
 final class AddressSuggestRankerTest extends TestCase

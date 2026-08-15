@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Tests\Entity\Location;
+namespace App\Locating\Tests\Entity\Location;
 
-use App\Entity\Location\ProviderGovernanceMetricSet;
+use App\Locating\Model\Location\ProviderGovernanceMetricSet;
 use PHPUnit\Framework\TestCase;
 
 final class ProviderGovernanceMetricSetTest extends TestCase

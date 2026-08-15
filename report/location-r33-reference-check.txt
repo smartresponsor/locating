@@ -8,6 +8,6 @@ Checked surfaces:
 - README.md
 
 Findings before removal:
-- BatchController referenced only by tests/Locator/BatchControllerTest.php
+- BatchService referenced only by tests/Locator/BatchServiceTest.php
 - Smartresponsor\Layer\Locator\BatchService appeared only inside the removed controller and its test
 - no active Symfony routing or current App service wiring referenced this cluster

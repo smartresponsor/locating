@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace App\Tests\Service\Batch\Location;
+namespace App\Locating\Tests\Service\Batch\Location;
 
-use App\Entity\Location\AddressBatchJob;
-use App\Entity\Location\AddressBatchJobStatus;
-use App\EntityInterface\Location\AddressBatchJobInterface;
-use App\InfrastructureInterface\Provider\Location\LocationMetricRecorderInterface;
-use App\Service\Batch\Location\LocationAddressBatchServiceMetricDecorator;
-use App\ServiceInterface\Batch\Location\LocationAddressBatchServiceInterface;
+use App\Locating\InfrastructureInterface\Provider\Location\Metrics\LocationMetricRecorderInterface;
+use App\Locating\Model\Location\AddressBatchJob;
+use App\Locating\Model\Location\AddressBatchJobStatus;
+use App\Locating\ModelInterface\Location\AddressBatchJobInterface;
+use App\Locating\Service\Batch\Location\LocationAddressBatchServiceMetricDecorator;
+use App\Locating\ServiceInterface\Batch\Location\LocationAddressBatchServiceInterface;
 use PHPUnit\Framework\TestCase;
 
 final class LocationAddressBatchServiceMetricDecoratorTest extends TestCase
 {
     public function testCreateJobRecordsSuccessMetrics(): void
     {
-        $inner = new class implements LocationAddressBatchServiceInterface {
+        $inner = new class () implements LocationAddressBatchServiceInterface {
             public function createJob(string $tenantId, array $itemList): AddressBatchJobInterface
             {
                 return new AddressBatchJob('job-1', 'tenant-demo', AddressBatchJobStatus::PENDING, 0, 0, new \DateTimeImmutable(), new \DateTimeImmutable());
@@ -45,7 +45,7 @@ final class LocationAddressBatchServiceMetricDecoratorTest extends TestCase
 
     public function testCreateJobRecordsErrorMetrics(): void
     {
-        $inner = new class implements LocationAddressBatchServiceInterface {
+        $inner = new class () implements LocationAddressBatchServiceInterface {
             public function createJob(string $tenantId, array $itemList): AddressBatchJobInterface
             {
                 throw new \RuntimeException('fail');

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Tests\Controller\Http;
+namespace App\Locating\Tests\Controller\Http;
 
-use App\Controller\Http\Location\GovernanceRecommendationController;
-use App\Entity\Location\ProviderGovernanceRecommendation;
-use App\Entity\Location\ProviderGovernanceRecommendationReport;
-use App\ServiceInterface\Observability\Location\LocationProviderGovernanceRecommendationServiceInterface;
+use App\Locating\Controller\Http\Location\GovernanceRecommendationController;
+use App\Locating\ReadModel\Observability\Location\ProviderGovernanceRecommendation;
+use App\Locating\ReadModel\Observability\Location\ProviderGovernanceRecommendationReport;
+use App\Locating\ServiceInterface\Observability\Location\LocationProviderGovernanceRecommendationServiceInterface;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;

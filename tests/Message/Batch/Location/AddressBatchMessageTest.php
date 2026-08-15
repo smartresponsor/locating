@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Tests\Message\Batch\Location;
+namespace App\Locating\Tests\Message\Batch\Location;
 
-use App\Message\Batch\Location\AddressBatchMessage;
+use App\Locating\Message\Batch\Location\AddressBatchMessage;
 use PHPUnit\Framework\TestCase;
 
 final class AddressBatchMessageTest extends TestCase

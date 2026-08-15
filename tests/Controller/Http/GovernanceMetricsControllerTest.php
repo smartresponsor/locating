@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Tests\Controller\Http;
+namespace App\Locating\Tests\Controller\Http;
 
-use App\Controller\Http\Location\GovernanceMetricsController;
-use App\Entity\Location\ProviderGovernanceMetricSet;
-use App\ServiceInterface\Observability\Location\LocationProviderGovernanceMetricsExportServiceInterface;
+use App\Locating\Controller\Http\Location\GovernanceMetricsController;
+use App\Locating\ReadModel\Observability\Location\ProviderGovernanceMetricSet;
+use App\Locating\ServiceInterface\Observability\Location\LocationProviderGovernanceMetricsExportServiceInterface;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;

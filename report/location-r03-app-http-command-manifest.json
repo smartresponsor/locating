@@ -3,16 +3,16 @@
   "package": "locating/location",
   "summary": {
     "app_controller_http_location_files": [
-      "src/Controller/Http/Location/AddressReverseController.php",
-      "src/Controller/Http/Location/AddressSuggestController.php",
-      "src/Controller/Http/Location/MetricsController.php",
-      "src/Controller/Http/Location/StatusController.php"
+      "src/Service/Http/Location/LocationAddressReverseHttpService.php",
+      "src/Service/Http/Location/LocationAddressSuggestHttpService.php",
+      "src/Service/Http/Location/LocationMetricsHttpService.php",
+      "src/Service/Http/Location/LocationStatusHttpService.php"
     ],
     "app_controller_interface_http_location_files": [
-      "src/ControllerInterface/Http/Location/AddressReverseControllerInterface.php",
-      "src/ControllerInterface/Http/Location/AddressSuggestControllerInterface.php",
-      "src/ControllerInterface/Http/Location/MetricsControllerInterface.php",
-      "src/ControllerInterface/Http/Location/StatusControllerInterface.php"
+      "src/ServiceInterface/Http/Location/LocationAddressReverseHttpServiceInterface.php",
+      "src/ServiceInterface/Http/Location/LocationAddressSuggestHttpServiceInterface.php",
+      "src/ServiceInterface/Http/Location/LocationMetricsHttpServiceInterface.php",
+      "src/ServiceInterface/Http/Location/LocationStatusHttpServiceInterface.php"
     ],
     "command_files": [
       "src/Command/Address/LocationNormalizeCommand.php",

@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Tests\Service\Provider\Location;
+namespace App\Locating\Tests\Service\Provider\Location;
 
-use App\Entity\Location\AddressSuggestionResult;
-use App\Entity\Location\AddressView;
-use App\Service\Provider\Location\AddressSuggestionRanker;
-use App\Service\Provider\Location\OrderedAddressSuggestionProvider;
-use App\Service\Provider\Location\StaticAddressSuggestionSourceOrder;
-use App\ServiceInterface\Provider\Location\AddressSuggestionSourceInterface;
+use App\Locating\Model\Location\AddressSuggestionResult;
+use App\Locating\Model\Location\AddressView;
+use App\Locating\Service\Provider\Location\AddressSuggestionRanker;
+use App\Locating\Service\Provider\Location\OrderedAddressSuggestionProvider;
+use App\Locating\Service\Provider\Location\StaticAddressSuggestionSourceOrder;
+use App\Locating\ServiceInterface\Provider\Location\AddressSuggestionSourceInterface;
 use PHPUnit\Framework\TestCase;
 
 final class OrderedAddressSuggestionProviderTest extends TestCase
@@ -18,7 +18,7 @@ final class OrderedAddressSuggestionProviderTest extends TestCase
     {
         $provider = new OrderedAddressSuggestionProvider(
             [
-                new class implements AddressSuggestionSourceInterface {
+                new class () implements AddressSuggestionSourceInterface {
                     public function sourceKey(): string
                     {
                         return 'legacy-suggest';

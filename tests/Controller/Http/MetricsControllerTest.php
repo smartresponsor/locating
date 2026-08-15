@@ -7,12 +7,12 @@ declare(strict_types=1);
  * dev@highhopesamerica.com
  */
 
-namespace App\Tests\Controller\Http;
+namespace App\Locating\Tests\Controller\Http;
 
-use App\Controller\Http\Location\MetricsController;
-use App\Entity\Location\ProviderMetricSnapshot;
-use App\Infrastructure\Provider\Location\InMemoryProviderMetricSnapshotStore;
-use App\Service\Observability\Location\LocationMetricsExportService;
+use App\Locating\Controller\Http\Location\MetricsController;
+use App\Locating\Infrastructure\Provider\Location\InMemoryProviderMetricSnapshotStore;
+use App\Locating\ReadModel\Observability\Location\ProviderMetricSnapshot;
+use App\Locating\Service\Observability\Location\LocationMetricsExportService;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 

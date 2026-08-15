@@ -18,11 +18,11 @@ foreach ($iterator as $file) {
         continue;
     }
     $namespace = $nsMatch[1];
-    if (!str_starts_with($namespace, 'App\\')) {
+    if (!str_starts_with($namespace, 'App\Locating\\')) {
         continue;
     }
-    preg_match_all('/^use\s+(Smartresponsor\\[^;]+);/m', $contents, $matches);
-    preg_match_all('/Smartresponsor\\[A-Za-z0-9_\\]+/', $contents, $inlineMatches);
+    preg_match_all('/^use\s+(App\Locating\\[^;]+);/m', $contents, $matches);
+    preg_match_all('/App\Locating\\[A-Za-z0-9_\\]+/', $contents, $inlineMatches);
     $refs = array_values(array_unique(array_merge($matches[1], $inlineMatches[0])));
     if ($refs === []) {
         continue;

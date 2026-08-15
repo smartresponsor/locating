@@ -23,21 +23,21 @@ src/Contract/Locator/ReverseProviderInterface.php
   [LOSER] v=17 size=347 sha256=c4c1427226b9de3bb566ea5567e05335547302d3b7729dfee166f7a305d9476c from=location-sketch17-oct17-final.zip:src/Contract/Locator/ReverseProviderInterface.php
   [WINNER] v=18 size=200 sha256=6c764bd63c76c2b9d8a5946b1680b0c939f7e70734f603e0f411f5c61cda13c6 from=location-sketch18-oct18-final.zip:src/Contract/Locator/ReverseProviderInterface.php
 
-src/Controller/Locator/.gitkeep
-  [LOSER] v=15 size=0 sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 from=location-sketch15-oct15-final.zip:src/Controller/Locator/.gitkeep
-  [LOSER] v=16 size=0 sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 from=location-sketch16-oct16-final.zip:src/Controller/Locator/.gitkeep
-  [LOSER] v=17 size=0 sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 from=location-sketch17-oct17-final.zip:src/Controller/Locator/.gitkeep
-  [LOSER] v=18 size=0 sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 from=location-sketch18-oct18-final.zip:src/Controller/Locator/.gitkeep
-  [LOSER] v=25 size=0 sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 from=location-sketch25-oct25-final.zip:src/Controller/Locator/.gitkeep
-  [WINNER] v=30 size=0 sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 from=location-sketch30-oct30-final.zip:src/Controller/Locator/.gitkeep
+src/Service/Locator/.gitkeep
+  [LOSER] v=15 size=0 sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 from=location-sketch15-oct15-final.zip:src/Service/Locator/.gitkeep
+  [LOSER] v=16 size=0 sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 from=location-sketch16-oct16-final.zip:src/Service/Locator/.gitkeep
+  [LOSER] v=17 size=0 sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 from=location-sketch17-oct17-final.zip:src/Service/Locator/.gitkeep
+  [LOSER] v=18 size=0 sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 from=location-sketch18-oct18-final.zip:src/Service/Locator/.gitkeep
+  [LOSER] v=25 size=0 sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 from=location-sketch25-oct25-final.zip:src/Service/Locator/.gitkeep
+  [WINNER] v=30 size=0 sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 from=location-sketch30-oct30-final.zip:src/Service/Locator/.gitkeep
 
-src/ControllerInterface/Locator/.gitkeep
-  [LOSER] v=15 size=0 sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 from=location-sketch15-oct15-final.zip:src/ControllerInterface/Locator/.gitkeep
-  [LOSER] v=16 size=0 sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 from=location-sketch16-oct16-final.zip:src/ControllerInterface/Locator/.gitkeep
-  [LOSER] v=17 size=0 sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 from=location-sketch17-oct17-final.zip:src/ControllerInterface/Locator/.gitkeep
-  [LOSER] v=18 size=0 sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 from=location-sketch18-oct18-final.zip:src/ControllerInterface/Locator/.gitkeep
-  [LOSER] v=25 size=0 sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 from=location-sketch25-oct25-final.zip:src/ControllerInterface/Locator/.gitkeep
-  [WINNER] v=30 size=0 sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 from=location-sketch30-oct30-final.zip:src/ControllerInterface/Locator/.gitkeep
+src/ServiceInterface/Locator/.gitkeep
+  [LOSER] v=15 size=0 sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 from=location-sketch15-oct15-final.zip:src/ServiceInterface/Locator/.gitkeep
+  [LOSER] v=16 size=0 sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 from=location-sketch16-oct16-final.zip:src/ServiceInterface/Locator/.gitkeep
+  [LOSER] v=17 size=0 sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 from=location-sketch17-oct17-final.zip:src/ServiceInterface/Locator/.gitkeep
+  [LOSER] v=18 size=0 sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 from=location-sketch18-oct18-final.zip:src/ServiceInterface/Locator/.gitkeep
+  [LOSER] v=25 size=0 sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 from=location-sketch25-oct25-final.zip:src/ServiceInterface/Locator/.gitkeep
+  [WINNER] v=30 size=0 sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 from=location-sketch30-oct30-final.zip:src/ServiceInterface/Locator/.gitkeep
 
 src/Domain/Locator/.gitkeep
   [LOSER] v=15 size=0 sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 from=location-sketch15-oct15-final.zip:src/Domain/Locator/.gitkeep

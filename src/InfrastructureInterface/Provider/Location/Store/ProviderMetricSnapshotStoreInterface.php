@@ -1,0 +1,20 @@
+<?php
+
+declare(strict_types=1);
+
+/*
+ * Marketing America Corp. Oleksandr Tishchenko
+ * dev@highhopesamerica.com
+ */
+
+namespace App\Locating\InfrastructureInterface\Provider\Location\Store;
+
+use App\Locating\ModelInterface\Location\ProviderMetricSnapshotInterface;
+
+interface ProviderMetricSnapshotStoreInterface
+{
+    /**
+     * @return array<string, ProviderMetricSnapshotInterface>
+     */
+    public function snapshot(): array;
+}

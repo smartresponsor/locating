@@ -1,0 +1,5 @@
+.gate/check/location-entity-first-canon.php
+composer.json
+docs/locating-lc04-entity-first-inventory.md
+report/locating-lc04-touched-files.txt
+tools/canon/location-entity-first-inventory.php

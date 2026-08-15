@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tests\Service\Observability\Location;
+namespace App\Locating\Tests\Service\Observability\Location;
 
-use App\Entity\Location\ProviderGovernanceSnapshot;
-use App\Entity\Location\ProviderMetricSnapshot;
-use App\Infrastructure\Provider\Location\InMemoryProviderMetricSnapshotStore;
-use App\Service\Observability\Location\LocationStatusReportService;
-use App\ServiceInterface\Observability\Location\LocationProviderGovernanceCatalogServiceInterface;
+use App\Locating\Infrastructure\Provider\Location\InMemoryProviderMetricSnapshotStore;
+use App\Locating\ReadModel\Observability\Location\ProviderGovernanceSnapshot;
+use App\Locating\ReadModel\Observability\Location\ProviderMetricSnapshot;
+use App\Locating\Service\Observability\Location\LocationStatusReportService;
+use App\Locating\ServiceInterface\Observability\Location\LocationProviderGovernanceCatalogServiceInterface;
 use PHPUnit\Framework\TestCase;
 
 final class LocationStatusReportServiceTest extends TestCase
@@ -19,7 +19,7 @@ final class LocationStatusReportServiceTest extends TestCase
             new InMemoryProviderMetricSnapshotStore([
                 'suggest' => new ProviderMetricSnapshot('suggest', 10, 0, 120.0, 0.0),
             ]),
-            new class implements LocationProviderGovernanceCatalogServiceInterface {
+            new class () implements LocationProviderGovernanceCatalogServiceInterface {
                 public function catalog(): array
                 {
                     return [

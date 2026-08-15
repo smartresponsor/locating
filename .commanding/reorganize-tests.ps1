@@ -78,12 +78,12 @@ function Update-Namespace($filePath, $ns, $skip = $false) {
 function Rel-To-Namespace($relPath) {
     # relPath: like "\Vendor\VendorEnTest.php" or "\DTO\X\YTest.php"
     $dir = Split-Path $relPath -Parent
-    if ([string]::IsNullOrWhiteSpace($dir)) { return 'App\Tests' }
+    if ([string]::IsNullOrWhiteSpace($dir)) { return 'App\Locating\Tests' }
 
     # Преобразуем \ -> \\ для namespace
     $parts = $dir.Trim('\','/').Split('\','/').Where({$_ -ne ''})
-    if ($parts.Count -eq 0) { return 'App\Tests' }
-    return 'App\Tests\' + ($parts -join '\')
+    if ($parts.Count -eq 0) { return 'App\Locating\Tests' }
+    return 'App\Locating\Tests\' + ($parts -join '\')
 }
 
 # Нормализуем «temp/test» -> «Temp/Test»
@@ -131,7 +131,7 @@ foreach ($f in $files) {
         $destDir = Join-Path $testsRoot $destHit.Dest
         $dst = Join-Path $destDir $name
         Move-File $f.FullName $dst
-        $ns = "App\Tests\" + $destHit.Dest
+        $ns = "App\Locating\Tests\" + $destHit.Dest
         $skipNs = ($name -ieq 'bootstrap.php') # на всякий случай
         Update-Namespace $dst $ns $skipNs
         continue
@@ -140,8 +140,8 @@ foreach ($f in $files) {
     # 4) Иначе — оставляем текущую относительную папку, но если файл лежит прямо в корне tests — НЕ трогаем путь
     $dirRel = Split-Path $rel -Parent
     if ($dirRel -eq '') {
-        # файл в корне tests -> только NS "App\Tests"
-        Update-Namespace $f.FullName 'App\Tests'
+        # файл в корне tests -> только NS "App\Locating\Tests"
+        Update-Namespace $f.FullName 'App\Locating\Tests'
     } else {
         # перенесём на верхний уровень tests\<TopLevel>\<File>, если это было tests\temp\* или tests\test\*
         $top = $dirRel.Split('\','/')[0]
@@ -149,7 +149,7 @@ foreach ($f in $files) {
             $destDir = Join-Path $testsRoot $top
             $dst = Join-Path $destDir $name
             Move-File $f.FullName $dst
-            $ns = "App\Tests\$top"
+            $ns = "App\Locating\Tests\$top"
             Update-Namespace $dst $ns
         } else {
             # в прочих нестандартных подпапках — просто нормализуем NS по пути

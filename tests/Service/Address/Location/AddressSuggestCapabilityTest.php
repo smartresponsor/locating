@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Tests\Service\Address\Location;
+namespace App\Locating\Tests\Service\Address\Location;
 
-use App\Entity\Location\AddressSuggestionResult;
-use App\Entity\Location\AddressView;
-use App\Service\Address\Location\AddressSuggestCapability;
-use App\ServiceInterface\Provider\Location\AddressSuggestionProviderInterface;
+use App\Locating\Model\Location\AddressSuggestionResult;
+use App\Locating\Model\Location\AddressView;
+use App\Locating\Service\Address\Location\AddressSuggestCapability;
+use App\Locating\ServiceInterface\Provider\Location\AddressSuggestionProviderInterface;
 use PHPUnit\Framework\TestCase;
 
 final class AddressSuggestCapabilityTest extends TestCase
 {
     public function testSuggestDelegatesToAppOwnedProviderBoundary(): void
     {
-        $provider = new class implements AddressSuggestionProviderInterface {
+        $provider = new class () implements AddressSuggestionProviderInterface {
             public function suggest(string $query, ?string $countryCode = null, int $limit = 5): array
             {
                 return [
