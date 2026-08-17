@@ -13,6 +13,7 @@ use App\Locating\ServiceInterface\Provider\Location\Runtime\Resilience\AnomalyDe
 
 final class AnomalyDetector implements AnomalyDetectorInterface
 {
+    /** @param list<float|int> $series */
     public function detect(array $series, float $z, float $ratio): bool
     {
         $n = count($series);

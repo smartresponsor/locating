@@ -13,7 +13,7 @@ use App\Locating\ServiceInterface\Provider\Location\Runtime\Geo\GeoFencePolicyIn
 
 final class GeoFencePolicy implements GeoFencePolicyInterface
 {
-    /** @var array<int, array{name:string,region:string,minLat:float,minLon:float,maxLat:float,maxLon:float}> */
+    /** @var array<int,array{nameEntity:string,region:string,minLat:float,minLon:float,maxLat:float,maxLon:float}> */
     private array $box = [];
 
     public function add(string $nameEntity, string $region, float $minLat, float $minLon, float $maxLat, float $maxLon): void

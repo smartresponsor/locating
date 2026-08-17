@@ -11,10 +11,10 @@ namespace App\Locating\InfrastructureInterface\Provider\Location\Queue;
 
 interface PriorityBatchQueueInterface
 {
-    /** Enqueue with priority (higher first). Return job id. */
+    /** @param array<string,mixed> $payload */
     public function enqueue(int $priority, array $payload): string;
 
-    /** Dequeue up to max items ordered by priority. */
+    /** @return list<array{id:string,payload:array<string,mixed>}> */
     public function dequeueBatch(int $max): array;
 
     /** Return length of queue. */

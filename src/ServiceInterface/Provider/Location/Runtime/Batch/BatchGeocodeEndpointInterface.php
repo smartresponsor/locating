@@ -11,6 +11,9 @@ namespace App\Locating\ServiceInterface\Provider\Location\Runtime\Batch;
 
 interface BatchGeocodeEndpointInterface
 {
-    /** Handle batch geocode; return list of result maps keyed by input index. */
+    /**
+     * @param list<string|array{text?:string}> $input
+     * @return array<int, array<string, mixed>>
+     */
     public function handle(array $input): array;
 }

@@ -11,8 +11,12 @@ namespace App\Locating\ServiceInterface\Provider\Location\Runtime\Experiment;
 
 interface ShadowTrafficInterface
 {
-    /** Decide shadow provider for request; return '' if no shadow. */
+    /** @param list<string> $candidate */
     public function pick(string $primary, array $candidate, float $ratio): string;
-    /** Record shadow result for analysis; return noop. */
+
+    /**
+     * @param array<string,mixed> $primaryResult
+     * @param array<string,mixed> $shadowResult
+     */
     public function record(string $primary, string $shadow, array $primaryResult, array $shadowResult): void;
 }

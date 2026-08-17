@@ -11,6 +11,10 @@ namespace App\Locating\ServiceInterface\Provider\Location\Runtime\Resilience;
 
 interface AnomalyDetectorInterface
 {
-    /** Return true if last value is anomaly based on z-score threshold and change ratio. */
+    /**
+     * Return true if last value is anomaly based on z-score threshold and change ratio.
+     *
+     * @param list<float|int> $series
+     */
     public function detect(array $series, float $z, float $ratio): bool;
 }

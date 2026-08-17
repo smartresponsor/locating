@@ -41,6 +41,7 @@ final class ProviderGovernanceRemediationStep implements ProviderGovernanceRemed
         return $this->ownerHint;
     }
 
+    /** @return array{code:string,priority:string,summary:string,ownerHint:string} */
     public function toArray(): array
     {
         return ['code' => $this->code, 'priority' => $this->priority, 'summary' => $this->summary, 'ownerHint' => $this->ownerHint];

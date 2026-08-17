@@ -7,9 +7,13 @@ namespace App\Locating\Integration\Provider\Location\Metrics;
 
 final class PrometheusExporter
 {
+    /** @var array<string, int> */
     private array $counters = [];
+
+    /** @var array<string, string> */
     private array $breaker = [];
 
+    /** @param array<string,string|int|float|bool> $labels */
     public function inc(string $nameEntity, array $labels): void
     {
         $key = $nameEntity . '|' . json_encode($labels, JSON_THROW_ON_ERROR);
@@ -30,10 +34,14 @@ final class PrometheusExporter
 
         foreach ($this->counters as $k => $v) {
             [$nameEntity, $labels] = explode('|', $k, 2);
-            $ls = json_decode($labels, true, 512, JSON_THROW_ON_ERROR);
+            $decoded = json_decode($labels, true, 512, JSON_THROW_ON_ERROR);
             $pairs = [];
-            foreach ($ls as $key => $value) {
-                $pairs[] = sprintf('%s="%s"', $key, $value);
+            if (is_array($decoded)) {
+                foreach ($decoded as $key => $value) {
+                    if (is_string($key) && is_scalar($value)) {
+                        $pairs[] = sprintf('%s="%s"', $key, (string) $value);
+                    }
+                }
             }
             $lines[] = sprintf('%s{%s} %d', $nameEntity, implode(',', $pairs), $v);
         }

@@ -22,6 +22,7 @@ final class RateLimiter
         return $this->dir . '/' . sha1($key) . '.json';
     }
 
+    /** @return array{allowed:bool, remaining:int, reset:int} */
     public function allow(string $key, ?int $now = null): array
     {
         $now = $now ?? time();
@@ -29,10 +30,16 @@ final class RateLimiter
         $state = ['ts' => $now, 'tokens' => $this->limit + $this->burst];
 
         if (file_exists($path)) {
-            $state = json_decode((string)file_get_contents($path), true) ?: $state;
-            $elapsed = max(0, $now - (int)$state['ts']);
-            $refill = (int)floor($elapsed * ($this->limit / $this->windowSec));
-            $state['tokens'] = min($this->limit + $this->burst, (int)$state['tokens'] + $refill);
+            $decoded = json_decode((string) file_get_contents($path), true);
+            if (is_array($decoded)) {
+                $state = [
+                    'ts' => is_numeric($decoded['ts'] ?? null) ? (int) $decoded['ts'] : $now,
+                    'tokens' => is_numeric($decoded['tokens'] ?? null) ? (int) $decoded['tokens'] : $this->limit + $this->burst,
+                ];
+            }
+            $elapsed = max(0, $now - $state['ts']);
+            $refill = (int) floor($elapsed * ($this->limit / $this->windowSec));
+            $state['tokens'] = min($this->limit + $this->burst, $state['tokens'] + $refill);
             $state['ts'] = $now;
         }
 
@@ -42,7 +49,7 @@ final class RateLimiter
             $allowed = true;
         }
 
-        file_put_contents($path, (string)json_encode($state));
+        file_put_contents($path, json_encode($state, JSON_THROW_ON_ERROR));
 
         return [
             'allowed' => $allowed,

@@ -11,11 +11,13 @@ final class MapboxClient
     public function __construct(private string $key, private string $base = 'https://api.mapbox.com', private int $timeout = 10)
     {
     }
+    /** @return array<string,mixed> */
     public function geocode(string $q): array
     {
         $u = $this->base.'/geocoding/v5/mapbox.places/'.rawurlencode($q).'.json?'.http_build_query(['access_token' => $this->key,'limit' => '1','types' => 'address,place,postcode,address']);
         return SimpleHttp::get($u, $this->timeout);
     }
+    /** @return array<string,mixed> */
     public function reverse(float $lat, float $lon): array
     {
         $u = $this->base.'/geocoding/v5/mapbox.places/'.rawurlencode((string)$lon.','.(string)$lat).'.json?'.http_build_query(['access_token' => $this->key,'limit' => '1','types' => 'address,place,postcode,address']);

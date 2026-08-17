@@ -8,6 +8,6 @@ interface ProviderStatAggregatorInterface
 {
     public function observe(string $providerId, string $region, float $latencyMs, bool $ok, float $cost): void;
 
-    /** @return array<string,mixed> */
+    /** @return list<array{providerId:string,region:string,count:int,errorRate:float,p95Ms:float,costAvg:float}> */
     public function snapshot(): array;
 }

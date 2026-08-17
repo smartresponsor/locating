@@ -11,9 +11,9 @@ namespace App\Locating\InfrastructureInterface\Provider\Location\Queue;
 
 interface DeferredLookupQueueInterface
 {
-    /** Enqueue deferred lookup and return job id. */
+    /** @param array<string,mixed> $payload */
     public function enqueue(string $tenantId, array $payload): string;
 
-    /** Dequeue next job (if any). */
+    /** @return array{id:string,tenant:string,payload:array<string,mixed>}|null */
     public function dequeue(): ?array;
 }

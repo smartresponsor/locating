@@ -21,6 +21,7 @@ final class LocationAddressSuggestService implements LocationAddressSuggestServi
     ) {
     }
 
+    /** @return list<\App\Locating\ModelInterface\Location\AddressSuggestionViewInterface> */
     public function suggest(string $query, ?string $countryCode = null, int $limit = 5): array
     {
         $items = [];

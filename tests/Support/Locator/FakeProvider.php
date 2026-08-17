@@ -20,9 +20,10 @@ final class FakeProvider implements ProviderAdapterInterface
     ) {
     }
 
+    /** @return array<string,mixed> */
     public function call(array $request): array
     {
-        $q = (string) ($request['q'] ?? 'unknown');
+        $q = is_string($request['q'] ?? null) ? $request['q'] : 'unknown';
 
         return [
             'status' => 'ok',

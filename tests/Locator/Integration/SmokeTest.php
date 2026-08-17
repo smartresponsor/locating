@@ -14,7 +14,7 @@ final class SmokeTest extends TestCase
     public function testLocatorFixturesRunnerWorksAgainstLocalHarness(): void
     {
         $socket = stream_socket_server('tcp://127.0.0.1:0', $socketErrorNumber, $socketErrorMessage);
-        self::assertIsResource($socket, $socketErrorMessage);
+        self::assertIsResource($socket, $socketErrorMessage ?? '');
         $socketName = stream_socket_get_name($socket, false);
         self::assertIsString($socketName);
         fclose($socket);
@@ -69,7 +69,6 @@ final class SmokeTest extends TestCase
             ];
 
             $inheritedEnvironment = getenv();
-            self::assertIsArray($inheritedEnvironment);
             $env = array_merge($inheritedEnvironment, [
                 'LOCATOR_BASE_URL' => $baseUrl,
                 'LOCATOR_TENANT' => 'smoke',

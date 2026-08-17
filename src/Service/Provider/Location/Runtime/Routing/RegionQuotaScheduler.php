@@ -16,6 +16,10 @@ final class RegionQuotaScheduler implements RegionQuotaSchedulerInterface
     /** @var array<string, array{cap:int, used:int}> */
     private array $q = [];
 
+    /**
+     * @param array<string,float|int> $weight
+     * @return array<string,int>
+     */
     public function split(int $total, array $weight): array
     {
         $total = max(0, $total);

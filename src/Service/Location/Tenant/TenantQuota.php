@@ -22,13 +22,11 @@ final class TenantQuota implements TenantQuotaInterface
 
     public function setBase(string $tenantId, string $op, int $base): void
     {
-        $t = &$this->map[$tenantId][$op];
-        if (!isset($t)) {
-            $t = ['base' => max(1, $base), 'adaptive' => max(1, $base), 'used' => 0, 'ewmaError' => 0.0];
-        } else {
-            $t['base'] = max(1, $base);
-            $t['adaptive'] = max(1, $base);
-        }
+        $value = max(1, $base);
+        $current = $this->map[$tenantId][$op] ?? ['base' => $value, 'adaptive' => $value, 'used' => 0, 'ewmaError' => 0.0];
+        $current['base'] = $value;
+        $current['adaptive'] = $value;
+        $this->map[$tenantId][$op] = $current;
     }
 
     public function limit(string $tenantId, string $op): int
@@ -40,28 +38,25 @@ final class TenantQuota implements TenantQuotaInterface
 
     public function update(string $tenantId, string $op, int $used, float $errorRate): int
     {
-        $t = &$this->map[$tenantId][$op];
-        if (!isset($t)) {
-            $this->setBase($tenantId, $op, 100);
-            $t = &$this->map[$tenantId][$op];
-        }
-        $t['used'] = max(0, $used);
-        $t['ewmaError'] = (1 - $this->alpha) * $t['ewmaError'] + $this->alpha * max(0.0, min(1.0, $errorRate));
-        $load = ($t['used'] + 1.0) / max(1.0, (float) $t['adaptive']);
+        $current = $this->map[$tenantId][$op] ?? ['base' => 100, 'adaptive' => 100, 'used' => 0, 'ewmaError' => 0.0];
+        $current['used'] = max(0, $used);
+        $current['ewmaError'] = (1 - $this->alpha) * $current['ewmaError'] + $this->alpha * max(0.0, min(1.0, $errorRate));
+        $load = ($current['used'] + 1.0) / max(1.0, (float) $current['adaptive']);
         $factor = 1.0;
-        if ($t['ewmaError'] > 0.1) {
+        if ($current['ewmaError'] > 0.1) {
             $factor *= 0.85;
         }
         if ($load > 0.9) {
             $factor *= 0.9;
         }
-        if ($load < 0.6 && $t['ewmaError'] < 0.05) {
+        if ($load < 0.6 && $current['ewmaError'] < 0.05) {
             $factor *= 1.15;
         }
-        $base = (float) $t['base'];
-        $new = (int) round(min($this->ceilRatio * $base, max($this->floorRatio * $base, $t['adaptive'] * $factor)));
-        $t['adaptive'] = max(1, $new);
+        $base = (float) $current['base'];
+        $new = (int) round(min($this->ceilRatio * $base, max($this->floorRatio * $base, $current['adaptive'] * $factor)));
+        $current['adaptive'] = max(1, $new);
+        $this->map[$tenantId][$op] = $current;
 
-        return $t['adaptive'];
+        return $current['adaptive'];
     }
 }

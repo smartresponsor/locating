@@ -18,17 +18,22 @@ final class BatchGeocodeEndpoint implements BatchGeocodeEndpointInterface
     {
     }
 
+    /**
+     * @param list<string|array{text?:string}> $input
+     * @return array<int, array<string, mixed>>
+     */
     public function handle(array $input): array
     {
         $out = [];
         foreach ($input as $i => $raw) {
-            $key = $this->key((string) ($raw['text'] ?? (string) $raw));
+            $text = is_array($raw) ? ($raw['text'] ?? '') : $raw;
+            $key = $this->key($text);
             $hit = $this->cache->get($key);
             if (null !== $hit) {
                 $out[$i] = $hit;
                 continue;
             }
-            $norm = $this->normalize((string) ($raw['text'] ?? (string) $raw));
+            $norm = $this->normalize($text);
             // fake deterministic lat/lon for demo purposes
             $lat = (hexdec(substr(hash('sha1', $norm), 0, 6)) % 1800000) / 10000.0 - 90.0;
             $lon = (hexdec(substr(hash('sha1', $norm), 6, 6)) % 3600000) / 10000.0 - 180.0;
@@ -47,8 +52,8 @@ final class BatchGeocodeEndpoint implements BatchGeocodeEndpointInterface
 
     private function normalize(string $s): string
     {
-        $t = preg_replace('/\s+/', ' ', strtoupper(trim($s)));
-        $t = str_replace([' ST ', ' AVE ', ' RD '], [' STREET ', ' AVENUE ', ' ROAD '], ' ' + $t + ' ');
+        $t = preg_replace('/\s+/', ' ', strtoupper(trim($s))) ?? strtoupper(trim($s));
+        $t = str_replace([' ST ', ' AVE ', ' RD '], [' STREET ', ' AVENUE ', ' ROAD '], ' '.$t.' ');
 
         return trim($t);
     }

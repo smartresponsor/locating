@@ -31,16 +31,19 @@ final class LocationAddressBatchService implements LocationAddressBatchServiceIn
         $jobId = $job->jobId();
 
         foreach ($itemList as $item) {
-            if (!is_array($item)) {
-                continue;
+            $raw = is_string($item['raw'] ?? null) ? $item['raw'] : '';
+            $data = [];
+            if (is_array($item['data'] ?? null)) {
+                foreach ($item['data'] as $key => $value) {
+                    if (is_string($key)) {
+                        $data[$key] = $value;
+                    }
+                }
             }
-
-            $payload = [
-                'raw' => (string) ($item['raw'] ?? ''),
-                'data' => (array) ($item['data'] ?? []),
-            ];
-
-            $this->messageDispatcher->dispatch(new AddressBatchMessage($jobId, $payload));
+            $this->messageDispatcher->dispatch(new AddressBatchMessage($jobId, [
+                'raw' => $raw,
+                'data' => $data,
+            ]));
         }
 
         return $job;

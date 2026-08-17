@@ -9,6 +9,7 @@ use App\Locating\Integration\Provider\Location\Cache\CacheInterface;
 use App\Locating\Integration\Provider\Location\Metrics\HealthMetrics;
 use App\Locating\Model\Location\AddressData;
 use App\Locating\Model\Location\GeoPoint;
+use App\Locating\ServiceInterface\Provider\Location\Runtime\Geo\LocatorInterface;
 
 final class AdaptiveMultiCachedLocator implements LocatorInterface
 {
@@ -23,9 +24,26 @@ final class AdaptiveMultiCachedLocator implements LocatorInterface
     ) {
     }
 
+    /** @param list<mixed> $a */
     private function k(string $p, array $a): string
     {
-        return $p.':'.md5(json_encode($a));
+        return $p.':'.md5(json_encode($a, JSON_THROW_ON_ERROR));
+    }
+
+    /**
+     * @param array<mixed,mixed> $value
+     * @return array<string,mixed>
+     */
+    private static function stringMap(array $value): array
+    {
+        $map = [];
+        foreach ($value as $key => $entry) {
+            if (is_string($key)) {
+                $map[$key] = $entry;
+            }
+        }
+
+        return $map;
     }
 
     private function decideTtl(): int
@@ -43,7 +61,7 @@ final class AdaptiveMultiCachedLocator implements LocatorInterface
             return new AddressData('', '', '', '', '');
         }
         if (is_array($v)) {
-            return AddressData::fromArray($v);
+            return AddressData::fromArray(self::stringMap($v));
         }
         $r = $this->inner->normalize($raw);
         $arr = $r->toArray();
@@ -64,8 +82,8 @@ final class AdaptiveMultiCachedLocator implements LocatorInterface
         if (self::NEG === $v) {
             return new GeoPoint(0.0, 0.0);
         }
-        if (is_array($v) && isset($v['lat'])) {
-            return new GeoPoint($v['lat'], $v['lon']);
+        if (is_array($v) && is_numeric($v['lat'] ?? null) && is_numeric($v['lon'] ?? null)) {
+            return new GeoPoint((float) $v['lat'], (float) $v['lon']);
         }
         $r = $this->inner->geocode($a);
         $ttl = $this->decideTtl();
@@ -88,7 +106,7 @@ final class AdaptiveMultiCachedLocator implements LocatorInterface
             return new AddressData('', '', '', '', '');
         }
         if (is_array($v)) {
-            return AddressData::fromArray($v);
+            return AddressData::fromArray(self::stringMap($v));
         }
         $r = $this->inner->reverse($p);
         $arr = $r->toArray();

@@ -13,9 +13,10 @@ use App\Locating\InfrastructureInterface\Provider\Location\Queue\DeferredLookupQ
 
 final class DeferredLookupQueue implements DeferredLookupQueueInterface
 {
-    /** @var array<int, array{id:string,tenant:string,payload:array}> */
+    /** @var list<array{id:string,tenant:string,payload:array<string,mixed>}> */
     private array $q = [];
 
+    /** @param array<string,mixed> $payload */
     public function enqueue(string $tenantId, array $payload): string
     {
         $id = bin2hex(random_bytes(6));
@@ -24,6 +25,7 @@ final class DeferredLookupQueue implements DeferredLookupQueueInterface
         return $id;
     }
 
+    /** @return array{id:string,tenant:string,payload:array<string,mixed>}|null */
     public function dequeue(): ?array
     {
         return array_shift($this->q) ?: null;

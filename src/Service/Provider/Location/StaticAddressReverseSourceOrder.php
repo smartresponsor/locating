@@ -9,7 +9,6 @@ declare(strict_types=1);
 
 namespace App\Locating\Service\Provider\Location;
 
-use App\Locating\ServiceInterface\Provider\Location\AddressReverseSourceInterface;
 use App\Locating\ServiceInterface\Provider\Location\AddressReverseSourceOrderInterface;
 
 final class StaticAddressReverseSourceOrder implements AddressReverseSourceOrderInterface
@@ -18,9 +17,7 @@ final class StaticAddressReverseSourceOrder implements AddressReverseSourceOrder
     {
         $ordered = [];
         foreach ($sources as $source) {
-            if ($source instanceof AddressReverseSourceInterface) {
-                $ordered[] = $source;
-            }
+            $ordered[] = $source;
         }
 
         return $ordered;

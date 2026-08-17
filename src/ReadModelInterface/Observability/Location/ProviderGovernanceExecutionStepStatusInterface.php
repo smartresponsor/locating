@@ -21,5 +21,6 @@ interface ProviderGovernanceExecutionStepStatusInterface
 
     public function acknowledgementRequired(): bool;
 
+    /** @return array{code:string,priority:string,ownerHint:string,status:string,acknowledgementRequired:bool} */
     public function toArray(): array;
 }

@@ -11,5 +11,6 @@ namespace App\Locating\ServiceInterface\Provider\Location\Runtime\Locator;
 
 interface LocatorServiceInterface
 {
+    /** @return list<array<string, mixed>> */
     public function search(?float $lat, ?float $lon, int $radiusMeters, string $bbox): array;
 }

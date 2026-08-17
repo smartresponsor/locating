@@ -17,7 +17,12 @@
     "symfony/http-foundation": "^8.0",
     "symfony/http-kernel": "^8.0",
     "symfony/routing": "^8.0",
-    "objecting/object": "dev-master"
+    "easycorp/easyadmin-bundle": "^5.0",
+    "cruding/crud": "dev-master",
+    "interfacing/interface": "dev-master",
+    "navigating/navigation": "dev-master",
+    "objecting/object": "dev-master",
+    "viewing/view": "dev-master"
   },
   "require-dev": {
     "doctrine/doctrine-fixtures-bundle": "^4.3",
@@ -253,7 +258,35 @@
   "repositories": [
     {
       "type": "path",
+      "url": "../Cruding",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
+      "url": "../Interfacing",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
+      "url": "../Navigating",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
       "url": "../Objecting",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "path",
+      "url": "../Viewing",
       "options": {
         "symlink": true
       }

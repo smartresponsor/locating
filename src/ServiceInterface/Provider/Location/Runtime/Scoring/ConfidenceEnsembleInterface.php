@@ -12,8 +12,9 @@ namespace App\Locating\ServiceInterface\Provider\Location\Runtime\Scoring;
 interface ConfidenceEnsembleInterface
 {
     /**
-     * Compute confidence 0..1 combining multiple feature scores:
-     * keys may include: 'provider', 'parse', 'reverse', 'distanceKm', 'houseMatch'
+     * Compute confidence 0..1 combining multiple feature scores.
+     *
+     * @param array{provider?:float|int,parse?:float|int,reverse?:float|int,distanceKm?:float|int,houseMatch?:int|bool} $feature
      */
     public function score(array $feature): float;
 }

@@ -16,7 +16,17 @@ final readonly class AddressInput
     /** @param array<string, mixed> $payload */
     public static function fromArray(array $payload): self
     {
-        return new self((string) ($payload['raw'] ?? ''), (array) ($payload['data'] ?? []));
+        $raw = is_string($payload['raw'] ?? null) ? $payload['raw'] : '';
+        $data = [];
+        if (is_array($payload['data'] ?? null)) {
+            foreach ($payload['data'] as $key => $value) {
+                if (is_string($key)) {
+                    $data[$key] = $value;
+                }
+            }
+        }
+
+        return new self($raw, $data);
     }
 
     public function raw(): string

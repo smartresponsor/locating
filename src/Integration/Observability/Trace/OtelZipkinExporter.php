@@ -17,8 +17,10 @@ final class OtelZipkinExporter
             $tsUs = (int)round($s->start * 1_000_000);
             $durUs = (int)round(($s->end - $s->start) * 1_000_000);
             $tags = [];
-            foreach ($s->attrs as $k => $v) {
-                $tags[] = ['key' => (string)$k, 'value' => is_scalar($v) ? (string)$v : json_encode($v)];
+            foreach ($s->attrs as $key => $value) {
+                $tags[$key] = is_scalar($value) || null === $value
+                    ? (string) $value
+                    : json_encode($value, JSON_THROW_ON_ERROR);
             }
             $payload[] = [
               'traceId' => $s->traceId,
@@ -28,14 +30,18 @@ final class OtelZipkinExporter
               'timestamp' => $tsUs,
               'duration' => $durUs > 0 ? $durUs : 1,
               'localEndpoint' => ['serviceName' => $service],
-              'tags' => array_reduce($tags, function ($acc, $t) {
-                  $acc[$t['key']] = $t['value'];
-                  return $acc;
-              }, []),
+              'tags' => $tags,
             ];
         }
         $ch = curl_init($this->endpoint);
-        curl_setopt_array($ch, [CURLOPT_RETURNTRANSFER => 1,CURLOPT_TIMEOUT => 3,CURLOPT_POST => 1,CURLOPT_HTTPHEADER => ['Content-Type: application/json'],CURLOPT_POSTFIELDS => json_encode($payload)]);
+        $encoded = json_encode($payload, JSON_THROW_ON_ERROR);
+        curl_setopt_array($ch, [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_TIMEOUT => 3,
+            CURLOPT_POST => true,
+            CURLOPT_HTTPHEADER => ['Content-Type: application/json'],
+            CURLOPT_POSTFIELDS => $encoded,
+        ]);
         curl_exec($ch);
         curl_close($ch);
     }

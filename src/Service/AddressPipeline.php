@@ -15,8 +15,9 @@ final readonly class AddressPipeline implements AddressPipelineInterface
     {
         $address = $this->normalize($this->parse($input));
         $issues = [];
+        $addressData = $address->toArray();
         foreach (['street', 'city', 'countryCode'] as $field) {
-            if ('' === trim((string) ($address->toArray()[$field] ?? ''))) {
+            if ('' === trim($addressData[$field])) {
                 $issues[] = ['field' => $field, 'code' => 'missing', 'message' => sprintf('Field "%s" is required.', $field)];
             }
         }
@@ -43,7 +44,7 @@ final readonly class AddressPipeline implements AddressPipelineInterface
         $parts = array_map('trim', explode(',', trim($input->raw())));
 
         return new AddressView(
-            $parts[0] ?? '',
+            $parts[0],
             $parts[1] ?? '',
             $parts[2] ?? '',
             $parts[3] ?? '',

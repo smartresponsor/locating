@@ -6,6 +6,7 @@ namespace App\Locating\Integration\Provider\Location\Decorator;
 
 use App\Locating\Model\Location\AddressData;
 use App\Locating\Model\Location\GeoPoint;
+use App\Locating\ServiceInterface\Provider\Location\Runtime\Geo\LocatorInterface;
 
 final class CircuitBreakerLocator implements LocatorInterface
 {
@@ -26,7 +27,12 @@ final class CircuitBreakerLocator implements LocatorInterface
         } // move to half-open
     }
 
-    private function wrap(callable $fn)
+    /**
+     * @template T
+     * @param callable():T $fn
+     * @return T
+     */
+    private function wrap(callable $fn): mixed
     {
         $this->guard();
         try {

@@ -10,8 +10,8 @@ declare(strict_types=1);
 namespace App\Locating\Service\Provider\Location;
 
 use App\Locating\InfrastructureInterface\Provider\Location\Store\ProviderHealthSnapshotStoreInterface;
-use App\Locating\Model\Location\ProviderHealthSignal;
-use App\Locating\ModelInterface\Location\ProviderHealthSignalInterface;
+use App\Locating\ReadModel\Observability\Location\ProviderHealthSignal;
+use App\Locating\ReadModelInterface\Observability\Location\ProviderHealthSignalInterface;
 use App\Locating\ServiceInterface\Provider\Location\ProviderHealthSignalReaderInterface;
 
 final class ProviderHealthSignalReader implements ProviderHealthSignalReaderInterface
@@ -27,8 +27,8 @@ final class ProviderHealthSignalReader implements ProviderHealthSignalReaderInte
 
         return new ProviderHealthSignal(
             $sourceKey,
-            is_array($row) && isset($row['successRate']) ? (float) $row['successRate'] : 0.5,
-            is_array($row) && isset($row['ewmaMs']) ? (float) $row['ewmaMs'] : 500.0,
+            is_array($row) && is_numeric($row['successRate'] ?? null) ? (float) $row['successRate'] : 0.5,
+            is_array($row) && is_numeric($row['ewmaMs'] ?? null) ? (float) $row['ewmaMs'] : 500.0,
         );
     }
 }

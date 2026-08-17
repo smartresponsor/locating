@@ -15,18 +15,28 @@ final class ShadowTraffic implements ShadowTrafficInterface
 {
     /** @var array<string,int> */
     private array $count = [];
+    /** @param list<string> $candidate */
     public function pick(string $primary, array $candidate, float $ratio): string
     {
         if ($ratio <= 0.0) {
             return '';
         }
-        $cand = array_values(array_filter($candidate, fn ($c) => $c !== $primary));
-        if (empty($cand)) {
+        $cand = array_values(array_filter($candidate, static fn (string $provider): bool => $provider !== $primary));
+        if ([] === $cand) {
             return '';
         }
         $r = random_int(0, 1000) / 1000.0;
-        return $r < min(1.0, max(0.0, $ratio)) ? (string)$cand[$r * 1000 % count($cand)] : '';
+        if ($r >= min(1.0, max(0.0, $ratio))) {
+            return '';
+        }
+
+        return $cand[random_int(0, count($cand) - 1)];
     }
+
+    /**
+     * @param array<string,mixed> $primaryResult
+     * @param array<string,mixed> $shadowResult
+     */
     public function record(string $primary, string $shadow, array $primaryResult, array $shadowResult): void
     {
         $k = $primary.'|'.$shadow;

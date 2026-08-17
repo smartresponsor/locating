@@ -12,13 +12,14 @@ final class USPSFormatter
     {
         return $zip4 !== '' ? ($zip5 . '-' . $zip4) : $zip5;
     }
+    /** @param array{street:string,city:string,state:string,zip5:string,zip4:string} $verified */
     public static function toAddress(array $verified): AddressData
     {
         return new AddressData(
-            $verified['street'] ?? '',
-            $verified['city'] ?? '',
-            $verified['state'] ?? '',
-            self::formatZip($verified['zip5'] ?? '', $verified['zip4'] ?? ''),
+            $verified['street'],
+            $verified['city'],
+            $verified['state'],
+            self::formatZip($verified['zip5'], $verified['zip4']),
             'US'
         );
     }

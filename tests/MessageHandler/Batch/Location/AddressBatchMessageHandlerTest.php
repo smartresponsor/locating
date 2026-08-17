@@ -39,6 +39,7 @@ final class AddressBatchMessageHandlerTest extends TestCase
         self::assertSame('completed', $reloaded->jobStatus()->value);
 
         $results = $runtimeStore->resultList($job->jobId());
+        /** @var list<array{status:string,address:array{street:string}}> $results */
         self::assertCount(1, $results);
         self::assertSame('verified', $results[0]['status']);
         self::assertSame('123 Main St', $results[0]['address']['street']);

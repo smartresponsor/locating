@@ -13,7 +13,10 @@ use App\Locating\ReadModelInterface\Observability\Location\ProviderGovernanceAud
 
 final class ProviderGovernanceAuditEntry implements ProviderGovernanceAuditEntryInterface
 {
-    /** @param list<string> $reasons @param list<string> $recommendations */
+    /**
+     * @param list<string> $reasons
+     * @param list<string> $recommendations
+     */
     public function __construct(
         private readonly string $sourceKey,
         private readonly string $operation,
@@ -54,6 +57,7 @@ final class ProviderGovernanceAuditEntry implements ProviderGovernanceAuditEntry
         return $this->decision;
     }
 
+    /** @return array{sourceKey:string,operation:string,severity:string,reasons:list<string>,recommendations:list<string>,decision:string} */
     public function toArray(): array
     {
         return [

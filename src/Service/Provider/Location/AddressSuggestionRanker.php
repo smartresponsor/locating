@@ -26,10 +26,6 @@ final class AddressSuggestionRanker implements AddressSuggestionRankerInterface
         $scored = [];
 
         foreach ($items as $index => $item) {
-            if (!$item instanceof AddressSuggestionResultInterface) {
-                continue;
-            }
-
             $label = $item->label();
             $normalizedLabel = $this->normalize($label);
             $score = $this->fuzzyScore($normalizedQuery, $normalizedLabel);
@@ -42,7 +38,7 @@ final class AddressSuggestionRanker implements AddressSuggestionRankerInterface
             $score -= min(strlen($label) / 1000.0, 0.1);
 
             $scored[] = [
-                'index' => (int) $index,
+                'index' => $index,
                 'score' => $score,
                 'item' => $item,
             ];

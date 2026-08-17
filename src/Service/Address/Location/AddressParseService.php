@@ -24,6 +24,7 @@ class AddressParseService implements AddressParseServiceInterface
         $this->http = new HttpClient();
     }
 
+    /** @return array<string,mixed> */
     public function parse(string $address, string $locale): array
     {
         $libpostal = $this->env->get('LIBPOSTAL_URL', '');
@@ -34,11 +35,18 @@ class AddressParseService implements AddressParseServiceInterface
             if (200 === $code) {
                 $data = json_decode($body, true);
                 if (is_array($data)) {
-                    return $data;
+                    $result = [];
+                    foreach ($data as $key => $value) {
+                        if (is_string($key)) {
+                            $result[$key] = $value;
+                        }
+                    }
+
+                    return $result;
                 }
             }
         }
-        $parts = preg_split('/,|\n/', $address);
+        $parts = preg_split('/,|\n/', $address) ?: [];
         $components = [];
         if (count($parts) > 0) {
             $components['line1'] = trim($parts[0]);

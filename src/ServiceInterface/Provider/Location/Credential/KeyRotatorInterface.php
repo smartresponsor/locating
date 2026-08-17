@@ -12,7 +12,7 @@ namespace App\Locating\ServiceInterface\Provider\Location\Credential;
 interface KeyRotatorInterface
 {
     /** Return active key for provider as of now; rotate if current is near revoke. */
-    public function active(string $providerId, int $nowTs = null): ?string;
+    public function active(string $providerId, ?int $nowTs = null): ?string;
     /** Register key with start/revoke timestamps. */
     public function register(string $providerId, string $key, int $startAtTs, int $revokeAtTs): void;
 }

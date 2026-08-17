@@ -15,12 +15,14 @@ final class ScoreEnsembleService implements ScoreEnsembleServiceInterface
 {
     /** @var array<string,float> */
     private array $w = ['text' => 0.4,'geo' => 0.2,'reliability' => 0.3,'history' => 0.1];
+    /** @param array<string,float|int> $w */
     public function setWeight(array $w): void
     {
         foreach ($w as $k => $v) {
             $this->w[$k] = (float)$v;
         }
     }
+    /** @param array<string,float|int> $signal */
     public function score(array $signal): float
     {
         $s = 0.0;

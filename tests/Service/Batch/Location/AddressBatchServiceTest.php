@@ -50,6 +50,7 @@ final class LocationAddressBatchServiceTest extends TestCase
         self::assertSame('completed', $job->jobStatus()->value);
 
         $results = $service->jobResultList($job->jobId());
+        /** @var list<array{status:string,address:array{city:string}}> $results */
         self::assertCount(2, $results);
         self::assertSame('verified', $results[0]['status']);
         self::assertSame('Houston', $results[0]['address']['city']);

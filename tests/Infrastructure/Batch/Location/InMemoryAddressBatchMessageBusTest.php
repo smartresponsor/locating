@@ -13,11 +13,9 @@ final class InMemoryAddressBatchMessageBusTest extends TestCase
 {
     public function testDispatchInvokesAppHandler(): void
     {
-        $seen = [];
-        $handler = new class ($seen) implements AddressBatchMessageHandlerInterface {
-            public function __construct(private array &$seen)
-            {
-            }
+        $handler = new class () implements AddressBatchMessageHandlerInterface {
+            /** @var list<array{0:string,1:array<string,mixed>}> */
+            public array $seen = [];
 
             public function __invoke(\App\Locating\MessageInterface\Batch\Location\AddressBatchMessageInterface $message): void
             {
@@ -28,6 +26,6 @@ final class InMemoryAddressBatchMessageBusTest extends TestCase
         $bus = new InMemoryAddressBatchMessageBus($handler);
         $bus->dispatch(new AddressBatchMessage('job-27', ['raw' => 'bar']));
 
-        self::assertSame([['job-27', ['raw' => 'bar']]], $seen);
+        self::assertSame([['job-27', ['raw' => 'bar']]], $handler->seen);
     }
 }

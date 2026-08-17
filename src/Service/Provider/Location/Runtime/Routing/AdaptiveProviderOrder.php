@@ -13,6 +13,10 @@ use App\Locating\ServiceInterface\Provider\Location\Runtime\Routing\AdaptiveProv
 
 final class AdaptiveProviderOrder implements AdaptiveProviderOrderInterface
 {
+    /**
+     * @param array<string, array{p95Ms?:float|int,errorRate?:float|int,costAvg?:float|int}> $signal
+     * @return list<string>
+     */
     public function rank(array $signal): array
     {
         $score = [];

@@ -25,5 +25,6 @@ interface ProviderGovernanceAcknowledgementInterface
 
     public function note(): string;
 
+    /** @return array{sourceKey:string,stepCode:string,requestedOutcome:string,normalizedOutcome:string,acknowledgementState:string,accepted:bool,note:string} */
     public function toArray(): array;
 }

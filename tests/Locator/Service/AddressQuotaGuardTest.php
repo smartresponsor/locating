@@ -76,7 +76,7 @@ final class AddressQuotaGuardTest extends TestCase
             {
             }
 
-            public function findLimit(string $tenantId, string $operation): ?TenantLimitInterface
+            public function findLimit(string $tenantId, string $operation): TenantLimitInterface
             {
                 return $this->limit;
             }
@@ -125,7 +125,7 @@ final class AddressQuotaGuardTest extends TestCase
             {
             }
 
-            public function findLimit(string $tenantId, string $operation): ?TenantLimitInterface
+            public function findLimit(string $tenantId, string $operation): TenantLimitInterface
             {
                 return $this->limit;
             }
@@ -133,6 +133,7 @@ final class AddressQuotaGuardTest extends TestCase
 
         $usageCounter = new class () implements TenantUsageCounterInterface {
             public int $callCount = 0;
+            /** @var array{string,string,int}|array{} */
             public array $lastArgs = [];
 
             public function increment(string $tenantId, string $operation, int $limitPerMinute): bool

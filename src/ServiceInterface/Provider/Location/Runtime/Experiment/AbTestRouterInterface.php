@@ -11,6 +11,6 @@ namespace App\Locating\ServiceInterface\Provider\Location\Runtime\Experiment;
 
 interface AbTestRouterInterface
 {
-    /** Decide variant ('A' or 'B') for tenant based on ratio (0..1 for B); returns provider id. */
+    /** @param array{A?:string,B?:string} $variant */
     public function decide(string $tenantId, string $op, array $variant, float $ratioB): string;
 }

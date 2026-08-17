@@ -13,14 +13,17 @@ use App\Locating\ServiceInterface\Provider\Location\Runtime\Batch\DeferredLookup
 
 final class DeferredLookup implements DeferredLookupInterface
 {
-    /** @var array<string, array{payload:array, done:bool}> */
+    /** @var array<string,array{payload:array<string,mixed>,done:bool}> */
     private array $q = [];
+
+    /** @param array<string,mixed> $payload */
     public function enqueue(array $payload): string
     {
         $id = bin2hex(random_bytes(6));
         $this->q[$id] = ['payload' => $payload,'done' => false];
         return $id;
     }
+    /** @return list<array{id:string,payload:array<string,mixed>}> */
     public function plan(int $limit): array
     {
         $out = [];

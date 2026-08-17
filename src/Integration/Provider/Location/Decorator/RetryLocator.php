@@ -6,6 +6,7 @@ namespace App\Locating\Integration\Provider\Location\Decorator;
 
 use App\Locating\Model\Location\AddressData;
 use App\Locating\Model\Location\GeoPoint;
+use App\Locating\ServiceInterface\Provider\Location\Runtime\Geo\LocatorInterface;
 
 final class RetryLocator implements LocatorInterface
 {
@@ -13,7 +14,12 @@ final class RetryLocator implements LocatorInterface
     {
     }
 
-    private function run(callable $fn)
+    /**
+     * @template T
+     * @param callable():T $fn
+     * @return T
+     */
+    private function run(callable $fn): mixed
     {
         $e = null;
         for ($i = 0; $i <= $this->retries; ++$i) {
@@ -23,7 +29,11 @@ final class RetryLocator implements LocatorInterface
                 usleep(($this->baseMs * (1 << $i) + rand(0, 50)) * 1000);
             }
         }
-        throw $e;
+        if ($e instanceof \Throwable) {
+            throw $e;
+        }
+
+        throw new \LogicException('RetryLocator exhausted without a captured failure.');
     }
 
     public function normalize(string $raw): AddressData

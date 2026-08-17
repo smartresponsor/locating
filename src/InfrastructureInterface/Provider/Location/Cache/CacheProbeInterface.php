@@ -11,9 +11,16 @@ namespace App\Locating\InfrastructureInterface\Provider\Location\Cache;
 
 interface CacheProbeInterface
 {
-    /** Return true if cached payload is consistent against checksum provider. */
+    /**
+     * @param array<string,mixed> $cached
+     * @param callable(string):string $checksum
+     */
     public function check(string $key, array $cached, callable $checksum): bool;
 
-    /** Diff two payloads shallowly. */
+    /**
+     * @param array<string,mixed> $a
+     * @param array<string,mixed> $b
+     * @return list<string>
+     */
     public function diff(array $a, array $b): array;
 }

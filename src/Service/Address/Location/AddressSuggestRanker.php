@@ -33,19 +33,8 @@ final class AddressSuggestRanker implements AddressSuggestRankerInterface
         $scored = [];
 
         foreach ($items as $index => $item) {
-            if (!$item instanceof AddressSuggestionResultInterface) {
-                continue;
-            }
-
             $label = $item->label();
-            $addressData = $item->addressData();
-            $suggestCountry = '';
-            if (property_exists($addressData, 'countryCode')) {
-                $country = $addressData->countryCode;
-                if (is_string($country)) {
-                    $suggestCountry = strtoupper($country);
-                }
-            }
+            $suggestCountry = strtoupper($item->address()->countryCode());
 
             $score = 0.0;
             $score += $this->fuzzyScore($normalizedQuery, $this->normalize($label));
@@ -67,7 +56,7 @@ final class AddressSuggestRanker implements AddressSuggestRankerInterface
             return $a['score'] < $b['score'] ? 1 : -1;
         });
 
-        return array_values(array_map(static fn (array $row) => $row['item'], $scored));
+        return array_map(static fn (array $row) => $row['item'], $scored);
     }
 
     private function normalize(string $value): string

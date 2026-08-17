@@ -12,6 +12,7 @@ namespace App\Locating\Service\Observability\Location;
 use App\Locating\ReadModel\Observability\Location\ProviderGovernanceExecutionItem;
 use App\Locating\ReadModel\Observability\Location\ProviderGovernanceExecutionReport;
 use App\Locating\ReadModel\Observability\Location\ProviderGovernanceExecutionStepStatus;
+use App\Locating\ReadModelInterface\Observability\Location\ProviderGovernanceExecutionItemInterface;
 use App\Locating\ReadModelInterface\Observability\Location\ProviderGovernanceExecutionReportInterface;
 use App\Locating\ReadModelInterface\Observability\Location\ProviderGovernanceRemediationStepInterface;
 use App\Locating\ServiceInterface\Observability\Location\LocationProviderGovernanceExecutionServiceInterface;
@@ -25,6 +26,7 @@ final class LocationProviderGovernanceExecutionService implements LocationProvid
 
     public function report(): ProviderGovernanceExecutionReportInterface
     {
+        /** @var array<string, ProviderGovernanceExecutionItemInterface> $items */
         $items = [];
         foreach ($this->plans->report()->providers() as $sourceKey => $plan) {
             $steps = [];

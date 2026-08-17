@@ -5,8 +5,11 @@ declare(strict_types=1);
 
 namespace App\Locating\Infrastructure\Provider\Location\Metrics;
 
+use App\Locating\InfrastructureInterface\Provider\Location\Metrics\BudgetTelemetryInterface;
+
 final class BudgetTelemetry implements BudgetTelemetryInterface
 {
+    /** @param list<array{tenantId?:string,op?:string,remaining?:float|int,used?:float|int}> $row */
     public function export(array $row): string
     {
         $lines = [];
@@ -14,9 +17,11 @@ final class BudgetTelemetry implements BudgetTelemetryInterface
         $lines[] = '# TYPE locator_budget_remaining gauge';
 
         foreach ($row as $r) {
-            $t = $this->label($r['tenantId'] ?? 't', $r['op'] ?? 'op');
-            $remaining = (float)($r['remaining'] ?? 0.0);
-            $used = (float)($r['used'] ?? 0.0);
+            $tenantId = is_string($r['tenantId'] ?? null) ? $r['tenantId'] : 't';
+            $op = is_string($r['op'] ?? null) ? $r['op'] : 'op';
+            $t = $this->label($tenantId, $op);
+            $remaining = (float) ($r['remaining'] ?? 0.0);
+            $used = (float) ($r['used'] ?? 0.0);
             $lines[] = "locator_budget_remaining{$t} {$remaining}";
             $lines[] = '# HELP locator_budget_used Used budget amount';
             $lines[] = '# TYPE locator_budget_used gauge';

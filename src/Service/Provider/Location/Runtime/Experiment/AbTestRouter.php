@@ -13,10 +13,11 @@ use App\Locating\ServiceInterface\Provider\Location\Runtime\Experiment\AbTestRou
 
 final class AbTestRouter implements AbTestRouterInterface
 {
+    /** @param array{A?:string,B?:string} $variant */
     public function decide(string $tenantId, string $op, array $variant, float $ratioB): string
     {
-        $a = (string) ($variant['A'] ?? '');
-        $b = (string) ($variant['B'] ?? '');
+        $a = $variant['A'] ?? '';
+        $b = $variant['B'] ?? '';
         if ('' === $a || '' === $b) {
             return $a ?: $b;
         }

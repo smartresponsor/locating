@@ -14,15 +14,16 @@ use Fiber;
 
 final class RaceRunner implements RaceRunnerInterface
 {
+    /**
+     * @param array<string,callable():mixed> $candidate
+     * @return array{id:string,value:mixed}
+     */
     public function run(array $candidate, int $softTimeoutMs = 800): array
     {
         $fiberMap = [];
         $result = null;
         foreach ($candidate as $id => $fn) {
-            if (!\is_callable($fn)) {
-                continue;
-            }
-            $fiber = new \Fiber(function () use ($fn) {
+            $fiber = new \Fiber(static function () use ($fn): mixed {
                 return $fn();
             });
             $fiberMap[(string) $id] = $fiber;

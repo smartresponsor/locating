@@ -13,8 +13,12 @@ interface CellIndexInterface
 {
     /** Return cell id for lat/lon at level 0..15. */
     public function toCell(float $lat, float $lon, int $level): string;
-    /** Return neighbor cell ids (N,E,S,W). */
+    /** @return array{N:string,E:string,S:string,W:string} */
     public function neighbor(string $cellId): array;
-    /** Return list of cells covering bbox [lat1,lon1,lat2,lon2]. */
+
+    /**
+     * @param array{0:float|int,1:float|int,2:float|int,3:float|int} $bbox
+     * @return list<string>
+     */
     public function cover(array $bbox, int $level): array;
 }

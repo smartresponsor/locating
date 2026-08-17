@@ -13,7 +13,7 @@ use App\Locating\InfrastructureInterface\Provider\Location\Cache\ResultCacheInte
 
 final class ResultCache implements ResultCacheInterface
 {
-    /** @var array<string, array{val:array, exp:int}> */
+    /** @var array<string,array{val:array<string,mixed>,exp:int}> */
     private array $map = [];
 
     public function get(string $key): ?array

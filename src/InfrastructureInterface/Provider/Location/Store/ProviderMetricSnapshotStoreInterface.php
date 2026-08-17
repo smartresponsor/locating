@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace App\Locating\InfrastructureInterface\Provider\Location\Store;
 
-use App\Locating\ModelInterface\Location\ProviderMetricSnapshotInterface;
+use App\Locating\ReadModelInterface\Observability\Location\ProviderMetricSnapshotInterface;
 
 interface ProviderMetricSnapshotStoreInterface
 {

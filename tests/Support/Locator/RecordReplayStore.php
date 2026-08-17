@@ -13,14 +13,19 @@ use App\Locating\Tests\Support\Locator\Interface\RecordReplayStoreInterface;
 
 final class RecordReplayStore implements RecordReplayStoreInterface
 {
-    /** @var array<string, array{request:array,response:array,ts:int}> */
+    /** @var array<string,array{request:array<string,mixed>,response:array<string,mixed>,ts:int}> */
     private array $m = [];
 
+    /**
+     * @param array<string,mixed> $request
+     * @param array<string,mixed> $response
+     */
     public function record(string $key, array $request, array $response): void
     {
         $this->m[$key] = ['request' => $request, 'response' => $response, 'ts' => time()];
     }
 
+    /** @return array<string,mixed>|null */
     public function replay(string $key): ?array
     {
         return $this->m[$key]['response'] ?? null;

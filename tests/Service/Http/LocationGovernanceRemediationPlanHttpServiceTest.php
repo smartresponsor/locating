@@ -27,6 +27,7 @@ final class LocationGovernanceRemediationPlanHttpServiceTest extends TestCase
 
         $response = (new LocationGovernanceRemediationPlanHttpService($service))(new Request());
         $payload = json_decode((string) $response->getContent(), true, 512, JSON_THROW_ON_ERROR);
+        /** @var array{service:string, providers:array<string, array{steps:list<array{code:string}>}>} $payload */
         self::assertSame('location', $payload['service']);
         self::assertSame('investigate-provider-latency', $payload['providers']['alpha']['steps'][0]['code']);
     }

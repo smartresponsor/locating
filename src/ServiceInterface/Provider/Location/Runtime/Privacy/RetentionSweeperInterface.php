@@ -15,5 +15,9 @@ interface RetentionSweeperInterface
      * Build deletion SQL for entities older than ttl; return list of SQL statements (strings).
      * Caller executes on Postgres/MySQL accordingly.
      */
+    /**
+     * @param array<string,string> $entityToTable
+     * @return list<string>
+     */
     public function plan(array $entityToTable, RetentionPolicyInterface $policy): array;
 }

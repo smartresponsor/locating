@@ -24,6 +24,12 @@ final class AddressBatchMessageHandlerTest extends TestCase
             {
             }
 
+            /** @return array<string,mixed> */
+            public function captured(): array
+            {
+                return $this->captured;
+            }
+
             public function process(\App\Locating\ModelInterface\Location\AddressInputInterface $input): \App\Locating\ModelInterface\Location\AddressPipelineResultInterface
             {
                 $this->captured['raw'] = $input->raw();
@@ -33,6 +39,7 @@ final class AddressBatchMessageHandlerTest extends TestCase
         };
 
         $jobProgressWriter = new class () implements AddressBatchJobProgressWriterInterface {
+            /** @var list<array{string,string}> */
             public array $calls = [];
 
             public function markRun(string $jobId): bool
@@ -54,6 +61,12 @@ final class AddressBatchMessageHandlerTest extends TestCase
             /** @param array<string,mixed> $captured */
             public function __construct(private array &$captured)
             {
+            }
+
+            /** @return array<string,mixed> */
+            public function captured(): array
+            {
+                return $this->captured;
             }
 
             public function appendPipelineResult(string $jobId, \App\Locating\ModelInterface\Location\AddressPipelineResultInterface $result): void

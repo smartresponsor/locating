@@ -6,14 +6,29 @@ namespace App\Locating\Infrastructure\Provider\Location\Io;
 
 final class JsonlReader
 {
+    /** @return \Generator<int,array<string,mixed>> */
     public static function read(string $p): \Generator
     {
         $f = fopen($p, 'r');
-        while (($l = fgets($f)) !== false) {
-            $j = json_decode($l, true);
-            if (is_array($j)) {
-                yield $j;
+        if (false === $f) {
+            throw new \RuntimeException('Unable to open JSONL file: '.$p);
+        }
+        try {
+            while (($line = fgets($f)) !== false) {
+                $decoded = json_decode($line, true);
+                if (!is_array($decoded)) {
+                    continue;
+                }
+                $row = [];
+                foreach ($decoded as $key => $value) {
+                    if (is_string($key)) {
+                        $row[$key] = $value;
+                    }
+                }
+                yield $row;
             }
-        } fclose($f);
+        } finally {
+            fclose($f);
+        }
     }
 }

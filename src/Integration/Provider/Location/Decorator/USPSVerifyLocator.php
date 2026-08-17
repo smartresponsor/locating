@@ -8,6 +8,7 @@ use App\Locating\Integration\Provider\Location\Http\USPSClient;
 use App\Locating\Integration\Provider\Location\Provider\USPS\USPSFormatter;
 use App\Locating\Model\Location\AddressData;
 use App\Locating\Model\Location\GeoPoint;
+use App\Locating\ServiceInterface\Provider\Location\Runtime\Geo\LocatorInterface;
 
 final class USPSVerifyLocator implements LocatorInterface
 {
@@ -15,6 +16,7 @@ final class USPSVerifyLocator implements LocatorInterface
     {
     }
 
+    /** @return array{0:string,1:string,2:string,3:string,4:string}|null */
     private static function tryParseUSLine(string $raw): ?array
     {
         // naive parser: "street, city, ST ZIP" or "street, city, ST"
@@ -50,14 +52,14 @@ final class USPSVerifyLocator implements LocatorInterface
         // fallback to inner
         $a = $this->inner->normalize($raw);
         // post-verify for US addresses
-        if ('US' === strtoupper($a->countryCode) && ($a->state ?? $a->region) !== '') {
+        if ('US' === strtoupper($a->countryCode) && '' !== $a->region) {
             try {
                 // region is state
                 $zip5 = preg_replace('~[^0-9]~', '', $a->postalCode);
                 $zip5 = substr($zip5 ?? '', 0, 5);
                 $v = $this->client->verify($a->street, $a->city, $a->region, $zip5 ?: '', '');
 
-                return USPSFormatter::toAddress(v: $v);
+                return USPSFormatter::toAddress($v);
             } catch (\Throwable $e) { /* keep a */
             }
         }

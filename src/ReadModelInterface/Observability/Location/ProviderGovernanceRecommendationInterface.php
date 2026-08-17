@@ -20,5 +20,6 @@ interface ProviderGovernanceRecommendationInterface
     /** @return list<string> */
     public function recommendations(): array;
 
+    /** @return array{sourceKey:string,operation:string,severity:string,recommendations:list<string>} */
     public function toArray(): array;
 }

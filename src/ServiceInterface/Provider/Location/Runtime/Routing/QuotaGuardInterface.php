@@ -10,5 +10,6 @@ interface QuotaGuardInterface
 
     public function charge(string $tenantId, float $costUnit = 0.0): bool;
 
+    /** @return array{req:int, cost:float} */
     public function state(string $tenantId): array;
 }

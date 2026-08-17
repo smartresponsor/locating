@@ -10,5 +10,6 @@ namespace App\Locating\InfrastructureInterface\Provider\Location\Observability;
 
 interface LogEventInterface
 {
+    /** @param array<string,mixed> $event */
     public function toJson(array $event, string $traceId = '', string $spanId = ''): string;
 }

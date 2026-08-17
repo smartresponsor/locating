@@ -18,11 +18,9 @@ final class ProviderKeyVaultService implements ProviderKeyVaultInterface
 
     public function add(string $providerId, string $keyId, string $secret, int $priority, int $tsStart, int $tsEnd): void
     {
-        $p = &$this->map[$providerId];
-        if (!isset($p)) {
-            $p = [];
-        }
-        $p[$priority] = ['keyId' => $keyId, 'secret' => $secret, 'tsStart' => $tsStart, 'tsEnd' => $tsEnd];
+        $providerKeys = $this->map[$providerId] ?? [];
+        $providerKeys[$priority] = ['keyId' => $keyId, 'secret' => $secret, 'tsStart' => $tsStart, 'tsEnd' => $tsEnd];
+        $this->map[$providerId] = $providerKeys;
     }
 
     public function current(string $providerId): ?string

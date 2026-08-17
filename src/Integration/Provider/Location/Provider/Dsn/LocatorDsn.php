@@ -20,7 +20,13 @@ final class LocatorDsn
         if (isset($p['query'])) {
             parse_str($p['query'], $q);
         }
-        $this->query = array_map(fn ($v) => (string)$v, $q);
+        $query = [];
+        foreach ($q as $key => $value) {
+            if (is_string($key) && is_scalar($value)) {
+                $query[$key] = (string) $value;
+            }
+        }
+        $this->query = $query;
     }
     public function get(string $key, ?string $default = null): ?string
     {

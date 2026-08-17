@@ -14,11 +14,8 @@ final class MessageBusAddressBatchMessageDispatcherTest extends TestCase
 {
     public function testDispatchDelegatesToAppMessageBus(): void
     {
-        $captured = null;
-        $bus = new class ($captured) implements AddressBatchMessageBusInterface {
-            public function __construct(private mixed &$captured)
-            {
-            }
+        $bus = new class () implements AddressBatchMessageBusInterface {
+            public ?AddressBatchMessageInterface $captured = null;
 
             public function dispatch(AddressBatchMessageInterface $message): void
             {
@@ -30,6 +27,6 @@ final class MessageBusAddressBatchMessageDispatcherTest extends TestCase
         $message = new AddressBatchMessage('job-27', ['raw' => 'baz']);
         $dispatcher->dispatch($message);
 
-        self::assertSame($message, $captured);
+        self::assertSame($message, $bus->captured);
     }
 }

@@ -13,14 +13,17 @@ use App\Locating\ServiceInterface\Address\Location\AddressCanonicalizerInterface
 
 final class AddressCanonicalizerService implements AddressCanonicalizerInterface
 {
+    /** @param array<string, mixed> $raw */
     public function normalize(array $raw, string $locale = 'en'): array
     {
+        $string = static fn (mixed $value): string => is_string($value) ? $value : '';
+        $postal = preg_replace('/\s+/', '', $string($raw['postal'] ?? null));
         $out = [
-            'street' => self::norm((string) ($raw['street'] ?? '')),
-            'city' => self::title((string) ($raw['city'] ?? '')),
-            'state' => strtoupper((string) ($raw['state'] ?? '')),
-            'postal' => preg_replace('/\s+/', '', (string) ($raw['postal'] ?? '')),
-            'country' => strtoupper((string) ($raw['country'] ?? '')),
+            'street' => self::norm($string($raw['street'] ?? null)),
+            'city' => self::title($string($raw['city'] ?? null)),
+            'state' => strtoupper($string($raw['state'] ?? null)),
+            'postal' => is_string($postal) ? $postal : '',
+            'country' => strtoupper($string($raw['country'] ?? null)),
             'locale' => $locale,
         ];
 
@@ -30,15 +33,17 @@ final class AddressCanonicalizerService implements AddressCanonicalizerInterface
     private static function norm(string $v): string
     {
         $v = trim($v);
-        $v = preg_replace('/\s+/', ' ', $v);
+        $normalized = preg_replace('/\s+/', ' ', $v);
 
-        return $v;
+        return is_string($normalized) ? $normalized : $v;
     }
 
     private static function title(string $v): string
     {
         $v = strtolower($v);
 
-        return preg_replace_callback('/\b([a-z])/', fn ($m) => strtoupper($m[1]), $v);
+        $titled = preg_replace_callback('/\b([a-z])/', static fn (array $match): string => strtoupper($match[1]), $v);
+
+        return is_string($titled) ? $titled : $v;
     }
 }

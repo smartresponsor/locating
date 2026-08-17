@@ -17,8 +17,8 @@ final class LocationBatchServicesConfigTest extends TestCase
         self::assertStringContainsString('use App\Locating\\ServiceInterface\\Batch\\Location\\LocationAddressBatchServiceInterface;', $contents);
         self::assertStringContainsString('$services->alias(AddressBatchJobFactoryInterface::class, AddressBatchJobFactory::class);', $contents);
         self::assertStringContainsString('$services->alias(LocationAddressBatchServiceInterface::class, LocationAddressBatchServiceMetricDecorator::class);', $contents);
-        self::assertStringContainsString("$services->set(AddressBatchJobFactory::class);", $contents);
-        self::assertStringContainsString("$services->set(LocationAddressBatchService::class)", $contents);
-        self::assertStringContainsString("$services->set(LocationAddressBatchServiceMetricDecorator::class)", $contents);
+        self::assertStringContainsString('$services->set(AddressBatchJobFactory::class);', $contents);
+        self::assertStringContainsString('$services->set(LocationAddressBatchService::class)', $contents);
+        self::assertStringContainsString('$services->set(LocationAddressBatchServiceMetricDecorator::class)', $contents);
     }
 }

@@ -11,9 +11,14 @@ namespace App\Locating\Tests\Support\Provider\Location\Interface;
 
 interface SandboxHarnessInterface
 {
-    /** Record provider response for a request signature. */
+    /**
+     * Record provider response for a request signature.
+     *
+     * @param array<string,mixed> $response
+     */
     public function record(string $providerId, string $sig, array $response): void;
-    /** Replay recorded response if present, null otherwise. */
+
+    /** @return array<string,mixed>|null */
     public function replay(string $providerId, string $sig): ?array;
     /** Remove recorded entry. */
     public function clear(string $providerId, string $sig): void;

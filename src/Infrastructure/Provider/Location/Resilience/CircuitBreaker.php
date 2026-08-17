@@ -43,7 +43,7 @@ class CircuitBreaker
             $this->cache->set('cb:'.$this->nameEntity, 'open', $this->ttl);
             $this->cache->set($k, '0', $this->ttl);
         } else {
-            $this->cache->set($k, str($n), $this->ttl);
+            $this->cache->set($k, (string) $n, $this->ttl);
         }
     }
 }

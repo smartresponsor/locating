@@ -6,6 +6,7 @@ namespace App\Locating\Integration\Provider\Location\Decorator;
 
 use App\Locating\Model\Location\AddressData;
 use App\Locating\Model\Location\GeoPoint;
+use App\Locating\ServiceInterface\Provider\Location\Runtime\Geo\LocatorInterface;
 
 final class TryFallbackLocator implements LocatorInterface
 {
@@ -15,7 +16,11 @@ final class TryFallbackLocator implements LocatorInterface
 
     private function notEmpty(AddressData $a): bool
     {
-        return !$a->isEmpty();
+        return '' !== trim($a->street)
+            || '' !== trim($a->city)
+            || '' !== trim($a->region)
+            || '' !== trim($a->postalCode)
+            || '' !== trim($a->countryCode);
     }
 
     private function notZero(GeoPoint $p): bool

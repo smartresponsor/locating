@@ -14,8 +14,11 @@ use App\Locating\ServiceInterface\Provider\Location\Runtime\Routing\QuotaGuardIn
 /** Simple per-tenant cost/request quota guard */
 final class QuotaGuard implements QuotaGuardInterface
 {
-    private array $limit = []; // tenant => {req, cost}
-    private array $use = [];   // tenant => {req, cost}
+    /** @var array<string, array{req:int, cost:float}> */
+    private array $limit = [];
+
+    /** @var array<string, array{req:int, cost:float}> */
+    private array $use = [];
 
     public function setLimit(string $tenantId, int $reqLimit, float $costLimit): void
     {
@@ -43,6 +46,7 @@ final class QuotaGuard implements QuotaGuardInterface
         return true;
     }
 
+    /** @return array{req:int, cost:float} */
     public function state(string $tenantId): array
     {
         return $this->use[$tenantId] ?? ['req' => 0, 'cost' => 0.0];

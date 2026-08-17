@@ -14,6 +14,11 @@ use App\Locating\ReadModelInterface\Observability\Location\ProviderGovernanceRem
 
 final class ProviderGovernanceRemediationPlan implements ProviderGovernanceRemediationPlanInterface
 {
+    /**
+     * @param list<string> $reasons
+     * @param list<string> $recommendations
+     * @param list<ProviderGovernanceRemediationStepInterface> $steps
+     */
     public function __construct(
         private readonly string $sourceKey,
         private readonly string $operation,
@@ -45,21 +50,25 @@ final class ProviderGovernanceRemediationPlan implements ProviderGovernanceRemed
         return $this->decision;
     }
 
+    /** @return list<string> */
     public function reasons(): array
     {
         return $this->reasons;
     }
 
+    /** @return list<string> */
     public function recommendations(): array
     {
         return $this->recommendations;
     }
 
+    /** @return list<ProviderGovernanceRemediationStepInterface> */
     public function steps(): array
     {
         return $this->steps;
     }
 
+    /** @return array{sourceKey:string,operation:string,severity:string,decision:string,reasons:list<string>,recommendations:list<string>,steps:list<array{code:string,priority:string,summary:string,ownerHint:string}>} */
     public function toArray(): array
     {
         return [

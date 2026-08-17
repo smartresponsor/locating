@@ -25,8 +25,10 @@ final class AddressReverseCapabilityTest extends TestCase
         $result = $service->reverse(29.7604, -95.3698, 'US');
 
         self::assertSame('verified', $result->status());
-        self::assertSame('Main St 10', $result->address()?->toArray()['street']);
-        self::assertSame('US', $result->address()?->toArray()['countryCode']);
+        $address = $result->address();
+        self::assertNotNull($address);
+        self::assertSame('Main St 10', $address->toArray()['street']);
+        self::assertSame('US', $address->toArray()['countryCode']);
         self::assertSame('nominatim', $result->providerKey());
     }
 }

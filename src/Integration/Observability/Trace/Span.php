@@ -6,6 +6,7 @@ namespace App\Locating\Integration\Observability\Trace;
 
 final class Span
 {
+    /** @param array<string,mixed> $attrs */
     public function __construct(
         public string $traceId,
         public string $spanId,
@@ -14,6 +15,7 @@ final class Span
         public float $start = 0.0,
         public float $end = 0.0,
         public int $status = 0,
+        /** @var array<string,mixed> */
         public array $attrs = []
     ) {
         $this->start = microtime(true);
@@ -23,6 +25,7 @@ final class Span
         $this->status = $status;
         $this->end = microtime(true);
     }
+    /** @return array<string,mixed> */
     public function toArray(): array
     {
         return ['traceId' => $this->traceId,'spanId' => $this->spanId,'parentId' => $this->parentId,'nameEntity' => $this->nameEntity,

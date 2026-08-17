@@ -16,6 +16,7 @@ final class TenantQuotaManager implements TenantQuotaManagerInterface
     /** @var array<string, array<string, array{limit:int, used:int}>> */
     private array $cfg = [];
 
+    /** @param array<string,array<string,array{limit:int,used:int}>> $bootstrap */
     public function __construct(array $bootstrap = [
         'default' => ['geocode' => ['limit' => 100000, 'used' => 0], 'reverse' => ['limit' => 50000, 'used' => 0], 'batch' => ['limit' => 10000, 'used' => 0]],
     ])

@@ -9,5 +9,9 @@ namespace App\Locating\ServiceInterface\Provider\Location;
  */
 interface ProviderRankerServiceInterface
 {
+    /**
+     * @param list<array<string,mixed>> $items
+     * @return list<array<string,mixed>>
+     */
     public static function sort(array $items): array;
 }

@@ -20,6 +20,20 @@ final class ProviderHealthSnapshotStore implements ProviderHealthSnapshotStoreIn
 
     public function snapshot(): array
     {
-        return $this->backend->snapshot();
+        $result = [];
+        foreach ($this->backend->snapshot() as $provider => $snapshot) {
+            if (!is_array($snapshot)) {
+                continue;
+            }
+            $normalized = [];
+            foreach ($snapshot as $key => $value) {
+                if (is_string($key)) {
+                    $normalized[$key] = $value;
+                }
+            }
+            $result[$provider] = $normalized;
+        }
+
+        return $result;
     }
 }

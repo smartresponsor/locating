@@ -29,9 +29,7 @@ final class OrderedAddressReverseProvider implements AddressReverseProviderInter
         private readonly AddressReverseResultNormalizerInterface $resultNormalizer,
     ) {
         foreach ($sources as $source) {
-            if ($source instanceof AddressReverseSourceInterface) {
-                $this->sources[] = $source;
-            }
+            $this->sources[] = $source;
         }
     }
 

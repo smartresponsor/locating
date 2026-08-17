@@ -9,5 +9,6 @@ namespace App\Locating\InfrastructureInterface\Provider\Location\Metrics;
  */
 interface HealthMetricInterface
 {
+    /** @return array{provider:string,region:string,health:float,ts:int} */
     public function serialize(string $provider, string $region, float $health, int $ts): array;
 }

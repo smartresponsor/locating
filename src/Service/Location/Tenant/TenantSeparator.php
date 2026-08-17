@@ -15,8 +15,8 @@ final class TenantSeparator implements TenantSeparatorInterface
 {
     public function schema(string $tenantId): string
     {
-        $s = strtolower(preg_replace('/[^a-z0-9_]/i', '_', $tenantId));
-        $s = preg_replace('/_+/', '_', $s);
+        $s = strtolower(preg_replace('/[^a-z0-9_]/i', '_', $tenantId) ?? '');
+        $s = preg_replace('/_+/', '_', $s) ?? '';
         $s = trim($s, '_');
         if ('' === $s) {
             $s = 'default';

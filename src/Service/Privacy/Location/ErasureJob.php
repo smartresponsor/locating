@@ -16,6 +16,10 @@ final class ErasureJob
         private PiiAnonymizer $anonymizer
     ) {
     }
+    /**
+     * @param array<string,mixed> $row
+     * @return array{action:string,ttl_days:int,result:array<string,mixed>}
+     */
     public function plan(string $kind, array $row, bool $legalHold = false): array
     {
         $rule = $this->policy->rule($kind);

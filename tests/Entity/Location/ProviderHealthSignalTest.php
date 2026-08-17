@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Entity\Location;
 
-use App\Locating\Model\Location\ProviderHealthSignal;
+use App\Locating\ReadModel\Observability\Location\ProviderHealthSignal;
 use PHPUnit\Framework\TestCase;
 
 final class ProviderHealthSignalTest extends TestCase

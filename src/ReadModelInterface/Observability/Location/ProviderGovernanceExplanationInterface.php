@@ -20,5 +20,6 @@ interface ProviderGovernanceExplanationInterface
     /** @return list<string> */
     public function reasons(): array;
 
+    /** @return array{sourceKey:string,operation:string,severity:string,reasons:list<string>} */
     public function toArray(): array;
 }

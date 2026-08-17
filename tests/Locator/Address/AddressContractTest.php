@@ -28,10 +28,9 @@ final class AddressContractTest extends TestCase
             }
 
             $record = json_decode($line, true, 512, JSON_THROW_ON_ERROR);
+            /** @var array{status:string,address:array{street:string,city:string,region:string,postalCode:string,countryCode:string},issues:list<array{field:string,code:string,message:string}>,geoPoint:?array{latitude:float|int,longitude:float|int},providerKey:?string} $record */
 
-            $statusValue = $record['status'] ?? null;
-            $this->assertIsString($statusValue, 'Status must be a string');
-
+            $statusValue = $record['status'];
             $status = match ($statusValue) {
                 'verified' => AddressStatus::VERIFIED,
                 'partial' => AddressStatus::PARTIAL,
@@ -40,39 +39,35 @@ final class AddressContractTest extends TestCase
                 default => throw new \RuntimeException('Unsupported status: ' . $statusValue),
             };
 
-            $addressDataArray = $record['address'] ?? null;
-            $this->assertIsArray($addressDataArray, 'Address must be an array');
+            $addressDataArray = $record['address'];
 
             $addressData = new AddressData(
-                $addressDataArray['street'] ?? '',
-                $addressDataArray['city'] ?? '',
-                $addressDataArray['region'] ?? '',
-                $addressDataArray['postalCode'] ?? '',
-                $addressDataArray['countryCode'] ?? ''
+                $addressDataArray['street'],
+                $addressDataArray['city'],
+                $addressDataArray['region'],
+                $addressDataArray['postalCode'],
+                $addressDataArray['countryCode']
             );
 
             $issues = [];
-            foreach ($record['issues'] ?? [] as $issueArray) {
+            foreach ($record['issues'] as $issueArray) {
                 $issues[] = new AddressValidationIssue(
-                    $issueArray['field'] ?? '',
-                    $issueArray['code'] ?? '',
-                    $issueArray['message'] ?? ''
+                    $issueArray['field'],
+                    $issueArray['code'],
+                    $issueArray['message']
                 );
             }
 
             $geoPoint = null;
-            if (array_key_exists('geoPoint', $record) && $record['geoPoint'] !== null) {
+            if ($record['geoPoint'] !== null) {
                 $geo = $record['geoPoint'];
                 $geoPoint = new GeoPoint(
-                    (float) ($geo['latitude'] ?? 0.0),
-                    (float) ($geo['longitude'] ?? 0.0)
+                    (float) $geo['latitude'],
+                    (float) $geo['longitude']
                 );
             }
 
-            $providerKey = $record['providerKey'] ?? null;
-            if ($providerKey !== null) {
-                $this->assertIsString($providerKey);
-            }
+            $providerKey = $record['providerKey'];
 
             $result = AddressResult::create(
                 $status,
@@ -104,6 +99,7 @@ final class AddressContractTest extends TestCase
             }
 
             $array = $result->toArray();
+            /** @var array{status:string,address:array<string,mixed>,issues:list<array{field:string,code:string,message:string}>,geoPoint:?array{latitude:float,longitude:float},providerKey:?string} $array */
             $this->assertArrayHasKey('status', $array);
             $this->assertArrayHasKey('address', $array);
             $this->assertArrayHasKey('issues', $array);

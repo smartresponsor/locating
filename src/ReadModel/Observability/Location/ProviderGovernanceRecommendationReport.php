@@ -36,6 +36,7 @@ final class ProviderGovernanceRecommendationReport implements ProviderGovernance
         return $this->providers;
     }
 
+    /** @return array{service:string,itemCount:int,providers:array<string,array{sourceKey:string,operation:string,severity:string,recommendations:list<string>}>} */
     public function toArray(): array
     {
         $providers = [];

@@ -25,6 +25,7 @@ final class GovernanceExplanationControllerTest extends TestCase
         $controller = new GovernanceExplanationController($service);
         $response = $controller(new Request());
         $payload = json_decode((string) $response->getContent(), true, 512, JSON_THROW_ON_ERROR);
+        /** @var array{service:string, providers:array<string, array{severity:string}>} $payload */
 
         self::assertSame('location', $payload['service']);
         self::assertSame('warning', $payload['providers']['legacy-suggest']['severity']);

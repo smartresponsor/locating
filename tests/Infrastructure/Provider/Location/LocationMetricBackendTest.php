@@ -13,7 +13,9 @@ final class LocationMetricBackendTest extends TestCase
     public function testRecorderDelegatesToRecorder(): void
     {
         $legacy = new class () implements LocationMetricRecorderInterface {
+            /** @var list<array{string,float}> */
             public array $latencies = [];
+            /** @var list<array{string,string}> */
             public array $counters = [];
 
             public function recordLatency(string $operation, float $milliseconds): void

@@ -8,7 +8,7 @@ final class LruCache implements CacheInterface
 {
     /** @var array<string,array{v:mixed,exp:int}> */
     private array $data = [];
-    /** @var string[] */
+    /** @var list<string> */
     private array $order = [];
     private int $hits = 0;
     private int $misses = 0;
@@ -18,15 +18,13 @@ final class LruCache implements CacheInterface
     private function touch(string $key): void
     {
         $i = array_search($key, $this->order, true);
-        if ($i !== false) {
+        if (is_int($i)) {
             array_splice($this->order, $i, 1);
         }
         $this->order[] = $key;
         if (count($this->order) > $this->max) {
             $old = array_shift($this->order);
-            if ($old !== null) {
-                unset($this->data[$old]);
-            }
+            unset($this->data[$old]);
         }
     }
     public function get(string $key): mixed
@@ -54,7 +52,7 @@ final class LruCache implements CacheInterface
     {
         unset($this->data[$key]);
         $i = array_search($key, $this->order, true);
-        if ($i !== false) {
+        if (is_int($i)) {
             array_splice($this->order, $i, 1);
         }
     }

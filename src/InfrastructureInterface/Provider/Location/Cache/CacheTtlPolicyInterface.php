@@ -14,6 +14,6 @@ interface CacheTtlPolicyInterface
     /** Set default ttl seconds for tag. */
     public function set(string $tag, int $ttlS): void;
 
-    /** Return ttl seconds for key using tag-based policy and fallback. */
+    /** @param array<string,mixed> $ctx */
     public function ttl(string $key, array $ctx = []): int;
 }

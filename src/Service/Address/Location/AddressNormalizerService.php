@@ -9,16 +9,21 @@ use App\Locating\ServiceInterface\Address\Location\AddressNormalizerServiceInter
 
 final class AddressNormalizerService implements AddressNormalizerServiceInterface
 {
+    /**
+     * @param array<string, mixed> $raw
+     * @return array{address:CanonicalAddress, score:float}
+     */
     public function canonicalize(array $raw, string $provider): array
     {
+        $string = static fn (mixed $value): string => is_string($value) ? trim($value) : '';
         $a = new CanonicalAddress(
-            street: trim((string)($raw['street'] ?? '')),
-            house: trim((string)($raw['house'] ?? '')),
-            city: trim((string)($raw['city'] ?? '')),
-            region: trim((string)($raw['region'] ?? '')),
-            postalCode: trim((string)($raw['postalCode'] ?? '')),
-            countryCode: strtoupper(trim((string)($raw['countryCode'] ?? ''))),
-            formatted: (string)($raw['formatted'] ?? '')
+            street: $string($raw['street'] ?? null),
+            house: $string($raw['house'] ?? null),
+            city: $string($raw['city'] ?? null),
+            region: $string($raw['region'] ?? null),
+            postalCode: $string($raw['postalCode'] ?? null),
+            countryCode: strtoupper($string($raw['countryCode'] ?? null)),
+            formatted: $string($raw['formatted'] ?? null),
         );
         $score = 0.0;
         if ($a->street !== '') {

@@ -14,6 +14,7 @@ use App\Locating\ReadModelInterface\Observability\Location\ProviderGovernanceExe
 
 final class ProviderGovernanceExecutionItem implements ProviderGovernanceExecutionItemInterface
 {
+    /** @param list<ProviderGovernanceExecutionStepStatusInterface> $steps */
     public function __construct(
         private readonly string $sourceKey,
         private readonly string $decision,
@@ -43,11 +44,13 @@ final class ProviderGovernanceExecutionItem implements ProviderGovernanceExecuti
         return $this->acknowledgementState;
     }
 
+    /** @return list<ProviderGovernanceExecutionStepStatusInterface> */
     public function steps(): array
     {
         return $this->steps;
     }
 
+    /** @return array{sourceKey:string,decision:string,severity:string,acknowledgementState:string,steps:list<array{code:string,priority:string,ownerHint:string,status:string,acknowledgementRequired:bool}>} */
     public function toArray(): array
     {
         return [

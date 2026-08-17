@@ -11,8 +11,9 @@ namespace App\Locating\ServiceInterface\Provider\Location;
 
 interface ScoreEnsembleServiceInterface
 {
-    /** Return final score 0..1 based on multiple signals (0..1). */
+    /** @param array<string,float|int> $signal */
     public function score(array $signal): float;
-    /** Configure weights for signals. */
+
+    /** @param array<string,float|int> $w */
     public function setWeight(array $w): void;
 }

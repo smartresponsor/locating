@@ -27,12 +27,14 @@ final class AddressView implements AddressViewInterface
      */
     public static function fromArray(array $payload): self
     {
+        $string = static fn (mixed $value): string => is_string($value) ? $value : '';
+
         return new self(
-            (string) ($payload['street'] ?? ''),
-            (string) ($payload['city'] ?? ''),
-            (string) ($payload['region'] ?? ''),
-            (string) ($payload['postalCode'] ?? ''),
-            (string) ($payload['countryCode'] ?? ''),
+            $string($payload['street'] ?? null),
+            $string($payload['city'] ?? null),
+            $string($payload['region'] ?? null),
+            $string($payload['postalCode'] ?? null),
+            $string($payload['countryCode'] ?? null),
         );
     }
 

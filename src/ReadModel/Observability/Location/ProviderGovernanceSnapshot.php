@@ -53,6 +53,7 @@ final class ProviderGovernanceSnapshot implements ProviderGovernanceSnapshotInte
         return $this->unitCost;
     }
 
+    /** @return array{sourceKey:string,operation:string,successRate:float,ewmaMs:float,quotaAllowed:bool,unitCost:float} */
     public function toArray(): array
     {
         return [

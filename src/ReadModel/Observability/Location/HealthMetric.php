@@ -11,6 +11,7 @@ namespace App\Locating\ReadModel\Observability\Location;
 
 final class HealthMetric
 {
+    /** @return array{provider:string,region:string,health:float,ts:int} */
     public function serialize(string $provider, string $region, float $health, int $ts): array
     {
         return ['provider' => $provider,'region' => $region,'health' => $health,'ts' => $ts];

@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace App\Locating\Service\Provider\Location\Runtime\Locator;
 
-use App\Locating\Infrastructure\Locator\Cache\RedisCache;
+use App\Locating\Infrastructure\Provider\Location\Cache\RedisCache;
 use App\Locating\ServiceInterface\Provider\Location\Runtime\Locator\LocatorServiceInterface;
 
 class LocatorService implements LocatorServiceInterface
@@ -19,31 +19,55 @@ class LocatorService implements LocatorServiceInterface
     {
         $this->cache = $cache;
     }
+    /** @return list<array<string, mixed>> */
     public function search(?float $lat, ?float $lon, int $radiusMeters, string $bbox): array
     {
         $dataJson = $this->cache->get('store:data');
-        if (!$dataJson) {
+        if (null === $dataJson || '' === $dataJson) {
             $fn = __DIR__.'/../../../data/stores.json';
             if (is_file($fn)) {
-                $dataJson = file_get_contents($fn);
-                $this->cache->set('store:data', $dataJson, 300);
+                $contents = file_get_contents($fn);
+                if (is_string($contents)) {
+                    $dataJson = $contents;
+                    $this->cache->set('store:data', $dataJson, 300);
+                }
             }
         }
-        $items = $dataJson ? json_decode($dataJson, true) : [];
+        $decoded = is_string($dataJson) && '' !== $dataJson ? json_decode($dataJson, true) : [];
+        $items = is_array($decoded) ? $decoded : [];
         $out = [];
-        foreach ($items as $it) {
-            if ($lat !== null && $lon !== null) {
-                $d = Geohash::haversine($lat, $lon, $it['lat'], $it['lon']);
-                if ($d <= $radiusMeters) {
-                    $out[] = $it + ['distance' => $d];
+        foreach ($items as $item) {
+            if (!is_array($item)) {
+                continue;
+            }
+            $row = [];
+            foreach ($item as $key => $value) {
+                if (is_string($key)) {
+                    $row[$key] = $value;
+                }
+            }
+            if (null !== $lat && null !== $lon) {
+                $itemLat = $row['lat'] ?? null;
+                $itemLon = $row['lon'] ?? null;
+                if (!is_numeric($itemLat) || !is_numeric($itemLon)) {
+                    continue;
+                }
+                $distance = Geohash::haversine($lat, $lon, (float) $itemLat, (float) $itemLon);
+                if ($distance <= $radiusMeters) {
+                    $row['distance'] = $distance;
+                    $out[] = $row;
                 }
             } else {
-                $out[] = $it;
+                $out[] = $row;
             }
         }
-        usort($out, function ($a, $b) {
-            return ($a['distance'] ?? 0) <=> ($b['distance'] ?? 0);
+        usort($out, static function (array $left, array $right): int {
+            $leftDistance = is_numeric($left['distance'] ?? null) ? (float) $left['distance'] : 0.0;
+            $rightDistance = is_numeric($right['distance'] ?? null) ? (float) $right['distance'] : 0.0;
+
+            return $leftDistance <=> $rightDistance;
         });
+
         return array_slice($out, 0, 50);
     }
 }

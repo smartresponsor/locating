@@ -14,10 +14,10 @@ use App\Locating\Infrastructure\Provider\Location\Cache\RedisCache;
 use App\Locating\Infrastructure\Provider\Location\Resilience\CircuitBreaker;
 use App\Locating\Infrastructure\Provider\Location\Resilience\Hedger;
 use App\Locating\Infrastructure\Provider\Location\Resilience\ProviderBudget;
+use App\Locating\ServiceInterface\Provider\Location\GeocodeLocationProviderInterface;
 
 class ProviderRouterService
 {
-    private Env $env;
     private RedisCache $cache;
     private MapboxProviderService $mapbox;
     private HereProviderService $here;
@@ -29,7 +29,6 @@ class ProviderRouterService
 
     public function __construct(Env $env, RedisCache $cache)
     {
-        $this->env = $env;
         $this->cache = $cache;
         $this->mapbox = new MapboxProviderService($env);
         $this->here = new HereProviderService($env);
@@ -42,74 +41,100 @@ class ProviderRouterService
         $this->hedgeDelay = (int) $env->get('HEDGE_DELAY_MS', '120');
     }
 
+    /** @return list<array<string, mixed>> */
     public function geocode(string $q, string $country): array
     {
         $key = 'geo:'.md5($q.'|'.$country);
         if ($hit = $this->cache->get($key)) {
-            return json_decode($hit, true);
+            $cached = $this->normalizeResults(json_decode($hit, true));
+            if ([] !== $cached) {
+                return $cached;
+            }
         }
-        $res = Hedger::race([function () {
-            return $this->tryProvider($this->mapbox, 'mapbox', 'geocode', [$q, $country]);
-        },
-            function () {
+        $res = Hedger::race([
+            function () use ($q, $country): array {
+                return $this->tryProvider($this->mapbox, 'mapbox', 'geocode', [$q, $country]);
+            },
+            function () use ($q, $country): array {
                 return $this->tryProvider($this->here, 'here', 'geocode', [$q, $country]);
-            }], $this->hedgeDelay);
+            },
+        ], $this->hedgeDelay);
+        $res = $this->normalizeResults($res);
         if (!$res) {
             $res = $this->tryProvider($this->nominatim, 'nominatim', 'geocode', [$q, $country]);
         }
         $res = ProviderRankerService::sort($res);
         if ($res) {
-            $this->cache->set($key, json_encode($res), 30);
+            $this->cache->set($key, json_encode($res, JSON_THROW_ON_ERROR), 30);
         }
 
         return $res;
     }
 
+    /** @return list<array<string, mixed>> */
     public function reverse(float $lat, float $lon): array
     {
         $key = 'rev:'.md5((string) $lat.'|'.(string) $lon);
         if ($hit = $this->cache->get($key)) {
-            return json_decode($hit, true);
+            $cached = $this->normalizeResults(json_decode($hit, true));
+            if ([] !== $cached) {
+                return $cached;
+            }
         }
-        $res = Hedger::race([function () {
-            return $this->tryProvider($this->mapbox, 'mapbox', 'reverse', [$lat, $lon]);
-        },
-            function () {
+        $res = Hedger::race([
+            function () use ($lat, $lon): array {
+                return $this->tryProvider($this->mapbox, 'mapbox', 'reverse', [$lat, $lon]);
+            },
+            function () use ($lat, $lon): array {
                 return $this->tryProvider($this->here, 'here', 'reverse', [$lat, $lon]);
-            }], $this->hedgeDelay);
+            },
+        ], $this->hedgeDelay);
+        $res = $this->normalizeResults($res);
         if (!$res) {
             $res = $this->tryProvider($this->nominatim, 'nominatim', 'reverse', [$lat, $lon]);
         }
         if ($res) {
-            $this->cache->set($key, json_encode($res), 30);
+            $this->cache->set($key, json_encode($res, JSON_THROW_ON_ERROR), 30);
         }
 
         return $res;
     }
 
+    /** @return list<array<string, mixed>> */
     public function autocomplete(string $q, string $country, string $bbox): array
     {
         $key = 'ac:'.md5($q.'|'.$country.'|'.$bbox);
         if ($hit = $this->cache->get($key)) {
-            return json_decode($hit, true);
+            $cached = $this->normalizeResults(json_decode($hit, true));
+            if ([] !== $cached) {
+                return $cached;
+            }
         }
-        $res = Hedger::race([function () {
-            return $this->tryProvider($this->mapbox, 'mapbox', 'autocomplete', [$q, $country, $bbox]);
-        },
-            function () {
+        $res = Hedger::race([
+            function () use ($q, $country, $bbox): array {
+                return $this->tryProvider($this->mapbox, 'mapbox', 'autocomplete', [$q, $country, $bbox]);
+            },
+            function () use ($q, $country, $bbox): array {
                 return $this->tryProvider($this->here, 'here', 'autocomplete', [$q, $country, $bbox]);
-            }], $this->hedgeDelay);
+            },
+        ], $this->hedgeDelay);
+        $res = $this->normalizeResults($res);
         if (!$res) {
             $res = $this->tryProvider($this->nominatim, 'nominatim', 'autocomplete', [$q, $country, $bbox]);
         }
         if ($res) {
-            $this->cache->set($key, json_encode($res), 10);
+            $this->cache->set($key, json_encode($res, JSON_THROW_ON_ERROR), 10);
         }
 
         return $res;
     }
 
-    private function tryProvider($prov, string $nameEntity, string $method, array $args): array
+    /**
+     * @param 'geocode'|'reverse'|'autocomplete' $method
+     * @param list<mixed> $args
+     * @return list<array<string, mixed>>
+     */
+    private function tryProvider(GeocodeLocationProviderInterface $provider, string $nameEntity, string $method, array $args): array
     {
         $cb = 'mapbox' === $nameEntity ? $this->cbMapbox : $this->cbHere;
         if ('nominatim' !== $nameEntity) {
@@ -121,12 +146,12 @@ class ProviderRouterService
             }
         }
         try {
-            $res = call_user_func_array([$prov, $method], $args);
+            $res = call_user_func_array([$provider, $method], $args);
             if ('nominatim' !== $nameEntity) {
                 $cb->recordSuccess();
             }
 
-            return $res;
+            return $this->normalizeResults($res);
         } catch (\Throwable $e) {
             if ('nominatim' !== $nameEntity) {
                 $cb->recordFailure();
@@ -134,5 +159,31 @@ class ProviderRouterService
 
             return [];
         }
+    }
+
+    /**
+     * @return list<array<string, mixed>>
+     */
+    private function normalizeResults(mixed $value): array
+    {
+        if (!is_array($value)) {
+            return [];
+        }
+
+        $results = [];
+        foreach ($value as $item) {
+            if (!is_array($item)) {
+                continue;
+            }
+            $normalized = [];
+            foreach ($item as $key => $entry) {
+                if (is_string($key)) {
+                    $normalized[$key] = $entry;
+                }
+            }
+            $results[] = $normalized;
+        }
+
+        return $results;
     }
 }

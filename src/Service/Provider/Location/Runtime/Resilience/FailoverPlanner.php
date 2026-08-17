@@ -17,12 +17,19 @@ final class FailoverPlanner implements FailoverPlannerInterface
     {
     }
 
+    /**
+     * @param list<string> $provider
+     * @param array<string, array{p95_ms?:float|int,error_rate?:float|int}> $signal
+     * @return list<string>
+     */
     public function plan(string $region, array $provider, array $signal): array
     {
         $score = [];
         foreach ($provider as $id) {
-            $s = $signal[$id] ?? ['p95_ms' => 300.0, 'error_rate' => 0.02];
-            $w = $this->sla->weight(300.0, (float) $s['p95_ms'], 0.02, (float) $s['error_rate']);
+            $s = $signal[$id] ?? [];
+            $p95 = (float) ($s['p95_ms'] ?? 300.0);
+            $errorRate = (float) ($s['error_rate'] ?? 0.02);
+            $w = $this->sla->weight(300.0, $p95, 0.02, $errorRate);
             $score[$id] = $w;
         }
         arsort($score, SORT_NUMERIC);

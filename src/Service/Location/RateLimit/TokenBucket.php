@@ -22,20 +22,26 @@ final class TokenBucket implements TokenBucketInterface
     public function allow(): bool
     {
         $now = microtime(true);
-        $state = ['tokens' => $this->capacity, 'ts' => $now];
+        $state = ['tokens' => (float) $this->capacity, 'ts' => $now];
         if (is_file($this->file)) {
-            $state = json_decode((string) file_get_contents($this->file), true) ?: $state;
+            $decoded = json_decode((string) file_get_contents($this->file), true);
+            if (is_array($decoded)) {
+                $state = [
+                    'tokens' => is_numeric($decoded['tokens'] ?? null) ? (float) $decoded['tokens'] : (float) $this->capacity,
+                    'ts' => is_numeric($decoded['ts'] ?? null) ? (float) $decoded['ts'] : $now,
+                ];
+            }
         }
-        $elapsed = max(0.0, $now - ($state['ts'] ?? $now));
-        $state['tokens'] = min($this->capacity, ($state['tokens'] ?? 0) + $elapsed * $this->rate);
+        $elapsed = max(0.0, $now - $state['ts']);
+        $state['tokens'] = min((float) $this->capacity, $state['tokens'] + $elapsed * $this->rate);
         $state['ts'] = $now;
         if ($state['tokens'] < 1.0) {
-            file_put_contents($this->file, json_encode($state));
+            file_put_contents($this->file, json_encode($state, JSON_THROW_ON_ERROR));
 
             return false;
         }
         $state['tokens'] -= 1.0;
-        file_put_contents($this->file, json_encode($state));
+        file_put_contents($this->file, json_encode($state, JSON_THROW_ON_ERROR));
 
         return true;
     }

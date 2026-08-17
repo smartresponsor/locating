@@ -4,16 +4,18 @@ declare(strict_types=1);
 
 namespace App\Locating\Integration\Provider\Location\Resilience;
 
+use App\Locating\Contract\Location\LocatorContract;
 use App\Locating\Model\Location\AddressData;
 use App\Locating\Model\Location\GeoPoint;
+use App\Locating\ServiceInterface\Provider\Location\Runtime\Geo\LocatorInterface;
 
-final class FallbackLocator implements LocatorInterface
+final class FallbackLocator implements LocatorInterface, LocatorContract
 {
     public function normalize(string $raw): AddressData
     {
         // dumb split
         $parts = array_map('trim', explode(',', $raw));
-        $street = $parts[0] ?? '';
+        $street = $parts[0];
         $city = $parts[1] ?? '';
         $rest = $parts[2] ?? '';
         $region = '';

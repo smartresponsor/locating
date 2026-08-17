@@ -20,6 +20,7 @@ final class AddressReverseGatewayTest extends TestCase
         });
 
         $payload = $gateway->reverse(29.7604, -95.3698, 'US');
+        /** @var array{address:array{road:string}} $payload */
 
         self::assertSame('Main St', $payload['address']['road']);
     }

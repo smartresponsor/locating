@@ -11,13 +11,19 @@ namespace App\Locating\Service\Privacy\Location;
 
 final class PiiAnonymizer
 {
+    /**
+     * @param array<string,mixed> $row
+     * @param array<string,'hash'|'null'|'partial'> $map
+     * @return array<string,mixed>
+     */
     public function mask(array $row, array $map): array
     {
         foreach ($map as $field => $mode) {
             if (!array_key_exists($field, $row)) {
                 continue;
             }
-            $val = (string)$row[$field];
+            $raw = $row[$field];
+            $val = is_scalar($raw) || $raw instanceof \Stringable ? (string) $raw : '';
             if ($mode === 'hash') {
                 $row[$field] = hash('sha256', $val);
             } elseif ($mode === 'null') {

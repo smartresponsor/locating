@@ -30,6 +30,7 @@ final class GovernanceRecommendationControllerTest extends TestCase
         $controller = new GovernanceRecommendationController($service);
         $response = $controller(new Request());
         $payload = json_decode((string) $response->getContent(), true, 512, JSON_THROW_ON_ERROR);
+        /** @var array{service:string, providers:array<string, array{recommendations:list<string>}>} $payload */
 
         self::assertSame('location', $payload['service']);
         self::assertSame('lower-provider-priority', $payload['providers']['legacy-suggest']['recommendations'][0]);

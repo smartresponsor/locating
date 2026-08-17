@@ -11,7 +11,10 @@ namespace App\Locating\Service\Privacy\Location;
 
 final class Redactor
 {
-    /** Simple field redactor */
+    /**
+     * @param array<string,mixed> $event
+     * @return array<string,mixed>
+     */
     public function apply(array $event): array
     {
         foreach (['email','phone','street'] as $f) {

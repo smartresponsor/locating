@@ -13,5 +13,6 @@ use App\Locating\ReadModelInterface\Observability\Location\ProviderGovernanceAck
 
 interface LocationProviderGovernanceAcknowledgementServiceInterface
 {
+    /** @param array<string, mixed> $payload */
     public function acknowledge(array $payload): ProviderGovernanceAcknowledgementReportInterface;
 }

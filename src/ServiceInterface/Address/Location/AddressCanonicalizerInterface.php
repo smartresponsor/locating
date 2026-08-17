@@ -6,6 +6,9 @@ namespace App\Locating\ServiceInterface\Address\Location;
 
 interface AddressCanonicalizerInterface
 {
-    /** @return array<string,mixed> */
+    /**
+     * @param array<string, mixed> $raw
+     * @return array<string,mixed>
+     */
     public function normalize(array $raw, string $locale = 'en'): array;
 }

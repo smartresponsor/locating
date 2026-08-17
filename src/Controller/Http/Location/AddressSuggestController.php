@@ -50,6 +50,6 @@ final class AddressSuggestController implements AddressSuggestControllerInterfac
             $this->suggestService->suggest($query, is_string($country) ? $country : null, $limit),
         );
 
-        return new JsonResponse(['items' => array_values($items)]);
+        return new JsonResponse(['items' => $items]);
     }
 }

@@ -10,8 +10,8 @@ declare(strict_types=1);
 namespace App\Locating\Service\Observability\Location;
 
 use App\Locating\InfrastructureInterface\Provider\Location\Store\ProviderMetricSnapshotStoreInterface;
-use App\Locating\Model\Location\LocationStatusReport;
-use App\Locating\ModelInterface\Location\LocationStatusReportInterface;
+use App\Locating\ReadModel\Observability\Location\LocationStatusReport;
+use App\Locating\ReadModelInterface\Observability\Location\LocationStatusReportInterface;
 use App\Locating\ServiceInterface\Observability\Location\LocationProviderGovernanceCatalogServiceInterface;
 use App\Locating\ServiceInterface\Observability\Location\LocationStatusReportServiceInterface;
 

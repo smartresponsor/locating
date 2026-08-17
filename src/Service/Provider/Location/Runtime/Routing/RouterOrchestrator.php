@@ -31,14 +31,20 @@ final class RouterOrchestrator implements RouterOrchestratorInterface
         private RetryPolicy $retry
     ) {
     }
+    /**
+     * @param array<string, mixed> $request
+     * @return array<string, mixed>
+     */
     public function route(array $request, TenantContextInterface $tenant): array
     {
         $key = 'locator:' . $tenant->id();
         if (!$this->limiter->allow($key, 1, 20, 40)) {
             return ['status' => 'error','error' => 'rate_limited','tenant' => $tenant->id()];
         }
-        $norm = ['q' => (string)($request['q'] ?? ''),'region' => (string)($request['region'] ?? 'us')];
-        $ck = $this->cache->key($norm);
+        $q = is_string($request['q'] ?? null) ? $request['q'] : '';
+        $requestRegion = is_string($request['region'] ?? null) ? $request['region'] : 'us';
+        $norm = ['q' => $q, 'region' => $requestRegion];
+        $ck = 'route:'.hash('sha256', json_encode($norm, JSON_THROW_ON_ERROR));
         if (($hit = $this->cache->get($ck)) !== null) {
             return ['status' => 'ok','cached' => true] + $hit;
         }
@@ -46,7 +52,7 @@ final class RouterOrchestrator implements RouterOrchestratorInterface
             return ['status' => 'error','error' => 'quota_exceeded','tenant' => $tenant->id()];
         }
         $region = $norm['region'];
-        $slaWeight = [$region => $this->sla->weight(200, 0.02)];
+        $slaWeight = [$region => $this->sla->weight(200.0, 200.0, 0.02, 0.02)];
         $selectedRegion = $this->region->select([$region => 0.9], $slaWeight);
         $candidates = $this->failover->candidate($selectedRegion, 'prov-a');
         $attempt = 0;
@@ -59,7 +65,7 @@ final class RouterOrchestrator implements RouterOrchestratorInterface
                 continue;
             }
             $res = ['provider' => $prov,'region' => $selectedRegion,'latency_ms' => $lat,'score' => $score];
-            $this->cache->set($ck, $res, 120);
+            $this->cache->put($ck, $res, 120);
             return ['status' => 'ok','cached' => false] + $res;
         }
         // Retry loop (simplified)

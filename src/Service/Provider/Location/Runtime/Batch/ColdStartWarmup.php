@@ -18,6 +18,7 @@ final class ColdStartWarmup implements ColdStartWarmupInterface
     {
     }
 
+    /** @return list<string> */
     public function plan(string $region, string $op, int $limit): array
     {
         // naive seed set: popular keys by region/op from seed table (projection later)
@@ -29,19 +30,20 @@ final class ColdStartWarmup implements ColdStartWarmupInterface
         return $seed;
     }
 
+    /**
+     * @param list<string> $key
+     * @param callable(string):array<string,mixed> $resolver
+     */
     public function run(string $region, string $op, array $key, callable $resolver, int $ttlS = 300): int
     {
         $n = 0;
         foreach ($key as $k) {
-            $k = (string) $k;
             if (null !== $this->cache->get($k)) {
                 continue;
             }
             $val = $resolver($k);
-            if (\is_array($val)) {
-                $this->cache->put($k, $val, max(1, $ttlS));
-                ++$n;
-            }
+            $this->cache->put($k, $val, max(1, $ttlS));
+            ++$n;
         }
 
         return $n;

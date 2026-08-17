@@ -13,6 +13,11 @@ use App\Locating\ServiceInterface\Location\Tenant\TenantContextInterface;
 
 interface RouterOrchestratorInterface
 {
-    /** Orchestrate a single geocode lookup */
+    /**
+     * Orchestrate a single geocode lookup.
+     *
+     * @param array<string, mixed> $request
+     * @return array<string, mixed>
+     */
     public function route(array $request, TenantContextInterface $tenant): array;
 }

@@ -7,6 +7,7 @@ namespace App\Locating\Integration\Provider\Location\Decorator;
 use App\Locating\Integration\Provider\Location\Metrics\HealthMetrics;
 use App\Locating\Model\Location\AddressData;
 use App\Locating\Model\Location\GeoPoint;
+use App\Locating\ServiceInterface\Provider\Location\Runtime\Geo\LocatorInterface;
 
 final class HealthProbeLocator implements LocatorInterface
 {
@@ -14,7 +15,12 @@ final class HealthProbeLocator implements LocatorInterface
     {
     }
 
-    private function run(callable $fn)
+    /**
+     * @template T
+     * @param callable():T $fn
+     * @return T
+     */
+    private function run(callable $fn): mixed
     {
         $t = microtime(true);
         try {

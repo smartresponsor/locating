@@ -34,6 +34,7 @@ final class ProviderGovernanceAcknowledgementReport implements ProviderGovernanc
         return $this->acknowledgements;
     }
 
+    /** @return array{service:string,itemCount:int,acknowledgements:array<string,array{sourceKey:string,stepCode:string,requestedOutcome:string,normalizedOutcome:string,acknowledgementState:string,accepted:bool,note:string}>} */
     public function toArray(): array
     {
         $acknowledgements = [];

@@ -10,7 +10,7 @@ declare(strict_types=1);
 namespace App\Locating\Infrastructure\Provider\Location;
 
 use App\Locating\InfrastructureInterface\Provider\Location\Store\ProviderMetricSnapshotStoreInterface;
-use App\Locating\ModelInterface\Location\ProviderMetricSnapshotInterface;
+use App\Locating\ReadModelInterface\Observability\Location\ProviderMetricSnapshotInterface;
 
 final class InMemoryProviderMetricSnapshotStore implements ProviderMetricSnapshotStoreInterface
 {

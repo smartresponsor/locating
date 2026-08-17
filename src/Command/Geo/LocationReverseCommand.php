@@ -33,8 +33,13 @@ final class LocationReverseCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $latitude = (float) $input->getArgument('lat');
-        $longitude = (float) $input->getArgument('lon');
+        $latitudeValue = $input->getArgument('lat');
+        $longitudeValue = $input->getArgument('lon');
+        if (!is_numeric($latitudeValue) || !is_numeric($longitudeValue)) {
+            throw new \InvalidArgumentException('Latitude and longitude must be numeric.');
+        }
+        $latitude = (float) $latitudeValue;
+        $longitude = (float) $longitudeValue;
         $reverseView = $this->addressReverseService->reverse($latitude, $longitude);
 
         $output->writeln(json_encode($reverseView->toArray(), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_THROW_ON_ERROR));

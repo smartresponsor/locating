@@ -25,8 +25,9 @@ final class AddressPipelineTest extends TestCase
         $result = $pipeline->process(new AddressInput(' 123 Main St , Houston , TX , 77001 , us '));
 
         self::assertSame(AddressPipelineResult::STATUS_VERIFIED, $result->status());
-        self::assertNotNull($result->address());
-        self::assertSame('123 Main St', $result->address()?->street());
-        self::assertSame('US', $result->address()?->countryCode());
+        $address = $result->address();
+        self::assertNotNull($address);
+        self::assertSame('123 Main St', $address->street());
+        self::assertSame('US', $address->countryCode());
     }
 }

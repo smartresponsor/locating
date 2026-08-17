@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Entity\Location;
 
-use App\Locating\Model\Location\ProviderQuotaSignal;
+use App\Locating\ReadModel\Observability\Location\ProviderQuotaSignal;
 use PHPUnit\Framework\TestCase;
 
 final class ProviderQuotaSignalTest extends TestCase

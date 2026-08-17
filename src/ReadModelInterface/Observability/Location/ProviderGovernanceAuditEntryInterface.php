@@ -25,5 +25,6 @@ interface ProviderGovernanceAuditEntryInterface
 
     public function decision(): string;
 
+    /** @return array{sourceKey:string,operation:string,severity:string,reasons:list<string>,recommendations:list<string>,decision:string} */
     public function toArray(): array;
 }

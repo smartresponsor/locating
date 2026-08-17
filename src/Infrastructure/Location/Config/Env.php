@@ -17,7 +17,8 @@ class Env
         if ($v === false) {
             $path = __DIR__ . '/../../../.env';
             if (is_file($path)) {
-                foreach (file($path) as $line) {
+                $lines = file($path) ?: [];
+                foreach ($lines as $line) {
                     if (preg_match('/^\s*#/', $line)) {
                         continue;
                     }

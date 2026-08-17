@@ -37,8 +37,9 @@ class RedisCache
         if (!$this->redis) {
             return null;
         }
-        $v = $this->redis->get($key);
-        return $v === false ? null : $v;
+        $value = $this->redis->get($key);
+
+        return is_string($value) ? $value : null;
     }
     public function set(string $key, string $val, int $ttl): void
     {

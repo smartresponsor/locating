@@ -34,6 +34,7 @@ final class ProviderGovernanceAuditReport implements ProviderGovernanceAuditRepo
         return $this->providers;
     }
 
+    /** @return array{service:string,itemCount:int,providers:array<string,array{sourceKey:string,operation:string,severity:string,reasons:list<string>,recommendations:list<string>,decision:string}>} */
     public function toArray(): array
     {
         $providers = [];

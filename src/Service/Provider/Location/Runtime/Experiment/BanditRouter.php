@@ -15,8 +15,12 @@ final class BanditRouter implements BanditRouterInterface
 {
     /** @var array<string, array<string, array<string, array{n:int,avg:float}>>> region=>op=>provider=>stats */
     private array $st = [];
+    /** @param list<string> $provider */
     public function select(string $region, string $op, array $provider): string
     {
+        if ([] === $provider) {
+            return '';
+        }
         $t = &$this->st[$region][$op];
         $N = 0;
         foreach ($provider as $id) {
@@ -41,12 +45,10 @@ final class BanditRouter implements BanditRouterInterface
     }
     public function update(string $region, string $op, string $providerId, float $reward): void
     {
-        $t = &$this->st[$region][$op][$providerId];
-        if (!isset($t)) {
-            $t = ['n' => 0,'avg' => 0.0];
-        }
-        $n = $t['n'] + 1;
-        $t['avg'] = ($t['avg'] * $t['n'] + max(0.0, min(1.0, $reward))) / $n;
-        $t['n'] = $n;
+        $current = $this->st[$region][$op][$providerId] ?? ['n' => 0, 'avg' => 0.0];
+        $n = $current['n'] + 1;
+        $current['avg'] = ($current['avg'] * $current['n'] + max(0.0, min(1.0, $reward))) / $n;
+        $current['n'] = $n;
+        $this->st[$region][$op][$providerId] = $current;
     }
 }

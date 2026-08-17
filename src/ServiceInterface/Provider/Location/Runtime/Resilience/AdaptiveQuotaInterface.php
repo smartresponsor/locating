@@ -11,6 +11,6 @@ namespace App\Locating\ServiceInterface\Provider\Location\Runtime\Resilience;
 
 interface AdaptiveQuotaInterface
 {
-    /** Compute new quota (req_limit, cost_limit) given usage and error rate. */
+    /** @return array{req_limit:int,cost_limit:float} */
     public function compute(string $tenantId, int $reqUsed, float $costUsed, int $reqLimit, float $costLimit, float $errorRate): array;
 }

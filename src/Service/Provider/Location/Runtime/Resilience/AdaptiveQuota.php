@@ -13,7 +13,7 @@ use App\Locating\ServiceInterface\Provider\Location\Runtime\Resilience\AdaptiveQ
 
 final class AdaptiveQuota implements AdaptiveQuotaInterface
 {
-    /** Simple controller: if errorRate high -> tighten; if low and budget left -> loosen slightly. */
+    /** @return array{req_limit:int,cost_limit:float} */
     public function compute(string $tenantId, int $reqUsed, float $costUsed, int $reqLimit, float $costLimit, float $errorRate): array
     {
         $leftReq = max(0, $reqLimit - $reqUsed);

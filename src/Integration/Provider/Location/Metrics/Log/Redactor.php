@@ -6,7 +6,10 @@ namespace App\Locating\Integration\Provider\Location\Metrics\Log;
 
 final class Redactor
 {
-    /** @return array<string,mixed> */
+    /**
+     * @param array<string,mixed> $ctx
+     * @return array<string,mixed>
+     */
     public static function mask(array $ctx): array
     {
         foreach (['GOOGLE_API_KEY','USPS_USERID','Authorization','X-API-Key'] as $k) {

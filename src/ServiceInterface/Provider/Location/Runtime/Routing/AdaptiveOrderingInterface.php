@@ -12,12 +12,11 @@ namespace App\Locating\ServiceInterface\Provider\Location\Runtime\Routing;
 interface AdaptiveOrderingInterface
 {
     /**
-     * Order providers by composite score. Inputs:
-     * - $provider: list of provider ids
-     * - $signal: map id => ['latency_ms'=>float,'error_rate'=>float,'health'=>float]
-     * - $cost: map id => unit cost
-     * - $hint: array of hint tags (country, etc.)
-     * Return: ordered ids best-first.
+     * @param list<string> $provider
+     * @param array<string, array{latency_ms?:float|int, error_rate?:float|int, health?:float|int}> $signal
+     * @param array<string, float|int> $cost
+     * @param array<string, mixed> $hint
+     * @return list<string>
      */
     public function order(string $region, array $provider, array $signal, array $cost, array $hint): array;
 }

@@ -19,8 +19,9 @@ class ApiKeyAuth
         if ('' === $key) {
             return;
         }
-        $hdr = $_SERVER['HTTP_X_API_KEY'] ?? '';
-        if (!hash_equals($key, (string) $hdr)) {
+        $headerValue = $_SERVER['HTTP_X_API_KEY'] ?? null;
+        $header = is_string($headerValue) ? $headerValue : '';
+        if (!hash_equals($key, $header)) {
             http_response_code(401);
             echo json_encode(['error' => 'unauthorized']);
             exit;

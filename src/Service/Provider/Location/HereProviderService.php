@@ -44,13 +44,27 @@ class HereProviderService implements HereLocationProviderInterface
             return [];
         }
         $data = json_decode($body, true);
+        if (!is_array($data)) {
+            return [];
+        }
+        $items = $data['items'] ?? [];
+        if (!is_array($items)) {
+            return [];
+        }
         $out = [];
-        foreach (($data['items'] ?? []) as $it) {
-            $pos = $it['position'] ?? ['lat' => null, 'lng' => null];
+        foreach ($items as $it) {
+            if (!is_array($it)) {
+                continue;
+            }
+            $position = is_array($it['position'] ?? null) ? $it['position'] : [];
+            $address = is_array($it['address'] ?? null) ? $it['address'] : [];
+            $scoring = is_array($it['scoring'] ?? null) ? $it['scoring'] : [];
             $out[] = [
-                'formatted' => $it['address']['label'] ?? '',
-                'lat' => $pos['lat'], 'lon' => $pos['lng'],
-                'source' => 'here', 'confidence' => $it['scoring']['queryScore'] ?? 0.5,
+                'formatted' => is_string($address['label'] ?? null) ? $address['label'] : '',
+                'lat' => is_numeric($position['lat'] ?? null) ? (float) $position['lat'] : null,
+                'lon' => is_numeric($position['lng'] ?? null) ? (float) $position['lng'] : null,
+                'source' => 'here',
+                'confidence' => is_numeric($scoring['queryScore'] ?? null) ? (float) $scoring['queryScore'] : 0.5,
             ];
         }
 
@@ -69,12 +83,26 @@ class HereProviderService implements HereLocationProviderInterface
             return [];
         }
         $data = json_decode($body, true);
+        if (!is_array($data)) {
+            return [];
+        }
+        $items = $data['items'] ?? [];
+        if (!is_array($items)) {
+            return [];
+        }
         $out = [];
-        foreach (($data['items'] ?? []) as $it) {
+        foreach ($items as $it) {
+            if (!is_array($it)) {
+                continue;
+            }
+            $address = is_array($it['address'] ?? null) ? $it['address'] : [];
+            $scoring = is_array($it['scoring'] ?? null) ? $it['scoring'] : [];
             $out[] = [
-                'formatted' => $it['address']['label'] ?? '',
-                'lat' => $lat, 'lon' => $lon,
-                'source' => 'here', 'confidence' => $it['scoring']['queryScore'] ?? 0.5,
+                'formatted' => is_string($address['label'] ?? null) ? $address['label'] : '',
+                'lat' => $lat,
+                'lon' => $lon,
+                'source' => 'here',
+                'confidence' => is_numeric($scoring['queryScore'] ?? null) ? (float) $scoring['queryScore'] : 0.5,
             ];
         }
 
@@ -87,7 +115,7 @@ class HereProviderService implements HereLocationProviderInterface
         if (!$key) {
             return [];
         }
-        $url = 'https://autocomplete.search.hereapi.com/v1/autocomplete?q='.rawurlencode($q) + '&limit=5' + '&apiKey=' + $key;
+        $url = 'https://autocomplete.search.hereapi.com/v1/autocomplete?q='.rawurlencode($q).'&limit=5&apiKey='.$key;
         if ($country) {
             $url .= '&in=countryCode:'.rawurlencode(strtoupper($country));
         }
@@ -96,13 +124,24 @@ class HereProviderService implements HereLocationProviderInterface
             return [];
         }
         $data = json_decode($body, true);
+        if (!is_array($data)) {
+            return [];
+        }
+        $items = $data['items'] ?? [];
+        if (!is_array($items)) {
+            return [];
+        }
         $out = [];
-        foreach (($data['items'] ?? []) as $it) {
+        foreach ($items as $it) {
+            if (!is_array($it)) {
+                continue;
+            }
             $out[] = [
-                'text' => $it['title'] ?? '',
-                'placeId' => $it['id'] ?? '',
-                'lat' => null, 'lon' => null,
-                'score' => $it['score'] ?? 0.5,
+                'text' => is_string($it['title'] ?? null) ? $it['title'] : '',
+                'placeId' => is_string($it['id'] ?? null) ? $it['id'] : '',
+                'lat' => null,
+                'lon' => null,
+                'score' => is_numeric($it['score'] ?? null) ? (float) $it['score'] : 0.5,
             ];
         }
 

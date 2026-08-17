@@ -10,8 +10,8 @@ declare(strict_types=1);
 namespace App\Locating\Service\Provider\Location;
 
 use App\Locating\InfrastructureInterface\Provider\Location\Gateway\ProviderCostCatalogGatewayInterface;
-use App\Locating\Model\Location\ProviderCostSignal;
-use App\Locating\ModelInterface\Location\ProviderCostSignalInterface;
+use App\Locating\ReadModel\Observability\Location\ProviderCostSignal;
+use App\Locating\ReadModelInterface\Observability\Location\ProviderCostSignalInterface;
 use App\Locating\ServiceInterface\Provider\Location\ProviderCostSignalReaderInterface;
 
 final class ProviderCostSignalReader implements ProviderCostSignalReaderInterface
@@ -24,8 +24,9 @@ final class ProviderCostSignalReader implements ProviderCostSignalReaderInterfac
 
     public function read(string $sourceKey, string $operation, array $context = []): ProviderCostSignalInterface
     {
-        $region = (string) ($context['region'] ?? $context['countryCode'] ?? $this->defaultRegion);
-        $region = '' !== strtoupper(trim($region)) ? strtoupper(trim($region)) : $this->defaultRegion;
+        $regionValue = $context['region'] ?? $context['countryCode'] ?? null;
+        $region = is_string($regionValue) ? trim($regionValue) : $this->defaultRegion;
+        $region = '' !== $region ? strtoupper($region) : $this->defaultRegion;
 
         return new ProviderCostSignal(
             $sourceKey,

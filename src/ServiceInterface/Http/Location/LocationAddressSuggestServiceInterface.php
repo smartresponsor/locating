@@ -9,10 +9,10 @@ declare(strict_types=1);
 
 namespace App\Locating\ServiceInterface\Http\Location;
 
+use App\Locating\ModelInterface\Location\AddressSuggestionViewInterface;
+
 interface LocationAddressSuggestServiceInterface
 {
-    /**
-     * @return array<int, array<string, mixed>>
-     */
+    /** @return list<AddressSuggestionViewInterface> */
     public function suggest(string $query, ?string $countryCode = null, int $limit = 5): array;
 }

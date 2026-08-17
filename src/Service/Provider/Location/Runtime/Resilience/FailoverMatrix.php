@@ -16,13 +16,14 @@ final class FailoverMatrix implements FailoverMatrixInterface
     /** @var array<string, array<string, array<string>>> map[region][primary] = [secondary,...] */
     private array $map = [];
 
+    /** @param list<string> $fallback */
     public function set(string $region, string $primary, array $fallback): void
     {
         $this->map[$region] = $this->map[$region] ?? [];
         $this->map[$region][$primary] = array_values(array_unique($fallback));
     }
 
-    /** Return ordered candidates for region starting from primary, then fallback list */
+    /** @return list<string> */
     public function candidate(string $region, string $primary): array
     {
         $list = $this->map[$region][$primary] ?? [];

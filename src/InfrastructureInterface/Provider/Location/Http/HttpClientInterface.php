@@ -10,6 +10,16 @@ namespace App\Locating\InfrastructureInterface\Provider\Location\Http;
 
 interface HttpClientInterface
 {
+    /**
+     * @param array<string,string> $headers
+     * @return array<string,mixed>
+     */
     public function get(string $url, array $headers = [], int $timeoutMs = 800): array;
+
+    /**
+     * @param array<string,mixed> $payload
+     * @param array<string,string> $headers
+     * @return array<string,mixed>
+     */
     public function postJson(string $url, array $payload, array $headers = [], int $timeoutMs = 800): array;
 }

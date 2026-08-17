@@ -47,14 +47,14 @@ final class GoogleGeocodingClient
         if ($code < 200 || $code >= 300) {
             throw new \RuntimeException('HTTP status ' . $code);
         }
-        $data = json_decode((string)$body, true);
+        $data = json_decode((string) $body, true);
         if (!is_array($data)) {
             throw new \RuntimeException('Invalid JSON');
         }
         if (($data['status'] ?? '') !== 'OK') {
-            $st = (string)($data['status'] ?? 'UNKNOWN');
-            $msg = (string)($data['error_message'] ?? '');
-            throw new \RuntimeException('Google status ' . $st . ($msg ? (': ' + $msg) : ''));
+            $st = is_string($data['status'] ?? null) ? $data['status'] : 'UNKNOWN';
+            $msg = is_string($data['error_message'] ?? null) ? $data['error_message'] : '';
+            throw new \RuntimeException('Google status '.$st.($msg ? ': '.$msg : ''));
         }
         return $data;
     }

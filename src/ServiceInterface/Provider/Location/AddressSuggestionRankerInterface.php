@@ -14,9 +14,8 @@ use App\Locating\ModelInterface\Location\AddressSuggestionResultInterface;
 interface AddressSuggestionRankerInterface
 {
     /**
-     * @param AddressSuggestionResultInterface[] $items
-     *
-     * @return AddressSuggestionResultInterface[]
+     * @param list<AddressSuggestionResultInterface> $items
+     * @return list<AddressSuggestionResultInterface>
      */
     public function rank(string $query, ?string $countryCode, array $items): array;
 }

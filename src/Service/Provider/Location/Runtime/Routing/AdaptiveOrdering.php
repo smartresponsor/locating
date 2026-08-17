@@ -24,15 +24,25 @@ final class AdaptiveOrdering implements AdaptiveOrderingInterface
     ) {
     }
 
+    /**
+     * @param list<string> $provider
+     * @param array<string, array{latency_ms?:float|int, error_rate?:float|int, health?:float|int}> $signal
+     * @param array<string, float|int> $cost
+     * @param array<string, mixed> $hint
+     * @return list<string>
+     */
     public function order(string $region, array $provider, array $signal, array $cost, array $hint): array
     {
         $score = [];
         foreach ($provider as $id) {
-            $s = $signal[$id] ?? ['latency_ms' => 250.0, 'error_rate' => 0.02, 'health' => 0.8];
-            $h = isset($s['health']) ? (float) $s['health'] : $this->health->health((float) $s['latency_ms'], (float) $s['error_rate']);
+            $s = $signal[$id] ?? [];
+            $latency = (float) ($s['latency_ms'] ?? 250.0);
+            $errorRate = (float) ($s['error_rate'] ?? 0.02);
+            $health = $s['health'] ?? null;
+            $h = null !== $health ? (float) $health : $this->health->health($latency, $errorRate);
             $c = (float) ($cost[$id] ?? 1.0);
             $cw = $this->costPolicy->score($h, $c);
-            $sl = $this->sla->weight(300.0, (float) $s['latency_ms'], 0.02, (float) $s['error_rate']);
+            $sl = $this->sla->weight(300.0, $latency, 0.02, $errorRate);
             $bw = $this->bias->weight($hint, $region);
             $score[$id] = $cw * (0.6 + 0.4 * $sl) * $bw;
         }

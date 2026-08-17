@@ -8,11 +8,19 @@ use App\Locating\ServiceInterface\Provider\Location\Runtime\Routing\StrategyRegi
 
 final class StrategyRegistry implements StrategyRegistryInterface
 {
+    /** @var array<string,object> */
     private array $providers = [];
 
     public function add(object $p): void
     {
-        $this->providers[method_exists($p, 'nameEntity') ? $p->nameEntity() : $p::class] = $p;
+        $name = $p::class;
+        if (method_exists($p, 'nameEntity')) {
+            $candidate = $p->nameEntity();
+            if (is_string($candidate) && '' !== $candidate) {
+                $name = $candidate;
+            }
+        }
+        $this->providers[$name] = $p;
     }
 
     public function byName(string $nameEntity): ?object

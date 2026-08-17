@@ -11,6 +11,10 @@ namespace App\Locating\InfrastructureInterface\Provider\Location\Metrics;
 
 interface BudgetTelemetryInterface
 {
-    /** Render Prometheus exposition for budget remaining and used. */
+    /**
+     * Render Prometheus exposition for budget remaining and used.
+     *
+     * @param list<array{tenantId?:string,op?:string,remaining?:float|int,used?:float|int}> $row
+     */
     public function export(array $row): string;
 }

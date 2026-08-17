@@ -14,6 +14,7 @@ final class AdaptiveTimeout
     private float $targetP;
     private int $min;
     private int $max;
+    /** @var list<float> */
     private array $buf = [];
 
     public function __construct(float $targetP = 0.95, int $min = 100, int $max = 2000)

@@ -7,14 +7,26 @@ namespace App\Locating\Service\Observability\Location;
 final class HealthMonitor
 {
     private string $path;
+
+    /** @var array<string, array{ok:int, fail:int, ewma_ms:float, last:int}> */
     private array $state = [];
     public function __construct(?string $file = null)
     {
         $this->path = $file ?: sys_get_temp_dir().'/locator_health.json';
         if (is_file($this->path)) {
-            $d = json_decode((string)file_get_contents($this->path), true);
-            if (is_array($d)) {
-                $this->state = $d;
+            $decoded = json_decode((string) file_get_contents($this->path), true);
+            if (is_array($decoded)) {
+                foreach ($decoded as $provider => $row) {
+                    if (!is_string($provider) || !is_array($row)) {
+                        continue;
+                    }
+                    $this->state[$provider] = [
+                        'ok' => is_numeric($row['ok'] ?? null) ? (int) $row['ok'] : 0,
+                        'fail' => is_numeric($row['fail'] ?? null) ? (int) $row['fail'] : 0,
+                        'ewma_ms' => is_numeric($row['ewma_ms'] ?? null) ? (float) $row['ewma_ms'] : 500.0,
+                        'last' => is_numeric($row['last'] ?? null) ? (int) $row['last'] : 0,
+                    ];
+                }
             }
         }
     }
@@ -39,6 +51,9 @@ final class HealthMonitor
     {
         @file_put_contents($this->path, json_encode($this->state));
     }
+    /**
+     * @return array<string, array{ok:int, fail:int, successRate:float, ewmaMs:float, score:int, last:int}>
+     */
     public function snapshot(): array
     {
         $out = [];

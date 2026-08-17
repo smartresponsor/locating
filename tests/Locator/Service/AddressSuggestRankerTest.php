@@ -43,6 +43,6 @@ final class AddressSuggestRankerTest extends TestCase
 
         $ranked = $ranker->rank('Main', null, 'de_DE', [$us, $de]);
 
-        self::assertSame('DE', $ranked[0]->addressData()->countryCode);
+        self::assertSame('DE', $ranked[0]->address()->countryCode());
     }
 }

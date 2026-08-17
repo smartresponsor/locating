@@ -7,6 +7,8 @@ namespace App\Locating\Integration\Provider\Location\Resilience\Throttle;
 final class ProviderThrottle
 {
     private string $dir;
+
+    /** @var array<string, array{limit:int,window:int}> */
     private array $cfg = [];
     public function __construct(string $spec)
     {
@@ -31,17 +33,23 @@ final class ProviderThrottle
         $c = $this->cfg[$prov] ?? ['limit' => 100,'window' => 1];
         $p = $this->path($prov);
         $now = time();
-        $state = ['ts' => $now,'cnt' => 0];
+        $state = ['ts' => $now, 'cnt' => 0];
         if (file_exists($p)) {
-            $state = json_decode((string)file_get_contents($p), true) ?: $state;
+            $decoded = json_decode((string) file_get_contents($p), true);
+            if (is_array($decoded)) {
+                $state = [
+                    'ts' => is_numeric($decoded['ts'] ?? null) ? (int) $decoded['ts'] : $now,
+                    'cnt' => is_numeric($decoded['cnt'] ?? null) ? (int) $decoded['cnt'] : 0,
+                ];
+            }
         }
-        if ($now - (int)$state['ts'] >= $c['window']) {
-            $state = ['ts' => $now,'cnt' => 0];
+        if ($now - $state['ts'] >= $c['window']) {
+            $state = ['ts' => $now, 'cnt' => 0];
         }
         $ok = $state['cnt'] < $c['limit'];
         if ($ok) {
-            $state['cnt'] += 1;
-            file_put_contents($p, json_encode($state));
+            ++$state['cnt'];
+            file_put_contents($p, json_encode($state, JSON_THROW_ON_ERROR));
         }
         return $ok;
     }

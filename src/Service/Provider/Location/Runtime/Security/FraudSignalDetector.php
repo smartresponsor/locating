@@ -13,6 +13,7 @@ use App\Locating\ServiceInterface\Provider\Location\Runtime\Security\FraudSignal
 
 final class FraudSignalDetector implements FraudSignalDetectorInterface
 {
+    /** @param array{ipDistanceKm?:float|int,velocityRps?:float|int,failRatio?:float|int,newDevice?:int|bool,proxy?:int|bool} $signal */
     public function score(array $signal): float
     {
         $ip = (float)($signal['ipDistanceKm'] ?? 0.0);      // > 2000km spikes suspicion

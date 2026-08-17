@@ -23,6 +23,7 @@ final class CellIndex implements CellIndexInterface
         $y = max(0, min($n - 1, $y));
         return 'L'.$lvl.':'.$x.':'.$y;
     }
+    /** @return array{N:string, E:string, S:string, W:string} */
     public function neighbor(string $cellId): array
     {
         [$lvl,$x,$y] = $this->parse($cellId);
@@ -33,6 +34,10 @@ final class CellIndex implements CellIndexInterface
         $E = 'L'.$lvl.':'.min($n - 1, $x + 1).':'.$y;
         return ['N' => $N,'E' => $E,'S' => $S,'W' => $W];
     }
+    /**
+     * @param array{0:float|int, 1:float|int, 2:float|int, 3:float|int} $bbox
+     * @return list<string>
+     */
     public function cover(array $bbox, int $level): array
     {
         $lvl = max(0, min(15, $level));
@@ -53,6 +58,7 @@ final class CellIndex implements CellIndexInterface
         }
         return $out;
     }
+    /** @return array{0:int, 1:int, 2:int} */
     private function parse(string $id): array
     {
         if (!preg_match('/^L(\d+):(\d+):(\d+)$/', $id, $m)) {

@@ -17,6 +17,6 @@ final class AddressBatchResultBackendTest extends TestCase
             ['field' => 'street', 'code' => 'normalized', 'message' => 'ok'],
         ]);
 
-        self::assertIsArray($record->toArray());
+        self::assertSame('accepted', $record->toArray()['status']);
     }
 }

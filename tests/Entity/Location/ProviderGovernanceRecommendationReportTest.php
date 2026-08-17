@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Entity\Location;
 
-use App\Locating\Model\Location\ProviderGovernanceRecommendation;
-use App\Locating\Model\Location\ProviderGovernanceRecommendationReport;
+use App\Locating\ReadModel\Observability\Location\ProviderGovernanceRecommendation;
+use App\Locating\ReadModel\Observability\Location\ProviderGovernanceRecommendationReport;
 use PHPUnit\Framework\TestCase;
 
 final class ProviderGovernanceRecommendationReportTest extends TestCase

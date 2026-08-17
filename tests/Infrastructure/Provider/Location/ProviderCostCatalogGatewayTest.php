@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Infrastructure\Provider\Location;
 
-use App\Locating\Infrastructure\Provider\Location\Provider\ProviderCostCatalogGateway;
+use App\Locating\Infrastructure\Provider\Location\ProviderCostCatalogGateway;
 use App\Locating\InfrastructureInterface\Provider\Location\Backend\ProviderCostCatalogBackendInterface;
 use PHPUnit\Framework\TestCase;
 

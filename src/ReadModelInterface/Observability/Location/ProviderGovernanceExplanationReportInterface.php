@@ -18,5 +18,6 @@ interface ProviderGovernanceExplanationReportInterface
     /** @return array<string, ProviderGovernanceExplanationInterface> */
     public function providers(): array;
 
+    /** @return array{service:string,itemCount:int,providers:array<string,array{sourceKey:string,operation:string,severity:string,reasons:list<string>}>} */
     public function toArray(): array;
 }

@@ -13,6 +13,10 @@ use App\Locating\InfrastructureInterface\Provider\Location\Observability\TracePr
 
 final class TracePropagator implements TracePropagatorInterface
 {
+    /**
+     * @param array<string, mixed> $header
+     * @return array{trace_id:string,span_id:string}
+     */
     public function extract(array $header): array
     {
         $tp = $header['traceparent'] ?? '';
@@ -23,11 +27,16 @@ final class TracePropagator implements TracePropagatorInterface
         return ['trace_id' => bin2hex(random_bytes(8)), 'span_id' => bin2hex(random_bytes(8))];
     }
 
+    /**
+     * @param array<string, mixed> $header
+     * @param array{trace_id:string,span_id:string} $ctx
+     * @return array<string, mixed>
+     */
     public function inject(array $header, array $ctx): array
     {
-        $trace = $ctx['trace_id'] ?? bin2hex(random_bytes(8));
-        $span = $ctx['span_id'] ?? bin2hex(random_bytes(8));
-        $header['traceparent'] = '00-' + substr($trace, 0, 32) + '-' + substr($span, 0, 16) + '-01';
+        $trace = $ctx['trace_id'];
+        $span = $ctx['span_id'];
+        $header['traceparent'] = '00-'.substr($trace, 0, 32).'-'.substr($span, 0, 16).'-01';
 
         return $header;
     }

@@ -14,12 +14,16 @@ use App\Locating\ServiceInterface\Provider\Location\Runtime\Privacy\RetentionSwe
 
 final class RetentionSweeper implements RetentionSweeperInterface
 {
+    /**
+     * @param array<string,string> $entityToTable
+     * @return list<string>
+     */
     public function plan(array $entityToTable, RetentionPolicyInterface $policy): array
     {
         $sql = [];
-        foreach ($entityToTable as $entity => $tbl) {
-            $ttl = $policy->ttl((string)$entity);
-            $sql[] = 'DELETE FROM '.$tbl." WHERE created_at < NOW() - INTERVAL '" . (int)$ttl . " day';";
+        foreach ($entityToTable as $entity => $table) {
+            $ttl = $policy->ttl($entity);
+            $sql[] = 'DELETE FROM '.$table." WHERE created_at < NOW() - INTERVAL '".$ttl." day';";
         }
         return $sql;
     }

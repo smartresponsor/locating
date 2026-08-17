@@ -13,6 +13,7 @@ use App\Locating\Infrastructure\Provider\Location\InMemoryProviderMetricSnapshot
 use App\Locating\ReadModel\Observability\Location\ProviderMetricSnapshot;
 use App\Locating\Service\Http\Location\LocationMetricsHttpService;
 use App\Locating\Service\Observability\Location\LocationMetricsExportService;
+use App\Locating\ServiceInterface\Observability\Location\LocationProviderGovernanceCatalogServiceInterface;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -20,9 +21,11 @@ final class LocationMetricsHttpServiceTest extends TestCase
 {
     public function testMetricsEndpointRendersPrometheusFormat(): void
     {
+        $governance = $this->createStub(LocationProviderGovernanceCatalogServiceInterface::class);
+        $governance->method('catalog')->willReturn([]);
         $controller = new LocationMetricsHttpService(new LocationMetricsExportService(new InMemoryProviderMetricSnapshotStore([
             'address_pipeline' => new ProviderMetricSnapshot('address_pipeline', 2, 1, 15.0, 0.5),
-        ])));
+        ]), $governance));
         $response = $controller(new Request());
 
         self::assertSame(200, $response->getStatusCode());

@@ -24,11 +24,11 @@ class ProviderBudget
     {
         $k = 'pb:'.$nameEntity.':'.date('YmdHi');
         $raw = $this->cache->get($k);
-        $n = $raw ? (int)$raw : 0;
+        $n = is_numeric($raw) ? (int) $raw : 0;
         if ($n >= $this->perMin) {
             return false;
         }
-        $this->cache->set($k, str($n + 1), 70);
+        $this->cache->set($k, (string) ($n + 1), 70);
         return true;
     }
 }

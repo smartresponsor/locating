@@ -55,7 +55,7 @@ foreach ($iterator as $file) {
     }
     $normalizedRelative = substr($normalizedAbsolute, strlen($normalizedRoot));
     $pathParts = explode('/', $normalizedRelative);
-    $topLayer = $pathParts[1] ?? '';
+    $topLayer = count($pathParts) > 2 ? $pathParts[1] : '(root)';
     $code = (string) file_get_contents($absolute);
 
     $namespace = '';
@@ -71,8 +71,9 @@ foreach ($iterator as $file) {
     }
 
     $rootNamespace = $namespace === '' ? '(missing)' : explode('\\', $namespace)[0];
-    $pathNamespace = trim(substr($normalizedRelative, 4, -4), '/');
-    $pathNamespace = str_replace('/', '\\', preg_replace('/\/[^\/]+$/', '', $pathNamespace) ?? '');
+    $relativePhpPath = substr($normalizedRelative, 4);
+    $directory = dirname($relativePhpPath);
+    $pathNamespace = '.' === $directory ? '' : str_replace('/', '\\', $directory);
     $expectedNamespace = 'App\\Locating' . ($pathNamespace !== '' ? '\\' . $pathNamespace : '');
 
     $hasBusinessSubject = $symbolName !== '' && preg_match($businessPattern, $symbolName) === 1;

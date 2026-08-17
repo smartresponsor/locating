@@ -16,11 +16,13 @@ final class LogEvent
     public function __construct(private Redactor $redactor = new Redactor())
     {
     }
+    /** @param array<string,mixed> $event */
     public function toJson(array $event, string $traceId = '', string $spanId = ''): string
     {
         $event['_trace_id'] = $traceId;
         $event['_span_id'] = $spanId;
         $safe = $this->redactor->apply($event);
-        return json_encode($safe, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+
+        return json_encode($safe, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR);
     }
 }

@@ -11,5 +11,6 @@ namespace App\Locating\ServiceInterface\Provider\Location\Runtime\Privacy;
 
 interface RetentionInterface
 {
+    /** @return array<string,array{ttl_days:int,action:string}> */
     public function policy(): array;
 }

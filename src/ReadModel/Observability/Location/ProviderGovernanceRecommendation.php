@@ -42,6 +42,7 @@ final class ProviderGovernanceRecommendation implements ProviderGovernanceRecomm
         return $this->recommendations;
     }
 
+    /** @return array{sourceKey:string,operation:string,severity:string,recommendations:list<string>} */
     public function toArray(): array
     {
         return [

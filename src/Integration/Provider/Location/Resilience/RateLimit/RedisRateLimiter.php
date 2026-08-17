@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace App\Locating\Integration\Provider\Location\Resilience\RateLimit;
 
-final class RedisRateLimiter implements RateLimiterInterface
+use App\Locating\Contract\Location\LocationRateLimiterContract;
+
+final class RedisRateLimiter implements LocationRateLimiterContract
 {
     public function __construct(private \Redis $r)
     {

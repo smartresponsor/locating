@@ -20,6 +20,7 @@ final class ConfidenceEnsemble implements ConfidenceEnsembleInterface
         private float $wGeo = 0.2
     ) {
     }
+    /** @param array{provider?:float|int,parse?:float|int,reverse?:float|int,distanceKm?:float|int,houseMatch?:int|bool} $feature */
     public function score(array $feature): float
     {
         $p = max(0.0, min(1.0, (float)($feature['provider'] ?? 0.7)));

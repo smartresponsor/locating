@@ -4,9 +4,12 @@ declare(strict_types=1);
 
 namespace App\Locating\Integration\Provider\Location\Decorator;
 
+use App\Locating\Contract\Location\LocationLoggerContract as LoggerInterface;
+use App\Locating\Contract\Location\LocationMetricsContract as MetricsInterface;
 use App\Locating\Integration\Provider\Location\Metrics\Correlation\TraceContext;
 use App\Locating\Model\Location\AddressData;
 use App\Locating\Model\Location\GeoPoint;
+use App\Locating\ServiceInterface\Provider\Location\Runtime\Geo\LocatorInterface;
 
 final class ObservabilityLocator implements LocatorInterface
 {
@@ -14,7 +17,13 @@ final class ObservabilityLocator implements LocatorInterface
     {
     }
 
-    private function withObs(string $op, callable $fn, array $ctx = [])
+    /**
+     * @template T
+     * @param callable():T $fn
+     * @param array<string, mixed> $ctx
+     * @return T
+     */
+    private function withObs(string $op, callable $fn, array $ctx = []): mixed
     {
         TraceContext::child();
         $traceparent = TraceContext::traceparent();

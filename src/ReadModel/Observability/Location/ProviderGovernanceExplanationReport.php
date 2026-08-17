@@ -36,6 +36,7 @@ final class ProviderGovernanceExplanationReport implements ProviderGovernanceExp
         return $this->providers;
     }
 
+    /** @return array{service:string,itemCount:int,providers:array<string,array{sourceKey:string,operation:string,severity:string,reasons:list<string>}>} */
     public function toArray(): array
     {
         $providers = [];

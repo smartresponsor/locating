@@ -9,7 +9,14 @@ namespace App\Locating\ServiceInterface\Address\Location;
  */
 interface AddressHintBiasServiceInterface
 {
+    public function set(string $tag, string $region, float $weight): void;
+
+    /** @param array<array-key, mixed> $hint */
+    public function weight(array $hint, string $region): float;
+
+    /** @param array<string, mixed> $hint */
     public function region(array $hint): string;
 
+    /** @param array<string, mixed> $hint */
     public function locale(array $hint): string;
 }

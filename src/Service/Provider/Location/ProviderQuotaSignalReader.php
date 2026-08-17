@@ -10,8 +10,8 @@ declare(strict_types=1);
 namespace App\Locating\Service\Provider\Location;
 
 use App\Locating\InfrastructureInterface\Provider\Location\Gateway\ProviderQuotaDecisionGatewayInterface;
-use App\Locating\Model\Location\ProviderQuotaSignal;
-use App\Locating\ModelInterface\Location\ProviderQuotaSignalInterface;
+use App\Locating\ReadModel\Observability\Location\ProviderQuotaSignal;
+use App\Locating\ReadModelInterface\Observability\Location\ProviderQuotaSignalInterface;
 use App\Locating\ServiceInterface\Provider\Location\ProviderQuotaSignalReaderInterface;
 
 final class ProviderQuotaSignalReader implements ProviderQuotaSignalReaderInterface
@@ -24,7 +24,8 @@ final class ProviderQuotaSignalReader implements ProviderQuotaSignalReaderInterf
 
     public function read(string $sourceKey, string $operation, array $context = []): ProviderQuotaSignalInterface
     {
-        $units = isset($context['units']) ? max(1, (int) $context['units']) : 1;
+        $unitsValue = $context['units'] ?? null;
+        $units = is_numeric($unitsValue) ? max(1, (int) $unitsValue) : 1;
         $allowed = $this->quotaGateway->allow($this->tenantId, $operation, $units, false);
 
         return new ProviderQuotaSignal($sourceKey, $operation, $allowed);

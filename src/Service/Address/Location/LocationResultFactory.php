@@ -32,7 +32,7 @@ final class LocationResultFactory implements LocationResultFactoryInterface
         return new AddressReverseResult(
             (string) $result['status'],
             is_array($result['address'] ?? null) ? AddressView::fromArray($result['address']) : null,
-            array_values($result['issues'] ?? []),
+            $result['issues'],
             is_array($result['geoPoint'] ?? null) ? $result['geoPoint'] : null,
             isset($result['providerKey']) ? (string) $result['providerKey'] : null,
         );

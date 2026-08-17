@@ -19,7 +19,9 @@ interface ProviderGovernanceExecutionItemInterface
 
     public function acknowledgementState(): string;
 
+    /** @return list<ProviderGovernanceExecutionStepStatusInterface> */
     public function steps(): array;
 
+    /** @return array{sourceKey:string,decision:string,severity:string,acknowledgementState:string,steps:list<array{code:string,priority:string,ownerHint:string,status:string,acknowledgementRequired:bool}>} */
     public function toArray(): array;
 }

@@ -6,16 +6,28 @@ namespace App\Locating\Integration\Http;
 
 final class SimpleHttp
 {
+    /** @return array<string,mixed> */
     public static function get(string $url, int $timeout = 10): array
     {
         $ch = curl_init($url);
-        curl_setopt_array($ch, [CURLOPT_RETURNTRANSFER => 1,CURLOPT_TIMEOUT => $timeout]);
-        $b = curl_exec($ch);
-        $c = (int)curl_getinfo($ch, CURLINFO_RESPONSE_CODE);
+        curl_setopt_array($ch, [CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => $timeout]);
+        $body = curl_exec($ch);
+        $code = (int) curl_getinfo($ch, CURLINFO_RESPONSE_CODE);
         curl_close($ch);
-        if ($b === false || $c < 200 || $c >= 300) {
+        if ($body === false || $code < 200 || $code >= 300) {
             return [];
-        } $d = json_decode((string)$b, true);
-        return is_array($d) ? $d : [];
+        }
+        $decoded = json_decode((string) $body, true);
+        if (!is_array($decoded)) {
+            return [];
+        }
+        $result = [];
+        foreach ($decoded as $key => $value) {
+            if (is_string($key)) {
+                $result[$key] = $value;
+            }
+        }
+
+        return $result;
     }
 }

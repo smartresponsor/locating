@@ -32,7 +32,7 @@ final class AddressParser implements AddressParserInterface
         $parts = array_map('trim', explode(',', $raw));
 
         return new AddressView(
-            $parts[0] ?? '',
+            $parts[0],
             $parts[1] ?? '',
             $parts[2] ?? '',
             $parts[3] ?? '',

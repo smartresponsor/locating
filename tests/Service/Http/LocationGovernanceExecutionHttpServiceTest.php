@@ -33,6 +33,7 @@ final class LocationGovernanceExecutionHttpServiceTest extends TestCase
 
         $response = (new LocationGovernanceExecutionHttpService($service))(new Request());
         $payload = json_decode((string) $response->getContent(), true, 512, JSON_THROW_ON_ERROR);
+        /** @var array{service:string, providers:array<string, array{acknowledgementState:string}>} $payload */
         self::assertSame('location', $payload['service']);
         self::assertSame('pending-acknowledgement', $payload['providers']['alpha']['acknowledgementState']);
     }

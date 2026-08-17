@@ -12,9 +12,10 @@ namespace App\Locating\ServiceInterface\Provider\Location\Runtime\Routing;
 interface CostRoutePlannerInterface
 {
     /**
-     * Plan provider order based on unit cost and signal map.
-     * $signal[id] => ['latencyMs'=>float,'errorRate'=>float]
-     * Return ordered id list best-first (lower cost, better signal).
+     * @param list<string> $provider
+     * @param array<string, float|int> $unitCost
+     * @param array<string, array{latencyMs?:float|int, errorRate?:float|int}> $signal
+     * @return list<string>
      */
     public function order(array $provider, array $unitCost, array $signal): array;
 }

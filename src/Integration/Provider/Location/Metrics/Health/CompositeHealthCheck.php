@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Locating\Integration\Provider\Location\Metrics\Health;
 
+use App\Locating\Contract\Location\HealthCheckContract as HealthCheckInterface;
+
 final class CompositeHealthCheck implements HealthCheckInterface
 {
     /** @param list<HealthCheckInterface> $checks */
@@ -22,7 +24,7 @@ final class CompositeHealthCheck implements HealthCheckInterface
         foreach ($this->checks as $chk) {
             $r = $chk->check();
             $result['details'][$chk->nameEntity()] = $r;
-            if (($r['status'] ?? 'DOWN') !== 'UP') {
+            if ($r['status'] !== 'UP') {
                 $result['status'] = 'DOWN';
             }
         }

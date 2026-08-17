@@ -36,6 +36,25 @@ final class NominatimClient
         $url = $this->baseUrl . '/reverse?' . http_build_query($params);
         return $this->getJson($url);
     }
+    public function ping(): bool
+    {
+        $ch = curl_init($this->baseUrl.'/');
+        curl_setopt_array($ch, [
+            CURLOPT_NOBODY => true,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_TIMEOUT => min(3, $this->timeout),
+            CURLOPT_HTTPHEADER => [
+                'User-Agent: Smartresponsor-Locator/1.0 (+https://example.local)',
+            ],
+        ]);
+        $result = curl_exec($ch);
+        $code = (int) curl_getinfo($ch, CURLINFO_RESPONSE_CODE);
+        curl_close($ch);
+
+        return false !== $result && $code >= 200 && $code < 500;
+    }
+
     /** @return array<mixed> */
     private function getJson(string $url): array
     {

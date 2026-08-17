@@ -21,7 +21,7 @@ final class KeyRotator implements KeyRotatorInterface
         $this->map[$providerId][] = ['key' => $key,'start' => $startAtTs,'revoke' => $revokeAtTs];
         usort($this->map[$providerId], fn ($a, $b) => $a['start'] <=> $b['start']);
     }
-    public function active(string $providerId, int $nowTs = null): ?string
+    public function active(string $providerId, ?int $nowTs = null): ?string
     {
         $now = $nowTs ?? time();
         $rows = $this->map[$providerId] ?? [];

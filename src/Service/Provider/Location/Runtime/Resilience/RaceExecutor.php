@@ -14,9 +14,8 @@ use App\Locating\ServiceInterface\Provider\Location\Runtime\Resilience\RaceExecu
 final class RaceExecutor implements RaceExecutorInterface
 {
     /**
-     * @param array $candidate map providerId => simulated latency ms; negative = failure
-     *
-     * @return array ['provider'=>string,'latency_ms'=>float,'status'=>'ok'|'error']
+     * @param array<string,float|int> $candidate
+     * @return array{status:'ok',provider:string,latency_ms:float|int}|array{status:'error',error:string}
      */
     public function race(array $candidate, int $timeoutMs): array
     {

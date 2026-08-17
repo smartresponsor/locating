@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Locating\Integration\Provider\Location\Metrics\Health;
 
+use App\Locating\Contract\Location\HealthCheckContract as HealthCheckInterface;
 use App\Locating\Integration\Provider\Location\Http\NominatimClient;
 
 final class NominatimHealthCheck implements HealthCheckInterface

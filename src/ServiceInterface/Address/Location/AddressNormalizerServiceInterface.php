@@ -10,5 +10,9 @@ namespace App\Locating\ServiceInterface\Address\Location;
 
 interface AddressNormalizerServiceInterface
 {
+    /**
+     * @param array<string, mixed> $raw
+     * @return array{address:\App\Locating\Model\Location\CanonicalAddress, score:float}
+     */
     public function canonicalize(array $raw, string $provider): array;
 }

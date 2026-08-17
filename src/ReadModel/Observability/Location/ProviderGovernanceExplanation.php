@@ -42,6 +42,7 @@ final class ProviderGovernanceExplanation implements ProviderGovernanceExplanati
         return $this->reasons;
     }
 
+    /** @return array{sourceKey:string,operation:string,severity:string,reasons:list<string>} */
     public function toArray(): array
     {
         return [

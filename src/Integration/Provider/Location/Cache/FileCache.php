@@ -18,27 +18,37 @@ final class FileCache
     {
         return $this->dir.'/'.sha1($key).'.json';
     }
+    /** @return array{hit:bool,stale?:bool,value?:array<string,mixed>} */
     public function get(string $key): array
     {
         $p = $this->path($key);
         if (!file_exists($p)) {
             return ['hit' => false];
         }
-        $raw = json_decode((string)file_get_contents($p), true) ?: null;
-        if (!$raw) {
+        $decoded = json_decode((string) file_get_contents($p), true);
+        if (!is_array($decoded) || !is_numeric($decoded['ts'] ?? null) || !is_array($decoded['value'] ?? null)) {
             return ['hit' => false];
         }
-        $age = time() - (int)$raw['ts'];
+        $value = [];
+        foreach ($decoded['value'] as $valueKey => $entry) {
+            if (is_string($valueKey)) {
+                $value[$valueKey] = $entry;
+            }
+        }
+        $age = time() - (int) $decoded['ts'];
         if ($age <= $this->ttl) {
-            return ['hit' => true,'stale' => false,'value' => $raw['value']];
+            return ['hit' => true, 'stale' => false, 'value' => $value];
         }
         if ($age <= $this->staleTtl) {
-            return ['hit' => true,'stale' => true,'value' => $raw['value']];
+            return ['hit' => true, 'stale' => true, 'value' => $value];
         }
+
         return ['hit' => false];
     }
+
+    /** @param array<string,mixed> $value */
     public function set(string $key, array $value): void
     {
-        file_put_contents($this->path($key), json_encode(['ts' => time(),'value' => $value]));
+        file_put_contents($this->path($key), json_encode(['ts' => time(), 'value' => $value], JSON_THROW_ON_ERROR));
     }
 }

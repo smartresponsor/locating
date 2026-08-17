@@ -1,0 +1,50 @@
+{
+  "name": "locating/location",
+  "description": "Location Symfony component for normalization, validation, geocoding, and provider governance.",
+  "type": "project",
+  "license": "proprietary",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "repositories": [
+    {"type": "vcs", "url": "git@github.com:smartresponsor/cruding.git", "no-api": true},
+    {"type": "vcs", "url": "git@github.com:smartresponsor/interfacing.git", "no-api": true},
+    {"type": "vcs", "url": "git@github.com:smartresponsor/navigating.git", "no-api": true},
+    {"type": "vcs", "url": "git@github.com:smartresponsor/objecting.git", "no-api": true},
+    {"type": "vcs", "url": "git@github.com:smartresponsor/viewing.git", "no-api": true}
+  ],
+  "require": {
+    "php": "^8.4",
+    "ext-json": "*",
+    "cruding/crud": "dev-master",
+    "easycorp/easyadmin-bundle": "^5.0",
+    "interfacing/interface": "dev-master",
+    "navigating/navigation": "dev-master",
+    "objecting/object": "dev-master",
+    "symfony/config": "^8.0",
+    "symfony/console": "^8.0",
+    "symfony/dependency-injection": "^8.0",
+    "symfony/http-foundation": "^8.0",
+    "symfony/http-kernel": "^8.0",
+    "symfony/routing": "^8.0",
+    "viewing/view": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\Locating\\": "src/"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "smartresponsor-canon": {
+      "workspace_name": "Locating",
+      "entity_name": "Location",
+      "root_namespace": "App\\Locating\\",
+      "author": "Oleksandr Tishchenko",
+      "author_email": "dev@highhopesamerica.com",
+      "deploy_nginx": "deploy/nginx/nginx.conf"
+    }
+  }
+}
+

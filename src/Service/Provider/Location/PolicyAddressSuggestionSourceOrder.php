@@ -27,18 +27,16 @@ final class PolicyAddressSuggestionSourceOrder implements AddressSuggestionSourc
     public function order(iterable $sources, string $query, ?string $countryCode = null, int $limit = 5): array
     {
         $eligible = [];
+        $index = 0;
 
-        foreach ($sources as $index => $source) {
-            if (!$source instanceof AddressSuggestionSourceInterface) {
-                continue;
-            }
-
+        foreach ($sources as $source) {
             if (!$this->quotaPolicy->allows($source->sourceKey(), $query, $countryCode, $limit)) {
+                ++$index;
                 continue;
             }
 
             $eligible[] = [
-                'index' => (int) $index,
+                'index' => $index++,
                 'score' => $this->healthPolicy->score($source->sourceKey()),
                 'costPenalty' => $this->costPolicy->penalty($source->sourceKey(), $query, $countryCode, $limit),
                 'source' => $source,

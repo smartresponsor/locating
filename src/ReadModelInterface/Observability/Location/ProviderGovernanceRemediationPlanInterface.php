@@ -19,11 +19,15 @@ interface ProviderGovernanceRemediationPlanInterface
 
     public function decision(): string;
 
+    /** @return list<string> */
     public function reasons(): array;
 
+    /** @return list<string> */
     public function recommendations(): array;
 
+    /** @return list<ProviderGovernanceRemediationStepInterface> */
     public function steps(): array;
 
+    /** @return array{sourceKey:string,operation:string,severity:string,decision:string,reasons:list<string>,recommendations:list<string>,steps:list<array{code:string,priority:string,summary:string,ownerHint:string}>} */
     public function toArray(): array;
 }

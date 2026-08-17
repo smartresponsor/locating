@@ -55,6 +55,7 @@ final class InMemoryMetricRecorder implements LocationMetricRecorderInterface
         }
     }
 
+    /** @return array<string,array{count:int,errorCount:int,avgMs:float,errorRate:float}> */
     public function snapshot(): array
     {
         $snapshot = [];

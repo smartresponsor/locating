@@ -8,6 +8,8 @@ declare(strict_types=1);
 
 namespace App\Locating\Infrastructure\Provider\Location\Http;
 
+use App\Locating\InfrastructureInterface\Provider\Location\Http\ReverseHttpClientInterface;
+
 /**
  * Simple reverse geocoding client backed by OpenStreetMap Nominatim API.
  *
@@ -71,6 +73,10 @@ final class NominatimReverseHttpClient implements ReverseHttpClientInterface
 
         if ($statusCode < 200 || $statusCode >= 300) {
             throw new \RuntimeException('Nominatim reverse request failed with HTTP '.$statusCode);
+        }
+
+        if (!is_string($body)) {
+            throw new \RuntimeException('Nominatim reverse response body is not a string');
         }
 
         $decoded = json_decode($body, true);

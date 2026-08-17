@@ -13,6 +13,7 @@ use App\Locating\ServiceInterface\Provider\Location\Runtime\Privacy\RetentionInt
 
 class RetentionPolicy implements RetentionInterface
 {
+    /** @return array<string,array{ttl_days:int,action:string}> */
     public function policy(): array
     {
         return [
@@ -21,6 +22,7 @@ class RetentionPolicy implements RetentionInterface
         ];
     }
 
+    /** @return array{ttl_days:int,action:string} */
     public function rule(string $kind): array
     {
         $p = $this->policy();

@@ -9,8 +9,8 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Entity\Location;
 
-use App\Locating\Model\Location\LocationStatusReport;
-use App\Locating\Model\Location\ProviderMetricSnapshot;
+use App\Locating\ReadModel\Observability\Location\LocationStatusReport;
+use App\Locating\ReadModel\Observability\Location\ProviderMetricSnapshot;
 use PHPUnit\Framework\TestCase;
 
 final class LocationStatusReportTest extends TestCase

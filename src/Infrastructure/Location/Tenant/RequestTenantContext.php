@@ -34,7 +34,8 @@ final class RequestTenantContext implements TenantContextInterface
     {
         $request = $this->requestStack->getCurrentRequest();
         if (null === $request) {
-            $envValue = (string) ($_ENV['LOCATOR_DEFAULT_TENANT'] ?? $_SERVER['LOCATOR_DEFAULT_TENANT'] ?? '');
+            $envRaw = $_ENV['LOCATOR_DEFAULT_TENANT'] ?? $_SERVER['LOCATOR_DEFAULT_TENANT'] ?? null;
+            $envValue = is_string($envRaw) ? $envRaw : '';
             $fallback = '' !== $envValue ? $envValue : self::DEFAULT_TENANT;
 
             return $fallback;
@@ -50,7 +51,8 @@ final class RequestTenantContext implements TenantContextInterface
             return $this->normalize($queryValue);
         }
 
-        $envValue = (string) ($_ENV['LOCATOR_DEFAULT_TENANT'] ?? $_SERVER['LOCATOR_DEFAULT_TENANT'] ?? '');
+        $envRaw = $_ENV['LOCATOR_DEFAULT_TENANT'] ?? $_SERVER['LOCATOR_DEFAULT_TENANT'] ?? null;
+        $envValue = is_string($envRaw) ? $envRaw : '';
         if ('' !== $envValue) {
             return $this->normalize($envValue);
         }

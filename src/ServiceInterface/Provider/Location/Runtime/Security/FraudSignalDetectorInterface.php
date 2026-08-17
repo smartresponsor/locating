@@ -13,7 +13,8 @@ interface FraudSignalDetectorInterface
 {
     /**
      * Return suspicion score 0..1 (1 is highly suspicious).
-     * input may contain: ipDistanceKm, velocityRps, failRatio, newDevice(0/1), proxy(0/1)
+     *
+     * @param array{ipDistanceKm?:float|int,velocityRps?:float|int,failRatio?:float|int,newDevice?:int|bool,proxy?:int|bool} $signal
      */
     public function score(array $signal): float;
 }

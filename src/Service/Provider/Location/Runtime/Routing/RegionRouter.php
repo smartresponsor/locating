@@ -13,7 +13,10 @@ use App\Locating\ServiceInterface\Provider\Location\Runtime\Routing\RegionRouter
 
 final class RegionRouter implements RegionRouterInterface
 {
-    /** Select region by health and SLA weight (simplified) */
+    /**
+     * @param array<string,float|int> $regionHealth
+     * @param array<string,float|int> $slaWeight
+     */
     public function select(array $regionHealth, array $slaWeight): string
     {
         $best = '';

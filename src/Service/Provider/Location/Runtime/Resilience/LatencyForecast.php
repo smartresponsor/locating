@@ -12,6 +12,7 @@ namespace App\Locating\Service\Provider\Location\Runtime\Resilience;
 final class LatencyForecast
 {
     private int $cap;
+    /** @var list<float> */
     private array $buf = [];
     public function __construct(int $cap = 128)
     {

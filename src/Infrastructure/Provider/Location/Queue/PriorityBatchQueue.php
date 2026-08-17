@@ -13,9 +13,10 @@ use App\Locating\InfrastructureInterface\Provider\Location\Queue\PriorityBatchQu
 
 final class PriorityBatchQueue implements PriorityBatchQueueInterface
 {
-    /** @var array<int, array<int, array{id:string,payload:array}>> priority => list */
+    /** @var array<int,list<array{id:string,payload:array<string,mixed>}>> */
     private array $q = [];
 
+    /** @param array<string,mixed> $payload */
     public function enqueue(int $priority, array $payload): string
     {
         $p = max(-10, min(10, $priority));
@@ -26,6 +27,7 @@ final class PriorityBatchQueue implements PriorityBatchQueueInterface
         return $id;
     }
 
+    /** @return list<array{id:string,payload:array<string,mixed>}> */
     public function dequeueBatch(int $max): array
     {
         $out = [];

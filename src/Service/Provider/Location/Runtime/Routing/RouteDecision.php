@@ -11,7 +11,7 @@ namespace App\Locating\Service\Provider\Location\Runtime\Routing;
 
 final class RouteDecision
 {
-    /** Choose provider with highest health */
+    /** @param array<string,float|int> $providerScore */
     public function choose(array $providerScore): string
     {
         $best = null;

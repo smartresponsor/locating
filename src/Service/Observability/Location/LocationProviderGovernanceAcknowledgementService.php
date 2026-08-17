@@ -21,16 +21,17 @@ final class LocationProviderGovernanceAcknowledgementService implements Location
     {
     }
 
+    /** @param array<string, mixed> $payload */
     public function acknowledge(array $payload): ProviderGovernanceAcknowledgementReportInterface
     {
-        $requested = $payload['acknowledgements'] ?? [];
+        $requested = $this->normalizeAcknowledgements($payload['acknowledgements'] ?? null);
         $items = [];
 
         foreach ($this->execution->report()->providers() as $sourceKey => $provider) {
             foreach ($provider->steps() as $step) {
                 $request = $requested[$sourceKey][$step->code()] ?? [];
-                $requestedOutcome = is_array($request) ? (string) ($request['outcome'] ?? 'pending') : 'pending';
-                $note = is_array($request) ? (string) ($request['note'] ?? '') : '';
+                $requestedOutcome = is_string($request['outcome'] ?? null) ? $request['outcome'] : 'pending';
+                $note = is_string($request['note'] ?? null) ? $request['note'] : '';
                 [$normalizedOutcome, $ackState, $accepted] = $this->normalizeOutcome($requestedOutcome, $step->acknowledgementRequired());
                 $items[$sourceKey.':'.$step->code()] = new ProviderGovernanceAcknowledgement(
                     $sourceKey,
@@ -45,6 +46,37 @@ final class LocationProviderGovernanceAcknowledgementService implements Location
         }
 
         return new ProviderGovernanceAcknowledgementReport('location', $items);
+    }
+
+    /**
+     * @return array<string, array<string, array<string, mixed>>>
+     */
+    private function normalizeAcknowledgements(mixed $value): array
+    {
+        if (!is_array($value)) {
+            return [];
+        }
+
+        $normalized = [];
+        foreach ($value as $sourceKey => $steps) {
+            if (!is_string($sourceKey) || !is_array($steps)) {
+                continue;
+            }
+            foreach ($steps as $stepCode => $request) {
+                if (!is_string($stepCode) || !is_array($request)) {
+                    continue;
+                }
+                $normalizedRequest = [];
+                foreach ($request as $key => $entry) {
+                    if (is_string($key)) {
+                        $normalizedRequest[$key] = $entry;
+                    }
+                }
+                $normalized[$sourceKey][$stepCode] = $normalizedRequest;
+            }
+        }
+
+        return $normalized;
     }
 
     /** @return array{0:string,1:string,2:bool} */

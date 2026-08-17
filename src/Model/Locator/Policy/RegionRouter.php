@@ -11,7 +11,12 @@ namespace App\Locating\Model\Locator\Policy;
 
 final class RegionRouter
 {
-    /** Select region by health and SLA weight (simplified) */
+    /**
+     * Select region by health and SLA weight (simplified).
+     *
+     * @param array<string, float|int> $regionHealth
+     * @param array<string, float|int> $slaWeight
+     */
     public function select(array $regionHealth, array $slaWeight): string
     {
         $best = '';

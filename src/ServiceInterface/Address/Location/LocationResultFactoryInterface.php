@@ -15,7 +15,7 @@ use App\Locating\ModelInterface\Location\AddressSuggestionResultInterface;
 interface LocationResultFactoryInterface
 {
     /**
-     * @param array{label:string,address:array<string,string>,providerKey:string} $suggestion
+     * @param array{label:string,address:array<string,mixed>,providerKey:string} $suggestion
      */
     public function createSuggestionResultFromArray(array $suggestion): AddressSuggestionResultInterface;
 

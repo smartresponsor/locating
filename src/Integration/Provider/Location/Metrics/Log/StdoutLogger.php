@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Locating\Integration\Provider\Location\Metrics\Log;
 
+use App\Locating\Contract\Location\LocationLoggerContract as LoggerInterface;
+
 final class StdoutLogger implements LoggerInterface
 {
     public function log(string $level, string $message, array $context = []): void

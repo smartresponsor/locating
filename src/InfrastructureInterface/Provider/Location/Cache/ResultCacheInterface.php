@@ -11,8 +11,10 @@ namespace App\Locating\InfrastructureInterface\Provider\Location\Cache;
 
 interface ResultCacheInterface
 {
+    /** @return array<string, mixed>|null */
     public function get(string $key): ?array;
 
+    /** @param array<string, mixed> $val */
     public function put(string $key, array $val, int $ttlS): void;
 
     public function invalidate(string $key): void;

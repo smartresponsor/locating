@@ -19,5 +19,6 @@ interface ProviderGovernanceRemediationStepInterface
 
     public function ownerHint(): string;
 
+    /** @return array{code:string,priority:string,summary:string,ownerHint:string} */
     public function toArray(): array;
 }

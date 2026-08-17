@@ -11,7 +11,7 @@ namespace App\Locating\Infrastructure\Provider\Location;
 
 use App\Locating\InfrastructureInterface\Provider\Location\Backend\ProviderMetricSnapshotBackendInterface;
 use App\Locating\InfrastructureInterface\Provider\Location\Store\ProviderMetricSnapshotStoreInterface;
-use App\Locating\Model\Location\ProviderMetricSnapshot;
+use App\Locating\ReadModel\Observability\Location\ProviderMetricSnapshot;
 
 final class ProviderMetricSnapshotStore implements ProviderMetricSnapshotStoreInterface
 {

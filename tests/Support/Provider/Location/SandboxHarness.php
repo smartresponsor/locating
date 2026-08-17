@@ -9,15 +9,20 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Support\Provider\Location;
 
+use App\Locating\Tests\Support\Provider\Location\Interface\SandboxHarnessInterface;
+
 final class SandboxHarness implements SandboxHarnessInterface
 {
-    /** @var array<string, array<string, array>> */
+    /** @var array<string,array<string,array<string,mixed>>> */
     private array $rec = [];
+
+    /** @param array<string,mixed> $response */
     public function record(string $providerId, string $sig, array $response): void
     {
         $this->rec[$providerId] = $this->rec[$providerId] ?? [];
         $this->rec[$providerId][$sig] = $response;
     }
+    /** @return array<string,mixed>|null */
     public function replay(string $providerId, string $sig): ?array
     {
         return $this->rec[$providerId][$sig] ?? null;

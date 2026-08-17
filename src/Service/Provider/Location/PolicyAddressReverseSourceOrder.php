@@ -27,18 +27,16 @@ final class PolicyAddressReverseSourceOrder implements AddressReverseSourceOrder
     public function order(iterable $sources, float $latitude, float $longitude, ?string $countryCode = null): array
     {
         $eligible = [];
+        $index = 0;
 
-        foreach ($sources as $index => $source) {
-            if (!$source instanceof AddressReverseSourceInterface) {
-                continue;
-            }
-
+        foreach ($sources as $source) {
             if (!$this->quotaPolicy->allows($source->sourceKey(), $latitude, $longitude, $countryCode)) {
+                ++$index;
                 continue;
             }
 
             $eligible[] = [
-                'index' => (int) $index,
+                'index' => $index++,
                 'score' => $this->healthPolicy->score($source->sourceKey()),
                 'costPenalty' => $this->costPolicy->penalty($source->sourceKey(), $latitude, $longitude, $countryCode),
                 'source' => $source,

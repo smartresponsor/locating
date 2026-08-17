@@ -22,17 +22,19 @@ final class BanditPolicy implements BanditPolicyInterface
         $this->eps = max(0.0, min(1.0, $eps));
     }
 
+    /** @param array<string,float|int> $arm */
     public function select(array $arm): string
     {
-        if (empty($arm)) {
+        if ([] === $arm) {
             return '';
         }
+        $keys = array_keys($arm);
         if (mt_rand() / mt_getrandmax() < $this->eps) {
-            return array_keys($arm)[array_rand($arm)];
+            return $keys[array_rand($keys)];
         }
         $bestId = '';
         $best = -INF;
-        foreach ($arm as $id => $w) {
+        foreach ($arm as $id => $weight) {
             $s = $this->stat[$id]['avg'] ?? 0.0;
             if ($s > $best) {
                 $best = $s;
@@ -40,7 +42,7 @@ final class BanditPolicy implements BanditPolicyInterface
             }
         }
 
-        return $bestId ?: array_keys($arm)[0];
+        return '' !== $bestId ? $bestId : $keys[0];
     }
 
     public function update(string $armId, float $reward): void

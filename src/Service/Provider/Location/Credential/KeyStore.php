@@ -13,7 +13,7 @@ use App\Locating\ServiceInterface\Provider\Location\Credential\KeyStoreInterface
 
 final class KeyStore implements KeyStoreInterface
 {
-    /** In-memory demo; replace with secure vault adapter */
+    /** @var array<string,array{key:string,start:?int,revoke:?int}> */
     private array $map = [];
 
     public function get(string $providerId): ?string

@@ -12,8 +12,11 @@ namespace App\Locating\Model\Locator\Policy;
 /** Simple per-tenant cost/request quota guard */
 final class QuotaGuard
 {
-    private array $limit = []; // tenant => {req, cost}
-    private array $use = [];   // tenant => {req, cost}
+    /** @var array<string, array{req:int, cost:float}> */
+    private array $limit = [];
+
+    /** @var array<string, array{req:int, cost:float}> */
+    private array $use = [];
     public function setLimit(string $tenantId, int $reqLimit, float $costLimit): void
     {
         $this->limit[$tenantId] = ['req' => $reqLimit, 'cost' => $costLimit];
@@ -37,6 +40,7 @@ final class QuotaGuard
         $this->use[$tenantId] = $u;
         return true;
     }
+    /** @return array{req:int, cost:float} */
     public function state(string $tenantId): array
     {
         return $this->use[$tenantId] ?? ['req' => 0,'cost' => 0.0];

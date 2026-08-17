@@ -23,5 +23,6 @@ interface ProviderGovernanceSnapshotInterface
 
     public function unitCost(): float;
 
+    /** @return array{sourceKey:string,operation:string,successRate:float,ewmaMs:float,quotaAllowed:bool,unitCost:float} */
     public function toArray(): array;
 }

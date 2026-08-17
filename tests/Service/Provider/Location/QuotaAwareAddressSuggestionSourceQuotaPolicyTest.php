@@ -16,8 +16,15 @@ final class QuotaAwareAddressSuggestionSourceQuotaPolicyTest extends TestCase
         $seen = [];
         $policy = new QuotaAwareAddressSuggestionSourceQuotaPolicy(
             new class ($seen) implements ProviderQuotaSignalReaderInterface {
+                /** @param array<int,mixed> $seen */
                 public function __construct(private array &$seen)
                 {
+                }
+
+                /** @return array<int,mixed> */
+                public function seen(): array
+                {
+                    return $this->seen;
                 }
 
                 public function read(string $sourceKey, string $operation, array $context = []): \App\Locating\ReadModelInterface\Observability\Location\ProviderQuotaSignalInterface

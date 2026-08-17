@@ -26,7 +26,13 @@ final class GovernanceAcknowledgementController implements GovernanceAcknowledge
         if (!is_array($payload)) {
             $payload = [];
         }
+        $normalized = [];
+        foreach ($payload as $key => $value) {
+            if (is_string($key)) {
+                $normalized[$key] = $value;
+            }
+        }
 
-        return new JsonResponse($this->service->acknowledge($payload)->toArray());
+        return new JsonResponse($this->service->acknowledge($normalized)->toArray());
     }
 }

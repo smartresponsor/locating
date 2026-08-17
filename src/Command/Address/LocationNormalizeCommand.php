@@ -32,8 +32,11 @@ final class LocationNormalizeCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $raw = (string) $input->getArgument('raw');
-        $result = $this->addressPipeline->process(new AddressInput($raw));
+        $rawValue = $input->getArgument('raw');
+        if (!is_string($rawValue)) {
+            throw new \InvalidArgumentException('Raw address must be a string.');
+        }
+        $result = $this->addressPipeline->process(new AddressInput($rawValue));
 
         $output->writeln(json_encode($result->toArray(), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_THROW_ON_ERROR));
 

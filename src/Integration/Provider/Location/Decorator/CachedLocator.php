@@ -7,6 +7,7 @@ namespace App\Locating\Integration\Provider\Location\Decorator;
 use App\Locating\Integration\Provider\Location\Cache\SimpleArrayCache;
 use App\Locating\Model\Location\AddressData;
 use App\Locating\Model\Location\GeoPoint;
+use App\Locating\ServiceInterface\Provider\Location\Runtime\Geo\LocatorInterface;
 
 final class CachedLocator implements LocatorInterface
 {

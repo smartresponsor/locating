@@ -42,13 +42,27 @@ class MapboxProviderService implements MapboxLocationProviderInterface
             return [];
         }
         $data = json_decode($body, true);
+        if (!is_array($data)) {
+            return [];
+        }
+        $features = $data['features'] ?? [];
+        if (!is_array($features)) {
+            return [];
+        }
         $out = [];
-        foreach (($data['features'] ?? []) as $f) {
+        foreach ($features as $f) {
+            if (!is_array($f)) {
+                continue;
+            }
+            $properties = is_array($f['properties'] ?? null) ? $f['properties'] : [];
+            $geometry = is_array($f['geometry'] ?? null) ? $f['geometry'] : [];
+            $coordinates = is_array($geometry['coordinates'] ?? null) ? $geometry['coordinates'] : [];
             $out[] = [
-                'formatted' => $f['properties']['full_address'] ?? ($f['place_name'] ?? ''),
-                'lat' => $f['geometry']['coordinates'][1] ?? null,
-                'lon' => $f['geometry']['coordinates'][0] ?? null,
-                'source' => 'mapbox', 'confidence' => $f['properties']['accuracy'] ?? 0.5,
+                'formatted' => is_string($properties['full_address'] ?? null) ? $properties['full_address'] : (is_string($f['place_name'] ?? null) ? $f['place_name'] : ''),
+                'lat' => is_numeric($coordinates[1] ?? null) ? (float) $coordinates[1] : null,
+                'lon' => is_numeric($coordinates[0] ?? null) ? (float) $coordinates[0] : null,
+                'source' => 'mapbox',
+                'confidence' => is_numeric($properties['accuracy'] ?? null) ? (float) $properties['accuracy'] : 0.5,
             ];
         }
 
@@ -67,11 +81,25 @@ class MapboxProviderService implements MapboxLocationProviderInterface
             return [];
         }
         $data = json_decode($body, true);
+        if (!is_array($data)) {
+            return [];
+        }
+        $features = $data['features'] ?? [];
+        if (!is_array($features)) {
+            return [];
+        }
         $out = [];
-        foreach (($data['features'] ?? []) as $f) {
+        foreach ($features as $f) {
+            if (!is_array($f)) {
+                continue;
+            }
+            $properties = is_array($f['properties'] ?? null) ? $f['properties'] : [];
             $out[] = [
-                'formatted' => $f['properties']['full_address'] ?? ($f['place_name'] ?? ''),
-                'lat' => $lat, 'lon' => $lon, 'source' => 'mapbox', 'confidence' => $f['properties']['accuracy'] ?? 0.5,
+                'formatted' => is_string($properties['full_address'] ?? null) ? $properties['full_address'] : (is_string($f['place_name'] ?? null) ? $f['place_name'] : ''),
+                'lat' => $lat,
+                'lon' => $lon,
+                'source' => 'mapbox',
+                'confidence' => is_numeric($properties['accuracy'] ?? null) ? (float) $properties['accuracy'] : 0.5,
             ];
         }
 
@@ -96,14 +124,26 @@ class MapboxProviderService implements MapboxLocationProviderInterface
             return [];
         }
         $data = json_decode($body, true);
+        if (!is_array($data)) {
+            return [];
+        }
+        $suggestions = $data['suggestions'] ?? [];
+        if (!is_array($suggestions)) {
+            return [];
+        }
         $out = [];
-        foreach (($data['suggestions'] ?? []) as $s) {
+        foreach ($suggestions as $s) {
+            if (!is_array($s)) {
+                continue;
+            }
+            $coordinates = is_array($s['coordinates'] ?? null) ? $s['coordinates'] : [];
+            $metadata = is_array($s['metadata'] ?? null) ? $s['metadata'] : [];
             $out[] = [
-                'text' => $s['nameEntity'] ?? $s['full_address'] ?? '',
-                'placeId' => $s['mapbox_id'] ?? '',
-                'lat' => $s['coordinates']['latitude'] ?? null,
-                'lon' => $s['coordinates']['longitude'] ?? null,
-                'score' => $s['metadata']['confidence'] ?? 0.5,
+                'text' => is_string($s['nameEntity'] ?? null) ? $s['nameEntity'] : (is_string($s['full_address'] ?? null) ? $s['full_address'] : ''),
+                'placeId' => is_string($s['mapbox_id'] ?? null) ? $s['mapbox_id'] : '',
+                'lat' => is_numeric($coordinates['latitude'] ?? null) ? (float) $coordinates['latitude'] : null,
+                'lon' => is_numeric($coordinates['longitude'] ?? null) ? (float) $coordinates['longitude'] : null,
+                'score' => is_numeric($metadata['confidence'] ?? null) ? (float) $metadata['confidence'] : 0.5,
             ];
         }
 

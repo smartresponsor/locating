@@ -33,7 +33,9 @@ final class AddressReverseProviderTest extends TestCase
         };
 
         $metricRecorder = new class () implements LocationMetricBackendInterface {
+            /** @var list<array{string, float}> */
             public array $latencies = [];
+            /** @var list<array{string, string}> */
             public array $counters = [];
 
             public function recordLatency(string $operation, float $milliseconds): void
@@ -51,8 +53,10 @@ final class AddressReverseProviderTest extends TestCase
         $result = $provider->reverse(29.7604, -95.3698, 'US');
 
         self::assertSame('verified', $result->status());
-        self::assertSame('Main St 10', $result->address()?->toArray()['street']);
-        self::assertSame('US', $result->address()?->toArray()['countryCode']);
+        $address = $result->address();
+        self::assertNotNull($address);
+        self::assertSame('Main St 10', $address->toArray()['street']);
+        self::assertSame('US', $address->toArray()['countryCode']);
         self::assertSame('nominatim', $result->providerKey());
         self::assertCount(1, $metricRecorder->latencies);
         self::assertSame(['address_reverse', 'ok'], $metricRecorder->counters[0]);

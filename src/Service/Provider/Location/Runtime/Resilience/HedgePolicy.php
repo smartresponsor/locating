@@ -17,6 +17,7 @@ final class HedgePolicy implements HedgePolicyInterface
     {
     }
 
+    /** @param list<float|int> $latencySample */
     public function delayMs(array $latencySample): int
     {
         if (empty($latencySample)) {

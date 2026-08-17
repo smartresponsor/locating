@@ -11,9 +11,10 @@ namespace App\Locating\ServiceInterface\Provider\Location\Runtime\Batch;
 
 interface DeferredLookupInterface
 {
-    /** Enqueue lookup request and return job id. */
+    /** @param array<string,mixed> $payload */
     public function enqueue(array $payload): string;
-    /** Plan batch for processing; returns list of payloads with ids. */
+
+    /** @return list<array{id:string,payload:array<string,mixed>}> */
     public function plan(int $limit): array;
     /** Mark job as done. */
     public function done(string $id): void;

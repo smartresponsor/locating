@@ -6,6 +6,7 @@ namespace App\Locating\ServiceInterface\Provider\Location\Runtime\Experiment;
 
 interface BanditPolicyInterface
 {
+    /** @param array<string,float|int> $arm */
     public function select(array $arm): string;
 
     public function update(string $armId, float $reward): void;

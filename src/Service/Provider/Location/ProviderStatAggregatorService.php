@@ -34,6 +34,7 @@ final class ProviderStatAggregatorService implements ProviderStatAggregatorInter
         $this->st[$p][$r] = $row;
     }
 
+    /** @return list<array{providerId:string,region:string,count:int,errorRate:float,p95Ms:float,costAvg:float}> */
     public function snapshot(): array
     {
         $out = [];

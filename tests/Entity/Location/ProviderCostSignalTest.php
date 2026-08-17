@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Entity\Location;
 
-use App\Locating\Model\Location\ProviderCostSignal;
+use App\Locating\ReadModel\Observability\Location\ProviderCostSignal;
 use PHPUnit\Framework\TestCase;
 
 final class ProviderCostSignalTest extends TestCase

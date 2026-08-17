@@ -46,11 +46,22 @@ class NominatimProviderService implements NominatimLocationProviderInterface
         if (200 !== $code) {
             return [];
         }
-        $d = json_decode($body, true);
+        $decoded = json_decode($body, true);
+        if (!is_array($decoded)) {
+            return [];
+        }
         $out = [];
-        foreach (($d ?? []) as $it) {
-            $out[] = ['formatted' => $it['display_name'] ?? '', 'lat' => isset($it['lat']) ? (float) $it['lat'] : null,
-                'lon' => isset($it['lon']) ? (float) $it['lon'] : null, 'source' => 'nominatim', 'confidence' => (float) ($it['importance'] ?? 0.4)];
+        foreach ($decoded as $item) {
+            if (!is_array($item)) {
+                continue;
+            }
+            $out[] = [
+                'formatted' => is_string($item['display_name'] ?? null) ? $item['display_name'] : '',
+                'lat' => is_numeric($item['lat'] ?? null) ? (float) $item['lat'] : null,
+                'lon' => is_numeric($item['lon'] ?? null) ? (float) $item['lon'] : null,
+                'source' => 'nominatim',
+                'confidence' => is_numeric($item['importance'] ?? null) ? (float) $item['importance'] : 0.4,
+            ];
         }
 
         return $out;
@@ -64,21 +75,36 @@ class NominatimProviderService implements NominatimLocationProviderInterface
         if (200 !== $code) {
             return [];
         }
-        $d = json_decode($body, true);
-        if (!is_array($d)) {
+        $decoded = json_decode($body, true);
+        if (!is_array($decoded)) {
             return [];
         }
 
-        return [['formatted' => $d['display_name'] ?? '', 'lat' => $lat, 'lon' => $lon, 'source' => 'nominatim', 'confidence' => 0.5]];
+        return [[
+            'formatted' => is_string($decoded['display_name'] ?? null) ? $decoded['display_name'] : '',
+            'lat' => $lat,
+            'lon' => $lon,
+            'source' => 'nominatim',
+            'confidence' => 0.5,
+        ]];
     }
 
     public function autocomplete(string $q, string $country, string $bbox): array
     {
         $res = $this->geocode($q, $country);
         $out = [];
-        foreach ($res as $r) {
-            $out[] = ['text' => $r['formatted'] ?? '', 'placeId' => md5(($r['formatted'] ?? '').'|'.($r['lat'] ?? '').'|'.($r['lon'] ?? '')),
-                'lat' => $r['lat'] ?? null, 'lon' => $r['lon'] ?? null, 'score' => $r['confidence'] ?? 0.5];
+        foreach ($res as $row) {
+            $formatted = is_string($row['formatted'] ?? null) ? $row['formatted'] : '';
+            $lat = is_numeric($row['lat'] ?? null) ? (float) $row['lat'] : null;
+            $lon = is_numeric($row['lon'] ?? null) ? (float) $row['lon'] : null;
+            $score = is_numeric($row['confidence'] ?? null) ? (float) $row['confidence'] : 0.5;
+            $out[] = [
+                'text' => $formatted,
+                'placeId' => md5($formatted.'|'.($lat ?? '').'|'.($lon ?? '')),
+                'lat' => $lat,
+                'lon' => $lon,
+                'score' => $score,
+            ];
         }
 
         return $out;

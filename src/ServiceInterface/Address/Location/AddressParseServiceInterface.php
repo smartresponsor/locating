@@ -11,5 +11,6 @@ namespace App\Locating\ServiceInterface\Address\Location;
 
 interface AddressParseServiceInterface
 {
+    /** @return array<string,mixed> */
     public function parse(string $address, string $locale): array;
 }

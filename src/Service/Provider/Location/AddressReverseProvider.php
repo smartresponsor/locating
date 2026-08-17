@@ -36,21 +36,31 @@ final class AddressReverseProvider implements AddressReverseProviderInterface, A
         try {
             $payload = $this->gateway->reverse($latitude, $longitude, $countryCode);
             $address = isset($payload['address']) && is_array($payload['address']) ? $payload['address'] : [];
+            $string = static fn (mixed $value): string => is_string($value) ? $value : '';
 
             $streetParts = [];
-            if (!empty($address['road'])) {
-                $streetParts[] = (string) $address['road'];
+            $road = $string($address['road'] ?? null);
+            if ('' !== $road) {
+                $streetParts[] = $road;
             }
-            if (!empty($address['house_number'])) {
-                $streetParts[] = (string) $address['house_number'];
+            $houseNumber = $string($address['house_number'] ?? null);
+            if ('' !== $houseNumber) {
+                $streetParts[] = $houseNumber;
+            }
+            $city = $string($address['city'] ?? null);
+            if ('' === $city) {
+                $city = $string($address['town'] ?? null);
+            }
+            if ('' === $city) {
+                $city = $string($address['village'] ?? null);
             }
 
             $dataArray = [
                 'street' => trim(implode(' ', $streetParts)),
-                'city' => (string) ($address['city'] ?? $address['town'] ?? $address['village'] ?? ''),
-                'region' => (string) ($address['state'] ?? ''),
-                'postalCode' => (string) ($address['postcode'] ?? ''),
-                'countryCode' => strtoupper((string) ($address['country_code'] ?? '')),
+                'city' => $city,
+                'region' => $string($address['state'] ?? null),
+                'postalCode' => $string($address['postcode'] ?? null),
+                'countryCode' => strtoupper($string($address['country_code'] ?? null)),
             ];
 
             $filled = count(array_filter($dataArray, static fn ($value): bool => '' !== $value));

@@ -16,10 +16,12 @@ final class AddressBatchResultStorageBackend implements AddressBatchResultStorag
 
     public function resultList(string $jobId): array
     {
-        return array_map(
-            static fn ($result) => new AddressBatchResultRecord($result),
-            $this->storage->resultList($jobId),
-        );
+        $recordList = [];
+        foreach ($this->storage->resultList($jobId) as $result) {
+            $recordList[] = new AddressBatchResultRecord($result);
+        }
+
+        return $recordList;
     }
 
     public function appendResult(string $jobId, AddressBatchResultRecordInterface $result): void

@@ -27,6 +27,7 @@ final class GovernanceAcknowledgementControllerTest extends TestCase
         $request = new Request(content: json_encode(['acknowledgements' => ['alpha' => ['reduce-traffic-share' => ['outcome' => 'approved']]]], JSON_THROW_ON_ERROR));
         $response = (new GovernanceAcknowledgementController($service))($request);
         $payload = json_decode((string) $response->getContent(), true, 512, JSON_THROW_ON_ERROR);
+        /** @var array{service:string, acknowledgements:array<string, array{acknowledgementState:string}>} $payload */
         self::assertSame('location', $payload['service']);
         self::assertSame('acknowledged', $payload['acknowledgements']['alpha:reduce-traffic-share']['acknowledgementState']);
     }

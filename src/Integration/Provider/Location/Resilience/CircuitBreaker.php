@@ -7,23 +7,36 @@ namespace App\Locating\Integration\Provider\Location\Resilience;
 final class CircuitBreaker
 {
     private string $path;
-    public function __construct(private string $nameEntity, private int $failThreshold = 3, private int $openSeconds = 30)
+    public function __construct(string $nameEntity, private int $failThreshold = 3, private int $openSeconds = 30)
     {
         $dir = sys_get_temp_dir().'/locator_cb';
         if (!is_dir($dir)) {
             @mkdir($dir, 0755, true);
         } $this->path = $dir.'/'.sha1($nameEntity).'.json';
     }
+    /** @return array{state:string,fails:int,openedAt:int} */
     private function read(): array
     {
+        $default = ['state' => 'CLOSED', 'fails' => 0, 'openedAt' => 0];
         if (!file_exists($this->path)) {
-            return ['state' => 'CLOSED','fails' => 0,'openedAt' => 0];
+            return $default;
         }
-        return json_decode((string)file_get_contents($this->path), true) ?: ['state' => 'CLOSED','fails' => 0,'openedAt' => 0];
+        $decoded = json_decode((string) file_get_contents($this->path), true);
+        if (!is_array($decoded)) {
+            return $default;
+        }
+
+        return [
+            'state' => is_string($decoded['state'] ?? null) ? $decoded['state'] : 'CLOSED',
+            'fails' => is_numeric($decoded['fails'] ?? null) ? (int) $decoded['fails'] : 0,
+            'openedAt' => is_numeric($decoded['openedAt'] ?? null) ? (int) $decoded['openedAt'] : 0,
+        ];
     }
+
+    /** @param array{state:string,fails:int,openedAt:int} $s */
     private function write(array $s): void
     {
-        file_put_contents($this->path, json_encode($s));
+        file_put_contents($this->path, json_encode($s, JSON_THROW_ON_ERROR));
     }
     public function allow(): bool
     {

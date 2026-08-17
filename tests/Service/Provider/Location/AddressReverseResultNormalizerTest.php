@@ -24,9 +24,11 @@ final class AddressReverseResultNormalizerTest extends TestCase
 
         $normalized = $normalizer->normalize($result, 29.7604, -95.3698, 'US');
 
-        self::assertSame('Main St 10', $normalized->address()?->street());
-        self::assertSame('Houston', $normalized->address()?->city());
-        self::assertSame('US', $normalized->address()?->countryCode());
+        $address = $normalized->address();
+        self::assertNotNull($address);
+        self::assertSame('Main St 10', $address->street());
+        self::assertSame('Houston', $address->city());
+        self::assertSame('US', $address->countryCode());
         self::assertSame(['latitude' => 29.7604, 'longitude' => -95.3698], $normalized->geoPoint());
         self::assertSame('reverse', $normalized->providerKey());
     }

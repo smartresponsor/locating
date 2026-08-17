@@ -17,6 +17,10 @@ final class ProviderContractGolden implements ProviderContractGoldenInterface
     {
     }
 
+    /**
+     * @param array<string, mixed> $request
+     * @param array<string, mixed> $response
+     */
     public function record(string $providerId, string $op, array $request, array $response): void
     {
         $p = $this->path($providerId, $op, $request);
@@ -24,6 +28,10 @@ final class ProviderContractGolden implements ProviderContractGoldenInterface
         file_put_contents($p, json_encode(['request' => $request, 'response' => $response], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
     }
 
+    /**
+     * @param array<string, mixed> $request
+     * @param array<string, mixed> $response
+     */
     public function verify(string $providerId, string $op, array $request, array $response, bool $update = false): bool
     {
         $p = $this->path($providerId, $op, $request);
@@ -33,7 +41,8 @@ final class ProviderContractGolden implements ProviderContractGoldenInterface
             return true;
         }
         $gold = json_decode((string) file_get_contents($p), true);
-        $ok = $this->equal($gold['response'] ?? null, $response);
+        $goldResponse = is_array($gold) ? ($gold['response'] ?? null) : null;
+        $ok = $this->equal($goldResponse, $response);
         if (!$ok && $update) {
             $this->record($providerId, $op, $request, $response);
 
@@ -43,15 +52,16 @@ final class ProviderContractGolden implements ProviderContractGoldenInterface
         return $ok;
     }
 
+    /** @param array<string, mixed> $request */
     public function path(string $providerId, string $op, array $request): string
     {
-        $hash = substr(hash('sha256', json_encode($request)), 0, 16);
+        $hash = substr(hash('sha256', json_encode($request, JSON_THROW_ON_ERROR)), 0, 16);
 
         return rtrim($this->root, '/').'/'.$providerId.'/'.$op.'/'.$hash.'.golden.json';
     }
 
-    private function equal($a, $b): bool
+    private function equal(mixed $a, mixed $b): bool
     {
-        return json_encode($a, JSON_UNESCAPED_SLASHES) === json_encode($b, JSON_UNESCAPED_SLASHES);
+        return json_encode($a, JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR) === json_encode($b, JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR);
     }
 }

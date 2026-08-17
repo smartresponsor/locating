@@ -29,9 +29,7 @@ final class OrderedAddressSuggestionProvider implements AddressSuggestionProvide
     ) {
         $this->sources = [];
         foreach ($sources as $source) {
-            if ($source instanceof AddressSuggestionSourceInterface) {
-                $this->sources[] = $source;
-            }
+            $this->sources[] = $source;
         }
     }
 

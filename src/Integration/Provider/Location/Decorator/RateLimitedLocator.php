@@ -6,6 +6,7 @@ namespace App\Locating\Integration\Provider\Location\Decorator;
 
 use App\Locating\Model\Location\AddressData;
 use App\Locating\Model\Location\GeoPoint;
+use App\Locating\ServiceInterface\Provider\Location\Runtime\Geo\LocatorInterface;
 
 final class RateLimitedLocator implements LocatorInterface
 {

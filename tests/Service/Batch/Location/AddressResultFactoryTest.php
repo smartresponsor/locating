@@ -24,7 +24,8 @@ final class AddressResultFactoryTest extends TestCase
         };
 
         $backend = new class ($record) implements AddressBatchResultBackendInterface {
-            public array $received = [];
+            /** @var array{0:string,1:?array<string,mixed>,2:list<array<string,mixed>>} */
+            public array $received = ['', null, []];
 
             public function __construct(private AddressBatchResultRecordInterface $record)
             {
@@ -47,7 +48,9 @@ final class AddressResultFactoryTest extends TestCase
 
         self::assertSame($record, $factory->create($result));
         self::assertSame('accepted', $backend->received[0]);
-        self::assertSame('1 Main', $backend->received[1]['street']);
+        $receivedAddress = $backend->received[1];
+        self::assertNotNull($receivedAddress);
+        self::assertSame('1 Main', $receivedAddress['street']);
         self::assertSame('normalized', $backend->received[2][0]['code']);
     }
 }

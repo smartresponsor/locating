@@ -11,8 +11,12 @@ namespace App\Locating\ServiceInterface\Provider\Location\Runtime\Batch;
 
 interface ColdStartWarmupInterface
 {
-    /** Return planned warmup key list for region/op. */
+    /** @return list<string> */
     public function plan(string $region, string $op, int $limit): array;
-    /** Execute warmup via resolver (key => array result); return warmed count. */
+
+    /**
+     * @param list<string> $key
+     * @param callable(string):array<string,mixed> $resolver
+     */
     public function run(string $region, string $op, array $key, callable $resolver, int $ttlS = 300): int;
 }

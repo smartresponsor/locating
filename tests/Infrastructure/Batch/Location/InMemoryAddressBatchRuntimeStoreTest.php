@@ -37,6 +37,7 @@ final class InMemoryAddressBatchRuntimeStoreTest extends TestCase
         self::assertSame(AddressBatchJobStatus::RUNNING, $reloaded->jobStatus());
 
         $results = $store->resultList($job->jobId());
+        /** @var list<array{status:string,address:array{city:string}}> $results */
         self::assertCount(1, $results);
         self::assertSame('partial', $results[0]['status']);
         self::assertSame('Houston', $results[0]['address']['city']);

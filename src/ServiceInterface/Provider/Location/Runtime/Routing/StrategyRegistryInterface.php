@@ -10,5 +10,6 @@ interface StrategyRegistryInterface
 
     public function byName(string $nameEntity): ?object;
 
+    /** @return list<string> */
     public function names(): array;
 }

@@ -39,6 +39,7 @@ final class LocatorFixtureReader implements LocatorFixtureReaderInterface
                 if (!is_array($decoded)) {
                     continue;
                 }
+                /** @var array<string,mixed> $decoded */
 
                 if (!isset($decoded['raw']) || !is_string($decoded['raw'])) {
                     continue;

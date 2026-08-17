@@ -25,9 +25,11 @@ final class CacheTtlPolicy implements CacheTtlPolicyInterface
         $this->map[$tag] = max(1, $ttlS);
     }
 
+    /** @param array<string,mixed> $ctx */
     public function ttl(string $key, array $ctx = []): int
     {
-        $tag = (string) ($ctx['tag'] ?? (str_starts_with($key, 'addr:') ? 'addr' : 'default'));
+        $defaultTag = str_starts_with($key, 'addr:') ? 'addr' : 'default';
+        $tag = is_string($ctx['tag'] ?? null) && '' !== $ctx['tag'] ? $ctx['tag'] : $defaultTag;
 
         return $this->map[$tag] ?? $this->fallback;
     }

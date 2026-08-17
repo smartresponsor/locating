@@ -16,12 +16,13 @@ final class PublicIndexSmokeTest extends TestCase
         $command = sprintf('%s %s', escapeshellarg(PHP_BINARY), escapeshellarg(__DIR__ . '/../../../public/index.php'));
         $output = shell_exec($command);
 
-        self::assertNotNull($output);
+        self::assertIsString($output);
 
         $payload = json_decode($output, true, 512, JSON_THROW_ON_ERROR);
+        /** @var array{status:string, component:string} $payload */
 
-        self::assertSame('ok', $payload['status'] ?? null);
-        self::assertSame('locator-sketch30', $payload['component'] ?? null);
+        self::assertSame('ok', $payload['status']);
+        self::assertSame('locator-sketch30', $payload['component']);
         self::assertSame(['status', 'component'], array_keys($payload));
     }
 }

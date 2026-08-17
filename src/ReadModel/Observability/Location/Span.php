@@ -21,6 +21,10 @@ final class Span
     {
         $this->end = microtime(true);
     }
+    /**
+     * @param array<string,mixed> $attr
+     * @return array<string,mixed>
+     */
     public function export(array $attr = []): array
     {
         $dur = ($this->end > 0.0) ? ($this->end - $this->start) : 0.0;

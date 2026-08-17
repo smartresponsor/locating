@@ -15,7 +15,9 @@ interface ProviderGovernanceRemediationPlanReportInterface
 
     public function itemCount(): int;
 
+    /** @return array<string, ProviderGovernanceRemediationPlanInterface> */
     public function providers(): array;
 
+    /** @return array{service:string,itemCount:int,providers:array<string,array{sourceKey:string,operation:string,severity:string,decision:string,reasons:list<string>,recommendations:list<string>,steps:list<array{code:string,priority:string,summary:string,ownerHint:string}>}>} */
     public function toArray(): array;
 }

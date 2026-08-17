@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Locating\Infrastructure\Provider\Location;
 
 use App\Locating\InfrastructureInterface\Provider\Location\Backend\AddressSuggestBackendInterface;
+use App\Locating\ServiceInterface\Provider\Location\AddressSuggestionProviderInterface as AddressSuggestProviderInterface;
 
 final class AddressSuggestBackend implements AddressSuggestBackendInterface
 {
@@ -31,8 +32,8 @@ final class AddressSuggestBackend implements AddressSuggestBackendInterface
             foreach ($provider->suggest($query, $countryCode, $limit) as $suggestion) {
                 $items[] = [
                     'label' => $suggestion->label(),
-                    'address' => $suggestion->addressData()->toArray(),
-                    'providerKey' => $suggestion->providerKey(),
+                    'address' => $suggestion->address()->toArray(),
+                    'providerKey' => $suggestion->providerKey() ?? '',
                 ];
                 if (count($items) >= $limit) {
                     return $items;

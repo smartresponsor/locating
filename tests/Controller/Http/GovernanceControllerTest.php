@@ -25,6 +25,7 @@ final class GovernanceControllerTest extends TestCase
         $controller = new GovernanceController($service);
         $response = $controller(new Request());
         $payload = json_decode((string) $response->getContent(), true, 512, JSON_THROW_ON_ERROR);
+        /** @var array{service:string, providerCount:int, providers:array<string, array<string, mixed>>} $payload */
 
         self::assertSame('location', $payload['service']);
         self::assertSame(1, $payload['providerCount']);

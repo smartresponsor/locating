@@ -59,6 +59,7 @@ final class ProviderGovernanceAcknowledgement implements ProviderGovernanceAckno
         return $this->note;
     }
 
+    /** @return array{sourceKey:string,stepCode:string,requestedOutcome:string,normalizedOutcome:string,acknowledgementState:string,accepted:bool,note:string} */
     public function toArray(): array
     {
         return [

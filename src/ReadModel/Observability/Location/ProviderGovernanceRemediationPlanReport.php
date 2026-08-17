@@ -9,10 +9,12 @@ declare(strict_types=1);
 
 namespace App\Locating\ReadModel\Observability\Location;
 
+use App\Locating\ReadModelInterface\Observability\Location\ProviderGovernanceRemediationPlanInterface;
 use App\Locating\ReadModelInterface\Observability\Location\ProviderGovernanceRemediationPlanReportInterface;
 
 final class ProviderGovernanceRemediationPlanReport implements ProviderGovernanceRemediationPlanReportInterface
 {
+    /** @param array<string, ProviderGovernanceRemediationPlanInterface> $providers */
     public function __construct(private readonly string $service, private readonly array $providers)
     {
     }
@@ -27,11 +29,13 @@ final class ProviderGovernanceRemediationPlanReport implements ProviderGovernanc
         return count($this->providers);
     }
 
+    /** @return array<string, ProviderGovernanceRemediationPlanInterface> */
     public function providers(): array
     {
         return $this->providers;
     }
 
+    /** @return array{service:string,itemCount:int,providers:array<string,array{sourceKey:string,operation:string,severity:string,decision:string,reasons:list<string>,recommendations:list<string>,steps:list<array{code:string,priority:string,summary:string,ownerHint:string}>}>} */
     public function toArray(): array
     {
         $providers = [];
