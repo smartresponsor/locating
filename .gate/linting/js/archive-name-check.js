@@ -36,10 +36,6 @@ function normalizeDomain(d) {
 }
 
 function lintOne(filePath) {
-<<<<<<< HEAD
-=======
-  if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) return null;
->>>>>>> 94ad96f (first/init commit)
   const base = path.basename(filePath);
   if (!base.toLowerCase().endsWith('.zip')) return `extension must be .zip`;
   if (base.includes(' ')) return `contains spaces`;
@@ -57,7 +53,6 @@ function lintOne(filePath) {
   return null;
 }
 
-<<<<<<< HEAD
 if (process.argv.length <= 2) {
   console.error('usage: node archive-name-lint.js <file1.zip> <file2.zip> ...');
   process.exit(2);
@@ -83,10 +78,6 @@ if (filesToCheck.length === 0) {
 
 let bad = 0;
 for (const p of filesToCheck) {
-=======
-let bad = 0;
-for (const p of process.argv.slice(2)) {
->>>>>>> 94ad96f (first/init commit)
   const err = lintOne(p);
   if (err) {
     bad++;
@@ -96,11 +87,4 @@ for (const p of process.argv.slice(2)) {
   }
 }
 
-<<<<<<< HEAD
-=======
-if (process.argv.length <= 2) {
-  console.error('usage: node archive-name-lint.js <file1.zip> <file2.zip> ...');
-  process.exit(2);
-}
->>>>>>> 94ad96f (first/init commit)
 process.exit(bad ? 2 : 0);
