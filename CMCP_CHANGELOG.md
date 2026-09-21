@@ -78,3 +78,13 @@
 1. Stage only owned RC files; exclude pre-existing `.gating/` and `PRODUCT_CAPABILITY_AUDIT.adoc`.
 2. Commit and push the current branch.
 3. Verify final HEAD/upstream/worktree state and retain the documented Canon019/020 topology migration as a separate follow-up workstream.
+
+### Canon019/020 migration slice: tenant quota contour
+
+- Moved `ArrayTenantConfigRepository`, `InMemoryTenantUsageCounter`, and `RequestTenantContext` from `src/Infrastructure/Location/Tenant/` to `src/Service/Location/Tenant/`.
+- Moved `TenantUsageCounterInterface` from `src/InfrastructureInterface/Location/Tenant/` to `src/ServiceInterface/Location/Tenant/`.
+- Updated Symfony wiring, service callers, and all affected tests to the new canonical namespaces.
+- Active old tenant Infrastructure FQCN references are gone; only regenerated/historical report data can mention the previous locations.
+- Structural debt delta for this slice: `Infrastructure` implementation files 117 -> 114; `InfrastructureInterface` files 53 -> 52.
+- Verification: standalone runtime passed; PHPStan passed with 0 errors; full PHPUnit passed with 29 tests / 267 assertions; canon scripts passed with 0 errors.
+- The service-family warning count moved from 214 to 222 because the migrated implementations now participate in the Service-family audit. This is tracked as naming/family cleanup, not a runtime or migration failure.

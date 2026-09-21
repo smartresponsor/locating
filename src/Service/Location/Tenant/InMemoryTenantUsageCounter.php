@@ -6,9 +6,9 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Locating\Infrastructure\Location\Tenant;
+namespace App\Locating\Service\Location\Tenant;
 
-use App\Locating\InfrastructureInterface\Location\Tenant\TenantUsageCounterInterface;
+use App\Locating\ServiceInterface\Location\Tenant\TenantUsageCounterInterface;
 
 /**
  * Naive in-memory usage counter with a simple 60 second window.

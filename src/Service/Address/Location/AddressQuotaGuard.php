@@ -8,10 +8,10 @@ declare(strict_types=1);
 
 namespace App\Locating\Service\Address\Location;
 
-use App\Locating\InfrastructureInterface\Location\Tenant\TenantUsageCounterInterface;
 use App\Locating\ServiceInterface\Address\Location\AddressQuotaGuardServiceInterface;
 use App\Locating\ServiceInterface\Location\Tenant\TenantConfigRepositoryInterface;
 use App\Locating\ServiceInterface\Location\Tenant\TenantContextInterface;
+use App\Locating\ServiceInterface\Location\Tenant\TenantUsageCounterInterface;
 
 /**
  * Guard that enforces per-tenant quotas for address related operations.

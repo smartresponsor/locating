@@ -6,7 +6,7 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Locating\Infrastructure\Location\Tenant;
+namespace App\Locating\Service\Location\Tenant;
 
 use App\Locating\Model\Location\Tenant\TenantLimit;
 use App\Locating\ServiceInterface\Location\Tenant\TenantConfigRepositoryInterface;

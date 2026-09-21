@@ -8,11 +8,11 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Locator\Service;
 
-use App\Locating\InfrastructureInterface\Location\Tenant\TenantUsageCounterInterface;
 use App\Locating\Service\Address\Location\AddressQuotaGuard;
 use App\Locating\ServiceInterface\Location\Tenant\TenantConfigRepositoryInterface;
 use App\Locating\ServiceInterface\Location\Tenant\TenantContextInterface;
 use App\Locating\ServiceInterface\Location\Tenant\TenantLimitInterface;
+use App\Locating\ServiceInterface\Location\Tenant\TenantUsageCounterInterface;
 use PHPUnit\Framework\TestCase;
 
 final class AddressQuotaGuardTest extends TestCase

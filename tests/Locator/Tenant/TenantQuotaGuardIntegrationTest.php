@@ -8,10 +8,10 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Locator\Tenant;
 
-use App\Locating\Infrastructure\Location\Tenant\ArrayTenantConfigRepository;
-use App\Locating\Infrastructure\Location\Tenant\InMemoryTenantUsageCounter;
 use App\Locating\Model\Location\Tenant\TenantContext;
 use App\Locating\Service\Address\Location\AddressQuotaGuard;
+use App\Locating\Service\Location\Tenant\ArrayTenantConfigRepository;
+use App\Locating\Service\Location\Tenant\InMemoryTenantUsageCounter;
 use PHPUnit\Framework\TestCase;
 
 final class TenantQuotaGuardIntegrationTest extends TestCase

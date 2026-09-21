@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Locator\Infrastructure;
 
-use App\Locating\Infrastructure\Location\Tenant\RequestTenantContext;
+use App\Locating\Service\Location\Tenant\RequestTenantContext;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
