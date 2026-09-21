@@ -9,8 +9,8 @@ declare(strict_types=1);
 
 namespace App\Locating\Service\Provider\Location;
 
-use App\Locating\Infrastructure\Location\Config\Env;
 use App\Locating\Infrastructure\Provider\Location\Http\HttpClient;
+use App\Locating\Service\Location\Config\Env;
 use App\Locating\ServiceInterface\Provider\Location\HereLocationProviderInterface;
 
 class HereProviderService implements HereLocationProviderInterface

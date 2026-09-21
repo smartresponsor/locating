@@ -7,7 +7,7 @@ declare(strict_types=1);
  * Author: Oleksandr Tishchenko <dev@smartresponsor.com>
  */
 
-namespace App\Locating\Infrastructure\Location\Config;
+namespace App\Locating\Service\Location\Config;
 
 class Env
 {

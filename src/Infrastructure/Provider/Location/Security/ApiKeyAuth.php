@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace App\Locating\Infrastructure\Provider\Location\Security;
 
-use App\Locating\Infrastructure\Location\Config\Env;
+use App\Locating\Service\Location\Config\Env;
 
 class ApiKeyAuth
 {

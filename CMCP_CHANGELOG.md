@@ -88,3 +88,13 @@
 - Structural debt delta for this slice: `Infrastructure` implementation files 117 -> 114; `InfrastructureInterface` files 53 -> 52.
 - Verification: standalone runtime passed; PHPStan passed with 0 errors; full PHPUnit passed with 29 tests / 267 assertions; canon scripts passed with 0 errors.
 - The service-family warning count moved from 214 to 222 because the migrated implementations now participate in the Service-family audit. This is tracked as naming/family cleanup, not a runtime or migration failure.
+
+### Canon019/020 migration slice: configuration contour
+
+- Moved `Env` from `src/Infrastructure/Location/Config/` to `src/Service/Location/Config/` and updated all active source/test callers.
+- Moved `LocatorConfig` from `src/Infrastructure/Provider/Location/Config/` to `src/Service/Provider/Location/Config/`.
+- Moved `LocatorConfigInterface` from `src/InfrastructureInterface/Provider/Location/Config/` to `src/ServiceInterface/Provider/Location/Config/`.
+- Active old configuration Infrastructure FQCN references are gone.
+- Structural debt delta after this slice: `Infrastructure` implementation files 114 -> 112; `InfrastructureInterface` files 52 -> 51.
+- Verification: standalone runtime passed; PHPStan passed with 0 errors; full PHPUnit passed with 29 tests / 267 assertions; canon scripts passed with 0 errors.
+- Service-family warnings moved from 222 to 227 because the migrated implementations/interfaces now participate in the Service-family audit; tracked separately from structural-root removal.

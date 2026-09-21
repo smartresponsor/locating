@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Locating\Infrastructure\Provider\Location\Config;
+namespace App\Locating\Service\Provider\Location\Config;
 
-use App\Locating\InfrastructureInterface\Provider\Location\Config\LocatorConfigInterface;
+use App\Locating\ServiceInterface\Provider\Location\Config\LocatorConfigInterface;
 
 final class LocatorConfig implements LocatorConfigInterface
 {
