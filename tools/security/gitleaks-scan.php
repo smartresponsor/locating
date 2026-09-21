@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 $root = dirname(__DIR__, 2);
-$command = 'gitleaks detect --source=' . escapeshellarg($root) . ' --no-banner --redact';
+$command = 'gitleaks detect --source=' . escapeshellarg($root) . ' --no-banner --redact --verbose';
 
 exec('gitleaks version 2>&1', $output, $versionExitCode);
 if ($versionExitCode !== 0) {

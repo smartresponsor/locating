@@ -2,25 +2,23 @@
 
 declare(strict_types=1);
 
-use App\Locating\Infrastructure\Batch\Location\AddressBatchJobProgressWriter;
 use App\Locating\Infrastructure\Batch\Location\AddressBatchJobRecordFactoryBackend;
-use App\Locating\Infrastructure\Batch\Location\AddressBatchJobRepositoryBackend;
-use App\Locating\Infrastructure\Batch\Location\AddressBatchJobStore;
-use App\Locating\Infrastructure\Batch\Location\AddressBatchMessageBus;
-use App\Locating\Infrastructure\Batch\Location\AddressBatchMessageBusBackend;
 use App\Locating\Infrastructure\Batch\Location\AddressBatchResultBackend;
-use App\Locating\Infrastructure\Batch\Location\AddressBatchResultReader;
-use App\Locating\Infrastructure\Batch\Location\AddressBatchResultStorageBackend;
-use App\Locating\Infrastructure\Batch\Location\AddressBatchResultWriter;
+use App\Locating\Infrastructure\Batch\Location\InMemoryAddressBatchMessageBus;
+use App\Locating\Infrastructure\Batch\Location\InMemoryAddressBatchRuntimeStore;
 use App\Locating\Infrastructure\Batch\Location\MessageBusAddressBatchMessageDispatcher;
+use App\Locating\Infrastructure\Location\Tenant\ArrayTenantConfigRepository;
+use App\Locating\Infrastructure\Location\Tenant\InMemoryTenantUsageCounter;
+use App\Locating\Infrastructure\Location\Tenant\RequestTenantContext;
 use App\Locating\Infrastructure\Provider\Location\AddressReverseGateway;
 use App\Locating\Infrastructure\Provider\Location\AddressReverseHttpBackend;
 use App\Locating\Infrastructure\Provider\Location\AddressSuggestBackend;
 use App\Locating\Infrastructure\Provider\Location\AddressSuggestGateway;
+use App\Locating\Infrastructure\Provider\Location\Http\NominatimReverseHttpClient;
 use App\Locating\Infrastructure\Provider\Location\LocationMetricBackend;
-use App\Locating\Infrastructure\Provider\Location\LocationMetricRecorder;
-use App\Locating\Infrastructure\Provider\Location\Provider\ProviderCostCatalogGateway;
+use App\Locating\Infrastructure\Provider\Location\Metrics\InMemoryMetricRecorder;
 use App\Locating\Infrastructure\Provider\Location\ProviderCostCatalogBackend;
+use App\Locating\Infrastructure\Provider\Location\ProviderCostCatalogGateway;
 use App\Locating\Infrastructure\Provider\Location\ProviderHealthSnapshotBackend;
 use App\Locating\Infrastructure\Provider\Location\ProviderHealthSnapshotStore;
 use App\Locating\Infrastructure\Provider\Location\ProviderMetricSnapshotBackend;
@@ -29,17 +27,16 @@ use App\Locating\Infrastructure\Provider\Location\ProviderQuotaDecisionBackend;
 use App\Locating\Infrastructure\Provider\Location\ProviderQuotaDecisionGateway;
 use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchJobProgressWriterInterface;
 use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchJobRecordFactoryBackendInterface;
-use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchJobRepositoryBackendInterface;
 use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchJobStoreInterface;
-use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchMessageBusBackendInterface;
 use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchMessageBusInterface;
 use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchMessageDispatcherInterface;
 use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchResultBackendInterface;
 use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchResultReaderInterface;
-use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchResultStorageBackendInterface;
 use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchResultWriterInterface;
+use App\Locating\InfrastructureInterface\Location\Tenant\TenantUsageCounterInterface;
 use App\Locating\InfrastructureInterface\Provider\Location\Backend\AddressSuggestBackendInterface;
 use App\Locating\InfrastructureInterface\Provider\Location\Backend\LocationMetricBackendInterface;
+use App\Locating\InfrastructureInterface\Provider\Location\Backend\MetricSnapshotProviderInterface;
 use App\Locating\InfrastructureInterface\Provider\Location\Backend\ProviderCostCatalogBackendInterface;
 use App\Locating\InfrastructureInterface\Provider\Location\Backend\ProviderHealthSnapshotBackendInterface;
 use App\Locating\InfrastructureInterface\Provider\Location\Backend\ProviderMetricSnapshotBackendInterface;
@@ -50,6 +47,7 @@ use App\Locating\InfrastructureInterface\Provider\Location\Gateway\ProviderCostC
 use App\Locating\InfrastructureInterface\Provider\Location\Gateway\ProviderQuotaDecisionGatewayInterface;
 use App\Locating\InfrastructureInterface\Provider\Location\Http\AddressReverseHttpBackendInterface;
 use App\Locating\InfrastructureInterface\Provider\Location\Metrics\LocationMetricRecorderInterface;
+use App\Locating\InfrastructureInterface\Provider\Location\Provider\ProviderCostCatalogInterface;
 use App\Locating\InfrastructureInterface\Provider\Location\Store\ProviderHealthSnapshotStoreInterface;
 use App\Locating\InfrastructureInterface\Provider\Location\Store\ProviderMetricSnapshotStoreInterface;
 use App\Locating\MessageHandler\Batch\Location\AddressBatchMessageHandler;
@@ -57,6 +55,7 @@ use App\Locating\MessageHandlerInterface\Batch\Location\AddressBatchMessageHandl
 use App\Locating\Service\Address\Location\AddressNormalizer;
 use App\Locating\Service\Address\Location\AddressParser;
 use App\Locating\Service\Address\Location\AddressPipeline;
+use App\Locating\Service\Address\Location\AddressQuotaGuard;
 use App\Locating\Service\Address\Location\AddressReverseCapability;
 use App\Locating\Service\Address\Location\AddressSuggestCapability;
 use App\Locating\Service\Address\Location\AddressValidator;
@@ -82,6 +81,8 @@ use App\Locating\Service\Http\Location\LocationQuotaGuard;
 use App\Locating\Service\Http\Location\LocationQuotaGuardBackend;
 use App\Locating\Service\Http\Location\LocationStatusHttpService;
 use App\Locating\Service\Http\Location\LocationViewFactory;
+use App\Locating\Service\Location\Tenant\TenantQuotaManager;
+use App\Locating\Service\Observability\Location\HealthMonitor;
 use App\Locating\Service\Observability\Location\LocationMetricsExportService;
 use App\Locating\Service\Observability\Location\LocationProviderGovernanceAcknowledgementService;
 use App\Locating\Service\Observability\Location\LocationProviderGovernanceAuditService;
@@ -105,6 +106,7 @@ use App\Locating\Service\Provider\Location\OrderedAddressReverseProvider;
 use App\Locating\Service\Provider\Location\OrderedAddressSuggestionProvider;
 use App\Locating\Service\Provider\Location\PolicyAddressReverseSourceOrder;
 use App\Locating\Service\Provider\Location\PolicyAddressSuggestionSourceOrder;
+use App\Locating\Service\Provider\Location\ProviderCostCatalogService;
 use App\Locating\Service\Provider\Location\ProviderCostSignalReader;
 use App\Locating\Service\Provider\Location\ProviderHealthSignalReader;
 use App\Locating\Service\Provider\Location\ProviderQuotaSignalReader;
@@ -115,6 +117,7 @@ use App\Locating\Service\Provider\Location\StaticAddressSuggestionSourceOrder;
 use App\Locating\ServiceInterface\Address\Location\AddressNormalizerInterface;
 use App\Locating\ServiceInterface\Address\Location\AddressParserInterface;
 use App\Locating\ServiceInterface\Address\Location\AddressPipelineInterface;
+use App\Locating\ServiceInterface\Address\Location\AddressQuotaGuardServiceInterface;
 use App\Locating\ServiceInterface\Address\Location\AddressReverseCapabilityInterface;
 use App\Locating\ServiceInterface\Address\Location\AddressSuggestCapabilityInterface;
 use App\Locating\ServiceInterface\Address\Location\AddressValidatorInterface;
@@ -127,6 +130,9 @@ use App\Locating\ServiceInterface\Http\Location\LocationAddressSuggestServiceInt
 use App\Locating\ServiceInterface\Http\Location\LocationQuotaGuardBackendInterface;
 use App\Locating\ServiceInterface\Http\Location\LocationQuotaGuardInterface;
 use App\Locating\ServiceInterface\Http\Location\LocationViewFactoryInterface;
+use App\Locating\ServiceInterface\Location\Tenant\TenantConfigRepositoryInterface;
+use App\Locating\ServiceInterface\Location\Tenant\TenantContextInterface;
+use App\Locating\ServiceInterface\Location\Tenant\TenantQuotaManagerInterface;
 use App\Locating\ServiceInterface\Observability\Location\LocationMetricsExportServiceInterface;
 use App\Locating\ServiceInterface\Observability\Location\LocationProviderGovernanceAcknowledgementServiceInterface;
 use App\Locating\ServiceInterface\Observability\Location\LocationProviderGovernanceAuditServiceInterface;
@@ -150,6 +156,7 @@ use App\Locating\ServiceInterface\Provider\Location\AddressSuggestionSourceCostP
 use App\Locating\ServiceInterface\Provider\Location\AddressSuggestionSourceHealthPolicyInterface;
 use App\Locating\ServiceInterface\Provider\Location\AddressSuggestionSourceOrderInterface;
 use App\Locating\ServiceInterface\Provider\Location\AddressSuggestionSourceQuotaPolicyInterface;
+use App\Locating\ServiceInterface\Provider\Location\Observability\ProviderHealthMonitorInterface;
 use App\Locating\ServiceInterface\Provider\Location\ProviderCostSignalReaderInterface;
 use App\Locating\ServiceInterface\Provider\Location\ProviderHealthSignalReaderInterface;
 use App\Locating\ServiceInterface\Provider\Location\ProviderQuotaSignalReaderInterface;
@@ -166,13 +173,17 @@ return static function (ContainerConfigurator $container): void {
     $services->alias(AddressSuggestBackendInterface::class, AddressSuggestBackend::class);
     $services->alias(AddressReverseHttpBackendInterface::class, AddressReverseHttpBackend::class);
     $services->alias(LocationMetricBackendInterface::class, LocationMetricBackend::class);
+    $services->alias(MetricSnapshotProviderInterface::class, InMemoryMetricRecorder::class);
     $services->alias(ProviderHealthSnapshotBackendInterface::class, ProviderHealthSnapshotBackend::class);
+    $services->alias(ProviderHealthMonitorInterface::class, HealthMonitor::class);
     $services->alias(ProviderMetricSnapshotBackendInterface::class, ProviderMetricSnapshotBackend::class);
     $services->alias(ProviderCostCatalogBackendInterface::class, ProviderCostCatalogBackend::class);
+    $services->alias(ProviderCostCatalogInterface::class, ProviderCostCatalogService::class);
     $services->alias(ProviderQuotaDecisionBackendInterface::class, ProviderQuotaDecisionBackend::class);
+    $services->alias(TenantQuotaManagerInterface::class, TenantQuotaManager::class);
     $services->alias(AddressSuggestGatewayInterface::class, AddressSuggestGateway::class);
     $services->alias(AddressReverseGatewayInterface::class, AddressReverseGateway::class);
-    $services->alias(LocationMetricRecorderInterface::class, LocationMetricRecorder::class);
+    $services->alias(LocationMetricRecorderInterface::class, InMemoryMetricRecorder::class);
     $services->alias(ProviderHealthSnapshotStoreInterface::class, ProviderHealthSnapshotStore::class);
     $services->alias(ProviderMetricSnapshotStoreInterface::class, ProviderMetricSnapshotStore::class);
     $services->alias(ProviderCostCatalogGatewayInterface::class, ProviderCostCatalogGateway::class);
@@ -197,6 +208,10 @@ return static function (ContainerConfigurator $container): void {
     $services->alias(LocationResultFactoryInterface::class, LocationResultFactory::class);
     $services->alias(LocationViewFactoryInterface::class, LocationViewFactory::class);
     $services->alias(LocationQuotaGuardBackendInterface::class, LocationQuotaGuardBackend::class);
+    $services->alias(AddressQuotaGuardServiceInterface::class, AddressQuotaGuard::class);
+    $services->alias(TenantContextInterface::class, RequestTenantContext::class);
+    $services->alias(TenantConfigRepositoryInterface::class, ArrayTenantConfigRepository::class);
+    $services->alias(TenantUsageCounterInterface::class, InMemoryTenantUsageCounter::class);
     $services->alias(LocationQuotaGuardInterface::class, LocationQuotaGuard::class);
     $services->alias(LocationAddressSuggestServiceInterface::class, LocationAddressSuggestService::class);
     $services->alias(LocationAddressReverseServiceInterface::class, LocationAddressReverseService::class);
@@ -217,27 +232,30 @@ return static function (ContainerConfigurator $container): void {
     $services->alias(AddressPipelineInterface::class, AddressPipeline::class);
     $services->alias(AddressResultFactoryInterface::class, AddressResultFactory::class);
     $services->alias(AddressBatchJobFactoryInterface::class, AddressBatchJobFactory::class);
-    $services->alias(AddressBatchJobStoreInterface::class, AddressBatchJobStore::class);
-    $services->alias(AddressBatchMessageBusInterface::class, AddressBatchMessageBus::class);
+    $services->alias(AddressBatchJobStoreInterface::class, InMemoryAddressBatchRuntimeStore::class);
+    $services->alias(AddressBatchMessageBusInterface::class, InMemoryAddressBatchMessageBus::class);
     $services->alias(AddressBatchMessageDispatcherInterface::class, MessageBusAddressBatchMessageDispatcher::class);
-    $services->alias(AddressBatchResultReaderInterface::class, AddressBatchResultReader::class);
-    $services->alias(AddressBatchJobProgressWriterInterface::class, AddressBatchJobProgressWriter::class);
-    $services->alias(AddressBatchResultWriterInterface::class, AddressBatchResultWriter::class);
+    $services->alias(AddressBatchResultReaderInterface::class, InMemoryAddressBatchRuntimeStore::class);
+    $services->alias(AddressBatchJobProgressWriterInterface::class, InMemoryAddressBatchRuntimeStore::class);
+    $services->alias(AddressBatchResultWriterInterface::class, InMemoryAddressBatchRuntimeStore::class);
     $services->alias(LocationAddressBatchServiceInterface::class, LocationAddressBatchServiceMetricDecorator::class);
-    $services->alias(AddressBatchJobRepositoryBackendInterface::class, AddressBatchJobRepositoryBackend::class);
-    $services->alias(AddressBatchResultStorageBackendInterface::class, AddressBatchResultStorageBackend::class);
-    $services->alias(AddressBatchMessageBusBackendInterface::class, AddressBatchMessageBusBackend::class);
     $services->alias(AddressBatchJobRecordFactoryBackendInterface::class, AddressBatchJobRecordFactoryBackend::class);
     $services->alias(AddressBatchResultBackendInterface::class, AddressBatchResultBackend::class);
 
-    $services->set(AddressSuggestBackend::class);
+    $services->set(AddressSuggestBackend::class)
+        ->args([[]]);
 
     $services->set(AddressSuggestGateway::class)
         ->args([
             service(AddressSuggestBackendInterface::class),
         ]);
 
-    $services->set(AddressReverseHttpBackend::class);
+    $services->set(NominatimReverseHttpClient::class);
+
+    $services->set(AddressReverseHttpBackend::class)
+        ->args([
+            service(NominatimReverseHttpClient::class),
+        ]);
 
     $services->set(AddressReverseGateway::class)
         ->args([
@@ -246,11 +264,9 @@ return static function (ContainerConfigurator $container): void {
 
     $services->set(LocationMetricBackend::class);
 
-    $services->set(LocationMetricRecorder::class)
-        ->args([
-            service(LocationMetricBackendInterface::class),
-        ]);
+    $services->set(InMemoryMetricRecorder::class);
 
+    $services->set(HealthMonitor::class);
     $services->set(ProviderHealthSnapshotBackend::class);
 
     $services->set(ProviderHealthSnapshotStore::class)
@@ -265,6 +281,7 @@ return static function (ContainerConfigurator $container): void {
             service(ProviderMetricSnapshotBackendInterface::class),
         ]);
 
+    $services->set(ProviderCostCatalogService::class);
     $services->set(ProviderCostCatalogBackend::class);
 
     $services->set(ProviderCostCatalogGateway::class)
@@ -272,6 +289,7 @@ return static function (ContainerConfigurator $container): void {
             service(ProviderCostCatalogBackendInterface::class),
         ]);
 
+    $services->set(TenantQuotaManager::class);
     $services->set(ProviderQuotaDecisionBackend::class);
 
     $services->set(ProviderQuotaDecisionGateway::class)
@@ -387,6 +405,11 @@ return static function (ContainerConfigurator $container): void {
 
     $services->set(LocationResultFactory::class);
     $services->set(LocationViewFactory::class);
+    $services->set(RequestTenantContext::class);
+    $services->set(ArrayTenantConfigRepository::class);
+    $services->set(InMemoryTenantUsageCounter::class);
+    $services->set(AddressQuotaGuard::class);
+    $services->set(LocationQuotaGuardBackend::class);
     $services->set(LocationQuotaGuard::class);
     $services->set(AddressParser::class);
     $services->set(AddressNormalizer::class);
@@ -406,51 +429,9 @@ return static function (ContainerConfigurator $container): void {
 
     $services->set(AddressBatchJobFactory::class);
 
-    $services->set(AddressBatchJobRepositoryBackend::class)
-        ->args([
-            service(AddressBatchJobRepositoryBackendInterface::class),
-        ]);
-
-    $services->set(AddressBatchMessageBusBackend::class)
-        ->args([
-            service(AddressBatchMessageBusBackendInterface::class),
-        ]);
-
-    $services->set(AddressBatchResultStorageBackend::class)
-        ->args([
-            service(AddressBatchResultStorageBackendInterface::class),
-        ]);
-
-    $services->set(AddressBatchJobStore::class)
-        ->args([
-            service(AddressBatchJobRepositoryBackendInterface::class),
-            service(AddressBatchJobFactoryInterface::class),
-        ]);
-
-    $services->set(AddressBatchMessageBus::class)
-        ->args([
-            service(AddressBatchMessageBusBackendInterface::class),
-        ]);
-
     $services->set(MessageBusAddressBatchMessageDispatcher::class)
         ->args([
             service(AddressBatchMessageBusInterface::class),
-        ]);
-
-    $services->set(AddressBatchResultReader::class)
-        ->args([
-            service(AddressBatchResultStorageBackendInterface::class),
-        ]);
-
-    $services->set(AddressBatchJobProgressWriter::class)
-        ->args([
-            service(AddressBatchJobRepositoryBackendInterface::class),
-        ]);
-
-    $services->set(AddressBatchResultWriter::class)
-        ->args([
-            service(AddressBatchResultStorageBackendInterface::class),
-            service(AddressResultFactoryInterface::class),
         ]);
 
     $services->set(LocationAddressBatchService::class)

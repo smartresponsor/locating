@@ -9,18 +9,43 @@ $scanPaths = [
     $root . DIRECTORY_SEPARATOR . 'public',
 ];
 
-exec('semgrep --version 2>&1', $output, $versionExitCode);
-if ($versionExitCode !== 0) {
-    fwrite(STDERR, "[security] semgrep is not available in PATH. Install Semgrep Community Edition to run the local security pipeline.\n");
-    exit(2);
+$candidatePattern = '~\\b(?:eval|unserialize|exec|system|shell_exec|passthru|putenv)\\s*\\(|\\$_ENV\\s*\\[~';
+$candidates = [];
+
+foreach ($scanPaths as $scanPath) {
+    if (!is_dir($scanPath)) {
+        continue;
+    }
+
+    $iterator = new RecursiveIteratorIterator(
+        new RecursiveDirectoryIterator($scanPath, FilesystemIterator::SKIP_DOTS),
+    );
+
+    foreach ($iterator as $file) {
+        if (!$file->isFile() || strtolower($file->getExtension()) !== 'php') {
+            continue;
+        }
+
+        $contents = file_get_contents($file->getPathname());
+        if ($contents !== false && preg_match($candidatePattern, $contents) === 1) {
+            $candidates[] = $file->getPathname();
+        }
+    }
 }
 
-$existingScanPaths = array_values(array_filter($scanPaths, static fn (string $path): bool => is_dir($path)));
-$command = 'semgrep scan --config ' . escapeshellarg($ruleSet) . ' --error --metrics=off';
+sort($candidates);
 
-foreach ($existingScanPaths as $path) {
+if ($candidates === []) {
+    fwrite(STDOUT, "[security] semgrep prefilter found no risky PHP primitive candidates.\n");
+    exit(0);
+}
+
+$command = 'semgrep scan --config ' . escapeshellarg($ruleSet) . ' --error --strict --metrics=off --disable-version-check --timeout 30 --timeout-threshold 1 --jobs 2';
+
+foreach ($candidates as $path) {
     $command .= ' ' . escapeshellarg($path);
 }
 
+fwrite(STDOUT, sprintf("[security] semgrep scanning %d candidate file(s).\n", count($candidates)));
 passthru($command, $exitCode);
 exit($exitCode);

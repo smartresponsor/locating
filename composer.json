@@ -11,17 +11,20 @@
   "require": {
     "php": "^8.4",
     "ext-json": "*",
-    "symfony/config": "^8.0",
-    "symfony/console": "^8.0",
-    "symfony/dependency-injection": "^8.0",
-    "symfony/http-foundation": "^8.0",
-    "symfony/http-kernel": "^8.0",
-    "symfony/routing": "^8.0",
+    "symfony/config": "^8.1",
+    "symfony/console": "^8.1",
+    "symfony/dependency-injection": "^8.1",
+    "symfony/framework-bundle": "^8.1",
+    "symfony/http-foundation": "^8.1",
+    "symfony/http-kernel": "^8.1",
+    "symfony/routing": "^8.1",
     "easycorp/easyadmin-bundle": "^5.0",
+    "collectioning/collection": "dev-master",
     "cruding/crud": "dev-master",
     "interfacing/interface": "dev-master",
     "navigating/navigation": "dev-master",
     "objecting/object": "dev-master",
+    "tabling/table": "dev-master",
     "viewing/view": "dev-master"
   },
   "require-dev": {
@@ -32,7 +35,10 @@
     "phpunit/phpunit": "^10.5",
     "phpstan/phpstan-phpunit": "^2.0"
   },
-  "minimum-stability": "stable",
+  "config": {
+    "process-timeout": 900
+  },
+  "minimum-stability": "dev",
   "prefer-stable": true,
   "scripts": {
     "lint": [
@@ -170,6 +176,7 @@
       "php -l src/Service/Provider/Location/CostCapPolicyService.php"
     ],
     "stan": "phpstan analyse -c phpstan.neon",
+    "runtime:verify": "php bin/console about --env=test --no-interaction",
     "test": "phpunit -c phpunit.xml.dist",
     "test:security:symfony": "phpunit -c phpunit.xml.dist --testsuite security",
     "test:locator": "phpunit -c phpunit.xml.dist tests/Locator",
@@ -258,37 +265,72 @@
   "repositories": [
     {
       "type": "path",
+      "url": "../Collectioning",
+      "options": {
+        "symlink": true,
+        "versions": {
+          "collectioning/collection": "dev-master"
+        }
+      }
+    },
+    {
+      "type": "path",
+      "url": "../Tabling",
+      "options": {
+        "symlink": true,
+        "versions": {
+          "tabling/table": "dev-master"
+        }
+      }
+    },
+    {
+      "type": "path",
       "url": "../Cruding",
       "options": {
-        "symlink": true
+        "symlink": true,
+        "versions": {
+          "cruding/crud": "dev-master"
+        }
       }
     },
     {
       "type": "path",
       "url": "../Interfacing",
       "options": {
-        "symlink": true
+        "symlink": true,
+        "versions": {
+          "interfacing/interface": "dev-master"
+        }
       }
     },
     {
       "type": "path",
       "url": "../Navigating",
       "options": {
-        "symlink": true
+        "symlink": true,
+        "versions": {
+          "navigating/navigation": "dev-master"
+        }
       }
     },
     {
       "type": "path",
       "url": "../Objecting",
       "options": {
-        "symlink": true
+        "symlink": true,
+        "versions": {
+          "objecting/object": "dev-master"
+        }
       }
     },
     {
       "type": "path",
       "url": "../Viewing",
       "options": {
-        "symlink": true
+        "symlink": true,
+        "versions": {
+          "viewing/view": "dev-master"
+        }
       }
     }
   ]

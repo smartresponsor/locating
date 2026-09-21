@@ -18,6 +18,7 @@ $finder = Finder::create()
         'public/build',
     ])
     ->name('*.php')
+    ->notPath('reference.php')
     ->ignoreDotFiles(true)
     ->ignoreVCS(true);
 

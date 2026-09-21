@@ -1,0 +1,12 @@
+title = "Locating gitleaks configuration"
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Ignore generated formatter cache and historical integrity indexes that contain hashes, not credentials."
+paths = [
+  '''^var/\.php-cs-fixer\.cache$''',
+  '''^report/legacy/''',
+]
+

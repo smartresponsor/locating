@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace App\Locating\Service\Observability\Location;
 
-final class HealthMonitor
+use App\Locating\ServiceInterface\Provider\Location\Observability\ProviderHealthMonitorInterface;
+
+final class HealthMonitor implements ProviderHealthMonitorInterface
 {
     private string $path;
 

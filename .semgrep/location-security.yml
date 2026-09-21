@@ -1,0 +1,29 @@
+rules:
+  - id: locating-php-eval
+    languages: [php]
+    severity: ERROR
+    message: Dynamic eval() is forbidden in Locating runtime code.
+    pattern: eval(...)
+
+  - id: locating-php-unserialize
+    languages: [php]
+    severity: ERROR
+    message: Native unserialize() is forbidden in Locating runtime code.
+    pattern: unserialize(...)
+
+  - id: locating-php-shell-execution
+    languages: [php]
+    severity: WARNING
+    message: Review shell/process execution in Locating runtime code.
+    pattern-either:
+      - pattern: exec(...)
+      - pattern: system(...)
+      - pattern: shell_exec(...)
+      - pattern: passthru(...)
+
+  - id: locating-php-request-env-write
+    languages: [php]
+    severity: WARNING
+    message: Review runtime mutation of process environment variables.
+    pattern-either:
+      - pattern: putenv(...)

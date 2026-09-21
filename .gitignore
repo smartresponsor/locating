@@ -1,6 +1,5 @@
 # Composer
 /vendor/
-composer.lock
 
 # Logs and caches
 /var/
@@ -32,7 +31,14 @@ Thumbs.db
 /archives/
 /Archives/
 /.codebase-memory/
+/.console-mcp/
 /*.zip
+
+# Symfony generated reference
+/config/reference.php
+
+# Console MCP bounded-run artifacts
+/.console-mcp/
 
 # Generated canon reports
 /report/locating-*-latest.*
