@@ -8,12 +8,12 @@ declare(strict_types=1);
 
 namespace App\Locating\MessageHandler\Batch\Location;
 
-use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchJobProgressWriterInterface;
-use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchResultWriterInterface;
 use App\Locating\MessageHandlerInterface\Batch\Location\AddressBatchMessageHandlerInterface;
 use App\Locating\MessageInterface\Batch\Location\AddressBatchMessageInterface;
 use App\Locating\Model\Location\AddressInput;
 use App\Locating\ServiceInterface\Address\Location\AddressPipelineInterface;
+use App\Locating\ServiceInterface\Batch\Location\AddressBatchJobProgressWriterInterface;
+use App\Locating\ServiceInterface\Batch\Location\AddressBatchResultWriterInterface;
 
 final class AddressBatchMessageHandler implements AddressBatchMessageHandlerInterface
 {

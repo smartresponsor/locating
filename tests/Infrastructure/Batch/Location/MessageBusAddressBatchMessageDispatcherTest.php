@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Infrastructure\Batch\Location;
 
-use App\Locating\Infrastructure\Batch\Location\MessageBusAddressBatchMessageDispatcher;
-use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchMessageBusInterface;
 use App\Locating\Message\Batch\Location\AddressBatchMessage;
 use App\Locating\MessageInterface\Batch\Location\AddressBatchMessageInterface;
+use App\Locating\Service\Batch\Location\MessageBusAddressBatchMessageDispatcher;
+use App\Locating\ServiceInterface\Batch\Location\AddressBatchMessageBusInterface;
 use PHPUnit\Framework\TestCase;
 
 final class MessageBusAddressBatchMessageDispatcherTest extends TestCase

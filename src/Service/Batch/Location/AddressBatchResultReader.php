@@ -7,11 +7,11 @@ declare(strict_types=1);
  * dev@highhopesamerica.com
  */
 
-namespace App\Locating\Infrastructure\Batch\Location;
+namespace App\Locating\Service\Batch\Location;
 
-use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchResultReaderInterface;
-use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchResultRecordInterface;
-use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchResultStorageBackendInterface;
+use App\Locating\ModelInterface\Location\AddressBatchResultRecordInterface;
+use App\Locating\ServiceInterface\Batch\Location\AddressBatchResultReaderInterface;
+use App\Locating\ServiceInterface\Batch\Location\AddressBatchResultStorageBackendInterface;
 
 final class AddressBatchResultReader implements AddressBatchResultReaderInterface
 {

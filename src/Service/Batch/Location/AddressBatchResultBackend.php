@@ -2,14 +2,15 @@
 
 declare(strict_types=1);
 
-namespace App\Locating\Infrastructure\Batch\Location;
+namespace App\Locating\Service\Batch\Location;
 
-use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchResultBackendInterface;
-use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchResultRecordInterface;
 use App\Locating\Model\Location\AddressData;
 use App\Locating\Model\Location\AddressResult;
 use App\Locating\Model\Location\AddressStatus;
 use App\Locating\Model\Location\AddressValidationIssue;
+use App\Locating\Model\Location\Batch\AddressBatchResultRecord;
+use App\Locating\ModelInterface\Location\AddressBatchResultRecordInterface;
+use App\Locating\ServiceInterface\Batch\Location\AddressBatchResultBackendInterface;
 
 final class AddressBatchResultBackend implements AddressBatchResultBackendInterface
 {

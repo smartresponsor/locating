@@ -98,3 +98,13 @@
 - Structural debt delta after this slice: `Infrastructure` implementation files 114 -> 112; `InfrastructureInterface` files 52 -> 51.
 - Verification: standalone runtime passed; PHPStan passed with 0 errors; full PHPUnit passed with 29 tests / 267 assertions; canon scripts passed with 0 errors.
 - Service-family warnings moved from 222 to 227 because the migrated implementations/interfaces now participate in the Service-family audit; tracked separately from structural-root removal.
+
+### Canon019/020 migration slice: Batch contour
+
+- Moved the complete `src/Infrastructure/Batch/Location/` implementation contour into canonical technical roles.
+- Batch runtime/services now live under `src/Service/Batch/Location/`; Batch service contracts live under `src/ServiceInterface/Batch/Location/`.
+- Reclassified `AddressBatchJobRecord` and `AddressBatchResultRecord` as data objects under `src/Model/Location/Batch/`, with their contracts under `src/ModelInterface/Location/` instead of retaining them as Service types.
+- Updated all active source, Symfony config, message-handler, service, and test references. Old Batch Infrastructure FQCNs remain only in historical/generated reports.
+- Structural debt delta after this slice: `Infrastructure` implementation files 112 -> 97; `InfrastructureInterface` files 51 -> 38.
+- Verification: standalone runtime passed; PHPStan passed with 0 errors; full PHPUnit passed with 29 tests / 267 assertions; canon scripts passed with 0 errors.
+- Service-family warnings moved from 227 to 249 after the final Model reclassification (an intermediate all-Service placement reached 253); the remaining warnings are naming/family normalization debt, not structural-root failures.

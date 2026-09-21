@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Service\Batch\Location;
 
-use App\Locating\Infrastructure\Batch\Location\InMemoryAddressBatchMessageBus;
-use App\Locating\Infrastructure\Batch\Location\InMemoryAddressBatchRuntimeStore;
-use App\Locating\Infrastructure\Batch\Location\MessageBusAddressBatchMessageDispatcher;
 use App\Locating\MessageHandler\Batch\Location\AddressBatchMessageHandler;
 use App\Locating\Model\Location\AddressPipelineResult;
 use App\Locating\Model\Location\AddressView;
+use App\Locating\Service\Batch\Location\InMemoryAddressBatchMessageBus;
+use App\Locating\Service\Batch\Location\InMemoryAddressBatchRuntimeStore;
 use App\Locating\Service\Batch\Location\LocationAddressBatchService;
+use App\Locating\Service\Batch\Location\MessageBusAddressBatchMessageDispatcher;
 use App\Locating\ServiceInterface\Address\Location\AddressPipelineInterface;
 use PHPUnit\Framework\TestCase;
 

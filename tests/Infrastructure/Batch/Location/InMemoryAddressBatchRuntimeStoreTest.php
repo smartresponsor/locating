@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Infrastructure\Batch\Location;
 
-use App\Locating\Infrastructure\Batch\Location\InMemoryAddressBatchRuntimeStore;
 use App\Locating\Model\Location\AddressBatchJobStatus;
 use App\Locating\Model\Location\AddressIssue;
 use App\Locating\Model\Location\AddressPipelineResult;
 use App\Locating\Model\Location\AddressView;
+use App\Locating\Service\Batch\Location\InMemoryAddressBatchRuntimeStore;
 use PHPUnit\Framework\TestCase;
 
 final class InMemoryAddressBatchRuntimeStoreTest extends TestCase

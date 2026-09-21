@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Locating\Infrastructure\Batch\Location;
+namespace App\Locating\Service\Batch\Location;
 
-use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchMessageBusBackendInterface;
 use App\Locating\MessageInterface\Batch\Location\AddressBatchMessageInterface;
 use App\Locating\Model\Location\Batch\AddressBatchMessage;
+use App\Locating\ServiceInterface\Batch\Location\AddressBatchMessageBusBackendInterface;
 use App\Locating\ServiceInterface\Location\Batch\AddressBatchMessageBusInterface;
 
 final class AddressBatchMessageBusBackend implements AddressBatchMessageBusBackendInterface

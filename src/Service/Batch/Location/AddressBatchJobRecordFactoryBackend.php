@@ -2,12 +2,13 @@
 
 declare(strict_types=1);
 
-namespace App\Locating\Infrastructure\Batch\Location;
+namespace App\Locating\Service\Batch\Location;
 
-use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchJobRecordFactoryBackendInterface;
-use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchJobRecordInterface;
 use App\Locating\Model\Location\AddressBatchJob;
 use App\Locating\Model\Location\AddressBatchJobStatus;
+use App\Locating\Model\Location\Batch\AddressBatchJobRecord;
+use App\Locating\ModelInterface\Location\AddressBatchJobRecordInterface;
+use App\Locating\ServiceInterface\Batch\Location\AddressBatchJobRecordFactoryBackendInterface;
 
 final class AddressBatchJobRecordFactoryBackend implements AddressBatchJobRecordFactoryBackendInterface
 {

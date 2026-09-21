@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Infrastructure\Batch\Location;
 
-use App\Locating\Infrastructure\Batch\Location\AddressBatchResultBackend;
+use App\Locating\Service\Batch\Location\AddressBatchResultBackend;
 use PHPUnit\Framework\TestCase;
 
 final class AddressBatchResultBackendTest extends TestCase

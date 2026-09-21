@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Service\Batch\Location;
 
-use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchJobRecordInterface;
 use App\Locating\Model\Location\AddressBatchJobStatus;
+use App\Locating\ModelInterface\Location\AddressBatchJobRecordInterface;
 use App\Locating\Service\Batch\Location\AddressBatchJobFactory;
 use PHPUnit\Framework\TestCase;
 

@@ -9,11 +9,11 @@ declare(strict_types=1);
 
 namespace App\Locating\Service\Batch\Location;
 
-use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchJobStoreInterface;
-use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchMessageDispatcherInterface;
-use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchResultReaderInterface;
 use App\Locating\Message\Batch\Location\AddressBatchMessage;
 use App\Locating\ModelInterface\Location\AddressBatchJobInterface;
+use App\Locating\ServiceInterface\Batch\Location\AddressBatchJobStoreInterface;
+use App\Locating\ServiceInterface\Batch\Location\AddressBatchMessageDispatcherInterface;
+use App\Locating\ServiceInterface\Batch\Location\AddressBatchResultReaderInterface;
 use App\Locating\ServiceInterface\Batch\Location\LocationAddressBatchServiceInterface;
 
 final class LocationAddressBatchService implements LocationAddressBatchServiceInterface

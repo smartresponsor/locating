@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Infrastructure\Batch\Location;
 
-use App\Locating\Infrastructure\Batch\Location\InMemoryAddressBatchMessageBus;
 use App\Locating\Message\Batch\Location\AddressBatchMessage;
 use App\Locating\MessageHandlerInterface\Batch\Location\AddressBatchMessageHandlerInterface;
+use App\Locating\Service\Batch\Location\InMemoryAddressBatchMessageBus;
 use PHPUnit\Framework\TestCase;
 
 final class InMemoryAddressBatchMessageBusTest extends TestCase

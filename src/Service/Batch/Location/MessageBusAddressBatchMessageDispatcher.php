@@ -7,11 +7,11 @@ declare(strict_types=1);
  * dev@highhopesamerica.com
  */
 
-namespace App\Locating\Infrastructure\Batch\Location;
+namespace App\Locating\Service\Batch\Location;
 
-use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchMessageBusInterface;
-use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchMessageDispatcherInterface;
 use App\Locating\MessageInterface\Batch\Location\AddressBatchMessageInterface;
+use App\Locating\ServiceInterface\Batch\Location\AddressBatchMessageBusInterface;
+use App\Locating\ServiceInterface\Batch\Location\AddressBatchMessageDispatcherInterface;
 
 final class MessageBusAddressBatchMessageDispatcher implements AddressBatchMessageDispatcherInterface
 {

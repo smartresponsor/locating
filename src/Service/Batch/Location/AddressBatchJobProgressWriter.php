@@ -7,10 +7,10 @@ declare(strict_types=1);
  * dev@highhopesamerica.com
  */
 
-namespace App\Locating\Infrastructure\Batch\Location;
+namespace App\Locating\Service\Batch\Location;
 
-use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchJobProgressWriterInterface;
-use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchJobRepositoryBackendInterface;
+use App\Locating\ServiceInterface\Batch\Location\AddressBatchJobProgressWriterInterface;
+use App\Locating\ServiceInterface\Batch\Location\AddressBatchJobRepositoryBackendInterface;
 
 final class AddressBatchJobProgressWriter implements AddressBatchJobProgressWriterInterface
 {

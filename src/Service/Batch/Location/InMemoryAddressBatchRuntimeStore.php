@@ -7,16 +7,16 @@ declare(strict_types=1);
  * dev@highhopesamerica.com
  */
 
-namespace App\Locating\Infrastructure\Batch\Location;
+namespace App\Locating\Service\Batch\Location;
 
-use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchJobProgressWriterInterface;
-use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchJobStoreInterface;
-use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchResultReaderInterface;
-use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchResultWriterInterface;
 use App\Locating\Model\Location\AddressBatchJob;
 use App\Locating\Model\Location\AddressBatchJobStatus;
 use App\Locating\ModelInterface\Location\AddressBatchJobInterface;
 use App\Locating\ModelInterface\Location\AddressPipelineResultInterface;
+use App\Locating\ServiceInterface\Batch\Location\AddressBatchJobProgressWriterInterface;
+use App\Locating\ServiceInterface\Batch\Location\AddressBatchJobStoreInterface;
+use App\Locating\ServiceInterface\Batch\Location\AddressBatchResultReaderInterface;
+use App\Locating\ServiceInterface\Batch\Location\AddressBatchResultWriterInterface;
 
 final class InMemoryAddressBatchRuntimeStore implements AddressBatchJobStoreInterface, AddressBatchJobProgressWriterInterface, AddressBatchResultReaderInterface, AddressBatchResultWriterInterface
 {

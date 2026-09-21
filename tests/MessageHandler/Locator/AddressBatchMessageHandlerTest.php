@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\MessageHandler\Locator;
 
-use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchJobProgressWriterInterface;
-use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchResultWriterInterface;
 use App\Locating\Message\Batch\Location\AddressBatchMessage;
 use App\Locating\MessageHandler\Batch\Location\AddressBatchMessageHandler;
 use App\Locating\Model\Location\AddressPipelineResult;
 use App\Locating\ServiceInterface\Address\Location\AddressPipelineInterface;
+use App\Locating\ServiceInterface\Batch\Location\AddressBatchJobProgressWriterInterface;
+use App\Locating\ServiceInterface\Batch\Location\AddressBatchResultWriterInterface;
 use PHPUnit\Framework\TestCase;
 
 final class AddressBatchMessageHandlerTest extends TestCase

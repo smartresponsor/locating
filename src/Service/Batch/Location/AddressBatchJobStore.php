@@ -7,13 +7,13 @@ declare(strict_types=1);
  * dev@highhopesamerica.com
  */
 
-namespace App\Locating\Infrastructure\Batch\Location;
+namespace App\Locating\Service\Batch\Location;
 
-use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchJobRecordFactoryBackendInterface;
-use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchJobRepositoryBackendInterface;
-use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchJobStoreInterface;
 use App\Locating\ModelInterface\Location\AddressBatchJobInterface;
 use App\Locating\ServiceInterface\Batch\Location\AddressBatchJobFactoryInterface;
+use App\Locating\ServiceInterface\Batch\Location\AddressBatchJobRecordFactoryBackendInterface;
+use App\Locating\ServiceInterface\Batch\Location\AddressBatchJobRepositoryBackendInterface;
+use App\Locating\ServiceInterface\Batch\Location\AddressBatchJobStoreInterface;
 
 final class AddressBatchJobStore implements AddressBatchJobStoreInterface
 {

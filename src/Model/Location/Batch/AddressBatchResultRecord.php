@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Locating\Infrastructure\Batch\Location;
+namespace App\Locating\Model\Location\Batch;
 
-use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchResultRecordInterface;
+use App\Locating\ModelInterface\Location\AddressBatchResultRecordInterface;
 use App\Locating\ModelInterface\Location\AddressReverseResultInterface;
 
 final class AddressBatchResultRecord implements AddressBatchResultRecordInterface

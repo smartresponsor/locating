@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Locating\InfrastructureInterface\Batch\Location;
+namespace App\Locating\ServiceInterface\Batch\Location;
 
 use App\Locating\MessageInterface\Batch\Location\AddressBatchMessageInterface;
 

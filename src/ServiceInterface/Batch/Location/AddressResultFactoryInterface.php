@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace App\Locating\ServiceInterface\Batch\Location;
 
-use App\Locating\InfrastructureInterface\Batch\Location\AddressBatchResultRecordInterface;
+use App\Locating\ModelInterface\Location\AddressBatchResultRecordInterface;
 use App\Locating\ModelInterface\Location\AddressPipelineResultInterface;
 
 interface AddressResultFactoryInterface
