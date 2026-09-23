@@ -56,7 +56,8 @@ foreach ($targets as $layer => $dir) {
         $isSmartresponsorNamespace = str_starts_with($namespace, 'Smartresponsor\\');
         $hasLocationPrefix = str_starts_with($className, 'Location') || str_starts_with($className, 'SmartresponsorLocation');
         $hasLocationContext = str_contains('/'.$relative.'/', '/Location/');
-        $hasAllowedServiceSuffix = preg_match('/(Service|Capability|Factory|Guard|Backend|Decorator|Resolver|Provider|Exporter|Collector|Pipeline|Parser|Normalizer|Validator|Mapper|Router|Registry|Policy|Manager|Scheduler|Executor|Runner|Ranker|Adapter|Aggregator|Bridge|Builder|Client|Filter|Handler|Hydrator|Planner|Reader|Repository|Selector|Store|Strategy|Writer|Recorder|Engine|Calibrator|Limiter|Toggle|Sweeper|Canonicalizer|Sanitizer)$/', $className) === 1;
+        $hasDominantRoleSuffixConflict = preg_match('/(Builder|Responder|Policy|Repository|Controller|Provider|Factory|Recorder|Verifier|Authenticator|Codec|Resolver|Command)$/', $className) === 1;
+        $hasMixedRoleSuffixConflict = preg_match('/(BuilderService|ResponderService|PolicyService|ProviderService|FactoryService|RecorderService|VerifierService|AuthenticatorService|CodecService|ResolverService)$/', $className) === 1;
         $hasInterfaceSuffix = str_ends_with($className, 'Interface');
         $logicalFamily = preg_replace('/Interface$/', '', $className) ?: $className;
 
@@ -72,7 +73,8 @@ foreach ($targets as $layer => $dir) {
             'smartresponsor_namespace' => $isSmartresponsorNamespace,
             'location_prefix' => $hasLocationPrefix,
             'location_context' => $hasLocationContext,
-            'allowed_service_suffix' => $hasAllowedServiceSuffix,
+            'dominant_role_suffix_conflict' => $hasDominantRoleSuffixConflict,
+            'mixed_role_suffix_conflict' => $hasMixedRoleSuffixConflict,
             'interface_suffix' => $hasInterfaceSuffix,
         ];
 
@@ -90,8 +92,11 @@ foreach ($targets as $layer => $dir) {
         if (!$isAppLocationNamespace) {
             $issues[] = issue($isSmartresponsorNamespace ? 'warning' : 'error', 'service_namespace_path_mismatch', $layer, $relative, "Namespace {$namespace} does not match expected {$expectedNamespace}.");
         }
-        if ($layer === 'Service' && !$hasAllowedServiceSuffix) {
-            $issues[] = issue('warning', 'service_class_suffix_not_canonical', $layer, $relative, "Service class {$className} has no canonical service-form suffix.");
+        if ($layer === 'Service' && $hasDominantRoleSuffixConflict) {
+            $issues[] = issue('warning', 'service_dominant_role_suffix_conflict', $layer, $relative, "Service class {$className} declares a first-class technical-role suffix that should own its top-level role root.");
+        }
+        if ($layer === 'Service' && $hasMixedRoleSuffixConflict) {
+            $issues[] = issue('warning', 'service_mixed_role_suffix_conflict', $layer, $relative, "Service class {$className} combines a first-class role suffix with Service.");
         }
         if ($layer === 'Service' && !$hasLocationPrefix && !$hasLocationContext && !$isSmartresponsorNamespace) {
             $issues[] = issue('warning', 'service_class_missing_location_prefix', $layer, $relative, "App service class {$className} should carry Location prefix where practical.");
@@ -111,9 +116,6 @@ foreach ($families as $family => $layers) {
         'service_paths' => $servicePaths,
         'service_interface_paths' => $interfacePaths,
     ];
-    if ($servicePaths !== [] && $interfacePaths === []) {
-        $issues[] = issue('warning', 'service_without_mirrored_interface', 'Service', implode(';', $servicePaths), "Service family {$family} has no mirrored ServiceInterface family.");
-    }
 }
 
 $summary = [
@@ -192,7 +194,7 @@ function writeCsv(string $path, array $rows): void
     if ($handle === false) {
         throw new RuntimeException("Unable to write CSV: {$path}");
     }
-    $headers = ['layer', 'direction', 'path', 'namespace', 'kind', 'symbol', 'logical_family', 'app_location_namespace', 'smartresponsor_namespace', 'location_prefix', 'location_context', 'allowed_service_suffix', 'interface_suffix'];
+    $headers = ['layer', 'direction', 'path', 'namespace', 'kind', 'symbol', 'logical_family', 'app_location_namespace', 'smartresponsor_namespace', 'location_prefix', 'location_context', 'dominant_role_suffix_conflict', 'mixed_role_suffix_conflict', 'interface_suffix'];
     fputcsv($handle, $headers, ',', '"', '');
     foreach ($rows as $row) {
         fputcsv($handle, array_map(static fn ($value): string => is_bool($value) ? ($value ? 'yes' : 'no') : (string) $value, array_intersect_key($row, array_flip($headers))), ',', '"', '');

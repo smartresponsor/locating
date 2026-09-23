@@ -33,9 +33,9 @@ jobs:
           path: |
             ~/.composer/cache/files
             vendor
-          key: ${{ runner.os }}-php82-composer-${{ hashFiles('composer.lock') }}
+          key: ${{ runner.os }}-php84-composer-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            ${{ runner.os }}-php82-composer-
+            ${{ runner.os }}-php84-composer-
 
       - name: Validate composer
         run: composer validate --strict
@@ -79,9 +79,9 @@ jobs:
           path: |
             ~/.composer/cache/files
             vendor
-          key: ${{ runner.os }}-php82-composer-${{ hashFiles('composer.lock') }}
+          key: ${{ runner.os }}-php84-composer-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            ${{ runner.os }}-php82-composer-
+            ${{ runner.os }}-php84-composer-
 
       - name: Ensure composer.lock exists
         shell: bash
@@ -113,9 +113,9 @@ jobs:
           path: |
             ~/.composer/cache/files
             vendor
-          key: ${{ runner.os }}-php82-composer-${{ hashFiles('composer.lock') }}
+          key: ${{ runner.os }}-php84-composer-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            ${{ runner.os }}-php82-composer-
+            ${{ runner.os }}-php84-composer-
 
       - name: Ensure composer.lock exists
         shell: bash
@@ -147,9 +147,9 @@ jobs:
           path: |
             ~/.composer/cache/files
             vendor
-          key: ${{ runner.os }}-php82-composer-${{ hashFiles('composer.lock') }}
+          key: ${{ runner.os }}-php84-composer-${{ hashFiles('composer.lock') }}
           restore-keys: |
-            ${{ runner.os }}-php82-composer-
+            ${{ runner.os }}-php84-composer-
 
       - name: Ensure composer.lock exists
         shell: bash

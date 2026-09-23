@@ -37,7 +37,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.2'
+          php-version: '8.4'
           tools: composer:v2
           coverage: none
 
@@ -47,9 +47,9 @@ jobs:
           path: |
             ~/.composer/cache/files
             vendor
-          key: ${{ runner.os }}-php82-slo-composer-${{ hashFiles('composer.json') }}
+          key: ${{ runner.os }}-php84-slo-composer-${{ hashFiles('composer.json') }}
           restore-keys: |
-            ${{ runner.os }}-php82-slo-composer-
+            ${{ runner.os }}-php84-slo-composer-
 
       - name: Install dependencies
         run: composer install --no-interaction --prefer-dist --no-progress
@@ -76,7 +76,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.2'
+          php-version: '8.4'
           tools: composer:v2
           coverage: none
 
@@ -86,9 +86,9 @@ jobs:
           path: |
             ~/.composer/cache/files
             vendor
-          key: ${{ runner.os }}-php82-slo-composer-${{ hashFiles('composer.json') }}
+          key: ${{ runner.os }}-php84-slo-composer-${{ hashFiles('composer.json') }}
           restore-keys: |
-            ${{ runner.os }}-php82-slo-composer-
+            ${{ runner.os }}-php84-slo-composer-
 
       - name: Install dependencies
         run: composer install --no-interaction --prefer-dist --no-progress
@@ -106,7 +106,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.2'
+          php-version: '8.4'
           tools: composer:v2
           coverage: none
 
@@ -116,9 +116,9 @@ jobs:
           path: |
             ~/.composer/cache/files
             vendor
-          key: ${{ runner.os }}-php82-slo-composer-${{ hashFiles('composer.json') }}
+          key: ${{ runner.os }}-php84-slo-composer-${{ hashFiles('composer.json') }}
           restore-keys: |
-            ${{ runner.os }}-php82-slo-composer-
+            ${{ runner.os }}-php84-slo-composer-
 
       - name: Install dependencies
         run: composer install --no-interaction --prefer-dist --no-progress
@@ -136,7 +136,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.2'
+          php-version: '8.4'
           tools: composer:v2
           coverage: none
 
@@ -146,9 +146,9 @@ jobs:
           path: |
             ~/.composer/cache/files
             vendor
-          key: ${{ runner.os }}-php82-slo-composer-${{ hashFiles('composer.json') }}
+          key: ${{ runner.os }}-php84-slo-composer-${{ hashFiles('composer.json') }}
           restore-keys: |
-            ${{ runner.os }}-php82-slo-composer-
+            ${{ runner.os }}-php84-slo-composer-
 
       - name: Install dependencies
         run: composer install --no-interaction --prefer-dist --no-progress

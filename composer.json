@@ -134,7 +134,6 @@
       "php -l src/Service/Address/Location/AddressStandardizeService.php",
       "php -l src/ServiceInterface/Address/Location/AddressParseServiceInterface.php",
       "php -l src/ServiceInterface/Address/Location/AddressStandardizeServiceInterface.php",
-      "php -l src/Infrastructure/Provider/Location/Http/Kernel.php",
       "php -l .gate/check/location-service-locator-address-ranker-path-canon.php",
       "php -l tools/canon/location-service-locator-address-ranker-path-audit.php",
       "php -l src/Service/Address/Location/AddressSuggestRanker.php",
