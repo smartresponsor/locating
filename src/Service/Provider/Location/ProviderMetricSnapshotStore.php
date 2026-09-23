@@ -7,11 +7,11 @@ declare(strict_types=1);
  * dev@highhopesamerica.com
  */
 
-namespace App\Locating\Infrastructure\Provider\Location;
+namespace App\Locating\Service\Provider\Location;
 
-use App\Locating\InfrastructureInterface\Provider\Location\Backend\ProviderMetricSnapshotBackendInterface;
-use App\Locating\InfrastructureInterface\Provider\Location\Store\ProviderMetricSnapshotStoreInterface;
 use App\Locating\ReadModel\Observability\Location\ProviderMetricSnapshot;
+use App\Locating\ServiceInterface\Provider\Location\ProviderMetricSnapshotBackendInterface;
+use App\Locating\ServiceInterface\Provider\Location\ProviderMetricSnapshotStoreInterface;
 
 final class ProviderMetricSnapshotStore implements ProviderMetricSnapshotStoreInterface
 {

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Locating\InfrastructureInterface\Provider\Location\Backend;
+namespace App\Locating\Contract\Location;
 
 interface MetricSnapshotProviderInterface
 {

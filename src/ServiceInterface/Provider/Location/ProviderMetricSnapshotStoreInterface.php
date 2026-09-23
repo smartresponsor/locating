@@ -7,7 +7,7 @@ declare(strict_types=1);
  * dev@highhopesamerica.com
  */
 
-namespace App\Locating\InfrastructureInterface\Provider\Location\Store;
+namespace App\Locating\ServiceInterface\Provider\Location;
 
 use App\Locating\ReadModelInterface\Observability\Location\ProviderMetricSnapshotInterface;
 

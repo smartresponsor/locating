@@ -7,10 +7,10 @@ declare(strict_types=1);
  * dev@highhopesamerica.com
  */
 
-namespace App\Locating\Infrastructure\Provider\Location;
+namespace App\Locating\Service\Provider\Location;
 
-use App\Locating\InfrastructureInterface\Provider\Location\Backend\ProviderQuotaDecisionBackendInterface;
-use App\Locating\InfrastructureInterface\Provider\Location\Gateway\ProviderQuotaDecisionGatewayInterface;
+use App\Locating\ServiceInterface\Provider\Location\ProviderQuotaDecisionBackendInterface;
+use App\Locating\ServiceInterface\Provider\Location\ProviderQuotaDecisionGatewayInterface;
 
 final class ProviderQuotaDecisionGateway implements ProviderQuotaDecisionGatewayInterface
 {

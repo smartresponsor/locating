@@ -152,3 +152,12 @@
 - Updated all active source/config/test references via exact namespace-prefix migration. Old FQCN matches remain only in generated reports and historical Console-MCP logs.
 - Exact structural-root delta for this slice: `Infrastructure` files 30 -> 23; `InfrastructureInterface` files 23 -> 17.
 - Verification: standalone runtime passed; PHPStan passed with 0 errors; CS check passed after import-order normalization; full PHPUnit passed with 29 tests / 267 assertions; canon scripts passed with 0 errors. Service-family warnings are 277 after making these service responsibilities visible to the family audit.
+
+### Canon019/020 migration slice: backend, gateway, and store contours
+
+- Moved 14 backend/gateway/store implementations from `src/Infrastructure/Provider/Location/` into the canonical `src/Service/Provider/Location/` role tree.
+- Moved 12 paired interfaces from InfrastructureInterface Backend/Gateway/Store buckets into the mirrored `src/ServiceInterface/Provider/Location/` tree.
+- Moved standalone `MetricSnapshotProviderInterface` to `src/Contract/Location/` because it is a recorder capability contract rather than a paired Service interface.
+- Updated namespaces and 45 active source/config/test caller files through an exact symbol map; no broad Infrastructure prefix replacement was used.
+- Exact structural-root delta for this slice: `Infrastructure` files 23 -> 9; `InfrastructureInterface` files 17 -> 4.
+- Verification: standalone runtime passed; PHPStan passed with 0 errors; CS check passed after import-order normalization; full PHPUnit passed with 29 tests / 267 assertions; canon scripts passed with 0 errors. Service-family warnings are 296 after making these responsibilities visible to the family audit.

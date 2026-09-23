@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Infrastructure\Provider\Location;
 
-use App\Locating\Infrastructure\Provider\Location\ProviderQuotaDecisionBackend;
+use App\Locating\Service\Provider\Location\ProviderQuotaDecisionBackend;
 use App\Locating\ServiceInterface\Location\Tenant\TenantQuotaManagerInterface;
 use PHPUnit\Framework\TestCase;
 

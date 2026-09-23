@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Infrastructure\Provider\Location;
 
-use App\Locating\Infrastructure\Provider\Location\ProviderHealthSnapshotStore;
-use App\Locating\InfrastructureInterface\Provider\Location\Backend\ProviderHealthSnapshotBackendInterface;
+use App\Locating\Service\Provider\Location\ProviderHealthSnapshotStore;
+use App\Locating\ServiceInterface\Provider\Location\ProviderHealthSnapshotBackendInterface;
 use PHPUnit\Framework\TestCase;
 
 final class ProviderHealthSnapshotStoreTest extends TestCase

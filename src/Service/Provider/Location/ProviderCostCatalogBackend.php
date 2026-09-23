@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Locating\Infrastructure\Provider\Location;
+namespace App\Locating\Service\Provider\Location;
 
-use App\Locating\InfrastructureInterface\Provider\Location\Backend\ProviderCostCatalogBackendInterface;
 use App\Locating\InfrastructureInterface\Provider\Location\Provider\ProviderCostCatalogInterface;
+use App\Locating\ServiceInterface\Provider\Location\ProviderCostCatalogBackendInterface;
 
 final class ProviderCostCatalogBackend implements ProviderCostCatalogBackendInterface
 {

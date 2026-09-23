@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace App\Locating\Recorder;
 
-use App\Locating\InfrastructureInterface\Provider\Location\Backend\MetricSnapshotProviderInterface;
+use App\Locating\Contract\Location\MetricSnapshotProviderInterface;
 use App\Locating\RecorderInterface\InMemoryMetricRecorderInterface;
 use App\Locating\RecorderInterface\LocationMetricRecorderInterface;
 

@@ -9,9 +9,9 @@ declare(strict_types=1);
 
 namespace App\Locating\Service\Provider\Location;
 
-use App\Locating\InfrastructureInterface\Provider\Location\Gateway\ProviderCostCatalogGatewayInterface;
 use App\Locating\ReadModel\Observability\Location\ProviderCostSignal;
 use App\Locating\ReadModelInterface\Observability\Location\ProviderCostSignalInterface;
+use App\Locating\ServiceInterface\Provider\Location\ProviderCostCatalogGatewayInterface;
 use App\Locating\ServiceInterface\Provider\Location\ProviderCostSignalReaderInterface;
 
 final class ProviderCostSignalReader implements ProviderCostSignalReaderInterface

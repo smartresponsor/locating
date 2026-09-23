@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Locating\Infrastructure\Provider\Location;
+namespace App\Locating\Service\Provider\Location;
 
 use App\Locating\Contract\Location\AddressReverseHttpBackendInterface;
 use App\Locating\Contract\Location\ReverseHttpClientInterface;

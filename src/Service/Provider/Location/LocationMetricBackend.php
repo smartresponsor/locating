@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Locating\Infrastructure\Provider\Location;
+namespace App\Locating\Service\Provider\Location;
 
-use App\Locating\InfrastructureInterface\Provider\Location\Backend\LocationMetricBackendInterface;
 use App\Locating\RecorderInterface\LocationMetricRecorderInterface;
+use App\Locating\ServiceInterface\Provider\Location\LocationMetricBackendInterface;
 
 final class LocationMetricBackend implements LocationMetricBackendInterface
 {

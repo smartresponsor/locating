@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Infrastructure\Provider\Location;
 
-use App\Locating\Infrastructure\Provider\Location\ProviderMetricSnapshotStore;
-use App\Locating\InfrastructureInterface\Provider\Location\Backend\ProviderMetricSnapshotBackendInterface;
+use App\Locating\Service\Provider\Location\ProviderMetricSnapshotStore;
+use App\Locating\ServiceInterface\Provider\Location\ProviderMetricSnapshotBackendInterface;
 use PHPUnit\Framework\TestCase;
 
 final class ProviderMetricSnapshotStoreTest extends TestCase

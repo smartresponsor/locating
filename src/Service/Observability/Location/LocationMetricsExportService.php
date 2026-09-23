@@ -9,9 +9,9 @@ declare(strict_types=1);
 
 namespace App\Locating\Service\Observability\Location;
 
-use App\Locating\InfrastructureInterface\Provider\Location\Store\ProviderMetricSnapshotStoreInterface;
 use App\Locating\ServiceInterface\Observability\Location\LocationMetricsExportServiceInterface;
 use App\Locating\ServiceInterface\Observability\Location\LocationProviderGovernanceCatalogServiceInterface;
+use App\Locating\ServiceInterface\Provider\Location\ProviderMetricSnapshotStoreInterface;
 
 final class LocationMetricsExportService implements LocationMetricsExportServiceInterface
 {

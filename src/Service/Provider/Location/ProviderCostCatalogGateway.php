@@ -7,10 +7,10 @@ declare(strict_types=1);
  * dev@highhopesamerica.com
  */
 
-namespace App\Locating\Infrastructure\Provider\Location;
+namespace App\Locating\Service\Provider\Location;
 
-use App\Locating\InfrastructureInterface\Provider\Location\Backend\ProviderCostCatalogBackendInterface;
-use App\Locating\InfrastructureInterface\Provider\Location\Gateway\ProviderCostCatalogGatewayInterface;
+use App\Locating\ServiceInterface\Provider\Location\ProviderCostCatalogBackendInterface;
+use App\Locating\ServiceInterface\Provider\Location\ProviderCostCatalogGatewayInterface;
 
 final class ProviderCostCatalogGateway implements ProviderCostCatalogGatewayInterface
 {

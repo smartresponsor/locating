@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Infrastructure\Provider\Location;
 
-use App\Locating\Infrastructure\Provider\Location\ProviderQuotaDecisionGateway;
-use App\Locating\InfrastructureInterface\Provider\Location\Backend\ProviderQuotaDecisionBackendInterface;
+use App\Locating\Service\Provider\Location\ProviderQuotaDecisionGateway;
+use App\Locating\ServiceInterface\Provider\Location\ProviderQuotaDecisionBackendInterface;
 use PHPUnit\Framework\TestCase;
 
 final class ProviderQuotaDecisionGatewayTest extends TestCase

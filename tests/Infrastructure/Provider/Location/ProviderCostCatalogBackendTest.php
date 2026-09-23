@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Infrastructure\Provider\Location;
 
-use App\Locating\Infrastructure\Provider\Location\ProviderCostCatalogBackend;
 use App\Locating\InfrastructureInterface\Provider\Location\Provider\ProviderCostCatalogInterface;
+use App\Locating\Service\Provider\Location\ProviderCostCatalogBackend;
 use PHPUnit\Framework\TestCase;
 
 final class ProviderCostCatalogBackendTest extends TestCase

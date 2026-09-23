@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Service\Provider\Location;
 
-use App\Locating\InfrastructureInterface\Provider\Location\Gateway\ProviderQuotaDecisionGatewayInterface;
 use App\Locating\Service\Provider\Location\ProviderQuotaSignalReader;
+use App\Locating\ServiceInterface\Provider\Location\ProviderQuotaDecisionGatewayInterface;
 use PHPUnit\Framework\TestCase;
 
 final class ProviderQuotaSignalReaderTest extends TestCase

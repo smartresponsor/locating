@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Service\Provider\Location;
 
-use App\Locating\InfrastructureInterface\Provider\Location\Gateway\ProviderCostCatalogGatewayInterface;
 use App\Locating\Service\Provider\Location\ProviderCostSignalReader;
+use App\Locating\ServiceInterface\Provider\Location\ProviderCostCatalogGatewayInterface;
 use PHPUnit\Framework\TestCase;
 
 final class ProviderCostSignalReaderTest extends TestCase

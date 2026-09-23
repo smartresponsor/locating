@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Infrastructure\Provider\Location;
 
-use App\Locating\Infrastructure\Provider\Location\AddressSuggestGateway;
-use App\Locating\InfrastructureInterface\Provider\Location\Backend\AddressSuggestBackendInterface;
+use App\Locating\Service\Provider\Location\AddressSuggestGateway;
+use App\Locating\ServiceInterface\Provider\Location\AddressSuggestBackendInterface;
 use PHPUnit\Framework\TestCase;
 
 final class AddressSuggestGatewayTest extends TestCase

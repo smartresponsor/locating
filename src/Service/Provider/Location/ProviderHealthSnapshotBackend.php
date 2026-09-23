@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Locating\Infrastructure\Provider\Location;
+namespace App\Locating\Service\Provider\Location;
 
-use App\Locating\InfrastructureInterface\Provider\Location\Backend\ProviderHealthSnapshotBackendInterface;
 use App\Locating\ServiceInterface\Provider\Location\Observability\ProviderHealthMonitorInterface;
+use App\Locating\ServiceInterface\Provider\Location\ProviderHealthSnapshotBackendInterface;
 
 final class ProviderHealthSnapshotBackend implements ProviderHealthSnapshotBackendInterface
 {

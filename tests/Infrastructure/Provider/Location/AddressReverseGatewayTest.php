@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Locating\Tests\Infrastructure\Provider\Location;
 
 use App\Locating\Contract\Location\AddressReverseHttpBackendInterface;
-use App\Locating\Infrastructure\Provider\Location\AddressReverseGateway;
+use App\Locating\Service\Provider\Location\AddressReverseGateway;
 use PHPUnit\Framework\TestCase;
 
 final class AddressReverseGatewayTest extends TestCase

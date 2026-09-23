@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Infrastructure\Provider\Location;
 
-use App\Locating\InfrastructureInterface\Provider\Location\Backend\LocationMetricBackendInterface;
 use App\Locating\Recorder\LocationMetricRecorder;
+use App\Locating\ServiceInterface\Provider\Location\LocationMetricBackendInterface;
 use PHPUnit\Framework\TestCase;
 
 final class LocationMetricRecorderTest extends TestCase

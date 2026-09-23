@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Infrastructure\Provider\Location;
 
-use App\Locating\Infrastructure\Provider\Location\ProviderHealthSnapshotBackend;
+use App\Locating\Service\Provider\Location\ProviderHealthSnapshotBackend;
 use App\Locating\ServiceInterface\Provider\Location\Observability\ProviderHealthMonitorInterface;
 use PHPUnit\Framework\TestCase;
 

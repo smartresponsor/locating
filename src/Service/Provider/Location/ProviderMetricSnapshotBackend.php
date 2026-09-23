@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Locating\Infrastructure\Provider\Location;
+namespace App\Locating\Service\Provider\Location;
 
-use App\Locating\InfrastructureInterface\Provider\Location\Backend\MetricSnapshotProviderInterface;
-use App\Locating\InfrastructureInterface\Provider\Location\Backend\ProviderMetricSnapshotBackendInterface;
+use App\Locating\Contract\Location\MetricSnapshotProviderInterface;
+use App\Locating\ServiceInterface\Provider\Location\ProviderMetricSnapshotBackendInterface;
 
 final class ProviderMetricSnapshotBackend implements ProviderMetricSnapshotBackendInterface
 {

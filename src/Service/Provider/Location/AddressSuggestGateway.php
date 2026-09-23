@@ -7,10 +7,10 @@ declare(strict_types=1);
  * dev@highhopesamerica.com
  */
 
-namespace App\Locating\Infrastructure\Provider\Location;
+namespace App\Locating\Service\Provider\Location;
 
-use App\Locating\InfrastructureInterface\Provider\Location\Backend\AddressSuggestBackendInterface;
-use App\Locating\InfrastructureInterface\Provider\Location\Gateway\AddressSuggestGatewayInterface;
+use App\Locating\ServiceInterface\Provider\Location\AddressSuggestBackendInterface;
+use App\Locating\ServiceInterface\Provider\Location\AddressSuggestGatewayInterface;
 
 final class AddressSuggestGateway implements AddressSuggestGatewayInterface
 {

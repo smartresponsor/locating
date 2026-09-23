@@ -7,10 +7,10 @@ declare(strict_types=1);
  * dev@highhopesamerica.com
  */
 
-namespace App\Locating\Infrastructure\Provider\Location;
+namespace App\Locating\Service\Provider\Location;
 
 use App\Locating\Contract\Location\AddressReverseHttpBackendInterface;
-use App\Locating\InfrastructureInterface\Provider\Location\Gateway\AddressReverseGatewayInterface;
+use App\Locating\ServiceInterface\Provider\Location\AddressReverseGatewayInterface;
 
 final class AddressReverseGateway implements AddressReverseGatewayInterface
 {

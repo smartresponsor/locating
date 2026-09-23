@@ -7,7 +7,7 @@ declare(strict_types=1);
  * dev@highhopesamerica.com
  */
 
-namespace App\Locating\InfrastructureInterface\Provider\Location\Gateway;
+namespace App\Locating\ServiceInterface\Provider\Location;
 
 interface ProviderCostCatalogGatewayInterface
 {

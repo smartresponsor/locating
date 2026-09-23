@@ -7,10 +7,10 @@ declare(strict_types=1);
  * dev@highhopesamerica.com
  */
 
-namespace App\Locating\Infrastructure\Provider\Location;
+namespace App\Locating\Service\Provider\Location;
 
-use App\Locating\InfrastructureInterface\Provider\Location\Store\ProviderMetricSnapshotStoreInterface;
 use App\Locating\ReadModelInterface\Observability\Location\ProviderMetricSnapshotInterface;
+use App\Locating\ServiceInterface\Provider\Location\ProviderMetricSnapshotStoreInterface;
 
 final class InMemoryProviderMetricSnapshotStore implements ProviderMetricSnapshotStoreInterface
 {

@@ -9,9 +9,9 @@ declare(strict_types=1);
 
 namespace App\Locating\Service\Provider\Location;
 
-use App\Locating\InfrastructureInterface\Provider\Location\Gateway\ProviderQuotaDecisionGatewayInterface;
 use App\Locating\ReadModel\Observability\Location\ProviderQuotaSignal;
 use App\Locating\ReadModelInterface\Observability\Location\ProviderQuotaSignalInterface;
+use App\Locating\ServiceInterface\Provider\Location\ProviderQuotaDecisionGatewayInterface;
 use App\Locating\ServiceInterface\Provider\Location\ProviderQuotaSignalReaderInterface;
 
 final class ProviderQuotaSignalReader implements ProviderQuotaSignalReaderInterface

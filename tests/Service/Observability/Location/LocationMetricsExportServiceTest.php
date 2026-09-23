@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Service\Observability\Location;
 
-use App\Locating\Infrastructure\Provider\Location\InMemoryProviderMetricSnapshotStore;
 use App\Locating\ReadModel\Observability\Location\ProviderGovernanceSnapshot;
 use App\Locating\ReadModel\Observability\Location\ProviderMetricSnapshot;
 use App\Locating\Service\Observability\Location\LocationMetricsExportService;
+use App\Locating\Service\Provider\Location\InMemoryProviderMetricSnapshotStore;
 use App\Locating\ServiceInterface\Observability\Location\LocationProviderGovernanceCatalogServiceInterface;
 use PHPUnit\Framework\TestCase;
 

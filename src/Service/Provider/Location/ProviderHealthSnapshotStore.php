@@ -7,10 +7,10 @@ declare(strict_types=1);
  * dev@highhopesamerica.com
  */
 
-namespace App\Locating\Infrastructure\Provider\Location;
+namespace App\Locating\Service\Provider\Location;
 
-use App\Locating\InfrastructureInterface\Provider\Location\Backend\ProviderHealthSnapshotBackendInterface;
-use App\Locating\InfrastructureInterface\Provider\Location\Store\ProviderHealthSnapshotStoreInterface;
+use App\Locating\ServiceInterface\Provider\Location\ProviderHealthSnapshotBackendInterface;
+use App\Locating\ServiceInterface\Provider\Location\ProviderHealthSnapshotStoreInterface;
 
 final class ProviderHealthSnapshotStore implements ProviderHealthSnapshotStoreInterface
 {

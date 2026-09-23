@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Locating\Infrastructure\Provider\Location;
+namespace App\Locating\Service\Provider\Location;
 
-use App\Locating\InfrastructureInterface\Provider\Location\Backend\AddressSuggestBackendInterface;
+use App\Locating\ServiceInterface\Provider\Location\AddressSuggestBackendInterface;
 use App\Locating\ServiceInterface\Provider\Location\AddressSuggestionProviderInterface as AddressSuggestProviderInterface;
 
 final class AddressSuggestBackend implements AddressSuggestBackendInterface

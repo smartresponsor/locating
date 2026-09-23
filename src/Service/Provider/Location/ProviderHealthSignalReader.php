@@ -9,10 +9,10 @@ declare(strict_types=1);
 
 namespace App\Locating\Service\Provider\Location;
 
-use App\Locating\InfrastructureInterface\Provider\Location\Store\ProviderHealthSnapshotStoreInterface;
 use App\Locating\ReadModel\Observability\Location\ProviderHealthSignal;
 use App\Locating\ReadModelInterface\Observability\Location\ProviderHealthSignalInterface;
 use App\Locating\ServiceInterface\Provider\Location\ProviderHealthSignalReaderInterface;
+use App\Locating\ServiceInterface\Provider\Location\ProviderHealthSnapshotStoreInterface;
 
 final class ProviderHealthSignalReader implements ProviderHealthSignalReaderInterface
 {

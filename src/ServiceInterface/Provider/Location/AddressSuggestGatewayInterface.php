@@ -2,9 +2,14 @@
 
 declare(strict_types=1);
 
-namespace App\Locating\InfrastructureInterface\Provider\Location\Backend;
+/*
+ * Marketing America Corp. Oleksandr Tishchenko
+ * dev@highhopesamerica.com
+ */
 
-interface AddressSuggestBackendInterface
+namespace App\Locating\ServiceInterface\Provider\Location;
+
+interface AddressSuggestGatewayInterface
 {
     /**
      * @return list<array{label:string,address:array<string,mixed>,providerKey:string}>
