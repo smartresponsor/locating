@@ -6,9 +6,9 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Locating\Infrastructure\Provider\Location\Http;
+namespace App\Locating\Integration\Provider\Location\Http;
 
-use App\Locating\InfrastructureInterface\Provider\Location\Http\ReverseHttpClientInterface;
+use App\Locating\Contract\Location\ReverseHttpClientInterface;
 
 /**
  * Simple reverse geocoding client backed by OpenStreetMap Nominatim API.

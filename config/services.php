@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
+use App\Locating\Contract\Location\AddressReverseHttpBackendInterface;
 use App\Locating\Infrastructure\Provider\Location\AddressReverseGateway;
 use App\Locating\Infrastructure\Provider\Location\AddressReverseHttpBackend;
 use App\Locating\Infrastructure\Provider\Location\AddressSuggestBackend;
 use App\Locating\Infrastructure\Provider\Location\AddressSuggestGateway;
-use App\Locating\Infrastructure\Provider\Location\Http\NominatimReverseHttpClient;
 use App\Locating\Infrastructure\Provider\Location\LocationMetricBackend;
 use App\Locating\Infrastructure\Provider\Location\Metrics\InMemoryMetricRecorder;
 use App\Locating\Infrastructure\Provider\Location\ProviderCostCatalogBackend;
@@ -28,11 +28,11 @@ use App\Locating\InfrastructureInterface\Provider\Location\Gateway\AddressRevers
 use App\Locating\InfrastructureInterface\Provider\Location\Gateway\AddressSuggestGatewayInterface;
 use App\Locating\InfrastructureInterface\Provider\Location\Gateway\ProviderCostCatalogGatewayInterface;
 use App\Locating\InfrastructureInterface\Provider\Location\Gateway\ProviderQuotaDecisionGatewayInterface;
-use App\Locating\InfrastructureInterface\Provider\Location\Http\AddressReverseHttpBackendInterface;
 use App\Locating\InfrastructureInterface\Provider\Location\Metrics\LocationMetricRecorderInterface;
 use App\Locating\InfrastructureInterface\Provider\Location\Provider\ProviderCostCatalogInterface;
 use App\Locating\InfrastructureInterface\Provider\Location\Store\ProviderHealthSnapshotStoreInterface;
 use App\Locating\InfrastructureInterface\Provider\Location\Store\ProviderMetricSnapshotStoreInterface;
+use App\Locating\Integration\Provider\Location\Http\NominatimReverseHttpClient;
 use App\Locating\MessageHandler\Batch\Location\AddressBatchMessageHandler;
 use App\Locating\MessageHandlerInterface\Batch\Location\AddressBatchMessageHandlerInterface;
 use App\Locating\Service\Address\Location\AddressNormalizer;

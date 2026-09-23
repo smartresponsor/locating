@@ -9,8 +9,8 @@ declare(strict_types=1);
 
 namespace App\Locating\Infrastructure\Provider\Location;
 
+use App\Locating\Contract\Location\AddressReverseHttpBackendInterface;
 use App\Locating\InfrastructureInterface\Provider\Location\Gateway\AddressReverseGatewayInterface;
-use App\Locating\InfrastructureInterface\Provider\Location\Http\AddressReverseHttpBackendInterface;
 
 final class AddressReverseGateway implements AddressReverseGatewayInterface
 {

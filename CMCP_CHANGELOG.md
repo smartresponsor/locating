@@ -117,3 +117,12 @@
 - Exact structural-root delta for this slice: `Infrastructure` files 44 -> 39; `InfrastructureInterface` files 37 -> 32.
 - Verification: standalone runtime passed; PHPStan passed with 0 errors; CS check passed; full PHPUnit passed with 29 tests / 267 assertions; canon scripts passed with 0 errors.
 - Service-family warnings are 259 after the slice; these remain naming/family normalization debt rather than structural-root failures.
+
+### Canon019/020 migration slice: live HTTP integration contour
+
+- Moved the active generic `HttpClient` and `NominatimReverseHttpClient` implementations from `src/Infrastructure/Provider/Location/Http/` to `src/Integration/Provider/Location/Http/`.
+- Moved the active HTTP contracts `HttpClientInterface`, `ReverseHttpClientInterface`, and `AddressReverseHttpBackendInterface` from `src/InfrastructureInterface/Provider/Location/Http/` to the existing canonical `src/Contract/Location/` root.
+- Updated all active service, Symfony DI, gateway/backend, and test callers. The old live HTTP Infrastructure FQCNs have no active references.
+- Left `CurlHttpClient`, `FixtureHttpClient`, their local interface, and the legacy HTTP `Kernel` in place for a separate compatibility/dead-code decision rather than relocating them blindly.
+- Exact structural-root delta for this slice: `Infrastructure` files 39 -> 37; `InfrastructureInterface` files 32 -> 29.
+- Verification: standalone runtime passed; PHPStan passed with 0 errors; CS check passed after import-order normalization; full PHPUnit passed with 29 tests / 267 assertions; canon scripts passed with 0 errors.

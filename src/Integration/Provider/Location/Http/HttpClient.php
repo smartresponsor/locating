@@ -7,7 +7,7 @@ declare(strict_types=1);
  * Author: Oleksandr Tishchenko <dev@smartresponsor.com>
  */
 
-namespace App\Locating\Infrastructure\Provider\Location\Http;
+namespace App\Locating\Integration\Provider\Location\Http;
 
 class HttpClient
 {

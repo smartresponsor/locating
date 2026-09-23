@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Locating\InfrastructureInterface\Provider\Location\Http;
+namespace App\Locating\Contract\Location;
 
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp

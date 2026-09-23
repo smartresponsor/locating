@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Locating\Infrastructure\Provider\Location;
 
-use App\Locating\InfrastructureInterface\Provider\Location\Http\AddressReverseHttpBackendInterface;
-use App\Locating\InfrastructureInterface\Provider\Location\Http\ReverseHttpClientInterface;
+use App\Locating\Contract\Location\AddressReverseHttpBackendInterface;
+use App\Locating\Contract\Location\ReverseHttpClientInterface;
 
 final class AddressReverseHttpBackend implements AddressReverseHttpBackendInterface
 {
