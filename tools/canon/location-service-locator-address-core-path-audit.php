@@ -18,6 +18,7 @@ $retiredFiles = [
     'src/Service/Locator/Address/AddressStandardizeService.php',
     'src/ServiceInterface/Locator/Address/AddressParseServiceInterface.php',
     'src/ServiceInterface/Locator/Address/AddressStandardizeServiceInterface.php',
+    'src/Infrastructure/Provider/Location/Http/Kernel.php',
 ];
 
 foreach ($expectedFiles as $relativePath => $expectedNamespace) {
@@ -39,27 +40,9 @@ foreach ($retiredFiles as $relativePath) {
     }
 }
 
-$kernelPath = $root.'/src/Infrastructure/Provider/Location/Http/Kernel.php';
-if (is_file($kernelPath)) {
-    $kernel = (string) file_get_contents($kernelPath);
-    foreach ([
-        'use App\Locating\\Service\\Provider\\Location\\Runtime\\Address\\AddressParseService;',
-        'use App\Locating\\Service\\Provider\\Location\\Runtime\\Address\\AddressStandardizeService;',
-    ] as $legacyUse) {
-        if (str_contains($kernel, $legacyUse)) {
-            $errors[] = 'Kernel still imports legacy LC-17 service: '.$legacyUse;
-        }
-    }
-    foreach ([
-        'use App\Locating\\Service\\Address\\Location\\AddressParseService;',
-        'use App\Locating\\Service\\Address\\Location\\AddressStandardizeService;',
-    ] as $canonicalUse) {
-        if (!str_contains($kernel, $canonicalUse)) {
-            $errors[] = 'Kernel is missing canonical LC-17 service import: '.$canonicalUse;
-        }
-    }
-} else {
-    $warnings[] = 'Kernel not found: src/Infrastructure/Provider/Location/Http/Kernel.php';
+$kernelPath = $root.'/src/Kernel.php';
+if (!is_file($kernelPath)) {
+    $errors[] = 'Missing canonical Symfony kernel: src/Kernel.php';
 }
 
 $reportDir = $root.'/report';

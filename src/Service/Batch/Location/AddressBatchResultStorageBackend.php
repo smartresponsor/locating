@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Locating\Service\Batch\Location;
 
-use App\Locating\InfrastructureInterface\Provider\Location\Batch\AddressBatchResultStorageInterface;
 use App\Locating\Model\Location\Batch\AddressBatchResultRecord;
 use App\Locating\ModelInterface\Location\AddressBatchResultRecordInterface;
 use App\Locating\ServiceInterface\Batch\Location\AddressBatchResultStorageBackendInterface;
+use App\Locating\ServiceInterface\Batch\Location\AddressBatchResultStorageInterface;
 
 final class AddressBatchResultStorageBackend implements AddressBatchResultStorageBackendInterface
 {

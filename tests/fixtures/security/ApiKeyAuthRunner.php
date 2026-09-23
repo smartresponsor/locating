@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 require dirname(__DIR__, 3).'/vendor/autoload.php';
 
-use App\Locating\Infrastructure\Provider\Location\Security\ApiKeyAuth;
 use App\Locating\Service\Location\Config\Env;
+use App\Locating\Service\Provider\Location\Security\ApiKeyAuth;
 
 $apiKey = $argv[1] ?? '-';
 $header = $argv[2] ?? '-';

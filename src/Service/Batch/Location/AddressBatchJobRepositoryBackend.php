@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Locating\Service\Batch\Location;
 
-use App\Locating\InfrastructureInterface\Provider\Location\Batch\AddressBatchJobRepositoryInterface;
 use App\Locating\Model\Location\Batch\AddressBatchJobRecord;
 use App\Locating\ModelInterface\Location\AddressBatchJobRecordInterface;
 use App\Locating\ServiceInterface\Batch\Location\AddressBatchJobRepositoryBackendInterface;
+use App\Locating\ServiceInterface\Batch\Location\AddressBatchJobRepositoryInterface;
 
 final class AddressBatchJobRepositoryBackend implements AddressBatchJobRepositoryBackendInterface
 {

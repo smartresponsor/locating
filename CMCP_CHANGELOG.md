@@ -161,3 +161,13 @@
 - Updated namespaces and 45 active source/config/test caller files through an exact symbol map; no broad Infrastructure prefix replacement was used.
 - Exact structural-root delta for this slice: `Infrastructure` files 23 -> 9; `InfrastructureInterface` files 17 -> 4.
 - Verification: standalone runtime passed; PHPStan passed with 0 errors; CS check passed after import-order normalization; full PHPUnit passed with 29 tests / 267 assertions; canon scripts passed with 0 errors. Service-family warnings are 296 after making these responsibilities visible to the family audit.
+
+### Canon019/020 migration completion: final Infrastructure retirement
+
+- Retired the remaining dead legacy Infrastructure-only surfaces: `TracingLocator`, the legacy HTTP client trio and HTTP `Kernel`, JSONL reader/writer helpers, the duplicate `ProviderCostCatalog`, and the orphan `LoggerInterface`.
+- Moved active `ApiKeyAuth` into `Service/Provider/Location/Security` and updated its security fixture caller.
+- Moved `AddressBatchJobRepositoryInterface` and `AddressBatchResultStorageInterface` into the mirrored `ServiceInterface/Batch/Location` tree and updated their backend consumers.
+- Moved the active `ProviderCostCatalogInterface` into `ServiceInterface/Provider/Location`; the duplicate Infrastructure implementation was retired because `ProviderCostCatalogService` is behaviorally equivalent and is the configured runtime implementation.
+- Updated LC-17 canon tooling so the retired legacy HTTP Kernel is forbidden and the canonical Symfony `src/Kernel.php` is required instead of checking obsolete manual service imports.
+- Final structural-root result: `src/Infrastructure` declarations 9 -> 0 and `src/InfrastructureInterface` declarations 4 -> 0. Overall migration baseline: 64 -> 0 and 52 -> 0.
+- Final verification at 0/0: standalone runtime passed; PHPStan passed with 0 errors; CS check passed; full PHPUnit passed with 29 tests / 267 assertions; canon and canon:all passed; RC validator returned `rc_diagnostic_green` with no blockers. The remaining structure-audit warning is naming-only (`316` potentially non-canonical names), and the RC canon scanner still reports one documentation TODO marker in `docs/location-r8-discovery-loop.md`.

@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace App\Locating\Service\Provider\Location;
 
-use App\Locating\InfrastructureInterface\Provider\Location\Provider\ProviderCostCatalogInterface;
+use App\Locating\ServiceInterface\Provider\Location\ProviderCostCatalogInterface;
 
 final class ProviderCostCatalogService implements ProviderCostCatalogInterface
 {

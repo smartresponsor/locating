@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Locating\InfrastructureInterface\Provider\Location\Provider;
+namespace App\Locating\ServiceInterface\Provider\Location;
 
 interface ProviderCostCatalogInterface
 {

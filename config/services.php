@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 use App\Locating\Contract\Location\AddressReverseHttpBackendInterface;
 use App\Locating\Contract\Location\MetricSnapshotProviderInterface;
-use App\Locating\InfrastructureInterface\Provider\Location\Provider\ProviderCostCatalogInterface;
 use App\Locating\Integration\Provider\Location\Http\NominatimReverseHttpClient;
 use App\Locating\MessageHandler\Batch\Location\AddressBatchMessageHandler;
 use App\Locating\MessageHandlerInterface\Batch\Location\AddressBatchMessageHandlerInterface;
@@ -151,6 +150,7 @@ use App\Locating\ServiceInterface\Provider\Location\LocationMetricBackendInterfa
 use App\Locating\ServiceInterface\Provider\Location\Observability\ProviderHealthMonitorInterface;
 use App\Locating\ServiceInterface\Provider\Location\ProviderCostCatalogBackendInterface;
 use App\Locating\ServiceInterface\Provider\Location\ProviderCostCatalogGatewayInterface;
+use App\Locating\ServiceInterface\Provider\Location\ProviderCostCatalogInterface;
 use App\Locating\ServiceInterface\Provider\Location\ProviderCostSignalReaderInterface;
 use App\Locating\ServiceInterface\Provider\Location\ProviderHealthSignalReaderInterface;
 use App\Locating\ServiceInterface\Provider\Location\ProviderHealthSnapshotBackendInterface;
