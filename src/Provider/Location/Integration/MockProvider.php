@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Locating\Integration\Provider\Location\Provider;
+namespace App\Locating\Provider\Location\Integration;
 
 use App\Locating\Contract\Location\LocationProviderContract;
 use App\Locating\Contract\Location\ReverseLocationProviderContract;
