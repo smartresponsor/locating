@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace App\Locating\Service\Observability\Location;
 
-use App\Locating\InfrastructureInterface\Provider\Location\Observability\TracePropagatorInterface;
+use App\Locating\ServiceInterface\Observability\Location\TracePropagatorInterface;
 
 final class TracePropagator implements TracePropagatorInterface
 {

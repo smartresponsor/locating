@@ -135,3 +135,12 @@
 - Updated Symfony DI, metric backends, service decorators/providers, and tests to the canonical recorder contracts.
 - Exact structural-root delta for this slice: `Infrastructure` files 37 -> 32; `InfrastructureInterface` files 29 -> 25.
 - Verification: standalone runtime passed; PHPStan passed with 0 errors; CS check passed; full PHPUnit passed with 29 tests / 267 assertions; canon scripts passed with 0 errors (service-family warnings 263).
+
+### Canon019/020 migration slice: observability deduplication
+
+- Retired duplicate Infrastructure copies of `LogEvent` and `TracePropagator`; canonical Service implementations already existed and were functionally equivalent.
+- Retired the duplicate Infrastructure `LogEventInterface`; canonical `ServiceInterface\\Provider\\Location\\Runtime\\Observability\\LogEventInterface` already exists and the Service `LogEvent` now implements it explicitly.
+- Moved `TracePropagatorInterface` into the mirrored `ServiceInterface\\Observability\\Location` tree and rebound the canonical Service implementation to it.
+- Verified that the four retired Infrastructure/InfrastructureInterface FQCNs have no active references.
+- Exact structural-root delta for this slice: `Infrastructure` files 32 -> 30; `InfrastructureInterface` files 25 -> 23.
+- Verification: standalone runtime passed; PHPStan passed with 0 errors; CS check passed; full PHPUnit passed with 29 tests / 267 assertions; canon scripts passed with 0 errors. Service-family warnings improved 263 -> 262 and potentially non-canonical names improved 328 -> 325.

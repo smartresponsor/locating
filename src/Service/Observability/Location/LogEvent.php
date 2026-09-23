@@ -10,8 +10,9 @@ declare(strict_types=1);
 namespace App\Locating\Service\Observability\Location;
 
 use App\Locating\Service\Privacy\Location\Redactor;
+use App\Locating\ServiceInterface\Provider\Location\Runtime\Observability\LogEventInterface;
 
-final class LogEvent
+final class LogEvent implements LogEventInterface
 {
     public function __construct(private Redactor $redactor = new Redactor())
     {
