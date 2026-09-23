@@ -39,37 +39,36 @@ final class IpAuthzPolicy implements IpAuthzPolicyInterface
     private function match(string $ip, string $cidr): bool
     {
         // IPv4/IPv6 CIDR match
-        try {
-            if (!str_contains($cidr, '/')) {
-                return $ip === $cidr;
-            }
-            [$net, $mask] = explode('/', $cidr, 2);
-            $netw = @inet_pton($net);
-            $addr = @inet_pton($ip);
-            $mask = (int) $mask;
-            if (false === $netw || false === $addr) {
-                return false;
-            }
-            $len = strlen($netw);
-            $bytes = intdiv($mask, 8);
-            $bits = $mask % 8;
-            if ($len !== strlen($addr)) {
-                return false;
-            }
-            if ($bytes > 0 && substr($netw, 0, $bytes) !== substr($addr, 0, $bytes)) {
-                return false;
-            }
-            if ($bits > 0) {
-                $n = ord($netw[$bytes]) >> (8 - $bits);
-                $a = ord($addr[$bytes]) >> (8 - $bits);
-                if ($n !== $a) {
-                    return false;
-                }
-            }
+        if (!str_contains($cidr, '/')) {
+            return $ip === $cidr;
+        }
 
-            return true;
-        } catch (\Throwable) {
+        [$net, $maskValue] = explode('/', $cidr, 2);
+        $netw = @inet_pton($net);
+        $addr = @inet_pton($ip);
+        if (false === $netw || false === $addr) {
             return false;
         }
+
+        $mask = filter_var($maskValue, FILTER_VALIDATE_INT);
+        $len = strlen($netw);
+        if (false === $mask || $mask < 0 || $mask > $len * 8 || $len !== strlen($addr)) {
+            return false;
+        }
+
+        $bytes = intdiv($mask, 8);
+        $bits = $mask % 8;
+        if ($bytes > 0 && substr($netw, 0, $bytes) !== substr($addr, 0, $bytes)) {
+            return false;
+        }
+        if ($bits > 0) {
+            $n = ord($netw[$bytes]) >> (8 - $bits);
+            $a = ord($addr[$bytes]) >> (8 - $bits);
+            if ($n !== $a) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

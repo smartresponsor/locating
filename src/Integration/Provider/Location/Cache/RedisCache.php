@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Locating\Integration\Provider\Location\Cache;
 
 use App\Locating\Contract\Cache\CacheInterface;
-use JsonException;
 use Redis;
 
 final class RedisCache implements CacheInterface
@@ -20,17 +19,17 @@ final class RedisCache implements CacheInterface
             return $default;
         }
 
-        try {
-            return json_decode($value, true, 512, JSON_THROW_ON_ERROR);
-        } catch (JsonException) {
+        $decoded = json_decode($value, true);
+        if (JSON_ERROR_NONE !== json_last_error()) {
             return $default;
         }
+
+        return $decoded;
     }
     public function set(string $key, mixed $value, int $ttl = 300): bool
     {
-        try {
-            $payload = json_encode($value, JSON_THROW_ON_ERROR);
-        } catch (JsonException) {
+        $payload = json_encode($value);
+        if (false === $payload) {
             return false;
         }
         if ($ttl > 0) {

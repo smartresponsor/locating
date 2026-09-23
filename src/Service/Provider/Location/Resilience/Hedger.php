@@ -34,6 +34,7 @@ class Hedger
         if ($elapsed < $hedgeDelayMs && isset($callables[1])) {
             usleep(($hedgeDelayMs - $elapsed) * 1000);
         }
+        $err2 = null;
         if (isset($callables[1])) {
             try {
                 $res2 = $callables[1]();
@@ -41,11 +42,24 @@ class Hedger
                     return $res2;
                 }
             } catch (\Throwable $e) {
+                $err2 = $e;
             }
         }
-        if ($err1) {
+
+        if (null !== $err1 && null !== $err2) {
+            throw new \RuntimeException(
+                'Both hedged callables failed; primary failure: '.$err1->getMessage(),
+                0,
+                $err2,
+            );
+        }
+        if (null !== $err1) {
             throw $err1;
         }
+        if (null !== $err2) {
+            throw $err2;
+        }
+
         return [];
     }
 }

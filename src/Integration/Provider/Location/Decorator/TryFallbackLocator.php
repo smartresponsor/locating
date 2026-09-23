@@ -30,40 +30,82 @@ final class TryFallbackLocator implements LocatorInterface
 
     public function normalize(string $raw): AddressData
     {
+        $primaryFailure = null;
         try {
             $r = $this->primary->normalize($raw);
             if ($this->notEmpty($r)) {
                 return $r;
             }
         } catch (\Throwable $e) {
+            $primaryFailure = $e;
         }
 
-        return $this->secondary->normalize($raw);
+        try {
+            return $this->secondary->normalize($raw);
+        } catch (\Throwable $secondaryFailure) {
+            if (null !== $primaryFailure) {
+                throw new \RuntimeException(
+                    'Both primary and secondary locators failed during normalize; primary failure: '.$primaryFailure->getMessage(),
+                    0,
+                    $secondaryFailure,
+                );
+            }
+
+            throw $secondaryFailure;
+        }
     }
 
     public function geocode(AddressData $a): GeoPoint
     {
+        $primaryFailure = null;
         try {
             $p = $this->primary->geocode($a);
             if ($this->notZero($p)) {
                 return $p;
             }
         } catch (\Throwable $e) {
+            $primaryFailure = $e;
         }
 
-        return $this->secondary->geocode($a);
+        try {
+            return $this->secondary->geocode($a);
+        } catch (\Throwable $secondaryFailure) {
+            if (null !== $primaryFailure) {
+                throw new \RuntimeException(
+                    'Both primary and secondary locators failed during geocode; primary failure: '.$primaryFailure->getMessage(),
+                    0,
+                    $secondaryFailure,
+                );
+            }
+
+            throw $secondaryFailure;
+        }
     }
 
     public function reverse(GeoPoint $p): AddressData
     {
+        $primaryFailure = null;
         try {
             $a = $this->primary->reverse($p);
             if ($this->notEmpty($a)) {
                 return $a;
             }
         } catch (\Throwable $e) {
+            $primaryFailure = $e;
         }
 
-        return $this->secondary->reverse($p);
+        try {
+            return $this->secondary->reverse($p);
+        } catch (\Throwable $secondaryFailure) {
+            if (null !== $primaryFailure) {
+                throw new \RuntimeException(
+                    'Both primary and secondary locators failed during reverse; primary failure: '.$primaryFailure->getMessage(),
+                    0,
+                    $secondaryFailure,
+                );
+            }
+
+            throw $secondaryFailure;
+        }
     }
 }
