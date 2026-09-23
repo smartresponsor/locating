@@ -10,6 +10,8 @@ declare(strict_types=1);
  *
  *   App\Locating\Service\Address\Location\*          => src/Service/Address/Location/*
  *   App\Locating\ServiceInterface\Address\Location\* => src/ServiceInterface/Address/Location/*
+ *   App\Locating\Factory\Address\Location\*          => src/Factory/Address/Location/*
+ *   App\Locating\FactoryInterface\Address\Location\* => src/FactoryInterface/Address/Location/*
  *
  * It is intentionally narrow. The legacy Smartresponsor service cluster is
  * tracked by the broader service-family audit and must not be mixed into this
@@ -27,14 +29,14 @@ $canonicalFiles = [
     'src/Service/Address/Location/AddressReverseCapability.php' => 'App\Locating\\Service\\Address\\Location',
     'src/Service/Address/Location/AddressSuggestCapability.php' => 'App\Locating\\Service\\Address\\Location',
     'src/Service/Address/Location/AddressValidator.php' => 'App\Locating\\Service\\Address\\Location',
-    'src/Service/Address/Location/LocationResultFactory.php' => 'App\Locating\\Service\\Address\\Location',
+    'src/Factory/Address/Location/LocationResultFactory.php' => 'App\Locating\\Factory\\Address\\Location',
     'src/ServiceInterface/Address/Location/AddressNormalizerInterface.php' => 'App\Locating\\ServiceInterface\\Address\\Location',
     'src/ServiceInterface/Address/Location/AddressParserInterface.php' => 'App\Locating\\ServiceInterface\\Address\\Location',
     'src/ServiceInterface/Address/Location/AddressPipelineInterface.php' => 'App\Locating\\ServiceInterface\\Address\\Location',
     'src/ServiceInterface/Address/Location/AddressReverseCapabilityInterface.php' => 'App\Locating\\ServiceInterface\\Address\\Location',
     'src/ServiceInterface/Address/Location/AddressSuggestCapabilityInterface.php' => 'App\Locating\\ServiceInterface\\Address\\Location',
     'src/ServiceInterface/Address/Location/AddressValidatorInterface.php' => 'App\Locating\\ServiceInterface\\Address\\Location',
-    'src/ServiceInterface/Address/Location/LocationResultFactoryInterface.php' => 'App\Locating\\ServiceInterface\\Address\\Location',
+    'src/FactoryInterface/Address/Location/LocationResultFactoryInterface.php' => 'App\Locating\\FactoryInterface\\Address\\Location',
 ];
 
 $retiredFiles = [
@@ -45,6 +47,7 @@ $retiredFiles = [
     'src/Service/Address/AddressSuggestCapability.php',
     'src/Service/Address/AddressValidator.php',
     'src/Service/Address/LocationResultFactory.php',
+    'src/Service/Address/Location/LocationResultFactory.php',
     'src/ServiceInterface/Address/AddressNormalizerInterface.php',
     'src/ServiceInterface/Address/AddressParserInterface.php',
     'src/ServiceInterface/Address/AddressPipelineInterface.php',
@@ -52,6 +55,7 @@ $retiredFiles = [
     'src/ServiceInterface/Address/AddressSuggestCapabilityInterface.php',
     'src/ServiceInterface/Address/AddressValidatorInterface.php',
     'src/ServiceInterface/Address/LocationResultFactoryInterface.php',
+    'src/ServiceInterface/Address/Location/LocationResultFactoryInterface.php',
 ];
 
 foreach ($canonicalFiles as $relativePath => $expectedNamespace) {
@@ -72,12 +76,12 @@ foreach ($canonicalFiles as $relativePath => $expectedNamespace) {
         );
     }
 
-    if (str_starts_with($relativePath, 'src/ServiceInterface/') && !str_contains($contents, 'interface ')) {
-        $errors[] = 'ServiceInterface file is not an interface: ' . $relativePath;
+    if ((str_starts_with($relativePath, 'src/ServiceInterface/') || str_starts_with($relativePath, 'src/FactoryInterface/')) && !str_contains($contents, 'interface ')) {
+        $errors[] = 'Typed interface file is not an interface: ' . $relativePath;
     }
 
-    if (str_starts_with($relativePath, 'src/Service/') && !str_contains($contents, 'final class ')) {
-        $warnings[] = 'Service file is not a final class: ' . $relativePath;
+    if ((str_starts_with($relativePath, 'src/Service/') || str_starts_with($relativePath, 'src/Factory/')) && !str_contains($contents, 'final class ')) {
+        $warnings[] = 'Technical-role implementation file is not a final class: ' . $relativePath;
     }
 }
 

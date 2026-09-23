@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace App\Locating\Service\Provider\Location;
 
-use App\Locating\ServiceInterface\Address\Location\LocationResultFactoryInterface;
+use App\Locating\FactoryInterface\Address\Location\LocationResultFactoryInterface;
 use App\Locating\ServiceInterface\Provider\Location\AddressSuggestGatewayInterface;
 use App\Locating\ServiceInterface\Provider\Location\AddressSuggestionSourceInterface;
 

@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 use App\Locating\Contract\Location\AddressReverseHttpBackendInterface;
 use App\Locating\Contract\Location\MetricSnapshotProviderInterface;
+use App\Locating\Factory\Address\Location\LocationResultFactory;
+use App\Locating\FactoryInterface\Address\Location\LocationResultFactoryInterface;
 use App\Locating\Integration\Provider\Location\Http\NominatimReverseHttpClient;
 use App\Locating\MessageHandler\Batch\Location\AddressBatchMessageHandler;
 use App\Locating\MessageHandlerInterface\Batch\Location\AddressBatchMessageHandlerInterface;
@@ -16,7 +18,6 @@ use App\Locating\Service\Address\Location\AddressQuotaGuard;
 use App\Locating\Service\Address\Location\AddressReverseCapability;
 use App\Locating\Service\Address\Location\AddressSuggestCapability;
 use App\Locating\Service\Address\Location\AddressValidator;
-use App\Locating\Service\Address\Location\LocationResultFactory;
 use App\Locating\Service\Batch\Location\AddressBatchJobFactory;
 use App\Locating\Service\Batch\Location\AddressBatchJobRecordFactoryBackend;
 use App\Locating\Service\Batch\Location\AddressBatchResultBackend;
@@ -99,7 +100,6 @@ use App\Locating\ServiceInterface\Address\Location\AddressQuotaGuardServiceInter
 use App\Locating\ServiceInterface\Address\Location\AddressReverseCapabilityInterface;
 use App\Locating\ServiceInterface\Address\Location\AddressSuggestCapabilityInterface;
 use App\Locating\ServiceInterface\Address\Location\AddressValidatorInterface;
-use App\Locating\ServiceInterface\Address\Location\LocationResultFactoryInterface;
 use App\Locating\ServiceInterface\Batch\Location\AddressBatchJobFactoryInterface;
 use App\Locating\ServiceInterface\Batch\Location\AddressBatchJobProgressWriterInterface;
 use App\Locating\ServiceInterface\Batch\Location\AddressBatchJobRecordFactoryBackendInterface;

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Service\Provider\Location;
 
-use App\Locating\Service\Address\Location\LocationResultFactory;
+use App\Locating\Factory\Address\Location\LocationResultFactory;
 use App\Locating\Service\Provider\Location\AddressSuggestGateway;
 use App\Locating\Service\Provider\Location\AddressSuggestionProvider;
 use App\Locating\ServiceInterface\Provider\Location\AddressSuggestBackendInterface;

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Service\Address\Location;
 
-use App\Locating\Service\Address\Location\LocationResultFactory;
+use App\Locating\Factory\Address\Location\LocationResultFactory;
 use PHPUnit\Framework\TestCase;
 
 final class LocationResultFactoryTest extends TestCase
