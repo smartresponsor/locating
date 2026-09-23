@@ -10,6 +10,8 @@ declare(strict_types=1);
  *
  *   App\Locating\Service\Http\Location\*          => src/Service/Http/Location/*
  *   App\Locating\ServiceInterface\Http\Location\* => src/ServiceInterface/Http/Location/*
+ *   App\Locating\Factory\Http\Location\*          => src/Factory/Http/Location/*
+ *   App\Locating\FactoryInterface\Http\Location\* => src/FactoryInterface/Http/Location/*
  *
  * It is intentionally narrow. The legacy Smartresponsor service cluster is
  * tracked by the broader service-family audit and must not be mixed into this
@@ -24,13 +26,13 @@ $canonicalFiles = [
     'src/Service/Http/Location/LocationAddressReverseService.php' => 'App\Locating\\Service\\Http\\Location',
     'src/Service/Http/Location/LocationAddressSuggestService.php' => 'App\Locating\\Service\\Http\\Location',
     'src/Service/Http/Location/LocationQuotaGuard.php' => 'App\Locating\\Service\\Http\\Location',
-    'src/Service/Http/Location/LocationViewFactory.php' => 'App\Locating\\Service\\Http\\Location',
+    'src/Factory/Http/Location/LocationViewFactory.php' => 'App\Locating\\Factory\\Http\\Location',
     'src/Service/Http/Location/LocationQuotaGuardBackend.php' => 'App\Locating\\Service\\Http\\Location',
     'src/ServiceInterface/Http/Location/LocationAddressReverseServiceInterface.php' => 'App\Locating\\ServiceInterface\\Http\\Location',
     'src/ServiceInterface/Http/Location/LocationAddressSuggestServiceInterface.php' => 'App\Locating\\ServiceInterface\\Http\\Location',
     'src/ServiceInterface/Http/Location/LocationQuotaGuardBackendInterface.php' => 'App\Locating\\ServiceInterface\\Http\\Location',
     'src/ServiceInterface/Http/Location/LocationQuotaGuardInterface.php' => 'App\Locating\\ServiceInterface\\Http\\Location',
-    'src/ServiceInterface/Http/Location/LocationViewFactoryInterface.php' => 'App\Locating\\ServiceInterface\\Http\\Location',
+    'src/FactoryInterface/Http/Location/LocationViewFactoryInterface.php' => 'App\Locating\\FactoryInterface\\Http\\Location',
 ];
 
 $retiredFiles = [
@@ -38,6 +40,7 @@ $retiredFiles = [
     'src/Service/Http/LocationAddressSuggestService.php',
     'src/Service/Http/LocationQuotaGuard.php',
     'src/Service/Http/LocationViewFactory.php',
+    'src/Service/Http/Location/LocationViewFactory.php',
     'src/Service/Http/SmartresponsorLocationQuotaGuardBackend.php',
     'src/Service/Http/Location/SmartresponsorLocationQuotaGuardBackend.php',
     'src/ServiceInterface/Http/LocationAddressReverseServiceInterface.php',
@@ -45,6 +48,7 @@ $retiredFiles = [
     'src/ServiceInterface/Http/LocationQuotaGuardBackendInterface.php',
     'src/ServiceInterface/Http/LocationQuotaGuardInterface.php',
     'src/ServiceInterface/Http/LocationViewFactoryInterface.php',
+    'src/ServiceInterface/Http/Location/LocationViewFactoryInterface.php',
 ];
 
 foreach ($canonicalFiles as $relativePath => $expectedNamespace) {
@@ -65,12 +69,12 @@ foreach ($canonicalFiles as $relativePath => $expectedNamespace) {
         );
     }
 
-    if (str_starts_with($relativePath, 'src/ServiceInterface/') && !str_contains($contents, 'interface ')) {
-        $errors[] = 'ServiceInterface file is not an interface: ' . $relativePath;
+    if ((str_starts_with($relativePath, 'src/ServiceInterface/') || str_starts_with($relativePath, 'src/FactoryInterface/')) && !str_contains($contents, 'interface ')) {
+        $errors[] = 'Typed interface file is not an interface: ' . $relativePath;
     }
 
-    if (str_starts_with($relativePath, 'src/Service/') && !str_contains($contents, 'final class ')) {
-        $warnings[] = 'Service file is not a final class: ' . $relativePath;
+    if ((str_starts_with($relativePath, 'src/Service/') || str_starts_with($relativePath, 'src/Factory/')) && !str_contains($contents, 'final class ')) {
+        $warnings[] = 'Technical-role implementation file is not a final class: ' . $relativePath;
     }
 }
 

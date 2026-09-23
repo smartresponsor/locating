@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Service\Http\Location;
 
+use App\Locating\FactoryInterface\Http\Location\LocationViewFactoryInterface;
 use App\Locating\Model\Location\AddressReverseResult;
 use App\Locating\Model\Location\AddressReverseView;
 use App\Locating\Model\Location\AddressView;
 use App\Locating\Service\Http\Location\LocationAddressReverseService;
 use App\Locating\ServiceInterface\Address\Location\AddressReverseCapabilityInterface;
-use App\Locating\ServiceInterface\Http\Location\LocationViewFactoryInterface;
 use PHPUnit\Framework\TestCase;
 
 final class LocationAddressReverseServiceTest extends TestCase

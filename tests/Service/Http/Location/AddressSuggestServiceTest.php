@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Service\Http\Location;
 
+use App\Locating\FactoryInterface\Http\Location\LocationViewFactoryInterface;
 use App\Locating\Model\Location\AddressSuggestionResult;
 use App\Locating\Model\Location\AddressSuggestionView;
 use App\Locating\Model\Location\AddressView;
 use App\Locating\Service\Http\Location\LocationAddressSuggestService;
 use App\Locating\ServiceInterface\Address\Location\AddressSuggestCapabilityInterface;
-use App\Locating\ServiceInterface\Http\Location\LocationViewFactoryInterface;
 use PHPUnit\Framework\TestCase;
 
 final class LocationAddressSuggestServiceTest extends TestCase

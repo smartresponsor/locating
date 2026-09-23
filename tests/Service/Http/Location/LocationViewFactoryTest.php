@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Service\Http\Location;
 
+use App\Locating\Factory\Http\Location\LocationViewFactory;
 use App\Locating\Model\Location\AddressData;
 use App\Locating\Model\Location\AddressResult;
 use App\Locating\Model\Location\AddressStatus;
 use App\Locating\Model\Location\AddressSuggestion;
 use App\Locating\Model\Location\GeoPoint;
 use App\Locating\ModelInterface\Location\AddressIssueInterface;
-use App\Locating\Service\Http\Location\LocationViewFactory;
 use PHPUnit\Framework\TestCase;
 
 final class LocationViewFactoryTest extends TestCase

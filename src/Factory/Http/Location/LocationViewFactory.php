@@ -7,15 +7,15 @@ declare(strict_types=1);
  * dev@highhopesamerica.com
  */
 
-namespace App\Locating\Service\Http\Location;
+namespace App\Locating\Factory\Http\Location;
 
+use App\Locating\FactoryInterface\Http\Location\LocationViewFactoryInterface;
 use App\Locating\Model\Location\AddressReverseView;
 use App\Locating\Model\Location\AddressSuggestionView;
 use App\Locating\ModelInterface\Location\AddressReverseResultInterface;
 use App\Locating\ModelInterface\Location\AddressReverseViewInterface;
 use App\Locating\ModelInterface\Location\AddressSuggestionResultInterface;
 use App\Locating\ModelInterface\Location\AddressSuggestionViewInterface;
-use App\Locating\ServiceInterface\Http\Location\LocationViewFactoryInterface;
 
 final class LocationViewFactory implements LocationViewFactoryInterface
 {

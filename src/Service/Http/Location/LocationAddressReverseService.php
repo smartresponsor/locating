@@ -9,10 +9,10 @@ declare(strict_types=1);
 
 namespace App\Locating\Service\Http\Location;
 
+use App\Locating\FactoryInterface\Http\Location\LocationViewFactoryInterface;
 use App\Locating\ModelInterface\Location\AddressReverseViewInterface;
 use App\Locating\ServiceInterface\Address\Location\AddressReverseCapabilityInterface;
 use App\Locating\ServiceInterface\Http\Location\LocationAddressReverseServiceInterface;
-use App\Locating\ServiceInterface\Http\Location\LocationViewFactoryInterface;
 
 final class LocationAddressReverseService implements LocationAddressReverseServiceInterface
 {

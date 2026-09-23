@@ -9,9 +9,9 @@ declare(strict_types=1);
 
 namespace App\Locating\Service\Http\Location;
 
+use App\Locating\FactoryInterface\Http\Location\LocationViewFactoryInterface;
 use App\Locating\ServiceInterface\Address\Location\AddressSuggestCapabilityInterface;
 use App\Locating\ServiceInterface\Http\Location\LocationAddressSuggestServiceInterface;
-use App\Locating\ServiceInterface\Http\Location\LocationViewFactoryInterface;
 
 final class LocationAddressSuggestService implements LocationAddressSuggestServiceInterface
 {
