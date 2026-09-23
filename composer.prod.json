@@ -2,7 +2,7 @@
   "name": "locating/location",
   "description": "Location Symfony component for normalization, validation, geocoding, and provider governance.",
   "type": "project",
-  "license": "proprietary",
+  "license": "PolyForm-Noncommercial-1.0.0",
   "minimum-stability": "dev",
   "prefer-stable": true,
   "repositories": [

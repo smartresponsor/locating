@@ -219,3 +219,4 @@
 - PHP syntax passed for all six changed PHP files and PHPStan passed with 0 errors after test typing was corrected.
 - `cs:check` could not be re-executed in this pass because both gate-runner and Composer-script wrappers returned Console MCP internal errors; this is recorded as tooling limitation rather than represented as a green result.
 - Parallel licensing changes (`composer.json`, `LICENSE`, `NOTICE`) were detected during the pass and intentionally excluded from all Canon011 edits, staging, and commit scope.
+- Licensing follow-up reviewed the previously parallel changes as a separate repository-value slice: adopted PolyForm Noncommercial 1.0.0, aligned both `composer.json` and `composer.prod.json`, added the canonical license text and a `Required Notice:` matching the repository's established `Oleksandr Tishchenko / Marketing America Corp` ownership convention. `composer validate --strict --check-lock` passed and `composer.prod.json` parsed as valid JSON.
