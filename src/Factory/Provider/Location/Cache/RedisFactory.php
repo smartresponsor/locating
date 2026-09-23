@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Locating\Integration\Provider\Location\Cache;
+namespace App\Locating\Factory\Provider\Location\Cache;
 
 use Redis;
 
