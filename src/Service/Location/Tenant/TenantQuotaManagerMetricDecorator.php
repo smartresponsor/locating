@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace App\Locating\Service\Location\Tenant;
 
-use App\Locating\InfrastructureInterface\Provider\Location\Metrics\LocationMetricRecorderInterface;
+use App\Locating\RecorderInterface\LocationMetricRecorderInterface;
 use App\Locating\ServiceInterface\Location\Tenant\TenantQuotaManagerInterface;
 
 /**

@@ -7,7 +7,7 @@ declare(strict_types=1);
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace App\Locating\InfrastructureInterface\Provider\Location\Metrics;
+namespace App\Locating\ServiceInterface\Provider\Location;
 
 interface BudgetTelemetryInterface
 {

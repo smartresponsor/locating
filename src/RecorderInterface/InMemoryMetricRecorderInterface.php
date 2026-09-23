@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Locating\InfrastructureInterface\Provider\Location\Metrics;
+namespace App\Locating\RecorderInterface;
 
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp

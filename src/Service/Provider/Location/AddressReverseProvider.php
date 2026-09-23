@@ -9,8 +9,8 @@ declare(strict_types=1);
 namespace App\Locating\Service\Provider\Location;
 
 use App\Locating\InfrastructureInterface\Provider\Location\Gateway\AddressReverseGatewayInterface;
-use App\Locating\InfrastructureInterface\Provider\Location\Metrics\LocationMetricRecorderInterface;
 use App\Locating\ModelInterface\Location\AddressReverseResultInterface;
+use App\Locating\RecorderInterface\LocationMetricRecorderInterface;
 use App\Locating\ServiceInterface\Address\Location\LocationResultFactoryInterface;
 use App\Locating\ServiceInterface\Provider\Location\AddressReverseProviderInterface;
 use App\Locating\ServiceInterface\Provider\Location\AddressReverseSourceInterface;

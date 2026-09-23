@@ -6,16 +6,17 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Locating\Infrastructure\Provider\Location\Metrics;
+namespace App\Locating\Recorder;
 
 use App\Locating\InfrastructureInterface\Provider\Location\Backend\MetricSnapshotProviderInterface;
-use App\Locating\InfrastructureInterface\Provider\Location\Metrics\LocationMetricRecorderInterface;
+use App\Locating\RecorderInterface\InMemoryMetricRecorderInterface;
+use App\Locating\RecorderInterface\LocationMetricRecorderInterface;
 
 /**
  * In-memory metric recorder that can be used for development and smoke tests.
  * It collects basic aggregates for latency and error rate per operation.
  */
-final class InMemoryMetricRecorder implements LocationMetricRecorderInterface, MetricSnapshotProviderInterface
+final class InMemoryMetricRecorder implements InMemoryMetricRecorderInterface, LocationMetricRecorderInterface, MetricSnapshotProviderInterface
 {
     /**
      * @var array<string,float>

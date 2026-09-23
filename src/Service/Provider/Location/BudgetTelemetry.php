@@ -3,9 +3,9 @@
 # Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 
-namespace App\Locating\Infrastructure\Provider\Location\Metrics;
+namespace App\Locating\Service\Provider\Location;
 
-use App\Locating\InfrastructureInterface\Provider\Location\Metrics\BudgetTelemetryInterface;
+use App\Locating\ServiceInterface\Provider\Location\BudgetTelemetryInterface;
 
 final class BudgetTelemetry implements BudgetTelemetryInterface
 {

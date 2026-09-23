@@ -9,8 +9,8 @@ declare(strict_types=1);
 
 namespace App\Locating\Service\Batch\Location;
 
-use App\Locating\InfrastructureInterface\Provider\Location\Metrics\LocationMetricRecorderInterface;
 use App\Locating\ModelInterface\Location\AddressBatchJobInterface;
+use App\Locating\RecorderInterface\LocationMetricRecorderInterface;
 use App\Locating\ServiceInterface\Batch\Location\LocationAddressBatchServiceInterface;
 
 final class LocationAddressBatchServiceMetricDecorator implements LocationAddressBatchServiceInterface

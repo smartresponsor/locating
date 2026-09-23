@@ -7,10 +7,10 @@ declare(strict_types=1);
  * dev@highhopesamerica.com
  */
 
-namespace App\Locating\Infrastructure\Provider\Location;
+namespace App\Locating\Recorder;
 
 use App\Locating\InfrastructureInterface\Provider\Location\Backend\LocationMetricBackendInterface;
-use App\Locating\InfrastructureInterface\Provider\Location\Metrics\LocationMetricRecorderInterface;
+use App\Locating\RecorderInterface\LocationMetricRecorderInterface;
 
 final class LocationMetricRecorder implements LocationMetricRecorderInterface
 {

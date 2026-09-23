@@ -7,9 +7,9 @@ declare(strict_types=1);
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace App\Locating\Infrastructure\Provider\Location\Metrics;
+namespace App\Locating\Service\Provider\Location;
 
-use App\Locating\InfrastructureInterface\Provider\Location\Metrics\HealthMetricInterface;
+use App\Locating\ServiceInterface\Provider\Location\HealthMetricInterface;
 
 final class HealthMetric implements HealthMetricInterface
 {

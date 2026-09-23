@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Locator\Service;
 
-use App\Locating\Infrastructure\Provider\Location\Metrics\InMemoryMetricRecorder;
+use App\Locating\Recorder\InMemoryMetricRecorder;
 use App\Locating\Service\Location\Tenant\TenantQuotaManager;
 use App\Locating\Service\Location\Tenant\TenantQuotaManagerMetricDecorator;
 use PHPUnit\Framework\TestCase;

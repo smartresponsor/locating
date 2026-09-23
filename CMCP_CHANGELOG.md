@@ -126,3 +126,12 @@
 - Left `CurlHttpClient`, `FixtureHttpClient`, their local interface, and the legacy HTTP `Kernel` in place for a separate compatibility/dead-code decision rather than relocating them blindly.
 - Exact structural-root delta for this slice: `Infrastructure` files 39 -> 37; `InfrastructureInterface` files 32 -> 29.
 - Verification: standalone runtime passed; PHPStan passed with 0 errors; CS check passed after import-order normalization; full PHPUnit passed with 29 tests / 267 assertions; canon scripts passed with 0 errors.
+
+### Canon019/020 migration slice: metrics and recorder contour
+
+- Created canonical `src/Recorder/` and `src/RecorderInterface/` role roots and moved `LocationMetricRecorder`, `InMemoryMetricRecorder`, `NullMetricRecorder`, `LocationMetricRecorderInterface`, and `InMemoryMetricRecorderInterface` into them.
+- `InMemoryMetricRecorder` now explicitly implements its named `InMemoryMetricRecorderInterface` in addition to the shared metric recorder contract and snapshot provider contract.
+- Moved non-recorder `BudgetTelemetry` and `HealthMetric` pairs into existing `Service/ServiceInterface` provider-location roles instead of keeping them under the Recorder root.
+- Updated Symfony DI, metric backends, service decorators/providers, and tests to the canonical recorder contracts.
+- Exact structural-root delta for this slice: `Infrastructure` files 37 -> 32; `InfrastructureInterface` files 29 -> 25.
+- Verification: standalone runtime passed; PHPStan passed with 0 errors; CS check passed; full PHPUnit passed with 29 tests / 267 assertions; canon scripts passed with 0 errors (service-family warnings 263).
