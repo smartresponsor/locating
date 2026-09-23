@@ -6,13 +6,46 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "repositories": [
-    {"type": "vcs", "url": "git@github.com:smartresponsor/collectioning.git", "no-api": true},
-    {"type": "vcs", "url": "git@github.com:smartresponsor/cruding.git", "no-api": true},
-    {"type": "vcs", "url": "git@github.com:smartresponsor/interfacing.git", "no-api": true},
-    {"type": "vcs", "url": "git@github.com:smartresponsor/navigating.git", "no-api": true},
-    {"type": "vcs", "url": "git@github.com:smartresponsor/objecting.git", "no-api": true},
-    {"type": "vcs", "url": "git@github.com:smartresponsor/tabling.git", "no-api": true},
-    {"type": "vcs", "url": "git@github.com:smartresponsor/viewing.git", "no-api": true}
+    {
+      "type": "vcs",
+      "url": "git@github.com:smartresponsor/collectioning.git",
+      "no-api": true
+    },
+    {
+      "type": "vcs",
+      "url": "git@github.com:smartresponsor/cruding.git",
+      "no-api": true
+    },
+    {
+      "type": "vcs",
+      "url": "git@github.com:smartresponsor/interfacing.git",
+      "no-api": true
+    },
+    {
+      "type": "vcs",
+      "url": "git@github.com:smartresponsor/navigating.git",
+      "no-api": true
+    },
+    {
+      "type": "vcs",
+      "url": "git@github.com:smartresponsor/objecting.git",
+      "no-api": true
+    },
+    {
+      "type": "vcs",
+      "url": "git@github.com:smartresponsor/tabling.git",
+      "no-api": true
+    },
+    {
+      "type": "vcs",
+      "url": "git@github.com:smartresponsor/viewing.git",
+      "no-api": true
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/smartresponsor/gating.git",
+      "no-api": true
+    }
   ],
   "require": {
     "php": "^8.4",
@@ -50,6 +83,8 @@
       "author_email": "dev@highhopesamerica.com",
       "deploy_nginx": "deploy/nginx/nginx.conf"
     }
+  },
+  "require-dev": {
+    "gating/gate": "dev-master"
   }
 }
-

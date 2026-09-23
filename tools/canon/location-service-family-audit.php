@@ -55,7 +55,8 @@ foreach ($targets as $layer => $dir) {
         $isAppLocationNamespace = $namespace === $expectedNamespace;
         $isSmartresponsorNamespace = str_starts_with($namespace, 'Smartresponsor\\');
         $hasLocationPrefix = str_starts_with($className, 'Location') || str_starts_with($className, 'SmartresponsorLocation');
-        $hasAllowedServiceSuffix = preg_match('/(Service|Capability|Factory|Guard|Backend|Decorator|Resolver|Provider|Exporter|Collector|Pipeline|Parser|Normalizer|Validator|Mapper|Router|Registry|Policy|Manager|Scheduler|Executor|Runner|Ranker|Adapter|Bridge|Client|Repository|Store|Recorder|Engine|Calibrator|Limiter|Toggle|Sweeper|Canonicalizer|Sanitizer)$/', $className) === 1;
+        $hasLocationContext = str_contains('/'.$relative.'/', '/Location/');
+        $hasAllowedServiceSuffix = preg_match('/(Service|Capability|Factory|Guard|Backend|Decorator|Resolver|Provider|Exporter|Collector|Pipeline|Parser|Normalizer|Validator|Mapper|Router|Registry|Policy|Manager|Scheduler|Executor|Runner|Ranker|Adapter|Aggregator|Bridge|Builder|Client|Filter|Handler|Hydrator|Planner|Reader|Repository|Selector|Store|Strategy|Writer|Recorder|Engine|Calibrator|Limiter|Toggle|Sweeper|Canonicalizer|Sanitizer)$/', $className) === 1;
         $hasInterfaceSuffix = str_ends_with($className, 'Interface');
         $logicalFamily = preg_replace('/Interface$/', '', $className) ?: $className;
 
@@ -70,6 +71,7 @@ foreach ($targets as $layer => $dir) {
             'app_location_namespace' => $isAppLocationNamespace,
             'smartresponsor_namespace' => $isSmartresponsorNamespace,
             'location_prefix' => $hasLocationPrefix,
+            'location_context' => $hasLocationContext,
             'allowed_service_suffix' => $hasAllowedServiceSuffix,
             'interface_suffix' => $hasInterfaceSuffix,
         ];
@@ -91,7 +93,7 @@ foreach ($targets as $layer => $dir) {
         if ($layer === 'Service' && !$hasAllowedServiceSuffix) {
             $issues[] = issue('warning', 'service_class_suffix_not_canonical', $layer, $relative, "Service class {$className} has no canonical service-form suffix.");
         }
-        if ($layer === 'Service' && !$hasLocationPrefix && !$isSmartresponsorNamespace) {
+        if ($layer === 'Service' && !$hasLocationPrefix && !$hasLocationContext && !$isSmartresponsorNamespace) {
             $issues[] = issue('warning', 'service_class_missing_location_prefix', $layer, $relative, "App service class {$className} should carry Location prefix where practical.");
         }
     }
@@ -190,7 +192,7 @@ function writeCsv(string $path, array $rows): void
     if ($handle === false) {
         throw new RuntimeException("Unable to write CSV: {$path}");
     }
-    $headers = ['layer', 'direction', 'path', 'namespace', 'kind', 'symbol', 'logical_family', 'app_location_namespace', 'smartresponsor_namespace', 'location_prefix', 'allowed_service_suffix', 'interface_suffix'];
+    $headers = ['layer', 'direction', 'path', 'namespace', 'kind', 'symbol', 'logical_family', 'app_location_namespace', 'smartresponsor_namespace', 'location_prefix', 'location_context', 'allowed_service_suffix', 'interface_suffix'];
     fputcsv($handle, $headers, ',', '"', '');
     foreach ($rows as $row) {
         fputcsv($handle, array_map(static fn ($value): string => is_bool($value) ? ($value ? 'yes' : 'no') : (string) $value, array_intersect_key($row, array_flip($headers))), ',', '"', '');

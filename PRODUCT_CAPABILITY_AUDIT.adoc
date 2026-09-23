@@ -1,0 +1,35 @@
+= Product Capability Audit: Locating
+:revdate: 2026-09-20
+
+== Boundary verdict
+
+Locating owns location computation and external-provider orchestration. Addressing owns durable address persistence. This separation is correct and should remain strict.
+
+== Capability matrix
+
+[cols="3,1,4",options="header"]
+|===
+|Capability |Status |Audit
+|Address/location lookup |PARITY |Provider orchestration exists.
+|Geocoding |PARITY |Natural locating responsibility.
+|Reverse geocoding |PARITY |Expected provider capability.
+|Address autocomplete/suggest |PARITY |Active suggest/ranking provider path exists.
+|Provider priority/fallback |PARITY |Provider ordering and circuit-breaker configuration exist.
+|Normalization result |PARTIAL |Return normalized candidates/evidence; durable record belongs to Addressing.
+|Confidence/evidence |PARTIAL |Should be explicit for automated decisions.
+|Timezone/location metadata |PARTIAL |Useful derived location fact where provider supports it.
+|Distance/geospatial calculation |PARTIAL |Appropriate computational responsibility if generic.
+|Serviceability lookup |MISSING |Commercial shipping/serviceability policy belongs elsewhere; Locating supplies geography facts.
+|===
+
+== Boundary risks
+
+* Do not persist durable address entities.
+* Shipping/Retailing consume location facts but own their commercial eligibility.
+
+== Milestone direction
+
+M1: confidence/evidence and normalization contracts.
+M2: geospatial/distance and provider provenance.
+M3: acceptance contract with Addressing/Shipping.
+

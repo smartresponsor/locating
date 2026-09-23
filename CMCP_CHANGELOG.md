@@ -171,3 +171,21 @@
 - Updated LC-17 canon tooling so the retired legacy HTTP Kernel is forbidden and the canonical Symfony `src/Kernel.php` is required instead of checking obsolete manual service imports.
 - Final structural-root result: `src/Infrastructure` declarations 9 -> 0 and `src/InfrastructureInterface` declarations 4 -> 0. Overall migration baseline: 64 -> 0 and 52 -> 0.
 - Final verification at 0/0: standalone runtime passed; PHPStan passed with 0 errors; CS check passed; full PHPUnit passed with 29 tests / 267 assertions; canon and canon:all passed; RC validator returned `rc_diagnostic_green` with no blockers. The remaining structure-audit warning is naming-only (`316` potentially non-canonical names), and the RC canon scanner still reports one documentation TODO marker in `docs/location-r8-discovery-loop.md`.
+
+### LC-07 service-family audit calibration
+
+- Corrected the LC-07 Location-prefix heuristic so a Service already scoped under a `/Location/` path is not warned merely because its class name does not repeat the `Location` prefix.
+- Added `location_context` evidence to the generated CSV/report rows.
+- Aligned LC-07 accepted service-form suffixes with forms already recognized by LC-14 (`Aggregator`, `Builder`, `Filter`, `Handler`, `Hydrator`, `Planner`, `Reader`, `Selector`, `Strategy`, `Writer`).
+- Service-family warnings dropped from 299 to 120 with 0 errors and no production API rename. Exact remaining categories: 67 suffix advisories, 52 missing mirrored-interface advisories, and 1 Location-prefix advisory (`src/Service/AddressPipeline.php`).
+- The remaining top-level `AddressPipeline` was not renamed or retired because it uses a distinct public contract/model family documented in README; handling it requires an explicit API compatibility decision rather than warning-driven churn.
+- Verification: `canon:service-family`, full `canon`, and `cs:check` pass.
+
+### Worktree integration and Gating dependency
+
+- Preserved the `gating/gate` dependency integration as a real consumer capability: development Composer uses a symlinked `../Gating` path repository with explicit `dev-master` identity, production Composer uses the Gating VCS repository, and the lock file contains the resolved package.
+- Installed the current lock successfully; `gating/gate` resolves from `../Gating` at `dev-master` and Composer validation with lock checking passes.
+- Added an explicit `composer gate` diagnostic command. The current Gating run is intentionally not part of blocking `composer quality` yet because Locating does not have a consumer profile and the full cross-canon gate still exposes known architecture/naming/profile debt beyond this worktree integration pass.
+- `composer quality` remains the blocking baseline (`cs:check`, `stan`, `test`) and passed after integration: CS clean, PHPStan 0 errors, PHPUnit 29 tests / 267 assertions.
+- Removed an accidental full Gating repository copy from consumer `.gating/`; the tracked `.gating/README.md` remains the artifact-only surface and executable policy continues to come from the Composer package.
+- Preserved `PRODUCT_CAPABILITY_AUDIT.adoc` as a product-boundary/capability planning artifact rather than discarding it as generated noise.
