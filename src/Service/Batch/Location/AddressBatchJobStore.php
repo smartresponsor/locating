@@ -9,8 +9,8 @@ declare(strict_types=1);
 
 namespace App\Locating\Service\Batch\Location;
 
+use App\Locating\FactoryInterface\Batch\Location\AddressBatchJobFactoryInterface;
 use App\Locating\ModelInterface\Location\AddressBatchJobInterface;
-use App\Locating\ServiceInterface\Batch\Location\AddressBatchJobFactoryInterface;
 use App\Locating\ServiceInterface\Batch\Location\AddressBatchJobRecordFactoryBackendInterface;
 use App\Locating\ServiceInterface\Batch\Location\AddressBatchJobRepositoryBackendInterface;
 use App\Locating\ServiceInterface\Batch\Location\AddressBatchJobStoreInterface;

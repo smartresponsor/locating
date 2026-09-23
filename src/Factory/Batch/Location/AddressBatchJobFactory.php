@@ -7,13 +7,13 @@ declare(strict_types=1);
  * dev@highhopesamerica.com
  */
 
-namespace App\Locating\Service\Batch\Location;
+namespace App\Locating\Factory\Batch\Location;
 
+use App\Locating\FactoryInterface\Batch\Location\AddressBatchJobFactoryInterface;
 use App\Locating\Model\Location\AddressBatchJob;
 use App\Locating\Model\Location\AddressBatchJobStatus;
 use App\Locating\ModelInterface\Location\AddressBatchJobInterface;
 use App\Locating\ModelInterface\Location\AddressBatchJobRecordInterface;
-use App\Locating\ServiceInterface\Batch\Location\AddressBatchJobFactoryInterface;
 
 final class AddressBatchJobFactory implements AddressBatchJobFactoryInterface
 {
