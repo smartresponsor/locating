@@ -35,7 +35,7 @@ if (!is_file($canonicalServicePath)) {
     if (!str_contains($contents, 'final class AddressReverseCapability implements AddressReverseCapabilityInterface')) {
         $errors[] = 'AddressReverseCapability must implement AddressReverseCapabilityInterface.';
     }
-    if (!str_contains($contents, 'use App\Locating\ServiceInterface\Provider\Location\AddressReverseProviderInterface;')) {
+    if (!str_contains($contents, 'use App\Locating\ProviderInterface\Location\AddressReverseProviderInterface;')) {
         $errors[] = 'AddressReverseCapability must depend on the canonical AddressReverseProviderInterface.';
     }
 }

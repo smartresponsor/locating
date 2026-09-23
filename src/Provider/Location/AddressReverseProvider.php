@@ -6,13 +6,13 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Locating\Service\Provider\Location;
+namespace App\Locating\Provider\Location;
 
 use App\Locating\FactoryInterface\Address\Location\LocationResultFactoryInterface;
 use App\Locating\ModelInterface\Location\AddressReverseResultInterface;
+use App\Locating\ProviderInterface\Location\AddressReverseProviderInterface;
 use App\Locating\RecorderInterface\LocationMetricRecorderInterface;
 use App\Locating\ServiceInterface\Provider\Location\AddressReverseGatewayInterface;
-use App\Locating\ServiceInterface\Provider\Location\AddressReverseProviderInterface;
 use App\Locating\ServiceInterface\Provider\Location\AddressReverseSourceInterface;
 
 final class AddressReverseProvider implements AddressReverseProviderInterface, AddressReverseSourceInterface

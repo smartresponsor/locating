@@ -13,7 +13,7 @@ $expectedMoves = [
     'src/Service/Provider/PolicyAddressSuggestionSourceOrder.php' => 'src/Service/Provider/Location/PolicyAddressSuggestionSourceOrder.php',
     'src/Service/Provider/StaticAddressReverseSourceOrder.php' => 'src/Service/Provider/Location/StaticAddressReverseSourceOrder.php',
     'src/Service/Provider/StaticAddressSuggestionSourceOrder.php' => 'src/Service/Provider/Location/StaticAddressSuggestionSourceOrder.php',
-    'src/ServiceInterface/Provider/AddressReverseProviderInterface.php' => 'src/ServiceInterface/Provider/Location/AddressReverseProviderInterface.php',
+    'src/ServiceInterface/Provider/AddressReverseProviderInterface.php' => 'src/ProviderInterface/Location/AddressReverseProviderInterface.php',
     'src/ServiceInterface/Provider/AddressReverseResultNormalizerInterface.php' => 'src/ServiceInterface/Provider/Location/AddressReverseResultNormalizerInterface.php',
     'src/ServiceInterface/Provider/AddressReverseSourceCostPolicyInterface.php' => 'src/ServiceInterface/Provider/Location/AddressReverseSourceCostPolicyInterface.php',
     'src/ServiceInterface/Provider/AddressReverseSourceHealthPolicyInterface.php' => 'src/ServiceInterface/Provider/Location/AddressReverseSourceHealthPolicyInterface.php',
@@ -66,16 +66,18 @@ foreach ($expectedMoves as $old => $new) {
         }
     }
 
-    $expectedNamespace = str_starts_with($new, 'src/ServiceInterface/')
-        ? 'App\Locating\\ServiceInterface\\Provider\\Location'
-        : 'App\Locating\\Service\\Provider\\Location';
+    $expectedNamespace = match (true) {
+        str_starts_with($new, 'src/ProviderInterface/') => 'App\Locating\\ProviderInterface\\Location',
+        str_starts_with($new, 'src/ServiceInterface/') => 'App\Locating\\ServiceInterface\\Provider\\Location',
+        default => 'App\Locating\\Service\\Provider\\Location',
+    };
 
     if ($newExists && $namespace !== $expectedNamespace) {
         $violations[] = sprintf('Unexpected namespace for %s: expected %s, got %s', $new, $expectedNamespace, $namespace ?? '[missing]');
     }
 
-    if (str_starts_with($new, 'src/ServiceInterface/') && $kind !== 'interface') {
-        $violations[] = sprintf('ServiceInterface provider file must declare an interface: %s', $new);
+    if ((str_starts_with($new, 'src/ServiceInterface/') || str_starts_with($new, 'src/ProviderInterface/')) && $kind !== 'interface') {
+        $violations[] = sprintf('Typed provider interface file must declare an interface: %s', $new);
     }
 
     if (str_starts_with($new, 'src/Service/') && $kind !== 'class') {

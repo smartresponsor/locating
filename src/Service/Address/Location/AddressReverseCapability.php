@@ -10,8 +10,8 @@ declare(strict_types=1);
 namespace App\Locating\Service\Address\Location;
 
 use App\Locating\ModelInterface\Location\AddressReverseResultInterface;
+use App\Locating\ProviderInterface\Location\AddressReverseProviderInterface;
 use App\Locating\ServiceInterface\Address\Location\AddressReverseCapabilityInterface;
-use App\Locating\ServiceInterface\Provider\Location\AddressReverseProviderInterface;
 
 final class AddressReverseCapability implements AddressReverseCapabilityInterface
 {

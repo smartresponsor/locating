@@ -6,9 +6,9 @@ namespace App\Locating\Tests\Service\Provider\Location;
 
 use App\Locating\Contract\Location\AddressReverseHttpBackendInterface;
 use App\Locating\Factory\Address\Location\LocationResultFactory;
+use App\Locating\Provider\Location\AddressReverseProvider;
 use App\Locating\Recorder\LocationMetricRecorder;
 use App\Locating\Service\Provider\Location\AddressReverseGateway;
-use App\Locating\Service\Provider\Location\AddressReverseProvider;
 use App\Locating\ServiceInterface\Provider\Location\LocationMetricBackendInterface;
 use PHPUnit\Framework\TestCase;
 

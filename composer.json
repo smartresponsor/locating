@@ -108,7 +108,7 @@
       "php -l src/Service/Provider/Location/PolicyAddressSuggestionSourceOrder.php",
       "php -l src/Service/Provider/Location/StaticAddressReverseSourceOrder.php",
       "php -l src/Service/Provider/Location/StaticAddressSuggestionSourceOrder.php",
-      "php -l src/ServiceInterface/Provider/Location/AddressReverseProviderInterface.php",
+      "php -l src/ProviderInterface/Location/AddressReverseProviderInterface.php",
       "php -l src/ServiceInterface/Provider/Location/AddressReverseResultNormalizerInterface.php",
       "php -l src/ServiceInterface/Provider/Location/AddressReverseSourceCostPolicyInterface.php",
       "php -l src/ServiceInterface/Provider/Location/AddressReverseSourceHealthPolicyInterface.php",

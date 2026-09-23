@@ -6,8 +6,8 @@ namespace App\Locating\Tests\Service\Address\Location;
 
 use App\Locating\Model\Location\AddressReverseResult;
 use App\Locating\Model\Location\AddressView;
+use App\Locating\ProviderInterface\Location\AddressReverseProviderInterface;
 use App\Locating\Service\Address\Location\AddressReverseCapability;
-use App\Locating\ServiceInterface\Provider\Location\AddressReverseProviderInterface;
 use PHPUnit\Framework\TestCase;
 
 final class AddressReverseCapabilityTest extends TestCase

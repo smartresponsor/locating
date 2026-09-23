@@ -10,7 +10,7 @@ declare(strict_types=1);
 namespace App\Locating\Service\Provider\Location;
 
 use App\Locating\ModelInterface\Location\AddressReverseResultInterface;
-use App\Locating\ServiceInterface\Provider\Location\AddressReverseProviderInterface;
+use App\Locating\ProviderInterface\Location\AddressReverseProviderInterface;
 use App\Locating\ServiceInterface\Provider\Location\AddressReverseResultNormalizerInterface;
 use App\Locating\ServiceInterface\Provider\Location\AddressReverseSourceInterface;
 use App\Locating\ServiceInterface\Provider\Location\AddressReverseSourceOrderInterface;
