@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace App\Locating\Model\Location\Batch;
 
-final class AddressBatchMessage
+use App\Locating\MessageInterface\Batch\Location\AddressBatchMessageInterface;
+
+final class AddressBatchMessage implements AddressBatchMessageInterface
 {
     /**
      * @param array<string,mixed> $payload

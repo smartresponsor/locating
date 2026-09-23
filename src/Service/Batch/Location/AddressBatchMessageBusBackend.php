@@ -7,7 +7,7 @@ namespace App\Locating\Service\Batch\Location;
 use App\Locating\MessageInterface\Batch\Location\AddressBatchMessageInterface;
 use App\Locating\Model\Location\Batch\AddressBatchMessage;
 use App\Locating\ServiceInterface\Batch\Location\AddressBatchMessageBusBackendInterface;
-use App\Locating\ServiceInterface\Location\Batch\AddressBatchMessageBusInterface;
+use App\Locating\ServiceInterface\Batch\Location\AddressBatchMessageBusInterface;
 
 final class AddressBatchMessageBusBackend implements AddressBatchMessageBusBackendInterface
 {

@@ -10,7 +10,7 @@ declare(strict_types=1);
 namespace App\Locating\Service\Observability\Location;
 
 use App\Locating\Service\Privacy\Location\Redactor;
-use App\Locating\ServiceInterface\Provider\Location\Runtime\Observability\LogEventInterface;
+use App\Locating\ServiceInterface\Observability\Location\LogEventInterface;
 
 final class LogEvent implements LogEventInterface
 {

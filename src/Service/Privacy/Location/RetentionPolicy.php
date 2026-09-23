@@ -9,10 +9,14 @@ declare(strict_types=1);
 
 namespace App\Locating\Service\Privacy\Location;
 
+use App\Locating\ServiceInterface\Privacy\Location\RetentionPolicyInterface;
 use App\Locating\ServiceInterface\Provider\Location\Runtime\Privacy\RetentionInterface;
 
-class RetentionPolicy implements RetentionInterface
+class RetentionPolicy implements RetentionInterface, RetentionPolicyInterface
 {
+    /** @var array<string,int> */
+    private array $ttlOverride = [];
+
     /** @return array<string,array{ttl_days:int,action:string}> */
     public function policy(): array
     {
@@ -28,5 +32,15 @@ class RetentionPolicy implements RetentionInterface
         $p = $this->policy();
 
         return $p[$kind] ?? ['ttl_days' => 365, 'action' => 'anonymize'];
+    }
+
+    public function set(string $entity, int $ttlDay): void
+    {
+        $this->ttlOverride[$entity] = max(0, $ttlDay);
+    }
+
+    public function ttl(string $entity): int
+    {
+        return $this->ttlOverride[$entity] ?? $this->rule($entity)['ttl_days'];
     }
 }

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Locating\ServiceInterface\Provider\Location\Runtime\Observability;
+namespace App\Locating\ServiceInterface\Observability\Location;
 
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp

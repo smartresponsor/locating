@@ -7,7 +7,7 @@ declare(strict_types=1);
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace App\Locating\ServiceInterface\Provider\Location\Runtime\Privacy;
+namespace App\Locating\ServiceInterface\Privacy\Location;
 
 interface RetentionPolicyInterface
 {
