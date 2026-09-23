@@ -7,7 +7,7 @@ declare(strict_types=1);
  * Author: Oleksandr Tishchenko <dev@smartresponsor.com>
  */
 
-namespace App\Locating\Infrastructure\Provider\Location\Resilience;
+namespace App\Locating\Service\Provider\Location\Resilience;
 
 class Hedger
 {

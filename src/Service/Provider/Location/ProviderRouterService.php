@@ -9,11 +9,11 @@ declare(strict_types=1);
 
 namespace App\Locating\Service\Provider\Location;
 
-use App\Locating\Infrastructure\Provider\Location\Resilience\CircuitBreaker;
-use App\Locating\Infrastructure\Provider\Location\Resilience\Hedger;
-use App\Locating\Infrastructure\Provider\Location\Resilience\ProviderBudget;
 use App\Locating\Service\Location\Config\Env;
 use App\Locating\Service\Provider\Location\Cache\RedisCache;
+use App\Locating\Service\Provider\Location\Resilience\CircuitBreaker;
+use App\Locating\Service\Provider\Location\Resilience\Hedger;
+use App\Locating\Service\Provider\Location\Resilience\ProviderBudget;
 use App\Locating\ServiceInterface\Provider\Location\GeocodeLocationProviderInterface;
 
 class ProviderRouterService

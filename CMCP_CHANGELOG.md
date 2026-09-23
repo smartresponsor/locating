@@ -144,3 +144,11 @@
 - Verified that the four retired Infrastructure/InfrastructureInterface FQCNs have no active references.
 - Exact structural-root delta for this slice: `Infrastructure` files 32 -> 30; `InfrastructureInterface` files 25 -> 23.
 - Verification: standalone runtime passed; PHPStan passed with 0 errors; CS check passed; full PHPUnit passed with 29 tests / 267 assertions; canon scripts passed with 0 errors. Service-family warnings improved 263 -> 262 and potentially non-canonical names improved 328 -> 325.
+
+### Canon019/020 migration slice: queue, resilience, and rate-limit contours
+
+- Moved `Queue`, `Resilience`, and `RateLimit` implementation families from `src/Infrastructure/Provider/Location/` into mirrored `src/Service/Provider/Location/` technical-role paths.
+- Moved their interfaces from `src/InfrastructureInterface/Provider/Location/` into matching `src/ServiceInterface/Provider/Location/` paths.
+- Updated all active source/config/test references via exact namespace-prefix migration. Old FQCN matches remain only in generated reports and historical Console-MCP logs.
+- Exact structural-root delta for this slice: `Infrastructure` files 30 -> 23; `InfrastructureInterface` files 23 -> 17.
+- Verification: standalone runtime passed; PHPStan passed with 0 errors; CS check passed after import-order normalization; full PHPUnit passed with 29 tests / 267 assertions; canon scripts passed with 0 errors. Service-family warnings are 277 after making these service responsibilities visible to the family audit.

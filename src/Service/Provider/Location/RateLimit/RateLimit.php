@@ -7,10 +7,10 @@ declare(strict_types=1);
  * Author: Oleksandr Tishchenko <dev@smartresponsor.com>.
  */
 
-namespace App\Locating\Infrastructure\Provider\Location\RateLimit;
+namespace App\Locating\Service\Provider\Location\RateLimit;
 
-use App\Locating\InfrastructureInterface\Provider\Location\RateLimit\RateLimitInterface;
 use App\Locating\Service\Provider\Location\Cache\RedisCache;
+use App\Locating\ServiceInterface\Provider\Location\RateLimit\RateLimitInterface;
 
 class RateLimit implements RateLimitInterface
 {

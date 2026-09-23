@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Locating\InfrastructureInterface\Provider\Location\RateLimit;
+namespace App\Locating\ServiceInterface\Provider\Location\RateLimit;
 
 /**
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp.

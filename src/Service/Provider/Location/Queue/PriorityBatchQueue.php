@@ -7,9 +7,9 @@ declare(strict_types=1);
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace App\Locating\Infrastructure\Provider\Location\Queue;
+namespace App\Locating\Service\Provider\Location\Queue;
 
-use App\Locating\InfrastructureInterface\Provider\Location\Queue\PriorityBatchQueueInterface;
+use App\Locating\ServiceInterface\Provider\Location\Queue\PriorityBatchQueueInterface;
 
 final class PriorityBatchQueue implements PriorityBatchQueueInterface
 {
