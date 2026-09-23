@@ -85,7 +85,7 @@
 - Moved `TenantUsageCounterInterface` from `src/InfrastructureInterface/Location/Tenant/` to `src/ServiceInterface/Location/Tenant/`.
 - Updated Symfony wiring, service callers, and all affected tests to the new canonical namespaces.
 - Active old tenant Infrastructure FQCN references are gone; only regenerated/historical report data can mention the previous locations.
-- Structural debt delta for this slice: `Infrastructure` implementation files 117 -> 114; `InfrastructureInterface` files 53 -> 52.
+- Structural debt delta for this slice: `Infrastructure` files 64 -> 61; `InfrastructureInterface` files 52 -> 51.
 - Verification: standalone runtime passed; PHPStan passed with 0 errors; full PHPUnit passed with 29 tests / 267 assertions; canon scripts passed with 0 errors.
 - The service-family warning count moved from 214 to 222 because the migrated implementations now participate in the Service-family audit. This is tracked as naming/family cleanup, not a runtime or migration failure.
 
@@ -95,7 +95,7 @@
 - Moved `LocatorConfig` from `src/Infrastructure/Provider/Location/Config/` to `src/Service/Provider/Location/Config/`.
 - Moved `LocatorConfigInterface` from `src/InfrastructureInterface/Provider/Location/Config/` to `src/ServiceInterface/Provider/Location/Config/`.
 - Active old configuration Infrastructure FQCN references are gone.
-- Structural debt delta after this slice: `Infrastructure` implementation files 114 -> 112; `InfrastructureInterface` files 52 -> 51.
+- Structural debt delta after this slice: `Infrastructure` files 61 -> 59; `InfrastructureInterface` files 51 -> 50.
 - Verification: standalone runtime passed; PHPStan passed with 0 errors; full PHPUnit passed with 29 tests / 267 assertions; canon scripts passed with 0 errors.
 - Service-family warnings moved from 222 to 227 because the migrated implementations/interfaces now participate in the Service-family audit; tracked separately from structural-root removal.
 
@@ -105,6 +105,15 @@
 - Batch runtime/services now live under `src/Service/Batch/Location/`; Batch service contracts live under `src/ServiceInterface/Batch/Location/`.
 - Reclassified `AddressBatchJobRecord` and `AddressBatchResultRecord` as data objects under `src/Model/Location/Batch/`, with their contracts under `src/ModelInterface/Location/` instead of retaining them as Service types.
 - Updated all active source, Symfony config, message-handler, service, and test references. Old Batch Infrastructure FQCNs remain only in historical/generated reports.
-- Structural debt delta after this slice: `Infrastructure` implementation files 112 -> 97; `InfrastructureInterface` files 51 -> 38.
+- Structural debt delta after this slice: `Infrastructure` files 59 -> 44; `InfrastructureInterface` files 50 -> 37.
 - Verification: standalone runtime passed; PHPStan passed with 0 errors; full PHPUnit passed with 29 tests / 267 assertions; canon scripts passed with 0 errors.
 - Service-family warnings moved from 227 to 249 after the final Model reclassification (an intermediate all-Service placement reached 253); the remaining warnings are naming/family normalization debt, not structural-root failures.
+
+### Canon019/020 migration slice: provider cache contour
+
+- Moved `src/Infrastructure/Provider/Location/Cache/` to `src/Service/Provider/Location/Cache/` and the matching contracts to `src/ServiceInterface/Provider/Location/Cache/`.
+- Preserved the separate `src/Integration/Provider/Location/Cache/` family because it has a different contract and constructor semantics; no cache implementations were merged implicitly.
+- Updated all active source and test callers; old provider-cache Infrastructure FQCNs remain only in generated/historical reports.
+- Exact structural-root delta for this slice: `Infrastructure` files 44 -> 39; `InfrastructureInterface` files 37 -> 32.
+- Verification: standalone runtime passed; PHPStan passed with 0 errors; CS check passed; full PHPUnit passed with 29 tests / 267 assertions; canon scripts passed with 0 errors.
+- Service-family warnings are 259 after the slice; these remain naming/family normalization debt rather than structural-root failures.

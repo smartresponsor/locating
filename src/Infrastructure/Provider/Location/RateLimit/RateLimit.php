@@ -9,8 +9,8 @@ declare(strict_types=1);
 
 namespace App\Locating\Infrastructure\Provider\Location\RateLimit;
 
-use App\Locating\Infrastructure\Provider\Location\Cache\RedisCache;
 use App\Locating\InfrastructureInterface\Provider\Location\RateLimit\RateLimitInterface;
+use App\Locating\Service\Provider\Location\Cache\RedisCache;
 
 class RateLimit implements RateLimitInterface
 {

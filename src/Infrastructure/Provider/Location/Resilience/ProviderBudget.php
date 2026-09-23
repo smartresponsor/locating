@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace App\Locating\Infrastructure\Provider\Location\Resilience;
 
-use App\Locating\Infrastructure\Provider\Location\Cache\RedisCache;
+use App\Locating\Service\Provider\Location\Cache\RedisCache;
 
 class ProviderBudget
 {

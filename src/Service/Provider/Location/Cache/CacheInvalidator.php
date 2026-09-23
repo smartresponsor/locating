@@ -7,10 +7,10 @@ declare(strict_types=1);
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace App\Locating\Infrastructure\Provider\Location\Cache;
+namespace App\Locating\Service\Provider\Location\Cache;
 
-use App\Locating\InfrastructureInterface\Provider\Location\Cache\CacheInvalidatorInterface;
-use App\Locating\InfrastructureInterface\Provider\Location\Cache\ResultCacheInterface;
+use App\Locating\ServiceInterface\Provider\Location\Cache\CacheInvalidatorInterface;
+use App\Locating\ServiceInterface\Provider\Location\Cache\ResultCacheInterface;
 
 final class CacheInvalidator implements CacheInvalidatorInterface
 {

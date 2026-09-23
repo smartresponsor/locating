@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace App\Locating\Service\Provider\Location\Runtime\Batch;
 
-use App\Locating\InfrastructureInterface\Provider\Location\Cache\ResultCacheInterface;
+use App\Locating\ServiceInterface\Provider\Location\Cache\ResultCacheInterface;
 use App\Locating\ServiceInterface\Provider\Location\Runtime\Batch\ColdStartWarmupInterface;
 
 final class ColdStartWarmup implements ColdStartWarmupInterface

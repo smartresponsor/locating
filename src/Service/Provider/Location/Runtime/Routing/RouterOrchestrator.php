@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace App\Locating\Service\Provider\Location\Runtime\Routing;
 
-use App\Locating\Infrastructure\Provider\Location\Cache\ResultCache;
+use App\Locating\Service\Provider\Location\Cache\ResultCache;
 use App\Locating\Service\Provider\Location\HealthEwmaService;
 use App\Locating\Service\Provider\Location\Runtime\Resilience\FailoverMatrix;
 use App\Locating\Service\Provider\Location\Runtime\Resilience\RetryPolicy;

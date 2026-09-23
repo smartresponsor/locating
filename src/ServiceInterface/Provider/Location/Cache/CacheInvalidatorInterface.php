@@ -7,7 +7,7 @@ declare(strict_types=1);
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace App\Locating\InfrastructureInterface\Provider\Location\Cache;
+namespace App\Locating\ServiceInterface\Provider\Location\Cache;
 
 interface CacheInvalidatorInterface
 {

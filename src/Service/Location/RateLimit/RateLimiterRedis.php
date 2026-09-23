@@ -9,8 +9,8 @@ declare(strict_types=1);
 
 namespace App\Locating\Service\Location\RateLimit;
 
-use App\Locating\InfrastructureInterface\Provider\Location\Cache\RedisClientInterface;
 use App\Locating\ServiceInterface\Location\RateLimit\RateLimiterInterface;
+use App\Locating\ServiceInterface\Provider\Location\Cache\RedisClientInterface;
 
 /** Windowed counter limiter (per-key per-window) using RedisClientInterface */
 final class RateLimiterRedis implements RateLimiterInterface

@@ -7,9 +7,9 @@ declare(strict_types=1);
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace App\Locating\Infrastructure\Provider\Location\Cache;
+namespace App\Locating\Service\Provider\Location\Cache;
 
-use App\Locating\InfrastructureInterface\Provider\Location\Cache\CacheProbeInterface;
+use App\Locating\ServiceInterface\Provider\Location\Cache\CacheProbeInterface;
 
 final class CacheProbe implements CacheProbeInterface
 {

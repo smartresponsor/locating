@@ -9,10 +9,10 @@ declare(strict_types=1);
 
 namespace App\Locating\Infrastructure\Provider\Location\Http;
 
-use App\Locating\Infrastructure\Provider\Location\Cache\RedisCache;
 use App\Locating\Service\Address\Location\AddressParseService;
 use App\Locating\Service\Address\Location\AddressStandardizeService;
 use App\Locating\Service\Location\Config\Env;
+use App\Locating\Service\Provider\Location\Cache\RedisCache;
 use App\Locating\Service\Provider\Location\ProviderRouterService;
 use App\Locating\Service\Provider\Location\Runtime\Geo\LocatorService;
 

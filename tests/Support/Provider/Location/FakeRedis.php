@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Support\Provider\Location;
 
-use App\Locating\InfrastructureInterface\Provider\Location\Cache\RedisClientInterface;
+use App\Locating\ServiceInterface\Provider\Location\Cache\RedisClientInterface;
 
 final class FakeRedis implements RedisClientInterface
 {
