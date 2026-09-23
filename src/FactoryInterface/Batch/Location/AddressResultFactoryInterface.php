@@ -7,7 +7,7 @@ declare(strict_types=1);
  * dev@highhopesamerica.com
  */
 
-namespace App\Locating\ServiceInterface\Batch\Location;
+namespace App\Locating\FactoryInterface\Batch\Location;
 
 use App\Locating\ModelInterface\Location\AddressBatchResultRecordInterface;
 use App\Locating\ModelInterface\Location\AddressPipelineResultInterface;

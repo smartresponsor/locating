@@ -9,10 +9,10 @@ declare(strict_types=1);
 
 namespace App\Locating\Service\Batch\Location;
 
+use App\Locating\FactoryInterface\Batch\Location\AddressResultFactoryInterface;
 use App\Locating\ModelInterface\Location\AddressPipelineResultInterface;
 use App\Locating\ServiceInterface\Batch\Location\AddressBatchResultStorageBackendInterface;
 use App\Locating\ServiceInterface\Batch\Location\AddressBatchResultWriterInterface;
-use App\Locating\ServiceInterface\Batch\Location\AddressResultFactoryInterface;
 
 final class AddressBatchResultWriter implements AddressBatchResultWriterInterface
 {

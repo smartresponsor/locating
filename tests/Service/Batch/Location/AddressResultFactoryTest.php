@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Service\Batch\Location;
 
+use App\Locating\Factory\Batch\Location\AddressResultFactory;
 use App\Locating\Model\Location\AddressIssue;
 use App\Locating\Model\Location\AddressPipelineResult;
 use App\Locating\Model\Location\AddressView;
 use App\Locating\ModelInterface\Location\AddressBatchResultRecordInterface;
-use App\Locating\Service\Batch\Location\AddressResultFactory;
 use App\Locating\ServiceInterface\Batch\Location\AddressBatchResultBackendInterface;
 use PHPUnit\Framework\TestCase;
 
