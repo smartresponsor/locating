@@ -7,8 +7,8 @@ $root = dirname(__DIR__, 2);
 $expectedMoves = [
     'src/Service/Provider/AddressReverseResultNormalizer.php' => 'src/Service/Provider/Location/AddressReverseResultNormalizer.php',
     'src/Service/Provider/AddressSuggestionRanker.php' => 'src/Service/Provider/Location/AddressSuggestionRanker.php',
-    'src/Service/Provider/OrderedAddressReverseProvider.php' => 'src/Service/Provider/Location/OrderedAddressReverseProvider.php',
-    'src/Service/Provider/OrderedAddressSuggestionProvider.php' => 'src/Service/Provider/Location/OrderedAddressSuggestionProvider.php',
+    'src/Service/Provider/OrderedAddressReverseProvider.php' => 'src/Provider/Location/OrderedAddressReverseProvider.php',
+    'src/Service/Provider/OrderedAddressSuggestionProvider.php' => 'src/Provider/Location/OrderedAddressSuggestionProvider.php',
     'src/Service/Provider/PolicyAddressReverseSourceOrder.php' => 'src/Service/Provider/Location/PolicyAddressReverseSourceOrder.php',
     'src/Service/Provider/PolicyAddressSuggestionSourceOrder.php' => 'src/Service/Provider/Location/PolicyAddressSuggestionSourceOrder.php',
     'src/Service/Provider/StaticAddressReverseSourceOrder.php' => 'src/Service/Provider/Location/StaticAddressReverseSourceOrder.php',
@@ -68,6 +68,7 @@ foreach ($expectedMoves as $old => $new) {
 
     $expectedNamespace = match (true) {
         str_starts_with($new, 'src/ProviderInterface/') => 'App\Locating\\ProviderInterface\\Location',
+        str_starts_with($new, 'src/Provider/') => 'App\Locating\\Provider\\Location',
         str_starts_with($new, 'src/ServiceInterface/') => 'App\Locating\\ServiceInterface\\Provider\\Location',
         default => 'App\Locating\\Service\\Provider\\Location',
     };

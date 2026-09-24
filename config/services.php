@@ -17,6 +17,8 @@ use App\Locating\MessageHandler\Batch\Location\AddressBatchMessageHandler;
 use App\Locating\MessageHandlerInterface\Batch\Location\AddressBatchMessageHandlerInterface;
 use App\Locating\Provider\Location\AddressReverseProvider;
 use App\Locating\Provider\Location\AddressSuggestionProvider;
+use App\Locating\Provider\Location\OrderedAddressReverseProvider;
+use App\Locating\Provider\Location\OrderedAddressSuggestionProvider;
 use App\Locating\ProviderInterface\Location\AddressReverseProviderInterface;
 use App\Locating\ProviderInterface\Location\AddressSuggestionProviderInterface;
 use App\Locating\Recorder\InMemoryMetricRecorder;
@@ -78,8 +80,6 @@ use App\Locating\Service\Provider\Location\CostAwareAddressSuggestionSourceCostP
 use App\Locating\Service\Provider\Location\HealthAwareAddressReverseSourceHealthPolicy;
 use App\Locating\Service\Provider\Location\HealthAwareAddressSuggestionSourceHealthPolicy;
 use App\Locating\Service\Provider\Location\LocationMetricBackend;
-use App\Locating\Service\Provider\Location\OrderedAddressReverseProvider;
-use App\Locating\Service\Provider\Location\OrderedAddressSuggestionProvider;
 use App\Locating\Service\Provider\Location\PolicyAddressReverseSourceOrder;
 use App\Locating\Service\Provider\Location\PolicyAddressSuggestionSourceOrder;
 use App\Locating\Service\Provider\Location\ProviderCostCatalogBackend;

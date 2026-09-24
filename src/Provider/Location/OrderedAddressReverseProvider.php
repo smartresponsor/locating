@@ -7,7 +7,7 @@ declare(strict_types=1);
  * dev@highhopesamerica.com
  */
 
-namespace App\Locating\Service\Provider\Location;
+namespace App\Locating\Provider\Location;
 
 use App\Locating\ModelInterface\Location\AddressReverseResultInterface;
 use App\Locating\ProviderInterface\Location\AddressReverseProviderInterface;

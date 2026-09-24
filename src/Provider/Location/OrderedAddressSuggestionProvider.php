@@ -7,7 +7,7 @@ declare(strict_types=1);
  * dev@highhopesamerica.com
  */
 
-namespace App\Locating\Service\Provider\Location;
+namespace App\Locating\Provider\Location;
 
 use App\Locating\ProviderInterface\Location\AddressSuggestionProviderInterface;
 use App\Locating\ServiceInterface\Provider\Location\AddressSuggestionRankerInterface;

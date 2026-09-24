@@ -6,8 +6,8 @@ namespace App\Locating\Tests\Service\Provider\Location;
 
 use App\Locating\Model\Location\AddressSuggestionResult;
 use App\Locating\Model\Location\AddressView;
+use App\Locating\Provider\Location\OrderedAddressSuggestionProvider;
 use App\Locating\Service\Provider\Location\AddressSuggestionRanker;
-use App\Locating\Service\Provider\Location\OrderedAddressSuggestionProvider;
 use App\Locating\Service\Provider\Location\StaticAddressSuggestionSourceOrder;
 use App\Locating\ServiceInterface\Provider\Location\AddressSuggestionSourceInterface;
 use PHPUnit\Framework\TestCase;
