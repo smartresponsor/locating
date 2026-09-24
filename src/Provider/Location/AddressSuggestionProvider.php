@@ -6,7 +6,7 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Locating\Service\Provider\Location;
+namespace App\Locating\Provider\Location;
 
 use App\Locating\FactoryInterface\Address\Location\LocationResultFactoryInterface;
 use App\Locating\ServiceInterface\Provider\Location\AddressSuggestGatewayInterface;

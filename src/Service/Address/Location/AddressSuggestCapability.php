@@ -9,8 +9,8 @@ declare(strict_types=1);
 
 namespace App\Locating\Service\Address\Location;
 
+use App\Locating\ProviderInterface\Location\AddressSuggestionProviderInterface;
 use App\Locating\ServiceInterface\Address\Location\AddressSuggestCapabilityInterface;
-use App\Locating\ServiceInterface\Provider\Location\AddressSuggestionProviderInterface;
 
 final class AddressSuggestCapability implements AddressSuggestCapabilityInterface
 {

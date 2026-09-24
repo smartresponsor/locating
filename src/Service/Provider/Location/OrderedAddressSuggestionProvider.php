@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace App\Locating\Service\Provider\Location;
 
-use App\Locating\ServiceInterface\Provider\Location\AddressSuggestionProviderInterface;
+use App\Locating\ProviderInterface\Location\AddressSuggestionProviderInterface;
 use App\Locating\ServiceInterface\Provider\Location\AddressSuggestionRankerInterface;
 use App\Locating\ServiceInterface\Provider\Location\AddressSuggestionSourceInterface;
 use App\Locating\ServiceInterface\Provider\Location\AddressSuggestionSourceOrderInterface;

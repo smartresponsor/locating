@@ -6,8 +6,8 @@ namespace App\Locating\Tests\Service\Address\Location;
 
 use App\Locating\Model\Location\AddressSuggestionResult;
 use App\Locating\Model\Location\AddressView;
+use App\Locating\ProviderInterface\Location\AddressSuggestionProviderInterface;
 use App\Locating\Service\Address\Location\AddressSuggestCapability;
-use App\Locating\ServiceInterface\Provider\Location\AddressSuggestionProviderInterface;
 use PHPUnit\Framework\TestCase;
 
 final class AddressSuggestCapabilityTest extends TestCase
