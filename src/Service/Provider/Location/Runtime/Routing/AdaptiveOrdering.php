@@ -10,6 +10,7 @@ declare(strict_types=1);
 namespace App\Locating\Service\Provider\Location\Runtime\Routing;
 
 use App\Locating\Policy\Provider\Location\Runtime\Resilience\SlaPolicy;
+use App\Locating\Policy\Provider\Location\Runtime\Routing\CostAwarePolicy;
 use App\Locating\Service\Address\Location\AddressHintBiasService;
 use App\Locating\Service\Provider\Location\HealthEwmaService;
 use App\Locating\ServiceInterface\Provider\Location\Runtime\Routing\AdaptiveOrderingInterface;

@@ -7,9 +7,9 @@ declare(strict_types=1);
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace App\Locating\Service\Provider\Location\Runtime\Routing;
+namespace App\Locating\Policy\Provider\Location\Runtime\Routing;
 
-use App\Locating\ServiceInterface\Provider\Location\Runtime\Routing\CostAwarePolicyInterface;
+use App\Locating\PolicyInterface\Provider\Location\Runtime\Routing\CostAwarePolicyInterface;
 
 final class CostAwarePolicy implements CostAwarePolicyInterface
 {
