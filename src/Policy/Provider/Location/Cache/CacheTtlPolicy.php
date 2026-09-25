@@ -7,9 +7,9 @@ declare(strict_types=1);
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace App\Locating\Service\Provider\Location\Cache;
+namespace App\Locating\Policy\Provider\Location\Cache;
 
-use App\Locating\ServiceInterface\Provider\Location\Cache\CacheTtlPolicyInterface;
+use App\Locating\PolicyInterface\Provider\Location\Cache\CacheTtlPolicyInterface;
 
 final class CacheTtlPolicy implements CacheTtlPolicyInterface
 {
