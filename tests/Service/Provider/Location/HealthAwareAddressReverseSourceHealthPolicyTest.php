@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Service\Provider\Location;
 
+use App\Locating\Policy\Provider\Location\HealthAwareAddressReverseSourceHealthPolicy;
 use App\Locating\ReadModel\Observability\Location\ProviderHealthSignal;
-use App\Locating\Service\Provider\Location\HealthAwareAddressReverseSourceHealthPolicy;
 use App\Locating\ServiceInterface\Provider\Location\ProviderHealthSignalReaderInterface;
 use PHPUnit\Framework\TestCase;
 

@@ -37,7 +37,7 @@ final class OrderedAddressReverseProviderTest extends TestCase
         $provider = new OrderedAddressReverseProvider(
             [$source],
             new PolicyAddressReverseSourceOrder(
-                new class () implements \App\Locating\ServiceInterface\Provider\Location\AddressReverseSourceHealthPolicyInterface {
+                new class () implements \App\Locating\PolicyInterface\Provider\Location\AddressReverseSourceHealthPolicyInterface {
                     public function score(string $sourceKey): float
                     {
                         return 0.9;

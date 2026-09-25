@@ -10,7 +10,7 @@ declare(strict_types=1);
 namespace App\Locating\Service\Provider\Location;
 
 use App\Locating\PolicyInterface\Provider\Location\AddressSuggestionSourceCostPolicyInterface;
-use App\Locating\ServiceInterface\Provider\Location\AddressSuggestionSourceHealthPolicyInterface;
+use App\Locating\PolicyInterface\Provider\Location\AddressSuggestionSourceHealthPolicyInterface;
 use App\Locating\ServiceInterface\Provider\Location\AddressSuggestionSourceInterface;
 use App\Locating\ServiceInterface\Provider\Location\AddressSuggestionSourceOrderInterface;
 use App\Locating\ServiceInterface\Provider\Location\AddressSuggestionSourceQuotaPolicyInterface;

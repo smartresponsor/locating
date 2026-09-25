@@ -7,9 +7,9 @@ declare(strict_types=1);
  * dev@highhopesamerica.com
  */
 
-namespace App\Locating\Service\Provider\Location;
+namespace App\Locating\Policy\Provider\Location;
 
-use App\Locating\ServiceInterface\Provider\Location\AddressReverseSourceHealthPolicyInterface;
+use App\Locating\PolicyInterface\Provider\Location\AddressReverseSourceHealthPolicyInterface;
 use App\Locating\ServiceInterface\Provider\Location\ProviderHealthSignalReaderInterface;
 
 final class HealthAwareAddressReverseSourceHealthPolicy implements AddressReverseSourceHealthPolicyInterface
