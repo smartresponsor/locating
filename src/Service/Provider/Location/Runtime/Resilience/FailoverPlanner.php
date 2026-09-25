@@ -9,6 +9,7 @@ declare(strict_types=1);
 
 namespace App\Locating\Service\Provider\Location\Runtime\Resilience;
 
+use App\Locating\Policy\Provider\Location\Runtime\Resilience\SlaPolicy;
 use App\Locating\ServiceInterface\Provider\Location\Runtime\Resilience\FailoverPlannerInterface;
 
 final class FailoverPlanner implements FailoverPlannerInterface
