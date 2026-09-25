@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace App\Locating\Service\Privacy\Location;
 
-use App\Locating\ServiceInterface\Privacy\Location\RetentionPolicyInterface;
+use App\Locating\PolicyInterface\Privacy\Location\RetentionPolicyInterface;
 use App\Locating\ServiceInterface\Privacy\Location\RetentionSweeperInterface;
 
 final class RetentionSweeper implements RetentionSweeperInterface

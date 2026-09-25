@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Service\Privacy\Location;
 
-use App\Locating\Service\Privacy\Location\RetentionPolicy;
+use App\Locating\Policy\Privacy\Location\RetentionPolicy;
 use App\Locating\Service\Privacy\Location\RetentionSweeper;
 use PHPUnit\Framework\TestCase;
 

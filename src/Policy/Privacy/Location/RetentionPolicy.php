@@ -7,9 +7,9 @@ declare(strict_types=1);
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace App\Locating\Service\Privacy\Location;
+namespace App\Locating\Policy\Privacy\Location;
 
-use App\Locating\ServiceInterface\Privacy\Location\RetentionPolicyInterface;
+use App\Locating\PolicyInterface\Privacy\Location\RetentionPolicyInterface;
 use App\Locating\ServiceInterface\Provider\Location\Runtime\Privacy\RetentionInterface;
 
 class RetentionPolicy implements RetentionInterface, RetentionPolicyInterface

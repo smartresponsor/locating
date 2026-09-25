@@ -9,6 +9,8 @@ declare(strict_types=1);
 
 namespace App\Locating\Service\Privacy\Location;
 
+use App\Locating\Policy\Privacy\Location\RetentionPolicy;
+
 final class ErasureJob
 {
     public function __construct(
