@@ -1,5 +1,5 @@
 {
-  "name": "smartresponsor/locator",
+  "name": "locating/location",
   "description": "Locator — utility engine for normalization, validation, and geocoding (DOM&DRIVE layer-first isolation).",
   "type": "library",
   "license": "proprietary",
