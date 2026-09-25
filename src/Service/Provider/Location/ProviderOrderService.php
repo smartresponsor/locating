@@ -9,8 +9,8 @@ declare(strict_types=1);
 
 namespace App\Locating\Service\Provider\Location;
 
+use App\Locating\PolicyInterface\Provider\Location\Runtime\Experiment\BanditPolicyInterface;
 use App\Locating\ServiceInterface\Provider\Location\ProviderOrderInterface;
-use App\Locating\ServiceInterface\Provider\Location\Runtime\Experiment\BanditPolicyInterface;
 
 final class ProviderOrderService implements ProviderOrderInterface
 {

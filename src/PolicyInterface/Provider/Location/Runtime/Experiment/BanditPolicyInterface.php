@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Locating\ServiceInterface\Provider\Location\Runtime\Experiment;
+namespace App\Locating\PolicyInterface\Provider\Location\Runtime\Experiment;
 
 interface BanditPolicyInterface
 {

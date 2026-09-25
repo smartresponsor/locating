@@ -7,9 +7,9 @@ declare(strict_types=1);
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace App\Locating\Service\Provider\Location\Runtime\Experiment;
+namespace App\Locating\Policy\Provider\Location\Runtime\Experiment;
 
-use App\Locating\ServiceInterface\Provider\Location\Runtime\Experiment\BanditPolicyInterface;
+use App\Locating\PolicyInterface\Provider\Location\Runtime\Experiment\BanditPolicyInterface;
 
 final class BanditPolicy implements BanditPolicyInterface
 {

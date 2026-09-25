@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Locating\ServiceInterface\Provider\Location;
 
-use App\Locating\ServiceInterface\Provider\Location\Runtime\Experiment\BanditPolicyInterface;
+use App\Locating\PolicyInterface\Provider\Location\Runtime\Experiment\BanditPolicyInterface;
 
 interface ProviderOrderInterface
 {
