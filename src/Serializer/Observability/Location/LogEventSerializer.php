@@ -7,12 +7,12 @@ declare(strict_types=1);
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace App\Locating\Service\Observability\Location;
+namespace App\Locating\Serializer\Observability\Location;
 
+use App\Locating\SerializerInterface\Observability\Location\LogEventSerializerInterface;
 use App\Locating\Service\Privacy\Location\Redactor;
-use App\Locating\ServiceInterface\Observability\Location\LogEventInterface;
 
-final class LogEvent implements LogEventInterface
+final class LogEventSerializer implements LogEventSerializerInterface
 {
     public function __construct(private Redactor $redactor = new Redactor())
     {
