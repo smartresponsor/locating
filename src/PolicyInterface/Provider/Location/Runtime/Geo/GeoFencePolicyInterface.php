@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Locating\ServiceInterface\Provider\Location\Runtime\Geo;
+namespace App\Locating\PolicyInterface\Provider\Location\Runtime\Geo;
 
 interface GeoFencePolicyInterface
 {

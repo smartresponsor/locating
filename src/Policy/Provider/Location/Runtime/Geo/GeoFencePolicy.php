@@ -7,9 +7,9 @@ declare(strict_types=1);
  * Comments in English only. Postgres = Data, MySQL = Infrastructure.
  */
 
-namespace App\Locating\Service\Provider\Location\Runtime\Geo;
+namespace App\Locating\Policy\Provider\Location\Runtime\Geo;
 
-use App\Locating\ServiceInterface\Provider\Location\Runtime\Geo\GeoFencePolicyInterface;
+use App\Locating\PolicyInterface\Provider\Location\Runtime\Geo\GeoFencePolicyInterface;
 
 final class GeoFencePolicy implements GeoFencePolicyInterface
 {
