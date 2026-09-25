@@ -15,14 +15,14 @@ $expectedMoves = [
     'src/Service/Provider/StaticAddressSuggestionSourceOrder.php' => 'src/Service/Provider/Location/StaticAddressSuggestionSourceOrder.php',
     'src/ServiceInterface/Provider/AddressReverseProviderInterface.php' => 'src/ProviderInterface/Location/AddressReverseProviderInterface.php',
     'src/ServiceInterface/Provider/AddressReverseResultNormalizerInterface.php' => 'src/NormalizerInterface/Provider/Location/AddressReverseResultNormalizerInterface.php',
-    'src/ServiceInterface/Provider/AddressReverseSourceCostPolicyInterface.php' => 'src/ServiceInterface/Provider/Location/AddressReverseSourceCostPolicyInterface.php',
+    'src/ServiceInterface/Provider/AddressReverseSourceCostPolicyInterface.php' => 'src/PolicyInterface/Provider/Location/AddressReverseSourceCostPolicyInterface.php',
     'src/ServiceInterface/Provider/AddressReverseSourceHealthPolicyInterface.php' => 'src/ServiceInterface/Provider/Location/AddressReverseSourceHealthPolicyInterface.php',
     'src/ServiceInterface/Provider/AddressReverseSourceInterface.php' => 'src/ServiceInterface/Provider/Location/AddressReverseSourceInterface.php',
     'src/ServiceInterface/Provider/AddressReverseSourceOrderInterface.php' => 'src/ServiceInterface/Provider/Location/AddressReverseSourceOrderInterface.php',
     'src/ServiceInterface/Provider/AddressReverseSourceQuotaPolicyInterface.php' => 'src/ServiceInterface/Provider/Location/AddressReverseSourceQuotaPolicyInterface.php',
     'src/ServiceInterface/Provider/AddressSuggestionProviderInterface.php' => 'src/ProviderInterface/Location/AddressSuggestionProviderInterface.php',
     'src/ServiceInterface/Provider/AddressSuggestionRankerInterface.php' => 'src/ServiceInterface/Provider/Location/AddressSuggestionRankerInterface.php',
-    'src/ServiceInterface/Provider/AddressSuggestionSourceCostPolicyInterface.php' => 'src/ServiceInterface/Provider/Location/AddressSuggestionSourceCostPolicyInterface.php',
+    'src/ServiceInterface/Provider/AddressSuggestionSourceCostPolicyInterface.php' => 'src/PolicyInterface/Provider/Location/AddressSuggestionSourceCostPolicyInterface.php',
     'src/ServiceInterface/Provider/AddressSuggestionSourceHealthPolicyInterface.php' => 'src/ServiceInterface/Provider/Location/AddressSuggestionSourceHealthPolicyInterface.php',
     'src/ServiceInterface/Provider/AddressSuggestionSourceInterface.php' => 'src/ServiceInterface/Provider/Location/AddressSuggestionSourceInterface.php',
     'src/ServiceInterface/Provider/AddressSuggestionSourceOrderInterface.php' => 'src/ServiceInterface/Provider/Location/AddressSuggestionSourceOrderInterface.php',
@@ -71,6 +71,8 @@ foreach ($expectedMoves as $old => $new) {
         str_starts_with($new, 'src/Provider/') => 'App\Locating\\Provider\\Location',
         str_starts_with($new, 'src/NormalizerInterface/') => 'App\Locating\\NormalizerInterface\\Provider\\Location',
         str_starts_with($new, 'src/Normalizer/') => 'App\Locating\\Normalizer\\Provider\\Location',
+        str_starts_with($new, 'src/PolicyInterface/') => 'App\Locating\\PolicyInterface\\Provider\\Location',
+        str_starts_with($new, 'src/Policy/') => 'App\Locating\\Policy\\Provider\\Location',
         str_starts_with($new, 'src/ServiceInterface/') => 'App\Locating\\ServiceInterface\\Provider\\Location',
         default => 'App\Locating\\Service\\Provider\\Location',
     };
@@ -79,11 +81,11 @@ foreach ($expectedMoves as $old => $new) {
         $violations[] = sprintf('Unexpected namespace for %s: expected %s, got %s', $new, $expectedNamespace, $namespace ?? '[missing]');
     }
 
-    if ((str_starts_with($new, 'src/ServiceInterface/') || str_starts_with($new, 'src/ProviderInterface/') || str_starts_with($new, 'src/NormalizerInterface/')) && $kind !== 'interface') {
+    if ((str_starts_with($new, 'src/ServiceInterface/') || str_starts_with($new, 'src/ProviderInterface/') || str_starts_with($new, 'src/NormalizerInterface/') || str_starts_with($new, 'src/PolicyInterface/')) && $kind !== 'interface') {
         $violations[] = sprintf('Typed provider interface file must declare an interface: %s', $new);
     }
 
-    if ((str_starts_with($new, 'src/Service/') || str_starts_with($new, 'src/Provider/') || str_starts_with($new, 'src/Normalizer/')) && $kind !== 'class') {
+    if ((str_starts_with($new, 'src/Service/') || str_starts_with($new, 'src/Provider/') || str_starts_with($new, 'src/Normalizer/') || str_starts_with($new, 'src/Policy/')) && $kind !== 'class') {
         $violations[] = sprintf('Service provider file must declare a class: %s', $new);
     }
 

@@ -7,9 +7,9 @@ declare(strict_types=1);
  * dev@highhopesamerica.com
  */
 
-namespace App\Locating\Service\Provider\Location;
+namespace App\Locating\Policy\Provider\Location;
 
-use App\Locating\ServiceInterface\Provider\Location\AddressSuggestionSourceCostPolicyInterface;
+use App\Locating\PolicyInterface\Provider\Location\AddressSuggestionSourceCostPolicyInterface;
 use App\Locating\ServiceInterface\Provider\Location\ProviderCostSignalReaderInterface;
 
 final class CostAwareAddressSuggestionSourceCostPolicy implements AddressSuggestionSourceCostPolicyInterface

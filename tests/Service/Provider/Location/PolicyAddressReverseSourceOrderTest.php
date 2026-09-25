@@ -6,8 +6,8 @@ namespace App\Locating\Tests\Service\Provider\Location;
 
 use App\Locating\Model\Location\AddressReverseResult;
 use App\Locating\Model\Location\AddressView;
+use App\Locating\PolicyInterface\Provider\Location\AddressReverseSourceCostPolicyInterface;
 use App\Locating\Service\Provider\Location\PolicyAddressReverseSourceOrder;
-use App\Locating\ServiceInterface\Provider\Location\AddressReverseSourceCostPolicyInterface;
 use App\Locating\ServiceInterface\Provider\Location\AddressReverseSourceHealthPolicyInterface;
 use App\Locating\ServiceInterface\Provider\Location\AddressReverseSourceInterface;
 use App\Locating\ServiceInterface\Provider\Location\AddressReverseSourceQuotaPolicyInterface;

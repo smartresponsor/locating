@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace App\Locating\Service\Provider\Location;
 
-use App\Locating\ServiceInterface\Provider\Location\AddressReverseSourceCostPolicyInterface;
+use App\Locating\PolicyInterface\Provider\Location\AddressReverseSourceCostPolicyInterface;
 use App\Locating\ServiceInterface\Provider\Location\AddressReverseSourceHealthPolicyInterface;
 use App\Locating\ServiceInterface\Provider\Location\AddressReverseSourceInterface;
 use App\Locating\ServiceInterface\Provider\Location\AddressReverseSourceOrderInterface;

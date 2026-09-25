@@ -49,7 +49,7 @@ final class OrderedAddressReverseProviderTest extends TestCase
                         return true;
                     }
                 },
-                new class () implements \App\Locating\ServiceInterface\Provider\Location\AddressReverseSourceCostPolicyInterface {
+                new class () implements \App\Locating\PolicyInterface\Provider\Location\AddressReverseSourceCostPolicyInterface {
                     public function penalty(string $sourceKey, float $latitude, float $longitude, ?string $countryCode = null): float
                     {
                         return 0.0;
