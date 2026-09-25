@@ -11,7 +11,7 @@ namespace App\Locating\Service\Address\Location;
 
 use App\Locating\ModelInterface\Location\AddressInputInterface;
 use App\Locating\ModelInterface\Location\AddressPipelineResultInterface;
-use App\Locating\ServiceInterface\Address\Location\AddressNormalizerInterface;
+use App\Locating\NormalizerInterface\Address\Location\AddressNormalizerInterface;
 use App\Locating\ServiceInterface\Address\Location\AddressParserInterface;
 use App\Locating\ServiceInterface\Address\Location\AddressPipelineInterface;
 use App\Locating\ServiceInterface\Address\Location\AddressValidatorInterface;

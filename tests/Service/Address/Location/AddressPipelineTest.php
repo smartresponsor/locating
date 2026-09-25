@@ -6,7 +6,7 @@ namespace App\Locating\Tests\Service\Address\Location;
 
 use App\Locating\Model\Location\AddressInput;
 use App\Locating\Model\Location\AddressPipelineResult;
-use App\Locating\Service\Address\Location\AddressNormalizer;
+use App\Locating\Normalizer\Address\Location\AddressNormalizer;
 use App\Locating\Service\Address\Location\AddressParser;
 use App\Locating\Service\Address\Location\AddressPipeline;
 use App\Locating\Service\Address\Location\AddressValidator;

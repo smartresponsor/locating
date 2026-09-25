@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Locating\Tests\Service\Address\Location;
 
 use App\Locating\Model\Location\AddressView;
-use App\Locating\Service\Address\Location\AddressNormalizer;
+use App\Locating\Normalizer\Address\Location\AddressNormalizer;
 use PHPUnit\Framework\TestCase;
 
 final class AddressNormalizerTest extends TestCase

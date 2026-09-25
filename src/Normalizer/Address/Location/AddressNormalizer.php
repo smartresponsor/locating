@@ -7,11 +7,11 @@ declare(strict_types=1);
  * dev@highhopesamerica.com
  */
 
-namespace App\Locating\Service\Address\Location;
+namespace App\Locating\Normalizer\Address\Location;
 
 use App\Locating\Model\Location\AddressView;
 use App\Locating\ModelInterface\Location\AddressViewInterface;
-use App\Locating\ServiceInterface\Address\Location\AddressNormalizerInterface;
+use App\Locating\NormalizerInterface\Address\Location\AddressNormalizerInterface;
 
 final class AddressNormalizer implements AddressNormalizerInterface
 {

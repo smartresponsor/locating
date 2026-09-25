@@ -7,7 +7,7 @@ declare(strict_types=1);
  * dev@highhopesamerica.com
  */
 
-namespace App\Locating\ServiceInterface\Address\Location;
+namespace App\Locating\NormalizerInterface\Address\Location;
 
 use App\Locating\ModelInterface\Location\AddressViewInterface;
 

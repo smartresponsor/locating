@@ -10,6 +10,8 @@ declare(strict_types=1);
  *
  *   App\Locating\Service\Address\Location\*          => src/Service/Address/Location/*
  *   App\Locating\ServiceInterface\Address\Location\* => src/ServiceInterface/Address/Location/*
+ *   App\Locating\Normalizer\Address\Location\*       => src/Normalizer/Address/Location/*
+ *   App\Locating\NormalizerInterface\Address\Location\* => src/NormalizerInterface/Address/Location/*
  *   App\Locating\Factory\Address\Location\*          => src/Factory/Address/Location/*
  *   App\Locating\FactoryInterface\Address\Location\* => src/FactoryInterface/Address/Location/*
  *
@@ -23,14 +25,14 @@ $errors = [];
 $warnings = [];
 
 $canonicalFiles = [
-    'src/Service/Address/Location/AddressNormalizer.php' => 'App\Locating\\Service\\Address\\Location',
+    'src/Normalizer/Address/Location/AddressNormalizer.php' => 'App\Locating\\Normalizer\\Address\\Location',
     'src/Service/Address/Location/AddressParser.php' => 'App\Locating\\Service\\Address\\Location',
     'src/Service/Address/Location/AddressPipeline.php' => 'App\Locating\\Service\\Address\\Location',
     'src/Service/Address/Location/AddressReverseCapability.php' => 'App\Locating\\Service\\Address\\Location',
     'src/Service/Address/Location/AddressSuggestCapability.php' => 'App\Locating\\Service\\Address\\Location',
     'src/Service/Address/Location/AddressValidator.php' => 'App\Locating\\Service\\Address\\Location',
     'src/Factory/Address/Location/LocationResultFactory.php' => 'App\Locating\\Factory\\Address\\Location',
-    'src/ServiceInterface/Address/Location/AddressNormalizerInterface.php' => 'App\Locating\\ServiceInterface\\Address\\Location',
+    'src/NormalizerInterface/Address/Location/AddressNormalizerInterface.php' => 'App\Locating\\NormalizerInterface\\Address\\Location',
     'src/ServiceInterface/Address/Location/AddressParserInterface.php' => 'App\Locating\\ServiceInterface\\Address\\Location',
     'src/ServiceInterface/Address/Location/AddressPipelineInterface.php' => 'App\Locating\\ServiceInterface\\Address\\Location',
     'src/ServiceInterface/Address/Location/AddressReverseCapabilityInterface.php' => 'App\Locating\\ServiceInterface\\Address\\Location',
@@ -41,6 +43,7 @@ $canonicalFiles = [
 
 $retiredFiles = [
     'src/Service/Address/AddressNormalizer.php',
+    'src/Service/Address/Location/AddressNormalizer.php',
     'src/Service/Address/AddressParser.php',
     'src/Service/Address/AddressPipeline.php',
     'src/Service/Address/AddressReverseCapability.php',
@@ -49,6 +52,7 @@ $retiredFiles = [
     'src/Service/Address/LocationResultFactory.php',
     'src/Service/Address/Location/LocationResultFactory.php',
     'src/ServiceInterface/Address/AddressNormalizerInterface.php',
+    'src/ServiceInterface/Address/Location/AddressNormalizerInterface.php',
     'src/ServiceInterface/Address/AddressParserInterface.php',
     'src/ServiceInterface/Address/AddressPipelineInterface.php',
     'src/ServiceInterface/Address/AddressReverseCapabilityInterface.php',
@@ -76,11 +80,11 @@ foreach ($canonicalFiles as $relativePath => $expectedNamespace) {
         );
     }
 
-    if ((str_starts_with($relativePath, 'src/ServiceInterface/') || str_starts_with($relativePath, 'src/FactoryInterface/')) && !str_contains($contents, 'interface ')) {
+    if ((str_starts_with($relativePath, 'src/ServiceInterface/') || str_starts_with($relativePath, 'src/FactoryInterface/') || str_starts_with($relativePath, 'src/NormalizerInterface/')) && !str_contains($contents, 'interface ')) {
         $errors[] = 'Typed interface file is not an interface: ' . $relativePath;
     }
 
-    if ((str_starts_with($relativePath, 'src/Service/') || str_starts_with($relativePath, 'src/Factory/')) && !str_contains($contents, 'final class ')) {
+    if ((str_starts_with($relativePath, 'src/Service/') || str_starts_with($relativePath, 'src/Factory/') || str_starts_with($relativePath, 'src/Normalizer/')) && !str_contains($contents, 'final class ')) {
         $warnings[] = 'Technical-role implementation file is not a final class: ' . $relativePath;
     }
 }
