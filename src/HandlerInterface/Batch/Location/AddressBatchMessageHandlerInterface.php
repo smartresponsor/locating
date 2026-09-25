@@ -6,7 +6,7 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Locating\MessageHandlerInterface\Batch\Location;
+namespace App\Locating\HandlerInterface\Batch\Location;
 
 use App\Locating\MessageInterface\Batch\Location\AddressBatchMessageInterface;
 

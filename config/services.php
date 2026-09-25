@@ -12,9 +12,9 @@ use App\Locating\FactoryInterface\Address\Location\LocationResultFactoryInterfac
 use App\Locating\FactoryInterface\Batch\Location\AddressBatchJobFactoryInterface;
 use App\Locating\FactoryInterface\Batch\Location\AddressResultFactoryInterface;
 use App\Locating\FactoryInterface\Http\Location\LocationViewFactoryInterface;
+use App\Locating\Handler\Batch\Location\AddressBatchMessageHandler;
+use App\Locating\HandlerInterface\Batch\Location\AddressBatchMessageHandlerInterface;
 use App\Locating\Integration\Provider\Location\Http\NominatimReverseHttpClient;
-use App\Locating\MessageHandler\Batch\Location\AddressBatchMessageHandler;
-use App\Locating\MessageHandlerInterface\Batch\Location\AddressBatchMessageHandlerInterface;
 use App\Locating\Normalizer\Address\Location\AddressNormalizer;
 use App\Locating\Normalizer\Provider\Location\AddressReverseResultNormalizer;
 use App\Locating\NormalizerInterface\Address\Location\AddressNormalizerInterface;

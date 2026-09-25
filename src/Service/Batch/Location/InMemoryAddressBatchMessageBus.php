@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace App\Locating\Service\Batch\Location;
 
-use App\Locating\MessageHandlerInterface\Batch\Location\AddressBatchMessageHandlerInterface;
+use App\Locating\HandlerInterface\Batch\Location\AddressBatchMessageHandlerInterface;
 use App\Locating\MessageInterface\Batch\Location\AddressBatchMessageInterface;
 use App\Locating\ServiceInterface\Batch\Location\AddressBatchMessageBusInterface;
 

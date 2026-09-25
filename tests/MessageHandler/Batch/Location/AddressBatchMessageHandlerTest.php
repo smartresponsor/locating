@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\MessageHandler\Batch\Location;
 
+use App\Locating\Handler\Batch\Location\AddressBatchMessageHandler;
 use App\Locating\Message\Batch\Location\AddressBatchMessage;
-use App\Locating\MessageHandler\Batch\Location\AddressBatchMessageHandler;
 use App\Locating\Model\Location\AddressPipelineResult;
 use App\Locating\Model\Location\AddressView;
 use App\Locating\Service\Batch\Location\InMemoryAddressBatchRuntimeStore;

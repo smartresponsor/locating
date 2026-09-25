@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Infrastructure\Batch\Location;
 
+use App\Locating\HandlerInterface\Batch\Location\AddressBatchMessageHandlerInterface;
 use App\Locating\Message\Batch\Location\AddressBatchMessage;
-use App\Locating\MessageHandlerInterface\Batch\Location\AddressBatchMessageHandlerInterface;
 use App\Locating\Service\Batch\Location\InMemoryAddressBatchMessageBus;
 use PHPUnit\Framework\TestCase;
 

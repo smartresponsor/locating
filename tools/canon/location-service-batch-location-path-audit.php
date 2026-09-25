@@ -12,6 +12,8 @@ declare(strict_types=1);
  *   App\Locating\ServiceInterface\Batch\Location\* => src/ServiceInterface/Batch/Location/*
  *   App\Locating\Factory\Batch\Location\*          => src/Factory/Batch/Location/*
  *   App\Locating\FactoryInterface\Batch\Location\* => src/FactoryInterface/Batch/Location/*
+ *   App\Locating\Handler\Batch\Location\*          => src/Handler/Batch/Location/*
+ *   App\Locating\HandlerInterface\Batch\Location\* => src/HandlerInterface/Batch/Location/*
  *
  * The gate is intentionally narrow. Smartresponsor legacy services and the
  * broader provider/observability families are tracked by separate waves.
@@ -23,17 +25,21 @@ $warnings = [];
 
 $canonicalFiles = [
     'src/Factory/Batch/Location/AddressBatchJobFactory.php' => 'App\Locating\\Factory\\Batch\\Location',
+    'src/Handler/Batch/Location/AddressBatchMessageHandler.php' => 'App\Locating\\Handler\\Batch\\Location',
     'src/Service/Batch/Location/LocationAddressBatchService.php' => 'App\Locating\\Service\\Batch\\Location',
     'src/Service/Batch/Location/LocationAddressBatchServiceMetricDecorator.php' => 'App\Locating\\Service\\Batch\\Location',
     'src/FactoryInterface/Batch/Location/AddressBatchJobFactoryInterface.php' => 'App\Locating\\FactoryInterface\\Batch\\Location',
+    'src/HandlerInterface/Batch/Location/AddressBatchMessageHandlerInterface.php' => 'App\Locating\\HandlerInterface\\Batch\\Location',
     'src/ServiceInterface/Batch/Location/LocationAddressBatchServiceInterface.php' => 'App\Locating\\ServiceInterface\\Batch\\Location',
 ];
 
 $retiredFiles = [
+    'src/MessageHandler/Batch/Location/AddressBatchMessageHandler.php',
     'src/Service/Batch/AddressBatchJobFactory.php',
     'src/Service/Batch/Location/AddressBatchJobFactory.php',
     'src/Service/Batch/LocationAddressBatchService.php',
     'src/Service/Batch/LocationAddressBatchServiceMetricDecorator.php',
+    'src/MessageHandlerInterface/Batch/Location/AddressBatchMessageHandlerInterface.php',
     'src/ServiceInterface/Batch/AddressBatchJobFactoryInterface.php',
     'src/ServiceInterface/Batch/Location/AddressBatchJobFactoryInterface.php',
     'src/ServiceInterface/Batch/LocationAddressBatchServiceInterface.php',
@@ -53,11 +59,11 @@ foreach ($canonicalFiles as $relativePath => $expectedNamespace) {
         $errors[] = sprintf('Namespace mismatch in %s; expected %s', $relativePath, $expectedNamespace);
     }
 
-    if ((str_starts_with($relativePath, 'src/ServiceInterface/') || str_starts_with($relativePath, 'src/FactoryInterface/')) && !str_contains($contents, 'interface ')) {
+    if ((str_starts_with($relativePath, 'src/ServiceInterface/') || str_starts_with($relativePath, 'src/FactoryInterface/') || str_starts_with($relativePath, 'src/HandlerInterface/')) && !str_contains($contents, 'interface ')) {
         $errors[] = 'Typed interface file is not an interface: ' . $relativePath;
     }
 
-    if ((str_starts_with($relativePath, 'src/Service/') || str_starts_with($relativePath, 'src/Factory/')) && !str_contains($contents, 'final class ')) {
+    if ((str_starts_with($relativePath, 'src/Service/') || str_starts_with($relativePath, 'src/Factory/') || str_starts_with($relativePath, 'src/Handler/')) && !str_contains($contents, 'final class ')) {
         $warnings[] = 'Technical-role implementation file is not a final class: ' . $relativePath;
     }
 }
