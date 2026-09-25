@@ -8,8 +8,8 @@ declare(strict_types=1);
 
 namespace App\Locating\Service\Address\Location;
 
+use App\Locating\RepositoryInterface\Location\Tenant\TenantConfigRepositoryInterface;
 use App\Locating\ServiceInterface\Address\Location\AddressQuotaGuardServiceInterface;
-use App\Locating\ServiceInterface\Location\Tenant\TenantConfigRepositoryInterface;
 use App\Locating\ServiceInterface\Location\Tenant\TenantContextInterface;
 use App\Locating\ServiceInterface\Location\Tenant\TenantUsageCounterInterface;
 

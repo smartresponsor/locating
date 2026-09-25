@@ -6,10 +6,10 @@ declare(strict_types=1);
  * Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
  */
 
-namespace App\Locating\Service\Location\Tenant;
+namespace App\Locating\Repository\Location\Tenant;
 
 use App\Locating\Model\Location\Tenant\TenantLimit;
-use App\Locating\ServiceInterface\Location\Tenant\TenantConfigRepositoryInterface;
+use App\Locating\RepositoryInterface\Location\Tenant\TenantConfigRepositoryInterface;
 use App\Locating\ServiceInterface\Location\Tenant\TenantLimitInterface;
 
 /**

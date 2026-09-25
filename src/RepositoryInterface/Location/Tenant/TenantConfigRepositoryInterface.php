@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Locating\ServiceInterface\Location\Tenant;
+namespace App\Locating\RepositoryInterface\Location\Tenant;
+
+use App\Locating\ServiceInterface\Location\Tenant\TenantLimitInterface;
 
 interface TenantConfigRepositoryInterface
 {
