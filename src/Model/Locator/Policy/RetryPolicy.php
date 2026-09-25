@@ -5,10 +5,10 @@ declare(strict_types=1);
 
 namespace App\Locating\Model\Locator\Policy;
 
-use App\Locating\Service\Provider\Location\Runtime\Resilience\RetryPolicy as ServiceRetryPolicy;
+use App\Locating\Policy\Provider\Location\Runtime\Resilience\RetryPolicy as ServiceRetryPolicy;
 
 /**
- * @deprecated Use App\Locating\Service\Provider\Location\Runtime\Resilience\RetryPolicy directly.
+ * @deprecated Use App\Locating\Policy\Provider\Location\Runtime\Resilience\RetryPolicy directly.
  */
 final class RetryPolicy
 {

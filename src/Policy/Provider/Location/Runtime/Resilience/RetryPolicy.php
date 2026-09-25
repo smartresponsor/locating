@@ -3,9 +3,9 @@
 // Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 declare(strict_types=1);
 
-namespace App\Locating\Service\Provider\Location\Runtime\Resilience;
+namespace App\Locating\Policy\Provider\Location\Runtime\Resilience;
 
-use App\Locating\ServiceInterface\Provider\Location\Runtime\Resilience\RetryPolicyInterface;
+use App\Locating\PolicyInterface\Provider\Location\Runtime\Resilience\RetryPolicyInterface;
 
 final class RetryPolicy implements RetryPolicyInterface
 {

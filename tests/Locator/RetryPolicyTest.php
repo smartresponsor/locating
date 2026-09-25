@@ -6,7 +6,7 @@ declare(strict_types=1);
 namespace App\Locating\Tests\Locator;
 
 use App\Locating\Model\Locator\Policy\RetryPolicy as EntityRetryPolicy;
-use App\Locating\Service\Provider\Location\Runtime\Resilience\RetryPolicy;
+use App\Locating\Policy\Provider\Location\Runtime\Resilience\RetryPolicy;
 use PHPUnit\Framework\TestCase;
 
 final class RetryPolicyTest extends TestCase

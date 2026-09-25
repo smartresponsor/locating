@@ -9,10 +9,10 @@ declare(strict_types=1);
 
 namespace App\Locating\Service\Provider\Location\Runtime\Routing;
 
+use App\Locating\Policy\Provider\Location\Runtime\Resilience\RetryPolicy;
 use App\Locating\Service\Provider\Location\Cache\ResultCache;
 use App\Locating\Service\Provider\Location\HealthEwmaService;
 use App\Locating\Service\Provider\Location\Runtime\Resilience\FailoverMatrix;
-use App\Locating\Service\Provider\Location\Runtime\Resilience\RetryPolicy;
 use App\Locating\Service\Provider\Location\Runtime\Resilience\SlaPolicy;
 use App\Locating\ServiceInterface\Location\RateLimit\RateLimiterInterface;
 use App\Locating\ServiceInterface\Location\Tenant\TenantContextInterface;
