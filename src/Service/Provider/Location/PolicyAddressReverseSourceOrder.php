@@ -11,9 +11,9 @@ namespace App\Locating\Service\Provider\Location;
 
 use App\Locating\PolicyInterface\Provider\Location\AddressReverseSourceCostPolicyInterface;
 use App\Locating\PolicyInterface\Provider\Location\AddressReverseSourceHealthPolicyInterface;
+use App\Locating\PolicyInterface\Provider\Location\AddressReverseSourceQuotaPolicyInterface;
 use App\Locating\ServiceInterface\Provider\Location\AddressReverseSourceInterface;
 use App\Locating\ServiceInterface\Provider\Location\AddressReverseSourceOrderInterface;
-use App\Locating\ServiceInterface\Provider\Location\AddressReverseSourceQuotaPolicyInterface;
 
 final class PolicyAddressReverseSourceOrder implements AddressReverseSourceOrderInterface
 {

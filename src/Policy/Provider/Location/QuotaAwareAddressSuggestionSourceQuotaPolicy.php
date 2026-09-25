@@ -7,9 +7,9 @@ declare(strict_types=1);
  * dev@highhopesamerica.com
  */
 
-namespace App\Locating\Service\Provider\Location;
+namespace App\Locating\Policy\Provider\Location;
 
-use App\Locating\ServiceInterface\Provider\Location\AddressSuggestionSourceQuotaPolicyInterface;
+use App\Locating\PolicyInterface\Provider\Location\AddressSuggestionSourceQuotaPolicyInterface;
 use App\Locating\ServiceInterface\Provider\Location\ProviderQuotaSignalReaderInterface;
 
 final class QuotaAwareAddressSuggestionSourceQuotaPolicy implements AddressSuggestionSourceQuotaPolicyInterface

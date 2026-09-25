@@ -8,9 +8,9 @@ use App\Locating\Model\Location\AddressSuggestionResult;
 use App\Locating\Model\Location\AddressView;
 use App\Locating\PolicyInterface\Provider\Location\AddressSuggestionSourceCostPolicyInterface;
 use App\Locating\PolicyInterface\Provider\Location\AddressSuggestionSourceHealthPolicyInterface;
+use App\Locating\PolicyInterface\Provider\Location\AddressSuggestionSourceQuotaPolicyInterface;
 use App\Locating\Service\Provider\Location\PolicyAddressSuggestionSourceOrder;
 use App\Locating\ServiceInterface\Provider\Location\AddressSuggestionSourceInterface;
-use App\Locating\ServiceInterface\Provider\Location\AddressSuggestionSourceQuotaPolicyInterface;
 use PHPUnit\Framework\TestCase;
 
 final class PolicyAddressSuggestionSourceOrderTest extends TestCase

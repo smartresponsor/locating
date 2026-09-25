@@ -8,9 +8,9 @@ use App\Locating\Model\Location\AddressReverseResult;
 use App\Locating\Model\Location\AddressView;
 use App\Locating\PolicyInterface\Provider\Location\AddressReverseSourceCostPolicyInterface;
 use App\Locating\PolicyInterface\Provider\Location\AddressReverseSourceHealthPolicyInterface;
+use App\Locating\PolicyInterface\Provider\Location\AddressReverseSourceQuotaPolicyInterface;
 use App\Locating\Service\Provider\Location\PolicyAddressReverseSourceOrder;
 use App\Locating\ServiceInterface\Provider\Location\AddressReverseSourceInterface;
-use App\Locating\ServiceInterface\Provider\Location\AddressReverseSourceQuotaPolicyInterface;
 use PHPUnit\Framework\TestCase;
 
 final class PolicyAddressReverseSourceOrderTest extends TestCase

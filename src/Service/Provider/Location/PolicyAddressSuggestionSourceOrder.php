@@ -11,9 +11,9 @@ namespace App\Locating\Service\Provider\Location;
 
 use App\Locating\PolicyInterface\Provider\Location\AddressSuggestionSourceCostPolicyInterface;
 use App\Locating\PolicyInterface\Provider\Location\AddressSuggestionSourceHealthPolicyInterface;
+use App\Locating\PolicyInterface\Provider\Location\AddressSuggestionSourceQuotaPolicyInterface;
 use App\Locating\ServiceInterface\Provider\Location\AddressSuggestionSourceInterface;
 use App\Locating\ServiceInterface\Provider\Location\AddressSuggestionSourceOrderInterface;
-use App\Locating\ServiceInterface\Provider\Location\AddressSuggestionSourceQuotaPolicyInterface;
 
 final class PolicyAddressSuggestionSourceOrder implements AddressSuggestionSourceOrderInterface
 {

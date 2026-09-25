@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Locating\Tests\Service\Provider\Location;
 
+use App\Locating\Policy\Provider\Location\QuotaAwareAddressSuggestionSourceQuotaPolicy;
 use App\Locating\ReadModel\Observability\Location\ProviderQuotaSignal;
-use App\Locating\Service\Provider\Location\QuotaAwareAddressSuggestionSourceQuotaPolicy;
 use App\Locating\ServiceInterface\Provider\Location\ProviderQuotaSignalReaderInterface;
 use PHPUnit\Framework\TestCase;
 

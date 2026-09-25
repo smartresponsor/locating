@@ -43,7 +43,7 @@ final class OrderedAddressReverseProviderTest extends TestCase
                         return 0.9;
                     }
                 },
-                new class () implements \App\Locating\ServiceInterface\Provider\Location\AddressReverseSourceQuotaPolicyInterface {
+                new class () implements \App\Locating\PolicyInterface\Provider\Location\AddressReverseSourceQuotaPolicyInterface {
                     public function allows(string $sourceKey, float $latitude, float $longitude, ?string $countryCode = null): bool
                     {
                         return true;
