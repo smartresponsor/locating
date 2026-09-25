@@ -6,7 +6,7 @@ namespace App\Locating\Tests\Service\Provider\Location;
 
 use App\Locating\Model\Location\AddressReverseResult;
 use App\Locating\Model\Location\AddressView;
-use App\Locating\Service\Provider\Location\AddressReverseResultNormalizer;
+use App\Locating\Normalizer\Provider\Location\AddressReverseResultNormalizer;
 use PHPUnit\Framework\TestCase;
 
 final class AddressReverseResultNormalizerTest extends TestCase

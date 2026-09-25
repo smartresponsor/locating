@@ -15,6 +15,8 @@ use App\Locating\FactoryInterface\Http\Location\LocationViewFactoryInterface;
 use App\Locating\Integration\Provider\Location\Http\NominatimReverseHttpClient;
 use App\Locating\MessageHandler\Batch\Location\AddressBatchMessageHandler;
 use App\Locating\MessageHandlerInterface\Batch\Location\AddressBatchMessageHandlerInterface;
+use App\Locating\Normalizer\Provider\Location\AddressReverseResultNormalizer;
+use App\Locating\NormalizerInterface\Provider\Location\AddressReverseResultNormalizerInterface;
 use App\Locating\Provider\Location\AddressReverseProvider;
 use App\Locating\Provider\Location\AddressSuggestionProvider;
 use App\Locating\Provider\Location\OrderedAddressReverseProvider;
@@ -71,7 +73,6 @@ use App\Locating\Service\Observability\Location\LocationProviderGovernanceReport
 use App\Locating\Service\Observability\Location\LocationStatusReportService;
 use App\Locating\Service\Provider\Location\AddressReverseGateway;
 use App\Locating\Service\Provider\Location\AddressReverseHttpBackend;
-use App\Locating\Service\Provider\Location\AddressReverseResultNormalizer;
 use App\Locating\Service\Provider\Location\AddressSuggestBackend;
 use App\Locating\Service\Provider\Location\AddressSuggestGateway;
 use App\Locating\Service\Provider\Location\AddressSuggestionRanker;
@@ -134,7 +135,6 @@ use App\Locating\ServiceInterface\Observability\Location\LocationProviderGoverna
 use App\Locating\ServiceInterface\Observability\Location\LocationProviderGovernanceReportServiceInterface;
 use App\Locating\ServiceInterface\Observability\Location\LocationStatusReportServiceInterface;
 use App\Locating\ServiceInterface\Provider\Location\AddressReverseGatewayInterface;
-use App\Locating\ServiceInterface\Provider\Location\AddressReverseResultNormalizerInterface;
 use App\Locating\ServiceInterface\Provider\Location\AddressReverseSourceCostPolicyInterface;
 use App\Locating\ServiceInterface\Provider\Location\AddressReverseSourceHealthPolicyInterface;
 use App\Locating\ServiceInterface\Provider\Location\AddressReverseSourceOrderInterface;

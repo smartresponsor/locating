@@ -7,12 +7,12 @@ declare(strict_types=1);
  * dev@highhopesamerica.com
  */
 
-namespace App\Locating\Service\Provider\Location;
+namespace App\Locating\Normalizer\Provider\Location;
 
 use App\Locating\Model\Location\AddressReverseResult;
 use App\Locating\Model\Location\AddressView;
 use App\Locating\ModelInterface\Location\AddressReverseResultInterface;
-use App\Locating\ServiceInterface\Provider\Location\AddressReverseResultNormalizerInterface;
+use App\Locating\NormalizerInterface\Provider\Location\AddressReverseResultNormalizerInterface;
 
 final class AddressReverseResultNormalizer implements AddressReverseResultNormalizerInterface
 {

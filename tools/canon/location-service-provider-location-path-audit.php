@@ -5,7 +5,7 @@ declare(strict_types=1);
 $root = dirname(__DIR__, 2);
 
 $expectedMoves = [
-    'src/Service/Provider/AddressReverseResultNormalizer.php' => 'src/Service/Provider/Location/AddressReverseResultNormalizer.php',
+    'src/Service/Provider/AddressReverseResultNormalizer.php' => 'src/Normalizer/Provider/Location/AddressReverseResultNormalizer.php',
     'src/Service/Provider/AddressSuggestionRanker.php' => 'src/Service/Provider/Location/AddressSuggestionRanker.php',
     'src/Service/Provider/OrderedAddressReverseProvider.php' => 'src/Provider/Location/OrderedAddressReverseProvider.php',
     'src/Service/Provider/OrderedAddressSuggestionProvider.php' => 'src/Provider/Location/OrderedAddressSuggestionProvider.php',
@@ -14,7 +14,7 @@ $expectedMoves = [
     'src/Service/Provider/StaticAddressReverseSourceOrder.php' => 'src/Service/Provider/Location/StaticAddressReverseSourceOrder.php',
     'src/Service/Provider/StaticAddressSuggestionSourceOrder.php' => 'src/Service/Provider/Location/StaticAddressSuggestionSourceOrder.php',
     'src/ServiceInterface/Provider/AddressReverseProviderInterface.php' => 'src/ProviderInterface/Location/AddressReverseProviderInterface.php',
-    'src/ServiceInterface/Provider/AddressReverseResultNormalizerInterface.php' => 'src/ServiceInterface/Provider/Location/AddressReverseResultNormalizerInterface.php',
+    'src/ServiceInterface/Provider/AddressReverseResultNormalizerInterface.php' => 'src/NormalizerInterface/Provider/Location/AddressReverseResultNormalizerInterface.php',
     'src/ServiceInterface/Provider/AddressReverseSourceCostPolicyInterface.php' => 'src/ServiceInterface/Provider/Location/AddressReverseSourceCostPolicyInterface.php',
     'src/ServiceInterface/Provider/AddressReverseSourceHealthPolicyInterface.php' => 'src/ServiceInterface/Provider/Location/AddressReverseSourceHealthPolicyInterface.php',
     'src/ServiceInterface/Provider/AddressReverseSourceInterface.php' => 'src/ServiceInterface/Provider/Location/AddressReverseSourceInterface.php',
@@ -69,6 +69,8 @@ foreach ($expectedMoves as $old => $new) {
     $expectedNamespace = match (true) {
         str_starts_with($new, 'src/ProviderInterface/') => 'App\Locating\\ProviderInterface\\Location',
         str_starts_with($new, 'src/Provider/') => 'App\Locating\\Provider\\Location',
+        str_starts_with($new, 'src/NormalizerInterface/') => 'App\Locating\\NormalizerInterface\\Provider\\Location',
+        str_starts_with($new, 'src/Normalizer/') => 'App\Locating\\Normalizer\\Provider\\Location',
         str_starts_with($new, 'src/ServiceInterface/') => 'App\Locating\\ServiceInterface\\Provider\\Location',
         default => 'App\Locating\\Service\\Provider\\Location',
     };
@@ -77,11 +79,11 @@ foreach ($expectedMoves as $old => $new) {
         $violations[] = sprintf('Unexpected namespace for %s: expected %s, got %s', $new, $expectedNamespace, $namespace ?? '[missing]');
     }
 
-    if ((str_starts_with($new, 'src/ServiceInterface/') || str_starts_with($new, 'src/ProviderInterface/')) && $kind !== 'interface') {
+    if ((str_starts_with($new, 'src/ServiceInterface/') || str_starts_with($new, 'src/ProviderInterface/') || str_starts_with($new, 'src/NormalizerInterface/')) && $kind !== 'interface') {
         $violations[] = sprintf('Typed provider interface file must declare an interface: %s', $new);
     }
 
-    if (str_starts_with($new, 'src/Service/') && $kind !== 'class') {
+    if ((str_starts_with($new, 'src/Service/') || str_starts_with($new, 'src/Provider/') || str_starts_with($new, 'src/Normalizer/')) && $kind !== 'class') {
         $violations[] = sprintf('Service provider file must declare a class: %s', $new);
     }
 
