@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace App\Locating\Integration\Provider\Location\Decorator;
 
-use App\Locating\Integration\Provider\Location\Cache\AdaptiveTtlPolicy;
 use App\Locating\Integration\Provider\Location\Cache\CacheInterface;
 use App\Locating\Integration\Provider\Location\Metrics\HealthMetrics;
 use App\Locating\Model\Location\AddressData;
 use App\Locating\Model\Location\GeoPoint;
+use App\Locating\Policy\Provider\Location\Cache\AdaptiveTtlPolicy;
 use App\Locating\ServiceInterface\Provider\Location\Runtime\Geo\LocatorInterface;
 
 final class AdaptiveMultiCachedLocator implements LocatorInterface

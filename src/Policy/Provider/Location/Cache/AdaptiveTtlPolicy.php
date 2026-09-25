@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Locating\Integration\Provider\Location\Cache;
+namespace App\Locating\Policy\Provider\Location\Cache;
 
 final class AdaptiveTtlPolicy
 {
@@ -14,7 +14,7 @@ final class AdaptiveTtlPolicy
         private float $latHighMs = 800.0
     ) {
     }
-    /** Возвращает TTL в секундах на основе метрик. */
+    /** Return TTL in seconds based on runtime metrics. */
     public function decide(float $avgMs, float $p95Ms, float $errorRate): int
     {
         $ttl = $this->baseTtl;
